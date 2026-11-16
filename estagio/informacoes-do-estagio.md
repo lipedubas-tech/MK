@@ -5,18 +5,31 @@ Este documento reúne tudo o que existe sobre o estágio. As fontes são:
 1. **A exportação do projeto do claude.ai** (`estagio-claude-code.zip`, enviado por e-mail em 16/11/2026). Ela traz o diário dia a dia, os exames, as pessoas, o resumo das conversas e as pendências. Os arquivos originais estão em [`exportacao-claude/`](exportacao-claude/).
 2. **As 8 páginas publicadas no Claude** (artifacts): 5 da Katita, 2 da criocirurgia e o Microscópio do Estágio. Delas saíram as etapas detalhadas da cirurgia e as 3 radiografias da pasta [`imagens/`](imagens/).
 3. **O modelo de slides** "Defesa de Estágio Técnico" do IFC.
-4. **Os dois PDFs de fotos** enviados nesta conversa (pasta [`pdfs/`](pdfs/)):
-   - "Fotos do dia 02" (29/10/2026), com 14 fotos legendadas.
-   - "Registro fotográfico do estágio", com 31 fotos legendadas.
+4. **Os 6 PDFs de fotos** enviados nesta conversa (pasta [`pdfs/`](pdfs/)), com **80 fotos legendadas**:
+   - "Registro fotográfico do estágio" (dia 01 e estrutura): 31 fotos
+   - "Fotos do dia 02" (29/10): 14 fotos
+   - "Katita, Barão e polidactilia" (pós-operatório da Katita, exames e odontologia do Barão, polidactilia): 9 fotos
+   - "Dia 06" (05/11): 5 fotos
+   - "Dia 07" (06/11): 15 fotos
+   - "12/11" (quimioterapia e cistocentese): 6 fotos
 
-   As 45 fotos foram extraídas para a pasta [`fotos/`](fotos/). A seção 10 reúne todas, com as legendas.
+   As fotos foram extraídas para a pasta [`fotos/`](fotos/). A seção 10 reúne todas, com as legendas.
 
-Ainda não chegaram: as fotos dos dias depois de 28/10 (exceto o dia 02), os PDFs dos laudos (Mel, Barão, Mel Serafina), as defesas de referência (Yasmin e outro colega) e o arquivo `13_11_2026.glb`. A lista completa está em [`exportacao-claude/anexos/LEIAME.md`](exportacao-claude/anexos/LEIAME.md).
+Ainda não chegaram:
+- Fotos do dia 03 (Luna, Atena, seringas), do dia 05 (vacinas), da nodulectomia, de 09–11/11 (castração, banho e tosa) e de 13/11 em diante.
+- As defesas de referência (Yasmin e outro colega).
+- O arquivo `13_11_2026.glb`.
+
+A lista completa do que faltava está em [`exportacao-claude/anexos/LEIAME.md`](exportacao-claude/anexos/LEIAME.md).
 
 > **Privacidade:**
 > - O PDF "Registro fotográfico" já veio com os nomes ocultados.
 > - O PDF **"Fotos do dia 02" não foi anonimizado**. Os raios-X da Katita mostram, no canto superior esquerdo, o nome da paciente e o do tutor. Cubra esses nomes antes de usar em slides.
-> - Na foto da sala de cirurgia aparecem os rostos da equipe.
+> - Aparecem rostos em três lugares:
+>   - na sala de cirurgia da Katita (equipe);
+>   - nas fotos da quimioterapia (a veterinária, de máscara e protetor);
+>   - no ultrassom do gato paraplégico (dia 07).
+> - O PDF de 12/11 diz "sem alteração ou desfoque", ou seja, não foi tratado.
 
 ---
 
@@ -178,6 +191,12 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 |---|---|---|---|
 | ![](fotos/dia02/08-katita-sala-de-cirurgia.jpg) | ![](fotos/dia02/09-katita-rx-pos-frontal-tela.jpg) | ![](fotos/dia02/10-katita-rx-pos-lateral.jpg) | ![](fotos/dia02/12-katita-rx-pos-anotado.jpg) |
 
+| Pós-operatório: deitada | Incisão com pontos de nylon | Katita sentada, de guia |
+|---|---|---|
+| ![](fotos/legendas/02-katita-pos-operatorio-deitada.jpg) | ![](fotos/legendas/03-katita-incisao-suturada.jpg) | ![](fotos/legendas/04-katita-sentada.jpg) |
+
+A Katita tem pelagem caramelo e orelhas escuras.
+
 **Legenda da foto anotada:**
 - Verde em cima: as 2 placas.
 - Verde embaixo: o parafuso transversal intercondilar.
@@ -205,9 +224,16 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **Medicamento:** doxorrubicina (Fauldoxo, Libbs, 50 mg/25 mL, uso exclusivamente intravenoso). É um fármaco **vesicante**, que lesa o tecido se extravasar.
 - **Frequência:** a cada 21 dias.
 - **Dose:** uma seringa cheia. Você ouviu "6,4/2 que dá 3,2". As unidades **não estão confirmadas**.
-- **Aplicação:** feita em seringa, e não em bolsa, porque o cão arranca o acesso mordendo.
-- **Paramentação:** avental descartável, respirador com filtro e protetor facial. O cão usava focinheira.
-- **Soro:** havia uma bolsa de NaCl 0,9% 250 mL, provavelmente para lavar o acesso (confirmar).
+- **Aplicação:** feita em seringa, e não em bolsa, porque a dose é pequena e o cão arranca o acesso mordendo. A aplicação é lenta e o acesso precisa ficar seguro, porque o fármaco é vesicante.
+- **Paramentação:** a veterinária usava avental descartável, respirador com filtro e protetor facial. O cão usava focinheira e era contido por uma segunda pessoa.
+- **Soro:** havia na sessão uma bolsa de NaCl 0,9% 250 mL (Fresenius Kabi, sistema fechado), provavelmente para lavar o acesso (confirmar).
+- **Cor:** o vermelho do frasco vem da própria molécula de doxorrubicina.
+
+| Frasco | Contenção e paramentação | Aplicação | Seringa no acesso |
+|---|---|---|---|
+| ![](fotos/quimio/01-doxorrubicina-frasco.jpg) | ![](fotos/quimio/03-quimio-contencao.jpg) | ![](fotos/quimio/04-quimio-aplicacao.jpg) | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) |
+
+**Cistocentese do mesmo dia:** o cão ficou em decúbito dorsal, com o abdômen tosado, para coletar a urina direto da bexiga. O momento da coleta não foi fotografado.
 
 ### 4.4 Criocirurgia de melanoma (05/11/2026)
 - Lesão na pele, na **região do traseiro** do cão.
@@ -239,7 +265,11 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
   - Peça de 22,5 × 6,8 × 3,0 cm. Ruptura de 3,2 × 3,0 cm.
   - **Diagnóstico: hemangiossarcoma esplênico** com ruptura e hematoma, hemossiderose e megacariócitos.
   - 22 mitoses em 2,37 mm². Hemorragia prévia crônica e hematopoese extramedular.
-- **Evolução:** do pós-cirúrgico (16/10) até 06/11, a hemoglobina, o hematócrito, as plaquetas e os leucócitos caíram. Em 06/11 o hematócrito estava em 13,88%, o mais baixo da série.
+- **Evolução:** do pós-cirúrgico (16/10) até 06/11, a hemoglobina, o hematócrito, as plaquetas e os leucócitos caíram. Em 06/11 o hematócrito estava em 13,88%, o mais baixo da série. Os gráficos de tendência do analisador mostram:
+  - plaquetas de 403 para 102;
+  - leucócitos de 34,69 para 15,15;
+  - plaquetócrito de 0,44 para 0,12;
+  - hematócrito, hemoglobina, VCM, HCM, linfócitos e monócitos em queda.
 
 ### 4.6 Mel Serafina: anemia grave, provável FeLV (05 e 06/11/2026)
 - **Paciente:** gata SRD, fêmea castrada, nascida em 09/04/2020.
@@ -247,8 +277,14 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - Os donos consideraram eutanásia, mas antes optaram pela **transfusão**, feita em 06/11. Se o quadro se repetir em 3 dias, a recomendação é a eutanásia.
 
 ### 4.7 Barão: linfoma na raiz dentária (04/11/2026)
-- **Paciente:** SRD, macho castrado, nascido em 08/04/2015.
-- Cerca de 8 dentes extraídos, com fotos de antes e depois.
+- **Paciente:** SRD, macho castrado, 11 anos (nascido em 08/04/2015).
+- **Antes do procedimento odontológico:** cálculo dentário espesso e gengiva avermelhada.
+- **Depois:** dentes limpos e sutura na gengiva, com sangramento, após a extração de cerca de 8 dentes.
+
+| Antes | Depois |
+|---|---|
+| ![](fotos/legendas/07-barao-antes-odontologico.jpg) | ![](fotos/legendas/08-barao-depois-odontologico.jpg) |
+
 - O hemograma mostrou leucocitose com linfócitos e monócitos altos e plaquetas baixas.
 
 ### 4.8 Outros casos e procedimentos
@@ -418,7 +454,7 @@ As referências estão ilegíveis na foto.
 
 ## 10. Registro fotográfico
 
-São as 45 fotos dos dois PDFs, com as legendas originais. As imagens em tamanho real estão em [`fotos/`](fotos/).
+São as 80 fotos dos 6 PDFs, com as legendas originais, em ordem de data. As imagens em tamanho real estão em [`fotos/`](fotos/).
 
 ### 10.1 Dia 02 — 29/10/2026 ([`pdfs/fotos-dia02-estagio.pdf`](pdfs/fotos-dia02-estagio.pdf))
 
@@ -510,3 +546,62 @@ As fotos são do primeiro dia (28/10), exceto quando a legenda diz outra coisa. 
 | # | Foto | Legenda |
 |---|---|---|
 | 31 | ![](fotos/geral/31-sao-francisco-de-assis.jpg) | São Francisco de Assis, padroeiro dos animais. Liga com a sua reflexão de que o trabalho do veterinário está mais próximo de São Francisco do que de um simples "tratador" |
+
+### 10.3 Katita, Barão e polidactilia ([`pdfs/fotos-katita-barao-polidactilia.pdf`](pdfs/fotos-katita-barao-polidactilia.pdf))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/legendas/01-katita-sala-de-cirurgia.jpg) | Cirurgia do cotovelo da Katita (29/10/2026). Cirurgião no campo operatório e anestesista ao fundo, com cilindro de oxigênio e bolsa de soro ao lado |
+| 2 | ![](fotos/legendas/02-katita-pos-operatorio-deitada.jpg) | Katita deitada depois da cirurgia, com a incisão suturada no cotovelo e a pele tricotomizada (raspada) ao redor |
+| 3 | ![](fotos/legendas/03-katita-incisao-suturada.jpg) | Detalhe da incisão no cotovelo, fechada com pontos de nylon na pele. Membro anterior estendido |
+| 4 | ![](fotos/legendas/04-katita-sentada.jpg) | Katita sentada na clínica, de guia: pelagem caramelo e orelhas escuras. SRD, 7 anos, 35 kg |
+| 5 | ![](fotos/legendas/05-barao-hemograma.jpg) | Hemograma do Barão (SRD, macho castrado, 11 anos), 04/11/2026, 08:30. Leucócitos 23,6 com neutrófilos, monócitos e linfócitos acima da referência; plaquetas 121, baixas |
+| 6 | ![](fotos/legendas/06-barao-bioquimico.jpg) | Bioquímico (Prep Profile II) do Barão, 04/11/2026, 08:28. Todos os valores dentro da referência. Hemólise 3+ e lipemia 3+ |
+| 7 | ![](fotos/legendas/07-barao-antes-odontologico.jpg) | Barão antes do procedimento odontológico: cálculo dentário espesso e gengiva avermelhada |
+| 8 | ![](fotos/legendas/08-barao-depois-odontologico.jpg) | Barão depois: dentes limpos e sutura na gengiva, com sangramento, após a extração de cerca de 8 dentes. Tem linfoma na raiz dentária |
+| 9 | ![](fotos/legendas/09-polidactilia.jpg) | Cão com polidactilia (6 dedos). Os dedos estão marcados em verde na foto |
+
+### 10.4 Dia 06 — 05/11/2026 ([`pdfs/fotos-dia06.pdf`](pdfs/fotos-dia06.pdf))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia06/01-criocirurgia-spray.jpg) | Criocirurgia: spray de nitrogênio líquido sobre o melanoma, na região do traseiro do cão. A ponta do criocautério fica sobre a lesão e o congelamento deixa a superfície esbranquiçada. Orientação ao tutor: vai inchar, sangrar e cair; se doer, dipirona em gotas |
+| 2 | ![](fotos/dia06/02-criocauterio.jpg) | Criocautério com nitrogênio líquido (cerca de −196 °C), com a ponta de aplicação em spray. O cão é contido com as mãos sobre a bancada |
+| 3 | ![](fotos/dia06/03-mel-serafina-internada.jpg) | Mel Serafina internada: gata SRD, castrada, nascida em 09/04/2020. Anemia grave, provavelmente por FeLV (a confirmar por teste). Conduta: transfusão; se o quadro se repetir 3 dias depois, a veterinária recomenda eutanásia |
+| 4 | ![](fotos/dia06/04-mel-serafina-hemograma.jpg) | Hemograma da Mel Serafina (05/11, 13:12): hemoglobina 6,3, hematócrito 19,42%, plaquetas 38, linfócitos 0,34 (baixos); neutrófilos 16,03 (altos) |
+| 5 | ![](fotos/dia06/05-mel-serafina-bioquimico.jpg) | Bioquímico da Mel Serafina (05/11, 13:16): glicose 197 alta (em gatos, o estresse pode elevar a glicose); o resto dentro do esperado. Hemólise 3+ |
+
+### 10.5 Dia 07 — 06/11/2026 ([`pdfs/fotos-dia07.pdf`](pdfs/fotos-dia07.pdf))
+
+O nome da tutora já vem coberto nos laudos.
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia07/01-ultrassom-gato-paraplegico.jpg) | Ultrassom em gato paraplégico: macho não castrado, 2 anos, jogado de uma janela em movimento quando filhote. A tutora esvazia a bexiga manualmente. Foram vistos cristais |
+| 2 | ![](fotos/dia07/02-mordida-no-pescoco.jpg) | Ferida por mordida no pescoço de uma cadela de 12 anos, só na pele. Sem sutura, para evitar abscesso: limpeza, clorexidina degermante e curativo |
+| 3 | ![](fotos/dia07/03-transfusao-mel-serafina.jpg) | Transfusão de sangue na gata Mel Serafina: bolsa de sangue e equipo, com a gata na baia embaixo |
+| 4 | ![](fotos/dia07/04-mel-hemograma-16-10.jpg) | Mel (labradora), hemograma de 16/10/2026 no analisador Zoetis: leucócitos 34,69 e neutrófilos 28,11 (altos); hemoglobina 8,2 e hematócrito 21,24% (baixos); plaquetas 403 |
+| 5 | ![](fotos/dia07/05-mel-hemograma-07-10-labvet.jpg) | Mel, hemograma completo de 07/10/2026 (Labvet Sul): hematócrito 24%, hemoglobina 7,1, plaquetas 87.000, segmentados 93%, monócitos ativados e macroplaquetas |
+| 6 | ![](fotos/dia07/06-mel-bioquimico-07-10-parte1.jpg) | Mel, bioquímico de 07/10 (parte 1): ALT 136 e fosfatase alcalina 426 (altas) |
+| 7 | ![](fotos/dia07/07-mel-bioquimico-07-10-parte2.jpg) | Mel, bioquímico de 07/10 (parte 2): proteínas totais 5,0 e globulina 2,30 (baixas) |
+| 8 | ![](fotos/dia07/08-mel-hemograma-06-11.jpg) | Mel, hemograma de 06/11/2026: hemoglobina 4,9 e hematócrito 13,88%, os mais baixos da série; plaquetas 102 |
+| 9 | ![](fotos/dia07/09-mel-tendencias-1.jpg) | Mel, tendências de 16/10 a 06/11 (1/2): hematócrito, hemoglobina, VCM, HCM, linfócitos e monócitos em queda |
+| 10 | ![](fotos/dia07/10-mel-tendencias-2.jpg) | Mel, tendências (2/2): plaquetas de 403 para 102, leucócitos de 34,69 para 15,15, plaquetócrito de 0,44 para 0,12 |
+| 11 | ![](fotos/dia07/11-mel-ultrassom-imagens-p3.jpg) | Mel, imagens do ultrassom abdominal (Nexavet, 07/10), página 3 |
+| 12 | ![](fotos/dia07/12-mel-ultrassom-imagens-p4.jpg) | Mel, imagens do ultrassom, página 4 |
+| 13 | ![](fotos/dia07/13-mel-ultrassom-imagens-p5.jpg) | Mel, imagens do ultrassom, página 5 |
+| 14 | ![](fotos/dia07/14-mel-laudo-ultrassom.jpg) | Mel, laudo do ultrassom (07/10): baço aumentado com várias estruturas arredondadas (a maior de 4,45 × 4,13 cm); fígado discretamente aumentado; adrenal esquerda com área nodular |
+| 15 | ![](fotos/dia07/15-mel-biopsia-baco.jpg) | Mel, biópsia do baço (Labvet Sul, coleta 08/10, laudo 27/10): esplenectomia total; hemangiossarcoma esplênico com ruptura e hematoma |
+
+### 10.6 Quimioterapia e cistocentese — 12/11/2026 ([`pdfs/fotos-12-11-quimioterapia.pdf`](pdfs/fotos-12-11-quimioterapia.pdf))
+
+> Este PDF não foi anonimizado nem desfocado.
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/quimio/01-doxorrubicina-frasco.jpg) | Cloridrato de doxorrubicina (Fauldoxo, Libbs), 50 mg/25 mL, uso exclusivamente intravenoso. A cor vermelha é da própria molécula |
+| 2 | ![](fotos/quimio/02-bolsa-nacl-250ml.jpg) | Bolsa de cloreto de sódio 0,9%, 250 mL (Fresenius Kabi), em sistema fechado, presente na sessão |
+| 3 | ![](fotos/quimio/03-quimio-contencao.jpg) | Cão de 17 anos com sarcoma (pescoço e cabeça), de focinheira, contido por uma segunda pessoa. A veterinária usa avental descartável, respirador com filtro e protetor facial |
+| 4 | ![](fotos/quimio/04-quimio-aplicacao.jpg) | Veterinária com a seringa de quimioterápico no acesso venoso. A aplicação foi em seringa, e não em bolsa, porque a dose é pequena e o cão arranca o acesso mordendo |
+| 5 | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) | Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro |
+| 6 | ![](fotos/quimio/06-cistocentese-ecoguiada.jpg) | Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga |
