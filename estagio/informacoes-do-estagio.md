@@ -14,10 +14,11 @@ Este documento reúne tudo o que existe sobre o estágio. As fontes são:
    - "12/11" (quimioterapia e cistocentese): 6 fotos
 
    As fotos foram extraídas para a pasta [`fotos/`](fotos/). A seção 10 reúne todas, com as legendas.
+5. **A defesa da Yasmin** (dezembro de 2025, mesma clínica, 29 slides), em [`pdfs/defesa-yasmin-2025.pdf`](pdfs/defesa-yasmin-2025.pdf). Dela saíram os dados formais da clínica. A seção 11 resume a estrutura dela e compara com o seu material.
 
 Ainda não chegaram:
 - Fotos do dia 03 (Luna, Atena, seringas), do dia 05 (vacinas), da nodulectomia, de 09–11/11 (castração, banho e tosa) e de 13/11 em diante.
-- As defesas de referência (Yasmin e outro colega).
+- A defesa do outro colega usada como referência.
 - O arquivo `13_11_2026.glb`.
 
 A lista completa do que faltava está em [`exportacao-claude/anexos/LEIAME.md`](exportacao-claude/anexos/LEIAME.md).
@@ -40,15 +41,40 @@ A lista completa do que faltava está em [`exportacao-claude/anexos/LEIAME.md`](
 | Estagiário | Felipe |
 | Curso | Técnico em Agropecuária Integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul |
 | Orientadora (IFC) | Fran Oliveira |
-| Local | Clínica veterinária Mundo Animal, Sombrio (SC). Os raios-X levam o nome "Mundo Animal", mas o cabeçalho dos laudos do analisador diz **"Clínica Veterinária Rangel, Sombrio SC"**. Confirmar qual é a razão social para o slide de identificação |
-| Supervisora no local | Cláudia, veterinária geral |
+| Supervisora no local | Cláudia Helena Bratti da Silva, médica veterinária |
 | Também acompanhado | Thiago, ortopedista da clínica |
 | Período | 28/10/2026 a 07/12/2026 |
 | Horário | 08:00–13:00 e 13:00–18:00 (no mesmo dia) |
 | Defesa | 25 a 30 minutos, formato livre desde que tenha o básico (local do estágio etc.) |
-| Referência | Defesa da colega Yasmin, feita na mesma clínica no ano anterior (29 slides) |
+| Referência | Defesa da colega Yasmin, feita na mesma clínica em dezembro de 2025 (29 slides) |
 
-**Ainda faltam para o modelo do IFC:** dados formais da clínica (responsável legal, endereço, bairro, CEP, telefone, site), carga horária semanal e total, setor do estágio, área de formação da supervisora, dificuldades encontradas, considerações finais e referências bibliográficas.
+### Dados da clínica
+Estes dados vêm do slide de identificação da Yasmin, de 2025. Confirme com a clínica se continuam iguais.
+
+| Campo do modelo IFC | Informação |
+|---|---|
+| Razão social | Comercial Agropecuária Rangel LTDA |
+| Nome | Mundo Animal Clínica Veterinária |
+| Responsável legal | Rangel Ramos Cardoso (médico veterinário, fundador) |
+| Endereço | Avenida Antonio Sant'Helena, 165 |
+| Bairro | Centro |
+| CEP | 88960-000 |
+| Cidade/Estado | Sombrio/SC |
+| Telefone | (48) 99924-7977 |
+| Site | Não informado |
+| Área de atuação | Clínica veterinária e pet shop |
+| Histórico | Inaugurada em 2005 pelo médico veterinário Rangel Ramos Cardoso. Começou pequena e cresceu até virar referência na região |
+| Serviços | Banho e tosa, consultas, cirurgias, exames laboratoriais, pet shop, raio-X, ultrassonografia, vacinas |
+| Ambientes | Balcão e pet shop, consultório, internamento, sala de espera e pesagem, cozinha e estante de remédios, gaiolas de animais prontos, sala de raio-X, banho e tosa, lavanderia, canil, sala de cirurgia, sala de esterilização |
+
+**Nome da clínica:** isso explica o "Clínica Veterinária Rangel" no cabeçalho dos laudos. **Rangel** é o nome do dono e da razão social, e **Mundo Animal** é o nome da clínica. No slide, use os dois: razão social "Comercial Agropecuária Rangel LTDA" e nome "Mundo Animal Clínica Veterinária".
+
+**Ainda faltam para o modelo do IFC:**
+- Carga horária semanal e total. A Yasmin pôs "8 horas diárias e 216 horas total". O seu horário é de 08:00 a 18:00; confirme quantas horas contam por dia e o total.
+- Setor do estágio.
+- Dificuldades encontradas.
+- Considerações finais.
+- Referências bibliográficas.
 
 ---
 
@@ -389,10 +415,11 @@ As referências estão ilegíveis na foto.
 
 | Pessoa | Papel |
 |---|---|
-| Cláudia | Veterinária geral, supervisora no estágio |
+| Cláudia Helena Bratti da Silva | Médica veterinária (clínica geral), supervisora no estágio |
+| Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica |
 | Thiago | Ortopedista; cirurgião da Katita e responsável pelo caso do Bob |
 | Fran Oliveira | Orientadora do estágio no IFC |
-| Yasmin | Colega que defendeu estágio na mesma clínica no ano passado |
+| Yasmim de Borba da Rolt | Colega que defendeu estágio na mesma clínica em dezembro de 2025. A orientadora dela foi Daiane da Rosa Fregulia e a banca, Rita de Albernaz Gonçalves da Silva |
 | Angela | Tutora da labradora Mel |
 | Hillary Giordani | Responsável pelo ultrassom da Mel (Nexavet) |
 
@@ -439,7 +466,8 @@ As referências estão ilegíveis na foto.
 - [ ] Para que servia a bolsa de NaCl 0,9% na quimioterapia
 - [ ] Com a Cláudia: hemoglobina e CHCM altos na pastora alemã e no Barão
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
-- [ ] O nome oficial da clínica: "Mundo Animal" ou "Clínica Veterinária Rangel"
+- [ ] Se os dados da clínica da defesa da Yasmin (2025) continuam válidos: endereço, telefone, responsável legal
+- [ ] Sua carga horária diária e total
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
@@ -605,3 +633,45 @@ O nome da tutora já vem coberto nos laudos.
 | 4 | ![](fotos/quimio/04-quimio-aplicacao.jpg) | Veterinária com a seringa de quimioterápico no acesso venoso. A aplicação foi em seringa, e não em bolsa, porque a dose é pequena e o cão arranca o acesso mordendo |
 | 5 | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) | Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro |
 | 6 | ![](fotos/quimio/06-cistocentese-ecoguiada.jpg) | Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga |
+
+---
+
+## 11. A defesa da Yasmin (referência)
+
+Defesa de **Yasmim de Borba da Rolt**, dezembro de 2025, na mesma clínica, entre 21/10/2025 e 27/11/2025. São 29 slides no modelo do IFC. O arquivo está em [`pdfs/defesa-yasmin-2025.pdf`](pdfs/defesa-yasmin-2025.pdf).
+
+### Estrutura
+
+| Slides | Seção | Conteúdo |
+|---|---|---|
+| 1 | Capa | Estudante, orientadora, banca e data |
+| 2 | Identificação da empresa | Razão social, endereço, responsável, supervisora, período e carga horária |
+| 3 | História da empresa | Um parágrafo e a foto da fachada |
+| 4–11 | Infraestrutura física | 8 slides com 2 fotos de cada ambiente: balcão e pet shop, consultório, internamento, espera e pesagem, cozinha e remédios, gaiolas e raio-X, banho e tosa, lavanderia e canil, cirurgia e esterilização |
+| 12 | Atividades da empresa | Lista dos serviços |
+| 13–17 | Procedimentos executados | Limpeza de tártaro, desobstrução uretral de gato, cirurgias, sedações (xilazina 2% e metadona) e citologia |
+| 18–21 | Casos clínicos vivenciados | Mastectomia, retirada de tumor, doença inflamatória crônica e eutanásia |
+| 22–25 | Exames realizados | Teste FIV/FeLV, eletrocardiograma, ultrassonografia, radiografia e exames de sangue |
+| 26 | Considerações finais e dificuldades | Dois parágrafos: rotina intensa, segurança nos procedimentos, casos delicados, crescimento pessoal |
+| 27–28 | Encerramento | Mosaicos de fotos dos animais e da turma, com "Obrigada pela atenção!" |
+
+**Como é:** descritiva. Cada slide tem um título, uma frase de definição ("A mastectomia é...") e duas ou três fotos. Algumas fotos são da internet, com a fonte citada. Não conta a história de nenhum paciente nem mostra valores de exame, e a parte pessoal ocupa só o último slide.
+
+### Comparação com o seu material
+
+| Tema | Yasmin | Você |
+|---|---|---|
+| Identificação e história | Tem | Pode reaproveitar os dados (seção 1), confirmando se mudaram |
+| Infraestrutura | 8 slides de ambientes | Tem fotos de equipamentos (analisadores, microscópio, raio-X, geladeiras, balança, armário), mas **não dos ambientes**. Se quiser essa parte, fotografe os ambientes |
+| Procedimentos | Definições genéricas | Casos com nome, história e desfecho: Katita (4 h de cirurgia, raios-X de antes e depois), quimioterapia, criocirurgia, transfusão, castração com seu auxílio |
+| Limpeza de tártaro | Tem | Tem o Barão (antes e depois, cerca de 8 extrações, linfoma) |
+| FIV/FeLV | Teste rápido | O mesmo teste (SensPERT) e a Mel Serafina, que liga o teste a um caso real |
+| Eutanásia | Definição | Dois casos vividos e o cloreto de potássio, com a sua reflexão |
+| Exames de sangue | Uma foto | 7 hemogramas com valores, a série de 3 meses da Mel e o Microscópio do Estágio |
+| Ultrassom | Fotos | Casos: Mel (baço com nódulos e biópsia de hemangiossarcoma), gato paraplégico, cistite, cistocentese |
+| Considerações finais | Dois parágrafos genéricos | Suas reflexões (seção 2): o veterinário trabalha com pessoas, São Francisco, a tese "o paciente é o animal, mas a clínica é construída com as pessoas que o amam" |
+| Recursos visuais | Fotos | Animações e modelo 3D da Katita, Microscópio do Estágio |
+
+**O que você não tem e ela tem:** fotos dos ambientes da clínica, o eletrocardiograma, a desobstrução uretral, a citologia e a mastectomia. Se você viu algum desses no estágio, vale registrar.
+
+**Onde a sua pode ser diferente:** a dela cumpre o básico em 26 slides descritivos. Você pode cumprir o mesmo básico (identificação, história, estrutura, atividades) em 4 ou 5 slides e usar o resto do tempo nos casos narrativos e na reflexão, que é o que você disse que quer.
