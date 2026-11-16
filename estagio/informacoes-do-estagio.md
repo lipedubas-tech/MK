@@ -41,6 +41,7 @@ A lista completa do que faltava está em [`exportacao-claude/anexos/LEIAME.md`](
 | Estagiário | Felipe |
 | Curso | Técnico em Agropecuária Integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul |
 | Orientadora (IFC) | Fran Oliveira |
+| Local | Mundo Animal Clínica Veterinária, Sombrio (SC). Dados completos abaixo |
 | Supervisora no local | Cláudia Helena Bratti da Silva, médica veterinária |
 | Também acompanhado | Thiago, ortopedista da clínica |
 | Período | 28/10/2026 a 07/12/2026 |
