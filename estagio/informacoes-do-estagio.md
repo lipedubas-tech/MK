@@ -5,10 +5,18 @@ Este documento reúne tudo o que existe sobre o estágio. As fontes são:
 1. **A exportação do projeto do claude.ai** (`estagio-claude-code.zip`, enviado por e-mail em 16/11/2026). Ela traz o diário dia a dia, os exames, as pessoas, o resumo das conversas e as pendências. Os arquivos originais estão em [`exportacao-claude/`](exportacao-claude/).
 2. **As 8 páginas publicadas no Claude** (artifacts): 5 da Katita, 2 da criocirurgia e o Microscópio do Estágio. Delas saíram as etapas detalhadas da cirurgia e as 3 radiografias da pasta [`imagens/`](imagens/).
 3. **O modelo de slides** "Defesa de Estágio Técnico" do IFC.
+4. **Os dois PDFs de fotos** enviados nesta conversa (pasta [`pdfs/`](pdfs/)):
+   - "Fotos do dia 02" (29/10/2026), com 14 fotos legendadas.
+   - "Registro fotográfico do estágio", com 31 fotos legendadas.
 
-Ficaram de fora porque **não vieram na exportação**: as fotos do estágio, os laudos e raios-X em PDF, as defesas de referência (Yasmin e outro colega) e o arquivo `13_11_2026.glb`. A lista completa está em [`exportacao-claude/anexos/LEIAME.md`](exportacao-claude/anexos/LEIAME.md). Esses arquivos precisam ser baixados à mão das conversas.
+   As 45 fotos foram extraídas para a pasta [`fotos/`](fotos/). A seção 10 reúne todas, com as legendas.
 
-> **Privacidade:** os laudos e raios-X trazem nomes de tutores e pacientes nos cabeçalhos. Cubra esses nomes antes de usar em slides e corte rostos e telas de celular das fotos.
+Ainda não chegaram: as fotos dos dias depois de 28/10 (exceto o dia 02), os PDFs dos laudos (Mel, Barão, Mel Serafina), as defesas de referência (Yasmin e outro colega) e o arquivo `13_11_2026.glb`. A lista completa está em [`exportacao-claude/anexos/LEIAME.md`](exportacao-claude/anexos/LEIAME.md).
+
+> **Privacidade:**
+> - O PDF "Registro fotográfico" já veio com os nomes ocultados.
+> - O PDF **"Fotos do dia 02" não foi anonimizado**. Os raios-X da Katita mostram, no canto superior esquerdo, o nome da paciente e o do tutor. Cubra esses nomes antes de usar em slides.
+> - Na foto da sala de cirurgia aparecem os rostos da equipe.
 
 ---
 
@@ -19,7 +27,7 @@ Ficaram de fora porque **não vieram na exportação**: as fotos do estágio, os
 | Estagiário | Felipe |
 | Curso | Técnico em Agropecuária Integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul |
 | Orientadora (IFC) | Fran Oliveira |
-| Local | Clínica veterinária Mundo Animal, Sombrio (SC) |
+| Local | Clínica veterinária Mundo Animal, Sombrio (SC). Os raios-X levam o nome "Mundo Animal", mas o cabeçalho dos laudos do analisador diz **"Clínica Veterinária Rangel, Sombrio SC"**. Confirmar qual é a razão social para o slide de identificação |
 | Supervisora no local | Cláudia, veterinária geral |
 | Também acompanhado | Thiago, ortopedista da clínica |
 | Período | 28/10/2026 a 07/12/2026 |
@@ -155,19 +163,33 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 | 6 | Banda de tensão | Olécrano, ulna | Refixar o olécrano, transformando a tração do tríceps em compressão | Furadeira, pinos de Kirschner, fio de cerclagem |
 | 7 | Fechamento | Músculo, subcutâneo, pele | Reconstruir os planos e proteger a fixação | Porta-agulhas, fio absorvível, nylon |
 
-**Radiografias:**
+**Linha do tempo pelas fotos:**
+- **26/10/2026, 15:20–15:22:** raios-X **antes** da cirurgia, em 3 incidências: lateral estendido, lateral flexionado e frontal (DP). É o cotovelo esquerdo, com o marcador "E" na imagem. Foram feitos 2 dias antes de você começar o estágio.
+- **29/10/2026:** cirurgia.
+- **29/10/2026, por volta de 16:13–16:19:** raios-X **depois** da cirurgia, frontal e lateral, fotografados da tela e do notebook.
 
-| Imagem 1 (marcada como pré-operatória na página) | Pós-operatório (DP) | Pós-operatório (lateral) |
-|---|---|---|
-| ![](imagens/katita-rx-pre-operatorio-DP.jpg) | ![](imagens/katita-rx-pos-operatorio-DP.jpg) | ![](imagens/katita-rx-pos-operatorio-lateral.jpg) |
+**Fotos da cirurgia** (pasta [`fotos/dia02/`](fotos/dia02/)):
+
+| Antes (frontal, 26/10) | Seu desenho da fratura | Campo cirúrgico: acesso | Campo cirúrgico: placa |
+|---|---|---|---|
+| ![](fotos/dia02/04-katita-rx-pre-frontal-DP.jpg) | ![](fotos/dia02/05-desenho-fratura-em-Y.jpg) | ![](fotos/dia02/06-katita-campo-cirurgico-afastadores.jpg) | ![](fotos/dia02/07-katita-campo-cirurgico-placa.jpg) |
+
+| Sala de cirurgia | Depois (frontal) | Depois (lateral) | Pós-operatório anotado |
+|---|---|---|---|
+| ![](fotos/dia02/08-katita-sala-de-cirurgia.jpg) | ![](fotos/dia02/09-katita-rx-pos-frontal-tela.jpg) | ![](fotos/dia02/10-katita-rx-pos-lateral.jpg) | ![](fotos/dia02/12-katita-rx-pos-anotado.jpg) |
+
+**Legenda da foto anotada:**
+- Verde em cima: as 2 placas.
+- Verde embaixo: o parafuso transversal intercondilar.
+- Demais parafusos: fixação.
+- Vermelho: o pino na ulna (banda de tensão).
 
 **A confirmar com o Thiago:**
-- **Lado operado.** A página 3D diz esquerdo, mas o diário marca como não confirmado.
+- **Lado operado:** os raios-X marcam "E" e a legenda diz cotovelo esquerdo. Falta só a confirmação dele.
 - **Duração, anestesia e pós-operatório.**
-- **Parafuso:** "intercondilar" (diário) ou "transcondilar" (página 3D).
-- **Pinos:** o diário diz "banda de tensão com pino", no singular. A página 3D mostra pino intramedular no úmero, 2 pinos longos na ulna e 1 pino transversal. Esses detalhes vieram da leitura da radiografia.
-- **Radiografia pré-operatória:** o diário só cita fotos do raio-X pós-operatório (3 incidências). Confirmar de onde veio a imagem marcada como pré-operatória.
-- **PDFs do raio-X pós-operatório:** ainda precisam ser pedidos à clínica.
+- **Parafuso:** o diário e a foto anotada dizem "intercondilar". Só a página 3D diz "transcondilar". Fique com "intercondilar".
+- **Pinos:** a sua anotação marca um pino na ulna. A página 3D desenhou pino intramedular no úmero, 2 pinos na ulna e 1 pino transversal, a partir da leitura da radiografia. Conferir quantos são.
+- **PDFs dos raios-X:** pedir à clínica para ter as imagens sem o reflexo da tela.
 
 ### 4.2 Bob: claudicação neurológica (29/10/2026)
 - **Paciente:** pinscher de 13 anos.
@@ -248,6 +270,19 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 
 As unidades estão como no laudo do analisador. A referência vem entre parênteses.
 
+### Primeiro paciente do estágio (cão) — 28/10/2026
+Este exame **não estava nas notas do projeto**. Os valores foram lidos das fotos 2 e 3 do "Registro fotográfico". O laudo é do analisador Zoetis da clínica, com o cabeçalho "Clínica Veterinária Rangel".
+
+**Hemograma (09:17):**
+- **Leucócitos:** leucócitos 12,34 (6,0–17,0); linfócitos 1,08 (1,0–4,8); monócitos 0,57 (0,2–1,5); neutrófilos 10,58 (3,0–12,0); eosinófilos 0,07 (0,0–0,8); basófilos 0,03 (0,0–0,4).
+- **Diferencial (%):** linfócitos 8,8; monócitos 4,6; neutrófilos 85,8; eosinófilos 0,6; basófilos 0,3.
+- **Série vermelha:** eritrócitos 6,68 (5,5–8,5); hemoglobina 18,6 (12,0–18,0) ↑; hematócrito 45,17 (37,0–55,0); VCM 68 (60–77); HCM 27,9 (19,5–24,5) ↑; CHCM 41,3 (31,0–39,0) ↑; RDWc 19,5 (14,0–20,0); RDWs 39,1.
+- **Plaquetas:** 351 (165–500); VPM 8,7 (3,9–11,1); PCT 0,31; PDWc 37,7; PDWs 14,1.
+
+**Bioquímico (Prep Profile II, 09:15):** ALP 42 (20–150); ALT 38 (10–118); BUN 14 (7–25); creatinina 0,7 (0,3–1,4); glicose 105 (60–110); proteínas totais 8,2 (5,4–8,2). Hemólise 1+, lipemia 2+, icterícia 0.
+
+> Este paciente também tem hemoglobina e CHCM acima da referência com hematócrito normal. Agora são três cães com o mesmo padrão: este, a pastora alemã e o Barão. Vale perguntar à Cláudia se é um efeito do analisador ou da lipemia.
+
 ### Pastora alemã (fêmea castrada, nascida em 2020) — 28/10/2026
 **Hemograma (17:56):**
 - **Leucócitos:** leucócitos 20,11 (6,0–17,0) ↑; linfócitos 2,18 (1,0–4,8); monócitos 0,36 (0,2–1,5); neutrófilos 15,83 (3,0–12,0) ↑; eosinófilos 1,43 (0,0–0,8) ↑; basófilos 0,30 (0,0–0,4).
@@ -300,13 +335,16 @@ As referências estão ilegíveis na foto.
 | Analgésicos e anti-inflamatórios | Dipirona (injetável e em gotas), meloxicam, metadona, dexametasona |
 | Antibióticos | Amoxicilina e "antibiótico" não especificado |
 | Quimioterápico | Doxorrubicina (Fauldoxo, Libbs, 50 mg/25 mL) |
-| Eutanásia | Cloreto de potássio intravenoso |
-| Antissépticos | Clorexidina degermante |
+| Eutanásia | Cloreto de potássio 19,1%, ampolas de 10 mL, intravenoso. É o agente final, aplicado depois da anestesia profunda (protocolo a confirmar). Medicamento de alta vigilância |
+| Antissépticos e limpeza | Clorexidina degermante; amônia (limpeza) |
 | Fluidos | NaCl 0,9% 250 mL; soro e suplemento intravenoso |
-| Vacinas | Vanguard Plus, V8/V10, Nobivac Raiva (antirrábica) |
-| Antiparasitários | Defenza, vermífugo, antipulgas |
-| Testes rápidos | FeLV/FIV |
-| Equipamentos | Analisador hematológico VetScan VS2 (com rotor de reagente) e analisador Zoetis, microscópio, ultrassom, raio-X com notebook e software, 2 geladeiras (cadeia fria), balança, armário de farmácia, cauterizador (ferro quente), monitor, cilindro de oxigênio, suporte de soro |
+| Vacinas | Vanguard Plus (Zoetis, com frasco de diluente), V8/V10, Nobivac Raiva (MSD, inativada) |
+| Antiparasitários | Defenza (fluralaner 400 mg, para cães de 20 a 40 kg), vermífugo, antipulgas |
+| Testes rápidos | SensPERT FeLV Ag/FIV Ab (Dechra) |
+| Exames | Analisador hematológico (Abaxis/Zoetis); analisador bioquímico VetScan VS2 (Abaxis), que processa o rotor de reagentes por centrifugação e fotometria; microscópio óptico binocular (citologia e esfregaço) |
+| Imagem | Ultrassom; gerador portátil de raio-X (laranja) em suporte de teto, com detector na mesa; notebook com o software de raio-X |
+| Estrutura | Geladeira de vacinas (Zoetis, 6 °C, dentro da faixa de 2 a 8 °C); geladeira Venax para medicamentos; balança de plataforma; armário de medicamentos e insumos; caixas de transporte |
+| Cirurgia e anestesia | Equipamento de anestesia e monitoração, monitor, cilindro de oxigênio, suporte de soro, cauterizador (ferro quente), afastadores, pinças, colar elizabetano |
 | Laboratórios externos | Labvet Sul (hemograma e biópsia), Nexavet (ultrassom) |
 
 ---
@@ -365,9 +403,110 @@ As referências estão ilegíveis na foto.
 - [ ] Para que servia a bolsa de NaCl 0,9% na quimioterapia
 - [ ] Com a Cláudia: hemoglobina e CHCM altos na pastora alemã e no Barão
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
+- [ ] O nome oficial da clínica: "Mundo Animal" ou "Clínica Veterinária Rangel"
+- [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
+- [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
+- [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
 
 **Organizar:**
 - [ ] Começar a contar as vacinas aplicadas por dia
 - [ ] Baixar das conversas do claude.ai as fotos, os laudos, os PDFs de referência e o `.glb`
 - [ ] Cobrir nomes de tutores e pacientes nos laudos e raios-X antes de usar nos slides
 - [ ] Registrar os dias depois de 13/11 (o estágio vai até 07/12)
+
+---
+
+## 10. Registro fotográfico
+
+São as 45 fotos dos dois PDFs, com as legendas originais. As imagens em tamanho real estão em [`fotos/`](fotos/).
+
+### 10.1 Dia 02 — 29/10/2026 ([`pdfs/fotos-dia02-estagio.pdf`](pdfs/fotos-dia02-estagio.pdf))
+
+> Este PDF **não foi anonimizado**: os raios-X mostram o nome da paciente e o do tutor.
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia02/01-gato-de-rua-internado.jpg) | Gato de rua branco internado, com acesso intravenoso. 29/10/2026, 08:55 |
+| 2 | ![](fotos/dia02/02-katita-rx-pre-lateral-estendido.jpg) | Raio-X **antes** da cirurgia: lateral, membro estendido. Cotovelo esquerdo, 26/10, 15:20 |
+| 3 | ![](fotos/dia02/03-katita-rx-pre-lateral-flexionado.jpg) | Raio-X **antes** da cirurgia: lateral, membro flexionado. 26/10, 15:21 |
+| 4 | ![](fotos/dia02/04-katita-rx-pre-frontal-DP.jpg) | Raio-X **antes** da cirurgia: frontal (DP). Fratura em Y do úmero distal. 26/10, 15:22 |
+| 5 | ![](fotos/dia02/05-desenho-fratura-em-Y.jpg) | Seu desenho de como o osso rachou: fratura em Y (intercondilar) do úmero distal |
+| 6 | ![](fotos/dia02/06-katita-campo-cirurgico-afastadores.jpg) | Campo cirúrgico: articulação exposta com afastadores e pinça (acesso por osteotomia do olécrano) |
+| 7 | ![](fotos/dia02/07-katita-campo-cirurgico-placa.jpg) | Campo cirúrgico: placa metálica já posicionada no osso |
+| 8 | ![](fotos/dia02/08-katita-sala-de-cirurgia.jpg) | Sala de cirurgia: cirurgião operando, equipe acompanhando, soro e cilindro de oxigênio |
+| 9 | ![](fotos/dia02/09-katita-rx-pos-frontal-tela.jpg) | Raio-X **depois** da cirurgia: frontal (DP), foto da tela. 29/10, 16:13 |
+| 10 | ![](fotos/dia02/10-katita-rx-pos-lateral.jpg) | Raio-X **depois** da cirurgia: lateral. 29/10, 16:16 |
+| 11 | ![](fotos/dia02/11-katita-rx-pos-frontal-notebook.jpg) | Raio-X **depois** da cirurgia: frontal, no notebook. 29/10, 16:19 |
+| 12 | ![](fotos/dia02/12-katita-rx-pos-anotado.jpg) | Pós-operatório anotado: verde em cima = 2 placas; verde embaixo = parafuso transversal intercondilar; demais parafusos = fixação; vermelho = pino na ulna (banda de tensão) |
+| 13 | ![](fotos/dia02/13-gerador-de-raio-x.jpg) | Gerador portátil de raio-X (laranja) no suporte de teto; detector na mesa |
+| 14 | ![](fotos/dia02/14-notebook-software-raio-x.jpg) | Notebook com o software de raio-X |
+
+### 10.2 Registro fotográfico geral ([`pdfs/fotos-estagio-clinica-veterinaria.pdf`](pdfs/fotos-estagio-clinica-veterinaria.pdf))
+
+As fotos são do primeiro dia (28/10), exceto quando a legenda diz outra coisa. Os dados de pacientes e tutores já vieram ocultados.
+
+**Exames laboratoriais**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/geral/01-analisador-hematologico.jpg) | Analisador hematológico da clínica, usado nos hemogramas |
+| 2 | ![](fotos/geral/02-hemograma-primeiro-paciente-28-10.jpg) | Hemograma do primeiro paciente (cão), 28/10/2026. Valores na seção 5 |
+| 3 | ![](fotos/geral/03-bioquimico-primeiro-paciente-28-10.jpg) | Bioquímico (Prep Profile II) do mesmo paciente. Lipemia 2+ |
+| 4 | ![](fotos/geral/04-rotor-de-reagentes.jpg) | Rotor de reagentes para a bioquímica. A amostra é centrifugada no disco e cada câmara é lida por fotometria |
+| 5 | ![](fotos/geral/05-vetscan-vs2.jpg) | Analisador bioquímico VetScan VS2 (Abaxis), que processa o rotor |
+| 6 | ![](fotos/geral/06-microscopio.jpg) | Microscópio óptico binocular, usado em citologia e esfregaço sanguíneo |
+| 7 | ![](fotos/geral/07-hemograma-pastor-alemao.jpg) | Hemograma da cadela pastor alemão, 28/10/2026 |
+| 8 | ![](fotos/geral/08-hemograma-pastor-alemao-2.jpg) | Segunda foto do mesmo hemograma, como registro dos dados |
+| 9 | ![](fotos/geral/09-bioquimico-pastor-alemao.jpg) | Bioquímico da mesma paciente: glicose e proteínas totais acima da referência; hemólise 3+ e lipemia 3+ |
+
+**Procedimento em cão sob anestesia**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 10 | ![](fotos/geral/10-anestesia-equipamento.jpg) | Equipamento de anestesia e monitoração preparado para o procedimento |
+| 11 | ![](fotos/geral/11-paciente-sob-anestesia.jpg) | Paciente sob anestesia durante o procedimento |
+| 12 | ![](fotos/geral/12-procedimento-monitoracao.jpg) | Procedimento em andamento, com monitoração do paciente |
+| 13 | ![](fotos/geral/13-lesao-na-face.jpg) | Lesão na face do paciente |
+| 14 | ![](fotos/geral/14-material-removido.jpg) | Material removido durante o procedimento |
+
+**Atendimento clínico e felino com esporotricose**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 15 | ![](fotos/geral/15-exame-fisico-cao.jpg) | Exame físico de cão: avaliação da cabeça e da pelagem |
+| 16 | ![](fotos/geral/16-felino-no-balcao.jpg) | Atendimento de felino no balcão |
+| 17 | ![](fotos/geral/17-esporotricose-lesao-pata.jpg) | Lesão ulcerada na pata, compatível com o diagnóstico de esporotricose informado pela veterinária. É zoonose: exige luvas e cuidado no manejo |
+| 18 | ![](fotos/geral/18-felino-colar-elizabetano.jpg) | Felino com colar elizabetano, que impede a lambedura da lesão. Tela de celular desfocada |
+
+**Prevenção: vacinas e antiparasitário**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 19 | ![](fotos/geral/19-vacina-vanguard-plus.jpg) | Vacina Vanguard Plus (Zoetis) |
+| 20 | ![](fotos/geral/20-vanguard-plus-diluente.jpg) | Vanguard Plus: frasco de diluente |
+| 21 | ![](fotos/geral/21-vacina-nobivac-raiva.jpg) | Vacina inativada contra raiva Nobivac Raiva (MSD) |
+| 22 | ![](fotos/geral/22-antiparasitario-defenza.jpg) | Antiparasitário Defenza (fluralaner 400 mg), para cães de 20 a 40 kg: a dose depende do peso |
+
+**Diagnóstico rápido e eutanásia**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 23 | ![](fotos/geral/23-teste-felv-fiv-aplicacao.jpg) | Teste rápido SensPERT FeLV Ag/FIV Ab (Dechra), logo após a aplicação da amostra |
+| 24 | ![](fotos/geral/24-teste-felv-fiv-leitura.jpg) | O mesmo teste após o tempo de leitura. Interpretação das linhas a confirmar com a veterinária |
+| 25 | ![](fotos/geral/25-cloreto-de-potassio.jpg) | Cloreto de potássio 19,1%, 10 mL, via intravenosa: agente final da eutanásia, aplicado após anestesia profunda (protocolo a confirmar). Medicamento de alta vigilância |
+
+**Estrutura, equipamentos e biossegurança**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 26 | ![](fotos/geral/26-geladeira-de-vacinas.jpg) | Geladeira de vacinas. O visor indica 6 °C, dentro da faixa de 2 a 8 °C da cadeia de frio |
+| 27 | ![](fotos/geral/27-geladeira-venax.jpg) | Segunda geladeira (Venax), para medicamentos e insumos refrigerados |
+| 28 | ![](fotos/geral/28-balanca.jpg) | Balança de plataforma para pesar os pacientes, base do cálculo de doses. À esquerda, caixas de transporte |
+| 29 | ![](fotos/geral/29-armario-de-medicamentos.jpg) | Armário de medicamentos e insumos: anti-inflamatórios, anestésicos, testes rápidos, tubos de coleta, estetoscópio e soluções |
+| 30 | ![](fotos/geral/30-amonia.jpg) | Frasco de amônia usado na limpeza |
+
+**Encerramento**
+
+| # | Foto | Legenda |
+|---|---|---|
+| 31 | ![](fotos/geral/31-sao-francisco-de-assis.jpg) | São Francisco de Assis, padroeiro dos animais. Liga com a sua reflexão de que o trabalho do veterinário está mais próximo de São Francisco do que de um simples "tratador" |
