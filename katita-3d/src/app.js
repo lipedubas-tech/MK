@@ -1,3 +1,4 @@
+(function(){var n=document.getElementById("nojs");if(n)n.parentNode.removeChild(n)})();
 function dec(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
 var steps=[
 {t:"O esqueleto e o cotovelo",est:"Escápula, úmero, rádio, ulna e olécrano (membro anterior esquerdo)",obj:"Localizar a região operada antes da intervenção",ins:"Nenhum nesta etapa",

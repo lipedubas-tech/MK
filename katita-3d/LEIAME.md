@@ -14,4 +14,6 @@ Página publicada: https://claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K
 - `build/`: as peças 3D já geradas.
 - `img/`: radiografias e fotos reais, já recortadas sem nomes.
 
-Para refazer a página depois de mexer em `src/`: `python3 tools/build_page.py`.
+No iPhone, o arquivo `.html` aberto direto do WhatsApp, do e-mail ou do app Arquivos mostra só a pré-visualização, que não roda o 3D. Quem usa iPhone precisa abrir pelo link publicado (com o compartilhamento público ligado). O arquivo mostra esse aviso sozinho quando o 3D não roda.
+
+Para refazer a página depois de mexer em `src/`: `python3 tools/build_page.py`. Para gerar também o arquivo offline, aponte `THREE_JS` para o `three.min.js` da versão r128.
