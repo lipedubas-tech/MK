@@ -1,3 +1,4 @@
+
 <title>Cirurgia da Katita no esqueleto 3D</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
@@ -32,6 +33,7 @@ background:radial-gradient(120% 85% at 50% 30%,var(--stage-a) 0%,var(--stage-b) 
 .pcap b{display:block;font:600 clamp(20px,2.6vw,34px)/1.15 var(--font-d);margin-bottom:6px}
 .pcap span{display:block;font-size:clamp(15px,1.5vw,21px);line-height:1.4;max-width:60ch;color:#d5e9e6}
 #err{padding:24px;color:var(--on-stage)}
+#nojs{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;color:var(--on-stage);font-size:15px;line-height:1.45}#nojs b{font-size:18px}#nojs a{color:#7fe9d8;font-weight:600;word-break:break-all}
 .cap{padding:8px 0 4px}
 .cap h2{font:600 22px/1.2 var(--font-d);margin:2px 0 6px;text-wrap:balance}
 .cap p{margin:0;min-height:4.5em}
@@ -99,6 +101,7 @@ kbd{font:12px/1 var(--font-b);border:1px solid var(--line);border-radius:5px;pad
 <div class="grid">
 <section class="view" aria-label="Animação 3D da cirurgia">
   <div id="stage">
+    <div id="nojs"><b>O 3D não abre nesta pré-visualização.</b><span>Isso acontece no iPhone quando o arquivo é aberto direto do WhatsApp, do e-mail ou do app Arquivos. Abra pelo link, no Safari:</span><a href="https://claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K">claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K</a></div>
     <div class="hud"><span class="chip" id="hchip"></span><span class="mode">Modo raio-X</span></div>
     <div class="pcap" aria-hidden="true"><b id="pt"></b><span id="pd"></span></div>
   </div>
@@ -143,5 +146,4 @@ kbd{font:12px/1 var(--font-b);border:1px solid var(--line);border-radius:5px;pad
 </main>
 @@THREE@@
 <script>
-@@APP@@
-</script>
+@@APP@@</script>
