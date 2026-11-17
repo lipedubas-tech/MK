@@ -11,7 +11,8 @@ for nome in sorted(os.listdir(os.path.join(root, "build"))):
         tex[nome[:-4]] = "data:image/png;base64," + b64("build", nome)
 data += "var TEX={%s};\n" % ",".join('%s:"%s"' % (k, v) for k, v in tex.items())
 libs = "<script>" + rd("vendor", "three-r128.min.js") + "</script>\n<script>" + rd("vendor", "GLTFLoader-r128.js") + "</script>"
-page = rd("src", "page.html").replace("@@THREE@@", libs).replace("@@APP@@", data + rd("src", "app.js"))
+app = "\n".join(rd("src", n) for n in sorted(os.listdir(os.path.join(root, "src"))) if n.endswith(".js"))
+page = rd("src", "page.html").replace("@@THREE@@", libs).replace("@@APP@@", data + app)
 page = re.sub(r"@@IMG:([\w-]+)@@", lambda g: "data:image/jpeg;base64," + b64("img", g.group(1) + ".jpg"), page)
 out = os.path.join(root, "dist", "osh-3d.html")
 open(out, "w", encoding="utf-8").write(page)
