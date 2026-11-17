@@ -3,8 +3,8 @@
 Especificação completa em `briefing-animacao-osh.pdf`. Fotos de referência em `referencias/` (extraídas do PDF).
 
 ## Versão 3D (principal), no nível da animação da Katita
-- `3d/dist/osh-3d.html`: **um arquivo só, abre sem internet** (three.js, modelo e texturas embutidos).
-  Gerado por `python3 3d/tools/build_page.py` (não fica no git; rode o comando para recriar).
+- `osh-3d.html`: **um arquivo só, abre sem internet** (three.js, modelo e texturas embutidos). É o que vai para a defesa.
+  Gerado por `python3 3d/tools/build_page.py` em `3d/dist/` e copiado para cá.
 - Navegação: botões Anterior / Próximo, setas ← →, clique ou toque no palco (avança), espaço (pausa),
   F (tela cheia), "Reproduzir tudo" (modo contínuo, ~116 s).
 - `3d/src/`: o código, em módulos, juntados pelo `build_page.py` na ordem dos nomes:
