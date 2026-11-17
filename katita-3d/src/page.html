@@ -1,110 +1,189 @@
 
 <title>Cirurgia da Katita no esqueleto 3D</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
 <style>
-/* Layout: palco 3D escuro (mesa sob o foco cirúrgico) à esquerda; roteiro da cirurgia e material real à direita. No celular, uma coluna. */
-:root{--bg:#f3f7f7;--fg:#13292b;--muted:#4d6567;--line:#9cc5be;--accent:#0b6f66;--btn:#0b6f66;--btn-fg:#fff;--card:#e4f0ee;
---stage-a:#2f5357;--stage-b:#14282b;--stage-c:#081214;--on-stage:#eaf6f4;--on-stage-dim:#a9c6c3;--warn:#b3261e;
---font-d:"Iowan Old Style",Georgia,"Times New Roman",serif;--font-b:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1618;--fg:#e4f1ef;--muted:#9bb5b3;--line:#25514d;--accent:#5eead4;--btn:#5eead4;--btn-fg:#07201d;--card:#132a2b;--warn:#ff8a80;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0c1618;--fg:#e4f1ef;--muted:#9bb5b3;--line:#25514d;--accent:#5eead4;--btn:#5eead4;--btn-fg:#07201d;--card:#132a2b;--warn:#ff8a80;color-scheme:dark}
+/* Layout: página de relato de caso. Cabeçalho, resumo e ficha do caso; depois a Figura 1 (palco 3D escuro, como uma
+   prancha de atlas) com o texto da etapa ao lado; por fim discussão, nota sobre o modelo e referências (ABNT). */
+:root{--paper:#fbfcfb;--ink:#14201f;--ink2:#4b5c5b;--rule:#c8d3d1;--tint:#eef3f2;--accent:#0f5660;--on-accent:#ffffff;--warn:#9e2b25;
+--stage-a:#2c474b;--stage-b:#142528;--stage-c:#070f11;--on-stage:#eef5f4;--on-stage-dim:#a9c2bf;--stage-accent:#7fd3c9;
+--serif:"Source Serif 4","Source Serif Pro",Charter,"Iowan Old Style",Georgia,serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0e1517;--ink:#e2ebe9;--ink2:#9db1af;--rule:#2b3d3f;--tint:#142225;--accent:#6fc9c1;--on-accent:#062022;--warn:#ff8f86;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0e1517;--ink:#e2ebe9;--ink2:#9db1af;--rule:#2b3d3f;--tint:#142225;--accent:#6fc9c1;--on-accent:#062022;--warn:#ff8f86;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--font-b)}
-.wrap{max-width:1180px;margin:0 auto;padding-block:20px 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1{font:600 28px/1.1 var(--font-d);margin:0 0 4px;text-wrap:balance}
-.sub{margin:0 0 14px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 30px;align-items:start}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--serif);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1220px;margin:0 auto;padding-block:28px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:34px}
+a{color:var(--accent)}
+/* cabeçalho */
+.mast{display:grid;gap:10px;max-width:62rem;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.kicker{margin:0;font:600 12.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font:600 clamp(28px,3.6vw,44px)/1.12 var(--serif);letter-spacing:-.005em;text-wrap:balance}
+.byline{margin:0;font:400 14.5px/1.5 var(--sans);color:var(--ink2)}
+.byline b{font-weight:600;color:var(--ink)}
+/* títulos de seção numerados, como num artigo */
+h2{margin:0 0 12px;font:600 21px/1.25 var(--serif);text-wrap:balance}
+h2 .n{display:inline-block;min-width:1.6em;color:var(--accent);font-variant-numeric:tabular-nums}
+.lbl{font:600 12.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:0 0 10px}
+/* resumo e ficha do caso */
+.front{display:grid;gap:30px;grid-template-columns:minmax(0,1fr);align-items:start}
+.abstract{background:var(--tint);padding:20px 22px;border-radius:4px;min-width:0}
+.abstract p{margin:0 0 10px;max-width:68ch;hyphens:auto}
+.kw{font:400 14.5px/1.5 var(--sans);color:var(--ink2);margin:0}
+.kw b{color:var(--ink);font-weight:600}
+.case{min-width:0}
+.tblwrap{overflow-x:auto}
+table.bt{border-collapse:collapse;width:100%;font:400 14.5px/1.45 var(--sans);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.bt caption{caption-side:top;text-align:left;font:400 14px/1.4 var(--sans);color:var(--ink2);padding-bottom:8px}
+.bt caption b{color:var(--ink);font-weight:600}
+.bt th,.bt td{padding:7px 10px 7px 0;text-align:left;vertical-align:top}
+.bt th{font-weight:600;white-space:nowrap;color:var(--ink2);width:1%}
+.bt tr+tr th,.bt tr+tr td{border-top:1px solid var(--rule)}
+.tsrc{font:400 13px/1.4 var(--sans);color:var(--ink2);margin:7px 0 0}
+/* Figura 1 e etapa */
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px 32px;align-items:start}
 .view,.side{min-width:0}
-#stage{position:relative;aspect-ratio:4/5;max-height:64vh;width:100%;max-width:100%;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+.ft{font:400 14.5px/1.45 var(--sans);color:var(--ink2);margin:0 0 9px}
+.ft b{color:var(--ink);font-weight:600}
+.src{font:400 13px/1.4 var(--sans);color:var(--ink2);margin:8px 0 0}
+#stage{position:relative;aspect-ratio:4/5;max-height:64vh;width:100%;max-width:100%;border-radius:4px;overflow:hidden;
 background:radial-gradient(120% 85% at 50% 30%,var(--stage-a) 0%,var(--stage-b) 58%,var(--stage-c) 100%)}
 #stage.xr{background:radial-gradient(120% 90% at 50% 40%,#0b1220 0%,#04060c 70%,#010203 100%)}
 #stage canvas{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab}
-.lb{position:absolute;left:0;top:0;transform:translate(-50%,-150%);background:rgba(6,18,20,.82);color:#fff;font:12px/1 var(--font-b);padding:5px 9px;border-radius:999px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .6s}
-.lb::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:9px;background:rgba(255,255,255,.75)}
+/* rótulos no estilo de atlas: texto curto com linha de chamada e ponto */
+.lb{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 14px));background:rgba(7,14,16,.82);color:var(--on-stage);font:500 12.5px/1 var(--sans);letter-spacing:.01em;padding:5px 8px;border-radius:3px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .6s}
+.lb::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:11px;background:rgba(238,245,244,.75)}
+.lb::before{content:"";position:absolute;left:calc(50% - 2px);top:calc(100% + 10px);width:5px;height:5px;border-radius:50%;background:var(--on-stage)}
 .lb.on{opacity:1}
 .hud{position:absolute;left:12px;top:12px;right:12px;display:flex;gap:8px;align-items:flex-start;justify-content:space-between;pointer-events:none}
-.hud .chip{background:rgba(6,18,20,.6);color:var(--on-stage);font:600 12px/1.2 var(--font-b);letter-spacing:.04em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
-.hud .mode{background:#dfeeff;color:#0b1a33;font:600 12px/1.2 var(--font-b);padding:6px 10px;border-radius:999px}
+.hud .chip{background:rgba(7,14,16,.62);color:var(--on-stage);font:600 11.5px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:3px}
+.hud .mode{background:#dfeeff;color:#0b1a33;font:600 11.5px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:6px 9px;border-radius:3px}
 .vig{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s;background:radial-gradient(ellipse 64% 60% at 50% 45%,transparent 52%,rgba(38,94,160,.94) 80%)}
 .vig.on{opacity:1}
-.cmp{position:absolute;bottom:12px;background:rgba(6,18,20,.8);color:#fff;font:12px/1 var(--font-b);padding:6px 10px;border-radius:999px;pointer-events:none}.cmp.l{left:12px}.cmp.r{right:12px}
+.cmp{position:absolute;bottom:12px;background:rgba(7,14,16,.82);color:var(--on-stage);font:500 12px/1 var(--sans);padding:6px 9px;border-radius:3px;pointer-events:none}.cmp.l{left:12px}.cmp.r{right:12px}
 .pcap{position:absolute;left:0;right:0;bottom:0;padding:48px 28px 20px;color:var(--on-stage);background:linear-gradient(transparent,rgba(4,10,11,.86) 55%);pointer-events:none}
-.pcap b{display:block;font:600 clamp(20px,2.6vw,34px)/1.15 var(--font-d);margin-bottom:6px}
-.pcap span{display:block;font-size:clamp(15px,1.5vw,21px);line-height:1.4;max-width:60ch;color:#d5e9e6}
-#err{padding:24px;color:var(--on-stage)}
-#nojs{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;color:var(--on-stage);font-size:15px;line-height:1.45}#nojs b{font-size:18px}#nojs a{color:#7fe9d8;font-weight:600;word-break:break-all}
-.cap{padding:8px 0 4px}
-.cap h2{font:600 22px/1.2 var(--font-d);margin:2px 0 6px;text-wrap:balance}
-.cap p{margin:0;min-height:4.5em}
-.step{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
-.cap .meta{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px}.cap dt{color:var(--accent);font-weight:600}.cap dd{margin:0;color:var(--muted)}
-.real{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
-.real h3{font:600 13px/1.2 var(--font-b);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
-.rf{margin:0}
-.rf img{display:block;width:100%;height:auto;border-radius:12px;background:#000}
-.rf .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
-.rf.tall img{max-height:420px;width:auto;max-width:100%;margin:0 auto}
-.rf figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
-.veil{position:relative;border-radius:12px;overflow:hidden;background:#000}
-.veil img{filter:blur(22px) saturate(.5);transform:scale(1.12);transition:filter .4s,transform .4s}
-.veil.open img{filter:none;transform:none}
-.veil button{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(6,18,20,.86);color:#fff;border-color:rgba(255,255,255,.7);white-space:nowrap}
-.veil.open button{display:none}
+.pcap b{display:block;font:600 clamp(20px,2.6vw,34px)/1.15 var(--serif);margin-bottom:6px}
+.pcap span{display:block;font:400 clamp(15px,1.5vw,21px)/1.4 var(--serif);max-width:60ch;color:#d5e9e6}
+#err{padding:24px;color:var(--on-stage);font-family:var(--sans)}
+#nojs{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:24px;color:var(--on-stage);font:15px/1.45 var(--sans)}#nojs b{font-size:18px}#nojs a{color:var(--stage-accent);font-weight:600;word-break:break-all}
+/* controles da figura */
 .tlw{margin-top:12px}.tlw input{width:100%;accent-color:var(--accent);height:28px;margin:0}
 .ticks{display:flex;justify-content:space-between;gap:4px;margin-top:2px}
-button{font:inherit;cursor:pointer;border-radius:999px;border:1.5px solid var(--btn);background:transparent;color:var(--accent);min-height:44px;padding:0 18px}
-button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.tk{min-height:32px;min-width:32px;padding:0;font-size:13px;border-color:var(--line);color:var(--muted)}.tk.done{color:var(--accent);border-color:var(--accent)}.tk.on{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
-.ctl{display:flex;gap:10px;margin-top:12px}.ctl button{flex:1}.ctl button#pp{flex:2;background:var(--btn);color:var(--btn-fg);font-weight:600}
-.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}.opts button,.opts select{min-height:40px;font-size:14px;padding:0 12px}
-.opts select{font:inherit;font-size:14px;border-radius:999px;border:1.5px solid var(--btn);background:transparent;color:var(--fg)}.spd{font-size:14px;color:var(--muted);display:flex;gap:6px;align-items:center}
-.seg{display:flex;border-radius:999px;border:1.5px solid var(--btn);overflow:hidden}.seg button{border:0;border-radius:0;min-height:38px;padding:0 12px;font-size:14px}.seg button.on{background:var(--btn);color:var(--btn-fg)}
-.opts button[aria-pressed="true"]{background:var(--btn);color:var(--btn-fg)}
-.keys{font-size:13px;color:var(--muted);margin:10px 0 0;display:none}
-kbd{font:12px/1 var(--font-b);border:1px solid var(--line);border-radius:5px;padding:2px 5px;background:var(--card)}
-.foot{margin:18px 0 4px;color:var(--muted);font-size:14px}
-.note{margin:0;font-size:13px;color:var(--muted)}
+button{font:500 14px/1 var(--sans);white-space:nowrap;cursor:pointer;border-radius:4px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);min-height:44px;padding:0 16px}
+button:hover{border-color:var(--accent)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tk{min-height:32px;min-width:32px;padding:0;font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}.tk.done{color:var(--accent);border-color:var(--accent)}.tk.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.ctl{display:flex;gap:8px;margin-top:10px}.ctl button{flex:1;padding:0 10px}.ctl button#pp{flex:2;background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}.opts button,.opts select{min-height:40px;font-size:13.5px;padding:0 12px}
+.opts select{font:500 13.5px/1 var(--sans);border-radius:4px;border:1px solid var(--rule);background:var(--paper);color:var(--ink)}.spd{font:400 13.5px/1 var(--sans);color:var(--ink2);display:flex;gap:6px;align-items:center}
+.seg{display:flex;border-radius:4px;border:1px solid var(--rule);overflow:hidden}.seg button{border:0;border-radius:0;min-height:38px;padding:0 11px}.seg button+button{border-left:1px solid var(--rule)}.seg button.on{background:var(--accent);color:var(--on-accent)}
+.opts button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.keys{font:400 13px/1.5 var(--sans);color:var(--ink2);margin:10px 0 0;display:none}
+kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;padding:2px 5px;background:var(--tint)}
+/* texto da etapa */
+.cap{padding:2px 0 4px}
+.step{margin:0;font:600 12.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.cap h3{font:600 23px/1.2 var(--serif);margin:4px 0 8px;text-wrap:balance}
+.cap p#d{margin:0;min-height:5.2em}
+.cap .meta{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font:400 14px/1.45 var(--sans);border-top:1px solid var(--rule);padding-top:12px}
+.cap dt{color:var(--ink2);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}.cap dd{margin:0}
+.real{margin-top:20px;border-top:1px solid var(--rule);padding-top:14px}
+.rf{margin:0}
+.rf figcaption{font:400 14px/1.45 var(--sans);color:var(--ink2);margin:0 0 8px}
+.rf figcaption b{color:var(--ink);font-weight:600}
+.rf img{display:block;width:100%;height:auto;border-radius:3px;background:#000}
+.rf .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+.rf .pair span{display:block;font:600 12px/1 var(--sans);color:var(--ink2);margin-top:5px}
+.rf.tall img{max-height:420px;width:auto;max-width:100%;margin:0 auto}
+.veil{position:relative;border-radius:3px;overflow:hidden;background:#000}
+.veil img{filter:blur(22px) saturate(.5);transform:scale(1.12);transition:filter .4s,transform .4s}
+.veil.open img{filter:none;transform:none}
+.veil button{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(7,14,16,.86);color:var(--on-stage);border-color:rgba(238,245,244,.7);white-space:nowrap}
+.veil.open button{display:none}
+/* discussão, nota e referências */
+.body{display:grid;gap:30px;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--rule);padding-top:28px}
+.body section{min-width:0}
+.body p{margin:0 0 12px;max-width:68ch;hyphens:auto}
+.refs{list-style:none;margin:0;padding:0;display:grid;gap:10px;font:400 15px/1.5 var(--serif);max-width:72ch}
+.refs li{padding-left:1.4em;text-indent:-1.4em}
+.foot{margin:0;font:400 13px/1.5 var(--sans);color:var(--ink2);border-top:1px solid var(--rule);padding-top:14px}
 .pcap,.hud .mode{display:none}
 @media(max-width:959.98px){
   .view,.side{display:contents}
-  #stage{order:1}.tlw{order:2}.ctl{order:3}.cap{order:4}.opts{order:5}.real{order:7}.foot{order:8}.note{order:9}
+  .ft{order:0}#stage{order:1}.src.s1{order:2}.tlw{order:3}.ctl{order:4}.cap{order:5}.opts{order:6}.real{order:7}
   .cap{padding-top:14px}.opts{margin-top:14px}
 }
 #stage.xr .hud .mode{display:block}
 @media(min-width:960px){
+  .front{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
   .grid{grid-template-columns:minmax(0,1.5fr) minmax(300px,.85fr)}
   .view{position:sticky;top:calc(12px + env(safe-area-inset-top,0px))}
   #stage{aspect-ratio:4/3;max-height:66vh}
   .keys{display:block}
-  h1{font-size:34px}
+  .body{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:40px}
+  .body .refsec{grid-column:1 / -1}
 }
 /* modo apresentação: o palco ocupa a tela toda, com o texto da etapa sobre a imagem */
 .wrap.present .view{position:fixed;inset:0;z-index:40;background:var(--stage-c);display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
-.wrap.present #stage{flex:1;min-height:0;aspect-ratio:auto;max-height:none;border-radius:0;border:0}
+.wrap.present .view .ft,.wrap.present .view .src{display:none}
+.wrap.present #stage{flex:1;min-height:0;aspect-ratio:auto;max-height:none;border-radius:0}
 .wrap.present .pcap{display:block}
 .wrap.present .tlw,.wrap.present .ctl,.wrap.present .opts{margin:0;padding:6px 14px;background:var(--stage-c)}
 .wrap.present .opts{padding-bottom:10px}
-.wrap.present .tk{border-color:#2c4a4d;color:var(--on-stage-dim)}
-.wrap.present .tk.done{color:#5eead4;border-color:#5eead4}.wrap.present .tk.on{background:#5eead4;color:#07201d;border-color:#5eead4}
-.wrap.present button{border-color:#5eead4;color:#5eead4}
-.wrap.present .ctl button#pp,.wrap.present .seg button.on,.wrap.present .opts button[aria-pressed="true"]{background:#5eead4;color:#07201d}
-.wrap.present .seg{border-color:#5eead4}
-.wrap.present .opts select{color:var(--on-stage);border-color:#5eead4}.wrap.present .spd{color:var(--on-stage-dim)}
-.wrap.present .tlw input{accent-color:#5eead4}
+.wrap.present button,.wrap.present .opts select,.wrap.present .seg{background:transparent;border-color:#2f4a4d;color:var(--on-stage)}
+.wrap.present .tk{color:var(--on-stage-dim)}
+.wrap.present .tk.done{color:var(--stage-accent);border-color:var(--stage-accent)}
+.wrap.present .tk.on,.wrap.present .ctl button#pp,.wrap.present .seg button.on,.wrap.present .opts button[aria-pressed="true"]{background:var(--stage-accent);color:#062022;border-color:var(--stage-accent)}
+.wrap.present .seg button+button{border-left-color:#2f4a4d}
+.wrap.present .spd{color:var(--on-stage-dim)}
+.wrap.present .tlw input{accent-color:var(--stage-accent)}
 .wrap.present .keys{display:none}
 @media(prefers-reduced-motion:reduce){.lb,.vig,.veil img{transition:none}}
 </style>
-<main class="wrap" id="wrap">
-<h1>Cirurgia da Katita</h1>
-<p class="sub">Fratura em Y do cotovelo esquerdo, passo a passo, em 3D. Arraste o modelo para girar.</p>
+<main class="wrap" id="wrap" lang="pt-BR">
+<header class="mast">
+  <p class="kicker">Relato de caso · Ortopedia veterinária</p>
+  <h1>Osteossíntese de fratura intercondilar em Y do úmero distal em uma cadela</h1>
+  <p class="byline"><b>Estágio curricular supervisionado</b> · Técnico em Agropecuária Integrado ao Ensino Médio · IFC Campus Santa Rosa do Sul · Mundo Animal Clínica Veterinária, Sombrio (SC) · 2026</p>
+</header>
+
+<section class="front" aria-label="Resumo e identificação do caso">
+  <div class="abstract">
+    <h2 class="lbl">Resumo</h2>
+    <p>Relata-se o tratamento cirúrgico de uma fratura intercondilar em Y do úmero distal esquerdo em uma cadela sem raça definida, de 7 anos e 35 kg, vítima de atropelamento, acompanhado durante o estágio. A articulação foi exposta por osteotomia do olécrano. Os côndilos foram reduzidos e comprimidos com um parafuso intercondilar e fixados à diáfise com duas placas e um pino intramedular. O olécrano foi refixado com banda de tensão. A Figura 1 reconstrói o procedimento em sete etapas, ao lado das radiografias e fotografias do caso.</p>
+    <p class="kw"><b>Palavras-chave:</b> ortopedia veterinária; fratura do úmero; osteotomia do olécrano; banda de tensão; osteossíntese.</p>
+  </div>
+  <div class="case">
+    <h2><span class="n">1</span>Identificação do caso</h2>
+    <div class="tblwrap">
+    <table class="bt">
+      <caption><b>Quadro 1</b> – Dados da paciente e do procedimento.</caption>
+      <tr><th scope="row">Paciente</th><td>Katita, canino, fêmea, sem raça definida</td></tr>
+      <tr><th scope="row">Idade e peso</th><td>7 anos · 35 kg</td></tr>
+      <tr><th scope="row">Histórico</th><td>Atropelamento</td></tr>
+      <tr><th scope="row">Diagnóstico</th><td>Fratura intercondilar em Y do úmero distal esquerdo, confirmada por radiografia (26/10/2026)</td></tr>
+      <tr><th scope="row">Procedimento</th><td>Osteotomia do olécrano, redução aberta e fixação interna</td></tr>
+      <tr><th scope="row">Implantes</th><td>Parafuso intercondilar, placas lateral e medial, pino intramedular, banda de tensão</td></tr>
+      <tr><th scope="row">Data e duração</th><td>29/10/2026 · mais de 4 horas</td></tr>
+    </table>
+    </div>
+    <p class="tsrc">Fonte: prontuário e anotações do estágio (2026).</p>
+  </div>
+</section>
+
+<section aria-labelledby="s2">
+<h2 id="s2"><span class="n">2</span>Técnica cirúrgica em sete etapas</h2>
 <div class="grid">
-<section class="view" aria-label="Animação 3D da cirurgia">
+<section class="view" aria-label="Figura 1: animação 3D da cirurgia">
+  <p class="ft"><b>Figura 1</b> – Reconstrução tridimensional da osteossíntese. Arraste o modelo para girar.</p>
   <div id="stage">
     <div id="nojs"><b>O 3D não abre nesta pré-visualização.</b><span>Isso acontece no iPhone quando o arquivo é aberto direto do WhatsApp, do e-mail ou do app Arquivos. Abra pelo link, no Safari:</span><a href="https://claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K">claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K</a></div>
     <div class="hud"><span class="chip" id="hchip"></span><span class="mode">Modo raio-X</span></div>
     <div class="pcap" aria-hidden="true"><b id="pt"></b><span id="pd"></span></div>
   </div>
+  <p class="src s1">Fonte: elaborado pelo autor (2026), a partir da anatomia do cão e das radiografias do caso.</p>
   <div class="tlw"><input id="tl" type="range" min="0" max="6999" value="0" aria-label="Linha do tempo da cirurgia"><div class="ticks" id="ticks"></div></div>
   <nav class="ctl" aria-label="Controles da animação">
     <button id="prev" aria-label="Etapa anterior">‹</button>
@@ -126,23 +205,46 @@ kbd{font:12px/1 var(--font-b);border:1px solid var(--line);border-radius:5px;pad
 </section>
 <section class="side">
   <div class="cap" aria-live="polite">
-    <div class="step" id="chip"></div><h2 id="t"></h2><p id="d"></p>
-    <dl class="meta"><dt>Estruturas</dt><dd id="m1"></dd><dt>Objetivo</dt><dd id="m2"></dd><dt>Instrumentos</dt><dd id="m3"></dd></dl>
+    <p class="step" id="chip"></p><h3 id="t"></h3><p id="d"></p>
+    <dl class="meta"><dt>Estruturas</dt><dd id="m1"></dd><dt>Objetivo</dt><dd id="m2"></dd><dt>Instrumental</dt><dd id="m3"></dd></dl>
   </div>
-  <div class="real" aria-label="Material real da cirurgia">
-    <h3>Material real</h3>
-    <figure class="rf tall" data-k="0"><img src="@@IMG:foto_katita@@" alt="Katita sentada na clínica, de guia: cadela caramelo de orelhas escuras"><figcaption>Katita na clínica: SRD caramelo, 7 anos, 35 kg.</figcaption></figure>
-    <figure class="rf" data-k="1" hidden><div class="pair"><img src="@@IMG:rx_pre_dp@@" alt="Radiografia frontal do cotovelo esquerdo antes da cirurgia, com um fragmento ósseo solto ao lado do úmero"><img src="@@IMG:rx_pre_lat@@" alt="Radiografia lateral do cotovelo esquerdo antes da cirurgia"></div><figcaption>Radiografias de 26/10/2026, antes da cirurgia: frontal (à esquerda) e lateral. Na frontal, um fragmento do côndilo aparece solto, afastado do úmero.</figcaption></figure>
-    <figure class="rf tall" data-k="2" hidden><div class="veil"><img src="@@IMG:foto_acesso@@" alt="Foto do campo cirúrgico: articulação do cotovelo exposta, com afastadores e pinça"><button type="button">Mostrar foto da cirurgia</button></div><figcaption>Campo cirúrgico em 29/10/2026: a articulação exposta, com afastadores e pinça.</figcaption></figure>
-    <figure class="rf tall" data-k="3" hidden><img src="@@IMG:rx_pos_dp@@" alt="Radiografia frontal do cotovelo depois da cirurgia, com placas, parafusos e pinos"><figcaption>Radiografia frontal de 29/10/2026, depois da cirurgia: o parafuso intercondilar é a peça horizontal mais abaixo; acima dele ficam as duas placas.</figcaption></figure>
-    <figure class="rf tall" data-k="4" hidden><div class="veil"><img src="@@IMG:foto_placa@@" alt="Foto do campo cirúrgico: placa metálica já posicionada sobre o osso"><button type="button">Mostrar foto da cirurgia</button></div><figcaption>Campo cirúrgico: placa metálica já posicionada no osso.</figcaption></figure>
-    <figure class="rf" data-k="5" hidden><img src="@@IMG:rx_pos_lat@@" alt="Radiografia lateral do cotovelo depois da cirurgia: pinos longos na ulna, fio em oito e placa no úmero"><figcaption>Radiografia lateral de 29/10/2026, depois da cirurgia: os pinos descem pela ulna e o fio de aço faz o oito atrás do olécrano.</figcaption></figure>
-    <figure class="rf tall" data-k="6" hidden><img src="@@IMG:foto_sutura@@" alt="Membro da Katita depois da cirurgia, com a incisão fechada por pontos e a pele raspada em volta"><figcaption>Depois da cirurgia: incisão fechada com pontos de nylon, com a pele raspada em volta.</figcaption></figure>
+  <div class="real" aria-label="Registro do caso na etapa atual">
+    <h2 class="lbl">Registro do caso nesta etapa</h2>
+    <figure class="rf tall" data-k="0"><figcaption><b>Figura 2</b> – A paciente na clínica: cadela sem raça definida, 7 anos, 35 kg.</figcaption><img src="@@IMG:foto_katita@@" alt="Katita sentada na clínica, de guia: cadela caramelo de orelhas escuras"><p class="src">Fonte: acervo do estágio (2026).</p></figure>
+    <figure class="rf" data-k="1" hidden><figcaption><b>Figura 3</b> – Radiografias pré-operatórias do cotovelo esquerdo (26/10/2026), incidências frontal (A) e lateral (B). Na frontal, um fragmento do côndilo aparece afastado do úmero.</figcaption><div class="pair"><div><img src="@@IMG:rx_pre_dp@@" alt="Radiografia frontal do cotovelo esquerdo antes da cirurgia, com um fragmento ósseo solto ao lado do úmero"><span>A</span></div><div><img src="@@IMG:rx_pre_lat@@" alt="Radiografia lateral do cotovelo esquerdo antes da cirurgia"><span>B</span></div></div><p class="src">Fonte: Mundo Animal Clínica Veterinária (2026).</p></figure>
+    <figure class="rf tall" data-k="2" hidden><figcaption><b>Figura 4</b> – Campo cirúrgico (29/10/2026): articulação exposta pela osteotomia do olécrano, com afastadores e pinça.</figcaption><div class="veil"><img src="@@IMG:foto_acesso@@" alt="Foto do campo cirúrgico: articulação do cotovelo exposta, com afastadores e pinça"><button type="button">Mostrar foto da cirurgia</button></div><p class="src">Fonte: acervo do estágio (2026).</p></figure>
+    <figure class="rf tall" data-k="3" hidden><figcaption><b>Figura 5</b> – Radiografia pós-operatória, incidência frontal (29/10/2026). O parafuso intercondilar é a peça horizontal mais baixa; acima dele ficam as duas placas.</figcaption><img src="@@IMG:rx_pos_dp@@" alt="Radiografia frontal do cotovelo depois da cirurgia, com placas, parafusos e pinos"><p class="src">Fonte: Mundo Animal Clínica Veterinária (2026).</p></figure>
+    <figure class="rf tall" data-k="4" hidden><figcaption><b>Figura 6</b> – Campo cirúrgico com a placa metálica já posicionada no úmero (29/10/2026).</figcaption><div class="veil"><img src="@@IMG:foto_placa@@" alt="Foto do campo cirúrgico: placa metálica já posicionada sobre o osso"><button type="button">Mostrar foto da cirurgia</button></div><p class="src">Fonte: acervo do estágio (2026).</p></figure>
+    <figure class="rf" data-k="5" hidden><figcaption><b>Figura 7</b> – Radiografia pós-operatória, incidência lateral (29/10/2026). Os pinos descem pela ulna e o fio de aço faz o oito caudal ao olécrano.</figcaption><img src="@@IMG:rx_pos_lat@@" alt="Radiografia lateral do cotovelo depois da cirurgia: pinos longos na ulna, fio em oito e placa no úmero"><p class="src">Fonte: Mundo Animal Clínica Veterinária (2026).</p></figure>
+    <figure class="rf tall" data-k="6" hidden><figcaption><b>Figura 8</b> – Pós-operatório: incisão fechada com pontos de nylon e pele tricotomizada ao redor.</figcaption><img src="@@IMG:foto_sutura@@" alt="Membro da Katita depois da cirurgia, com a incisão fechada por pontos e a pele raspada em volta"><p class="src">Fonte: acervo do estágio (2026).</p></figure>
   </div>
-  <p class="foot">Durante toda a cirurgia, de mais de 4 horas, o anestesista garante a sobrevivência da Katita.</p>
-  <p class="note">Os ossos do cotovelo, as placas e a pele foram modelados para esta página a partir da anatomia do cão e das radiografias da Katita. O esqueleto ao fundo é ilustrativo. Posições aproximadas, sem escala.</p>
 </section>
 </div>
+</section>
+
+<div class="body">
+  <section aria-labelledby="s3">
+    <h2 id="s3"><span class="n">3</span>Discussão</h2>
+    <p>Fraturas intercondilares do úmero, em Y ou em T, atravessam a superfície articular do cotovelo. O tratamento é cirúrgico, com redução anatômica da articulação e fixação estável, para que o membro volte a ser usado cedo e o risco de osteoartrite diminua <span class="cite">(DECAMP et al., 2016)</span>.</p>
+    <p>A osteotomia do olécrano dá a exposição mais ampla da superfície articular do úmero distal. Em troca, cria um segundo foco, que precisa ser refixado no fim: a banda de tensão transforma a tração do tríceps braquial em compressão sobre o corte <span class="cite">(JOHNSON; HOULTON; VANNINI, 2005)</span>.</p>
+    <p>A sequência seguiu o princípio de reconstruir primeiro a articulação, unindo os côndilos com o parafuso intercondilar, e depois prender esse bloco à diáfise com as placas lateral e medial. O fechamento foi feito por planos, com fio absorvível no músculo e nylon na pele <span class="cite">(FOSSUM, 2019)</span>. Durante toda a cirurgia, de mais de 4 horas, o anestesista garantiu a sobrevivência da Katita.</p>
+  </section>
+  <section aria-labelledby="s4">
+    <h2 id="s4"><span class="n">4</span>Nota sobre o modelo</h2>
+    <p>Os ossos do cotovelo, os implantes, a pele e o músculo foram modelados para esta página a partir da anatomia do cão <span class="cite">(EVANS; DE LAHUNTA, 2013)</span> e das radiografias da paciente. O esqueleto ao fundo é um modelo genérico de cão, usado só para localizar a região operada. Posições aproximadas, sem escala.</p>
+    <p>O número e a posição dos pinos foram estimados nas radiografias e devem ser confirmados com o cirurgião responsável. Os instrumentos seguem os tipos vistos nas fotografias do campo cirúrgico.</p>
+  </section>
+  <section class="refsec" aria-labelledby="sr">
+    <h2 id="sr">Referências</h2>
+    <ul class="refs">
+      <li>DECAMP, C. E. et al. <b>Brinker, Piermattei and Flo's handbook of small animal orthopedics and fracture repair</b>. 5. ed. St. Louis: Elsevier, 2016.</li>
+      <li>EVANS, H. E.; DE LAHUNTA, A. <b>Miller's anatomy of the dog</b>. 4. ed. St. Louis: Elsevier Saunders, 2013.</li>
+      <li>FOSSUM, T. W. <b>Small animal surgery</b>. 5. ed. Philadelphia: Elsevier, 2019.</li>
+      <li>JOHNSON, A. L.; HOULTON, J. E. F.; VANNINI, R. <b>AO principles of fracture management in the dog and cat</b>. Davos: AO Publishing; Stuttgart: Thieme, 2005.</li>
+    </ul>
+  </section>
+</div>
+<p class="foot">Página preparada para a defesa do estágio curricular supervisionado, IFC Campus Santa Rosa do Sul, 2026.</p>
 </main>
 @@THREE@@
 <script>
