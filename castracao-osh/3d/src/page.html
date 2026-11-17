@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSH em gata 3D</title>
+<style>
+  html,body{margin:0;height:100%;background:#070f11;overflow:hidden;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  body{display:flex;align-items:center;justify-content:center}
+  #palco{position:relative;width:min(100vw,calc(100vh*16/9));aspect-ratio:16/9;background:radial-gradient(ellipse at 50% 40%,#2c474b,#142528 60%,#070f11)}
+  #palco canvas{display:block;width:100%!important;height:100%!important}
+</style>
+@@THREE@@
+</head>
+<body>
+<div id="palco"></div>
+<script>
+@@APP@@
+</script>
+</body>
+</html>
