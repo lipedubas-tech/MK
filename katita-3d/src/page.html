@@ -27,7 +27,7 @@ h1{margin:0;max-width:62rem;font:600 clamp(24px,3vw,36px)/1.15 var(--serif);lett
 .tabs{display:flex;gap:4px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
 .tabs a{display:flex;align-items:center;gap:8px;padding:10px 14px 11px;font:500 14.5px/1.2 var(--sans);color:var(--ink2);text-decoration:none;border-bottom:2.5px solid transparent;white-space:nowrap}
 .tabs a span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule);font-size:12px;font-variant-numeric:tabular-nums}
-.tabs a em{font-style:normal}
+.tabs a em,.tabs a i{font-style:normal}
 .tabs a:hover{color:var(--ink)}
 .tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
 .tabs a[aria-current="page"] span{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
@@ -148,6 +148,20 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
   .body{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:40px}
   .body .refsec{grid-column:1 / -1}
 }
+/* página da cirurgia no computador: a animação ocupa a altura da tela e o cabeçalho encolhe */
+@media(min-width:960px){
+  .wrap[data-pg="cirurgia"]{max-width:1760px;padding-block:14px 30px;gap:18px}
+  .wrap[data-pg="cirurgia"] .kicker,.wrap[data-pg="cirurgia"] .byline,.wrap[data-pg="cirurgia"] #s2{display:none}
+  .wrap[data-pg="cirurgia"] .mast{grid-template-columns:auto 1fr;align-items:end;gap:6px 28px}
+  .wrap[data-pg="cirurgia"] h1{font-size:21px;line-height:1.25;max-width:34rem;padding-bottom:12px}
+  .wrap[data-pg="cirurgia"] .tabs{margin-top:0;justify-self:end}
+  .wrap[data-pg="cirurgia"] .grid{grid-template-columns:minmax(0,1fr) minmax(300px,370px);column-gap:28px}
+  .wrap[data-pg="cirurgia"] #stage{aspect-ratio:auto;height:calc(100vh - 292px);min-height:420px;max-height:none}
+  .wrap[data-pg="cirurgia"] .ft{margin-bottom:6px}
+  .wrap[data-pg="cirurgia"] .src.s1{margin-top:5px}
+  .wrap[data-pg="cirurgia"] .tlw{margin-top:6px}
+  .wrap[data-pg="cirurgia"] .rf.tall img{max-height:46vh}
+}
 /* modo apresentação: o palco ocupa a tela toda, com o texto da etapa sobre a imagem */
 .wrap.present .view{position:fixed;inset:0;z-index:40;background:var(--stage-c);display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
 .wrap.present .view .ft,.wrap.present .view .src{display:none}
@@ -171,9 +185,9 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
   <h1>Osteossíntese de fratura intercondilar em Y do úmero distal em uma cadela</h1>
   <p class="byline"><b>Estágio curricular supervisionado</b> · Técnico em Agropecuária Integrado ao Ensino Médio · IFC Campus Santa Rosa do Sul · Mundo Animal Clínica Veterinária, Sombrio (SC) · 2026</p>
   <nav class="tabs" aria-label="Páginas do relato">
-    <a href="#caso" data-pg="caso"><span>1</span>O caso</a>
-    <a href="#cirurgia" data-pg="cirurgia"><span>2</span>A cirurgia</a>
-    <a href="#discussao" data-pg="discussao"><span>3</span>Discussão<em> e referências</em></a>
+    <a href="#caso" data-pg="caso"><span>1</span><i>O caso</i></a>
+    <a href="#cirurgia" data-pg="cirurgia"><span>2</span><i>A cirurgia</i></a>
+    <a href="#discussao" data-pg="discussao"><span>3</span><i>Discussão<em> e referências</em></i></a>
   </nav>
 </header>
 
