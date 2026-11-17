@@ -15,14 +15,35 @@
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--serif);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1220px;margin:0 auto;padding-block:28px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:34px}
+.wrap{max-width:1220px;margin:0 auto;padding-block:22px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:34px}
 a{color:var(--accent)}
 /* cabeçalho */
-.mast{display:grid;gap:10px;max-width:62rem;padding-bottom:22px;border-bottom:1px solid var(--rule)}
+.mast{display:grid;gap:8px;border-bottom:1px solid var(--rule)}
 .kicker{margin:0;font:600 12.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{margin:0;font:600 clamp(28px,3.6vw,44px)/1.12 var(--serif);letter-spacing:-.005em;text-wrap:balance}
+h1{margin:0;max-width:62rem;font:600 clamp(24px,3vw,36px)/1.15 var(--serif);letter-spacing:-.005em;text-wrap:balance}
 .byline{margin:0;font:400 14.5px/1.5 var(--sans);color:var(--ink2)}
 .byline b{font-weight:600;color:var(--ink)}
+/* abas: as três páginas do relato */
+.tabs{display:flex;gap:4px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
+.tabs a{display:flex;align-items:center;gap:8px;padding:10px 14px 11px;font:500 14.5px/1.2 var(--sans);color:var(--ink2);text-decoration:none;border-bottom:2.5px solid transparent;white-space:nowrap}
+.tabs a span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule);font-size:12px;font-variant-numeric:tabular-nums}
+.tabs a em{font-style:normal}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.tabs a[aria-current="page"] span{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tabs a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pg{display:grid;gap:30px;min-width:0}
+.pnav{display:flex;justify-content:space-between;gap:12px;margin:0;padding-top:16px;border-top:1px solid var(--rule);font:500 15px/1.3 var(--sans)}
+.pnav a{text-decoration:none}.pnav a:hover{text-decoration:underline}
+/* galeria: todas as imagens do caso, cada uma leva à sua etapa */
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.th{display:grid;gap:6px;padding:0;min-height:0;border:1px solid var(--rule);border-radius:4px;background:var(--paper);text-align:left;overflow:hidden;white-space:normal}
+.th .im{display:block;aspect-ratio:4/3;overflow:hidden;background:#000}
+.th img{display:block;width:100%;height:100%;object-fit:cover}
+.th.vl img{filter:blur(10px) saturate(.5);transform:scale(1.15)}
+.th b{display:block;padding:0 9px 8px;font:500 12.5px/1.35 var(--sans);color:var(--ink2)}
+.th b i{font-style:normal;color:var(--ink);font-weight:600}
+.th.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 /* títulos de seção numerados, como num artigo */
 h2{margin:0 0 12px;font:600 21px/1.25 var(--serif);text-wrap:balance}
 h2 .n{display:inline-block;min-width:1.6em;color:var(--accent);font-variant-numeric:tabular-nums}
@@ -103,7 +124,7 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
 .veil button{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(7,14,16,.86);color:var(--on-stage);border-color:rgba(238,245,244,.7);white-space:nowrap}
 .veil.open button{display:none}
 /* discussão, nota e referências */
-.body{display:grid;gap:30px;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--rule);padding-top:28px}
+.body{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
 .body section{min-width:0}
 .body p{margin:0 0 12px;max-width:68ch;hyphens:auto}
 .refs{list-style:none;margin:0;padding:0;display:grid;gap:10px;font:400 15px/1.5 var(--serif);max-width:72ch}
@@ -111,6 +132,8 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
 .foot{margin:0;font:400 13px/1.5 var(--sans);color:var(--ink2);border-top:1px solid var(--rule);padding-top:14px}
 .pcap,.hud .mode{display:none}
 @media(max-width:959.98px){
+  .tabs a em{display:none}.tabs a{padding:10px 10px 11px}
+  .wrap:not([data-pg="caso"]) .byline{display:none}
   .view,.side{display:contents}
   .ft{order:0}#stage{order:1}.src.s1{order:2}.tlw{order:3}.ctl{order:4}.cap{order:5}.opts{order:6}.real{order:7}
   .cap{padding-top:14px}.opts{margin-top:14px}
@@ -147,8 +170,14 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
   <p class="kicker">Relato de caso · Ortopedia veterinária</p>
   <h1>Osteossíntese de fratura intercondilar em Y do úmero distal em uma cadela</h1>
   <p class="byline"><b>Estágio curricular supervisionado</b> · Técnico em Agropecuária Integrado ao Ensino Médio · IFC Campus Santa Rosa do Sul · Mundo Animal Clínica Veterinária, Sombrio (SC) · 2026</p>
+  <nav class="tabs" aria-label="Páginas do relato">
+    <a href="#caso" data-pg="caso"><span>1</span>O caso</a>
+    <a href="#cirurgia" data-pg="cirurgia"><span>2</span>A cirurgia</a>
+    <a href="#discussao" data-pg="discussao"><span>3</span>Discussão<em> e referências</em></a>
+  </nav>
 </header>
 
+<div class="pg" id="pg-caso" data-pg="caso">
 <section class="front" aria-label="Resumo e identificação do caso">
   <div class="abstract">
     <h2 class="lbl">Resumo</h2>
@@ -172,7 +201,10 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
     <p class="tsrc">Fonte: prontuário e anotações do estágio (2026).</p>
   </div>
 </section>
+<p class="pnav"><span></span><a href="#cirurgia">Próxima: a cirurgia em 3D e as fotos →</a></p>
+</div>
 
+<div class="pg" id="pg-cirurgia" data-pg="cirurgia" hidden>
 <section aria-labelledby="s2">
 <h2 id="s2"><span class="n">2</span>Técnica cirúrgica em sete etapas</h2>
 <div class="grid">
@@ -221,7 +253,14 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
 </section>
 </div>
 </section>
+<section class="gal" aria-labelledby="sg">
+  <h2 id="sg" class="lbl">Registro fotográfico e radiográfico · toque numa imagem para ir à etapa</h2>
+  <div class="thumbs" id="thumbs"></div>
+</section>
+<p class="pnav"><a href="#caso">← O caso</a><a href="#discussao">Próxima: discussão e referências →</a></p>
+</div>
 
+<div class="pg" id="pg-discussao" data-pg="discussao" hidden>
 <div class="body">
   <section aria-labelledby="s3">
     <h2 id="s3"><span class="n">3</span>Discussão</h2>
@@ -243,6 +282,8 @@ kbd{font:12px/1 var(--sans);border:1px solid var(--rule);border-radius:3px;paddi
       <li>JOHNSON, A. L.; HOULTON, J. E. F.; VANNINI, R. <b>AO principles of fracture management in the dog and cat</b>. Davos: AO Publishing; Stuttgart: Thieme, 2005.</li>
     </ul>
   </section>
+</div>
+<p class="pnav"><a href="#cirurgia">← A cirurgia</a><span></span></p>
 </div>
 <p class="foot">Página preparada para a defesa do estágio curricular supervisionado, IFC Campus Santa Rosa do Sul, 2026.</p>
 </main>
@@ -281,12 +322,25 @@ inc:[["Incisão de pele",-.1287,.0341,.1393]],
 6:[["Músculo: fio absorvível",-.117,-.02,.1],["Pele: nylon",-.1235,-.09,.094]]};
 var N=steps.length,DUR=[8,8,14,11,14,12,11],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
 var tickEl=$("ticks"),lastK=-1,lastP=-1,figs=document.querySelectorAll(".rf");
+/* três páginas no mesmo endereço: #caso, #cirurgia, #discussao */
+var PGS=["caso","cirurgia","discussao"],curPg="caso";
+function route(){var h=(location.hash||"").replace("#",""),pg=PGS.indexOf(h)>=0?h:(h==="s2"?"cirurgia":"caso"),chg=pg!==curPg;curPg=pg;
+  Array.prototype.forEach.call(document.querySelectorAll(".pg"),function(e){e.hidden=e.getAttribute("data-pg")!==pg});$("wrap").setAttribute("data-pg",pg);
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs a"),function(a){if(a.getAttribute("data-pg")===pg)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(pg==="cirurgia"&&api)api.resize();if(chg)window.scrollTo(0,0)}
+addEventListener("hashchange",route);route();
+/* galeria: uma miniatura por figura do caso; o clique leva à etapa correspondente */
+var thumbs=[];Array.prototype.forEach.call(figs,function(g){var im=g.querySelector("img"),k=+g.getAttribute("data-k"),cap=g.querySelector("figcaption"),b=document.createElement("button");
+  b.type="button";b.className="th"+(g.querySelector(".veil")?" vl":"");var fn=cap.querySelector("b").textContent;
+  b.innerHTML='<span class="im"><img alt=""></span><b><i></i></b>';b.querySelector("img").src=im.src;b.querySelector("i").textContent=fn;b.querySelector("b").appendChild(document.createTextNode(" · etapa "+(k+1)+": "+steps[k].t));
+  b.setAttribute("aria-label",fn+", etapa "+(k+1)+": "+steps[k].t);b.onclick=function(){go(k);var st=$("stage");if(st&&st.getBoundingClientRect().top<0)st.scrollIntoView({behavior:"smooth",block:"start"})};
+  $("thumbs").appendChild(b);thumbs.push({b:b,k:k})});
 steps.forEach(function(s,n){var b=document.createElement("button");b.className="tk";b.textContent=n+1;b.setAttribute("aria-label","Etapa "+(n+1)+": "+s.t);b.title=(n+1)+". "+s.t;b.onclick=function(){go(n)};tickEl.appendChild(b)});
 function go(n,end){n=((n%N)+N)%N;A3.u=n+(end?.995:.0);lastK=-1;uiTick()}
 function uiTick(){var u=A3.u>=0?A3.u:0,k=Math.min(N-1,Math.floor(u)),f=u-k,S=steps[k],pi=0;
   for(var q=0;q<S.ph.length;q++)if(f>=S.ph[q][0])pi=q;
   if(k!==lastK){lastK=k;$("chip").textContent="Etapa "+(k+1)+" de "+N;$("hchip").textContent="Etapa "+(k+1)+" de "+N;$("t").textContent=S.t;$("pt").textContent=S.t;$("m1").textContent=S.est;$("m2").textContent=S.obj;$("m3").textContent=S.ins;
-    Array.prototype.forEach.call(figs,function(g){g.hidden=g.getAttribute("data-k")!==String(k)});
+    Array.prototype.forEach.call(figs,function(g){g.hidden=g.getAttribute("data-k")!==String(k)});thumbs.forEach(function(t){t.b.className=t.b.className.replace(" on","")+(t.k===k?" on":"")});
     Array.prototype.forEach.call(tickEl.children,function(b,i){b.className="tk"+(i===k?" on":(i<k?" done":""))});lastP=-1}
   if(pi!==lastP||lastP===-1){lastP=pi;$("d").textContent=S.ph[pi][1];$("pd").textContent=S.ph[pi][1]}
   var tl=$("tl");if(document.activeElement!==tl)tl.value=Math.round(u*1000);
@@ -313,7 +367,7 @@ press("pres",function(on,b){b.textContent=on?"Sair da apresentação":"Modo apre
   if(api)api.resize()});
 $("zin").onclick=function(){if(api)api.zoom(.8)};$("zout").onclick=function(){if(api)api.zoom(1.25)};$("zrs").onclick=function(){if(api)api.zoom(0)};
 Array.prototype.forEach.call(document.querySelectorAll(".veil button"),function(b){b.onclick=function(){b.parentNode.classList.add("open")}});
-document.addEventListener("keydown",function(e){var tg=e.target&&e.target.tagName;if(tg==="INPUT"||tg==="SELECT"||tg==="TEXTAREA"||e.ctrlKey||e.metaKey||e.altKey)return;
+document.addEventListener("keydown",function(e){var tg=e.target&&e.target.tagName;if(curPg!=="cirurgia"&&!$("wrap").classList.contains("present"))return;if(tg==="INPUT"||tg==="SELECT"||tg==="TEXTAREA"||e.ctrlKey||e.metaKey||e.altKey)return;
   var k=e.key;
   if(k==="ArrowRight"||k==="PageDown"){stepFwd();e.preventDefault()}
   else if(k==="ArrowLeft"||k==="PageUp"){stepBack();e.preventDefault()}
@@ -754,7 +808,7 @@ function build(){
       sc.overrideMaterial=depthM;ren.render(sc,cam);ghostM.uniforms.op.value=gA;sc.overrideMaterial=ghostM;ren.render(sc,cam);
       sc.overrideMaterial=null;skel.visible=v1;skelP.visible=v2;ground.visible=true}
     ren.clearDepth();cam.layers.set(0);ren.render(sc,cam);ren.autoClear=true}
-  function loop(now){requestAnimationFrame(loop);
+  function loop(now){requestAnimationFrame(loop);if(!host.offsetParent){tp=now;return}
     var dt=Math.max(0,Math.min((now-tp)/1000,.1)),t=(now-t0)/1000,kk=Math.min(1,dt*(calm||STILL?20:2.2));tp=now;
     var A=window.A3;if(playing&&!dragSlider){var k0=Math.min(6,Math.floor(A.u));A.u+=dt*speed/DUR[k0];if(A.u>=7){A.u=6.999;playing=false}}
     if(!(A.u>=0))A.u=0;var u=A.u;

@@ -26,12 +26,25 @@ inc:[["Incisão de pele",-.1287,.0341,.1393]],
 6:[["Músculo: fio absorvível",-.117,-.02,.1],["Pele: nylon",-.1235,-.09,.094]]};
 var N=steps.length,DUR=[8,8,14,11,14,12,11],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
 var tickEl=$("ticks"),lastK=-1,lastP=-1,figs=document.querySelectorAll(".rf");
+/* três páginas no mesmo endereço: #caso, #cirurgia, #discussao */
+var PGS=["caso","cirurgia","discussao"],curPg="caso";
+function route(){var h=(location.hash||"").replace("#",""),pg=PGS.indexOf(h)>=0?h:(h==="s2"?"cirurgia":"caso"),chg=pg!==curPg;curPg=pg;
+  Array.prototype.forEach.call(document.querySelectorAll(".pg"),function(e){e.hidden=e.getAttribute("data-pg")!==pg});$("wrap").setAttribute("data-pg",pg);
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs a"),function(a){if(a.getAttribute("data-pg")===pg)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(pg==="cirurgia"&&api)api.resize();if(chg)window.scrollTo(0,0)}
+addEventListener("hashchange",route);route();
+/* galeria: uma miniatura por figura do caso; o clique leva à etapa correspondente */
+var thumbs=[];Array.prototype.forEach.call(figs,function(g){var im=g.querySelector("img"),k=+g.getAttribute("data-k"),cap=g.querySelector("figcaption"),b=document.createElement("button");
+  b.type="button";b.className="th"+(g.querySelector(".veil")?" vl":"");var fn=cap.querySelector("b").textContent;
+  b.innerHTML='<span class="im"><img alt=""></span><b><i></i></b>';b.querySelector("img").src=im.src;b.querySelector("i").textContent=fn;b.querySelector("b").appendChild(document.createTextNode(" · etapa "+(k+1)+": "+steps[k].t));
+  b.setAttribute("aria-label",fn+", etapa "+(k+1)+": "+steps[k].t);b.onclick=function(){go(k);var st=$("stage");if(st&&st.getBoundingClientRect().top<0)st.scrollIntoView({behavior:"smooth",block:"start"})};
+  $("thumbs").appendChild(b);thumbs.push({b:b,k:k})});
 steps.forEach(function(s,n){var b=document.createElement("button");b.className="tk";b.textContent=n+1;b.setAttribute("aria-label","Etapa "+(n+1)+": "+s.t);b.title=(n+1)+". "+s.t;b.onclick=function(){go(n)};tickEl.appendChild(b)});
 function go(n,end){n=((n%N)+N)%N;A3.u=n+(end?.995:.0);lastK=-1;uiTick()}
 function uiTick(){var u=A3.u>=0?A3.u:0,k=Math.min(N-1,Math.floor(u)),f=u-k,S=steps[k],pi=0;
   for(var q=0;q<S.ph.length;q++)if(f>=S.ph[q][0])pi=q;
   if(k!==lastK){lastK=k;$("chip").textContent="Etapa "+(k+1)+" de "+N;$("hchip").textContent="Etapa "+(k+1)+" de "+N;$("t").textContent=S.t;$("pt").textContent=S.t;$("m1").textContent=S.est;$("m2").textContent=S.obj;$("m3").textContent=S.ins;
-    Array.prototype.forEach.call(figs,function(g){g.hidden=g.getAttribute("data-k")!==String(k)});
+    Array.prototype.forEach.call(figs,function(g){g.hidden=g.getAttribute("data-k")!==String(k)});thumbs.forEach(function(t){t.b.className=t.b.className.replace(" on","")+(t.k===k?" on":"")});
     Array.prototype.forEach.call(tickEl.children,function(b,i){b.className="tk"+(i===k?" on":(i<k?" done":""))});lastP=-1}
   if(pi!==lastP||lastP===-1){lastP=pi;$("d").textContent=S.ph[pi][1];$("pd").textContent=S.ph[pi][1]}
   var tl=$("tl");if(document.activeElement!==tl)tl.value=Math.round(u*1000);
@@ -58,7 +71,7 @@ press("pres",function(on,b){b.textContent=on?"Sair da apresentação":"Modo apre
   if(api)api.resize()});
 $("zin").onclick=function(){if(api)api.zoom(.8)};$("zout").onclick=function(){if(api)api.zoom(1.25)};$("zrs").onclick=function(){if(api)api.zoom(0)};
 Array.prototype.forEach.call(document.querySelectorAll(".veil button"),function(b){b.onclick=function(){b.parentNode.classList.add("open")}});
-document.addEventListener("keydown",function(e){var tg=e.target&&e.target.tagName;if(tg==="INPUT"||tg==="SELECT"||tg==="TEXTAREA"||e.ctrlKey||e.metaKey||e.altKey)return;
+document.addEventListener("keydown",function(e){var tg=e.target&&e.target.tagName;if(curPg!=="cirurgia"&&!$("wrap").classList.contains("present"))return;if(tg==="INPUT"||tg==="SELECT"||tg==="TEXTAREA"||e.ctrlKey||e.metaKey||e.altKey)return;
   var k=e.key;
   if(k==="ArrowRight"||k==="PageDown"){stepFwd();e.preventDefault()}
   else if(k==="ArrowLeft"||k==="PageUp"){stepBack();e.preventDefault()}
@@ -499,7 +512,7 @@ function build(){
       sc.overrideMaterial=depthM;ren.render(sc,cam);ghostM.uniforms.op.value=gA;sc.overrideMaterial=ghostM;ren.render(sc,cam);
       sc.overrideMaterial=null;skel.visible=v1;skelP.visible=v2;ground.visible=true}
     ren.clearDepth();cam.layers.set(0);ren.render(sc,cam);ren.autoClear=true}
-  function loop(now){requestAnimationFrame(loop);
+  function loop(now){requestAnimationFrame(loop);if(!host.offsetParent){tp=now;return}
     var dt=Math.max(0,Math.min((now-tp)/1000,.1)),t=(now-t0)/1000,kk=Math.min(1,dt*(calm||STILL?20:2.2));tp=now;
     var A=window.A3;if(playing&&!dragSlider){var k0=Math.min(6,Math.floor(A.u));A.u+=dt*speed/DUR[k0];if(A.u>=7){A.u=6.999;playing=false}}
     if(!(A.u>=0))A.u=0;var u=A.u;
