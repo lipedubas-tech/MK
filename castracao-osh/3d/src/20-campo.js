@@ -32,7 +32,7 @@ function criaPele() {
     var g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("aLoc", new THREE.Float32BufferAttribute(loc, 2)); g.setIndex(ix); g.computeVertexNormals();
     metades.push({ g: g, base: base, s: s })
   });
-  var mt = MS(0xf0cbbd, { roughness: .55, envMapIntensity: .35 });
+  var mt = MS(0xd98c7c, { roughness: .6, envMapIntensity: .3 });
   mt.onBeforeCompile = function (sh) {
     Object.keys(UC).forEach(function (k) { sh.uniforms[k] = UC[k] });
     sh.vertexShader = "attribute vec2 aLoc;\nvarying vec2 vLoc;\n" + sh.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\n vLoc = aLoc;");

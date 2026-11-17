@@ -87,7 +87,7 @@ function ligRaio(t) { return lerp(.0055, .0017, RP(t, .45, 1)) }
 
 /* ---------- câmera: quadros-chave [u, posição, alvo] ---------- */
 var CAMS = [
-  [1.0, [.7, .42, .7], [0, .13, .02]], [1.26, [.6, .5, .22], [0, .12, -.02]], [1.32, [.24, .5, -.32], [0, .14, -.06]],
+  [1.0, [.95, .5, .95], [0, .15, .02]], [1.26, [.62, .72, .25], [0, .12, -.03]], [1.32, [.16, .58, -.34], [0, .14, -.06]],
   [1.66, [.2, .62, -.42], [0, .11, -.07]], [1.98, [.14, .52, -.36], [0, .13, -.065]],
   [2.0, [.1, .4, -.27], [0, .152, -.066]], [2.5, [.08, .37, -.25], [0, .152, -.066]], [2.98, [.07, .36, -.24], [0, .148, -.064]],
   [3.0, [.02, .5, -.2], [0, .105, -.045]], [3.45, [.03, .49, -.2], [.004, .108, -.045]], [3.8, [.08, .4, -.23], [.004, .15, -.055]], [3.98, [.09, .39, -.22], [.005, .155, -.055]],
@@ -243,7 +243,7 @@ function aplica(u) {
     manta.position.set(0, 0, .03);
     var a0 = posOsso("R_Arm"), a1 = posOsso("R_FrontPaw"), mid = vl(a0, a1, .55), dir = a1.clone().sub(a0).normalize();
     acesso.fita.position.copy(mid); acesso.fita.quaternion.setFromUnitVectors(P(0, 1, 0), dir);
-    acesso.equipo.set([mid.clone().add(P(0, .008, 0)), mid.clone().add(P(.02, .03, -.03)), P(mid.x + .06, .12, mid.z - .02), P(mid.x + .1, .45, mid.z - .15)])
+    acesso.equipo.set([mid.clone().add(P(0, .008, 0)), mid.clone().add(P(.025, .02, -.03)), P(mid.x + .07, .05, mid.z - .12), P(mid.x + .16, .2, mid.z - .42)])
   }
   /* luz de foco cirúrgico durante a cirurgia */
   foco.intensity = cir && u < 9.98 ? 3 * (1 - raio) : 0;
