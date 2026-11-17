@@ -17,7 +17,7 @@ var host = document.getElementById("palco");
 var ren = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
 ren.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
 ren.outputEncoding = THREE.sRGBEncoding; ren.physicallyCorrectLights = true;
-ren.toneMapping = THREE.ACESFilmicToneMapping; ren.toneMappingExposure = .95;
+ren.toneMapping = THREE.ACESFilmicToneMapping; ren.toneMappingExposure = .86;
 ren.shadowMap.enabled = true; ren.shadowMap.type = THREE.PCFSoftShadowMap;
 host.insertBefore(ren.domElement, host.firstChild);
 var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(30, 16 / 9, .005, 20);

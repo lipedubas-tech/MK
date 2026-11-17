@@ -57,7 +57,7 @@ function criaPosOp() {
   var nomes = c.skeleton.bones.map(function (b) { return b.name }), PES = { Back: 1, Butt: .85, Neck: .55, L_Shoulder: .9, R_Shoulder: .9, L_Thigh: .7, R_Thigh: .7 };
   for (i = 0; i < n; i++) { var s = 0; for (var k = 0; k < 4; k++) s += (PES[nomes[Jt.array[i * 4 + k]]] || 0) * Wt.array[i * 4 + k]; tor[i] = s }
   var g2 = gg.clone(); g2.setAttribute("aTronco", new THREE.BufferAttribute(tor, 1));
-  var mt = MS(0xffffff, { map: texturaEstampa(), roughness: .85, envMapIntensity: .25, side: THREE.DoubleSide });
+  var mt = MS(0xffffff, { map: texturaEstampa(), roughness: .85, envMapIntensity: .25, side: THREE.DoubleSide, skinning: true });
   mt.onBeforeCompile = function (sh) {
     sh.vertexShader = "attribute float aTronco;\nvarying float vTr;\n" + sh.vertexShader.replace("#include <skinning_vertex>", "#include <skinning_vertex>\n transformed += normalize(objectNormal) * .0045;\n vTr = aTronco;");
     sh.fragmentShader = "varying float vTr;\n" + sh.fragmentShader.replace("#include <map_fragment>", "#include <map_fragment>\n if (vTr < .62) discard;\n diffuseColor.rgb *= mix(.75, 1., smoothstep(.62, .7, vTr));")
@@ -106,8 +106,10 @@ function camera(u) {
     cam.position.set(Math.sin(a) * r, .36, .02 + Math.cos(a) * r); cam.up.set(0, 1, 0); cam.lookAt(-.12 * Math.cos(a), .17, .02 + .12 * Math.sin(a)); return
   }
   if (u >= 10) {
-    var b2 = lerp(.75, .35, RP(u, 10, 11)), r2 = .72;
-    cam.position.set(Math.sin(b2) * r2, .26, .03 + Math.cos(b2) * r2); cam.up.set(0, 1, 0); cam.lookAt(-.08, .08, .04); return
+    var b2 = lerp(.8, .45, RP(u, 10, 11)), r2 = .92, alvo = P(-.01, .1, .05);
+    cam.position.set(Math.sin(b2) * r2, .3, .05 + Math.cos(b2) * r2); cam.up.set(0, 1, 0);
+    var dir = alvo.clone().sub(cam.position).normalize(), dir2 = new V().crossVectors(dir, P(0, 1, 0)).normalize();
+    cam.lookAt(alvo.addScaledVector(dir2, .13)); return
   }
   var i = 0; while (i < CAMS.length - 2 && CAMS[i + 1][0] <= u) i++;
   var a = CAMS[i], b = CAMS[i + 1], t = cl((u - a[0]) / (b[0] - a[0]), 0, 1), e = t * t * (3 - 2 * t);
@@ -244,7 +246,8 @@ function aplica(u) {
     acesso.equipo.set([mid.clone().add(P(0, .008, 0)), mid.clone().add(P(.02, .03, -.03)), P(mid.x + .06, .12, mid.z - .02), P(mid.x + .1, .45, mid.z - .15)])
   }
   /* luz de foco cirúrgico durante a cirurgia */
-  foco.intensity = cir && u < 9.98 ? 6 : 0; foco.target.position.set(0, .15, -.065);
+  foco.intensity = cir && u < 9.98 ? 3 * (1 - raio) : 0;
+  key.intensity = 2.4 * (1 - .55 * raio); hemi.intensity = 1.1 * (1 - .6 * raio); INOX.color.setHex(raio > .5 ? 0x4a5258 : 0x8e979f); foco.target.position.set(0, .15, -.065);
   return k
 }
 

@@ -156,7 +156,7 @@ function criaCampo() {
   var g = new THREE.BufferGeometry();
   g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2)); g.setAttribute("aLoc", new THREE.Float32BufferAttribute(loc, 2));
   g.setIndex(ix); g.computeVertexNormals();
-  var mt = MS(0xffffff, { map: texturaTecido("#93c3e6", 6), roughness: .88, envMapIntensity: .3, side: THREE.DoubleSide, transparent: true });
+  var mt = MS(0xffffff, { map: texturaTecido("#7fb0da", 6), roughness: .88, envMapIntensity: .3, side: THREE.DoubleSide, transparent: true });
   mt.onBeforeCompile = function (sh) {
     sh.uniforms.uQueda = UQ.uQueda; sh.uniforms.uVis = UQ.uVis;
     sh.vertexShader = "attribute vec2 aLoc;\nvarying vec2 vLoc;\nuniform float uQueda;\n" + sh.vertexShader.replace("#include <begin_vertex>",
