@@ -267,17 +267,35 @@ function build(){
   function geo(list){var g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.BufferAttribute(pos,3));g.setAttribute("uv",new THREE.BufferAttribute(uv,2));g.setIndex(list);g.computeVertexNormals();return g}
   var gRest=geo(rest),skel=new THREE.Mesh(gRest,skelM),skelP=new THREE.Mesh(gRest,skelPre);skel.renderOrder=1;skelP.renderOrder=0;sc.add(skelP,skel);
   var limbMain=new THREE.Mesh(geo(main),limbSk);sc.add(limbMain);
-  /* cauda: vértebras caudais articuladas */
-  var TU=[0.022915709763765335,0.8021401166915894],tailRoot=new THREE.Group();tailRoot.position.set(0,.097,-.455);tailRoot.rotation.x=-.9;sc.add(tailRoot);
-  var tailJ=[],TN=20,tprev=tailRoot,tl=0;
-  function setUV(g){var n=g.attributes.position.count,a=new Float32Array(n*2);for(var q=0;q<n;q++){a[q*2]=TU[0];a[q*2+1]=TU[1]}g.setAttribute("uv",new THREE.BufferAttribute(a,2));return g}
+  /* cauda: 21 vértebras caudais articuladas. As primeiras têm processos transversos, arco e espinhoso;
+     as do meio são longas, em forma de carretel; as finais viram bastonetes curtos. Em repouso o rabo sai
+     na linha do sacro e cai pendurado, com a ponta levemente virada. */
+  var tailM=new THREE.MeshStandardMaterial({vertexColors:true,metalness:0,roughness:.82,envMapIntensity:.5,side:THREE.DoubleSide,transparent:true});
+  var tailRoot=new THREE.Group();tailRoot.position.set(0,.099,-.452);tailRoot.rotation.x=-.42;sc.add(tailRoot);
+  var tailJ=[],TN=21,tprev=tailRoot,tl=0;
+  function tcol(g,fn){var ps=g.attributes.position,n=ps.count,c=new Float32Array(n*3);
+    for(var q=0;q<n;q++){var x=ps.getX(q),y=ps.getY(q),z=ps.getZ(q),k=fn(x,y,z),h=.94+.1*hash(Math.round(x*900),Math.round(y*900),Math.round(z*900));
+      c[q*3]=.55*k*h;c[q*3+1]=.52*k*h;c[q*3+2]=.44*k*h}
+    g.setAttribute("color",new THREE.BufferAttribute(c,3));g.deleteAttribute("uv");return g}
+  function blob(gj,L,sx,sy,sz,x,y,z,ry,rz,sh){var g=new THREE.SphereGeometry(1,10,8);g.scale(sx,sy,sz);if(rz)g.rotateZ(rz);if(ry)g.rotateY(ry);g.translate(x,y,z);
+    tcol(g,function(xx,yy,zz){return sh*(.78+.22*Math.min(1,Math.max(0,(yy+sy)/(2*sy))))});gj.add(new THREE.Mesh(g,tailM))}
   for(var ti2=0;ti2<TN;ti2++){
-    var f=ti2/(TN-1),L=.03-.016*f,r=.0165*(1-.8*f)+.0018,gj=new THREE.Group();
-    gj.position.set(0,0,ti2?-tl:0);gj.rotation.x=ti2?.075:0;tprev.add(gj);
-    var pr=[];[[0,0],[.84,0],[1,.14],[.78,.5],[1,.86],[.84,1],[0,1]].forEach(function(p){pr.push(new THREE.Vector2(r*p[0],L*.92*p[1]))});
-    var vg=setUV(new THREE.LatheGeometry(pr,10));vg.rotateX(-PI/2);gj.add(new THREE.Mesh(vg,skelM));
-    if(ti2<6){var sp=setUV(new THREE.ConeGeometry(r*.38,.011*(1-f*1.2),6));var spm=new THREE.Mesh(sp,skelM);spm.position.set(0,r*.95+.004,-L*.5);gj.add(spm);
-      var tp=setUV(new THREE.BoxGeometry(r*5.2,.0035,.009));var tpm=new THREE.Mesh(tp,skelM);tpm.position.set(0,0,-L*.32);gj.add(tpm)}
+    var f=ti2/(TN-1),L=.84*(.0125+.0185*Math.exp(-Math.pow((f-.3)/.42,2))),r=.0032+.0118*Math.pow(1-f,1.3),BL=L*.86,gj=new THREE.Group();
+    gj.position.set(0,0,ti2?-tl:0);
+    gj.userData.rx=ti2?(-.105*Math.exp(-Math.pow((ti2-4)/4.5,2))-.012+(ti2>TN-5?.035:0)):0;gj.rotation.x=gj.userData.rx;tprev.add(gj);
+    /* corpo: carretel com as pontas alargadas e cintura no meio (mais marcada nas vértebras longas) */
+    var wa=.62+.25*Math.max(0,1-Math.abs(f-.35)*2.2),pr=[],prof=[[0,0],[.8,0],[.97,.03],[1,.1],[.86,.24],[wa,.42],[wa*.97,.5],[wa,.58],[.86,.76],[1,.9],[.97,.97],[.8,1],[0,1]];
+    prof.forEach(function(p){pr.push(new THREE.Vector2(r*p[0]*(1-.08*p[1]),BL*p[1]))});
+    var vg=new THREE.LatheGeometry(pr,14);vg.rotateX(-PI/2);vg.scale(1,.92,1);
+    tcol(vg,function(x,y,z){var t=-z/BL,e=Math.min(t,1-t);return .66+.34*Math.min(1,e/.14)});
+    gj.add(new THREE.Mesh(vg,tailM));
+    /* processos transversos (asas voltadas para trás), arco neural com espinhoso e processos articulares */
+    if(ti2<7){var w=1-ti2/7,tw=r*(.4+.62*w);
+      [-1,1].forEach(function(sd){blob(gj,L,tw,r*.17,BL*(.26+.1*w),sd*(r*.7+tw*.7),-r*.05,-BL*.52,sd*.22,0,.9)});
+      blob(gj,L,r*.32,r*(.3+.25*w),BL*.3,0,r*.82,-BL*.48,0,0,.92);
+      if(ti2<5)[-1,1].forEach(function(sd){blob(gj,L,r*.2,r*.18,BL*.2,sd*r*.42,r*.72,-BL*.04,sd*.25,0,.88)})}
+    /* arcos hemais (ventrais), pequenos, nas vértebras proximais e médias */
+    if(ti2>=3&&ti2<11){var hw=1-(ti2-3)/8;[-1,1].forEach(function(sd){blob(gj,L,r*.16,r*(.12+.12*hw),BL*.12,sd*r*.3,-r*.86,-BL*.07,0,0,.82)})}
     tailJ.push(gj);tl=L;tprev=gj}
   var skelMeshes=[skel,limbMain];tailRoot.traverse(function(o){if(o.isMesh){skelMeshes.push(o);o.renderOrder=1}});
   [skel,skelP].forEach(function(o){o.layers.set(1)});tailRoot.traverse(function(o){o.layers.set(1)});
@@ -458,7 +476,7 @@ function build(){
       stS.forEach(function(s){var a=RP(US.front.value,s.s-.01,s.s+.03);s.g.visible=a>.01;s.g.scale.setScalar(Math.max(.001,a))})}
     /* esqueleto de fundo */
     so=u<.9?1:1-.72*RP(u,.9,1.1);if(iso)so=0;
-    if(!xray){skelM.opacity=so;skelM.depthWrite=so>.999;skelP.visible=so<=.999&&so>.01}else skelP.visible=false;
+    if(!xray){skelM.opacity=tailM.opacity=so;skelM.depthWrite=tailM.depthWrite=so>.999;skelP.visible=so<=.999&&so>.01}else skelP.visible=false;
     skel.visible=so>.01;skel.castShadow=so>.8&&!xray;tailRoot.visible=!iso;limbMain.visible=!iso;
     /* instrumentos */
     var sawA=WN(u,2.04,2.12,2.45,2.55);place(tSaw,P(CXL+CW*cutp,OQ.y,OQ.z),P(-.45,-.32,-.72),sawA,.07,OAX);if(tSaw.pt.blade)tSaw.pt.blade.rotation.z=Math.sin(t*48)*.1;
@@ -511,7 +529,7 @@ function build(){
     cam.up.set(0,1,0);cam.lookAt(tgt);if(Math.abs(cam.fov-fvT)>.05){cam.fov+=(fvT-cam.fov)*k;cam.updateProjectionMatrix()}
     var sd=Math.max(.15,co.length()*.7);sun.shadow.camera.left=-sd;sun.shadow.camera.right=sd;sun.shadow.camera.top=sd;sun.shadow.camera.bottom=-sd;sun.shadow.camera.near=.1;sun.shadow.camera.far=9;sun.shadow.camera.updateProjectionMatrix();
     sunT.position.copy(cl);sun.position.copy(cl).add(tV.set(-.62,.6,.5).multiplyScalar(3.2));
-    tailJ.forEach(function(j,q){var w=q/(TN-1);if(calm){return}j.rotation.y=Math.sin(t*1.5-q*.3)*.05*(.4+w);j.rotation.x=(q?.075:0)+Math.sin(t*1.05-q*.22)*.012*(.3+w)});
+    tailJ.forEach(function(j,q){var w=q/(TN-1);if(calm){return}j.rotation.y=Math.sin(t*1.2-q*.28)*.035*(.25+w);j.rotation.x=j.userData.rx+Math.sin(t*.9-q*.2)*.008*(.3+w)});
     tailRoot.rotation.y=calm?0:Math.sin(t*.8)*.05}
   /* com o esqueleto de fundo translúcido, ele é desenhado antes e o cotovelo por cima, em duas passadas */
   function draw(){
