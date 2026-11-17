@@ -1,11 +1,12 @@
+(function(){var n=document.getElementById("nojs");if(n)n.parentNode.removeChild(n)})();
 function dec(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
 var steps=[
 {t:"O esqueleto e o cotovelo",est:"Escápula, úmero, rádio, ulna e olécrano (membro anterior esquerdo)",obj:"Localizar a região operada antes da intervenção",ins:"Nenhum nesta etapa",
  ph:[[0,"Katita, 7 anos, SRD, 35 kg, foi atropelada. No esqueleto inteiro, o úmero do membro anterior esquerdo está fraturado junto ao cotovelo."],[.5,"De perto: a ponta do úmero está partida em três pedaços, a diáfise e os dois côndilos."]]},
 {t:"A lesão: fratura em Y",est:"Diáfise do úmero e côndilos lateral e medial",obj:"Reconhecer a fratura do úmero distal em três partes",ins:"Radiografia (diagnóstico por imagem)",
  ph:[[0,"O úmero quebrou em formato de Y: uma linha separa os dois côndilos e outras duas os soltam da diáfise, o corpo do osso."],[.3,"O côndilo lateral (vermelho) e o medial (âmbar) estão fora do lugar. O contorno brilhante mostra a posição original de cada um."],[.65,"As faces rosadas são o osso esponjoso exposto pela fratura. As radiografias reais mostram a mesma lesão."]]},
-{t:"Acesso: osteotomia do olécrano",est:"Olécrano, ulna proximal e tríceps braquial",obj:"Expor a articulação para enxergar e reduzir o úmero distal",ins:"Afastadores de Hohmann, serra oscilatória",
- ph:[[0,"Com os tecidos afastados, o cotovelo fica exposto por trás. O acesso é pela face caudal."],[.08,"A serra oscilatória faz um corte transversal no olécrano, de lateral para medial."],[.45,"O olécrano é rebatido para cima, junto com a inserção do tríceps, e abre o acesso à articulação."]]},
+{t:"Acesso: osteotomia do olécrano",est:"Pele, músculo, olécrano, ulna proximal e tríceps braquial",obj:"Expor a articulação para enxergar e reduzir o úmero distal",ins:"Bisturi, afastadores de Hohmann, serra oscilatória",
+ ph:[[0,"O acesso é pela face caudal do cotovelo. O bisturi abre a pele sobre a articulação."],[.15,"A pele e o músculo são afastados, e o osso aparece no fundo da incisão."],[.24,"Com os tecidos afastados, o cotovelo fica exposto por trás. Daqui em diante a pele e o músculo ficam ocultos, para mostrar o osso."],[.356,"A serra oscilatória faz um corte transversal no olécrano, de lateral para medial."],[.615,"O olécrano é rebatido para cima, junto com a inserção do tríceps, e abre o acesso à articulação."]]},
 {t:"Redução e parafuso intercondilar",est:"Côndilos medial e lateral do úmero",obj:"Recompor a superfície articular e comprimir os fragmentos",ins:"Pinça de redução, furadeira ortopédica, parafuso de compressão",
  ph:[[0,"A pinça de redução leva os côndilos de volta ao lugar, até a superfície articular ficar contínua."],[.5,"A furadeira abre um túnel que atravessa os dois côndilos, de lateral para medial."],[.8,"O parafuso intercondilar avança girando e comprime um côndilo contra o outro. O trecho dentro do osso aparece em azul-claro."]]},
 {t:"Placas e parafusos",est:"Úmero distal e diáfise (faces lateral e medial), canal medular",obj:"Fixar os côndilos ao corpo do úmero com estabilidade",ins:"Placas ortopédicas, furadeira, parafusos corticais, pino intramedular",
@@ -17,12 +18,13 @@ var steps=[
 ];
 var LB={r:[["Escápula",-.09,.21,.13],["Úmero",-.102,.03,.168],["Cotovelo fraturado",-.092,-.05,.12],["Ulna e rádio",-.09,-.17,.125]],
 1:[["Diáfise do úmero",-.104,.012,.166],["Côndilo lateral",-.128,-.05,.128],["Côndilo medial",-.066,-.05,.136],["Rádio",-.088,-.125,.142],["Ulna",-.108,-.14,.112]],
+inc:[["Incisão de pele",-.1287,.0341,.1393]],
 2:[["Olécrano",-.0985,-.02,.075],["Corte (osteotomia)",-.108,-.043,.088]],
 3:[["Parafuso intercondilar",-.1195,-.0612,.1245]],
 4:[["Placa lateral",-.1195,.004,.153],["Parafusos",-.1235,-.0315,.128]],
 5:[["Pinos",-.105,-.14,.112],["Banda de tensão",-.103,-.062,.083]],
 6:[["Músculo: fio absorvível",-.117,-.02,.1],["Pele: nylon",-.1235,-.09,.094]]};
-var N=steps.length,DUR=[8,8,10,11,14,12,11],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
+var N=steps.length,DUR=[8,8,14,11,14,12,11],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
 var tickEl=$("ticks"),lastK=-1,lastP=-1,figs=document.querySelectorAll(".rf");
 steps.forEach(function(s,n){var b=document.createElement("button");b.className="tk";b.textContent=n+1;b.setAttribute("aria-label","Etapa "+(n+1)+": "+s.t);b.onclick=function(){go(n)};tickEl.appendChild(b)});
 function go(n,end){n=((n%N)+N)%N;A3.u=n+(end?.995:.0);lastK=-1;uiTick()}
@@ -217,11 +219,11 @@ function build(){
   metalMeshes.forEach(function(o){if(o===plL||o===plM||o.material===DK)return;var c=new THREE.Mesh(o.geometry,ovM);c.renderOrder=6;o.add(c);ovs.push(c)});
 
   /* ---------- pele, músculo e suturas ---------- */
-  var US={front:{value:0},w:{value:.0078}},UM={front:{value:0},w:{value:.0062}};
-  function wound(mat,U){mat.onBeforeCompile=function(sh){sh.uniforms.uFront=U.front;sh.uniforms.uW=U.w;
+  var US={front:{value:0},w:{value:.0078},cut:{value:2}},UM={front:{value:0},w:{value:.0062},cut:{value:2}};
+  function wound(mat,U){mat.onBeforeCompile=function(sh){sh.uniforms.uFront=U.front;sh.uniforms.uW=U.w;sh.uniforms.uCut=U.cut;
     sh.vertexShader="attribute float aS;attribute float aD;varying float vS;varying float vD;\n"+sh.vertexShader.replace("#include <begin_vertex>","#include <begin_vertex>\nvS=aS;vD=aD;");
-    sh.fragmentShader="uniform float uFront;uniform float uW;varying float vS;varying float vD;\n"+sh.fragmentShader.replace(/void main\(\) *\{/,"void main(){float kLens=pow(max(sin(3.14159*clamp(vS,0.,1.)),0.),.6);float kW=uW*kLens*smoothstep(uFront-.03,uFront+.03,vS);if(vD<kW)discard;")
-      .replace("#include <color_fragment>","#include <color_fragment>\ndiffuseColor.rgb=mix(vec3(.2,.012,.015),diffuseColor.rgb,smoothstep(0.,.0017,vD-kW));")};return mat}
+    sh.fragmentShader="uniform float uFront;uniform float uW;uniform float uCut;varying float vS;varying float vD;\n"+sh.fragmentShader.replace(/void main\(\) *\{/,"void main(){float kLens=pow(max(sin(3.14159*clamp(vS,0.,1.)),0.),.6);float kCut=1.-smoothstep(uCut-.03,uCut+.03,vS);float kW=uW*kLens*kCut*smoothstep(uFront-.03,uFront+.03,vS);if(vD<kW)discard;")
+      .replace("#include <color_fragment>","#include <color_fragment>\ndiffuseColor.rgb=mix(diffuseColor.rgb,vec3(.2,.012,.015),kCut*(1.-smoothstep(0.,.0017,vD-kW)));")};return mat}
   var skM=wound(new THREE.MeshStandardMaterial({vertexColors:true,roughness:.88,envMapIntensity:.25,transparent:true}),US),
       skIn=wound(new THREE.MeshStandardMaterial({color:0x6e1a1c,roughness:.7,envMapIntensity:.2,side:THREE.BackSide,transparent:true}),US),
       muM=wound(new THREE.MeshStandardMaterial({vertexColors:true,roughness:.6,envMapIntensity:.3,side:THREE.DoubleSide,transparent:true}),UM);
@@ -243,6 +245,10 @@ function build(){
       var bg=new THREE.ExtrudeGeometry(shp,{depth:.0005,bevelEnabled:false});bg.translate(0,0,-.00025);
       var bl=new THREE.Mesh(bg,STL);bl.position.y=.0215;g.add(bl);pt.blade=bl;
       g.add(taper(.0026,.0044,.012,.0215,BLK),taper(.0044,.0052,.07,.0335,GRIP),taper(.0052,.0036,.02,.1035,BLK))}
+    else if(kind==="scalpel"){ /* bisturi: lâmina com o fio voltado para +X, cabo chato */
+      var bs=new THREE.Shape();bs.moveTo(0,0);bs.quadraticCurveTo(.0046,.006,.0036,.018);bs.lineTo(.0026,.03);bs.lineTo(-.0016,.03);bs.lineTo(-.0019,.012);bs.closePath();
+      var sg2=new THREE.ExtrudeGeometry(bs,{depth:.0004,bevelEnabled:false});sg2.translate(0,0,-.0002);g.add(new THREE.Mesh(sg2,STL));
+      g.add(m(box,STL,.0005,.036,0,.004,.012,.0016),m(box,GRIP,.0005,.097,0,.0078,.11,.0034),m(box,BLK,.0005,.048,0,.0082,.012,.0038))}
     else if(kind==="drill"){ /* furadeira tipo caneta */
       var bit=m(cyl,STL,0,.015,0,.00085,.03,.00085);g.add(bit);pt.bit=bit;
       g.add(taper(.0016,.003,.008,.03,STL),taper(.003,.0052,.012,.038,BLK),taper(.0052,.0056,.07,.05,GRIP),taper(.0056,.0038,.018,.12,BLK))}
@@ -255,7 +261,7 @@ function build(){
       g.add(m(cyl,BLK,0,.03,0,.0019,.0032,.0019));g.children[g.children.length-1].rotation.x=PI/2;
       if(kind==="holder"){var nd=new THREE.Mesh(new THREE.TorusGeometry(.0065,.00045,6,16,PI*1.1),STL);nd.position.set(0,-.0005,0);nd.rotation.set(0,PI/2,.4);g.add(nd)}}
     g.scale.setScalar(.72);g.visible=false;INS.add(g);return{g:g,pt:pt}}
-  var tSaw=mkTool("saw"),tDr=mkTool("drill"),tDr2=mkTool("drill"),tFo=mkTool("forceps"),tNH=mkTool("holder");
+  var tSaw=mkTool("saw"),tDr=mkTool("drill"),tDr2=mkTool("drill"),tFo=mkTool("forceps"),tNH=mkTool("holder"),tSc=mkTool("scalpel");
   var bX=new V(),bM=new THREE.Matrix4();
   function place(t,target,dir,ap,dist,nrm){var on=ap>.01&&!cmp&&!xray;t.g.visible=on;if(!on)return;var dn=dir.clone().normalize();t.g.position.copy(target).addScaledVector(dn,dist*(1-ap));
     if(nrm){bX.crossVectors(dn,nrm).normalize();t.g.quaternion.setFromRotationMatrix(bM.makeBasis(bX,dn,new V().crossVectors(bX,dn)))}else t.g.quaternion.setFromUnitVectors(Y,dn)}
@@ -283,20 +289,26 @@ function build(){
   var sunT=new THREE.Object3D();sc.add(sunT);sun.target=sunT;sun.castShadow=true;sun.shadow.mapSize.set(1536,1536);sun.shadow.bias=-.0004;sun.shadow.normalBias=.0006;
   ren.shadowMap.enabled=true;ren.shadowMap.type=THREE.PCFSoftShadowMap;ren.toneMapping=THREE.ACESFilmicToneMapping;ren.toneMappingExposure=1.0;
   var ground=new THREE.Mesh(new THREE.PlaneGeometry(6,6),new THREE.ShadowMaterial({opacity:.34}));ground.rotation.x=-PI/2;ground.position.y=-.406;ground.receiveShadow=true;ground.layers.set(1);sc.add(ground);
-  function camKey(u){var k=Math.min(6,Math.floor(u));if(cmp)return"cl";if(pov)return k===6?"povw":"pov";if(k===0)return u<.5?"far":"near";if(k===6)return"wide";if(k===2||k===5)return"lat";if(k===3)return u<3.52?"cl":"scw";if(k===4)return"cl";return"near"}
+  function camKey(u){var k=Math.min(6,Math.floor(u));if(cmp)return"cl";if(pov)return k===6?"povw":"pov";if(k===0)return u<.5?"far":"near";if(k===6)return"wide";if(k===2&&u<2+INC-.04)return"wide";if(k===2||k===5)return"lat";if(k===3)return u<3.52?"cl":"scw";if(k===4)return"cl";return"near"}
   function setLabels(list){labs.forEach(function(l){l.el.remove()});labs=(list||[]).map(function(a){var el=document.createElement("div");el.className="lb";el.textContent=a[0];host.appendChild(el);setTimeout(function(){el.classList.add("on")},60);return{el:el,v:new V(a[1],a[2],a[3])}})}
-  var so=1,tV=new V();
+  var so=1,tV=new V(),INC=.3,GHO=.07;
+  var IPATH=SO.path.map(P3),ICUM=[0];for(var ip=1;ip<IPATH.length;ip++)ICUM.push(ICUM[ip-1]+IPATH[ip].distanceTo(IPATH[ip-1]));
+  var ISN=SO.stSkin.map(function(e){return{s:e.s,n:P3(e.n)}}),incR={p:new V(),n:new V(),t:new V()};
+  function incAt(sv){var L=sv*ICUM[ICUM.length-1],i=1;while(i<IPATH.length-1&&ICUM[i]<L)i++;
+    var a=IPATH[i-1],b=IPATH[i],q=(L-ICUM[i-1])/Math.max(1e-9,ICUM[i]-ICUM[i-1]);incR.p.copy(a).lerp(b,q);incR.t.copy(b).sub(a).normalize();
+    var j=1;while(j<ISN.length-1&&ISN[j].s<sv)j++;var qa=ISN[j-1],qb=ISN[j],qq=Math.min(1,Math.max(0,(sv-qa.s)/(qb.s-qa.s)));incR.n.copy(qa.n).lerp(qb.n,qq).normalize();return incR}
   function applyState(u,t){
     var k=Math.min(6,Math.floor(u));
     /* fratura e olécrano */
-    var disp=1-RP(u,3.1,3.5),cutp=RP(u,2.08,2.42),od=RP(u,2.45,2.85)*(1-RP(u,5.02,5.3)),cutOn=u>=2.08;
+    var f3=u-2,inc=u>=2&&u<2+INC,w=(u>=2&&u<3)?2+Math.max(0,f3-INC)/(1-INC):u; /* w: tempo da etapa 3 sem a incisão */
+    var disp=1-RP(u,3.1,3.5),cutp=RP(w,2.08,2.42),od=RP(w,2.45,2.85)*(1-RP(u,5.02,5.3)),cutOn=w>=2.08;
     gL.rotation.set(-.1*disp,0,.3*disp);gL.position.set(FP.x-.018*disp,FP.y+.011*disp,FP.z-.005*disp);
     gM.rotation.set(.06*disp,0,-.17*disp);gM.position.set(FP.x+.011*disp,FP.y+.007*disp,FP.z+.003*disp);
     gO.rotation.x=-.42*od;gO.position.copy(OP).addScaledVector(OAX,.021*od+(cutOn?.0004:0));gO.position.z-=.007*od;
     uFull.visible=!cutOn;uBody.visible=gO.visible=cutOn;
         fragM.emissiveIntensity=.1*disp;medM.emissiveIntensity=.085*disp;
-        var gv=disp>.02&&!xray,pu=.8+.2*Math.sin(t*2.6);gh.visible=gh2.visible=gv;ghM.uniforms.op.value=disp*pu;ghM2.uniforms.op.value=disp*pu;
-    var csh=RP(u,2.05,2.1)*(1-RP(u,2.45,2.6));cutM.opacity=.5*csh;cutP.visible=csh>.01&&!xray;cutP.scale.x=Math.max(.0001,CW*cutp);cutP.position.x=CXL+CW*cutp/2;
+        var gv=disp>.02&&!xray&&!inc,pu=.8+.2*Math.sin(t*2.6);gh.visible=gh2.visible=gv;ghM.uniforms.op.value=disp*pu;ghM2.uniforms.op.value=disp*pu;
+    var csh=RP(w,2.05,2.1)*(1-RP(w,2.45,2.6));cutM.opacity=.5*csh;cutP.visible=csh>.01&&!xray;cutP.scale.x=Math.max(.0001,CW*cutp);cutP.position.x=CXL+CW*cutp/2;
     /* implantes: furo, depois parafuso */
     animScrew(tcs,RP(u,3.58,3.78),RP(u,3.8,3.97));
     var lL=RP(u,4,4.2);plL.visible=plM.visible=lL>.002;plL.position.copy(nL).multiplyScalar(.035*(1-lL));plM.position.copy(nM).multiplyScalar(.035*(1-lL));
@@ -305,24 +317,31 @@ function build(){
     drawTo(opins[0],RP(u,5.3,5.46));drawTo(opins[1],RP(u,5.46,5.62));
     var bp=RP(u,5.63,5.72);hmk.visible=bp>.5&&!xray;drawTo(owire[0],RP(u,5.74,5.87));drawTo(owire[1],RP(u,5.87,5.97));knot.visible=u>5.97;
     /* tecidos e suturas */
-    var tis=xray?0:RP(u,6.0,6.22);soft.visible=tis>.01;
+    var tisI=inc?RP(f3,0,.035)*(1-RP(f3,.235,INC)):0,tis=xray?0:Math.max(tisI,RP(u,6.0,6.22));soft.visible=tis>.01;
+    var scS=Math.min(1,Math.max(0,(f3-.05)/.095)); /* posição do bisturi ao longo da incisão */
+    gL.visible=gM.visible=!(inc&&tisI>.985&&!xray);
     ovM.opacity=.36*(1-tis);ovs.forEach(function(c){c.visible=!xray&&tis<.98});
     if(soft.visible){var op=tis>=.999;[skM,skIn,muM].forEach(function(mm){mm.transparent=!op;mm.opacity=tis});
       var fm=(u-6.3)/.3,fs=(u-6.62)/.3;UM.front.value=-.06+1.14*Math.min(1,Math.max(0,fm));US.front.value=-.06+1.14*Math.min(1,Math.max(0,fs));
+      if(inc){US.cut.value=scS>0?scS*1.1+.03:-.06;US.w.value=.0026+(.0078-.0026)*RP(f3,.15,.225);UM.cut.value=-.06+1.14*Math.min(1,Math.max(0,(f3-.15)/.045));UM.w.value=.0062*RP(f3,.165,.235)}
+      else{US.cut.value=UM.cut.value=2;US.w.value=.0078;UM.w.value=.0062}
       stMu.forEach(function(s){var a=RP(UM.front.value,s.s-.01,s.s+.03);s.g.visible=a>.01;s.g.scale.setScalar(Math.max(.001,a))});
       stS.forEach(function(s){var a=RP(US.front.value,s.s-.01,s.s+.03);s.g.visible=a>.01;s.g.scale.setScalar(Math.max(.001,a))})}
     /* esqueleto de fundo */
-    so=u<.9?1:1-.72*RP(u,.9,1.1);if(iso)so=0;
+    so=u<.9?1:1-(1-GHO)*RP(u,.9,1.1);if(iso)so=0;
     if(!xray){skelM.opacity=tailM.opacity=so;skelM.depthWrite=tailM.depthWrite=so>.999;skelP.visible=so<=.999&&so>.01}else skelP.visible=false;
     skel.visible=so>.01;skel.castShadow=so>.8&&!xray;tailRoot.visible=!iso;limbMain.visible=!iso;
     /* instrumentos */
-    var sawA=WN(u,2.04,2.12,2.45,2.55);place(tSaw,P(CXL+CW*cutp,OQ.y,OQ.z),P(-.45,-.32,-.72),sawA,.07,OAX);if(tSaw.pt.blade)tSaw.pt.blade.rotation.z=Math.sin(t*48)*.1;
+    var sawA=WN(w,2.04,2.12,2.45,2.55);place(tSaw,P(CXL+CW*cutp,OQ.y,OQ.z),P(-.45,-.32,-.72),sawA,.07,OAX);if(tSaw.pt.blade)tSaw.pt.blade.rotation.z=Math.sin(t*48)*.1;
         var fA=WN(u,3.05,3.14,3.5,3.6);place(tFo,P(-.1215-.016*disp,-.05+.01*disp,.119),P(-.7,.4,-.6),fA,.07);var opn=.06+.3*disp;tFo.pt.A.rotation.z=opn;tFo.pt.B.rotation.z=-opn;
     var dTC=WN(u,3.54,3.6,3.84,3.9),dPin=WN(u,5.26,5.32,5.6,5.64);
     if(dPin>dTC)place(tDr,TUB.clone().addScaledVector(OAX,.0045),P(0,.88,-.47),dPin,.07);else place(tDr,tcs.a.clone().addScaledVector(tcs.d,tcs.L*RP(u,3.58,3.78)*.55),tcs.d.clone().negate(),dTC,.07);
     var dA=WN(u,4.2,4.26,4.78,4.84),dH=WN(u,5.6,5.64,5.71,5.75);
     if(dH>.01)place(tDr2,HA,P(-1,.2,-.25),dH,.06);else if(act)place(tDr2,act.a.clone().addScaledVector(act.d,act.L*actH*.5),act.d.clone().negate(),dA,.07);else place(tDr2,HA,Y,0,0);
     tDr.pt.bit.rotation.y=tDr2.pt.bit.rotation.y=t*60;
+    var scA=inc?WN(f3,.03,.05,.145,.17):0;if(scA>.01){var sp=incAt(scS);tSc.g.visible=!cmp&&!xray;
+      tV.copy(sp.n).multiplyScalar(.77).addScaledVector(sp.t,.64).normalize();tSc.g.position.copy(sp.p).addScaledVector(sp.n,-.0012).addScaledVector(tV,.07*(1-scA));
+      bX.copy(sp.t).addScaledVector(tV,-sp.t.dot(tV)).normalize();bX.applyAxisAngle(tV,.5);tSc.g.quaternion.setFromRotationMatrix(bM.makeBasis(bX,tV,new V().crossVectors(bX,tV)))}else tSc.g.visible=false;
     var nA=WN(u,6.3,6.36,6.93,6.99),lst=u<6.62?stMu:stS,fr=u<6.62?UM.front.value:US.front.value,cur=lst[0];lst.forEach(function(s){if(fr>=s.s-.02)cur=s});
     place(tNH,cur.p,P(-.8,.45,-.35),nA,.06);var jo=.1+.12*Math.abs(Math.sin(t*5));tNH.pt.A.rotation.z=jo;tNH.pt.B.rotation.z=-jo;
     return k}
@@ -356,9 +375,9 @@ function build(){
   var t0=performance.now(),tp=t0,pv=new V();
   function frame(u,t,k){
     var key=camKey(u);
-    var kk=Math.min(6,Math.floor(u)),lk=key+"|"+kk+"|"+(kk===0&&u<.5)+"|"+pov+"|"+cmp;
+    var kk=Math.min(6,Math.floor(u)),lk=key+"|"+kk+"|"+(kk===0&&u<.5)+"|"+(kk===2&&u<2+INC-.04)+"|"+pov+"|"+cmp;
     if(key!==lastKey){lastKey=key;ct.copy(VW[key][1]);cc.copy(VW[key][0]).sub(ct);fvT=VW[key][2]}
-    if(lk!==lastLbl){lastLbl=lk;setLabels(pov||cmp?[]:(kk===0?(u<.5?LB.r:LB.r.slice(2,3)):LB[kk]));vig.classList.toggle("on",pov&&kk>0)}
+    if(lk!==lastLbl){lastLbl=lk;setLabels(pov||cmp?[]:(kk===0?(u<.5?LB.r:LB.r.slice(2,3)):(kk===2&&u<2+INC-.04?LB.inc:LB[kk])));vig.classList.toggle("on",pov&&kk>0)}
     cl.lerp(ct,k);co.lerp(offsetFor(),k);var tgt=cl.clone().add(panV);
     var sway=(STILL||!playing||calm)?0:Math.sin(t*.4)*.08;
     cam.position.copy(tgt).add(new V(co.x*Math.cos(sway)+co.z*Math.sin(sway),co.y,-co.x*Math.sin(sway)+co.z*Math.cos(sway)));
@@ -392,3 +411,4 @@ function build(){
 }
 try{build()}catch(e){$("stage").innerHTML='<p id="err">Não foi possível iniciar o 3D neste navegador. Tente abrir em outro navegador.</p>';console.error(e)}
 go(0);uiTick();
+
