@@ -171,6 +171,16 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - Você enviou o modelo 3D do esqueleto de cachorro (`.glb`) e pediu a cirurgia da Katita sobre ele. A versão foi publicada.
 - Você não gostou das primeiras ideias interativas e escolheu prototipar a "Katita modo cinema".
 
+### 17/11/2026
+Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](animacao-osh/) e [`animacao-nodulectomia/`](animacao-nodulectomia/)).
+- **Castração (OSH) de uma gata colorpoint:** incisão na linha média, retirada de ovários e útero e sutura em três planos. Havia fetos mumificados no útero.
+- **Nodulectomia em uma cadela preta idosa:** nódulo na região da axila, retirado inteiro junto com a pele por cima; sutura contínua de náilon.
+
+### 18/11/2026
+- **Gato com esporotricose:** gato branco com feridas ulceradas perto do olho e no pescoço. É o segundo caso de esporotricose do estágio; o primeiro foi em 28/10, com a lesão na pata.
+- **Autoclaves** da sala de esterilização: Cristófoli Vitale 21 e Bioex. Esterilizam os instrumentos cirúrgicos com vapor sob pressão. Ao lado fica o rolo de papel grau cirúrgico usado para embalar os instrumentos.
+- **Revolution Plus** (selamectina + sarolaner, Zoetis): antiparasitário para gatos de 2,6 a 5 kg. A confirmar se foi para o gato com esporotricose.
+
 ---
 
 ## 4. Casos em detalhe
@@ -634,6 +644,21 @@ O nome da tutora já vem coberto nos laudos.
 | 4 | ![](fotos/quimio/04-quimio-aplicacao.jpg) | Veterinária com a seringa de quimioterápico no acesso venoso. A aplicação foi em seringa, e não em bolsa, porque a dose é pequena e o cão arranca o acesso mordendo |
 | 5 | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) | Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro |
 | 6 | ![](fotos/quimio/06-cistocentese-ecoguiada.jpg) | Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga |
+
+### 10.7 18/11/2026 ([`fotos/dia-18-11/`](fotos/dia-18-11/))
+
+> Nas fotos do gato aparece a mão sem luva. Nos slides, as fotos foram recortadas sem a mão.
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia-18-11/01-autoclave-cristofoli-vitale-21.jpg) | Autoclave Cristófoli Vitale 21, com o rolo de papel grau cirúrgico ao lado |
+| 2 | ![](fotos/dia-18-11/02-autoclave-bioex.jpg) | Autoclave Bioex, com instrumentos e compressa por cima |
+| 3 | ![](fotos/dia-18-11/03-esporotricose-cabeca.jpg) | Gato com esporotricose: cabeça (foto tremida) |
+| 4 | ![](fotos/dia-18-11/04-esporotricose-lesao-pescoco.jpg) | Ferida ulcerada no pescoço |
+| 5 | ![](fotos/dia-18-11/05-esporotricose-lesao-pescoco-2.jpg) | A mesma ferida, outro ângulo |
+| 6 | ![](fotos/dia-18-11/06-esporotricose-gato-na-mesa.jpg) | O gato na mesa de atendimento |
+| 7 | ![](fotos/dia-18-11/07-esporotricose-lesao-olho.jpg) | Ferida perto do olho |
+| 8 | ![](fotos/dia-18-11/08-revolution-plus.jpg) | Revolution Plus (selamectina + sarolaner), antiparasitário para gatos de 2,6 a 5 kg |
 
 ---
 
