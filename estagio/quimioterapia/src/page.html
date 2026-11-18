@@ -1,0 +1,931 @@
+<title>3,2 mL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+{{FONTS}}
+/* Layout: palco 16:9 de 1600×900 escalado para a tela; cenas de "papel de prontuário" (grade clara) e cenas "de sala escura" (noite). O vermelho é sempre o do remédio. */
+:root {
+  --paper: #eef0ef;
+  --grid: #dde2e0;
+  --ink: #14181a;
+  --muted: #5b6563;
+  --rule: #b9c1bf;
+  --doxo: #d9252e;
+  --doxo-deep: #8c0d17;
+  --doxo-tint: #f7d9d7;
+  --night: #0a0b0c;
+  --night-ink: #e8ebea;
+  --night-muted: #78817f;
+  --grain-1: #b8b0a5;
+  --grain-2: #9d958b;
+  --grain-3: #cbc4ba;
+  --display: "Archivo", "Archivo Narrow", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --text: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --hand: "Caveat", "Segoe Print", "Comic Sans MS", cursive;
+  color-scheme: light;
+}
+html, body { height: 100%; }
+body {
+  margin: 0; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: var(--text); -webkit-font-smoothing: antialiased;
+  padding-left: max(0px, env(safe-area-inset-left, 0px)); padding-right: max(0px, env(safe-area-inset-right, 0px));
+  transition: background .6s ease;
+}
+body.is-night { background: var(--night); }
+.viewport { position: fixed; inset: 0; overflow: hidden; }
+.stage {
+  position: absolute; left: 50%; top: 50%; width: 1600px; height: 900px;
+  transform: translate(-50%, -50%) scale(var(--s, .5)); transform-origin: 50% 50%;
+}
+
+/* cenas */
+.scene {
+  position: absolute; inset: 0; opacity: 0; visibility: hidden;
+  transition: opacity .5s ease, visibility 0s linear .5s;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px; background-position: -1px -1px;
+}
+.scene.on { opacity: 1; visibility: visible; transition: opacity .5s ease; }
+.scene.night { background: var(--night); color: var(--night-ink); }
+[data-s] { opacity: 0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease; }
+[data-s].in { opacity: 1; transform: none; }
+[data-s].gone { opacity: 0; transform: none; }
+
+.eyebrow {
+  position: absolute; left: 80px; top: 56px; margin: 0;
+  font: 500 17px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.night .eyebrow { color: var(--night-muted); }
+.title {
+  position: absolute; left: 80px; top: 86px; margin: 0; max-width: 1300px;
+  font: 800 66px/1.02 var(--display); font-stretch: 72%; letter-spacing: -.005em; text-wrap: balance;
+}
+.mono { font-family: var(--mono); white-space: nowrap; }
+.red { color: var(--doxo); }
+.hip {
+  display: inline-block; margin-top: 10px; padding: 4px 10px 5px;
+  border: 1.5px dashed var(--rule); border-radius: 3px;
+  font: 500 15px/1.2 var(--mono); letter-spacing: .04em; color: var(--muted); white-space: nowrap;
+}
+.night .hip { border-color: #3a4040; color: var(--night-muted); }
+p { margin: 0; }
+
+/* 1. abertura */
+#abertura .bignum {
+  position: absolute; left: 80px; top: 120px;
+  font: 500 190px/1 var(--mono); letter-spacing: -.04em; color: var(--doxo);
+}
+#abertura .bignum small { font-size: 64px; letter-spacing: 0; color: var(--night-ink); margin-left: 18px; }
+#abertura svg { position: absolute; left: 80px; top: 360px; width: 1440px; height: 300px; overflow: visible; }
+#abertura .facts {
+  position: absolute; left: 80px; bottom: 70px; display: flex; gap: 56px; margin: 0; padding: 0; list-style: none;
+  font: 400 27px/1.3 var(--text); color: var(--night-ink);
+}
+#abertura .facts li { max-width: 400px; }
+#abertura .facts b { display: block; font: 500 16px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--night-muted); margin-bottom: 10px; }
+
+/* 2. a conta */
+#conta .hand {
+  position: absolute; left: 76px; top: 110px;
+  font: 600 128px/1 var(--hand); color: var(--ink); white-space: nowrap;
+}
+#conta .hand .n { position: relative; transition: color .4s ease; }
+#conta .hand .n::after {
+  content: ""; position: absolute; left: -4px; right: -4px; bottom: 6px; height: 7px; border-radius: 4px;
+  background: var(--doxo); transform: scaleX(0); transform-origin: left; transition: transform .45s ease;
+}
+#conta .hand .n.lit { color: var(--doxo); }
+#conta .hand .n.lit::after { transform: scaleX(1); }
+#conta .sub { position: absolute; left: 84px; top: 262px; font: 500 20px/1 var(--mono); color: var(--muted); letter-spacing: .04em; }
+#conta .rows { position: absolute; left: 80px; top: 320px; width: 940px; display: grid; gap: 30px; }
+#conta .row { display: grid; grid-template-columns: 210px 1fr; gap: 28px; align-items: start; padding-top: 22px; border-top: 1.5px solid var(--rule); }
+#conta .num { font: 500 76px/.9 var(--mono); letter-spacing: -.03em; color: var(--doxo); }
+#conta .unit { font: 800 34px/1.05 var(--display); font-stretch: 75%; margin-bottom: 6px; }
+#conta .row p:not(.unit) { font: 400 23px/1.35 var(--text); color: var(--ink); }
+#conta .eq { font-family: var(--mono) !important; font-size: 27px !important; }
+#conta figure { position: absolute; right: 80px; top: 120px; margin: 0; width: 420px; }
+#conta figure .pic { position: relative; height: 680px; overflow: hidden; border-radius: 2px; }
+#conta figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#conta figure .ring {
+  position: absolute; left: 27%; top: 54.6%; width: 50%; height: 6.8%;
+  border: 4px solid var(--doxo); border-radius: 8px; box-shadow: 0 0 0 9999px rgba(10, 11, 12, .28);
+}
+#conta figcaption { margin-top: 12px; font: 500 16px/1.3 var(--mono); color: var(--muted); }
+
+/* 3. a seringa */
+#seringa figure { position: absolute; left: 80px; top: 200px; margin: 0; width: 560px; height: 653px; }
+#seringa figure img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
+#seringa figure svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#seringa .col { position: absolute; left: 720px; top: 210px; width: 800px; display: grid; gap: 40px; }
+#seringa .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+#seringa .cmp > div { border-top: 1.5px solid var(--rule); padding-top: 18px; }
+#seringa .cmp .num { display: block; font: 500 84px/1 var(--mono); letter-spacing: -.03em; }
+#seringa .cmp p { margin-top: 8px; font: 400 23px/1.3 var(--text); color: var(--muted); }
+#seringa .bag { display: grid; grid-template-columns: 210px 1fr; gap: 30px; align-items: start; }
+#seringa .bag img { width: 210px; height: 300px; object-fit: cover; border-radius: 2px; display: block; }
+#seringa .bag .lead { font: 800 36px/1.08 var(--display); font-stretch: 75%; margin-bottom: 14px; }
+#seringa .bag p:not(.lead) { font: 400 23px/1.4 var(--text); }
+
+/* 4. origem */
+#origem canvas { position: absolute; left: 0; top: 0; width: 820px; height: 900px; }
+#origem .col { position: absolute; left: 880px; top: 70px; width: 660px; display: grid; gap: 26px; }
+#origem .col .eyebrow { position: static; }
+#origem .blk { border-top: 1.5px solid var(--rule); padding-top: 14px; }
+#origem .blk p { font: 400 23px/1.35 var(--text); }
+#origem .blk .sp { font: italic 500 30px/1.1 var(--text); margin-bottom: 4px; }
+#origem .castle { display: grid; grid-template-columns: 170px 1fr; gap: 24px; align-items: center; }
+#origem .castle svg { width: 170px; height: 170px; overflow: visible; }
+#origem .castle path { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linejoin: round; }
+#origem .castle path.court { stroke: var(--doxo); }
+#origem .blk .name { font: 800 64px/1 var(--display); font-stretch: 70%; letter-spacing: .01em; display: flex; gap: 6px; }
+#origem .name span { display: grid; gap: 6px; }
+#origem .name i { font: 500 15px/1.25 var(--mono); font-style: normal; color: var(--muted); letter-spacing: .02em; max-width: 270px; }
+#origem .name .plus { color: var(--rule); align-self: start; }
+#origem .dist { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 20px; }
+#origem .dist svg { width: 640px; height: 70px; overflow: visible; }
+#origem .dist path { fill: none; stroke: var(--doxo); stroke-width: 2; stroke-dasharray: 6 7; }
+#origem .dist circle { fill: var(--ink); }
+#origem .dist text { font: 500 15px var(--mono); fill: var(--muted); }
+#origem .dist text.km { font: 500 26px var(--mono); fill: var(--ink); }
+#origem .canvas-cap { position: absolute; left: 80px; bottom: 44px; background: var(--paper); padding: 4px 8px; font: 500 15px/1.3 var(--mono); color: var(--muted); letter-spacing: .04em; }
+
+/* 5. molécula */
+#molecula svg.mol { position: absolute; left: 60px; top: 228px; width: 820px; height: 440px; overflow: visible; }
+#molecula svg.dna { position: absolute; left: 1060px; top: 40px; width: 460px; height: 840px; overflow: visible; }
+#molecula .cap { position: absolute; left: 80px; width: 860px; font: 400 25px/1.4 var(--text); }
+#molecula .cap { top: 708px; }
+#molecula .cap b { font-weight: 700; }
+.mol .ring { fill: var(--doxo-tint); stroke: var(--doxo); stroke-width: 3; stroke-linejoin: round; }
+.mol .ringA { fill: var(--paper); stroke: var(--doxo); stroke-width: 3; }
+.mol .sugar { fill: var(--paper); stroke: var(--muted); stroke-width: 3; }
+.mol .bond { stroke: var(--doxo); stroke-width: 3; fill: none; }
+.mol .bond.g { stroke: var(--muted); }
+.mol text { font: 500 19px var(--mono); fill: var(--ink); }
+.mol text.g { fill: var(--muted); }
+.mol .tag { font: 500 15px var(--mono); fill: var(--muted); letter-spacing: .06em; }
+.dna .bb { stroke: var(--ink); stroke-width: 3; }
+.dna .rung { transition: transform .9s cubic-bezier(.5, 0, .2, 1); }
+.dna .rung line { stroke-width: 9; stroke-linecap: round; }
+.dna .rung .a { stroke: var(--muted); }
+.dna .rung .b { stroke: var(--rule); }
+.dna .plate { transition: transform 1s cubic-bezier(.5, 0, .2, 1), opacity .4s; }
+.dna .plate rect { fill: var(--doxo); }
+.dna text { font: 500 15px var(--mono); fill: var(--muted); letter-spacing: .06em; }
+
+/* 6. ciclo */
+#ciclo svg { position: absolute; left: 60px; top: 230px; width: 1480px; height: 620px; overflow: visible; }
+#ciclo .axis { stroke: var(--ink); stroke-width: 1.5; }
+#ciclo .tick { stroke: var(--rule); stroke-width: 1.5; }
+#ciclo .gridl { stroke: var(--grid); stroke-width: 1.5; }
+#ciclo text { font: 500 17px var(--mono); fill: var(--muted); }
+#ciclo text.dt { fill: var(--ink); }
+#ciclo text.big { font: 500 22px var(--mono); fill: var(--ink); }
+#ciclo .curve { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+#ciclo .area { fill: var(--ink); opacity: .05; }
+#ciclo .nadir { fill: var(--doxo); opacity: .1; }
+#ciclo .thr { stroke: var(--doxo); stroke-width: 2; stroke-dasharray: 8 8; }
+#ciclo .drop { fill: var(--doxo); }
+#ciclo .drop.next { fill: none; stroke: var(--doxo); stroke-width: 3; stroke-dasharray: 5 5; }
+#ciclo .note { position: absolute; font: 400 23px/1.35 var(--text); width: 470px; }
+
+/* 7. coração */
+#coracao svg { position: absolute; left: 90px; top: 190px; width: 700px; height: 640px; overflow: visible; }
+#coracao .outline { fill: none; stroke: var(--ink); stroke-width: 4; }
+#coracao .band { fill: var(--doxo); transition: opacity .3s; }
+#coracao .sep { stroke: var(--paper); stroke-width: 3; }
+#coracao .limit { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 10 8; }
+#coracao .limit.hot { stroke: var(--doxo); }
+#coracao svg text { font: 500 18px var(--mono); fill: var(--muted); }
+#coracao .col { position: absolute; left: 860px; top: 220px; width: 660px; display: grid; gap: 30px; }
+#coracao .col p { font: 400 25px/1.4 var(--text); }
+#coracao .counter { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1.5px solid var(--rule); padding-top: 18px; }
+#coracao .counter span { display: block; font: 500 15px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+#coracao .counter b { font: 500 66px/1 var(--mono); letter-spacing: -.03em; }
+#coracao .col p.q { font: 800 40px/1.08 var(--display); font-stretch: 74%; }
+
+/* 8. proteção */
+#protecao .ph { position: absolute; left: 40px; top: 40px; width: 1093px; height: 820px; }
+#protecao .ph img { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 2px; }
+#protecao .ph svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#protecao .ph .co line { stroke: var(--doxo); stroke-width: 4; }
+#protecao .ph .co circle { fill: none; stroke: var(--doxo); stroke-width: 5; }
+#protecao .ph .co rect { fill: var(--paper); }
+#protecao .ph .co text { font: 600 34px var(--text); fill: var(--ink); }
+#protecao .col { position: absolute; left: 1180px; top: 56px; width: 360px; display: grid; gap: 24px; }
+#protecao .col .eyebrow { position: static; }
+#protecao .col h2 { margin: 0; font: 800 54px/1 var(--display); font-stretch: 72%; }
+#protecao .col p { font: 400 22px/1.38 var(--text); }
+#protecao .col p.k { font: 800 31px/1.1 var(--display); font-stretch: 75%; }
+#protecao .col .blk { border-top: 1.5px solid var(--rule); padding-top: 14px; display: grid; gap: 8px; }
+
+/* 9. silêncio */
+#silencio svg { position: absolute; left: 50px; top: 300px; width: 1500px; height: 300px; overflow: visible; }
+#silencio .clock { position: absolute; right: 80px; bottom: 60px; font: 500 22px/1 var(--mono); color: var(--night-muted); letter-spacing: .06em; }
+#silencio .after { position: absolute; left: 80px; bottom: 70px; width: 1100px; font: 400 27px/1.4 var(--text); color: var(--night-ink); }
+#silencio .after b { color: var(--doxo); font-weight: 600; }
+
+/* 10. fim */
+#fim .next { position: absolute; left: 80px; top: 170px; }
+#fim .next .lab { display: block; font: 500 18px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--night-muted); }
+#fim .next b { display: block; font: 500 230px/1 var(--mono); letter-spacing: -.05em; color: var(--doxo); margin: 18px 0 14px; }
+#fim .next p { font: 400 28px/1.35 var(--text); max-width: 900px; }
+#fim .last { position: absolute; left: 80px; bottom: 90px; font: 800 86px/1 var(--display); font-stretch: 68%; letter-spacing: .005em; }
+#fim .last em { font-style: normal; color: var(--doxo); }
+
+/* syringe (shared) */
+.syr .barrel { fill: none; stroke: currentColor; stroke-width: 3; }
+.syr .glass { fill: currentColor; opacity: .05; }
+.syr .tk { stroke: currentColor; stroke-width: 2; opacity: .75; }
+.syr .lbl { font: 500 24px var(--mono); fill: currentColor; opacity: .85; }
+.syr .stopper { fill: #2a2e30; stroke: currentColor; stroke-width: 2; }
+.syr .rod { fill: currentColor; opacity: .18; stroke: currentColor; stroke-width: 2; }
+.syr .needle { stroke: currentColor; stroke-width: 3; opacity: .8; }
+.syr .hub { fill: none; stroke: currentColor; stroke-width: 3; }
+
+/* chrome */
+.progress { position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: flex; gap: 6px; z-index: 5; }
+.progress i { width: 26px; height: 3px; border-radius: 2px; background: var(--rule); opacity: .55; }
+.progress i.on { background: var(--doxo); opacity: 1; }
+body.is-night .progress i { background: #2b3131; }
+body.is-night .progress i.on { background: var(--doxo); }
+.hint { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(10px + env(safe-area-inset-bottom, 0px)); font: 500 12px/1.3 var(--mono); color: var(--night-muted); z-index: 5; transition: opacity 1s; }
+.notes {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; max-height: 46vh; overflow: auto;
+  padding: 18px max(20px, env(safe-area-inset-right, 0px)) calc(22px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  background: #111516f2; color: var(--night-ink); font: 400 17px/1.5 var(--text); border-top: 3px solid var(--doxo);
+}
+.notes h3 { margin: 0 0 6px; font: 500 13px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--night-muted); }
+.notes p { margin: 0 0 8px; max-width: 980px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; color: #f2b9b5; }
+.scene aside { display: none; }
+button.tap { position: fixed; top: 0; bottom: 0; width: 22%; z-index: 4; background: transparent; border: 0; cursor: pointer; }
+button.tap:focus-visible { outline: 3px solid var(--doxo); outline-offset: -3px; }
+button.tap.l { left: 0; } button.tap.r { right: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .scene, [data-s], .dna .rung, .dna .plate { transition-duration: .01s !important; }
+}
+</style>
+
+<div class="viewport">
+<div class="stage" id="stage">
+
+<!-- 1 ─────────────────────────────────────────── -->
+<section class="scene night" id="abertura" data-steps="2">
+  <p class="eyebrow">Quimioterapia · 12/11/2026</p>
+  <div class="bignum">3,2<small>mL</small></div>
+  <svg class="syr" id="syr1" viewBox="-300 -150 1960 300" aria-label="Seringa com 3,2 mL de líquido vermelho"></svg>
+  <ul class="facts" data-s="1">
+    <li><b>Paciente</b>Cão de 17 anos, com sarcoma no pescoço e na cabeça</li>
+    <li><b>Tratamento</b>7 meses com oncologista</li>
+    <li><b>Ritmo</b>Uma sessão a cada 21 dias</li>
+  </ul>
+  <aside>
+    <p>Levante a seringa com 3,2 mL de água com corante vermelho. Espere um segundo antes de falar.</p>
+    <p>"Isto é o remédio que um cão de 17 anos recebe a cada 21 dias. Parece pouco. Nos próximos minutos eu vou mostrar o que cabe aqui dentro."</p>
+  </aside>
+</section>
+
+<!-- 2 ─────────────────────────────────────────── -->
+<section class="scene" id="conta" data-steps="4">
+  <p class="eyebrow">O que eu anotei na hora</p>
+  <p class="hand">“<span class="n" data-k="2">6,4</span> / <span class="n" data-k="1">2</span> que dá <span class="n" data-k="3">3,2</span>”</p>
+  <p class="sub" data-s="0">uma conta ouvida na sala, sem nenhuma unidade</p>
+  <div class="rows">
+    <div class="row" data-s="1">
+      <b class="num">2</b>
+      <div><p class="unit">mg por mL</p><p>Está no rótulo: 50 mg em 25 mL. Cada mL do frasco tem 2 mg de doxorrubicina.</p></div>
+    </div>
+    <div class="row" data-s="2">
+      <b class="num">6,4</b>
+      <div><p class="unit">mg: a dose</p><p>Peso × dose por kg. Se ele pesa 6,4 kg, é 1 mg por kg, a dose usual para cães pequenos.</p><span class="hip">hipótese · confirmar o peso</span></div>
+    </div>
+    <div class="row" data-s="3">
+      <b class="num">3,2</b>
+      <div><p class="unit">mL de doxorrubicina</p><p class="eq">6,4 mg ÷ 2 mg/mL = 3,2 mL</p></div>
+    </div>
+  </div>
+  <figure data-s="1">
+    <div class="pic"><img src="{{img:frasco}}" alt="Frasco de Fauldoxo, cloridrato de doxorrubicina 50 mg/25 mL, numa mão de luva"><div class="ring"></div></div>
+    <figcaption>Fauldoxo (Libbs) · cloridrato de doxorrubicina · uso exclusivo intravenoso</figcaption>
+  </figure>
+  <aside>
+    <p>"Na hora eu só ouvi isto: 6,4 dividido por 2 dá 3,2. Sem unidade nenhuma. Depois eu fui decifrar."</p>
+    <p>O 2 está no rótulo. O 6,4 é a dose em mg. O 3,2 é o que vai para a seringa.</p>
+    <ul><li>Confirmar com a Cláudia: peso do cão e dose (mg/kg ou mg/m²).</li></ul>
+  </aside>
+</section>
+
+<!-- 3 ─────────────────────────────────────────── -->
+<section class="scene" id="seringa" data-steps="2">
+  <p class="eyebrow">A foto não bate com a conta</p>
+  <h2 class="title">Na seringa havia quase 9 mL</h2>
+  <figure>
+    <img src="{{img:seringa}}" alt="Seringa de 10 mL com líquido vermelho conectada ao acesso na pata do cão">
+    <svg viewBox="0 0 600 700" aria-hidden="true">
+      <g class="brk">
+        <path d="M402 296 h16 V380 h-16" style="fill:none;stroke:var(--paper);stroke-width:9"/>
+        <path d="M402 296 h16 V380 h-16" style="fill:none;stroke:var(--ink);stroke-width:4"/>
+        <rect x="430" y="318" width="124" height="40" rx="3" style="fill:var(--paper)"/>
+        <text x="442" y="346" style="font:500 24px var(--mono);fill:var(--ink)">3,2 mL</text>
+        <path d="M455 296 h16 V541 h-16" style="fill:none;stroke:var(--paper);stroke-width:9" transform="translate(115 0)"/>
+        <path d="M455 296 h16 V541 h-16" style="fill:none;stroke:var(--doxo);stroke-width:4" transform="translate(115 0)"/>
+        <rect x="436" y="470" width="128" height="40" rx="3" style="fill:var(--doxo)"/>
+        <text x="446" y="498" style="font:500 24px var(--mono);fill:var(--paper)">≈ 9 mL</text>
+      </g>
+    </svg>
+  </figure>
+  <div class="col">
+    <div class="cmp">
+      <div><b class="num">3,2 mL</b><p>de remédio, pela conta</p></div>
+      <div><b class="num red">≈ 9 mL</b><p>na seringa, pela foto da aplicação</p></div>
+    </div>
+    <div class="bag" data-s="1">
+      <img src="{{img:bolsa}}" alt="Bolsa de cloreto de sódio 0,9%, 250 mL, Fresenius Kabi">
+      <div>
+        <p class="lead">E a bolsa de soro que estava na mesa?</p>
+        <p>Hipótese: a doxorrubicina foi diluída em NaCl 0,9%. A dose continua 6,4 mg, só que em ≈ 9 mL: <span class="mono">≈ 0,7 mg/mL</span>, quase 3 vezes mais diluída que no frasco. Na veia, isso irrita menos.</p>
+        <span class="hip">hipótese · perguntar à Cláudia</span>
+      </div>
+    </div>
+  </div>
+  <aside>
+    <p>"Só que, olhando a foto depois, a seringa tinha quase 9 mL, e não 3,2."</p>
+    <p>"Tinha uma bolsa de soro na mesa que ninguém usou na minha frente. A minha hipótese é que ela explica a diferença."</p>
+    <ul><li>Confirmar: o remédio foi diluído? Em quanto soro? Para que servia a bolsa de 250 mL?</li></ul>
+  </aside>
+</section>
+
+<!-- 4 ─────────────────────────────────────────── -->
+<section class="scene" id="origem" data-steps="6">
+  <canvas id="soil" width="1640" height="1800" aria-label="Filamentos vermelhos de bactéria entre grãos de terra"></canvas>
+  <p class="canvas-cap">ilustração, fora de escala</p>
+  <div class="col">
+    <p class="eyebrow">De onde vem o vermelho</p>
+    <div class="blk" data-s="0">
+      <p class="sp">Streptomyces peucetius</p>
+      <p>Uma bactéria do solo que cresce em filamentos e produz um pigmento vermelho.</p>
+    </div>
+    <div class="blk" data-s="1"><p>Ela foi achada numa amostra de terra.</p></div>
+    <div class="blk castle" data-s="2">
+      <svg id="castle" viewBox="-110 -110 220 220" aria-label="Planta octogonal do Castel del Monte"></svg>
+      <p>Castel del Monte, Apúlia, Itália, anos 1950. A Farmitalia procurava remédios contra o câncer em micróbios do solo.</p>
+    </div>
+    <div class="blk" data-s="3">
+      <p class="name"><span>DAUNO<i>dos dáunios, povo antigo da região da amostra</i></span><span class="plus">+</span><span>RUBICINA<i>de rubis: rubi, a cor do pigmento</i></span></p>
+    </div>
+    <div class="blk" data-s="4"><p><span class="mono">1969</span> · Uma linhagem mutante da mesma bactéria produz a <b>doxorrubicina</b>. O primeiro nome comercial foi Adriamicina, por causa do mar Adriático.</p></div>
+    <div class="blk dist" data-s="5">
+      <svg viewBox="0 0 640 70" aria-label="Distância de Castel del Monte a Sombrio">
+        <path d="M10 56 Q 320 -28 630 56"/>
+        <circle cx="10" cy="56" r="6"/><circle cx="630" cy="56" r="6"/>
+        <text x="0" y="22">Castel del Monte</text><text x="640" y="22" text-anchor="end">Sombrio, SC</text>
+        <text class="km" x="320" y="62" text-anchor="middle">≈ 10.300 km</text>
+      </svg>
+    </div>
+  </div>
+  <aside>
+    <p>"Esse vermelho não foi inventado num laboratório. Ele saiu do chão."</p>
+    <p>Na década de 1950, uma empresa italiana, a Farmitalia, coletou terra perto de um castelo do século XIII, o Castel del Monte. Nela havia uma bactéria que produzia um pigmento vermelho e matava tumores em camundongos. O nome junta os dáunios, povo antigo da região, com rubis, rubi em francês. Em 1969, uma linhagem mutante deu a doxorrubicina.</p>
+    <p>Ponte com o curso: microbiologia do solo. É o mesmo grupo de bactérias que dá o cheiro de terra molhada (Streptomyces).</p>
+  </aside>
+</section>
+
+<!-- 5 ─────────────────────────────────────────── -->
+<section class="scene" id="molecula" data-steps="3">
+  <p class="eyebrow">O que o vermelho faz lá dentro</p>
+  <h2 class="title">A parte que dá a cor é a<br>parte que entra no DNA</h2>
+  <svg class="mol" id="mol" viewBox="0 0 820 440" aria-label="Estrutura da doxorrubicina: quatro anéis e um açúcar"></svg>
+  <svg class="dna" id="dna" viewBox="0 0 460 840" aria-label="Fita de DNA com moléculas encaixadas entre os degraus" data-s="1"></svg>
+  <p class="cap c0" data-s="0" data-until="0">Quatro anéis formam uma placa plana. Eles absorvem a luz azul-esverdeada, perto de 480 nm, e o que sobra para o olho é o vermelho.</p>
+  <p class="cap c1" data-s="1" data-until="1">Vista de lado, a placa é fina. Ela se encaixa entre os degraus do DNA e trava a enzima que desenrola a fita, a topoisomerase II.</p>
+  <p class="cap c2" data-s="2">Sem conseguir copiar o DNA, a célula não se divide e morre. Quem se divide rápido sofre mais: <b>o tumor</b>, mas também <b>a medula óssea</b>, o intestino e o pelo.</p>
+  <aside>
+    <p>"Os quatro anéis são planos. Eles são a parte que absorve luz e dá a cor, e são a mesma parte que entra entre os degraus do DNA."</p>
+    <p>"Quem mais sofre é quem se divide rápido. O tumor, e também a medula. É por isso que existe um intervalo entre as sessões."</p>
+  </aside>
+</section>
+
+<!-- 6 ─────────────────────────────────────────── -->
+<section class="scene" id="ciclo" data-steps="3">
+  <p class="eyebrow">Por que 21 dias</p>
+  <h2 class="title">O intervalo é o tempo da medula voltar</h2>
+  <svg id="chart" viewBox="0 0 1480 620" aria-label="Curva ilustrativa de neutrófilos ao longo de 21 dias"></svg>
+  <aside>
+    <p>"Depois da dose, os neutrófilos caem. O fundo do poço é entre o dia 7 e o dia 10. Nesses dias o cão fica mais exposto a infecção."</p>
+    <p>"Em três semanas, a medula se recupera. Antes de cada sessão se faz um hemograma: se os neutrófilos ainda estiverem baixos, a sessão espera."</p>
+    <ul><li>A curva é ilustrativa. Pedir à Cláudia os hemogramas deste cão antes das sessões para trocar pela curva real.</li><li>Confirmar a data da próxima sessão.</li></ul>
+  </aside>
+</section>
+
+<!-- 7 ─────────────────────────────────────────── -->
+<section class="scene" id="coracao" data-steps="3">
+  <p class="eyebrow">A conta que não zera</p>
+  <h2 class="title">O coração tem um orçamento</h2>
+  <svg id="heart" viewBox="0 0 700 640" aria-label="Coração preenchido por faixas, uma por sessão"></svg>
+  <div class="col">
+    <p data-s="0">A doxorrubicina lesa o músculo do coração aos poucos, e esse dano se soma de uma sessão para a outra. Em cães, acima de cerca de <span class="mono">180 mg/m²</span> acumulados, o risco ao coração sobe muito.</p>
+    <div data-s="1">
+      <p>Num cão de 6,4 kg, a área do corpo é de ≈ 0,35 m². Cada sessão de 6,4 mg gasta <span class="mono">≈ 18 mg/m²</span>: cerca de um décimo do orçamento.</p>
+      <span class="hip">hipótese · peso e dose a confirmar</span>
+    </div>
+    <div class="counter" data-s="1">
+      <div><span>Sessões</span><b id="hc-n">1</b></div>
+      <div><span>Acumulado (mg/m²)</span><b id="hc-mg">18</b></div>
+    </div>
+    <p class="q" data-s="2">7 meses a cada 21 dias dão ≈ 10 sessões. Quantas foram de doxorrubicina?</p>
+  </div>
+  <aside>
+    <p>"Esse remédio tem um limite para a vida inteira do animal, porque ele lesa o coração aos poucos."</p>
+    <p>"Se o cão pesa 6,4 kg, cada sessão gasta um décimo do limite. Em 7 meses, a cada 21 dias, cabem umas 10 sessões. Por isso cada dose é anotada."</p>
+    <ul><li>Perguntar à Cláudia: quantas sessões de doxorrubicina ele já fez, e se o protocolo alterna com outros remédios.</li><li>Faça a pergunta como curiosidade, não como crítica ao tratamento.</li></ul>
+  </aside>
+</section>
+
+<!-- 8 ─────────────────────────────────────────── -->
+<section class="scene" id="protecao" data-steps="4">
+  <div class="ph">
+    <img src="{{img:aplicacao}}" alt="Veterinária de avental, respirador e protetor facial aplicando a seringa vermelha na pata de um cão de focinheira, contido por outra pessoa">
+    <svg viewBox="0 0 2000 1500" aria-hidden="true">
+      <g class="co" data-s="0">
+        <line x1="985" y1="575" x2="560" y2="250"/><circle cx="985" cy="575" r="34"/>
+        <rect x="150" y="196" width="440" height="58" rx="4"/><text x="170" y="237">respirador com filtro</text>
+        <line x1="1190" y1="460" x2="1430" y2="260"/><circle cx="1190" cy="460" r="30"/>
+        <rect x="1370" y="206" width="300" height="58" rx="4"/><text x="1390" y="247">protetor facial</text>
+        <line x1="700" y1="640" x2="420" y2="780"/><circle cx="700" cy="640" r="30"/>
+        <rect x="110" y="756" width="400" height="58" rx="4"/><text x="130" y="797">avental descartável</text>
+      </g>
+      <g class="co" data-s="1">
+        <line x1="1180" y1="900" x2="900" y2="1260"/><circle cx="1180" cy="900" r="40"/>
+        <rect x="640" y="1240" width="520" height="58" rx="4"/><text x="660" y="1281">6,4 mg de doxorrubicina</text>
+        <line x1="470" y1="1080" x2="300" y2="1400"/><circle cx="470" cy="1080" r="40"/>
+        <rect x="90" y="1380" width="420" height="58" rx="4"/><text x="110" y="1421">a bolsa de soro</text>
+      </g>
+      <g class="co" data-s="2">
+        <line x1="1345" y1="880" x2="1420" y2="1230"/><circle cx="1345" cy="880" r="40"/>
+        <rect x="1250" y="1220" width="260" height="58" rx="4"/><text x="1270" y="1261">focinheira</text>
+        <line x1="1640" y1="880" x2="1700" y2="1380"/><circle cx="1640" cy="880" r="34"/>
+        <rect x="1500" y="1370" width="480" height="58" rx="4"/><text x="1520" y="1411">segunda pessoa contém</text>
+      </g>
+    </svg>
+  </div>
+  <div class="col">
+    <p class="eyebrow">Quem se protege de quem</p>
+    <div class="blk" data-s="0"><p class="k">Ela se protege de uma gota.</p><p>Avental, respirador com filtro e protetor facial: o fármaco é perigoso para quem manipula.</p></div>
+    <div class="blk" data-s="1"><p class="k">Ele recebe a seringa inteira.</p><p>Na veia, devagar.</p></div>
+    <div class="blk" data-s="2"><p class="k">A focinheira explica a técnica.</p><p>Ele arranca o acesso mordendo. Por isso a dose vai em seringa, com a mão firme, e não pendurada numa bolsa.</p></div>
+    <div class="blk" data-s="3"><p class="k">Em casa, o cuidado continua.</p><p>O remédio sai na urina e nas fezes por alguns dias. Quem recolhe usa luvas.</p><span class="hip">orientação geral · confirmar o prazo</span></div>
+  </div>
+  <aside>
+    <p>"A veterinária está de avental, respirador e protetor facial para se proteger de uma gota. E o cão recebe a seringa inteira na veia."</p>
+    <p>"E a focinheira não é só segurança: ele arranca o acesso mordendo. Foi isso que decidiu que a aplicação seria em seringa."</p>
+    <ul><li>Pedir autorização à Cláudia para usar esta foto (o rosto está coberto pelos EPIs).</li><li>Confirmar por quantos dias o tutor deve usar luvas.</li></ul>
+  </aside>
+</section>
+
+<!-- 9 ─────────────────────────────────────────── -->
+<section class="scene night" id="silencio" data-steps="2">
+  <svg class="syr" id="syr2" viewBox="-300 -150 2000 300" aria-label="Seringa vermelha esvaziando devagar"></svg>
+  <p class="clock" id="clock">00:00</p>
+  <p class="after" data-s="1">A aplicação é lenta porque a doxorrubicina é <b>vesicante</b>: se escapar da veia, destrói o tecido em volta. <span class="hip">duração real · perguntar</span></p>
+  <aside>
+    <p>"Foi assim." Depois não fale nada até a seringa esvaziar.</p>
+    <p>A seringa começa a esvaziar sozinha. A seta → encerra o silêncio antes do fim, se precisar.</p>
+    <ul><li>Perguntar quanto tempo durou a aplicação e ajustar silencioSeg no código (hoje são 45 s).</li></ul>
+  </aside>
+</section>
+
+<!-- 10 ────────────────────────────────────────── -->
+<section class="scene night" id="fim" data-steps="2">
+  <div class="next">
+    <span class="lab">Próxima sessão</span>
+    <b>03/12</b>
+    <p>21 dias depois de 12/11. Quatro dias antes do fim do meu estágio.</p>
+    <span class="hip">se o ritmo se mantiver</span>
+  </div>
+  <p class="last" data-s="1">17 anos. 7 meses. 21 dias. <em>3,2 mL.</em></p>
+  <aside>
+    <p>"A próxima sessão deve ser no dia 3 de dezembro. Eu ainda vou estar lá."</p>
+    <p>Se acompanhar essa sessão, troque esta tela pelo que viu nela.</p>
+  </aside>
+</section>
+
+</div>
+</div>
+
+<button class="tap l" id="tapL" aria-label="Voltar"></button>
+<button class="tap r" id="tapR" aria-label="Avançar"></button>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<p class="hint" id="hint">→ avançar · ← voltar · F tela cheia · N notas</p>
+<div class="notes" id="notes" hidden></div>
+
+<script>
+/* Números para atualizar quando a Cláudia confirmar. */
+const CONFIG = {
+  silencioSeg: 45,      // quanto tempo a seringa leva para esvaziar na cena do silêncio
+  volumeSeringa: 9,     // mL na seringa, lido na foto
+  dosePorSessao: 18.4,  // mg/m² por sessão (6,4 mg ÷ 0,348 m²)
+  limite: 180,          // mg/m² acumulados
+  sessoesHipotese: 10   // 7 meses ÷ 21 dias
+};
+
+const NS = "http://www.w3.org/2000/svg";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function el(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const fmt = (n, d = 1) => n.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+/* ---------- palco ---------- */
+const stage = $("#stage");
+function fit() { stage.style.setProperty("--s", Math.min(innerWidth / 1600, innerHeight / 900)); }
+addEventListener("resize", fit); fit();
+
+/* ---------- seringa ---------- */
+function syringe(svg, id) {
+  const ML = 90, L = 10 * ML, H = 104;
+  const defs = el("defs", {}, svg);
+  const gr = el("linearGradient", { id: id + "g", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+  el("stop", { offset: "0", "stop-color": css("--doxo"), "stop-opacity": ".75" }, gr);
+  el("stop", { offset: ".35", "stop-color": css("--doxo") }, gr);
+  el("stop", { offset: "1", "stop-color": css("--doxo-deep") }, gr);
+  el("line", { class: "needle", x1: -290, y1: 0, x2: -110, y2: 0 }, svg);
+  el("path", { class: "hub", d: "M-110 -14 H-50 V-22 H-30 L0 -30 V30 L-30 22 H-50 V14 H-110 Z" }, svg);
+  el("rect", { class: "glass", x: 0, y: -H / 2, width: L + 20, height: H }, svg);
+  const fluid = el("rect", { x: 3, y: -H / 2 + 6, height: H - 12, width: 0, fill: `url(#${id}g)` }, svg);
+  for (let i = 0; i <= 50; i++) {
+    const x = i * ML / 5, whole = i % 5 === 0;
+    el("line", { class: "tk", x1: x, x2: x, y1: -H / 2, y2: -H / 2 + (whole ? 34 : 16) }, svg);
+    if (whole && i > 0) { const t = el("text", { class: "lbl", x, y: -H / 2 - 16, "text-anchor": "middle" }, svg); t.textContent = i / 5; }
+  }
+  el("rect", { class: "barrel", x: 0, y: -H / 2, width: L + 20, height: H, rx: 6 }, svg);
+  el("rect", { class: "barrel", x: L + 20, y: -H / 2 - 30, width: 16, height: H + 60, rx: 3 }, svg);
+  const plunger = el("g", {}, svg);
+  el("rect", { class: "rod", x: 26, y: -16, width: L * .95, height: 32 }, plunger);
+  el("rect", { class: "rod", x: 26 + L * .95, y: -H / 2 - 10, width: 18, height: H + 20, rx: 4 }, plunger);
+  el("rect", { class: "stopper", x: 0, y: -H / 2 + 3, width: 26, height: H - 6, rx: 4 }, plunger);
+  return {
+    set(v) {
+      const x = Math.max(0, v) * ML;
+      fluid.setAttribute("width", Math.max(0, x - 3));
+      plunger.setAttribute("transform", `translate(${x} 0)`);
+    }
+  };
+}
+const syr1 = syringe($("#syr1"), "s1");
+const syr2 = syringe($("#syr2"), "s2");
+$("#syr1").style.color = "var(--night-ink)";
+$("#syr2").style.color = "var(--night-ink)";
+
+function tween(ms, fn, done) {
+  if (reduce) ms = Math.min(ms, 1);
+  const t0 = performance.now(); let id;
+  const tick = now => {
+    const p = Math.min(1, (now - t0) / ms);
+    fn(p);
+    if (p < 1) id = requestAnimationFrame(tick); else if (done) done();
+  };
+  id = requestAnimationFrame(tick);
+  return () => cancelAnimationFrame(id);
+}
+const ease = p => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+
+/* ---------- 4. solo e bactéria ---------- */
+const soil = (() => {
+  const cv = $("#soil"), cx = cv.getContext("2d"), W = 1640, H = 1800;
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const segs = [], spores = [];
+  const tips = [];
+  for (let i = 0; i < 7; i++) {
+    const a = i / 7 * Math.PI * 2 + rnd() * .5;
+    tips.push({ x: W / 2 + Math.cos(a) * 40, y: H / 2 + Math.sin(a) * 40, a, t: rnd() * 6, life: 150 + rnd() * 70, w: 3.4 });
+  }
+  while (tips.length) {
+    const p = tips.pop();
+    for (let k = 0; k < p.life; k++) {
+      p.a += (rnd() - .5) * .32;
+      const nx = p.x + Math.cos(p.a) * 6, ny = p.y + Math.sin(p.a) * 6;
+      segs.push([p.x, p.y, nx, ny, p.t, p.w]);
+      p.x = nx; p.y = ny; p.t += 1;
+      if (Math.hypot(p.x - W / 2, p.y - H / 2) > 760) break;
+      if (rnd() < .045 && p.w > 1.3) {
+        const s = rnd() < .5 ? -1 : 1;
+        tips.push({ x: p.x, y: p.y, a: p.a + s * (.6 + rnd() * .6), t: p.t, life: (p.life - k) * (.45 + rnd() * .35), w: p.w * .78 });
+      }
+      if (k === Math.floor(p.life) - 1 && p.w < 2.4) {
+        let a = p.a, x = p.x, y = p.y;
+        for (let j = 0; j < 9; j++) { a += .22; x += Math.cos(a) * 8.5; y += Math.sin(a) * 8.5; spores.push([x, y, p.t + j * 1.5]); }
+      }
+    }
+  }
+  const tMax = Math.max(...segs.map(s => s[4]), ...spores.map(s => s[2]));
+  const grains = [];
+  for (let gy = -3000; gy <= 4800; gy += 520) for (let gx = -3000; gx <= 4600; gx += 520) {
+    const x = gx + (rnd() - .5) * 300, y = gy + (rnd() - .5) * 300;
+    if (Math.hypot(x - W / 2, y - H / 2) < 900) continue;
+    const r = 170 + rnd() * 140, n = 7 + Math.floor(rnd() * 4), pts = [];
+    for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2 + rnd() * .3, rr = r * (.72 + rnd() * .36); pts.push([x + Math.cos(a) * rr, y + Math.sin(a) * rr]); }
+    grains.push({ pts, c: ["--grain-1", "--grain-2", "--grain-3"][Math.floor(rnd() * 3)] });
+  }
+  let grow = 0, zoom = 1, grainA = 0, stop = null;
+  function draw() {
+    const red = css("--doxo"), paper = css("--paper");
+    cx.setTransform(1, 0, 0, 1, 0, 0);
+    cx.fillStyle = paper; cx.fillRect(0, 0, W, H);
+    cx.setTransform(zoom, 0, 0, zoom, W / 2 * (1 - zoom), H / 2 * (1 - zoom));
+    if (grainA > 0) {
+      cx.globalAlpha = grainA;
+      for (const g of grains) {
+        cx.fillStyle = css(g.c); cx.beginPath();
+        g.pts.forEach(([x, y], i) => i ? cx.lineTo(x, y) : cx.moveTo(x, y));
+        cx.closePath(); cx.fill();
+      }
+      cx.globalAlpha = 1;
+    }
+    const lim = grow * tMax;
+    cx.strokeStyle = red; cx.lineCap = "round";
+    for (const s of segs) if (s[4] <= lim) { cx.lineWidth = s[5] / Math.max(zoom, .45); cx.beginPath(); cx.moveTo(s[0], s[1]); cx.lineTo(s[2], s[3]); cx.stroke(); }
+    cx.fillStyle = red;
+    for (const s of spores) if (s[2] <= lim) { cx.beginPath(); cx.arc(s[0], s[1], 3.6 / Math.max(zoom, .45), 0, 7); cx.fill(); }
+  }
+  return {
+    show(step, animate) {
+      if (stop) stop();
+      const target = step >= 1 ? { z: .36, g: 1 } : { z: 1, g: 0 };
+      if (!animate) { grow = 1; zoom = target.z; grainA = target.g; draw(); return; }
+      if (step === 0) { zoom = 1; grainA = 0; stop = tween(4200, p => { grow = p; draw(); }); return; }
+      grow = 1; const z0 = zoom, g0 = grainA;
+      stop = tween(2200, p => { const e = ease(p); zoom = z0 + (target.z - z0) * e; grainA = g0 + (target.g - g0) * e; draw(); });
+    }
+  };
+})();
+
+/* castelo: octógono com oito torres octogonais e pátio octogonal */
+(() => {
+  const svg = $("#castle");
+  const oct = (cx, cy, r, rot = Math.PI / 8) => {
+    let d = "";
+    for (let i = 0; i < 8; i++) { const a = rot + i * Math.PI / 4; d += (i ? "L" : "M") + (cx + Math.cos(a) * r).toFixed(1) + " " + (cy + Math.sin(a) * r).toFixed(1); }
+    return d + "Z";
+  };
+  const R = 72;
+  el("path", { d: oct(0, 0, R), pathLength: 1 }, svg);
+  for (let i = 0; i < 8; i++) { const a = Math.PI / 8 + i * Math.PI / 4; el("path", { d: oct(Math.cos(a) * R, Math.sin(a) * R, 17), pathLength: 1 }, svg); }
+  el("path", { d: oct(0, 0, 36), class: "court", pathLength: 1 }, svg);
+  $$("path", svg).forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = "stroke-dashoffset 1.6s ease .2s"; });
+})();
+function castle(on) { $$("#castle path").forEach(p => p.style.strokeDashoffset = on ? 0 : 1); }
+
+/* ---------- 5. molécula e DNA ---------- */
+(() => {
+  const svg = $("#mol"), r = 58, dx = r * Math.sqrt(3), y0 = 170, x0 = 140;
+  const hex = (cx, cy, rr = r) => { let d = ""; for (let i = 0; i < 6; i++) { const a = -Math.PI / 2 + i * Math.PI / 3; d += (i ? "L" : "M") + (cx + Math.cos(a) * rr).toFixed(1) + " " + (cy + Math.sin(a) * rr).toFixed(1); } return d + "Z"; };
+  const C = [0, 1, 2, 3].map(i => [x0 + i * dx, y0]);
+  C.slice(0, 3).forEach(([x, y]) => el("path", { class: "ring", d: hex(x, y) }, svg));
+  el("path", { class: "ringA", d: hex(C[3][0], C[3][1]) }, svg);
+  const t = (x, y, s, cl = "") => { const e = el("text", { x, y, "text-anchor": "middle", class: cl }, svg); e.textContent = s; return e; };
+  const ln = (x1, y1, x2, y2, cl = "bond") => el("line", { x1, y1, x2, y2, class: cl }, svg);
+  // anel C: quinona (=O em cima e embaixo)
+  ln(C[1][0] - 5, y0 - r, C[1][0] - 5, y0 - r - 34); ln(C[1][0] + 5, y0 - r, C[1][0] + 5, y0 - r - 34); t(C[1][0], y0 - r - 44, "O");
+  ln(C[1][0] - 5, y0 + r, C[1][0] - 5, y0 + r + 34); ln(C[1][0] + 5, y0 + r, C[1][0] + 5, y0 + r + 34); t(C[1][0], y0 + r + 60, "O");
+  // anel B: OH em cima e embaixo
+  ln(C[2][0], y0 - r, C[2][0], y0 - r - 34); t(C[2][0], y0 - r - 44, "OH");
+  ln(C[2][0], y0 + r, C[2][0], y0 + r + 34); t(C[2][0], y0 + r + 60, "OH");
+  // anel D: metoxila
+  const a = [C[0][0] - r * Math.cos(Math.PI / 6), y0 + r / 2];
+  ln(a[0], a[1], a[0] - 34, a[1] + 22); t(a[0] - 62, a[1] + 46, "OCH₃");
+  // anel A: cadeia lateral e o açúcar
+  const tr = [C[3][0] + r * Math.cos(Math.PI / 6), y0 - r / 2];
+  ln(tr[0], tr[1], tr[0] + 40, tr[1] - 24); t(tr[0] + 110, tr[1] - 30, "COCH₂OH");
+  const br = [C[3][0] + r * Math.cos(Math.PI / 6), y0 + r / 2];
+  ln(br[0], br[1], br[0] + 34, br[1] + 22, "bond g"); t(br[0] + 48, br[1] + 40, "O", "g");
+  const sx = br[0] + 120, sy = br[1] + 92;
+  ln(br[0] + 60, br[1] + 44, sx - 52, sy - 26, "bond g");
+  el("path", { class: "sugar", d: hex(sx, sy, 46) }, svg);
+  t(sx, sy + 7, "açúcar", "g");
+  ln(sx + 40, sy + 23, sx + 66, sy + 46, "bond g"); t(sx + 92, sy + 70, "NH₂", "g");
+  // marcação da placa vermelha
+  const hw = r * Math.cos(Math.PI / 6), bx = C[0][0] - hw, bw = C[2][0] + hw - bx;
+  el("line", { x1: bx, x2: bx + bw, y1: 398, y2: 398, style: "stroke:var(--doxo);stroke-width:3" }, svg);
+  el("line", { x1: bx, x2: bx, y1: 388, y2: 408, style: "stroke:var(--doxo);stroke-width:3" }, svg);
+  el("line", { x1: bx + bw, x2: bx + bw, y1: 388, y2: 408, style: "stroke:var(--doxo);stroke-width:3" }, svg);
+  const lab = el("text", { x: bx + bw / 2, y: 432, "text-anchor": "middle", class: "tag" }, svg); lab.textContent = "PARTE PLANA · DÁ A COR";
+})();
+const dna = (() => {
+  const svg = $("#dna"), N = 13, gap = 46, top = 40, x1 = 120, x2 = 340;
+  const back = [el("line", { class: "bb", x1, x2: x1, y1: top - 20, y2: top + (N + 2) * gap }, svg), el("line", { class: "bb", x1: x2, x2, y1: top - 20, y2: top + (N + 2) * gap }, svg)];
+  const rungs = [];
+  for (let i = 0; i < N; i++) {
+    const g = el("g", { class: "rung" }, svg), y = top + i * gap, mid = 175 + ((i * 37) % 5 - 2) * 18;
+    el("line", { class: "a", x1: x1 + 8, x2: mid, y1: y, y2: y }, g);
+    el("line", { class: "b", x1: mid + 12, x2: x2 - 8, y1: y, y2: y }, g);
+    rungs.push(g);
+  }
+  const slots = [3, 6, 9], plates = [];
+  slots.forEach(s => {
+    const g = el("g", { class: "plate" }, svg);
+    el("rect", { x: x1 + 10, y: top + s * gap + gap / 2 - 5, width: x2 - x1 - 20, height: 10, rx: 3 }, g);
+    plates.push(g);
+  });
+  const lab = el("text", { x: 230, y: top + (N + 2) * gap + 34, "text-anchor": "middle" }, svg); lab.textContent = "DNA, VISTO DE LADO";
+  return {
+    set(on, animate = true) {
+      rungs.forEach((g, i) => { const k = on ? slots.filter(s => i > s).length : 0; g.style.transform = `translateY(${k * gap}px)`; });
+      plates.forEach((g, j) => {
+        const k = slots.filter(s => s < slots[j]).length;
+        g.style.transform = on ? `translate(0, ${k * gap + gap / 2}px)` : `translate(420px, ${k * gap + gap / 2}px)`;
+        g.style.opacity = on ? 1 : 0;
+        g.style.transitionDelay = on && animate ? (.5 + j * .35) + "s" : "0s";
+      });
+    }
+  };
+})();
+dna.set(false);
+
+/* ---------- 6. curva dos neutrófilos ---------- */
+const chart = (() => {
+  const svg = $("#chart"), X0 = 120, X1 = 1440, Y0 = 470, Y1 = 40, max = 10000;
+  const x = d => X0 + (X1 - X0) * d / 21, y = v => Y0 - (Y0 - Y1) * v / max;
+  const f = d => 7600 - 5300 * Math.exp(-((d - 8.5) ** 2) / (2 * 3 * 3));
+  const g0 = el("g", {}, svg), gN = el("g", { "data-s": 1 }, svg), gC = el("g", {}, svg), gX = el("g", { "data-s": 2 }, svg);
+  [0, 2500, 5000, 7500, 10000].forEach(v => {
+    el("line", { class: "gridl", x1: X0, x2: X1, y1: y(v), y2: y(v) }, g0);
+    const tx = el("text", { x: X0 - 14, y: y(v) + 6, "text-anchor": "end" }, g0); tx.textContent = v.toLocaleString("pt-BR");
+  });
+  const yl = el("text", { x: X0 - 14, y: Y1 - 22, "text-anchor": "end" }, g0); yl.textContent = "neutrófilos/µL";
+  el("rect", { class: "nadir", x: x(7), y: Y1, width: x(10) - x(7), height: Y0 - Y1 }, gN);
+  const nt = el("text", { class: "big", x: (x(7) + x(10)) / 2, y: Y1 + 32, "text-anchor": "middle" }, gN); nt.textContent = "dias 7 a 10";
+  const nt2 = el("text", { x: (x(7) + x(10)) / 2, y: Y1 + 58, "text-anchor": "middle" }, gN); nt2.textContent = "o fundo";
+  el("line", { class: "thr", x1: X0, x2: X1, y1: y(1500), y2: y(1500) }, gN);
+  const th = el("text", { x: x(1.3), y: y(1500) + 30 }, gN); th.textContent = "abaixo de ≈ 1.500/µL, a sessão costuma ser adiada";
+  th.style.fill = "var(--doxo)";
+  let d = "";
+  for (let i = 0; i <= 210; i++) { const dd = i / 10; d += (i ? "L" : "M") + x(dd).toFixed(1) + " " + y(f(dd)).toFixed(1); }
+  el("path", { class: "area", d: d + `L${X1} ${Y0} L${X0} ${Y0}Z` }, gC);
+  const curve = el("path", { class: "curve", d, pathLength: 1 }, gC);
+  curve.style.strokeDasharray = 1; curve.style.strokeDashoffset = 1; curve.style.transition = "stroke-dashoffset 2.4s ease .3s";
+  el("line", { class: "axis", x1: X0, x2: X1, y1: Y0, y2: Y0 }, g0);
+  const dates = { 0: "12/11", 7: "19/11", 10: "22/11", 14: "26/11", 21: "03/12" };
+  for (let i = 0; i <= 21; i++) {
+    el("line", { class: "tick", x1: x(i), x2: x(i), y1: Y0, y2: Y0 + (dates[i] ? 18 : 9) }, g0);
+    const t = el("text", { x: x(i), y: Y0 + 42, "text-anchor": "middle", class: dates[i] ? "dt" : "" }, g0); t.textContent = i;
+    if (dates[i]) { const t2 = el("text", { x: x(i), y: Y0 + 68, "text-anchor": "middle" }, g0); t2.textContent = dates[i]; }
+  }
+  const dl = el("text", { x: X0 - 14, y: Y0 + 42, "text-anchor": "end" }, g0); dl.textContent = "dia";
+  const drop = (cx, cls, parent) => el("path", { class: cls, d: `M${cx} ${Y0 - 70} C ${cx - 22} ${Y0 - 40}, ${cx - 18} ${Y0 - 14}, ${cx} ${Y0 - 14} C ${cx + 18} ${Y0 - 14}, ${cx + 22} ${Y0 - 40}, ${cx} ${Y0 - 70} Z` }, parent);
+  drop(x(0) + 30, "drop", g0);
+  const s0 = el("text", { x: x(0) + 30, y: Y0 - 86, "text-anchor": "middle", class: "dt" }, g0); s0.textContent = "dose";
+  drop(x(21) - 30, "drop next", gX);
+  const s1 = el("text", { x: x(21) - 30, y: Y0 - 86, "text-anchor": "middle", class: "dt" }, gX); s1.textContent = "próxima";
+  const s2 = el("text", { x: X0, y: Y0 + 122, class: "big" }, gX); s2.textContent = "Antes de cada sessão, um hemograma decide se ela acontece.";
+  const s3 = el("text", { x: X1, y: Y1 - 22, "text-anchor": "end" }, g0); s3.textContent = "curva ilustrativa · não são os valores deste cão";
+  return { set(step, animate) { curve.style.transition = animate ? "stroke-dashoffset 2.4s ease .3s" : "none"; curve.style.strokeDashoffset = 0; } , reset() { curve.style.transition = "none"; curve.style.strokeDashoffset = 1; } };
+})();
+
+/* ---------- 7. coração ---------- */
+const heart = (() => {
+  const svg = $("#heart");
+  const P = "M350 600 C 150 470, 40 360, 40 220 C 40 110, 120 50, 210 50 C 280 50, 330 95, 350 140 C 370 95, 420 50, 490 50 C 580 50, 660 110, 660 220 C 660 360, 550 470, 350 600 Z";
+  const top = 50, bot = 600, span = bot - top;
+  const defs = el("defs", {}, svg), cp = el("clipPath", { id: "hclip" }, defs); el("path", { d: P }, cp);
+  const g = el("g", { "clip-path": "url(#hclip)" }, svg);
+  const bh = span * CONFIG.dosePorSessao / CONFIG.limite;
+  const bands = [];
+  for (let i = 0; i < CONFIG.sessoesHipotese; i++) {
+    const r = el("rect", { class: "band", x: 0, y: bot - (i + 1) * bh, width: 700, height: bh }, g);
+    r.style.opacity = 0; bands.push(r);
+    el("line", { class: "sep", x1: 0, x2: 700, y1: bot - (i + 1) * bh, y2: bot - (i + 1) * bh }, g);
+  }
+  el("path", { class: "outline", d: P }, svg);
+  const lim = el("line", { class: "limit", x1: 0, x2: 700, y1: top, y2: top }, svg);
+  const lt = el("text", { x: 700, y: top - 14, "text-anchor": "end" }, svg); lt.textContent = "≈ 180 mg/m²";
+  const n = $("#hc-n"), mg = $("#hc-mg");
+  let stop = null;
+  const paint = k => {
+    bands.forEach((b, i) => b.style.opacity = i < k ? (i === k - 1 ? 1 : .85) : 0);
+    n.textContent = k; mg.textContent = Math.round(k * CONFIG.dosePorSessao);
+    lim.classList.toggle("hot", k * CONFIG.dosePorSessao >= CONFIG.limite);
+  };
+  return {
+    set(step, animate) {
+      if (stop) { stop(); stop = null; }
+      if (step === 0) return paint(0);
+      if (step === 1) return paint(1);
+      if (!animate) return paint(CONFIG.sessoesHipotese);
+      let last = 1;
+      stop = tween(4500, p => { const k = 1 + Math.floor(p * (CONFIG.sessoesHipotese - 1) + 1e-6); if (k !== last) { last = k; paint(k); } });
+    }
+  };
+})();
+
+/* ---------- 9. silêncio ---------- */
+const silence = (() => {
+  const clock = $("#clock");
+  let stop = null, wait = null, running = false, played = false;
+  const show = s => { const m = Math.floor(s / 60), r = Math.floor(s % 60); clock.textContent = String(m).padStart(2, "0") + ":" + String(r).padStart(2, "0"); };
+  return {
+    get running() { return running; },
+    get played() { return played; },
+    start() {
+      this.reset(); running = true; played = true;
+      wait = setTimeout(() => {
+        stop = tween(CONFIG.silencioSeg * 1000, p => { syr2.set(CONFIG.volumeSeringa * (1 - p) + .15 * p); show(p * CONFIG.silencioSeg); }, () => { running = false; setStep(1); });
+      }, reduce ? 0 : 1600);
+    },
+    finish() { this.cancel(); syr2.set(.15); show(CONFIG.silencioSeg); running = false; },
+    cancel() { clearTimeout(wait); if (stop) stop(); stop = null; },
+    reset() { this.cancel(); running = false; played = false; syr2.set(CONFIG.volumeSeringa); show(0); }
+  };
+})();
+
+/* ---------- navegação ---------- */
+const scenes = $$(".scene");
+const prog = $("#progress");
+scenes.forEach(() => prog.appendChild(document.createElement("i")));
+let cur = -1, step = 0;
+const notes = $("#notes");
+
+function reveal(sc, s) {
+  $$("[data-s]", sc).forEach(e => {
+    const from = +e.dataset.s, until = e.dataset.until != null ? +e.dataset.until : Infinity;
+    e.classList.toggle("in", s >= from && s <= until);
+    e.classList.toggle("gone", s > until);
+  });
+  $$(".n[data-k]", sc).forEach(e => e.classList.toggle("lit", s >= +e.dataset.k));
+}
+
+function enterStep(id, s, animate) {
+  switch (id) {
+    case "abertura":
+      if (animate && s === 0) tween(1400, p => syr1.set(3.2 * ease(p))); else syr1.set(3.2);
+      break;
+    case "origem": soil.show(s, animate); castle(s >= 2); break;
+    case "molecula": dna.set(s >= 1, animate); break;
+    case "ciclo": if (animate && s === 0) { chart.reset(); requestAnimationFrame(() => requestAnimationFrame(() => chart.set(s, true))); } else chart.set(s, false); break;
+    case "coracao": heart.set(s, animate); break;
+    case "silencio": if (s === 0) { animate ? silence.start() : silence.reset(); } else silence.finish(); break;
+  }
+}
+
+function show(i, s = 0, animate = true) {
+  if (i !== cur) {
+    if (cur >= 0) { scenes[cur].classList.remove("on"); if (scenes[cur].id === "silencio") silence.cancel(); }
+    cur = i; scenes[cur].classList.add("on");
+    document.body.classList.toggle("is-night", scenes[cur].classList.contains("night"));
+    $$("i", prog).forEach((d, k) => d.classList.toggle("on", k === cur));
+    try { history.replaceState(null, "", "#c" + (cur + 1)); } catch (e) {}
+  }
+  setStep(s, animate);
+}
+function setStep(s, animate = true) {
+  step = s;
+  const sc = scenes[cur];
+  reveal(sc, s);
+  enterStep(sc.id, s, animate);
+  const a = $("aside", sc);
+  if (a) notes.innerHTML = `<h3>Cena ${cur + 1} de ${scenes.length} · passo ${s + 1} de ${sc.dataset.steps}</h3>` + a.innerHTML;
+}
+function next() {
+  const sc = scenes[cur], n = +sc.dataset.steps;
+  if (sc.id === "silencio" && step === 0) {
+    if (silence.running) { silence.finish(); setStep(1, false); return; }
+    if (!silence.played) { silence.start(); return; }
+  }
+  if (step < n - 1) setStep(step + 1);
+  else if (cur < scenes.length - 1) show(cur + 1, 0);
+}
+function prev() {
+  if (step > 0) setStep(step - 1, false);
+  else if (cur > 0) show(cur - 1, +scenes[cur - 1].dataset.steps - 1, false);
+}
+addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  const k = e.key;
+  if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(k)) { e.preventDefault(); next(); }
+  else if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(k)) { e.preventDefault(); prev(); }
+  else if (k === "n" || k === "N") notes.hidden = !notes.hidden;
+  else if (k === "f" || k === "F") { try { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {}); } catch (err) {} }
+  else if (k === "Home") show(0, 0);
+  else if (/^[1-9]$/.test(k)) show(Math.min(+k, scenes.length) - 1, 0);
+  else if (k === "0") show(scenes.length - 1, 0);
+});
+$("#tapR").addEventListener("click", next);
+$("#tapL").addEventListener("click", prev);
+setTimeout(() => { $("#hint").style.opacity = 0; }, 6000);
+
+function fromHash() {
+  const m = /^#c(\d+)$/.exec(location.hash);
+  const i = m ? Math.min(Math.max(+m[1], 1), scenes.length) - 1 : 0;
+  show(i, 0);
+}
+addEventListener("hashchange", () => { const m = /^#c(\d+)$/.exec(location.hash); if (m && +m[1] - 1 !== cur) fromHash(); });
+fromHash();
+</script>
