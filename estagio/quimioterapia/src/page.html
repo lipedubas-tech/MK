@@ -1,4 +1,4 @@
-<title>3,2 mL</title>
+<title>A seringa vermelha</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 {{FONTS}}
@@ -21,7 +21,6 @@
   --display: "Archivo", "Archivo Narrow", "Arial Narrow", "Helvetica Neue", sans-serif;
   --text: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --hand: "Caveat", "Segoe Print", "Comic Sans MS", cursive;
   color-scheme: light;
 }
 html, body { height: 100%; }
@@ -74,11 +73,10 @@ body.is-night { background: var(--night); }
 p { margin: 0; }
 
 /* 1. abertura */
-#abertura .bignum {
-  position: absolute; left: 80px; top: 120px;
-  font: 500 190px/1 var(--mono); letter-spacing: -.04em; color: var(--doxo);
+#abertura .drug {
+  position: absolute; left: 74px; top: 110px; margin: 0;
+  font: 800 210px/.9 var(--display); font-stretch: 64%; letter-spacing: -.01em; color: var(--doxo);
 }
-#abertura .bignum small { font-size: 64px; letter-spacing: 0; color: var(--night-ink); margin-left: 18px; }
 #abertura svg { position: absolute; left: 80px; top: 360px; width: 1440px; height: 300px; overflow: visible; }
 #abertura .facts {
   position: absolute; left: 80px; bottom: 70px; display: flex; gap: 56px; margin: 0; padding: 0; list-style: none;
@@ -86,35 +84,6 @@ p { margin: 0; }
 }
 #abertura .facts li { max-width: 400px; }
 #abertura .facts b { display: block; font: 500 16px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--night-muted); margin-bottom: 10px; }
-
-/* 2. a conta */
-#conta .hand {
-  position: absolute; left: 76px; top: 110px;
-  font: 600 128px/1 var(--hand); color: var(--ink); white-space: nowrap;
-}
-#conta .hand .n { position: relative; transition: color .4s ease; }
-#conta .hand .n::after {
-  content: ""; position: absolute; left: -4px; right: -4px; bottom: 6px; height: 7px; border-radius: 4px;
-  background: var(--doxo); transform: scaleX(0); transform-origin: left; transition: transform .45s ease;
-}
-#conta .hand .n.lit { color: var(--doxo); }
-#conta .hand .n.lit::after { transform: scaleX(1); }
-#conta .sub { position: absolute; left: 84px; top: 262px; font: 500 20px/1 var(--mono); color: var(--muted); letter-spacing: .04em; }
-#conta .rows { position: absolute; left: 80px; top: 320px; width: 940px; display: grid; gap: 30px; }
-#conta .row { display: grid; grid-template-columns: 210px 1fr; gap: 28px; align-items: start; padding-top: 22px; border-top: 1.5px solid var(--rule); }
-#conta .num { font: 500 76px/.9 var(--mono); letter-spacing: -.03em; color: var(--doxo); }
-#conta .unit { font: 800 34px/1.05 var(--display); font-stretch: 75%; margin-bottom: 6px; }
-#conta .row p:not(.unit) { font: 400 23px/1.35 var(--text); color: var(--ink); }
-#conta .eq { font-family: var(--mono) !important; font-size: 27px !important; }
-#conta figure { position: absolute; right: 80px; top: 120px; margin: 0; width: 420px; }
-#conta figure .pic { position: relative; height: 680px; overflow: hidden; border-radius: 2px; }
-#conta figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
-#conta figure .ring {
-  position: absolute; left: 27%; top: 54.6%; width: 50%; height: 6.8%;
-  border: 4px solid var(--doxo); border-radius: 8px; box-shadow: 0 0 0 9999px rgba(10, 11, 12, .28);
-}
-#conta figcaption { margin-top: 12px; font: 500 16px/1.3 var(--mono); color: var(--muted); }
-
 
 /* 4. origem */
 #origem canvas { position: absolute; left: 0; top: 0; width: 820px; height: 900px; }
@@ -136,7 +105,6 @@ p { margin: 0; }
 #origem .dist path { fill: none; stroke: var(--doxo); stroke-width: 2; stroke-dasharray: 6 7; }
 #origem .dist circle { fill: var(--ink); }
 #origem .dist text { font: 500 15px var(--mono); fill: var(--muted); }
-#origem .dist text.km { font: 500 26px var(--mono); fill: var(--ink); }
 #origem .canvas-cap { position: absolute; left: 80px; bottom: 44px; background: var(--paper); padding: 4px 8px; font: 500 15px/1.3 var(--mono); color: var(--muted); letter-spacing: .04em; }
 
 /* 5. molécula */
@@ -188,7 +156,7 @@ p { margin: 0; }
 #coracao svg text { font: 500 18px var(--mono); fill: var(--muted); }
 #coracao .col { position: absolute; left: 860px; top: 220px; width: 660px; display: grid; gap: 30px; }
 #coracao .col p { font: 400 25px/1.4 var(--text); }
-#coracao .counter { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1.5px solid var(--rule); padding-top: 18px; }
+#coracao .counter { display: grid; grid-template-columns: 1fr; gap: 30px; border-top: 1.5px solid var(--rule); padding-top: 18px; }
 #coracao .counter span { display: block; font: 500 15px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 #coracao .counter b { font: 500 66px/1 var(--mono); letter-spacing: -.03em; }
 #coracao .col p.q { font: 800 40px/1.08 var(--display); font-stretch: 74%; }
@@ -210,7 +178,6 @@ p { margin: 0; }
 
 /* 9. silêncio */
 #silencio svg { position: absolute; left: 50px; top: 300px; width: 1500px; height: 300px; overflow: visible; }
-#silencio .clock { position: absolute; right: 80px; bottom: 60px; font: 500 22px/1 var(--mono); color: var(--night-muted); letter-spacing: .06em; }
 #silencio .after { position: absolute; left: 80px; bottom: 70px; width: 1100px; font: 400 27px/1.4 var(--text); color: var(--night-ink); }
 #silencio .after b { color: var(--doxo); font-weight: 600; }
 
@@ -262,46 +229,16 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
 <!-- 1 ─────────────────────────────────────────── -->
 <section class="scene night" id="abertura" data-steps="2">
   <p class="eyebrow">Quimioterapia · 12/11/2026</p>
-  <div class="bignum">3,2<small>mL</small></div>
-  <svg class="syr" id="syr1" viewBox="-300 -150 1960 300" aria-label="Seringa com 3,2 mL de líquido vermelho"></svg>
+  <p class="drug">Doxorrubicina</p>
+  <svg class="syr" id="syr1" viewBox="-300 -150 1960 300" aria-label="Seringa enchendo de líquido vermelho"></svg>
   <ul class="facts" data-s="1">
     <li><b>Paciente</b>Cão de 17 anos, com sarcoma no pescoço e na cabeça</li>
     <li><b>Tratamento</b>7 meses com oncologista</li>
     <li><b>Ritmo</b>Uma sessão a cada 21 dias</li>
   </ul>
   <aside>
-    <p>Levante a seringa com 3,2 mL de água com corante vermelho. Espere um segundo antes de falar.</p>
+    <p>Levante uma seringa com água e corante vermelho. Espere um segundo antes de falar.</p>
     <p>"Isto é o remédio que um cão de 17 anos recebe a cada 21 dias. Parece pouco. Nos próximos minutos eu vou mostrar o que cabe aqui dentro."</p>
-  </aside>
-</section>
-
-<!-- 2 ─────────────────────────────────────────── -->
-<section class="scene" id="conta" data-steps="4">
-  <p class="eyebrow">O que eu anotei na hora</p>
-  <p class="hand">“<span class="n" data-k="2">6,4</span> / <span class="n" data-k="1">2</span> que dá <span class="n" data-k="3">3,2</span>”</p>
-  <p class="sub" data-s="0">uma conta ouvida na sala, sem nenhuma unidade</p>
-  <div class="rows">
-    <div class="row" data-s="1">
-      <b class="num">2</b>
-      <div><p class="unit">mg por mL</p><p>Está no rótulo: 50 mg em 25 mL. Cada mL do frasco tem 2 mg de doxorrubicina.</p></div>
-    </div>
-    <div class="row" data-s="2">
-      <b class="num">6,4</b>
-      <div><p class="unit">mg: a dose</p><p>Peso × dose por kg. Se ele pesa 6,4 kg, é 1 mg por kg, a dose usual para cães pequenos.</p><span class="hip">hipótese · confirmar o peso</span></div>
-    </div>
-    <div class="row" data-s="3">
-      <b class="num">3,2</b>
-      <div><p class="unit">mL de doxorrubicina</p><p class="eq">6,4 mg ÷ 2 mg/mL = 3,2 mL</p></div>
-    </div>
-  </div>
-  <figure data-s="1">
-    <div class="pic"><img src="{{img:frasco}}" alt="Frasco de Fauldoxo, cloridrato de doxorrubicina 50 mg/25 mL, numa mão de luva"><div class="ring"></div></div>
-    <figcaption>Fauldoxo (Libbs) · cloridrato de doxorrubicina · uso exclusivo intravenoso</figcaption>
-  </figure>
-  <aside>
-    <p>"Na hora eu só ouvi isto: 6,4 dividido por 2 dá 3,2. Sem unidade nenhuma. Depois eu fui decifrar."</p>
-    <p>O 2 está no rótulo. O 6,4 é a dose em mg. O 3,2 é o que vai para a seringa.</p>
-    <ul><li>Confirmar com a Cláudia: peso do cão e dose (mg/kg ou mg/m²).</li></ul>
   </aside>
 </section>
 
@@ -325,11 +262,10 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
     </div>
     <div class="blk" data-s="4"><p><span class="mono">1969</span> · Uma linhagem mutante da mesma bactéria produz a <b>doxorrubicina</b>. O primeiro nome comercial foi Adriamicina, por causa do mar Adriático.</p></div>
     <div class="blk dist" data-s="5">
-      <svg viewBox="0 0 640 70" aria-label="Distância de Castel del Monte a Sombrio">
+      <svg viewBox="0 0 640 70" aria-label="De Castel del Monte a Sombrio">
         <path d="M10 56 Q 320 -28 630 56"/>
         <circle cx="10" cy="56" r="6"/><circle cx="630" cy="56" r="6"/>
         <text x="0" y="22">Castel del Monte</text><text x="640" y="22" text-anchor="end">Sombrio, SC</text>
-        <text class="km" x="320" y="62" text-anchor="middle">≈ 10.300 km</text>
       </svg>
     </div>
   </div>
@@ -346,7 +282,7 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
   <h2 class="title">A parte que dá a cor é a<br>parte que entra no DNA</h2>
   <svg class="mol" id="mol" viewBox="0 0 820 440" aria-label="Estrutura da doxorrubicina: quatro anéis e um açúcar"></svg>
   <svg class="dna" id="dna" viewBox="0 0 460 840" aria-label="Fita de DNA com moléculas encaixadas entre os degraus" data-s="1"></svg>
-  <p class="cap c0" data-s="0" data-until="0">Quatro anéis formam uma placa plana. Eles absorvem a luz azul-esverdeada, perto de 480 nm, e o que sobra para o olho é o vermelho.</p>
+  <p class="cap c0" data-s="0" data-until="0">Quatro anéis formam uma placa plana. Eles absorvem a luz azul-esverdeada, e o que sobra para o olho é o vermelho.</p>
   <p class="cap c1" data-s="1" data-until="1">Vista de lado, a placa é fina. Ela se encaixa entre os degraus do DNA e trava a enzima que desenrola a fita, a topoisomerase II.</p>
   <p class="cap c2" data-s="2">Sem conseguir copiar o DNA, a célula não se divide e morre. Quem se divide rápido sofre mais: <b>o tumor</b>, mas também <b>a medula óssea</b>, o intestino e o pelo.</p>
   <aside>
@@ -373,20 +309,19 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
   <h2 class="title">O coração tem um orçamento</h2>
   <svg id="heart" viewBox="0 0 700 640" aria-label="Coração preenchido por faixas, uma por sessão"></svg>
   <div class="col">
-    <p data-s="0">A doxorrubicina lesa o músculo do coração aos poucos, e esse dano se soma de uma sessão para a outra. Em cães, acima de cerca de <span class="mono">180 mg/m²</span> acumulados, o risco ao coração sobe muito.</p>
+    <p data-s="0">A doxorrubicina lesa o músculo do coração aos poucos, e esse dano se soma de uma sessão para a outra. Por isso existe um limite para a vida inteira do animal.</p>
     <div data-s="1">
-      <p>Num cão de 6,4 kg, a área do corpo é de ≈ 0,35 m². Cada sessão de 6,4 mg gasta <span class="mono">≈ 18 mg/m²</span>: cerca de um décimo do orçamento.</p>
-      <span class="hip">hipótese · peso e dose a confirmar</span>
+      <p>Cada sessão gasta um pedaço desse orçamento, e o coração não devolve o que foi gasto.</p>
+      <span class="hip">ilustração · o limite depende do peso e da dose</span>
     </div>
     <div class="counter" data-s="1">
       <div><span>Sessões</span><b id="hc-n">1</b></div>
-      <div><span>Acumulado (mg/m²)</span><b id="hc-mg">18</b></div>
     </div>
-    <p class="q" data-s="2">7 meses a cada 21 dias dão ≈ 10 sessões. Quantas foram de doxorrubicina?</p>
+    <p class="q" data-s="2">Em 7 meses, a cada 21 dias, foram cerca de 10 sessões. Quantas delas foram de doxorrubicina?</p>
   </div>
   <aside>
     <p>"Esse remédio tem um limite para a vida inteira do animal, porque ele lesa o coração aos poucos."</p>
-    <p>"Se o cão pesa 6,4 kg, cada sessão gasta um décimo do limite. Em 7 meses, a cada 21 dias, cabem umas 10 sessões. Por isso cada dose é anotada."</p>
+    <p>"Cada sessão gasta um pedaço desse limite, e ele não volta. Por isso cada dose é anotada."</p>
     <ul><li>Perguntar à Cláudia: quantas sessões de doxorrubicina ele já fez, e se o protocolo alterna com outros remédios.</li><li>Faça a pergunta como curiosidade, não como crítica ao tratamento.</li></ul>
   </aside>
 </section>
@@ -433,7 +368,6 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
 <!-- 9 ─────────────────────────────────────────── -->
 <section class="scene night" id="silencio" data-steps="2">
   <svg class="syr" id="syr2" viewBox="-550 -150 2000 300" aria-label="Seringa vermelha esvaziando devagar"></svg>
-  <p class="clock" id="clock">00:00</p>
   <p class="after" data-s="1">A aplicação é lenta porque a doxorrubicina é <b>vesicante</b>: se escapar da veia, destrói o tecido em volta. <span class="hip">duração real · perguntar</span></p>
   <aside>
     <p>"Foi assim." Depois não fale nada até a seringa esvaziar.</p>
@@ -450,7 +384,7 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
     <p>21 dias depois de 12/11. Quatro dias antes do fim do meu estágio.</p>
     <span class="hip">se o ritmo se mantiver</span>
   </div>
-  <p class="last" data-s="1">17 anos. 7 meses. 21 dias. <em>3,2 mL.</em></p>
+  <p class="last" data-s="1">17 anos. 7 meses. A cada 21 dias, <em>uma seringa.</em></p>
   <aside>
     <p>"A próxima sessão deve ser no dia 3 de dezembro. Eu ainda vou estar lá."</p>
     <p>Se acompanhar essa sessão, troque esta tela pelo que viu nela.</p>
@@ -467,13 +401,11 @@ button.tap.l { left: 0; } button.tap.r { right: 0; }
 <div class="notes" id="notes" hidden></div>
 
 <script>
-/* Números para atualizar quando a Cláudia confirmar. */
+/* Ajustes das animações. */
 const CONFIG = {
   silencioSeg: 45,      // quanto tempo a seringa leva para esvaziar na cena do silêncio
-  volumeSeringa: 3.2,   // mL na seringa
-  dosePorSessao: 18.4,  // mg/m² por sessão (6,4 mg ÷ 0,348 m²)
-  limite: 180,          // mg/m² acumulados
-  sessoesHipotese: 10   // 7 meses ÷ 21 dias
+  enchimento: 4,        // quanto da seringa aparece cheio (só visual)
+  sessoes: 10           // faixas do coração: 7 meses ÷ 21 dias
 };
 
 const NS = "http://www.w3.org/2000/svg";
@@ -506,11 +438,6 @@ function syringe(svg, id) {
   el("path", { class: "hub", d: "M-110 -14 H-50 V-22 H-30 L0 -30 V30 L-30 22 H-50 V14 H-110 Z" }, svg);
   el("rect", { class: "glass", x: 0, y: -H / 2, width: L + 20, height: H }, svg);
   const fluid = el("rect", { x: 3, y: -H / 2 + 6, height: H - 12, width: 0, fill: `url(#${id}g)` }, svg);
-  for (let i = 0; i <= 50; i++) {
-    const x = i * ML / 5, whole = i % 5 === 0;
-    el("line", { class: "tk", x1: x, x2: x, y1: -H / 2, y2: -H / 2 + (whole ? 34 : 16) }, svg);
-    if (whole && i > 0) { const t = el("text", { class: "lbl", x, y: -H / 2 - 16, "text-anchor": "middle" }, svg); t.textContent = i / 5; }
-  }
   el("rect", { class: "barrel", x: 0, y: -H / 2, width: L + 20, height: H, rx: 6 }, svg);
   el("rect", { class: "barrel", x: L + 20, y: -H / 2 - 30, width: 16, height: H + 60, rx: 3 }, svg);
   const plunger = el("g", {}, svg);
@@ -701,16 +628,13 @@ const chart = (() => {
   const x = d => X0 + (X1 - X0) * d / 21, y = v => Y0 - (Y0 - Y1) * v / max;
   const f = d => 7600 - 5300 * Math.exp(-((d - 8.5) ** 2) / (2 * 3 * 3));
   const g0 = el("g", {}, svg), gN = el("g", { "data-s": 1 }, svg), gC = el("g", {}, svg), gX = el("g", { "data-s": 2 }, svg);
-  [0, 2500, 5000, 7500, 10000].forEach(v => {
-    el("line", { class: "gridl", x1: X0, x2: X1, y1: y(v), y2: y(v) }, g0);
-    const tx = el("text", { x: X0 - 14, y: y(v) + 6, "text-anchor": "end" }, g0); tx.textContent = v.toLocaleString("pt-BR");
-  });
-  const yl = el("text", { x: X0 - 14, y: Y1 - 22, "text-anchor": "end" }, g0); yl.textContent = "neutrófilos/µL";
+  [2500, 5000, 7500, 10000].forEach(v => el("line", { class: "gridl", x1: X0, x2: X1, y1: y(v), y2: y(v) }, g0));
+  const yl = el("text", { x: X0, y: Y1 - 22 }, g0); yl.textContent = "neutrófilos no sangue";
   el("rect", { class: "nadir", x: x(7), y: Y1, width: x(10) - x(7), height: Y0 - Y1 }, gN);
   const nt = el("text", { class: "big", x: (x(7) + x(10)) / 2, y: Y1 + 32, "text-anchor": "middle" }, gN); nt.textContent = "dias 7 a 10";
   const nt2 = el("text", { x: (x(7) + x(10)) / 2, y: Y1 + 58, "text-anchor": "middle" }, gN); nt2.textContent = "o fundo";
   el("line", { class: "thr", x1: X0, x2: X1, y1: y(1500), y2: y(1500) }, gN);
-  const th = el("text", { x: x(1.3), y: y(1500) + 30 }, gN); th.textContent = "abaixo de ≈ 1.500/µL, a sessão costuma ser adiada";
+  const th = el("text", { x: x(1.3), y: y(1500) + 30 }, gN); th.textContent = "abaixo desta linha, a sessão costuma ser adiada";
   th.style.fill = "var(--doxo)";
   let d = "";
   for (let i = 0; i <= 210; i++) { const dd = i / 10; d += (i ? "L" : "M") + x(dd).toFixed(1) + " " + y(f(dd)).toFixed(1); }
@@ -742,52 +666,50 @@ const heart = (() => {
   const top = 50, bot = 600, span = bot - top;
   const defs = el("defs", {}, svg), cp = el("clipPath", { id: "hclip" }, defs); el("path", { d: P }, cp);
   const g = el("g", { "clip-path": "url(#hclip)" }, svg);
-  const bh = span * CONFIG.dosePorSessao / CONFIG.limite;
+  const bh = span / CONFIG.sessoes;
   const bands = [];
-  for (let i = 0; i < CONFIG.sessoesHipotese; i++) {
+  for (let i = 0; i < CONFIG.sessoes; i++) {
     const r = el("rect", { class: "band", x: 0, y: bot - (i + 1) * bh, width: 700, height: bh }, g);
     r.style.opacity = 0; bands.push(r);
     el("line", { class: "sep", x1: 0, x2: 700, y1: bot - (i + 1) * bh, y2: bot - (i + 1) * bh }, g);
   }
   el("path", { class: "outline", d: P }, svg);
   const lim = el("line", { class: "limit", x1: 0, x2: 700, y1: top, y2: top }, svg);
-  const lt = el("text", { x: 700, y: top - 14, "text-anchor": "end" }, svg); lt.textContent = "≈ 180 mg/m²";
-  const n = $("#hc-n"), mg = $("#hc-mg");
+  const lt = el("text", { x: 700, y: top - 14, "text-anchor": "end" }, svg); lt.textContent = "limite";
+  const n = $("#hc-n");
   let stop = null;
   const paint = k => {
     bands.forEach((b, i) => b.style.opacity = i < k ? (i === k - 1 ? 1 : .85) : 0);
-    n.textContent = k; mg.textContent = Math.round(k * CONFIG.dosePorSessao);
-    lim.classList.toggle("hot", k * CONFIG.dosePorSessao >= CONFIG.limite);
+    n.textContent = k;
+    lim.classList.toggle("hot", k >= CONFIG.sessoes);
   };
   return {
     set(step, animate) {
       if (stop) { stop(); stop = null; }
       if (step === 0) return paint(0);
       if (step === 1) return paint(1);
-      if (!animate) return paint(CONFIG.sessoesHipotese);
+      if (!animate) return paint(CONFIG.sessoes);
       let last = 1;
-      stop = tween(4500, p => { const k = 1 + Math.floor(p * (CONFIG.sessoesHipotese - 1) + 1e-6); if (k !== last) { last = k; paint(k); } });
+      stop = tween(4500, p => { const k = 1 + Math.floor(p * (CONFIG.sessoes - 1) + 1e-6); if (k !== last) { last = k; paint(k); } });
     }
   };
 })();
 
-/* ---------- 9. silêncio ---------- */
+/* ---------- silêncio ---------- */
 const silence = (() => {
-  const clock = $("#clock");
   let stop = null, wait = null, running = false, played = false;
-  const show = s => { const m = Math.floor(s / 60), r = Math.floor(s % 60); clock.textContent = String(m).padStart(2, "0") + ":" + String(r).padStart(2, "0"); };
   return {
     get running() { return running; },
     get played() { return played; },
     start() {
       this.reset(); running = true; played = true;
       wait = setTimeout(() => {
-        stop = tween(CONFIG.silencioSeg * 1000, p => { syr2.set(CONFIG.volumeSeringa * (1 - p) + .15 * p); show(p * CONFIG.silencioSeg); }, () => { running = false; setStep(1); });
+        stop = tween(CONFIG.silencioSeg * 1000, p => syr2.set(CONFIG.enchimento * (1 - p) + .15 * p), () => { running = false; setStep(1); });
       }, reduce ? 0 : 1600);
     },
-    finish() { this.cancel(); syr2.set(.15); show(CONFIG.silencioSeg); running = false; },
+    finish() { this.cancel(); syr2.set(.15); running = false; },
     cancel() { clearTimeout(wait); if (stop) stop(); stop = null; },
-    reset() { this.cancel(); running = false; played = false; syr2.set(CONFIG.volumeSeringa); show(0); }
+    reset() { this.cancel(); running = false; played = false; syr2.set(CONFIG.enchimento); }
   };
 })();
 
@@ -810,7 +732,7 @@ function reveal(sc, s) {
 function enterStep(id, s, animate) {
   switch (id) {
     case "abertura":
-      if (animate && s === 0) tween(1400, p => syr1.set(3.2 * ease(p))); else syr1.set(3.2);
+      if (animate && s === 0) tween(1400, p => syr1.set(CONFIG.enchimento * ease(p))); else syr1.set(CONFIG.enchimento);
       break;
     case "origem": soil.show(s, animate); castle(s >= 2); break;
     case "molecula": dna.set(s >= 1, animate); break;

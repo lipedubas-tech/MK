@@ -17,8 +17,7 @@ FONTS_DIR = ROOT / "build" / "fonts"
 CSS_URL = (
     "https://fonts.googleapis.com/css2?"
     "family=Archivo:wdth,wght@62..125,300..900"
-    "&family=IBM+Plex+Mono:wght@400;500"
-    "&family=Caveat:wght@600&display=swap"
+    "&family=IBM+Plex+Mono:wght@400;500&display=swap"
 )
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
 SUBSETS = ("latin", "latin-ext")
