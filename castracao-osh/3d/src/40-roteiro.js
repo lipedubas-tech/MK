@@ -143,7 +143,8 @@ function aplica(u) {
   UG.uOlho.value = u < 1.06 || pos ? 1 : 0;
   var raio = Math.max(WN(u, 3.0, 3.16, 3.74, 3.9), WN(u, 8.0, 8.12, 8.86, 8.98));
   UG.uRaio.value = raio;
-  [partes.corpo, partes.cabeca, partes.cauda].forEach(function (m) { var mt = m.material, tr = raio > .001; if (mt.transparent !== tr) { mt.transparent = tr; mt.needsUpdate = true } mt.opacity = 1 - .9 * raio; mt.depthWrite = !tr });
+  atualizaRabo();
+  [partes.corpo, partes.cabeca, rabo].forEach(function (m) { var mt = m.material, tr = raio > .001; if (mt.transparent !== tr) { mt.transparent = tr; mt.needsUpdate = true } mt.opacity = 1 - .9 * raio; mt.depthWrite = !tr });
   /* ----- sítio cirúrgico ----- */
   var cir = u >= 1.28 && !pos;
   pele.visible = cir; UC.uRaspa.value = RP(u, 1.3, 1.48); UC.uAnti.value = RP(u, 1.5, 1.66); UC.uTrac.value = RP(u, 2.04, 2.12); UC.uCorte.value = RP(u, 2.16, 2.44);

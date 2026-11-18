@@ -96,13 +96,15 @@ function quadro(agora) {
   }
   desenha()
 }
-function desenha() { aplica(u); camera(u); ren.render(scene, cam); painel(u) }
+var camFixa = null;   /* só para testes: câmera parada */
+function desenha() { aplica(u); if (camFixa) { cam.position.fromArray(camFixa[0]); cam.up.set(0, 1, 0); cam.lookAt(new V().fromArray(camFixa[1])) } else camera(u); ren.render(scene, cam); painel(u) }
 
 tamanho();
 carregaGata(function () {
   iniciaCampo(); criaOrgaos(); iniciaRoteiro(); rotulos(); liga();
   prontoTudo = true;
   window.DBG = { pronto: true, ir: function (x) { u = x; tocando = false; desenha() }, get u() { return u }, THREE: THREE, scene: scene, cam: cam, ossos: ossos,
+    olharFixo: function (p, t) { camFixa = p ? [p, t] : null; desenha() },
     olhar: function (p, t, up) { cam.position.set(p[0], p[1], p[2]); cam.up.set(0, 1, 0); if (up) cam.up.set(up[0], up[1], up[2]); cam.lookAt(t[0], t[1], t[2]); ren.render(scene, cam) } }
 });
 requestAnimationFrame(quadro);
