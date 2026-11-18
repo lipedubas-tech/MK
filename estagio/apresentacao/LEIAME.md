@@ -35,7 +35,6 @@
 
 No slide, as pendências estão em laranja e entre colchetes.
 
-- Seu sobrenome na capa e no slide 2.
 - Carga horária semanal e total, e o nome do setor (slide 3).
 - Se a clínica tem site (slide 2).
 - Ações que o campus poderia alterar (slide 22): o modelo do IFC pede esse item.
