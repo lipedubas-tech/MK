@@ -331,17 +331,19 @@ A Katita tem pelagem caramelo e orelhas escuras.
 | 10/11 | Gato com cistite (ultrassom) |
 | 11/11 | Dobermann sem ultrassom (recusa de sedação); banho e tosa; castração |
 | 12/11 | Cistocentese ecoguiada |
-| 18/11 | Cirurgia de fecaloma em gato, feita pelo Rangel (seção 4.9) |
+| 18/11 | Cirurgia de fecaloma em gato (comeu pão; terceira cirurgia dele), feita pelo Rangel (seção 4.9) |
 
 ### 4.9 Gato: fecaloma (18/11/2026)
 **Diagnóstico confirmado: fecaloma**, uma massa de fezes ressecadas e endurecidas que o gato não consegue eliminar. A massa foi retirada do **intestino**. O resto vem das fotos; o histórico e a evolução ainda faltam.
 - **Paciente:** gato SRD tigrado e branco (sexo, idade e peso não registrados).
+- **Histórico:** gato de estômago sensível, com prisão de ventre. Comia comida caseira e **comeu pão**, o que levou ao fecaloma. Foi a **terceira cirurgia** dele.
 - **Equipe:** o **cirurgião foi o Rangel**, dono da clínica. A **anestesista foi a Cláudia**. Os dois estavam paramentados (avental descartável, touca, máscara e luvas).
 - **Anestesia:** inalatória, com o paciente intubado. A Cláudia controla o balão reservatório do circuito. Há monitor multiparamétrico, fluidoterapia em bolsa no suporte e acesso venoso na pata dianteira.
 - **Posição e campo:** decúbito dorsal, com campos cirúrgicos verdes e compressas. A incisão fica no abdômen ventral caudal, com tricotomia ampla.
-- **Material removido:** o fecaloma, em duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. Fecaloma costuma se formar no cólon (intestino grosso), muitas vezes ligado a obstipação crônica ou megacólon.Aqui o órgão aberto foi o **intestino**. Falta saber a causa.
+- **Material removido:** o fecaloma, em duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. Fecaloma costuma se formar no cólon (intestino grosso), muitas vezes ligado a obstipação crônica ou megacólon.Aqui o órgão aberto foi o **intestino**, e a causa foi a prisão de ventre.
 - **Mesa de instrumentais:** tesouras, porta-agulhas, pinças hemostáticas, pinça de dissecção, cabo de bisturi, afastador de Farabeuf, gaze e fio de sutura 3-0.
 - **Pós-operatório imediato:** gato ainda intubado, aquecido com toalhas sobre a mesa, com a ferida suturada no abdômen.
+- **Para explicar na defesa:** fezes ressecadas vão se acumulando no intestino até virar uma massa dura que o gato não consegue eliminar. Num gato sensível, um alimento inadequado como o pão já basta para isso. O caso também mostra o papel do tutor: a dieta é parte do tratamento, e foi a terceira vez que esse gato precisou ir para a mesa de cirurgia.
 - **Ideia para a defesa:** junta duas histórias: o fundador que se afastou das consultas pelo estresse, mas segue operando, e um caso visual forte (o "oculto" que sai do corpo, eixo 1 da seção 2) e pode virar uma animação curta como as de OSH e nodulectomia.
 
 ---
@@ -487,7 +489,7 @@ As referências estão ilegíveis na foto.
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
 - [ ] Se os dados da clínica da defesa da Yasmin (2025) continuam válidos: endereço, telefone, responsável legal
 - [ ] Sua carga horária diária e total
-- [ ] Cirurgia do fecaloma (18/11): a causa (obstipação crônica, megacólon?), o nome do gato e a evolução
+- [ ] Cirurgia do fecaloma (18/11): o nome do gato, se as duas cirurgias anteriores também foram por fecaloma, a dieta recomendada depois e a evolução
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
