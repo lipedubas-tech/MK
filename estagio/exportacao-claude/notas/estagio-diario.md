@@ -78,3 +78,10 @@ Período: 28/10/2026 a 07/12/2026. Horário: 08:00–13:00 e 13:00–18:00 (mesm
 ## 13/11/2026
 - Enviou modelo 3D (.glb) de esqueleto de cachorro; pediu a cirurgia da Katita sobre ele. Versão publicada (ver artefatos).
 - Não gostou das primeiras ideias interativas; escolheu prototipar a "Katita modo cinema".
+
+## 17/11/2026
+- **Nodulectomia** em cadela SRD preta, idosa, porte médio: nódulo na região torácica lateral, perto da axila
+  (lado a confirmar). Correção do Felipe (18/11): no dia da cirurgia o nódulo **já tinha se aberto para fora**
+  (ulcerado, não estava mais subcutâneo) e **estava infeccionado**. Exérese em bloco com margem de pele; hemostática
+  curva na dissecção, gaze para hemostasia; pele em sutura contínua com náilon 3-0; peça para histopatológico.
+  Fotos e briefing em `animacao-nodulectomia/`. A confirmar: antibiótico, cultura, padrão de sutura do subcutâneo.

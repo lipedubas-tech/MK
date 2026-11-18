@@ -19,8 +19,9 @@
   tomada(s[10] + 11.8, "sala", [-0.02, 0.5, 0.55], [-0.08, 0.13, -0.03], 30);
 })();
 var _sitioMundo = new V3();
-function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, .012 * cao.morphTargetInfluences[1])); }
-rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo", "volume sob a pele, perto da axila", sitioMundo, 9, -9);
+function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
+rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e infeccionado, perto da axila", sitioMundo, 9, -9);
+rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
 
 /* ============================================================ interface */
 var E = { t: 0, tocando: false, tudo: false, cena: -1 };

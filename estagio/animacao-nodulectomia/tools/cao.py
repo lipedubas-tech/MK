@@ -3,7 +3,8 @@
 O modelo original é um labrador amarelo em pé, sem esqueleto. Aqui ele vira a paciente:
 - pelagem preta com focinho grisalho (cadela SRD preta e idosa, fotos 4 a 6);
 - pose de decúbito lateral direito, guardada como morph (a base continua sendo o cão em pé);
-- volume do nódulo na parede torácica esquerda, logo caudal ao cotovelo, perto da axila (segundo morph);
+- base do nódulo levantando a pele na parede torácica esquerda, caudal ao cotovelo, perto da axila (segundo morph);
+  a massa ulcerada, aberta para fora, é uma malha à parte (src/app.js);
 - dados para a cena: olhos, boca, referencial do campo operatório e o relevo do pano de campo.
 
 Saída em build/: cao.bin, cao.json, cao_cor.jpg (cor) e cao_rug.jpg (rugosidade).
@@ -134,9 +135,9 @@ V = np.cross(NC, U)
 
 d = P - C
 du, dv, dn = d @ U, d @ V, d @ NC
-r2 = (du / 0.042) ** 2 + (dv / 0.034) ** 2
+r2 = (du / 0.045) ** 2 + (dv / 0.038) ** 2
 mask_nod = (r2 < 1) & (np.abs(dn) < 0.04) & (x > 0.02)
-ALT_NOD = 0.019
+ALT_NOD = 0.008   # só a base: a massa ulcerada é uma malha à parte (src/app.js)
 desl_nod = np.zeros_like(P)
 desl_nod[mask_nod] = (ALT_NOD * (1 - r2[mask_nod]) ** 2)[:, None] * NC[None, :]
 N_NOD = normais(P + desl_nod)

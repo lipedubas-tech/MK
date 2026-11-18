@@ -12,12 +12,19 @@ Setas ← → (ou os botões) trocam de cena e cada cena toca ao entrar; espaço
 **Reproduzir tudo** passa pelas 11 cenas sem parar (cerca de 1 min 50 s); **F** põe em tela cheia.
 No celular: deslize para o lado para trocar de cena, toque para pausar.
 
+## Correção do caso (18/11)
+No dia da cirurgia o nódulo **já tinha rompido a pele** (aberto para fora, ulcerado) e **estava infeccionado**;
+não estava mais sob a pele, como dizia o briefing. A animação mostra isso: metade da massa fica para fora da
+pele, com crostas e exsudato discretos e a pele inflamada em volta; a base entra no subcutâneo. Como a lesão
+é contaminada, a antissepsia vai da periferia para a lesão, e a dissecção passa pelo tecido sadio, sem cortar o nódulo.
+
 ## Como o modelo foi adaptado (`tools/cao.py`)
 O modelo original é um labrador amarelo em pé, sem esqueleto. O script:
 - pinta a pelagem de preto e deixa o focinho grisalho (salpicado), como a paciente das fotos;
 - deita a cadela em decúbito lateral direito: os membros giram e caem em direção à mesa, o pescoço e a
   cauda descem (guardado como *morph*, então a cena 2 mostra ela deitando);
-- cria o volume do nódulo na parede torácica esquerda, caudal ao cotovelo, perto da axila;
+- levanta a base do nódulo na parede torácica esquerda, caudal ao cotovelo, perto da axila
+  (a massa ulcerada, aberta para fora, é uma malha à parte, em `src/app.js`);
 - calcula o relevo do pano de campo sobre o corpo deitado.
 
 ## Partes do código (`src/`)
@@ -37,5 +44,7 @@ Para conferir um quadro: abra `index.html?t=45` (abre parado aos 45 s).
 ## A confirmar com a Cláudia
 - Padrões de sutura usados no caso (a animação mostra subcutâneo contínuo com fio absorvível e pele em
   sutura contínua simples com náilon 3-0, como na foto 8).
-- Antisséptico usado (a animação mostra um tom âmbar genérico).
+- Antisséptico usado (a animação mostra um tom âmbar genérico) e se a úlcera foi coberta ou isolada antes da incisão.
+- Lado operado (o modelo mostra o lado esquerdo, com a cadela em decúbito lateral direito).
+- Se houve antibiótico no pós-operatório e se foi feita cultura da secreção.
 - A animação fala só em "nódulo": o tipo depende do laudo histopatológico.

@@ -51,7 +51,7 @@ var tampaFrasco;
     g.fillStyle = "#fffdf6"; g.fillRect(0, 0, w, h); g.fillStyle = "#c0392b"; g.fillRect(0, 0, w, 44);
     g.fillStyle = "#fff"; g.font = "bold 30px sans-serif"; g.fillText("FORMOL 10%", 18, 32);
     g.fillStyle = "#1b2836"; g.font = "bold 30px sans-serif"; g.fillText("Histopatológico", 18, 92);
-    g.font = "24px sans-serif"; g.fillText("Cão · fêmea · SRD", 18, 134); g.fillText("Nódulo, região axilar esq.", 18, 170); g.fillText("Coleta: 17/11/2026", 18, 206);
+    g.font = "24px sans-serif"; g.fillText("Cão · fêmea · SRD", 18, 134); g.fillText("Nódulo ulcerado, reg. axilar", 18, 170); g.fillText("Coleta: 17/11/2026", 18, 206);
     g.strokeStyle = "#c9c2b0"; g.lineWidth = 2; g.strokeRect(1, 1, w - 2, h - 2);
   });
   texEt.wrapS = THREE.ClampToEdgeWrapping;
@@ -69,8 +69,8 @@ var pecaBandeja = new THREE.Group(); bandeja.add(pecaBandeja);
     var mt = m.material === matTopo ? matTopoLivre : matLadoLivre;
     var c = new THREE.Mesh(m.geometry.clone(), mt); c.castShadow = true; c.receiveShadow = true; pecaBandeja.add(c);
   });
-  /* na peça solta o nódulo aparece por baixo, como na foto 7 */
-  var nd = new THREE.Mesh(noduloMesh.geometry, noduloMesh.material.clone()); nd.material.clippingPlanes = []; nd.position.copy(noduloMesh.position); nd.position.y -= .0045; nd.scale.set(1.05, 1.25, 1.05); pecaBandeja.add(nd);
+  /* a massa ulcerada fica em cima da pele, como na foto 7 */
+  var nd = new THREE.Mesh(GEO_NOD, matNodulo()); nd.position.set(0, K.nc, 0); nd.castShadow = true; pecaBandeja.add(nd);
   Object.assign(F, guarda);
   pecaBandeja.scale.setScalar(.7);
 })();
@@ -81,15 +81,15 @@ function poseBandeja(t) {
   var s7 = S[6], s10 = S[9];
   var cai = sai(seg(t, s7 + 4.8, s7 + 6.4));
   /* posição na gaze, de cabeça para baixo um pouco (mostra o nódulo e a pele) */
-  var naGaze = new V3(0, .005, .07);
+  var naGaze = new V3(0, .0185, .07);   /* a base da peça (gordura) encosta na gaze */
   var pega = eio(seg(t, s10 + .8, s10 + 2.2)), leva = eio(seg(t, s10 + 2.2, s10 + 3.4)), afunda = eio(seg(t, s10 + 3.4, s10 + 4.4));
   var noFrasco = frasco.position.clone().add(new V3(0, .028, 0));
   var p = naGaze.clone();
-  if (t < s10) { p.y += (1 - cai) * .14; pecaBandeja.rotation.set(-.15 * (1 - cai), .5, .22 * cai); }
+  if (t < s10) { p.y += (1 - cai) * .14; pecaBandeja.rotation.set(-.15 * (1 - cai), .5, .05 * cai); }
   else {
     var alto = naGaze.clone().lerp(noFrasco.clone().add(new V3(0, .1, 0)), leva); alto.y = lerp(naGaze.y, noFrasco.y + .1, Math.max(pega * .6, leva));
     p = afunda > 0 ? noFrasco.clone().add(new V3(0, .1 * (1 - afunda), 0)) : alto;
-    pecaBandeja.rotation.set(-.15 * pega, .5 + .6 * leva, lerp(.22, 2.4, Math.min(1, pega * .5 + leva)));
+    pecaBandeja.rotation.set(-.15 * pega, .5 + .6 * leva, lerp(.05, .3, leva));
   }
   pecaBandeja.position.copy(p);
   pecaBandeja.visible = t >= s7 + 4.7;
@@ -114,6 +114,6 @@ function poseBandeja(t) {
   tomada(s[9] + 4.2, "bandeja", [-.02, .34, .4], [-.12, .03, -.04], 30);
   tomada(s[9] + 7.8, "bandeja", [-.04, .3, .36], [-.13, .035, -.05], 30);
 })();
-rotulo(S[6] + 6.4, S[6] + 9, "bandeja", "Peça cirúrgica", "nódulo e pele retirados em bloco", function () { return pecaBandeja.position.clone().add(new V3(0, .012, 0)); }, 12, -8);
+rotulo(S[6] + 6.4, S[6] + 9, "bandeja", "Peça cirúrgica", "nódulo ulcerado e pele retirados em bloco", function () { return pecaBandeja.position.clone().add(new V3(0, .012, 0)); }, 12, -8);
 rotulo(S[9] + 5.4, S[9] + 8, "bandeja", "Formol 10%", "volume cerca de 10 vezes o da peça", function () { return frasco.position.clone().add(new V3(0, .06, .04)); }, 13, -9);
 rotulo(S[9] + 5.9, S[9] + 8, "bandeja", "Laboratório de patologia →", "o diagnóstico vem do laudo histopatológico", function () { return frasco.position.clone().add(new V3(.03, .02, .03)); }, 15, 5);

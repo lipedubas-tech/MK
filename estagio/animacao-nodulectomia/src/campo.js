@@ -2,17 +2,17 @@
 /* ============================================================ campo operatório: bloco de tecido em camadas
    Referencial do bloco: x = v (largura do fuso), y = n (para fora da pele), z = u (eixo maior do fuso;
    a ponta ventral, perto do cotovelo, fica para o lado da câmera). Pele 4 mm, subcutâneo 17 mm, fáscia, músculo.
-   O nódulo (4,4 × 3,4 × 1,9 cm) fica no subcutâneo e levanta a pele. O corte esquemático é o plano z = c:
+   O nódulo (4,4 × 3,6 × 3 cm) já tinha rompido a pele: metade da massa fica para fora, ulcerada e
+   infeccionada, e a base entra no subcutâneo. O corte esquemático é o plano z = c:
    o que está à frente dele some e a face de corte mostra as camadas, o nódulo e os vasos.
    Todo movimento do tecido é um deslocamento lateral (em x) calculado a partir das coordenadas originais
    de cada ponto: assim a abertura da incisão, a retirada e o fechamento ficam coerentes em todas as malhas. */
 var campo = new THREE.Scene();
 var luzCampo = luzes(campo, new V3(0, 0, 0), .26);
 luzCampo.sol.position.set(-.55, 1.6, .9);
-var K = { U0: .15, V0: .11, L: .085, W: .03, tS: .004, tF: .017, tFa: .0018, fundo: .046, hB: .010, ru: .022, rv: .017, rn: .0105, rasU: .108, rasV: .078 };
-K.fasc = K.tS + K.tF;                       /* profundidade da fáscia fora do nódulo */
-K.rn = .0095;
-K.nc = K.hB - K.tS - .003 - K.rn;           /* altura do centro do nódulo */
+var K = { U0: .15, V0: .11, L: .085, W: .03, tS: .004, tF: .017, tFa: .0018, fundo: .046, hB: .006, ru: NOD.ru, rv: NOD.rv, rn: NOD.rn, rasU: .108, rasV: .078 };
+K.fasc = K.tS + K.tF;                       /* profundidade da fáscia */
+K.nc = NOD.sobe;                            /* centro da massa: um pouco acima da pele (metade para fora) */
 function S0(u, v) { return -(v * v) / (2 * .45) - (u * u) / (2 * .8); }
 function bossa(u, v) { var r2 = (u / .04) * (u / .04) + (v / .032) * (v / .032); return r2 < 1 ? K.hB * (1 - r2) * (1 - r2) : 0; }
 function hw(u) { return Math.abs(u) < K.L ? K.W * (1 - (u / K.L) * (u / K.L)) : 0; }
@@ -66,12 +66,14 @@ var GLSL_CAMADAS = [
   "  c *= .74 + .26 * smoothstep(.00008, .0004, ln);",
   "  return c; }",
   /* nódulo no corte: r = raio normalizado da elipse (0 no centro, 1 na borda) */
-  "vec3 nodulo(vec2 q, float r){",
-  "  vec2 vo = voro(q * 260.); vec3 c = lin(vec3(.52,.16,.33)) * (.85 + .25 * (1. - vo.x));",
-  "  c = mix(lin(vec3(.36,.08,.22)), c, smoothstep(.02, .08, vo.y));",
-  "  c = mix(c, lin(vec3(.62,.24,.42)), .25 * (1. - r));",
-  "  float cap = smoothstep(.885, .91, r); c = mix(c, lin(vec3(.86,.62,.76)), cap);",
-  "  c *= .8 + .2 * smoothstep(.0, .02, 1. - r);",
+  "vec3 nodulo(vec2 q, float r, float dy){",
+  "  vec2 vo = voro(q * 260.); vec3 c = lin(vec3(.5,.13,.22)) * (.85 + .25 * (1. - vo.x));",
+  "  c = mix(lin(vec3(.32,.06,.14)), c, smoothstep(.02, .08, vo.y));",
+  "  c = mix(c, lin(vec3(.62,.22,.34)), .2 * (1. - r));",
+  "  float borda = smoothstep(.9, .965, r), fora = smoothstep(-.001, .003, dy);",
+  "  c = mix(c, lin(vec3(.76,.62,.31)) * (.85 + .3 * vr(q * 900.)), borda * fora);",
+  "  c = mix(c, lin(vec3(.82,.56,.62)), borda * (1. - fora) * .7);",
+  "  c *= .82 + .18 * smoothstep(.0, .02, 1. - r);",
   "  return c; }"
 ].join("\n");
 
@@ -88,7 +90,10 @@ function matCamadas(tampa) {
         "vec2 q = vec2(vQ.x, vY);",
         tampa ? [
           /* acima da pele: pelos pretos fora da área raspada */
-          "if (prof < 0.) {",
+          "float rn = length(vec2(vQ.x / max(uNod.x, 1e-5), (vY - uNod.z) / max(uNod.y, 1e-5)));",
+          "if (uNod.w > .5 && rn < 1. && uRem < .5) { diffuseColor.rgb = nodulo(q, rn, vY - uNod.z); rug = .35; }",
+          "else if (prof < 0.) {",
+          "  if (-prof > .0085) discard;",
           "  float ras = length(vec2(uC / " + K.rasU.toFixed(3) + ", vQ.x / " + K.rasV.toFixed(3) + "));",
           "  float w = vQ.x - prof * (.45 + .3 * h12(vec2(floor((vQ.x - prof * .55) * 1500.), 5.))); float fi = floor(w * 1500.); float tam = .0022 + .0038 * h12(vec2(fi, 3.));",
           "  float fio = smoothstep(.36, .12, abs(fract(w * 1500.) - .5)) * step(-prof, tam) * step(.35, h12(vec2(fi, 7.))) * step(1.03, ras + (vr(vec2(vQ.x * 120., 1.)) - .5) * .08);",
@@ -99,9 +104,7 @@ function matCamadas(tampa) {
           "  float bordaG = abs(abs(vQ.x) - uHwC);",
           "  if (bordaG < uEps && prof < uDInc + .004 && uHwC > 0. && uAberto > .5) discard;",
           "  if (uRem > .5 && abs(vQ.x) < uHwC && prof < fasc - .0002) discard;",
-          "  float rn = length(vec2(vQ.x / max(uNod.x, 1e-5), (vY - uNod.z) / max(uNod.y, 1e-5)));",
-          "  if (uNod.w > .5 && rn < 1. && uRem < .5) { diffuseColor.rgb = nodulo(q, rn); rug = .3; }",
-          "  else diffuseColor.rgb = camada(q, prof, fasc, rug);",
+          "  diffuseColor.rgb = camada(q, prof, fasc, rug);",
           "  if (uRem > .5 && abs(vQ.x) < uHwC + .0006 && prof < fasc + uTFa && prof > fasc - .0008) diffuseColor.rgb = mix(diffuseColor.rgb, lin(vec3(.3,.8,.45)), uLeito * .5);",
           "}"].join("\n") : [
           "if (prof < 0.) discard;",
@@ -136,6 +139,10 @@ matTopo.onBeforeCompile = function (sh) {
       "pl = mix(pl, lin(vec3(.2,.17,.18)), smoothstep(.8, .95, h12(floor(vec2(uu, vv) * 2600.))) * .55);",
       "pl *= lin(vec3(.97,.78,.6)) * .7 + .3;",
       "vec3 c = mix(pelo, pl, rasp);",
+      "float rmm = length(vec2(uu / " + K.ru.toFixed(3) + ", vv / " + K.rv.toFixed(3) + "));",
+      "if (rmm < .955) discard;",
+      "float infl = 1. - smoothstep(1., 1.6, rmm + (vr(vec2(uu, vv) * 300.) - .5) * .2);",
+      "c = mix(c, lin(vec3(.62,.3,.3)) * (.85 + .3 * vr(vec2(uu, vv) * 400.)), infl * .8);",
       /* linhas de tensão da pele: finas, paralelas ao eixo maior */
       "float lt = (1. - smoothstep(.0, .0007, abs(fract(vv * 60. + .5) - .5) / 60.)) * rasp * uTensao * (1. - smoothstep(.06, .1, abs(uu)));",
       "c = mix(c, lin(vec3(.25,.5,.85)), lt * .55);",
@@ -240,14 +247,8 @@ var pecaFundo = (function () {
 })();
 /* nódulo em 3D (aparece inteiro quando a peça sai): elipsoide levemente lobulado, cápsula brilhante */
 var noduloMesh = (function () {
-  var g = new THREE.SphereGeometry(1, 48, 32), p = g.attributes.position;
-  for (var i = 0; i < p.count; i++) {
-    var x = p.getX(i), y = p.getY(i), z = p.getZ(i), k = 1 + .05 * Math.sin(x * 5 + y * 3) * Math.sin(z * 4 - y * 2) + .03 * Math.sin(x * 11 + z * 9);
-    p.setXYZ(i, x * K.rv * k, y * (K.rn + .0012) * k, z * K.ru * k);
-  }
-  g.computeVertexNormals();
-  var m = new THREE.Mesh(g, M(0x5a1636, { roughness: .42, metalness: 0, envMapIntensity: .5 }));
-  m.position.set(0, K.nc - .0006, 0); m.castShadow = true; m.material.clippingPlanes = [PLANO]; peca.add(m); return m;
+  var m = new THREE.Mesh(GEO_NOD, matNodulo([PLANO]));
+  m.position.set(0, K.nc, 0); m.castShadow = true; m.receiveShadow = true; peca.add(m); return m;
 })();
 
 /* laterais e fundo do bloco (fixas) */
@@ -267,7 +268,7 @@ function lateral(tipo) {
 }
 ["esq", "dir", "fundo"].forEach(lateral);
 /* face de corte: grade em (v0, profundidade) no plano z = c, refeita a cada quadro */
-var NTV = 150, NTR = 64;
+var NTV = 150, NTR = 80;
 var tampa = (function () {
   var nv = (NTV + 4) * NTR;
   var g = new THREE.BufferGeometry();
@@ -278,7 +279,7 @@ var tampa = (function () {
 })();
 /* linhas da face de corte: as primeiras ficam acima da pele (pelos); as outras vão da pele até o fundo do bloco */
 var FR_TAMPA = [];
-for (var r = 0; r < NTR; r++) { var f = r / (NTR - 1); FR_TAMPA.push(f < .12 ? -(1 - f / .12) : Math.pow((f - .12) / .88, 1.5)); }
+for (var r = 0; r < NTR; r++) { var f = r / (NTR - 1); FR_TAMPA.push(f < .2 ? -(1 - f / .2) : Math.pow((f - .2) / .8, 1.5)); }
 
 /* ---------------- atualização das malhas */
 function atualizaAnel() {
@@ -322,7 +323,7 @@ function atualizaTampa() {
   for (i = 0; i < ncol; i++) {
     var v = cols[i], ilha = Math.abs(v) < h, topo = pele(c, v), fas = topo - (S0(c, v) - K.fasc), base = S0(c, v) - K.fundo;
     for (var r = 0; r < NTR; r++) {
-      var fr = FR_TAMPA[r], pr = fr < 0 ? fr * .0085 : (topo - lerp(topo, base, fr)) + 1e-5, id = r * ncol + i, x;
+      var fr = FR_TAMPA[r], pr = fr < 0 ? fr * .024 : (topo - lerp(topo, base, fr)) + 1e-5, id = r * ncol + i, x;
       if (F.rem > .5 && ilha) x = v * (1 - F.k1 * frente(F.f1, c));
       else x = v + (pr < 0 ? desloc(c, v, 0, ilha) : desloc(c, v, pr, ilha));
       P[id * 3] = x; P[id * 3 + 1] = topo - pr; P[id * 3 + 2] = c;
@@ -573,13 +574,14 @@ function poseCampo(t) {
 function pontoCorte(v, y) { return function () { return new V3(v, y, F.c); }; }
 function pontoTopo(u, v) { return function () { return new V3(v, pele(u, v), u); }; }
 rotulo(S[2] + 1.0, S[2] + 4.6, "campo", "Linhas de tensão da pele", "o eixo maior do fuso segue essas linhas", pontoTopo(-.03, .045), 11, -7);
+rotulo(S[2] + .6, S[2] + 4.6, "campo", "Nódulo ulcerado", "infeccionado; pele inflamada em volta", function () { return new V3(-.004, K.nc + K.rn * .9, .006); }, -15, -6);
 rotulo(S[2] + 5.4, S[2] + 8, "campo", "Margem de segurança", "faixa de pele sã entre o nódulo e a incisão", pontoTopo(.0, .026), 14, -6);
 rotulo(S[3] + 7.6, S[4] + 9.8, "campo", "Pele", null, pontoCorte(.075, S0(C_CORTE, .075) - .002), 8, -6);
 rotulo(S[3] + 7.8, S[4] + 9.8, "campo", "Subcutâneo", "gordura", pontoCorte(.07, S0(C_CORTE, .07) - .012), 9, 0);
 rotulo(S[3] + 8.0, S[4] + 9.8, "campo", "Fáscia", null, pontoCorte(.066, S0(C_CORTE, .066) - K.fasc - .0009), 9, 4);
 rotulo(S[3] + 8.2, S[4] + 9.8, "campo", "Músculo", null, pontoCorte(.06, S0(C_CORTE, .06) - .034), 9, 6);
-rotulo(S[3] + 7.9, S[4] + 9.8, "campo", "Nódulo", "encapsulado no subcutâneo", pontoCorte(.004, K.nc + .002), -2, -11);
-rotulo(S[4] + 3, S[4] + 9.8, "campo", "Cápsula íntegra", null, pontoCorte(K.rv * .97, K.nc - .002), 12, 3);
+rotulo(S[3] + 7.9, S[4] + 9.8, "campo", "Nódulo", "rompeu a pele e ficou exposto", pontoCorte(-.004, K.nc - .002), -14, -10);
+rotulo(S[4] + 3, S[4] + 9.8, "campo", "Úlcera infeccionada", "crostas e exsudato", pontoCorte(K.rv * .5, K.nc + K.rn * .84), 12, -9);
 rotulo(S[5] + 1.4, S[5] + 8.8, "campo", "Artéria e veia do nódulo", null, function () { return new V3(-.07, S0(C_CORTE, -.07) - K.fasc + .004, F.c + .002); }, -6, 7);
 rotulo(S[5] + 4.4, S[5] + 8.8, "campo", "Ligadura", "antes do corte", function () { return ligadura.position.clone(); }, -9, -7);
 rotulo(S[7] + 5.4, S[7] + 8, "campo", "Leito sem sangramento", null, function () { return new V3(0, S0(0, 0) - K.fasc + .001, .02); }, 10, -7, "ok");

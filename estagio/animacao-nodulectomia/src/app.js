@@ -22,9 +22,9 @@ var CENAS = [
   { nome: "Preparo", dur: 14, leg: "Anestesia geral, tricotomia, antissepsia e campos" },
   { nome: "Marcação", dur: 8, leg: "Incisão elíptica com margem de segurança" },
   { nome: "Incisão", dur: 9, leg: "Incisão de pele e subcutâneo" },
-  { nome: "Dissecção", dur: 10, leg: "Dissecção do nódulo, sem romper a cápsula" },
+  { nome: "Dissecção", dur: 10, leg: "Dissecção pelo tecido sadio, sem cortar o nódulo" },
   { nome: "Vasos", dur: 9, leg: "Pinçamento e ligadura dos vasos" },
-  { nome: "Retirada", dur: 9, leg: "Exérese em bloco com a pele sobrejacente" },
+  { nome: "Retirada", dur: 9, leg: "Exérese em bloco, com a pele ao redor da úlcera" },
   { nome: "Hemostasia", dur: 8, leg: "Hemostasia por compressão e conferência do leito" },
   { nome: "Sutura", dur: 16, leg: "Redução do espaço morto e síntese da pele" },
   { nome: "Histopatológico", dur: 8, leg: "Peça em formol 10% para exame histopatológico" },
@@ -102,6 +102,44 @@ var GLSL_RUIDO = [
   "vec3 lin(vec3 c){return pow(c,vec3(2.2));}"
 ].join("\n");
 
+/* ============================================================ nódulo ulcerado
+   No dia da cirurgia o nódulo já tinha rompido a pele: metade da massa fica para fora, aberta (ulcerada)
+   e infeccionada, e a base entra no subcutâneo. É a mesma peça na cadela, no campo e na bandeja.
+   Referencial (v, n, u) do sítio: x = largura do fuso, y = para fora da pele, z = eixo maior. Medidas em m. */
+var NOD = { ru: .022, rv: .018, rn: .015, sobe: .004 };   /* sobe: altura do centro da massa acima da pele */
+var GEO_NOD = (function () {
+  var g = new THREE.SphereGeometry(1, 72, 48), p = g.attributes.position;
+  for (var i = 0; i < p.count; i++) {
+    var x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    var k = 1 + .06 * Math.sin(x * 6 + y * 4) * Math.sin(z * 5 - y * 3) + .035 * Math.sin(x * 13 + z * 11 + y * 5) + .02 * Math.sin(x * 23 - z * 19);
+    if (y > 0) k += .045 * y * Math.sin(x * 17 + 1) * Math.sin(z * 15);   /* superfície de cima mais irregular */
+    p.setXYZ(i, x * NOD.rv * k, y * NOD.rn * k, z * NOD.ru * k);
+  }
+  g.computeVertexNormals(); return g;
+})();
+function matNodulo(planos) {
+  var m = new THREE.MeshStandardMaterial({ roughness: .4, metalness: 0, envMapIntensity: .55 });
+  if (planos) m.clippingPlanes = planos;
+  m.onBeforeCompile = function (sh) {
+    sh.vertexShader = "varying vec3 vNo;\n" + sh.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\nvNo = position;");
+    sh.fragmentShader = GLSL_RUIDO + "\nvarying vec3 vNo;\n" + sh.fragmentShader
+      .replace("#include <map_fragment>", [
+        "#include <map_fragment>",
+        "float yy = vNo.y / " + NOD.rn.toFixed(4) + ";",
+        "vec2 vo = voro(vNo.xz * 380. + vNo.y * 200.);",
+        "vec3 c = lin(vec3(.46,.15,.3)) * (.82 + .26 * (1. - vo.x));",
+        "c = mix(lin(vec3(.3,.08,.19)), c, smoothstep(.02, .09, vo.y));",
+        /* parte exposta (úlcera infeccionada): crostas castanhas e exsudato creme, discretos e sem sangue */
+        "float crosta = smoothstep(.6, .74, fbm(vNo.xz * 240. + 3.)) * smoothstep(.15, .55, yy);",
+        "c = mix(c, lin(vec3(.55,.42,.27)) * (.85 + .3 * vr(vNo.xz * 2000.)), crosta * .8);",
+        "float fibrina = smoothstep(.72, .86, fbm(vNo.xz * 480. + 9.)) * smoothstep(.35, .75, yy);",
+        "c = mix(c, lin(vec3(.86,.8,.62)), fibrina * .45);",
+        "diffuseColor.rgb = c;"].join("\n"))
+      .replace("#include <roughnessmap_fragment>", "#include <roughnessmap_fragment>\nroughnessFactor = mix(.3, .72, crosta);");
+  };
+  return m;
+}
+
 /* ============================================================ dados do cão */
 var CM = KC.meta, CB = dec(KC.bin).buffer;
 function vista(T, off, n) { return new T(CB, off, n); }
@@ -148,7 +186,7 @@ var texCao = carregaTex(KC.cor, true), texRug = carregaTex(KC.rug, false);
    no referencial (u, v, n) do sítio do nódulo */
 var UC = {
   uC: { value: SIT.c }, uN: { value: SIT.n }, uU: { value: SIT.u }, uV: { value: SIT.v },
-  uTrico: { value: 0 }, uAntis: { value: 0 }, uFerida: { value: 0 }, uAnel: { value: 0 },
+  uTrico: { value: 0 }, uAntis: { value: 0 }, uFerida: { value: 0 }, uAnel: { value: 0 }, uMassa: { value: 0 },
   uOlhoE: { value: new V3() }, uOlhoD: { value: new V3() }, uPalp: { value: 0 },
   uResp: { value: 0 }, uCauda: { value: 0 }, uCaudaPiv: { value: new V3(0, .33, -.245) }
 };
@@ -161,7 +199,7 @@ matCao.onBeforeCompile = function (sh) {
       "transformed += objectNormal * aux.x * uResp;",
       "if (aux.y > 0.) { vec3 dq = transformed - uCaudaPiv; float aa = uCauda * aux.y; float ca = cos(aa), sa = sin(aa); transformed = uCaudaPiv + vec3(dq.x, dq.y * ca - dq.z * sa, dq.y * sa + dq.z * ca); }",
       "vObj = transformed; vTronco = aux.z;"].join("\n"));
-  sh.fragmentShader = ["uniform vec3 uC,uN,uU,uV,uOlhoE,uOlhoD;", "uniform float uTrico,uAntis,uFerida,uAnel,uPalp;", "varying vec3 vObj;", "varying float vTronco;", GLSL_RUIDO,
+  sh.fragmentShader = ["uniform vec3 uC,uN,uU,uV,uOlhoE,uOlhoD;", "uniform float uTrico,uAntis,uFerida,uAnel,uPalp,uMassa;", "varying vec3 vObj;", "varying float vTronco;", GLSL_RUIDO,
     "float dseg(vec2 p,vec2 a,vec2 b){vec2 pa=p-a,ba=b-a;float h=clamp(dot(pa,ba)/dot(ba,ba),0.,1.);return length(pa-ba*h);}"].join("\n") + "\n" + sh.fragmentShader
     .replace("#include <map_fragment>", ["#include <map_fragment>",
       "vec3 dq = vObj - uC; float su = dot(dq, uU), sv = dot(dq, uV), sn = dot(dq, uN);",
@@ -180,9 +218,11 @@ matCao.onBeforeCompile = function (sh) {
       "pele = mix(pele, lin(vec3(.16, .14, .16)), toco * .7);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, pele, rasp);",
       /* antissepsia em espiral, do centro para fora */
-      "float th = atan(sv / .078, su / .108); float voltas = 6.; float rs = uAntis * .98;",
+      /* lesão infeccionada: a antissepsia vai da periferia para a lesão; rs = raio onde a gaze está agora */
+      "float th = atan(sv / .078, su / .108); float voltas = 5.; float rs = .98 - uAntis * .68;",
       "float atras = 1. - fract((uAntis * voltas * 6.2832 - th) / 6.2832);",
-      "float pint = (1. - smoothstep(rs - atras * (.98 / voltas) - .02, rs - atras * (.98 / voltas) + .01, re)) * step(.001, uAntis) * rasp;",
+      "float pint = smoothstep(rs + atras * (.68 / voltas) - .01, rs + atras * (.68 / voltas) + .02, re) * (1. - smoothstep(.98, 1.01, re)) * step(.001, uAntis) * rasp;",
+      "pint = max(pint, step(.999, uAntis) * (1. - smoothstep(.98, 1.01, re)) * smoothstep(.27, .3, re) * rasp);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * lin(vec3(.95, .66, .42)), pint * .85);",
       /* ferida suturada (pós-operatório): linha da incisão com pontos contínuos de náilon */
       "float LL = .085; float ao = smoothstep(LL + .004, LL - .004, abs(su));",
@@ -194,6 +234,10 @@ matCao.onBeforeCompile = function (sh) {
       "diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * lin(vec3(1., .62, .6)), eri * .55 * fer);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, lin(vec3(.32, .07, .07)), lin_inc * fer);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, lin(vec3(.13, .22, .6)), fio * fer);",
+      /* em volta da massa ulcerada: pele inflamada, sem pelo (some depois da cirurgia) */
+      "float rmm = length(vec2(su / " + NOD.ru.toFixed(3) + ", sv / " + NOD.rv.toFixed(3) + "));",
+      "float infl = (1. - smoothstep(1.05, 1.75, rmm + (vr(vec2(su, sv) * 300.) - .5) * .25)) * lado * (1. - uFerida);",
+      "diffuseColor.rgb = mix(diffuseColor.rgb, lin(vec3(.58,.33,.33)) * (.85 + .3 * vr(vec2(su, sv) * 400.)), infl * .7 * uMassa);",
       /* pálpebras: escurece o olho como se estivesse fechado */
       "float pal = max(1. - smoothstep(.007, .0115, distance(vObj, uOlhoE)), 1. - smoothstep(.007, .0115, distance(vObj, uOlhoD)));",
       "diffuseColor.rgb = mix(diffuseColor.rgb, lin(vec3(.11, .1, .115)), pal * uPalp);"
@@ -204,7 +248,7 @@ matCao.onBeforeCompile = function (sh) {
       "roughnessFactor = mix(roughnessFactor, .75, pal * uPalp);"].join("\n"))
     .replace("#include <emissivemap_fragment>", ["#include <emissivemap_fragment>",
       /* anel que destaca o volume do nódulo na abertura */
-      "float rn2 = length(vec2(su / .036, sv / .03));",
+      "float rn2 = length(vec2(su / .038, sv / .033));",
       "float anel = exp(-pow((rn2 - 1.) / .09, 2.)) * lado;",
       "totalEmissiveRadiance += vec3(1., .62, .16) * anel * uAnel * 1.6;"].join("\n"));
 };
@@ -278,6 +322,10 @@ var anest = new THREE.Group(); cao.add(anest);
   ox.traverse(function (o) { o.castShadow = true; }); anest.add(ox);
 })();
 
+var massaCao = new THREE.Mesh(GEO_NOD, matNodulo());
+massaCao.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, SIT.n, SIT.u));
+massaCao.position.copy(SIT.c).addScaledVector(SIT.n, NOD.sobe); massaCao.castShadow = true; cao.add(massaCao);
+
 /* ============================================================ estado no tempo (sala) */
 var OLHO = { e: vec(CM.olho_e), d: vec(CM.olho_d), ed: vec(CM.olho_e_dei), dd: vec(CM.olho_d_dei) };
 function poseSala(t) {
@@ -287,7 +335,10 @@ function poseSala(t) {
   rolo.rotation.x = -PI / 2 * deita;
   rolo.position.set(0, -CM.xmin * deita + .04 * Math.sin(deita * PI), CM.dz * deita);
   cao.morphTargetInfluences[0] = morph;
-  cao.morphTargetInfluences[1] = ss(S[0] + 1.6, S[0] + 3.6, t);   /* o nódulo aparece */
+  var aparece = ss(S[0] + 1.6, S[0] + 3.6, t), operado = t >= S[10];
+  cao.morphTargetInfluences[1] = operado ? 0 : aparece;   /* o nódulo aparece: base levantando a pele e a massa aberta para fora */
+  massaCao.visible = !operado && aparece > 0; massaCao.scale.setScalar(Math.max(.001, aparece));
+  UC.uMassa.value = operado ? 0 : aparece;
   UC.uOlhoE.value.lerpVectors(OLHO.e, OLHO.ed, morph); UC.uOlhoD.value.lerpVectors(OLHO.d, OLHO.dd, morph);
   var acorda = ss(S[10] + 4, S[10] + 6.5, t);
   UC.uPalp.value = ss(c2 + .3, c2 + 1.6, t) * (1 - acorda);
@@ -306,10 +357,10 @@ function poseSala(t) {
     var yy = SIT.u.clone().multiplyScalar(.82).addScaledVector(SIT.n, .57).normalize(), zz = new V3().crossVectors(SIT.v, yy).normalize();
     maquina.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, yy, zz));
   }
-  /* gaze com antisséptico em espiral, do centro para fora */
+  /* gaze com antisséptico em espiral, da periferia para a lesão (área contaminada por último) */
   var an = UC.uAntis.value; bola.visible = an > 0 && an < 1;
   if (bola.visible) {
-    var th = an * 6 * TAU, rr = an * .98, ps = SIT.c.clone().addScaledVector(SIT.u, Math.cos(th) * rr * .108).addScaledVector(SIT.v, Math.sin(th) * rr * .078).addScaledVector(SIT.n, .007);
+    var th = an * 5 * TAU, rr = .98 - an * .68, ps = SIT.c.clone().addScaledVector(SIT.u, Math.cos(th) * rr * .108).addScaledVector(SIT.v, Math.sin(th) * rr * .078).addScaledVector(SIT.n, .007);
     bola.position.copy(ps);
     var yb = SIT.n.clone().multiplyScalar(.75).addScaledVector(SIT.u, -.66).normalize(), zb = new V3().crossVectors(SIT.v, yb).normalize();
     bola.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, yb, zb));
