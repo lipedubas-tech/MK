@@ -64,7 +64,7 @@ Estes dados vêm do slide de identificação da Yasmin, de 2025. Confirme com a 
 | Telefone | (48) 99924-7977 |
 | Site | Não informado |
 | Área de atuação | Clínica veterinária e pet shop |
-| Histórico | Inaugurada em 2005 pelo médico veterinário Rangel Ramos Cardoso. Começou pequena e cresceu até virar referência na região. Pela conversa com o Rangel (18/11/2026), ele se formou em 2005 e queria trabalhar com grande porte, mas a demanda da região era de pet, por isso abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento clínico por causa do estresse de lidar com a vida dos animais. Hoje só vai à clínica para fazer cirurgias |
+| Histórico | Inaugurada em 2005 pelo médico veterinário Rangel Ramos Cardoso. Começou pequena e cresceu até virar referência na região. Pela conversa com o Rangel (18/11/2026, que **autorizou** usar a história dele na defesa), ele se formou em 2005 e queria trabalhar com grande porte, mas a demanda da região era de pet, por isso abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento clínico por causa do estresse de lidar com a vida dos animais. Hoje só vai à clínica para fazer cirurgias |
 | Serviços | Banho e tosa, consultas, cirurgias, exames laboratoriais, pet shop, raio-X, ultrassonografia, vacinas |
 | Ambientes | Balcão e pet shop, consultório, internamento, sala de espera e pesagem, cozinha e estante de remédios, gaiolas de animais prontos, sala de raio-X, banho e tosa, lavanderia, canil, sala de cirurgia, sala de esterilização |
 
@@ -172,9 +172,9 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - Você enviou o modelo 3D do esqueleto de cachorro (`.glb`) e pediu a cirurgia da Katita sobre ele. A versão foi publicada.
 - Você não gostou das primeiras ideias interativas e escolheu prototipar a "Katita modo cinema".
 
-### 18/11/2026 (data do envio; confirmar o dia)
+### 18/11/2026 (quarta)
 - **Conversa com o Rangel**, dono da clínica: formou-se em 2005, queria grande porte, mas só havia demanda para pet, então abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento por causa do estresse de trabalhar com a vida animal; hoje só aparece para fazer cirurgias (ver seção 1 e seção 2).
-- **Cirurgia de fecaloma em gato**, feita pelo Rangel (ver seção 4.9 e fotos da seção 10.7).
+- **Cirurgia de fecaloma em gato**, feita pelo Rangel, com a Cláudia na anestesia (ver seção 4.9 e fotos da seção 10.7).
 
 ---
 
@@ -333,13 +333,13 @@ A Katita tem pelagem caramelo e orelhas escuras.
 | 12/11 | Cistocentese ecoguiada |
 | 18/11 | Cirurgia de fecaloma em gato, feita pelo Rangel (seção 4.9) |
 
-### 4.9 Gato: fecaloma (18/11/2026, confirmar a data)
-**Diagnóstico confirmado: fecaloma**, uma massa de fezes ressecadas e endurecidas que o gato não consegue eliminar. O resto vem das fotos; a técnica e o histórico ainda precisam ser confirmados.
+### 4.9 Gato: fecaloma (18/11/2026)
+**Diagnóstico confirmado: fecaloma**, uma massa de fezes ressecadas e endurecidas que o gato não consegue eliminar. A massa foi retirada do **intestino**. O resto vem das fotos; o histórico e a evolução ainda faltam.
 - **Paciente:** gato SRD tigrado e branco (sexo, idade e peso não registrados).
-- **Equipe:** o **cirurgião foi o Rangel**, dono da clínica. A anestesista ainda não está identificada. Os dois estavam paramentados (avental descartável, touca, máscara e luvas).
-- **Anestesia:** inalatória, com o paciente intubado. A anestesista controla o balão reservatório do circuito. Há monitor multiparamétrico, fluidoterapia em bolsa no suporte e acesso venoso na pata dianteira.
+- **Equipe:** o **cirurgião foi o Rangel**, dono da clínica. A **anestesista foi a Cláudia**. Os dois estavam paramentados (avental descartável, touca, máscara e luvas).
+- **Anestesia:** inalatória, com o paciente intubado. A Cláudia controla o balão reservatório do circuito. Há monitor multiparamétrico, fluidoterapia em bolsa no suporte e acesso venoso na pata dianteira.
 - **Posição e campo:** decúbito dorsal, com campos cirúrgicos verdes e compressas. A incisão fica no abdômen ventral caudal, com tricotomia ampla.
-- **Material removido:** o fecaloma, em duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. Fecaloma costuma se formar no cólon (intestino grosso), muitas vezes ligado a obstipação crônica ou megacólon. Confirmar o órgão aberto (provável colotomia) e a causa.
+- **Material removido:** o fecaloma, em duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. Fecaloma costuma se formar no cólon (intestino grosso), muitas vezes ligado a obstipação crônica ou megacólon.Aqui o órgão aberto foi o **intestino**. Falta saber a causa.
 - **Mesa de instrumentais:** tesouras, porta-agulhas, pinças hemostáticas, pinça de dissecção, cabo de bisturi, afastador de Farabeuf, gaze e fio de sutura 3-0.
 - **Pós-operatório imediato:** gato ainda intubado, aquecido com toalhas sobre a mesa, com a ferida suturada no abdômen.
 - **Ideia para a defesa:** junta duas histórias: o fundador que se afastou das consultas pelo estresse, mas segue operando, e um caso visual forte (o "oculto" que sai do corpo, eixo 1 da seção 2) e pode virar uma animação curta como as de OSH e nodulectomia.
@@ -433,8 +433,8 @@ As referências estão ilegíveis na foto.
 
 | Pessoa | Papel |
 |---|---|
-| Cláudia Helena Bratti da Silva | Médica veterinária (clínica geral), supervisora no estágio |
-| Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica. Formado em 2005; queria grande porte, mas abriu para pet pela demanda. Afastado do atendimento clínico há 2 anos pelo estresse; hoje só vem para cirurgias. Operou o gato do fecaloma (18/11) |
+| Cláudia Helena Bratti da Silva | Médica veterinária (clínica geral), supervisora no estágio. Anestesista na cirurgia do fecaloma (18/11) |
+| Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica. Formado em 2005; queria grande porte, mas abriu para pet pela demanda. Afastado do atendimento clínico há 2 anos pelo estresse; hoje só vem para cirurgias. Operou o gato do fecaloma (18/11). Autorizou citar a história dele na defesa |
 | Thiago | Ortopedista; cirurgião da Katita e responsável pelo caso do Bob |
 | Fran Oliveira | Orientadora do estágio no IFC |
 | Yasmim de Borba da Rolt | Colega que defendeu estágio na mesma clínica em dezembro de 2025. A orientadora dela foi Daiane da Rosa Fregulia e a banca, Rita de Albernaz Gonçalves da Silva |
@@ -487,8 +487,7 @@ As referências estão ilegíveis na foto.
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
 - [ ] Se os dados da clínica da defesa da Yasmin (2025) continuam válidos: endereço, telefone, responsável legal
 - [ ] Sua carga horária diária e total
-- [ ] Cirurgia do fecaloma (18/11): a data, o órgão aberto (provável colotomia), a causa (obstipação crônica, megacólon?), quem anestesiou e a evolução
-- [ ] Com o Rangel: se ele permite citar na defesa a história dele (o grande porte e o afastamento pelo estresse)
+- [ ] Cirurgia do fecaloma (18/11): a causa (obstipação crônica, megacólon?), o nome do gato e a evolução
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
@@ -655,13 +654,13 @@ O nome da tutora já vem coberto nos laudos.
 | 5 | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) | Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro |
 | 6 | ![](fotos/quimio/06-cistocentese-ecoguiada.jpg) | Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga |
 
-### 10.7 Cirurgia de fecaloma em gato, feita pelo Rangel — 18/11/2026 (confirmar a data)
+### 10.7 Cirurgia de fecaloma em gato, feita pelo Rangel — 18/11/2026
 
 > Fotos sem rostos de tutores, mas com o rosto da equipe (fotos 1 e 8). Pedir autorização antes de usar nos slides.
 
 | # | Foto | Legenda |
 |---|---|---|
-| 1 | ![](fotos/cirurgia-felino/01-equipe-paramentada-anestesia.jpg) | Equipe paramentada: o Rangel (cirurgião) à esquerda e a anestesista à direita, segurando o balão reservatório da anestesia inalatória. Ao fundo, o monitor multiparamétrico e a bolsa de soro |
+| 1 | ![](fotos/cirurgia-felino/01-equipe-paramentada-anestesia.jpg) | Equipe paramentada: o Rangel (cirurgião) à esquerda e a Cláudia (anestesista) à direita, segurando o balão reservatório da anestesia inalatória. Ao fundo, o monitor multiparamétrico e a bolsa de soro |
 | 2 | ![](fotos/cirurgia-felino/02-cirurgiao-e-cuba-rim.jpg) | Gato em decúbito dorsal sob campos cirúrgicos. O cirurgião trabalha na incisão abdominal e a auxiliar aproxima a cuba-rim |
 | 3 | ![](fotos/cirurgia-felino/03-retirada-da-massa-1.jpg) | Retirada do fecaloma, escuro e endurecido, pela incisão, direto para a cuba-rim |
 | 4 | ![](fotos/cirurgia-felino/04-retirada-da-massa-2.jpg) | A mesma massa, já exteriorizada; dentro da cuba, um fragmento retirado antes |
