@@ -9,6 +9,7 @@ Os links só abrem logado na conta do Felipe. Para editar no Claude Code, baixe 
 | Criocirurgia em 3D (Three.js) | https://claude.ai/artifact/UMCerhq34d46XxXLvPbmq7 |
 | Cirurgia da Katita em 3D (osso em Y + visão do cirurgião) | https://claude.ai/artifact/5jzyf4bCynjkN2e3FroFAk |
 | Cirurgia da Katita sobre esqueleto 3D (.glb enviado em 13/11) | https://claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K |
+| Animação 3D da nodulectomia em cão (11 cenas, modelo de cão adaptado) | https://claude.ai/artifact/RwWEPrfi7o7iUJ1Li1wZYt |
 | "Microscópio do Estágio" (exames de sangue: microscópio, guia de células, mapa de calor, radar) | https://claude.ai/artifact/85brKfCJS7kMSgTEgs4NYZ |
 
 ## Aprendizados de design
