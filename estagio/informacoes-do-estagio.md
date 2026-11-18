@@ -489,7 +489,6 @@ As referências estão ilegíveis na foto.
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
 - [ ] Se os dados da clínica da defesa da Yasmin (2025) continuam válidos: endereço, telefone, responsável legal
 - [ ] Sua carga horária diária e total
-- [ ] Cirurgia do fecaloma (18/11): o nome do gato, se as duas cirurgias anteriores também foram por fecaloma, a dieta recomendada depois e a evolução
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
