@@ -657,7 +657,7 @@ O nome da tutora já vem coberto nos laudos.
 
 ### 10.7 Cirurgia de fecaloma em gato, feita pelo Rangel — 18/11/2026
 
-> Fotos sem rostos de tutores, mas com o rosto da equipe (fotos 1 e 8). Pedir autorização antes de usar nos slides.
+> As fotos mostram o rosto do Rangel e da Cláudia (fotos 1 e 8). O uso nos slides está **autorizado**.
 
 | # | Foto | Legenda |
 |---|---|---|
