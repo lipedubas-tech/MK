@@ -1,0 +1,93 @@
+<title>Nodulectomia em cão</title>
+<meta name="description" content="Animação didática em 3D de uma nodulectomia em cão: preparo, incisão elíptica com margem, dissecção, ligadura, exérese em bloco, sutura e envio ao histopatológico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Palco 16:9 que ocupa o máximo da tela; a barra de controles fica embaixo do palco e,
+   em tela cheia, flutua por cima dele e se esconde quando o mouse para. */
+:root{
+  --fundo:#0b1015; --barra:#121a22; --tinta:#f3f6f8; --tinta2:#a9b7c4; --acento:#f2b84b; --acento-tinta:#1b2836;
+  --linha:#2a3744; --rotulo:#ffffff; --rotulo-fundo:rgba(14,22,30,.86);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fundo);color:var(--tinta);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{overflow:hidden;touch-action:manipulation}
+#app{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+#palco{position:relative;flex:none;overflow:hidden;background:radial-gradient(120% 90% at 50% 38%,#e9edef 0%,#cfd6db 55%,#aab4bc 100%);
+  width:min(100vw,calc((100vh - var(--hb,64px)) * 16 / 9));aspect-ratio:16/9;container-type:inline-size;user-select:none;-webkit-user-select:none}
+#palco canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+/* tudo dentro do palco escala com a largura dele (cqw) */
+#veu{position:absolute;inset:0;background:#0b1015;opacity:0;pointer-events:none}
+#topo{position:absolute;left:2.2cqw;top:1.8cqw;display:flex;align-items:center;gap:1.1cqw;pointer-events:none}
+#topo .num{display:grid;place-items:center;min-width:5.6cqw;height:2.9cqw;padding:0 1cqw;border-radius:1.5cqw;background:var(--acento);color:var(--acento-tinta);
+  font:700 1.55cqw/1 var(--sans);font-variant-numeric:tabular-nums}
+#topo .nome{font:600 1.75cqw/1.1 var(--sans);color:#1b2836;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+#palco.escuro #topo .nome{color:#f3f6f8;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+#legenda{position:absolute;left:50%;bottom:2.4cqw;transform:translateX(-50%);max-width:82cqw;padding:1.1cqw 2.2cqw 1.25cqw;border-radius:1.2cqw;
+  background:rgba(16,25,34,.88);color:#fff;text-align:center;font:600 2.65cqw/1.28 var(--sans);letter-spacing:.005em;text-wrap:balance;
+  box-shadow:0 .4cqw 1.6cqw rgba(0,0,0,.25);transition:opacity .35s}
+#legenda:empty{opacity:0}
+#abertura{position:absolute;left:5cqw;top:50%;transform:translateY(-62%);max-width:44cqw;pointer-events:none;opacity:0}
+#abertura .k{font:700 1.45cqw/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#8a5a2b;margin:0 0 1cqw}
+#abertura h1{margin:0;font:700 5.4cqw/1.02 var(--sans);letter-spacing:-.015em;color:#14212d}
+#abertura p{margin:1.4cqw 0 0;font:500 1.9cqw/1.35 var(--sans);color:#3d4b58}
+#rotulos{position:absolute;inset:0;pointer-events:none}
+#rotulos svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#rotulos .r{position:absolute;transform:translate(-50%,-50%);padding:.45cqw .9cqw .5cqw;border-radius:.7cqw;background:var(--rotulo-fundo);color:var(--rotulo);
+  font:600 1.5cqw/1.15 var(--sans);white-space:nowrap;transition:opacity .25s}
+#rotulos .r small{display:block;font:500 1.12cqw/1.2 var(--sans);color:#c7d3dd;margin-top:.15cqw}
+#rotulos .r.ok{background:#1d7a46}
+#carregando{position:absolute;inset:0;display:grid;place-items:center;font:500 1.6cqw/1.4 var(--sans);color:#33414e}
+/* barra de controles */
+#barra{flex:none;width:min(100vw,max(640px,calc((100vh - var(--hb,64px)) * 16 / 9)));height:var(--hb,64px);display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--barra)}
+#barra button{appearance:none;border:0;border-radius:10px;min-height:44px;min-width:44px;padding:0;background:#1f2b36;color:var(--tinta);
+  font:600 15px/1 var(--sans);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+#barra > button{padding:0 14px}
+#barra button:hover{background:#2a3946}
+#barra button:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+#barra button[aria-pressed="true"]{background:var(--acento);color:var(--acento-tinta)}
+#barra svg{width:18px;height:18px;flex:none}
+#trilha{flex:1;display:flex;gap:4px;align-items:center;min-width:0;height:44px}
+#trilha button{flex:1;min-width:0;min-height:0;height:44px;padding:0;background:transparent;border-radius:6px;position:relative}
+#trilha button::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;border-radius:3px;background:#2b3a48}
+#trilha button i{position:absolute;left:0;top:50%;height:6px;margin-top:-3px;border-radius:3px;background:var(--acento);width:0}
+#trilha button:hover::before{background:#3a4c5c}
+.so-largo{display:inline}
+#dica{display:none;margin:10px 16px 0;font:500 14px/1.4 var(--sans);color:var(--tinta2);text-align:center}
+@media (max-width:760px){ .so-largo{display:none} #barra{gap:5px;padding:6px} #barra > button{padding:0 10px} }
+@media (max-width:760px) and (orientation:portrait){ #dica{display:block} }
+/* tela cheia: controles por cima do palco, somem com o mouse parado */
+:fullscreen #app,.cheia #app{justify-content:center}
+.cheia #palco{width:min(100vw,calc(100vh * 16 / 9))}
+.cheia #barra{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(980px,96vw);border-radius:14px;background:rgba(18,26,34,.92);transition:opacity .4s}
+.cheia.quieto #barra{opacity:0;pointer-events:none}
+.cheia.quieto{cursor:none}
+@media (prefers-reduced-motion:reduce){#legenda,#rotulos .r,.cheia #barra{transition:none}}
+</style>
+<div id="app">
+  <div id="palco" role="img" aria-label="Animação 3D da nodulectomia em cão">
+    <div id="carregando">Carregando o modelo 3D…</div>
+    <div id="veu"></div>
+    <div id="abertura"><p class="k">Animação didática</p><h1>Nodulectomia em cão</h1><p>Exérese de nódulo cutâneo/subcutâneo, da marcação ao histopatológico</p></div>
+    <div id="rotulos"><svg aria-hidden="true"></svg></div>
+    <div id="topo" aria-hidden="true"><span class="num" id="num">1/11</span><span class="nome" id="nome">Abertura</span></div>
+    <p id="legenda" aria-live="polite"></p>
+  </div>
+  <nav id="barra" aria-label="Controles da animação">
+    <button id="ant" title="Cena anterior (seta para a esquerda)" aria-label="Cena anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span class="so-largo">Anterior</span></button>
+    <button id="tocar" title="Reproduzir ou pausar (espaço)" aria-label="Reproduzir"><svg viewBox="0 0 24 24" fill="currentColor"><path id="icone-tocar" d="M7 4.5v15l13-7.5z"/></svg></button>
+    <button id="prox" title="Próxima cena (seta para a direita)" aria-label="Próxima cena"><span class="so-largo">Próximo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div id="trilha" role="group" aria-label="Cenas"></div>
+    <button id="tudo" aria-pressed="false" title="Reproduzir todas as cenas sem parar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5v14l8.5-7zM12.5 5v14L21 12z"/></svg><span class="so-largo">Reproduzir</span> tudo</button>
+    <button id="cheia" title="Tela cheia (tecla F)" aria-label="Tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </nav>
+  <p id="dica">Gire o celular para ver maior. Deslize para o lado para trocar de cena.</p>
+</div>
+@@THREE@@
+<script>
+@@APP@@
+</script>

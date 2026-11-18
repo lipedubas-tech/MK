@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nodulectomia em cão</title>
+<style>
+  :root {
+    --fundo: #0e141b;
+    --palco: #f4f1ea;
+    --tinta: #1b2836;
+    --tinta-suave: #5a6775;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--fundo); }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  #palco {
+    width: min(100vw, calc(100vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    background: var(--palco);
+    position: relative;
+  }
+  #palco svg { display: block; width: 100%; height: 100%; }
+  svg text { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style>
+</head>
+<body>
+<div id="palco">
+<svg id="cena" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Cadela preta em decúbito lateral com um nódulo perto da axila, e um corte esquemático das camadas da pele com o nódulo encapsulado no subcutâneo">
+  <defs>
+    <!-- pelagem preta: dorso um pouco mais claro, ventre mais escuro -->
+    <linearGradient id="g-pelo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3640"/>
+      <stop offset="0.45" stop-color="#25222a"/>
+      <stop offset="1" stop-color="#151318"/>
+    </linearGradient>
+    <linearGradient id="g-pelo-membro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34313a"/>
+      <stop offset="1" stop-color="#1b191f"/>
+    </linearGradient>
+    <linearGradient id="g-pelo-fundo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1a20"/>
+      <stop offset="1" stop-color="#0f0e12"/>
+    </linearGradient>
+    <!-- focinho grisalho -->
+    <linearGradient id="g-grisalho" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a7a3ab" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#8e8a94" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#8e8a94" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g-mesa" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3e7eb"/>
+      <stop offset="0.5" stop-color="#c9cfd6"/>
+      <stop offset="1" stop-color="#b3bac3"/>
+    </linearGradient>
+    <linearGradient id="g-parede" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9eef0"/>
+      <stop offset="1" stop-color="#dfe6e8"/>
+    </linearGradient>
+    <radialGradient id="g-nodulo" cx="0.42" cy="0.36" r="0.7">
+      <stop offset="0" stop-color="#a6517c"/>
+      <stop offset="0.6" stop-color="#7d2f57"/>
+      <stop offset="1" stop-color="#58183a"/>
+    </radialGradient>
+    <radialGradient id="g-volume" cx="0.45" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#4b4652"/>
+      <stop offset="1" stop-color="#25222a"/>
+    </radialGradient>
+    <linearGradient id="g-musculo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c0504f"/>
+      <stop offset="1" stop-color="#a23d40"/>
+    </linearGradient>
+    <linearGradient id="g-pele" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8a69d"/>
+      <stop offset="0.25" stop-color="#f3c0b6"/>
+      <stop offset="1" stop-color="#f6cdc2"/>
+    </linearGradient>
+    <filter id="f-sombra" x="-20%" y="-20%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="f-cartao" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1b2836" flood-opacity="0.16"/>
+    </filter>
+    <clipPath id="c-corte">
+      <rect x="1180" y="196" width="374" height="566" rx="14"/>
+    </clipPath>
+    <marker id="m-ponta" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7">
+      <circle cx="5" cy="5" r="4" fill="#1b2836"/>
+    </marker>
+  </defs>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <g id="cabecalho">
+    <text x="60" y="62" font-size="17" font-weight="700" letter-spacing="3" fill="#8a5a2b">PASSO 1 · BASE VISUAL PARA APROVAR</text>
+    <text x="58" y="112" font-size="46" font-weight="800" fill="#1b2836">Nodulectomia em cão</text>
+  </g>
+
+  <!-- ===================== VISTA GERAL: CADELA EM DECÚBITO LATERAL ===================== -->
+  <g id="vista-geral">
+    <!-- parede e mesa -->
+    <rect x="30" y="140" width="985" height="660" rx="22" fill="url(#g-parede)"/>
+    <path d="M 30 420 L 1015 400 L 1015 778 Q 1015 800 993 800 L 52 800 Q 30 800 30 778 Z" fill="url(#g-mesa)"/>
+    <path d="M 30 420 L 1015 400" stroke="#f7f9fa" stroke-width="4"/>
+    <g stroke="#ffffff" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round">
+      <path d="M 640 790 L 760 420"/>
+      <path d="M 700 790 L 800 430"/>
+    </g>
+
+    <!-- toalha creme com bolinhas, como nas fotos -->
+    <g id="toalha">
+      <path d="M 70 470 C 160 430 330 445 470 432 C 640 418 820 430 975 452
+               C 990 520 985 640 968 742 C 820 760 600 770 420 762
+               C 280 758 160 765 90 752 C 70 680 62 560 70 470 Z"
+            fill="#efe7d2" stroke="#ddd2b6" stroke-width="3"/>
+      <g id="toalha-bolinhas" fill="#cfc77f" fill-opacity="0.55"></g>
+    </g>
+
+    <!-- sombra do corpo na toalha -->
+    <ellipse cx="560" cy="640" rx="420" ry="58" fill="#5b5140" opacity="0.28" filter="url(#f-sombra)"/>
+
+    <!-- a cadela; desenhada num espaço próprio e posicionada aqui -->
+    <g id="cadela" transform="translate(62 262) scale(0.9)">
+      <!-- membros do lado de baixo (direitos), mais escuros, atrás do corpo -->
+      <g id="membros-fundo" fill="url(#g-pelo-fundo)">
+        <path id="anterior-fundo" d="M 470 372 C 430 414 384 446 330 482 C 296 503 254 516 222 521
+                 C 196 525 178 536 181 551 C 185 563 204 565 222 563
+                 C 262 559 304 550 336 538 C 396 514 446 486 506 444 Z"/>
+        <path id="posterior-fundo" d="M 860 340 C 840 400 850 440 890 470 C 930 500 975 528 1010 552
+                 C 1030 565 1048 572 1062 584 C 1068 597 1054 604 1036 601
+                 C 1004 597 968 584 940 568 C 896 544 856 512 830 470 Z"/>
+      </g>
+      <!-- cauda, deitada sobre a toalha -->
+      <path id="cauda" d="M 938 232 C 990 238 1030 262 1052 300 C 1066 324 1072 352 1070 372
+               C 1062 376 1056 372 1054 362 C 1048 330 1032 302 1004 280 C 984 266 962 262 942 262 Z"
+            fill="url(#g-pelo)"/>
+
+      <!-- corpo, pescoço e cabeça -->
+      <path id="corpo" d="M 38 298
+               C 38 288 46 279 60 277
+               C 100 268 150 260 186 248
+               C 205 230 238 220 268 223
+               C 290 226 302 234 314 242
+               C 352 244 396 226 440 206
+               C 470 194 500 188 530 186
+               C 640 174 770 178 850 192
+               C 900 200 930 216 948 238
+               C 978 276 982 345 954 382
+               C 936 402 906 412 872 412
+               C 800 422 700 424 622 414
+               C 560 416 500 408 452 394
+               C 400 374 352 350 302 340
+               C 250 336 200 333 150 330
+               C 110 328 78 326 62 322
+               C 46 318 38 310 38 298 Z"
+            fill="url(#g-pelo)"/>
+      <!-- brilho do dorso -->
+      <path d="M 470 210 C 600 190 760 190 880 214 C 760 206 610 206 480 224 Z" fill="#5a5562" opacity="0.45"/>
+      <!-- costelas sugeridas e contorno da escápula, bem sutis -->
+      <g fill="none" stroke="#0f0e12" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round">
+        <path d="M 640 250 C 650 300 652 350 640 398"/>
+        <path d="M 690 246 C 702 300 704 352 692 404"/>
+        <path d="M 740 244 C 752 300 752 352 742 404"/>
+      </g>
+      <g fill="none" stroke="#4a4652" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round">
+        <path d="M 600 236 C 630 228 660 226 690 228"/>
+        <path d="M 820 236 C 850 244 872 258 888 278"/>
+      </g>
+
+      <!-- orelha semiereta, de ponta dobrada -->
+      <g id="orelha">
+        <path d="M 256 236 C 250 204 258 172 278 150 C 296 150 312 166 318 194 C 322 214 318 232 310 246 Z"
+              fill="url(#g-pelo-membro)" stroke="#0f0e12" stroke-width="2"/>
+        <path d="M 278 150 C 264 152 248 160 234 176 C 230 182 236 186 244 184 C 258 180 272 172 288 160 Z"
+              fill="#2c2932" stroke="#0f0e12" stroke-width="2"/>
+        <path d="M 266 224 C 266 200 274 180 286 166" fill="none" stroke="#4d4855" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- focinho grisalho (idosa) -->
+      <path id="grisalho" d="M 40 300 C 40 288 48 280 62 278 C 100 270 140 262 176 252
+               C 190 262 196 290 192 330 C 150 330 110 328 62 322 C 46 318 40 310 40 300 Z"
+            fill="url(#g-grisalho)"/>
+      <path d="M 196 244 C 206 236 220 232 232 234 C 222 240 210 244 196 248 Z" fill="#9a96a0" opacity="0.8"/>
+      <g stroke="#b9b5bd" stroke-width="2" stroke-linecap="round" opacity="0.7">
+        <path d="M 210 300 l 8 -3"/><path d="M 224 310 l 8 -2"/><path d="M 214 318 l 9 -1"/>
+        <path d="M 236 296 l 7 -3"/><path d="M 244 322 l 8 -2"/>
+      </g>
+
+      <!-- trufa (nariz) -->
+      <path d="M 34 294 C 34 282 44 276 56 277 C 64 278 68 286 66 296 C 64 306 56 310 46 309 C 38 308 34 302 34 294 Z"
+            fill="#0c0b0e"/>
+      <ellipse cx="50" cy="285" rx="8" ry="4" fill="#5c5864" opacity="0.8"/>
+      <!-- boca -->
+      <path id="boca" d="M 64 314 C 100 320 140 322 172 318" fill="none" stroke="#141217" stroke-width="3" stroke-linecap="round"/>
+      <!-- olho aberto (acordada) -->
+      <g id="olho">
+        <ellipse cx="214" cy="262" rx="12" ry="8" transform="rotate(-12 214 262)" fill="#2a1a12" stroke="#0c0b0e" stroke-width="2"/>
+        <circle cx="210" cy="259" r="3" fill="#f2efe8"/>
+      </g>
+
+      <!-- volume do nódulo na parede torácica, caudal ao cotovelo, perto da axila -->
+      <g id="volume-nodulo">
+        <ellipse cx="572" cy="352" rx="36" ry="27" fill="url(#g-volume)"/>
+        <path d="M 542 344 C 552 328 584 322 602 336" fill="none" stroke="#6a6472" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 546 372 C 562 382 590 382 604 368" fill="none" stroke="#0c0b0e" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- membro torácico de cima (esquerdo), estendido para a frente -->
+      <path id="anterior-cima" d="M 455 268 C 425 298 410 340 420 375
+               C 390 402 350 432 312 458
+               C 290 470 268 478 246 482
+               C 222 484 200 490 194 504
+               C 192 516 206 522 222 522
+               C 250 522 280 516 302 508
+               C 340 494 390 470 440 444
+               C 470 428 498 420 518 404
+               C 536 380 536 330 520 290
+               C 505 270 480 262 455 268 Z"
+            fill="url(#g-pelo-membro)" stroke="#0f0e12" stroke-width="2.5"/>
+      <g fill="none" stroke="#0f0e12" stroke-width="2.5" stroke-linecap="round">
+        <path d="M 206 506 C 212 512 220 514 228 512"/>
+        <path d="M 200 496 C 206 500 212 502 218 500"/>
+      </g>
+
+      <!-- membro pélvico de cima (esquerdo), estendido para trás -->
+      <path id="posterior-cima" d="M 846 226 C 806 270 792 360 834 418
+               C 866 450 910 478 952 504
+               C 980 520 1006 534 1030 546
+               C 1048 552 1062 560 1060 572
+               C 1056 582 1040 582 1024 578
+               C 996 572 966 560 944 548
+               C 930 540 916 528 906 516
+               C 940 500 966 470 976 434
+               C 990 380 976 300 940 252
+               C 918 228 878 216 846 226 Z"
+            fill="url(#g-pelo-membro)" stroke="#0f0e12" stroke-width="2.5"/>
+      <g fill="none" stroke="#0f0e12" stroke-width="2.5" stroke-linecap="round">
+        <path d="M 1046 566 C 1040 572 1032 574 1024 572"/>
+        <path d="M 1052 556 C 1046 562 1040 564 1032 562"/>
+      </g>
+      <path d="M 850 250 C 900 240 940 262 958 300" fill="none" stroke="#4a4652" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- lupa: região que o corte mostra -->
+    <g id="lupa">
+      <circle cx="577" cy="579" r="58" fill="none" stroke="#f4f1ea" stroke-width="5"/>
+      <circle cx="577" cy="579" r="58" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 7"/>
+      <path d="M 625 548 C 760 470 880 330 1020 300" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="10 7"/>
+      <rect x="440" y="676" width="236" height="46" rx="23" fill="#1b2836"/>
+      <text x="558" y="707" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">nódulo perto da axila</text>
+      <path d="M 560 676 L 570 640" stroke="#1b2836" stroke-width="3"/>
+    </g>
+    <text x="60" y="784" font-size="19" fill="#5a6775">Decúbito lateral direito · cadela SRD, porte médio, idosa</text>
+  </g>
+
+  <!-- ===================== CORTE ESQUEMÁTICO EM CAMADAS ===================== -->
+  <g id="painel-corte">
+    <rect x="1030" y="140" width="540" height="660" rx="22" fill="#ffffff" filter="url(#f-cartao)"/>
+    <text x="1058" y="182" font-size="26" font-weight="800" fill="#1b2836">Corte em camadas</text>
+
+    <g id="corte" clip-path="url(#c-corte)">
+      <rect x="1180" y="196" width="374" height="566" fill="#f7f5f0"/>
+      <g id="corte-musculo"></g>
+      <g id="corte-fascia"></g>
+      <g id="corte-subcutaneo"></g>
+      <g id="corte-vasos"></g>
+      <g id="corte-nodulo"></g>
+      <g id="corte-pele"></g>
+      <g id="corte-pelos"></g>
+    </g>
+    <rect x="1180" y="196" width="374" height="566" rx="14" fill="none" stroke="#d9d3c6" stroke-width="2"/>
+
+    <g id="rotulos" font-size="21" font-weight="700" fill="#1b2836"></g>
+  </g>
+
+  <!-- ===================== PRÉVIA DA BARRA DE LEGENDA ===================== -->
+  <g id="legenda">
+    <rect x="30" y="818" width="1540" height="66" rx="16" fill="#1b2836"/>
+    <rect x="46" y="830" width="78" height="42" rx="21" fill="#f2b84b"/>
+    <text x="85" y="859" font-size="22" font-weight="800" fill="#1b2836" text-anchor="middle">3/11</text>
+    <text x="146" y="862" font-size="32" font-weight="700" fill="#ffffff">Incisão elíptica com margem de segurança</text>
+    <text x="1548" y="860" font-size="19" fill="#9fb0c2" text-anchor="end">prévia do estilo da legenda</text>
+  </g>
+</svg>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+
+  // gerador pseudoaleatório com semente fixa: o desenho sai sempre igual
+  var semente = 7;
+  function aleatorio() {
+    semente = (semente * 16807) % 2147483647;
+    return (semente - 1) / 2147483646;
+  }
+  function el(nome, attrs, pai) {
+    var e = document.createElementNS(NS, nome);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (pai) pai.appendChild(e);
+    return e;
+  }
+  function $(id) { return document.getElementById(id); }
+
+  // ---------- bolinhas da toalha ----------
+  var bolinhas = $("toalha-bolinhas");
+  for (var i = 0; i < 46; i++) {
+    var bx = 95 + aleatorio() * 860, by = 460 + aleatorio() * 280;
+    var r = 6 + aleatorio() * 7;
+    el("ellipse", { cx: bx.toFixed(1), cy: by.toFixed(1), rx: r.toFixed(1), ry: (r * 0.8).toFixed(1),
+      fill: aleatorio() < 0.35 ? "#c9a96a" : "#cfc77f" }, bolinhas);
+  }
+
+  // ---------- geometria do corte ----------
+  var X0 = 1180, X1 = 1554;              // largura do bloco
+  var NX = 1388, NY = 404;               // centro do nódulo
+  var PELE = 30;                         // espessura da pele
+  var FASCIA_Y = 604, FASCIA_H = 12, FUNDO = 762;
+  function superficie(x) {               // a pele levanta sobre o nódulo
+    var d = (x - NX) / 96;
+    return 292 - 36 * Math.exp(-d * d);
+  }
+  function caminhoFaixa(topo, base) {    // faixa entre duas curvas
+    var d = "M " + X0 + " " + topo(X0).toFixed(1);
+    for (var x = X0 + 6; x <= X1; x += 6) d += " L " + x + " " + topo(x).toFixed(1);
+    for (var x2 = X1; x2 >= X0; x2 -= 6) d += " L " + x2 + " " + base(x2).toFixed(1);
+    return d + " Z";
+  }
+
+  // músculo com feixes
+  var gm = $("corte-musculo");
+  el("rect", { x: X0, y: FASCIA_Y + FASCIA_H, width: X1 - X0, height: FUNDO - FASCIA_Y - FASCIA_H, fill: "url(#g-musculo)" }, gm);
+  for (var f = 0; f < 9; f++) {
+    var fy = FASCIA_Y + FASCIA_H + 14 + f * 16;
+    var dd = "M " + X0 + " " + fy;
+    for (var fx = X0; fx <= X1 + 20; fx += 40) {
+      dd += " q 10 " + (aleatorio() * 4 - 2).toFixed(1) + " 20 0 t 20 0";
+    }
+    el("path", { d: dd, fill: "none", stroke: f % 3 === 2 ? "#d9797a" : "#8f3236", "stroke-width": f % 3 === 2 ? 2 : 1.6, "stroke-opacity": 0.7 }, gm);
+  }
+
+  // fáscia
+  el("rect", { x: X0, y: FASCIA_Y, width: X1 - X0, height: FASCIA_H, fill: "#f1ece3" }, $("corte-fascia"));
+  el("path", { d: "M " + X0 + " " + (FASCIA_Y + 1) + " H " + X1 + " M " + X0 + " " + (FASCIA_Y + FASCIA_H - 1) + " H " + X1,
+    stroke: "#cfc3ad", "stroke-width": 2 }, $("corte-fascia"));
+
+  // subcutâneo: gordura em lóbulos
+  var gs = $("corte-subcutaneo");
+  el("path", { d: caminhoFaixa(function (x) { return superficie(x) + PELE; }, function () { return FASCIA_Y; }),
+    fill: "#f9e7a8" }, gs);
+  var lobulos = [];
+  for (var t = 0; t < 900 && lobulos.length < 90; t++) {
+    var lx = X0 + 8 + aleatorio() * (X1 - X0 - 16);
+    var ly = superficie(lx) + PELE + 10 + aleatorio() * (FASCIA_Y - superficie(lx) - PELE - 14);
+    var lr = 11 + aleatorio() * 10;
+    var dn = Math.pow((lx - NX) / 104, 2) + Math.pow((ly - NY) / 82, 2);
+    if (dn < 1) continue;                                   // não entra no nódulo
+    if (ly > FASCIA_Y - 52 && ly < FASCIA_Y - 14) continue; // corredor dos vasos
+    var livre = lobulos.every(function (o) { return Math.hypot(o[0] - lx, o[1] - ly) > o[2] + lr - 3; });
+    if (!livre) continue;
+    lobulos.push([lx, ly, lr]);
+    el("circle", { cx: lx.toFixed(1), cy: ly.toFixed(1), r: lr.toFixed(1), fill: "#fbefc2", stroke: "#e6cc7a", "stroke-width": 2 }, gs);
+  }
+
+  // vasos: artéria (vermelha) e veia (azul) correndo acima da fáscia, com ramos para o nódulo
+  var gv = $("corte-vasos");
+  var VA = FASCIA_Y - 38, VV = FASCIA_Y - 22;
+  el("path", { id: "veia", d: "M " + X0 + " " + VV + " C 1260 " + (VV + 4) + " 1330 " + (VV - 2) + " 1420 " + VV + " S 1520 " + (VV + 4) + " " + X1 + " " + VV,
+    fill: "none", stroke: "#3c66c2", "stroke-width": 10, "stroke-linecap": "round" }, gv);
+  el("path", { id: "arteria", d: "M " + X0 + " " + VA + " C 1260 " + (VA - 3) + " 1330 " + (VA + 3) + " 1420 " + VA + " S 1520 " + (VA - 3) + " " + X1 + " " + VA,
+    fill: "none", stroke: "#d6403f", "stroke-width": 8, "stroke-linecap": "round" }, gv);
+  el("path", { id: "ramo-veia", d: "M 1420 " + VV + " C 1424 " + (VV - 40) + " 1418 " + (NY + 80) + " 1414 " + (NY + 62),
+    fill: "none", stroke: "#3c66c2", "stroke-width": 7, "stroke-linecap": "round" }, gv);
+  el("path", { id: "ramo-arteria", d: "M 1356 " + VA + " C 1352 " + (VA - 40) + " 1358 " + (NY + 84) + " 1364 " + (NY + 64),
+    fill: "none", stroke: "#d6403f", "stroke-width": 6, "stroke-linecap": "round" }, gv);
+
+  // nódulo encapsulado, levemente lobulado
+  var gn = $("corte-nodulo");
+  function contornoNodulo(rx, ry) {
+    var d = "";
+    for (var a = 0; a <= 64; a++) {
+      var ang = a / 64 * Math.PI * 2;
+      var k = 1 + 0.045 * Math.sin(ang * 5 + 0.6) + 0.03 * Math.sin(ang * 9);
+      var px = NX + Math.cos(ang) * rx * k, py = NY + Math.sin(ang) * ry * k;
+      d += (a ? " L " : "M ") + px.toFixed(1) + " " + py.toFixed(1);
+    }
+    return d + " Z";
+  }
+  el("path", { id: "capsula", d: contornoNodulo(96, 72), fill: "#e8b9cf", stroke: "#c48aa8", "stroke-width": 2 }, gn);
+  el("path", { id: "nodulo", d: contornoNodulo(88, 64), fill: "url(#g-nodulo)" }, gn);
+  el("path", { d: "M " + (NX - 50) + " " + (NY - 30) + " C " + (NX - 30) + " " + (NY - 50) + " " + (NX + 10) + " " + (NY - 52) + " " + (NX + 34) + " " + (NY - 40),
+    fill: "none", stroke: "#c77aa1", "stroke-width": 5, "stroke-linecap": "round", "stroke-opacity": 0.6 }, gn);
+  el("path", { d: "M " + (NX - 20) + " " + (NY + 6) + " C " + NX + " " + (NY - 6) + " " + (NX + 24) + " " + (NY + 8) + " " + (NX + 40) + " " + (NY - 4),
+    fill: "none", stroke: "#4c1532", "stroke-width": 3, "stroke-linecap": "round", "stroke-opacity": 0.6 }, gn);
+
+  // pele (epiderme + derme)
+  var gp = $("corte-pele");
+  el("path", { d: caminhoFaixa(superficie, function (x) { return superficie(x) + PELE; }), fill: "url(#g-pele)" }, gp);
+  var epi = "M " + X0 + " " + superficie(X0).toFixed(1);
+  for (var ex = X0 + 6; ex <= X1; ex += 6) epi += " L " + ex + " " + superficie(ex).toFixed(1);
+  el("path", { d: epi, fill: "none", stroke: "#c97a72", "stroke-width": 3 }, gp);
+  // folículos na derme
+  for (var fo = X0 + 12; fo < X1; fo += 22) {
+    var sy = superficie(fo);
+    el("path", { d: "M " + fo + " " + (sy + 3).toFixed(1) + " l 6 " + (PELE - 9), stroke: "#2a2630", "stroke-width": 2, "stroke-opacity": 0.55, fill: "none" }, gp);
+  }
+
+  // pelos pretos curtos
+  var gpe = $("corte-pelos");
+  for (var hx = X0 + 4; hx < X1; hx += 7) {
+    var hy = superficie(hx);
+    var comp = 14 + aleatorio() * 9;
+    var ang2 = -0.55 - aleatorio() * 0.35;
+    el("path", { d: "M " + hx + " " + (hy + 1).toFixed(1) + " q " + (Math.cos(ang2) * comp * 0.4).toFixed(1) + " " + (Math.sin(ang2) * comp * 0.6).toFixed(1) +
+      " " + (Math.cos(ang2) * comp).toFixed(1) + " " + (Math.sin(ang2) * comp).toFixed(1),
+      stroke: "#1d1b21", "stroke-width": 2.2, "stroke-linecap": "round", fill: "none" }, gpe);
+  }
+
+  // ---------- rótulos com linhas de chamada ----------
+  var gr = $("rotulos");
+  function rotulo(texto, sub, ty, alvoX, alvoY) {
+    el("path", { d: "M 1150 " + (ty - 7) + " L 1168 " + (ty - 7) + " L " + alvoX + " " + alvoY,
+      fill: "none", stroke: "#1b2836", "stroke-width": 2, "marker-end": "url(#m-ponta)" }, gr);
+    var t = el("text", { x: 1052, y: ty }, gr);
+    t.textContent = texto;
+    if (sub) {
+      var s = el("text", { x: 1052, y: ty + 22, "font-size": 16, "font-weight": 500, fill: "#5a6775" }, gr);
+      s.textContent = sub;
+    }
+  }
+  rotulo("Pelo", null, 252, 1196, superficie(1196) - 8);
+  rotulo("Pele", null, 304, 1200, superficie(1200) + 16);
+  rotulo("Nódulo", "encapsulado", 404, NX - 92, NY + 6);
+  rotulo("Subcutâneo", "gordura", 486, 1214, 470);
+  rotulo("Vasos", "artéria e veia", 562, 1206, VA + 6);
+  rotulo("Fáscia", null, 640, 1200, FASCIA_Y + 6);
+  rotulo("Músculo", null, 712, 1206, 700);
+
+  // ---------- tela cheia (tecla F) ----------
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "f" || e.key === "F") {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function () {});
+      else document.exitFullscreen();
+    }
+  });
+})();
+</script>
+</body>
+</html>
