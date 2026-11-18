@@ -64,7 +64,7 @@ Estes dados vêm do slide de identificação da Yasmin, de 2025. Confirme com a 
 | Telefone | (48) 99924-7977 |
 | Site | Não informado |
 | Área de atuação | Clínica veterinária e pet shop |
-| Histórico | Inaugurada em 2005 pelo médico veterinário Rangel Ramos Cardoso. Começou pequena e cresceu até virar referência na região. Pela conversa com o Rangel (18/11/2026), ele se formou em 2005 e queria trabalhar com grande porte, mas a demanda da região era de pet, por isso abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento por causa do estresse de lidar com a vida dos animais |
+| Histórico | Inaugurada em 2005 pelo médico veterinário Rangel Ramos Cardoso. Começou pequena e cresceu até virar referência na região. Pela conversa com o Rangel (18/11/2026), ele se formou em 2005 e queria trabalhar com grande porte, mas a demanda da região era de pet, por isso abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento clínico por causa do estresse de lidar com a vida dos animais. Hoje só vai à clínica para fazer cirurgias |
 | Serviços | Banho e tosa, consultas, cirurgias, exames laboratoriais, pet shop, raio-X, ultrassonografia, vacinas |
 | Ambientes | Balcão e pet shop, consultório, internamento, sala de espera e pesagem, cozinha e estante de remédios, gaiolas de animais prontos, sala de raio-X, banho e tosa, lavanderia, canil, sala de cirurgia, sala de esterilização |
 
@@ -89,7 +89,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **A rotina (dia 02):** você pulou o almoço para acompanhar a cirurgia da Katita, querendo sentir o estresse da rotina. O veterinário brincou que depois dessa ele desistiria da veterinária.
 - **O papel do anestesista (dia 02):** garantir a sobrevivência da cachorra.
 - **Os gatos na clínica (10–11/11):** quase sempre são casos de FIV/FeLV ou cistite. A exceção foi a esporotricose.
-- **A conversa com o Rangel (18/11):** o fundador queria grande porte e acabou no pet porque era o que a região pedia. Depois de cerca de 20 anos, se afastou do atendimento pelo estresse de ter a vida dos animais nas mãos. Isso conversa com a sua reflexão do dia 01 (o peso emocional da profissão) e com a do dia 02 (sentir o estresse da rotina). Pode abrir ou fechar a defesa: a clínica nasceu de uma adaptação ao mercado, e o custo da profissão aparece no próprio fundador.
+- **A conversa com o Rangel (18/11):** o fundador queria grande porte e acabou no pet porque era o que a região pedia. Depois de cerca de 20 anos, se afastou do atendimento clínico pelo estresse de ter a vida dos animais nas mãos, mas continua operando: o que o afastou foi a rotina de consultas, não a cirurgia. Isso conversa com a sua reflexão do dia 01 (o peso emocional da profissão) e com a do dia 02 (sentir o estresse da rotina). Pode abrir ou fechar a defesa: a clínica nasceu de uma adaptação ao mercado, e o custo da profissão aparece no próprio fundador.
 - **Tese sugerida numa conversa:** "O paciente é o animal, mas a clínica é construída com as pessoas que o amam."
 - **O sentido da defesa:** você quer usar a defesa para explorar a sua curiosidade e as suas "megalomanias", pensando primeiro no sentido dela ("metafísica da defesa") antes de fechar o formato. O que mais agradou ao ortopedista e a quem assistiu foi a animação da cirurgia da Katita.
 
@@ -173,8 +173,8 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - Você não gostou das primeiras ideias interativas e escolheu prototipar a "Katita modo cinema".
 
 ### 18/11/2026 (data do envio; confirmar o dia)
-- **Conversa com o Rangel**, dono da clínica: formou-se em 2005, queria grande porte, mas só havia demanda para pet, então abriu o consultório para pequenos animais. Há 2 anos se afastou por causa do estresse de trabalhar com a vida animal (ver seção 1 e seção 2).
-- **Cirurgia abdominal em gato** com retirada de massas escuras e endurecidas (ver seção 4.9 e fotos da seção 10.7).
+- **Conversa com o Rangel**, dono da clínica: formou-se em 2005, queria grande porte, mas só havia demanda para pet, então abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento por causa do estresse de trabalhar com a vida animal; hoje só aparece para fazer cirurgias (ver seção 1 e seção 2).
+- **Cirurgia de fecaloma em gato**, feita pelo Rangel (ver seção 4.9 e fotos da seção 10.7).
 
 ---
 
@@ -331,18 +331,18 @@ A Katita tem pelagem caramelo e orelhas escuras.
 | 10/11 | Gato com cistite (ultrassom) |
 | 11/11 | Dobermann sem ultrassom (recusa de sedação); banho e tosa; castração |
 | 12/11 | Cistocentese ecoguiada |
-| 18/11 | Cirurgia abdominal em gato com retirada de massas (seção 4.9) |
+| 18/11 | Cirurgia de fecaloma em gato, feita pelo Rangel (seção 4.9) |
 
-### 4.9 Gato: cirurgia abdominal com retirada de massas (18/11/2026, confirmar)
-O que as fotos mostram; o diagnóstico e a técnica ainda precisam ser confirmados com a equipe.
+### 4.9 Gato: fecaloma (18/11/2026, confirmar a data)
+**Diagnóstico confirmado: fecaloma**, uma massa de fezes ressecadas e endurecidas que o gato não consegue eliminar. O resto vem das fotos; a técnica e o histórico ainda precisam ser confirmados.
 - **Paciente:** gato SRD tigrado e branco (sexo, idade e peso não registrados).
-- **Equipe:** cirurgião e anestesista paramentados (avental descartável, touca, máscara e luvas). Quem é cada um ainda não está registrado.
+- **Equipe:** o **cirurgião foi o Rangel**, dono da clínica. A anestesista ainda não está identificada. Os dois estavam paramentados (avental descartável, touca, máscara e luvas).
 - **Anestesia:** inalatória, com o paciente intubado. A anestesista controla o balão reservatório do circuito. Há monitor multiparamétrico, fluidoterapia em bolsa no suporte e acesso venoso na pata dianteira.
 - **Posição e campo:** decúbito dorsal, com campos cirúrgicos verdes e compressas. A incisão fica no abdômen ventral caudal, com tricotomia ampla.
-- **Material removido:** duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. O aspecto lembra **fecaloma** (fezes ressecadas, como na obstipação ou no megacólon) ou um **tricobezoar** (bola de pelos). Confirmar qual era e de que órgão saiu (cólon, intestino ou estômago).
+- **Material removido:** o fecaloma, em duas massas grandes e dois fragmentos menores, escuros, secos e endurecidos, colocados na cuba-rim. Fecaloma costuma se formar no cólon (intestino grosso), muitas vezes ligado a obstipação crônica ou megacólon. Confirmar o órgão aberto (provável colotomia) e a causa.
 - **Mesa de instrumentais:** tesouras, porta-agulhas, pinças hemostáticas, pinça de dissecção, cabo de bisturi, afastador de Farabeuf, gaze e fio de sutura 3-0.
 - **Pós-operatório imediato:** gato ainda intubado, aquecido com toalhas sobre a mesa, com a ferida suturada no abdômen.
-- **Ideia para a defesa:** é um caso visual forte (o "oculto" que sai do corpo, eixo 1 da seção 2) e pode virar uma animação curta como as de OSH e nodulectomia.
+- **Ideia para a defesa:** junta duas histórias: o fundador que se afastou das consultas pelo estresse, mas segue operando, e um caso visual forte (o "oculto" que sai do corpo, eixo 1 da seção 2) e pode virar uma animação curta como as de OSH e nodulectomia.
 
 ---
 
@@ -434,7 +434,7 @@ As referências estão ilegíveis na foto.
 | Pessoa | Papel |
 |---|---|
 | Cláudia Helena Bratti da Silva | Médica veterinária (clínica geral), supervisora no estágio |
-| Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica. Formado em 2005; queria grande porte, mas abriu para pet pela demanda. Afastado do atendimento há 2 anos pelo estresse |
+| Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica. Formado em 2005; queria grande porte, mas abriu para pet pela demanda. Afastado do atendimento clínico há 2 anos pelo estresse; hoje só vem para cirurgias. Operou o gato do fecaloma (18/11) |
 | Thiago | Ortopedista; cirurgião da Katita e responsável pelo caso do Bob |
 | Fran Oliveira | Orientadora do estágio no IFC |
 | Yasmim de Borba da Rolt | Colega que defendeu estágio na mesma clínica em dezembro de 2025. A orientadora dela foi Daiane da Rosa Fregulia e a banca, Rita de Albernaz Gonçalves da Silva |
@@ -487,8 +487,8 @@ As referências estão ilegíveis na foto.
 - [ ] Com a Fran: como apresentar a participação na castração de 11/11
 - [ ] Se os dados da clínica da defesa da Yasmin (2025) continuam válidos: endereço, telefone, responsável legal
 - [ ] Sua carga horária diária e total
-- [ ] Cirurgia do gato (18/11): a data, o diagnóstico (fecaloma, megacólon ou tricobezoar), o órgão aberto (colotomia, enterotomia ou gastrotomia), quem operou e quem anestesiou, e a evolução
-- [ ] Com o Rangel: se ele permite citar na defesa a história dele (o grande porte e o afastamento pelo estresse), e se ainda faz algo na clínica (gestão, cirurgias)
+- [ ] Cirurgia do fecaloma (18/11): a data, o órgão aberto (provável colotomia), a causa (obstipação crônica, megacólon?), quem anestesiou e a evolução
+- [ ] Com o Rangel: se ele permite citar na defesa a história dele (o grande porte e o afastamento pelo estresse)
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
@@ -503,7 +503,7 @@ As referências estão ilegíveis na foto.
 
 ## 10. Registro fotográfico
 
-São as 80 fotos dos 6 PDFs (mais as 9 da cirurgia do gato, seção 10.7, enviadas direto na conversa), com as legendas originais, em ordem de data. As imagens em tamanho real estão em [`fotos/`](fotos/).
+São as 80 fotos dos 6 PDFs (mais as 9 da cirurgia de fecaloma, seção 10.7, enviadas direto na conversa), com as legendas originais, em ordem de data. As imagens em tamanho real estão em [`fotos/`](fotos/).
 
 ### 10.1 Dia 02 — 29/10/2026 ([`pdfs/fotos-dia02-estagio.pdf`](pdfs/fotos-dia02-estagio.pdf))
 
@@ -655,19 +655,19 @@ O nome da tutora já vem coberto nos laudos.
 | 5 | ![](fotos/quimio/05-quimio-seringa-no-acesso.jpg) | Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro |
 | 6 | ![](fotos/quimio/06-cistocentese-ecoguiada.jpg) | Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga |
 
-### 10.7 Cirurgia abdominal em gato — 18/11/2026 (confirmar a data)
+### 10.7 Cirurgia de fecaloma em gato, feita pelo Rangel — 18/11/2026 (confirmar a data)
 
 > Fotos sem rostos de tutores, mas com o rosto da equipe (fotos 1 e 8). Pedir autorização antes de usar nos slides.
 
 | # | Foto | Legenda |
 |---|---|---|
-| 1 | ![](fotos/cirurgia-felino/01-equipe-paramentada-anestesia.jpg) | Equipe paramentada: cirurgião à esquerda e anestesista à direita, segurando o balão reservatório da anestesia inalatória. Ao fundo, o monitor multiparamétrico e a bolsa de soro |
+| 1 | ![](fotos/cirurgia-felino/01-equipe-paramentada-anestesia.jpg) | Equipe paramentada: o Rangel (cirurgião) à esquerda e a anestesista à direita, segurando o balão reservatório da anestesia inalatória. Ao fundo, o monitor multiparamétrico e a bolsa de soro |
 | 2 | ![](fotos/cirurgia-felino/02-cirurgiao-e-cuba-rim.jpg) | Gato em decúbito dorsal sob campos cirúrgicos. O cirurgião trabalha na incisão abdominal e a auxiliar aproxima a cuba-rim |
-| 3 | ![](fotos/cirurgia-felino/03-retirada-da-massa-1.jpg) | Retirada de uma massa escura e endurecida pela incisão, direto para a cuba-rim |
+| 3 | ![](fotos/cirurgia-felino/03-retirada-da-massa-1.jpg) | Retirada do fecaloma, escuro e endurecido, pela incisão, direto para a cuba-rim |
 | 4 | ![](fotos/cirurgia-felino/04-retirada-da-massa-2.jpg) | A mesma massa, já exteriorizada; dentro da cuba, um fragmento retirado antes |
 | 5 | ![](fotos/cirurgia-felino/05-retirada-da-massa-3.jpg) | Outro ângulo da retirada, com o tecido do órgão aberto visível em volta da massa |
 | 6 | ![](fotos/cirurgia-felino/06-retirada-da-massa-4.jpg) | Sequência da retirada; à frente, a mesa de instrumentais |
-| 7 | ![](fotos/cirurgia-felino/07-material-removido-cuba-rim.jpg) | Material removido na cuba-rim: duas massas grandes e dois fragmentos menores, escuros e secos (aspecto de fecaloma ou tricobezoar, a confirmar) |
+| 7 | ![](fotos/cirurgia-felino/07-material-removido-cuba-rim.jpg) | Material removido na cuba-rim: duas massas grandes e dois fragmentos menores, escuros e secos (fecaloma) |
 | 8 | ![](fotos/cirurgia-felino/08-sutura-e-mesa-de-instrumentais.jpg) | Fase de sutura. Na mesa: tesouras, pinças hemostáticas, porta-agulhas, cabo de bisturi, afastador de Farabeuf, gaze e fio 3-0 |
 | 9 | ![](fotos/cirurgia-felino/09-pos-operatorio-intubado.jpg) | Pós-operatório imediato: gato tigrado e branco ainda intubado, com acesso venoso enfaixado na pata e a ferida suturada no abdômen, aquecido com toalhas |
 
