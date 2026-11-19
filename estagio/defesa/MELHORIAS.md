@@ -16,7 +16,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 - [x] **FEITO 19/11 (teste):** linha do tempo do estágio inteiro com **todas as fotos e todas as ideias**, dia a dia (28/10 até hoje). Cada dia com as suas fotos (de `estagio/fotos/` e `estagio/imagens/`, com as legendas originais), os casos, as reflexões e as ideias da defesa que surgiram naquele dia (animações, eixos temáticos, artefatos publicados). Formato visual (página HTML em `estagio/defesa/linha-do-tempo/`, com as fotos referenciadas do repositório, sem copiar nem alterar os originais), com uma versão em PDF para o plano B offline. Atualizar a cada execução seguinte quando chegarem dias novos.
 
-- [ ] **1º NA FILA: material para o Felipe escolher o eixo da defesa.** A escolha é dele; a tarefa **não decide** o eixo. Fazer uma página comparando os 5 eixos temáticos (seção 2 de `informacoes-do-estagio.md`: tornar visível o oculto; dar voz ao paciente que não fala; caráter formado por exposição e habituação; mortalidade e tempo condensados em dados clínicos; mídia visual como argumento) e a tese "o paciente é o animal, mas a clínica é construída com as pessoas que o amam". Para cada um: os casos e fotos que encaixam, as reflexões dele que sustentam, como seria a abertura e o fechamento, o que fica de fora, e o risco. Em `estagio/defesa/eixos/`.
+- [x] **FEITO 19/11 11h41 (`estagio/defesa/eixos/comparativo.md`) — 1º NA FILA: material para o Felipe escolher o eixo da defesa.** A escolha é dele; a tarefa **não decide** o eixo. Fazer uma página comparando os 5 eixos temáticos (seção 2 de `informacoes-do-estagio.md`: tornar visível o oculto; dar voz ao paciente que não fala; caráter formado por exposição e habituação; mortalidade e tempo condensados em dados clínicos; mídia visual como argumento) e a tese "o paciente é o animal, mas a clínica é construída com as pessoas que o amam". Para cada um: os casos e fotos que encaixam, as reflexões dele que sustentam, como seria a abertura e o fechamento, o que fica de fora, e o risco. Em `estagio/defesa/eixos/`.
   - **O Felipe gostou desta ligação (19/11), incluir no comparativo:** o par 17/11 → 19/11. Os 3 fetos que já estavam mortos (mumificados) na castração da gata, sem nada a fazer, e os 3 filhotes que sobreviveram ao cachorro e chegaram vivos para serem salvos. Encaixa no eixo "mortalidade e tempo" e na tese "a clínica é construída com as pessoas que o amam" (alguém resgatou a ninhada). Mostrar como poderia servir de abertura ou fechamento, com as fotos de `estagio/fotos/dia-19-11/`.
 - **Enquanto o eixo não for escolhido:** o roteiro e as considerações finais ficam como esboço com variantes, sem fixar um eixo.
 
@@ -50,3 +50,16 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Dias sem fotos: 30/10, 03/11, 09/11, 10–11/11. Há fotos desses dias fora do repositório (Luna, Atena, castração de 11/11, banho e tosa)?
 
 **Próxima sugestão:** o comparativo dos eixos (prioridade da fila), usando a linha do tempo como base.
+
+### 19/11/2026 — 11h41
+
+**Feito:** comparativo dos 5 eixos e da tese, para o Felipe escolher (nenhum eixo foi decidido).
+- `estagio/defesa/eixos/comparativo.md`: quadro rápido; para cada opção, a ideia, os casos que encaixam com fotos reais, as reflexões dele que sustentam, como entra na Parte 1, o que fica de fora e o risco; o par 17/11 → 19/11 em cada opção; quatro combinações possíveis (eixo + tese); quatro perguntas para ajudar a escolher.
+- Apontado (sem mexer): a apresentação atual tem os slides 14 (Mel) e 15 (Mel Serafina) como casos, o que contraria as decisões de 19/11, e o slide 23 de referências, que o modelo do IFC traz mas o Felipe decidiu dispensar.
+
+**Perguntas para o Felipe:**
+- Qual eixo (ou combinação)?
+- Os slides 14, 15 e 23 da apresentação devem sair ou mudar? (mudança estrutural: só com aprovação)
+- Perguntar à Fran se o slide de referências do modelo do IFC é obrigatório.
+
+**Próxima sugestão:** 2º da fila, a pesquisa aprofundada (13h41).
