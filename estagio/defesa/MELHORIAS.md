@@ -1,6 +1,6 @@
 # Melhorias da defesa — registro da tarefa agendada
 
-A tarefa "Melhorar a defesa" roda 3 vezes por dia. Cada execução acrescenta
+A tarefa "Melhorar a defesa" roda a cada 2 horas, das 7h41 às 23h41 (9 vezes por dia). Cada execução acrescenta
 uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 ## Decisões do Felipe (seguir sempre)

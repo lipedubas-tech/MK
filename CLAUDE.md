@@ -42,7 +42,7 @@ com a Cláudia ou o Thiago, nunca escrita como fato.
 
 ## Tarefa agendada "Melhorar a defesa"
 
-Roda de manhã, à tarde e à noite. Cada execução lê
+Roda a cada 2 horas, das 7h41 às 23h41 (9 vezes por dia). Cada execução lê
 `estagio/defesa/MELHORIAS.md`, escolhe a próxima melhoria, faz, e registra lá
 o que fez e o que sugere em seguida. Ao terminar, manda um e-mail (Gmail) ao
 Felipe com o resumo das mudanças e o link do PR. As decisões do Felipe ficam
