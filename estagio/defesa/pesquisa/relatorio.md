@@ -199,6 +199,47 @@ Fontes: [Greek Reporter: Odysseus and the most loyal dog](https://greekreporter.
 
 ---
 
+## 6. Complemento: material que estava em pull requests abertos (19/11, à tarde)
+
+A primeira versão deste relatório leu só o branch principal. Depois foram encontrados **6 pull requests em rascunho**, de outras sessões, com material importante que ainda não tinha sido juntado. O Felipe pediu que esse material fosse considerado. **Até ele aprovar, nada disso está no branch principal.**
+
+| PR | Material | O que muda nesta pesquisa |
+|---|---|---|
+| **#10** | **Conversa com o Rangel (18/11)** e **cirurgia de fecaloma em gato** (18/11), com 9 fotos | Traz um caso e uma história humana novos (detalhes abaixo) |
+| **#6** | **Animação 3D da castração (OSH)**: 11 cenas, cerca de 116 s, **um arquivo só que abre sem internet** (`castracao-osh/osh-3d.html`); a gata colorpoint repintada a partir de modelo CC BY 4.0, com crédito | Plano B da OSH **já pronto** |
+| **#8** | **Animação 3D da nodulectomia**, versão completa: `index.html` **abre sem internet**, modelo de cão adaptado, esboço 2D, código | Plano B da nodulectomia **já pronto**. Corrige o caso: o nódulo **já tinha rompido a pele e estava infeccionado** |
+| **#9** | **"A seringa vermelha"**: sequência de 8 cenas, cerca de 4 min, sobre a quimio com doxorrubicina, **versão offline**, sem nenhuma dose, com notas do apresentador (tecla N) | Plano B da quimio pronto. É a peça mais "acadêmica e pedagógica" que existe: origem da molécula, intercalação no DNA, por que 21 dias |
+| **#1** | Katita 3D: aviso para iPhone, incisão na etapa 3, fundo mais leve | Melhorias na peça principal |
+| **#12** | Nome completo do estagiário na apresentação | Resolve uma pendência do modelo do IFC |
+
+### O que isso muda nas conclusões
+
+1. **O plano B offline está quase todo feito.** Katita, OSH, nodulectomia e quimio têm versão sem internet. A proposta **P4** (vídeos offline) fica menor: só falta a criocirurgia (2D e 3D), que está só no claude.ai, e um **teste de todas no computador da defesa**.
+2. **Já existem 4 animações de procedimento** (Katita, OSH, nodulectomia, quimio), além da criocirurgia. Isso é muito para 25 a 30 minutos: **não cabem todas inteiras**. É preciso decidir quais entram e com quanto tempo cada uma. A quimio sozinha tem cerca de 4 minutos, e a OSH cerca de 2.
+3. **O caso do fecaloma** é forte para os eixos:
+   - **Oculto:** a massa escondida no intestino sai do corpo. As fotos da retirada são muito visuais.
+   - **Tempo:** foi a **terceira cirurgia** do mesmo gato.
+   - **Tese das pessoas:** a dieta é parte do tratamento. O tutor deu pão.
+   - **"O que entra e o que sai"**, uma das ideias visuais.
+   - A foto 1 mostra o rosto do Rangel e da Cláudia; o uso foi **autorizado**.
+4. **A história do Rangel** pode abrir a **Parte 1** com gente em vez de dados. É o fundador que queria trabalhar com grande porte, abriu para pet porque era a demanda da região, e 20 anos depois se afastou das consultas pelo estresse de ter a vida dos animais nas mãos, mas continua operando. Ele **autorizou** contar essa história. Ela liga diretamente com:
+   - a sua reflexão do dia 01 (a profissão é quase mais com humanos);
+   - a eutanásia que a Cláudia não queria fazer;
+   - o eixo "caráter formado por exposição".
+5. **Três peças já trazem notas do apresentador ou roteiro** (a quimio e a Katita). Isso adianta a proposta P8 (roteiro falado).
+
+### Propostas novas, **para o Felipe avaliar**
+
+| # | Tarefa | Por que |
+|---|---|---|
+| P11 | **Juntar os PRs de conteúdo (#6, #8, #9, #10)** ao branch principal, resolvendo os conflitos sem perder nada | O material passa a valer para a fila, a linha do tempo e o roteiro |
+| P12 | **Orçamento de tempo das animações**: duração de cada uma, qual trecho entra e quantos segundos | Não cabem 4 animações inteiras |
+| P13 | **Teste offline de todas as peças** num navegador sem rede, com uma lista de verificação para o dia | Garante o plano B |
+| P14 | **Abrir a Parte 1 com o Rangel**: um slide e uma fala | A clínica contada por quem a fundou |
+| P15 | **Atualizar a linha do tempo** com 18/11 (Rangel e fecaloma) e 19/11 (segunda eutanásia) | Ela está desatualizada |
+
+---
+
 ## Fontes consultadas (para você estudar; não viram slide)
 
 **Apresentação e slides**

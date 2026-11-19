@@ -15,6 +15,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
   - **1. Tornar visível o oculto** e **2. Dar voz ao paciente:** duas perguntas aplicadas dentro de cada caso: "o que estava escondido e como apareceu?" e "como o animal mostrou o que sentia?".
   - **4. Mortalidade e tempo:** abertura e fechamento com o par 17/11 → 19/11 e o dia 1.
   - **5. Mídia visual como argumento:** o método de toda a defesa (raio-X real, 3D, linha do tempo, corpo do estágio), com plano B offline.
+- **19/11 — Material dos PRs abertos conta.** O Felipe pediu que o material dos pull requests em rascunho (#1, #6, #8, #9, #10, #12) seja considerado nas pesquisas e decisões. Cada execução deve olhar também os PRs abertos do repositório, não só o branch principal. Juntar esses PRs depende da aprovação dele.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
 
