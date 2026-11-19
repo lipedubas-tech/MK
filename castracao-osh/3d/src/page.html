@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OSH em gata 3D</title>
+<style>
+  :root { --u: 16px; --marinho: #1f3a5f; --tinta: #eef5f4; --dim: #a9c2bf; --acento: #7fd3c9; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #070f11; overflow: hidden;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { display: flex; align-items: center; justify-content: center; }
+  #palco { position: relative; width: min(100vw, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; overflow: hidden;
+    background: radial-gradient(ellipse at 50% 38%, #2c474b, #142528 60%, #070f11); color: var(--tinta);
+    user-select: none; -webkit-user-select: none; cursor: pointer; }
+  #palco canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
+  #linhas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  #rotulos { position: absolute; inset: 0; pointer-events: none; }
+  .rot { position: absolute; left: 0; top: 0; padding: .28em .6em; border-radius: .4em; white-space: nowrap;
+    font-size: calc(var(--u) * 1.32); font-weight: 600; background: rgba(7, 18, 20, .78); color: #fff;
+    border: 1px solid rgba(127, 211, 201, .55); }
+  #topo { position: absolute; left: calc(var(--u) * 1.4); top: calc(var(--u) * 1.2); display: flex; align-items: baseline;
+    gap: .6em; font-size: calc(var(--u) * 1.5); pointer-events: none; background: rgba(7, 18, 20, .72); padding: .3em .7em; border-radius: .5em; }
+  #topo #num { color: var(--acento); font-weight: 700; font-variant-numeric: tabular-nums; }
+  #topo #titulo { font-weight: 700; }
+  #badge { font-size: .8em; font-weight: 700; color: #08201f; background: var(--acento); padding: .1em .5em; border-radius: .4em; display: none; }
+  #pontos { position: absolute; left: calc(var(--u) * 2.1); top: calc(var(--u) * 4.9); display: flex; gap: calc(var(--u) * .5); }
+  #pontos i { width: calc(var(--u) * .7); height: calc(var(--u) * .7); border-radius: 50%; background: rgba(238, 245, 244, .25); }
+  #pontos i.feito { background: rgba(127, 211, 201, .6); }
+  #pontos i.agora { background: var(--acento); box-shadow: 0 0 0 2px rgba(127, 211, 201, .35); }
+  #controles { position: absolute; right: calc(var(--u) * 1.2); top: calc(var(--u) * 1.1); display: flex; gap: calc(var(--u) * .5); }
+  #controles button { font: inherit; font-size: calc(var(--u) * 1.1); font-weight: 600; cursor: pointer; color: var(--tinta);
+    background: rgba(7, 18, 20, .6); border: 1px solid rgba(238, 245, 244, .35); border-radius: .5em; padding: .45em .8em; min-height: 2.4em; }
+  #controles button:hover { border-color: var(--acento); }
+  #controles button:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  #controles button[aria-pressed="true"] { background: var(--acento); color: #08201f; border-color: var(--acento); }
+  #legenda { position: absolute; left: 0; right: 0; bottom: 0; padding: calc(var(--u) * 1.1) calc(var(--u) * 2) calc(var(--u) * 1.4);
+    background: linear-gradient(to top, rgba(4, 12, 14, .92), rgba(4, 12, 14, .7) 70%, rgba(4, 12, 14, 0)); text-align: center; pointer-events: none; }
+  #leg { margin: 0 auto; max-width: 70em; font-size: calc(var(--u) * 2.15); font-weight: 600; line-height: 1.25; text-wrap: balance; }
+  #abertura { position: absolute; left: 6%; top: 24%; max-width: 46%; pointer-events: none; }
+  #abertura h1 { margin: 0; font-size: calc(var(--u) * 3.6); line-height: 1.08; font-weight: 750; letter-spacing: -.01em; }
+  #abertura p { margin: .7em 0 0; font-size: calc(var(--u) * 1.55); color: var(--dim); line-height: 1.35; }
+  #lupa { position: absolute; left: 0; top: 0; width: calc(var(--u) * 7); height: calc(var(--u) * 7); margin: calc(var(--u) * -3.5) 0 0 calc(var(--u) * -3.5);
+    border-radius: 50%; border: calc(var(--u) * .35) solid #e9f2f1; box-shadow: 0 0 0 calc(var(--u) * .2) rgba(0,0,0,.35), inset 0 0 calc(var(--u) * 1.4) rgba(127,211,201,.45);
+    pointer-events: none; opacity: 0; }
+  #lupa::after { content: ""; position: absolute; right: calc(var(--u) * -2); bottom: calc(var(--u) * -2); width: calc(var(--u) * 2.6); height: calc(var(--u) * .7);
+    background: #e9f2f1; border-radius: .4em; transform: rotate(45deg); }
+  .ok { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); font-size: calc(var(--u) * 1.2); font-weight: 700;
+    color: #fff; background: #1c9a5b; border-radius: 2em; padding: .2em .65em .2em .45em; white-space: nowrap; pointer-events: none; opacity: 0; }
+  .ok::before { content: "✓ "; }
+  #foto { position: absolute; right: 3%; top: 15%; width: 34%; margin: 0; pointer-events: none; opacity: 0;
+    background: #f4f1ea; padding: calc(var(--u) * .6) calc(var(--u) * .6) calc(var(--u) * .3); border-radius: calc(var(--u) * .3); box-shadow: 0 calc(var(--u) * .8) calc(var(--u) * 2.4) rgba(0,0,0,.5); transform: rotate(1.5deg); }
+  #foto img { display: block; width: 100%; }
+  #foto figcaption { color: #2b3433; font-size: calc(var(--u) * 1.1); font-weight: 600; padding: .4em .1em .1em; }
+  #credito { position: absolute; left: calc(var(--u) * 1.4); bottom: calc(var(--u) * 6.4); max-width: 46%; font-size: calc(var(--u) * .9); color: var(--dim); background: rgba(7, 18, 20, .72); padding: .35em .7em; border-radius: .4em; pointer-events: none; opacity: 0; }
+  #veu { position: absolute; inset: 0; background: #070f11; pointer-events: none; opacity: 0; }
+  #carregando { position: absolute; inset: 0; display: grid; place-items: center; font-size: calc(var(--u) * 1.6); color: var(--dim); }
+</style>
+@@THREE@@
+</head>
+<body>
+<div id="palco" role="application" aria-label="Animação 3D da ovariosalpingohisterectomia em gata">
+  <svg id="linhas" aria-hidden="true"></svg>
+  <div id="rotulos" aria-hidden="true"></div>
+  <div id="lupa" aria-hidden="true"></div>
+  <div id="oks" aria-hidden="true"></div>
+  <div id="abertura">
+    <h1>Ovariosalpingohisterectomia eletiva em gata</h1>
+    <p>Abordagem pela linha média ventral · técnica das três pinças</p>
+  </div>
+  <figure id="foto"><img src="@@IMG:caso-real@@" alt="A paciente acordada no pós-operatório"><figcaption>Caso real: a paciente no pós-operatório</figcaption></figure>
+  <div id="topo"><span id="num">1/11</span><span id="titulo">Abertura</span><span id="badge">acelerado</span></div>
+  <div id="pontos"></div>
+  <div id="controles">
+    <button id="btAnt" title="Cena anterior (←)">◀ Anterior</button>
+    <button id="btProx" title="Próxima cena (→)">Próximo ▶</button>
+    <button id="btTudo" aria-pressed="false" title="Reproduzir tudo (espaço pausa)">Reproduzir tudo</button>
+    <button id="btTela" title="Tela cheia (F)">⛶</button>
+  </div>
+  <div id="legenda"><p id="leg" aria-live="polite"></p></div>
+  <div id="credito">Modelo 3D da gata: “Cat by Sumpitueslag”, de photon (that one larry), CC BY 4.0, repintado e posado. Órgãos e instrumentos modelados para esta animação.</div>
+  <div id="veu"></div>
+  <div id="carregando">Carregando…</div>
+</div>
+<script>
+(function () {
+@@APP@@
+})();
+</script>
+</body>
+</html>
