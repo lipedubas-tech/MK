@@ -141,24 +141,39 @@ DIAS = [
             "Nodulectomia em cadela preta idosa, na axila.",
         ],
         "reflexoes": [],
-        "ideias": ["Briefings para animações da OSH e da nodulectomia."],
+        "ideias": [
+            "Briefings para animações da OSH e da nodulectomia.",
+            "Animações 3D prontas depois (18/11): OSH em 11 cenas e nodulectomia em 11 cenas, ambas com versão offline.",
+        ],
     },
     {
-        "data": "18/11", "titulo": "Esporotricose e esterilização",
+        "data": "18/11", "titulo": "O fundador, o fecaloma e a esporotricose",
         "casos": [
+            "Conversa com o Rangel, fundador da clínica: queria grande porte, abriu para pet pela demanda da região; há 2 anos se afastou das consultas pelo estresse e hoje só vem para operar (autorizou contar).",
+            "Cirurgia de fecaloma em gato, feita pelo Rangel com a Cláudia na anestesia: massa de fezes endurecidas retirada do intestino; o gato comeu pão; terceira cirurgia dele.",
             "Segundo caso de esporotricose: gato branco com feridas perto do olho e no pescoço.",
             "Autoclaves da sala de esterilização; Revolution Plus.",
         ],
-        "reflexoes": [], "ideias": [],
+        "reflexoes": ["O fundador que se afastou das consultas pelo peso de ter a vida dos animais nas mãos, mas continua operando."],
+        "ideias": ["O Rangel abre a Parte 1 da defesa; o fecaloma como caso do oculto que sai do corpo."],
     },
     {
-        "data": "19/11", "titulo": "Resgate dos filhotes",
-        "casos": ["Ninhada de 7 gatinhos; um cachorro matou 4. Três sobreviventes internados; o creme com ferida infeccionada, olho doente e costela quebrada."],
-        "reflexoes": ["Os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que podem ser salvos hoje. O sofrimento desnecessário no mundo."],
+        "data": "19/11", "titulo": "Os filhotes e a segunda eutanásia",
+        "casos": [
+            "Ninhada de 7 gatinhos; um cachorro matou 4. Três sobreviventes internados; o creme com ferida infeccionada, olho doente e costela quebrada.",
+            "Segunda eutanásia do estágio: uma cachorra grande que ainda andava; a veterinária não queria fazer; o tutor não acompanhou; veia difícil de achar (sem fotos).",
+            "Visita da oncologista à clínica.",
+        ],
+        "reflexoes": [
+            "Os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que podem ser salvos hoje. O sofrimento desnecessário no mundo.",
+            "Na eutanásia, o esforço para largar o dó, lembrando a frase da orientadora: \"se alguém tiver com dó, o bicho não morre\".",
+        ],
         "ideias": [
             "Estrutura da defesa: primeiro a clínica em geral, depois os casos específicos.",
             "Registro detalhado não é critério para virar caso; exames e transfusão vão para atividades realizadas.",
-            "O par 17/11 → 19/11 como possível abertura ou fechamento (eixo a escolher).",
+            "O par 17/11 → 19/11 como possível abertura ou fechamento.",
+            "Eixo da defesa: todos, em camadas (tese das pessoas, caráter, oculto, voz do paciente, tempo, mídia).",
+            "Odisseu e o cão Argos (Odisseia, canto XVII) como imagem para os slides.",
         ],
     },
 ]
@@ -171,6 +186,7 @@ PASTA_DIA = {
     "fotos/dia07": "06/11",
     "fotos/quimio": "12/11",
     "fotos/dia-18-11": "18/11",
+    "fotos/cirurgia-felino": "18/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",
@@ -182,6 +198,7 @@ SENSIVEIS = {
     "fotos/dia02/02", "fotos/dia02/03", "fotos/dia02/04", "fotos/dia02/08",
     "fotos/dia02/09", "fotos/dia02/10", "fotos/dia02/11", "fotos/dia02/12",
     "fotos/legendas/01", "fotos/quimio/03", "fotos/quimio/04", "fotos/dia07/01",
+    "fotos/cirurgia-felino/01", "fotos/cirurgia-felino/08",
 }
 
 
