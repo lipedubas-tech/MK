@@ -8,6 +8,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - **19/11 — Estrutura em duas partes.** Primeiro a clínica em geral, como na defesa da Yasmin (identificação, história, infraestrutura, serviços e atividades realizadas). Depois o diferencial: os casos específicos que interessaram ao Felipe. A parte geral deve ser enxuta (referência: seção 11 de `informacoes-do-estagio.md`); o tempo maior vai para os casos.
 - **19/11 — Registro detalhado não é critério para virar caso.** Ter muitos dados de algo não significa que entra como caso específico. Exames de sangue (inclusive a série da Mel labradora) vão para "atividades realizadas / exames", não para casos.
 - **19/11 — Transfusão de sangue entra em "atividades realizadas".** Atenção: a transfusão foi na **Mel Serafina (gata, 06/11)**; a **Mel labradora** é a do hemangiossarcoma e da série de hemogramas. Confirmar com o Felipe qual das duas ele quis dizer antes de montar o slide.
+- **19/11 — Sem citações e sem animação do tártaro.** A defesa não precisa de referências bibliográficas, e a limpeza de tártaro não justifica uma animação (pode entrar como foto em atividades realizadas).
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
 
@@ -21,10 +22,10 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 - [ ] Lista única "perguntas para a Cláudia, o Thiago e a Fran", juntando as pendências.
 - [ ] Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
-- [ ] Referências bibliográficas para os casos (esporotricose, hemangiossarcoma, FeLV, fratura em Y, criocirurgia, doxorrubicina).
+- [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
 - [ ] Roteiro da defesa (25–30 min): ordem dos casos e tempo por bloco (depois que o Felipe escolher o eixo).
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
-- [ ] Animação da limpeza de tártaro com extração dentária (Barão).
+- [x] ~~Animação da limpeza de tártaro~~ — descartado pelo Felipe em 19/11 (não justifica uma animação).
 - [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
 - [ ] Checklist de privacidade das fotos que entram nos slides.
 
