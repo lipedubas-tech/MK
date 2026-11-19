@@ -3,7 +3,15 @@
 A tarefa "Melhorar a defesa" roda 3 vezes por dia. Cada execução acrescenta
 uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
+## Decisões do Felipe (seguir sempre)
+
+- **19/11 — Estrutura em duas partes.** Primeiro a clínica em geral, como na defesa da Yasmin (identificação, história, infraestrutura, serviços e atividades realizadas). Depois o diferencial: os casos específicos que interessaram ao Felipe. A parte geral deve ser enxuta (referência: seção 11 de `informacoes-do-estagio.md`); o tempo maior vai para os casos.
+- **19/11 — Registro detalhado não é critério para virar caso.** Ter muitos dados de algo não significa que entra como caso específico. Exames de sangue (inclusive a série da Mel labradora) vão para "atividades realizadas / exames", não para casos.
+- **19/11 — Transfusão de sangue entra em "atividades realizadas".** Atenção: a transfusão foi na **Mel Serafina (gata, 06/11)**; a **Mel labradora** é a do hemangiossarcoma e da série de hemogramas. Confirmar com o Felipe qual das duas ele quis dizer antes de montar o slide.
+
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
+
+- [ ] **Parte 1 — a clínica em geral (prioridade alta, depois da linha do tempo):** esboço dos slides da parte geral, enxuto, com base na estrutura da Yasmin: capa, identificação, história, infraestrutura, serviços, atividades realizadas (procedimentos, exames, vacinas, transfusão). Usar as fotos que existem e listar as que faltam (o Felipe não tem fotos dos ambientes da clínica: balcão, consultório, internamento, espera, banho e tosa, canil, cirurgia, esterilização parcial). Em `estagio/defesa/parte1-clinica/`.
 
 - [ ] **PRIORIDADE (pedido do Felipe em 19/11):** linha do tempo do estágio inteiro com **todas as fotos e todas as ideias**, dia a dia (28/10 até hoje). Cada dia com as suas fotos (de `estagio/fotos/` e `estagio/imagens/`, com as legendas originais), os casos, as reflexões e as ideias da defesa que surgiram naquele dia (animações, eixos temáticos, artefatos publicados). Formato visual (página HTML em `estagio/defesa/linha-do-tempo/`, com as fotos referenciadas do repositório, sem copiar nem alterar os originais), com uma versão em PDF para o plano B offline. Atualizar a cada execução seguinte quando chegarem dias novos.
 
@@ -17,7 +25,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [ ] Roteiro da defesa (25–30 min): ordem dos casos e tempo por bloco (depois que o Felipe escolher o eixo).
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
 - [ ] Animação da limpeza de tártaro com extração dentária (Barão).
-- [ ] Linha do tempo dos exames da Mel (labradora).
+- [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
 - [ ] Checklist de privacidade das fotos que entram nos slides.
 
 ## Registro das execuções
