@@ -90,7 +90,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **O papel do anestesista (dia 02):** garantir a sobrevivência da cachorra.
 - **Os gatos na clínica (10–11/11):** quase sempre são casos de FIV/FeLV ou cistite. A exceção foi a esporotricose.
 - **Tese sugerida numa conversa:** "O paciente é o animal, mas a clínica é construída com as pessoas que o amam."
-- **A eutanásia que a Cláudia não queria fazer (19/11):** uma cachorra que ainda andava; o tutor que não quis acompanhar; a veia difícil; o dó que ele se esforçou para largar, lembrando a professora Franciele ("se alguém tiver com dó, o bicho não morre"); a impressão de que a mão da Cláudia pesou por ela não querer fazer. É a segunda eutanásia do estágio (a primeira foi no dia 01).
+- **A eutanásia que a Cláudia não queria fazer (19/11):** uma cachorra que ainda andava; o tutor que não quis acompanhar; a veia difícil; o dó que ele se esforçou para largar, lembrando a professora Franciele, a orientadora Fran Oliveira ("se alguém tiver com dó, o bicho não morre"); a impressão de que a mão da Cláudia pesou por ela não querer fazer. É a segunda eutanásia do estágio (a primeira foi no dia 01).
 - **Resgate dos filhotes (19/11):** os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que sobreviveram ao ataque de um cachorro. Reflexão sobre o sofrimento desnecessário no mundo: só se mexe no que ainda está acontecendo na nossa frente.
 - **O sentido da defesa:** você quer usar a defesa para explorar a sua curiosidade e as suas "megalomanias", pensando primeiro no sentido dela ("metafísica da defesa") antes de fechar o formato. O que mais agradou ao ortopedista e a quem assistiu foi a animação da cirurgia da Katita.
 
@@ -186,9 +186,9 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 ### 19/11/2026
 - **Resgate de filhotes:** ninhada de 7 gatinhos (cerca de 4–5 semanas); um cachorro matou 4. Os 3 sobreviventes ficaram internados (um laranja e branco, um creme e um cinza), com secreção ocular. O creme tem uma ferida infeccionada na barriga (furo de mordida), problema em um olho e uma costela quebrada; comendo, mas respirando rápido e com a ferida ainda com mau cheiro. A veterinária está conduzindo o caso. Fotos e nota em [`fotos/dia-19-11/`](fotos/dia-19-11/).
 - **Reflexão:** os 3 fetos mumificados da castração da gata em 17/11 e os 3 filhotes que podem ser salvos hoje; o sofrimento desnecessário no mundo.
-- **Eutanásia de uma cachorra grande** (data a confirmar: 19/11?). O tutor pediu a eutanásia. A Cláudia disse antes que não queria fazer: a cachorra estava bem, "meio judiada de feridas, mas funcionando", andando. Mesmo assim, a Cláudia fez. Três pontos, nas palavras do Felipe:
+- **Eutanásia de uma cachorra grande** (19/11). O tutor pediu a eutanásia. A Cláudia disse antes que não queria fazer: a cachorra estava bem, "meio judiada de feridas, mas funcionando", andando. Mesmo assim, a Cláudia fez. Três pontos, nas palavras do Felipe:
   1. Por ser uma cachorra grande, com feridas e patas estranhas, foi muito difícil achar a veia. O tutor não quis acompanhar.
-  2. A professora Franciele dizia que, se alguém estivesse com dó, o bicho não morria. Quando o Felipe pensou nisso, se esforçou para parar de ter dó, e a Cláudia achou a veia.
+  2. A professora Franciele (Fran Oliveira, orientadora no IFC) dizia que, se alguém estivesse com dó, o bicho não morria. Quando o Felipe pensou nisso, se esforçou para parar de ter dó, e a Cláudia achou a veia.
   3. O Felipe acredita que, por a Cláudia não querer fazer a eutanásia, a mão dela pesou mais; mas a cachorra já estava desacordada.
   - Percepções e crenças do Felipe, não fatos clínicos. Protocolo, motivo do tutor e condição da cachorra a confirmar com a Cláudia. Sem fotos.
 
