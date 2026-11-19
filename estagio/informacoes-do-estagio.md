@@ -38,7 +38,7 @@ A lista completa do que faltava está em [`exportacao-claude/anexos/LEIAME.md`](
 
 | Campo | Informação |
 |---|---|
-| Estagiário | Felipe |
+| Estagiário | Felipe de Oliveira Dubas Pires |
 | Curso | Técnico em Agropecuária Integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul |
 | Orientadora (IFC) | Fran Oliveira |
 | Local | Mundo Animal Clínica Veterinária, Sombrio (SC). Dados completos abaixo |

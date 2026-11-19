@@ -309,7 +309,13 @@ s_capa, s_orient, s_info, s_area, s_ativ, s_dific, s_consid, s_refs = orig
 base = duplicar(prs, s_ativ)
 
 # ---- 1. Capa
-titulo(s_capa, "Defesa de Estágio - Estudante Felipe")
+_t = titulo(s_capa, "Defesa de Estágio - Estudante")
+_p = _t.text_frame.paragraphs[0]
+_p.add_line_break()
+_r = copy.deepcopy(_p.runs[0]._r)
+_r.find(qn("a:t")).text = "Felipe de Oliveira Dubas Pires"
+_p._p.find(qn("a:endParaRPr")).addprevious(_r)
+_t.width = Inches(9.1)   # termina antes da faixa vermelha da capa
 for sh in s_capa.shapes:
     if sh.shape_type == 13 and Emu(sh.width).inches > 5:   # logo do curso
         sh.left, sh.top, sh.width, sh.height = Inches(2.75), Inches(1.7), Inches(4.9), Inches(3.47)
@@ -320,16 +326,16 @@ texto(s_capa, 0.8, 5.35, 8.8, 1.7, [
     [("Santa Rosa do Sul, dezembro de 2026", {"cor": CINZA})],
 ], tam=18, alinh=PP_ALIGN.CENTER, depois=2)
 notas(s_capa, """
-Apresentar-se: Felipe, Técnico em Agropecuária integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul.
+Apresentar-se: Felipe de Oliveira Dubas Pires, Técnico em Agropecuária integrado ao Ensino Médio, IFC Campus Santa Rosa do Sul.
 Estágio na Mundo Animal Clínica Veterinária, em Sombrio, de 28/10 a 07/12/2026.
 Orientadora: Franciele Oliveira. Supervisora na clínica: Cláudia Helena Bratti da Silva.
-PENDENTE: completar o nome com o sobrenome no título; acrescentar a banca, se for pedida.
+PENDENTE: acrescentar a banca, se for pedida.
 """)
 
 # ---- 2. Informações do estagiário
 tirar_corpo(s_info)
 texto(s_info, L, 1.85, 6.0, 5.3, [
-    [rot("Nome do estagiário: "), ("Felipe", {})],
+    [rot("Nome do estagiário: "), ("Felipe de Oliveira Dubas Pires", {})],
     [rot("Nome da orientadora: "), ("Franciele Oliveira", {})],
     {"runs": [("", {})], "depois": 2},
     [("Identificação da empresa", {"cor": AZUL, "negrito": True, "tam": 18})],
@@ -964,7 +970,7 @@ for e in list(lst):
 for sl in ordem:
     lst.append(por_parte[sl.part])
 
-prs.core_properties.title = "Defesa de Estágio - Felipe"
-prs.core_properties.author = "Felipe"
+prs.core_properties.title = "Defesa de Estágio - Felipe de Oliveira Dubas Pires"
+prs.core_properties.author = "Felipe de Oliveira Dubas Pires"
 prs.save(SAIDA)
 print("salvo:", SAIDA, "-", len(prs.slides), "slides")
