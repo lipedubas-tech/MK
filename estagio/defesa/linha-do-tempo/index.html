@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linha do tempo do estágio</title>
+<style>
+:root {
+  --fundo:#f7f5f0; --papel:#ffffff; --tinta:#1f2328; --suave:#5b636e; --linha:#d9d4c7;
+  --casos:#2f6f5e; --reflexoes:#7a4b8c; --ideias:#b0661c; --aviso:#a8322d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo:#16181b; --papel:#1f2226; --tinta:#e8e6e1; --suave:#a3a9b1; --linha:#3a3f45;
+    --casos:#6cc2a8; --reflexoes:#c79be0; --ideias:#e8a35c; --aviso:#ef7d76;
+  }
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--fundo); color:var(--tinta);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+header { max-width:1100px; margin:0 auto; padding:32px 16px 8px; }
+header h1 { margin:0 0 4px; font-size:2rem; letter-spacing:-0.01em; }
+header p { margin:4px 0; color:var(--suave); }
+nav { position:sticky; top:0; z-index:2; background:var(--fundo); border-bottom:1px solid var(--linha); }
+nav div { max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; gap:6px; overflow-x:auto; }
+nav a { flex:none; padding:4px 10px; border:1px solid var(--linha); border-radius:999px;
+  color:var(--tinta); text-decoration:none; font-size:.85rem; background:var(--papel); }
+main { max-width:1100px; margin:0 auto; padding:16px; }
+.dia { display:grid; grid-template-columns:92px 1fr; gap:16px; position:relative; padding-bottom:28px; }
+.dia::before { content:""; position:absolute; left:45px; top:0; bottom:0; width:2px; background:var(--linha); }
+.marca { position:relative; z-index:1; }
+.data { display:inline-block; background:var(--tinta); color:var(--fundo); font-weight:700;
+  padding:4px 8px; border-radius:6px; font-size:.9rem; white-space:nowrap; }
+.conteudo { background:var(--papel); border:1px solid var(--linha); border-radius:10px; padding:16px; min-width:0; }
+h3 { margin:0 0 10px; font-size:1.25rem; }
+h3 small { color:var(--suave); font-weight:400; font-size:.8rem; margin-left:6px; }
+.blocos { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+.bloco h4 { margin:0 0 4px; font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; }
+.bloco ul { margin:0; padding-left:18px; }
+.casos h4 { color:var(--casos); } .reflexoes h4 { color:var(--reflexoes); } .ideias h4 { color:var(--ideias); }
+.galeria { margin-top:14px; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+figure { margin:0; border:1px solid var(--linha); border-radius:8px; overflow:hidden; background:var(--fundo); break-inside:avoid; }
+figure img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
+figcaption { padding:6px 8px; font-size:.78rem; color:var(--suave); }
+.aviso { display:block; margin-top:4px; color:var(--aviso); font-weight:600; }
+.semfoto { margin:12px 0 0; color:var(--suave); font-style:italic; font-size:.9rem; }
+footer { max-width:1100px; margin:0 auto; padding:16px 16px 40px; color:var(--suave); font-size:.85rem; }
+@media (max-width:600px) {
+  .dia { grid-template-columns:1fr; } .dia::before { display:none; }
+}
+@media print {
+  nav { display:none; } body { background:#fff; }
+  .dia { break-inside:auto; } .conteudo { border-color:#ccc; }
+  .galeria { grid-template-columns:repeat(4,1fr); }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Linha do tempo do estágio</h1>
+  <p>Mundo Animal Clínica Veterinária, Sombrio (SC) · 28/10 a 07/12/2026 · 15 momentos · 110 fotos</p>
+  <p>Fotos e legendas originais do repositório; textos dos dias resumidos do diário. Interpretações clínicas a confirmar com a Cláudia ou o Thiago.
+  As fotos marcadas em vermelho mostram rosto ou nome: cobrir antes de usar em slides.</p>
+</header>
+<nav><div><a href="#d2610">26/10</a><a href="#d2810">28/10</a><a href="#d2910">29/10</a><a href="#d3010">30/10</a><a href="#d0311">03/11</a><a href="#d0411">04/11</a><a href="#d0511">05/11</a><a href="#d0611">06/11</a><a href="#d0911">09/11</a><a href="#d101111">10–11/11</a><a href="#d1211">12/11</a><a href="#d1311">13/11</a><a href="#d1711">17/11</a><a href="#d1811">18/11</a><a href="#d1911">19/11</a></div></nav>
+<main>
+<section class="dia" id="d2610">
+  <div class="marca"><span class="data">26/10</span></div>
+  <div class="conteudo">
+    <h3>Antes do estágio <small>1 foto</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Raios-X pré-operatórios do cotovelo esquerdo da Katita (fratura em Y do úmero distal), feitos 2 dias antes do início.</li></ul></div>
+      
+      
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../imagens/katita-rx-pre-operatorio-DP.jpg" alt=""><figcaption>Rx pre operatorio dp (sem legenda original)</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d2810">
+  <div class="marca"><span class="data">28/10</span></div>
+  <div class="conteudo">
+    <h3>Dia 01 — primeiro dia <small>31 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Pastora alemã já morta ao chegar.</li><li>Golden retriever morreu durante o ultrassom (falência múltipla), com a família presente.</li><li>Salsicha com massas no fígado, no baço e nas mamas.</li><li>Eutanásia de cão idoso sem qualidade de vida, depois de longa conversa com a dona.</li><li>Pug com doença renal crônica; gato com esporotricose na pata; procedimento sob anestesia.</li><li>Vacinas, antiparasitário, teste rápido FeLV/FIV, hemogramas e bioquímicos.</li></ul></div>
+      <div class="bloco reflexoes"><h4>Reflexões</h4><ul><li>O trabalho do veterinário é quase mais com humanos do que com animais; mais perto de São Francisco do que de um simples &quot;tratador&quot;.</li></ul></div>
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Juntar todos os exames de sangue e fazer algo visual com eles (virou o &quot;Microscópio do Estágio&quot;).</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/geral/01-analisador-hematologico.jpg" alt=""><figcaption>Analisador hematológico da clínica, usado nos hemogramas</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/02-hemograma-primeiro-paciente-28-10.jpg" alt=""><figcaption>Hemograma do primeiro paciente (cão), 28/10/2026. Valores na seção 5</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/03-bioquimico-primeiro-paciente-28-10.jpg" alt=""><figcaption>Bioquímico (Prep Profile II) do mesmo paciente. Lipemia 2+</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/04-rotor-de-reagentes.jpg" alt=""><figcaption>Rotor de reagentes para a bioquímica. A amostra é centrifugada no disco e cada câmara é lida por fotometria</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/05-vetscan-vs2.jpg" alt=""><figcaption>Analisador bioquímico VetScan VS2 (Abaxis), que processa o rotor</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/06-microscopio.jpg" alt=""><figcaption>Microscópio óptico binocular, usado em citologia e esfregaço sanguíneo</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/07-hemograma-pastor-alemao.jpg" alt=""><figcaption>Hemograma da cadela pastor alemão, 28/10/2026</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/08-hemograma-pastor-alemao-2.jpg" alt=""><figcaption>Segunda foto do mesmo hemograma, como registro dos dados</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/09-bioquimico-pastor-alemao.jpg" alt=""><figcaption>Bioquímico da mesma paciente: glicose e proteínas totais acima da referência; hemólise 3+ e lipemia 3+</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/10-anestesia-equipamento.jpg" alt=""><figcaption>Equipamento de anestesia e monitoração preparado para o procedimento</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/11-paciente-sob-anestesia.jpg" alt=""><figcaption>Paciente sob anestesia durante o procedimento</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/12-procedimento-monitoracao.jpg" alt=""><figcaption>Procedimento em andamento, com monitoração do paciente</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/13-lesao-na-face.jpg" alt=""><figcaption>Lesão na face do paciente</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/14-material-removido.jpg" alt=""><figcaption>Material removido durante o procedimento</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/15-exame-fisico-cao.jpg" alt=""><figcaption>Exame físico de cão: avaliação da cabeça e da pelagem</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/16-felino-no-balcao.jpg" alt=""><figcaption>Atendimento de felino no balcão</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/17-esporotricose-lesao-pata.jpg" alt=""><figcaption>Lesão ulcerada na pata, compatível com o diagnóstico de esporotricose informado pela veterinária. É zoonose: exige luvas e cuidado no manejo</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/18-felino-colar-elizabetano.jpg" alt=""><figcaption>Felino com colar elizabetano, que impede a lambedura da lesão. Tela de celular desfocada</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/19-vacina-vanguard-plus.jpg" alt=""><figcaption>Vacina Vanguard Plus (Zoetis)</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/20-vanguard-plus-diluente.jpg" alt=""><figcaption>Vanguard Plus: frasco de diluente</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/21-vacina-nobivac-raiva.jpg" alt=""><figcaption>Vacina inativada contra raiva Nobivac Raiva (MSD)</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/22-antiparasitario-defenza.jpg" alt=""><figcaption>Antiparasitário Defenza (fluralaner 400 mg), para cães de 20 a 40 kg: a dose depende do peso</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/23-teste-felv-fiv-aplicacao.jpg" alt=""><figcaption>Teste rápido SensPERT FeLV Ag/FIV Ab (Dechra), logo após a aplicação da amostra</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/24-teste-felv-fiv-leitura.jpg" alt=""><figcaption>O mesmo teste após o tempo de leitura. Interpretação das linhas a confirmar com a veterinária</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/25-cloreto-de-potassio.jpg" alt=""><figcaption>Cloreto de potássio 19,1%, 10 mL, via intravenosa: agente final da eutanásia, aplicado após anestesia profunda (protocolo a confirmar). Medicamento de alta vigilância</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/26-geladeira-de-vacinas.jpg" alt=""><figcaption>Geladeira de vacinas. O visor indica 6 °C, dentro da faixa de 2 a 8 °C da cadeia de frio</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/27-geladeira-venax.jpg" alt=""><figcaption>Segunda geladeira (Venax), para medicamentos e insumos refrigerados</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/28-balanca.jpg" alt=""><figcaption>Balança de plataforma para pesar os pacientes, base do cálculo de doses. À esquerda, caixas de transporte</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/29-armario-de-medicamentos.jpg" alt=""><figcaption>Armário de medicamentos e insumos: anti-inflamatórios, anestésicos, testes rápidos, tubos de coleta, estetoscópio e soluções</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/30-amonia.jpg" alt=""><figcaption>Frasco de amônia usado na limpeza</figcaption></figure><figure><img loading="lazy" src="../../fotos/geral/31-sao-francisco-de-assis.jpg" alt=""><figcaption>São Francisco de Assis, padroeiro dos animais. Liga com a sua reflexão de que o trabalho do veterinário está mais próximo de São Francisco do que de um simples &quot;tratador&quot;</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d2910">
+  <div class="marca"><span class="data">29/10</span></div>
+  <div class="conteudo">
+    <h3>Dia 02 — cirurgia da Katita <small>20 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Cirurgia da Katita com o Thiago: osteotomia do olécrano, 2 placas, parafuso intercondilar, banda de tensão. Mais de 4 horas.</li><li>Bob, pinscher de 13 anos: claudicação de origem neurológica; bota ortopédica.</li><li>Gato de rua branco internado; shih-tzu de 17 anos com soro 3 vezes por semana.</li></ul></div>
+      <div class="bloco reflexoes"><h4>Reflexões</h4><ul><li>&quot;Os animais têm uma alma muito pura.&quot;</li><li>Começou a se envolver com gatos: o gato de rua se esfregava nos dedos sob o vidro da baia.</li><li>Pulou o almoço para sentir o estresse da rotina; o papel do anestesista é garantir a sobrevivência.</li></ul></div>
+      
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/dia02/01-gato-de-rua-internado.jpg" alt=""><figcaption>Gato de rua branco internado, com acesso intravenoso. 29/10/2026, 08:55</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/02-katita-rx-pre-lateral-estendido.jpg" alt=""><figcaption>Raio-X <strong>antes</strong> da cirurgia: lateral, membro estendido. Cotovelo esquerdo, 26/10, 15:20<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/03-katita-rx-pre-lateral-flexionado.jpg" alt=""><figcaption>Raio-X <strong>antes</strong> da cirurgia: lateral, membro flexionado. 26/10, 15:21<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/04-katita-rx-pre-frontal-DP.jpg" alt=""><figcaption>Raio-X <strong>antes</strong> da cirurgia: frontal (DP). Fratura em Y do úmero distal. 26/10, 15:22<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/05-desenho-fratura-em-Y.jpg" alt=""><figcaption>Seu desenho de como o osso rachou: fratura em Y (intercondilar) do úmero distal</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/06-katita-campo-cirurgico-afastadores.jpg" alt=""><figcaption>Campo cirúrgico: articulação exposta com afastadores e pinça (acesso por osteotomia do olécrano)</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/07-katita-campo-cirurgico-placa.jpg" alt=""><figcaption>Campo cirúrgico: placa metálica já posicionada no osso</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/08-katita-sala-de-cirurgia.jpg" alt=""><figcaption>Sala de cirurgia: cirurgião operando, equipe acompanhando, soro e cilindro de oxigênio<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/09-katita-rx-pos-frontal-tela.jpg" alt=""><figcaption>Raio-X <strong>depois</strong> da cirurgia: frontal (DP), foto da tela. 29/10, 16:13<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/10-katita-rx-pos-lateral.jpg" alt=""><figcaption>Raio-X <strong>depois</strong> da cirurgia: lateral. 29/10, 16:16<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/11-katita-rx-pos-frontal-notebook.jpg" alt=""><figcaption>Raio-X <strong>depois</strong> da cirurgia: frontal, no notebook. 29/10, 16:19<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/12-katita-rx-pos-anotado.jpg" alt=""><figcaption>Pós-operatório anotado: verde em cima = 2 placas; verde embaixo = parafuso transversal intercondilar; demais parafusos = fixação; vermelho = pino na ulna (banda de tensão)<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/13-gerador-de-raio-x.jpg" alt=""><figcaption>Gerador portátil de raio-X (laranja) no suporte de teto; detector na mesa</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia02/14-notebook-software-raio-x.jpg" alt=""><figcaption>Notebook com o software de raio-X</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/01-katita-sala-de-cirurgia.jpg" alt=""><figcaption>Cirurgia do cotovelo da Katita (29/10/2026). Cirurgião no campo operatório e anestesista ao fundo, com cilindro de oxigênio e bolsa de soro ao lado<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/02-katita-pos-operatorio-deitada.jpg" alt=""><figcaption>Katita deitada depois da cirurgia, com a incisão suturada no cotovelo e a pele tricotomizada (raspada) ao redor</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/03-katita-incisao-suturada.jpg" alt=""><figcaption>Detalhe da incisão no cotovelo, fechada com pontos de nylon na pele. Membro anterior estendido</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/04-katita-sentada.jpg" alt=""><figcaption>Katita sentada na clínica, de guia: pelagem caramelo e orelhas escuras. SRD, 7 anos, 35 kg</figcaption></figure><figure><img loading="lazy" src="../../imagens/katita-rx-pos-operatorio-DP.jpg" alt=""><figcaption>Rx pos operatorio dp (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../imagens/katita-rx-pos-operatorio-lateral.jpg" alt=""><figcaption>Rx pos operatorio lateral (sem legenda original)</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d3010">
+  <div class="marca"><span class="data">30/10</span></div>
+  <div class="conteudo">
+    <h3>Dia 03 <small>0 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Luna, atropelada, com possível fratura de quadril (não confirmada).</li><li>Atena, filhote resgatada; tutor cheio de perguntas sobre os cuidados.</li><li>Seringas preparadas com antibiótico, anti-inflamatório e analgésicos.</li></ul></div>
+      
+      
+    </div>
+    <p class="semfoto">Sem fotos no repositório para este dia.</p>
+  </div>
+</section>
+<section class="dia" id="d0311">
+  <div class="marca"><span class="data">03/11</span></div>
+  <div class="conteudo">
+    <h3>Dia 04 <small>0 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Chegou o PDF da defesa da Yasmin (29 slides, descritiva).</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>A defesa pode apostar em casos narrativos (Katita, Bob) e numa reflexão final.</li><li>Primeira ideia de uma animação simples explicando a cirurgia da Katita.</li></ul></div>
+    </div>
+    <p class="semfoto">Sem fotos no repositório para este dia.</p>
+  </div>
+</section>
+<section class="dia" id="d0411">
+  <div class="marca"><span class="data">04/11</span></div>
+  <div class="conteudo">
+    <h3>Dia 05 <small>5 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Barão: linfoma na raiz dentária, cerca de 8 dentes extraídos.</li><li>Cão com polidactilia (6 dedos). Várias vacinas V8/V10 e antirrábica.</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Animação 2D da Katita ajustada com detalhes reais da sala (campo azul, mesa com estampa de onça, cilindro, monitor).</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/legendas/05-barao-hemograma.jpg" alt=""><figcaption>Hemograma do Barão (SRD, macho castrado, 11 anos), 04/11/2026, 08:30. Leucócitos 23,6 com neutrófilos, monócitos e linfócitos acima da referência; plaquetas 121, baixas</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/06-barao-bioquimico.jpg" alt=""><figcaption>Bioquímico (Prep Profile II) do Barão, 04/11/2026, 08:28. Todos os valores dentro da referência. Hemólise 3+ e lipemia 3+</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/07-barao-antes-odontologico.jpg" alt=""><figcaption>Barão antes do procedimento odontológico: cálculo dentário espesso e gengiva avermelhada</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/08-barao-depois-odontologico.jpg" alt=""><figcaption>Barão depois: dentes limpos e sutura na gengiva, com sangramento, após a extração de cerca de 8 dentes. Tem linfoma na raiz dentária</figcaption></figure><figure><img loading="lazy" src="../../fotos/legendas/09-polidactilia.jpg" alt=""><figcaption>Cão com polidactilia (6 dedos). Os dedos estão marcados em verde na foto</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d0511">
+  <div class="marca"><span class="data">05/11</span></div>
+  <div class="conteudo">
+    <h3>Dia 06 <small>5 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Criocirurgia de melanoma com nitrogênio líquido.</li><li>Mel Serafina, gata com anemia grave e provável FeLV.</li><li>Nodulectomia na pálpebra com cauterização.</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Animações da criocirurgia em 2D e 3D.</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/dia06/01-criocirurgia-spray.jpg" alt=""><figcaption>Criocirurgia: spray de nitrogênio líquido sobre o melanoma, na região do traseiro do cão. A ponta do criocautério fica sobre a lesão e o congelamento deixa a superfície esbranquiçada. Orientação ao tutor: vai inchar, sangrar e cair; se doer, dipirona em gotas</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia06/02-criocauterio.jpg" alt=""><figcaption>Criocautério com nitrogênio líquido (cerca de −196 °C), com a ponta de aplicação em spray. O cão é contido com as mãos sobre a bancada</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia06/03-mel-serafina-internada.jpg" alt=""><figcaption>Mel Serafina internada: gata SRD, castrada, nascida em 09/04/2020. Anemia grave, provavelmente por FeLV (a confirmar por teste). Conduta: transfusão; se o quadro se repetir 3 dias depois, a veterinária recomenda eutanásia</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia06/04-mel-serafina-hemograma.jpg" alt=""><figcaption>Hemograma da Mel Serafina (05/11, 13:12): hemoglobina 6,3, hematócrito 19,42%, plaquetas 38, linfócitos 0,34 (baixos); neutrófilos 16,03 (altos)</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia06/05-mel-serafina-bioquimico.jpg" alt=""><figcaption>Bioquímico da Mel Serafina (05/11, 13:16): glicose 197 alta (em gatos, o estresse pode elevar a glicose); o resto dentro do esperado. Hemólise 3+</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d0611">
+  <div class="marca"><span class="data">06/11</span></div>
+  <div class="conteudo">
+    <h3>Dia 07 <small>15 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Ultrassom em gato paraplégico (cristais na bexiga).</li><li>Cadela de 12 anos com mordida no pescoço: limpeza, sem sutura.</li><li>Transfusão de sangue na Mel Serafina.</li><li>Mel, labradora: laudo de hemangiossarcoma esplênico.</li></ul></div>
+      
+      
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/dia07/01-ultrassom-gato-paraplegico.jpg" alt=""><figcaption>Ultrassom em gato paraplégico: macho não castrado, 2 anos, jogado de uma janela em movimento quando filhote. A tutora esvazia a bexiga manualmente. Foram vistos cristais<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/02-mordida-no-pescoco.jpg" alt=""><figcaption>Ferida por mordida no pescoço de uma cadela de 12 anos, só na pele. Sem sutura, para evitar abscesso: limpeza, clorexidina degermante e curativo</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/03-transfusao-mel-serafina.jpg" alt=""><figcaption>Transfusão de sangue na gata Mel Serafina: bolsa de sangue e equipo, com a gata na baia embaixo</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/04-mel-hemograma-16-10.jpg" alt=""><figcaption>Mel (labradora), hemograma de 16/10/2026 no analisador Zoetis: leucócitos 34,69 e neutrófilos 28,11 (altos); hemoglobina 8,2 e hematócrito 21,24% (baixos); plaquetas 403</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/05-mel-hemograma-07-10-labvet.jpg" alt=""><figcaption>Mel, hemograma completo de 07/10/2026 (Labvet Sul): hematócrito 24%, hemoglobina 7,1, plaquetas 87.000, segmentados 93%, monócitos ativados e macroplaquetas</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/06-mel-bioquimico-07-10-parte1.jpg" alt=""><figcaption>Mel, bioquímico de 07/10 (parte 1): ALT 136 e fosfatase alcalina 426 (altas)</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/07-mel-bioquimico-07-10-parte2.jpg" alt=""><figcaption>Mel, bioquímico de 07/10 (parte 2): proteínas totais 5,0 e globulina 2,30 (baixas)</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/08-mel-hemograma-06-11.jpg" alt=""><figcaption>Mel, hemograma de 06/11/2026: hemoglobina 4,9 e hematócrito 13,88%, os mais baixos da série; plaquetas 102</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/09-mel-tendencias-1.jpg" alt=""><figcaption>Mel, tendências de 16/10 a 06/11 (1/2): hematócrito, hemoglobina, VCM, HCM, linfócitos e monócitos em queda</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/10-mel-tendencias-2.jpg" alt=""><figcaption>Mel, tendências (2/2): plaquetas de 403 para 102, leucócitos de 34,69 para 15,15, plaquetócrito de 0,44 para 0,12</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/11-mel-ultrassom-imagens-p3.jpg" alt=""><figcaption>Mel, imagens do ultrassom abdominal (Nexavet, 07/10), página 3</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/12-mel-ultrassom-imagens-p4.jpg" alt=""><figcaption>Mel, imagens do ultrassom, página 4</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/13-mel-ultrassom-imagens-p5.jpg" alt=""><figcaption>Mel, imagens do ultrassom, página 5</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/14-mel-laudo-ultrassom.jpg" alt=""><figcaption>Mel, laudo do ultrassom (07/10): baço aumentado com várias estruturas arredondadas (a maior de 4,45 × 4,13 cm); fígado discretamente aumentado; adrenal esquerda com área nodular</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia07/15-mel-biopsia-baco.jpg" alt=""><figcaption>Mel, biópsia do baço (Labvet Sul, coleta 08/10, laudo 27/10): esplenectomia total; hemangiossarcoma esplênico com ruptura e hematoma</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d0911">
+  <div class="marca"><span class="data">09/11</span></div>
+  <div class="conteudo">
+    <h3>Segunda <small>0 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Conversa sobre cinomose (nenhum caso há 1 ano) e parvovirose (sumiu da clínica).</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Pedir números concretos de parvovirose do ano passado e de agora.</li></ul></div>
+    </div>
+    <p class="semfoto">Sem fotos no repositório para este dia.</p>
+  </div>
+</section>
+<section class="dia" id="d101111">
+  <div class="marca"><span class="data">10–11/11</span></div>
+  <div class="conteudo">
+    <h3>Terça e quarta <small>0 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Gato com cistite (ultrassom).</li><li>Dobermann sem ultrassom: a dona recusou sedação.</li><li>Banho e tosa.</li><li>Castração de cadela: o Felipe segurou o útero com pinça para a Cláudia (auxílio sob supervisão).</li></ul></div>
+      <div class="bloco reflexoes"><h4>Reflexões</h4><ul><li>Os gatos na clínica quase sempre são FIV/FeLV ou cistite; a exceção foi a esporotricose.</li></ul></div>
+      
+    </div>
+    <p class="semfoto">Sem fotos no repositório para este dia.</p>
+  </div>
+</section>
+<section class="dia" id="d1211">
+  <div class="marca"><span class="data">12/11</span></div>
+  <div class="conteudo">
+    <h3>Quimioterapia <small>6 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Quimioterapia com doxorrubicina em cão de 17 anos com sarcoma.</li><li>Cistocentese ecoguiada em cão com suspeita de doença renal.</li></ul></div>
+      
+      
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/quimio/01-doxorrubicina-frasco.jpg" alt=""><figcaption>Cloridrato de doxorrubicina (Fauldoxo, Libbs), 50 mg/25 mL, uso exclusivamente intravenoso. A cor vermelha é da própria molécula</figcaption></figure><figure><img loading="lazy" src="../../fotos/quimio/02-bolsa-nacl-250ml.jpg" alt=""><figcaption>Bolsa de cloreto de sódio 0,9%, 250 mL (Fresenius Kabi), em sistema fechado, presente na sessão</figcaption></figure><figure><img loading="lazy" src="../../fotos/quimio/03-quimio-contencao.jpg" alt=""><figcaption>Cão de 17 anos com sarcoma (pescoço e cabeça), de focinheira, contido por uma segunda pessoa. A veterinária usa avental descartável, respirador com filtro e protetor facial<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/quimio/04-quimio-aplicacao.jpg" alt=""><figcaption>Veterinária com a seringa de quimioterápico no acesso venoso. A aplicação foi em seringa, e não em bolsa, porque a dose é pequena e o cão arranca o acesso mordendo<span class="aviso">rosto ou nome visível</span></figcaption></figure><figure><img loading="lazy" src="../../fotos/quimio/05-quimio-seringa-no-acesso.jpg" alt=""><figcaption>Seringa conectada ao acesso na pata. A doxorrubicina é vesicante: a aplicação é lenta e o acesso precisa ficar seguro</figcaption></figure><figure><img loading="lazy" src="../../fotos/quimio/06-cistocentese-ecoguiada.jpg" alt=""><figcaption>Cistocentese guiada por ultrassom: cão com suspeita de doença renal, em decúbito dorsal e com o abdômen tosado, para coletar urina direto da bexiga</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d1311">
+  <div class="marca"><span class="data">13/11</span></div>
+  <div class="conteudo">
+    <h3>Katita em 3D <small>4 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>O Felipe enviou o modelo 3D do esqueleto de cachorro (.glb).</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Cirurgia da Katita sobre o esqueleto 3D.</li><li>Rejeição das ideias interativas genéricas; escolha da &quot;Katita modo cinema&quot;.</li><li>O que funciona é material real: raio-X, fotos, modelo 3D. Ter plano B offline.</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../apresentacao/capturas-3d/etapa2-lesao-em-Y.jpg" alt=""><figcaption>Lesao em y (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../apresentacao/capturas-3d/etapa4-reducao-parafuso.jpg" alt=""><figcaption>Reducao parafuso (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../apresentacao/capturas-3d/etapa6-banda-de-tensao.jpg" alt=""><figcaption>Banda de tensao (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../apresentacao/capturas-3d/etapa6-modo-raio-x.jpg" alt=""><figcaption>Modo raio x (sem legenda original)</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d1711">
+  <div class="marca"><span class="data">17/11</span></div>
+  <div class="conteudo">
+    <h3>Castração da gata e nodulectomia <small>11 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Castração (OSH) de uma gata colorpoint, com fetos mumificados no útero.</li><li>Nodulectomia em cadela preta idosa, na axila.</li></ul></div>
+      
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Briefings para animações da OSH e da nodulectomia.</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../animacao-osh/referencias/foto1-sutura-subcutaneo.jpg" alt=""><figcaption>Sutura subcutaneo (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-osh/referencias/foto2-sutura-angulo2.jpg" alt=""><figcaption>Sutura angulo2 (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-osh/referencias/foto3-pos-operatorio.jpg" alt=""><figcaption>Pos operatorio (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto1-dissecção.jpg" alt=""><figcaption>Dissecção (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto2-hemostasia.jpg" alt=""><figcaption>Hemostasia (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto3-mesa-instrumentais.jpg" alt=""><figcaption>Mesa instrumentais (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto4-pos-operatorio.jpg" alt=""><figcaption>Pos operatorio (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto5-pos-operatorio-angulo2.jpg" alt=""><figcaption>Pos operatorio angulo2 (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto6-pos-operatorio-angulo3.jpg" alt=""><figcaption>Pos operatorio angulo3 (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto7-peca-cirurgica.jpg" alt=""><figcaption>Peca cirurgica (sem legenda original)</figcaption></figure><figure><img loading="lazy" src="../../animacao-nodulectomia/referencias/foto8-sutura-pele.jpg" alt=""><figcaption>Sutura pele (sem legenda original)</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d1811">
+  <div class="marca"><span class="data">18/11</span></div>
+  <div class="conteudo">
+    <h3>Esporotricose e esterilização <small>8 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Segundo caso de esporotricose: gato branco com feridas perto do olho e no pescoço.</li><li>Autoclaves da sala de esterilização; Revolution Plus.</li></ul></div>
+      
+      
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/dia-18-11/01-autoclave-cristofoli-vitale-21.jpg" alt=""><figcaption>Autoclave Cristófoli Vitale 21, com o rolo de papel grau cirúrgico ao lado</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/02-autoclave-bioex.jpg" alt=""><figcaption>Autoclave Bioex, com instrumentos e compressa por cima</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/03-esporotricose-cabeca.jpg" alt=""><figcaption>Gato com esporotricose: cabeça (foto tremida)</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/04-esporotricose-lesao-pescoco.jpg" alt=""><figcaption>Ferida ulcerada no pescoço</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/05-esporotricose-lesao-pescoco-2.jpg" alt=""><figcaption>A mesma ferida, outro ângulo</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/06-esporotricose-gato-na-mesa.jpg" alt=""><figcaption>O gato na mesa de atendimento</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/07-esporotricose-lesao-olho.jpg" alt=""><figcaption>Ferida perto do olho</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-18-11/08-revolution-plus.jpg" alt=""><figcaption>Revolution Plus (selamectina + sarolaner), antiparasitário para gatos de 2,6 a 5 kg</figcaption></figure></div>
+  </div>
+</section>
+<section class="dia" id="d1911">
+  <div class="marca"><span class="data">19/11</span></div>
+  <div class="conteudo">
+    <h3>Resgate dos filhotes <small>4 fotos</small></h3>
+    <div class="blocos">
+      <div class="bloco casos"><h4>Casos e atividades</h4><ul><li>Ninhada de 7 gatinhos; um cachorro matou 4. Três sobreviventes internados; o creme com ferida infeccionada, olho doente e costela quebrada.</li></ul></div>
+      <div class="bloco reflexoes"><h4>Reflexões</h4><ul><li>Os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que podem ser salvos hoje. O sofrimento desnecessário no mundo.</li></ul></div>
+      <div class="bloco ideias"><h4>Ideias para a defesa</h4><ul><li>Estrutura da defesa: primeiro a clínica em geral, depois os casos específicos.</li><li>Registro detalhado não é critério para virar caso; exames e transfusão vão para atividades realizadas.</li><li>O par 17/11 → 19/11 como possível abertura ou fechamento (eixo a escolher).</li></ul></div>
+    </div>
+    <div class="galeria"><figure><img loading="lazy" src="../../fotos/dia-19-11/01-laranja-e-branco-olho-remelento.jpg" alt=""><figcaption>Laranja e branco de perto, olho com secreção</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-19-11/02-tres-filhotes-comendo.jpg" alt=""><figcaption>Os três; creme e cinza comendo frango desfiado</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-19-11/03-tres-filhotes-cinza-no-fundo.jpg" alt=""><figcaption>Os três; cinza no fundo da baia</figcaption></figure><figure><img loading="lazy" src="../../fotos/dia-19-11/04-tres-filhotes-baia.jpg" alt=""><figcaption>Os três na baia, creme comendo</figcaption></figure></div>
+  </div>
+</section></main>
+<footer>Gerado por <code>estagio/defesa/linha-do-tempo/gerar.py</code>. Para atualizar com dias novos, acrescente o dia na lista <code>DIAS</code> e rode o script de novo.</footer>
+</body>
+</html>

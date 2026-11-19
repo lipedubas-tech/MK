@@ -13,7 +13,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 - [ ] **Parte 1 — a clínica em geral (prioridade alta, depois da linha do tempo):** esboço dos slides da parte geral, enxuto, com base na estrutura da Yasmin: capa, identificação, história, infraestrutura, serviços, atividades realizadas (procedimentos, exames, vacinas, transfusão). Usar as fotos que existem e listar as que faltam (o Felipe não tem fotos dos ambientes da clínica: balcão, consultório, internamento, espera, banho e tosa, canil, cirurgia, esterilização parcial). Em `estagio/defesa/parte1-clinica/`.
 
-- [ ] **PRIORIDADE (pedido do Felipe em 19/11):** linha do tempo do estágio inteiro com **todas as fotos e todas as ideias**, dia a dia (28/10 até hoje). Cada dia com as suas fotos (de `estagio/fotos/` e `estagio/imagens/`, com as legendas originais), os casos, as reflexões e as ideias da defesa que surgiram naquele dia (animações, eixos temáticos, artefatos publicados). Formato visual (página HTML em `estagio/defesa/linha-do-tempo/`, com as fotos referenciadas do repositório, sem copiar nem alterar os originais), com uma versão em PDF para o plano B offline. Atualizar a cada execução seguinte quando chegarem dias novos.
+- [x] **FEITO 19/11 (teste):** linha do tempo do estágio inteiro com **todas as fotos e todas as ideias**, dia a dia (28/10 até hoje). Cada dia com as suas fotos (de `estagio/fotos/` e `estagio/imagens/`, com as legendas originais), os casos, as reflexões e as ideias da defesa que surgiram naquele dia (animações, eixos temáticos, artefatos publicados). Formato visual (página HTML em `estagio/defesa/linha-do-tempo/`, com as fotos referenciadas do repositório, sem copiar nem alterar os originais), com uma versão em PDF para o plano B offline. Atualizar a cada execução seguinte quando chegarem dias novos.
 
 - [ ] **PRIORIDADE (logo depois da linha do tempo): material para o Felipe escolher o eixo da defesa.** A escolha é dele; a tarefa **não decide** o eixo. Fazer uma página comparando os 5 eixos temáticos (seção 2 de `informacoes-do-estagio.md`: tornar visível o oculto; dar voz ao paciente que não fala; caráter formado por exposição e habituação; mortalidade e tempo condensados em dados clínicos; mídia visual como argumento) e a tese "o paciente é o animal, mas a clínica é construída com as pessoas que o amam". Para cada um: os casos e fotos que encaixam, as reflexões dele que sustentam, como seria a abertura e o fechamento, o que fica de fora, e o risco. Em `estagio/defesa/eixos/`.
   - **O Felipe gostou desta ligação (19/11), incluir no comparativo:** o par 17/11 → 19/11. Os 3 fetos que já estavam mortos (mumificados) na castração da gata, sem nada a fazer, e os 3 filhotes que sobreviveram ao cachorro e chegaram vivos para serem salvos. Encaixa no eixo "mortalidade e tempo" e na tese "a clínica é construída com as pessoas que o amam" (alguém resgatou a ninhada). Mostrar como poderia servir de abertura ou fechamento, com as fotos de `estagio/fotos/dia-19-11/`.
@@ -29,3 +29,17 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [ ] Checklist de privacidade das fotos que entram nos slides.
 
 ## Registro das execuções
+
+### 19/11/2026 — execução de teste (manhã)
+
+**Feito:** linha do tempo do estágio inteiro, de 26/10 a 19/11: 15 momentos, 110 fotos com as legendas originais, e para cada dia os casos, as reflexões e as ideias da defesa.
+- `estagio/defesa/linha-do-tempo/index.html`: página para abrir no navegador (usa as fotos onde já estão no repositório, sem copiar).
+- `estagio/defesa/linha-do-tempo/linha-do-tempo.pdf`: 15 páginas, fotos reduzidas (plano B offline).
+- `estagio/defesa/linha-do-tempo/gerar.py`: refaz os dois. Lê as legendas direto de `informacoes-do-estagio.md` e dos LEIAME; os textos dos dias ficam na lista `DIAS`.
+- 13 fotos marcadas em vermelho por mostrarem rosto ou nome (raios-X do dia 02, sala da cirurgia, quimio, ultrassom do gato paraplégico).
+
+**Perguntas para o Felipe:**
+- 18 fotos estão "sem legenda original" (referências da OSH e da nodulectomia, capturas 3D, raios-X de `imagens/`). Quer legendas para elas?
+- Dias sem fotos: 30/10, 03/11, 09/11, 10–11/11. Há fotos desses dias fora do repositório (Luna, Atena, castração de 11/11, banho e tosa)?
+
+**Próxima sugestão:** o comparativo dos eixos (prioridade da fila), usando a linha do tempo como base.
