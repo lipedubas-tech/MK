@@ -1,5 +1,5 @@
 ---
-name: fila-de-tarefas-agendada
+name: fila-agendada
 description: Protocolo para montar e manter uma fila de tarefas que o Claude executa sozinho em horários agendados para uma atividade longa (defesa, TCC, relatório, projeto), gravando no git e mandando por e-mail o resumo de cada execução. Use quando o usuário pedir para "trabalhar sozinho", "não deixar os tokens ociosos", "rodar de manhã, à tarde e à noite", "me mandar um e-mail com as mudanças", criar ou reorganizar uma fila de melhorias, mudar a ordem ou a frequência das execuções, ou registrar uma decisão que as execuções devem seguir, mesmo que ele não use a palavra "fila".
 ---
 
