@@ -90,6 +90,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **O papel do anestesista (dia 02):** garantir a sobrevivência da cachorra.
 - **Os gatos na clínica (10–11/11):** quase sempre são casos de FIV/FeLV ou cistite. A exceção foi a esporotricose.
 - **Tese sugerida numa conversa:** "O paciente é o animal, mas a clínica é construída com as pessoas que o amam."
+- **Resgate dos filhotes (19/11):** os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que sobreviveram ao ataque de um cachorro. Reflexão sobre o sofrimento desnecessário no mundo: só se mexe no que ainda está acontecendo na nossa frente.
 - **O sentido da defesa:** você quer usar a defesa para explorar a sua curiosidade e as suas "megalomanias", pensando primeiro no sentido dela ("metafísica da defesa") antes de fechar o formato. O que mais agradou ao ortopedista e a quem assistiu foi a animação da cirurgia da Katita.
 
 **Eixos temáticos propostos (nenhum decidido):**
@@ -180,6 +181,10 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 - **Gato com esporotricose:** gato branco com feridas ulceradas perto do olho e no pescoço. É o segundo caso de esporotricose do estágio; o primeiro foi em 28/10, com a lesão na pata.
 - **Autoclaves** da sala de esterilização: Cristófoli Vitale 21 e Bioex. Esterilizam os instrumentos cirúrgicos com vapor sob pressão. Ao lado fica o rolo de papel grau cirúrgico usado para embalar os instrumentos.
 - **Revolution Plus** (selamectina + sarolaner, Zoetis): antiparasitário para gatos de 2,6 a 5 kg. A confirmar se foi para o gato com esporotricose.
+
+### 19/11/2026
+- **Resgate de filhotes:** ninhada de 7 gatinhos (cerca de 4–5 semanas); um cachorro matou 4. Os 3 sobreviventes ficaram internados (um laranja e branco, um creme e um cinza), com secreção ocular. O creme tem uma ferida infeccionada na barriga (furo de mordida), problema em um olho e uma costela quebrada; comendo, mas respirando rápido e com a ferida ainda com mau cheiro. A veterinária está conduzindo o caso. Fotos e nota em [`fotos/dia-19-11/`](fotos/dia-19-11/).
+- **Reflexão:** os 3 fetos mumificados da castração da gata em 17/11 e os 3 filhotes que podem ser salvos hoje; o sofrimento desnecessário no mundo.
 
 ---
 
