@@ -14,9 +14,9 @@
   tomada(s[1] + 9.8, "sala", [-0.02, 0.58, 0.42], [-0.09, 0.16, -0.025], 30);
   tomada(s[1] + 12.6, "sala", [0.0, 0.78, 0.64], [-0.07, 0.11, -0.03], 30);
   tomada(s[1] + 13.95, "sala", [-0.07, 0.44, 0.24], [-0.095, 0.17, -0.024], 30);
-  /* 11. pós-operatório */
-  tomada(s[10], "sala", [0.12, 0.66, 0.86], [-0.05, 0.1, -0.05], 30, true);
-  tomada(s[10] + 11.8, "sala", [-0.02, 0.5, 0.55], [-0.08, 0.13, -0.03], 30);
+  /* 10. pós-operatório */
+  tomada(POS, "sala", [0.12, 0.66, 0.86], [-0.05, 0.1, -0.05], 30, true);
+  tomada(POS + 11.8, "sala", [-0.02, 0.5, 0.55], [-0.08, 0.13, -0.03], 30);
 })();
 var _sitioMundo = new V3();
 function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
@@ -24,9 +24,9 @@ rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e i
 rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
 /* pós-operatório (fotos 4 a 6): ferida suturada, acesso venoso e extubação */
 var _ferida = new V3(), _acesso = new V3(), _boca = new V3();
-rotulo(S[10] + .9, S[10] + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);
-rotulo(S[10] + 2.0, S[10] + 4.8, "sala", "Acesso venoso", "no membro torácico", function () { return acesso.localToWorld(_acesso.set(0, 0, 0)); }, -2, 8);
-rotulo(S[10] + 5.2, S[10] + 8.4, "sala", "Extubação", "quando volta o reflexo de deglutição", function () { return anest.localToWorld(_boca.copy(anest.boca)); }, 10, -10);
+rotulo(POS + .9, POS + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);
+rotulo(POS + 2.0, POS + 4.8, "sala", "Acesso venoso", "no membro torácico", function () { return acesso.localToWorld(_acesso.set(0, 0, 0)); }, -2, 8);
+rotulo(POS + 5.2, POS + 8.4, "sala", "Extubação", "quando volta o reflexo de deglutição", function () { return anest.localToWorld(_boca.copy(anest.boca)); }, 10, -10);
 
 /* ============================================================ interface */
 var E = { t: 0, tocando: false, tudo: false, cena: -1 };

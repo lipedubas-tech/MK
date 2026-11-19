@@ -1,5 +1,5 @@
 "use strict";
-/* Nodulectomia em cão: animação 3D em 11 cenas.
+/* Nodulectomia em cão: animação 3D em 10 cenas.
    Três ambientes na mesma página: a sala (mesa, cadela, panos), o campo operatório em camadas
    e a mesa de instrumentais. Tudo é função do tempo global t, então dá para pular para qualquer
    cena (ou exportar quadro a quadro) e o estado sai sempre igual. */
@@ -27,11 +27,11 @@ var CENAS = [
   { nome: "Retirada", dur: 9, leg: "Exérese em bloco, com a pele ao redor da úlcera" },
   { nome: "Hemostasia", dur: 8, leg: "Hemostasia por compressão e conferência do leito" },
   { nome: "Sutura", dur: 16, leg: "Redução do espaço morto e síntese da pele" },
-  { nome: "Histopatológico", dur: 8, leg: "Peça em formol 10% para exame histopatológico" },
-  { nome: "Pós-operatório", dur: 12, leg: "Recuperação: analgesia, curativo e retorno com o laudo" }
+  { nome: "Pós-operatório", dur: 12, leg: "Recuperação: analgesia, curativo e retorno" }
 ];
 var NC = CENAS.length, S = [], TOTAL = 0;
 CENAS.forEach(function (c) { S.push(TOTAL); TOTAL += c.dur; });
+var POS = S[NC - 1];   /* início do pós-operatório, a última cena */
 function cenaDe(t) { for (var k = NC - 1; k > 0; k--) if (t >= S[k]) return k; return 0; }
 
 /* ============================================================ renderizador */
@@ -320,7 +320,7 @@ var anest = new THREE.Group(); cao.add(anest);
   ox.add(cabo);
   ox.position.set(lingua.position.x - .012, lingua.position.y - .004, lingua.position.z + .026); ox.rotation.set(.3, 0, -.2);
   ox.traverse(function (o) { o.castShadow = true; }); anest.add(ox);
-  /* guardados para a extubação na cena 11 (o tubo sai deslizando pela boca) */
+  /* guardados para a extubação no pós-operatório (o tubo sai deslizando pela boca) */
   anest.tubo = tubo; anest.con = con; anest.ox = ox; anest.boca = B.clone();
   anest.con0 = con.position.clone(); anest.ox0 = ox.position.clone(); anest.lingua0 = lingua.position.clone();
 })();
@@ -339,18 +339,18 @@ function poseSala(t) {
   rolo.rotation.x = -PI / 2 * deita;
   rolo.position.set(0, -CM.xmin * deita + .04 * Math.sin(deita * PI), CM.dz * deita);
   cao.morphTargetInfluences[0] = morph;
-  var aparece = ss(S[0] + 1.6, S[0] + 3.6, t), operado = t >= S[10];
+  var aparece = ss(S[0] + 1.6, S[0] + 3.6, t), operado = t >= POS;
   cao.morphTargetInfluences[1] = operado ? 0 : aparece;   /* o nódulo aparece: base levantando a pele e a massa aberta para fora */
   massaCao.visible = !operado && aparece > 0; massaCao.scale.setScalar(Math.max(.001, aparece));
   UC.uMassa.value = operado ? 0 : aparece;
   UC.uOlhoE.value.lerpVectors(OLHO.e, OLHO.ed, morph); UC.uOlhoD.value.lerpVectors(OLHO.d, OLHO.dd, morph);
-  var acorda = ss(S[10] + 4, S[10] + 6.5, t);
+  var acorda = ss(POS + 4, POS + 6.5, t);
   UC.uPalp.value = ss(c2 + .3, c2 + 1.6, t) * (1 - acorda);
   UC.uAnel.value = ss(S[0] + 3.2, S[0] + 4.2, t) * (1 - ss(S[0] + 6.5, S[0] + 7.6, t));
   var trico = seg(t, c2 + 4.0, c2 + 6.9);
   UC.uTrico.value = trico;
-  UC.uAntis.value = t < S[10] ? seg(t, c2 + 7.1, c2 + 9.7) : 0;
-  UC.uFerida.value = t >= S[10] ? 1 : 0;
+  UC.uAntis.value = t < POS ? seg(t, c2 + 7.1, c2 + 9.7) : 0;
+  UC.uFerida.value = t >= POS ? 1 : 0;
   /* máquina de tosa: oito passadas paralelas ao eixo u */
   maquina.visible = trico > 0 && trico < 1;
   if (maquina.visible) {
@@ -370,17 +370,17 @@ function poseSala(t) {
     bola.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, yb, zb));
   }
   /* pano de campo desce sobre a cadela; as pinças de Backhaus prendem os cantos da janela */
-  var desce = sai(seg(t, c2 + 9.9, c2 + 11.6)), fica = t >= c2 + 9.9 && t < S[10];
+  var desce = sai(seg(t, c2 + 9.9, c2 + 11.6)), fica = t >= c2 + 9.9 && t < POS;
   pano.visible = fica; pano.position.y = (1 - desce) * .22; matPano.opacity = Math.min(1, desce * 2.2); matPano.transparent = desce < 1; matPano.depthWrite = desce >= 1;
   backhaus.forEach(function (b, i) {
     var k = sai(seg(t, c2 + 11.4 + i * .45, c2 + 12.1 + i * .45)); b.visible = fica && k > 0;
     var cp = b.userData.canto; b.position.set(cp.x, alturaPano(cp.x, cp.z) + .007, cp.z).addScaledVector(SITW.n, (1 - k) * .08).addScaledVector(b.userData.fora, (1 - k) * .03);
     b.userData.abre(.18 * (1 - k));
   });
-  acesso.visible = t >= S[10];
+  acesso.visible = t >= POS;
   /* extubação: com o reflexo de deglutição de volta, o tubo (com o oxímetro) sai pela boca e a língua recolhe */
-  var extuba = eio(seg(t, S[10] + 5.4, S[10] + 6.6)), recolhe = eio(seg(t, S[10] + 6.2, S[10] + 7.2));
-  anest.visible = t >= c2 + 2.2 && t < S[10] + 7.2;
+  var extuba = eio(seg(t, POS + 5.4, POS + 6.6)), recolhe = eio(seg(t, POS + 6.2, POS + 7.2));
+  anest.visible = t >= c2 + 2.2 && t < POS + 7.2;
   anest.scale.setScalar(1);
   var puxa = .085 * extuba;
   anest.tubo.position.set(-.012 * extuba, -.004 * extuba, puxa); anest.tubo.material.opacity = .62 * (1 - ss(.6, 1, extuba));
@@ -388,8 +388,8 @@ function poseSala(t) {
   anest.ox.position.copy(anest.ox0).add(_puxa.set(-.02 * extuba, -.01 * extuba, puxa));
   anest.ox.visible = anest.con.visible = extuba < .85;
   anest.lingua.position.copy(anest.lingua0).lerp(anest.boca, recolhe * .7); anest.lingua.scale.setScalar(1 - .65 * recolhe);
-  UC.uResp.value = .0028 * Math.sin(t * TAU / (t >= c2 && t < S[10] + 4 ? 4.2 : 2.6));
-  UC.uCauda.value = t >= S[10] + 6.5 ? .16 * Math.sin((t - S[10]) * 5.2) * ss(S[10] + 6.5, S[10] + 7.5, t) : 0;
+  UC.uResp.value = .0028 * Math.sin(t * TAU / (t >= c2 && t < POS + 4 ? 4.2 : 2.6));
+  UC.uCauda.value = t >= POS + 6.5 ? .16 * Math.sin((t - POS) * 5.2) * ss(POS + 6.5, POS + 7.5, t) : 0;
 }
 
 /* ============================================================ câmera: tomadas no tempo global */
