@@ -9,6 +9,12 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - **19/11 — Registro detalhado não é critério para virar caso.** Ter muitos dados de algo não significa que entra como caso específico. Exames de sangue (inclusive a série da Mel labradora) vão para "atividades realizadas / exames", não para casos.
 - **19/11 — Transfusão de sangue entra em "atividades realizadas".** Atenção: a transfusão foi na **Mel Serafina (gata, 06/11)**; a **Mel labradora** é a do hemangiossarcoma e da série de hemogramas. Confirmar com o Felipe qual das duas ele quis dizer antes de montar o slide.
 - **19/11 — Sem citações e sem animação do tártaro.** A defesa não precisa de referências bibliográficas, e a limpeza de tártaro não justifica uma animação (pode entrar como foto em atividades realizadas).
+- **19/11 — Eixo: todos.** O Felipe quer todos os eixos (os 5 e a tese), com grande parte dos elementos do comparativo presentes. Não escolher um só: integrar cada eixo como uma **camada** com lugar definido, para não diluir em 25–30 min. Proposta de partida (o Felipe ainda pode ajustar):
+  - **Tese (as pessoas que o amam):** o fio humano que atravessa a defesa inteira, uma frase ou uma pessoa por caso.
+  - **3. Caráter por exposição e habituação:** a ordem dos casos segue a cronologia do estágio (dia 1 → 19/11), como arco pessoal; a parte pessoal ocupa uma frase por caso.
+  - **1. Tornar visível o oculto** e **2. Dar voz ao paciente:** duas perguntas aplicadas dentro de cada caso: "o que estava escondido e como apareceu?" e "como o animal mostrou o que sentia?".
+  - **4. Mortalidade e tempo:** abertura e fechamento com o par 17/11 → 19/11 e o dia 1.
+  - **5. Mídia visual como argumento:** o método de toda a defesa (raio-X real, 3D, linha do tempo, corpo do estágio), com plano B offline.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
 
@@ -18,7 +24,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 - [x] **FEITO 19/11 11h41 (`estagio/defesa/eixos/comparativo.md`) — 1º NA FILA: material para o Felipe escolher o eixo da defesa.** A escolha é dele; a tarefa **não decide** o eixo. Fazer uma página comparando os 5 eixos temáticos (seção 2 de `informacoes-do-estagio.md`: tornar visível o oculto; dar voz ao paciente que não fala; caráter formado por exposição e habituação; mortalidade e tempo condensados em dados clínicos; mídia visual como argumento) e a tese "o paciente é o animal, mas a clínica é construída com as pessoas que o amam". Para cada um: os casos e fotos que encaixam, as reflexões dele que sustentam, como seria a abertura e o fechamento, o que fica de fora, e o risco. Em `estagio/defesa/eixos/`.
   - **O Felipe gostou desta ligação (19/11), incluir no comparativo:** o par 17/11 → 19/11. Os 3 fetos que já estavam mortos (mumificados) na castração da gata, sem nada a fazer, e os 3 filhotes que sobreviveram ao cachorro e chegaram vivos para serem salvos. Encaixa no eixo "mortalidade e tempo" e na tese "a clínica é construída com as pessoas que o amam" (alguém resgatou a ninhada). Mostrar como poderia servir de abertura ou fechamento, com as fotos de `estagio/fotos/dia-19-11/`.
-- **Enquanto o eixo não for escolhido:** o roteiro e as considerações finais ficam como esboço com variantes, sem fixar um eixo.
+- ~~Enquanto o eixo não for escolhido~~ — o eixo foi decidido em 19/11: todos, em camadas.
 
 - [ ] **2º NA FILA (pedido do Felipe em 19/11; subiu para 2º para orientar as próximas execuções): pesquisa aprofundada para direcionar a continuação da fila.** Instrução do Felipe: **não poupe tokens; pesquise o máximo possível; ultra pesquisa aprofundada** de como direcionar o uso do Claude para a melhor produtividade possível na apresentação. Buscar ideias boas, **altamente agradáveis, pedagógicas, visuais e acadêmicas**.
   - **Dentro do git (o material dele):** ler tudo (diário, casos, reflexões, fotos e legendas, exportação do claude.ai, briefings, apresentação atual, defesa da Yasmin, artefatos publicados, linha do tempo) e mapear o que ainda não foi aproveitado, as ligações entre casos, os pontos fortes e as lacunas.
@@ -29,7 +35,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [ ] Lista única "perguntas para a Cláudia, o Thiago e a Fran", juntando as pendências.
 - [ ] Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
-- [ ] Roteiro da defesa (25–30 min): ordem dos casos e tempo por bloco (depois que o Felipe escolher o eixo).
+- [ ] **Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
 - [x] ~~Animação da limpeza de tártaro~~ — descartado pelo Felipe em 19/11 (não justifica uma animação).
 - [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
