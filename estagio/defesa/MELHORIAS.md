@@ -19,7 +19,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
 
-- [ ] **3º NA FILA — Parte 1, a clínica em geral:** esboço dos slides da parte geral, enxuto, com base na estrutura da Yasmin: capa, identificação, história, infraestrutura, serviços, atividades realizadas (procedimentos, exames, vacinas, transfusão). Usar as fotos que existem e listar as que faltam (o Felipe não tem fotos dos ambientes da clínica: balcão, consultório, internamento, espera, banho e tosa, canil, cirurgia, esterilização parcial). Em `estagio/defesa/parte1-clinica/`.
+- [x] **FEITO 19/11 15h41 (`estagio/defesa/parte1-clinica/esboco.md`) — 3º NA FILA — Parte 1, a clínica em geral:** esboço dos slides da parte geral, enxuto, com base na estrutura da Yasmin: capa, identificação, história, infraestrutura, serviços, atividades realizadas (procedimentos, exames, vacinas, transfusão). Usar as fotos que existem e listar as que faltam (o Felipe não tem fotos dos ambientes da clínica: balcão, consultório, internamento, espera, banho e tosa, canil, cirurgia, esterilização parcial). Em `estagio/defesa/parte1-clinica/`.
 
 - [x] **FEITO 19/11 (teste):** linha do tempo do estágio inteiro com **todas as fotos e todas as ideias**, dia a dia (28/10 até hoje). Cada dia com as suas fotos (de `estagio/fotos/` e `estagio/imagens/`, com as legendas originais), os casos, as reflexões e as ideias da defesa que surgiram naquele dia (animações, eixos temáticos, artefatos publicados). Formato visual (página HTML em `estagio/defesa/linha-do-tempo/`, com as fotos referenciadas do repositório, sem copiar nem alterar os originais), com uma versão em PDF para o plano B offline. Atualizar a cada execução seguinte quando chegarem dias novos.
 
@@ -85,3 +85,15 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - O slide 5 fica com as fotos da Yasmin com crédito, ou ele tira fotos suas?
 
 **Próxima sugestão:** 3º da fila, a Parte 1 (a clínica), já usando a técnica de afirmação e prova; ou o que o Felipe escolher entre P1 e P10.
+
+### 19/11/2026 — 15h41
+
+**Feito:** esboço da Parte 1 (a clínica em geral), com 7 slides em frase-afirmação e prova visual, cerca de 6 minutos. A Parte 1 abre com a história do Rangel (autorizada) em vez de dados, e usa as camadas dos eixos. Cada slide tem fotos reais do repositório (caminhos conferidos), fala e tempo; no fim, o que depende do Felipe e a comparação com a apresentação atual, que não foi mexida.
+- `estagio/defesa/parte1-clinica/esboco.md`
+
+**Perguntas para o Felipe:**
+- Tirar fotos dos ambientes, da fachada e do banho e tosa até 07/12? (slides 2, 4 e 5)
+- Carga horária e setor do estágio.
+- Slide 5: fotos da Yasmin com crédito, ou fotos dele?
+
+**Próxima sugestão:** o corpo do estágio (próximo item numerado da fila), ou atualizar a linha do tempo com 18/11 (Rangel e fecaloma) e 19/11 (P15).
