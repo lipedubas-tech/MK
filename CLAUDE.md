@@ -25,4 +25,25 @@ rascunho e espere o usuário aprovar antes de juntar. Contam como estruturais:
 
 Na dúvida, trate como estrutural e pergunte.
 
+## Informações puras: nunca alterar
+
+São os registros originais do estágio. Pode **acrescentar** a eles (dia novo,
+foto nova, pendência nova), mas nunca apagar, resumir por cima, reescrever ou
+"corrigir" o que já está lá sem o usuário pedir:
+- `estagio/informacoes-do-estagio.md` (diário, casos, exames, reflexões);
+- `estagio/exportacao-claude/` inteira;
+- `estagio/fotos/`, `estagio/imagens/`, `estagio/pdfs/` e as notas `LEIAME.md`
+  de cada pasta de fotos;
+- os PDFs e `.pptx` recebidos (modelo do IFC, defesa da Yasmin, briefings).
+
+Trabalho derivado (rascunhos, roteiros, slides novos, análises) vai em
+`estagio/defesa/`. Interpretação clínica é sempre marcada como "a confirmar"
+com a Cláudia ou o Thiago, nunca escrita como fato.
+
+## Tarefa agendada "Melhorar a defesa"
+
+Roda de manhã, à tarde e à noite. Cada execução lê
+`estagio/defesa/MELHORIAS.md`, escolhe a próxima melhoria, faz, e registra lá
+o que fez e o que sugere em seguida.
+
 Depois de juntar, avise o usuário em uma linha o que foi gravado.
