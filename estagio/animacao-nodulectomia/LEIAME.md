@@ -18,6 +18,23 @@ não estava mais sob a pele, como dizia o briefing. A animação mostra isso: me
 pele, com crostas e exsudato discretos e a pele inflamada em volta; a base entra no subcutâneo. Como a lesão
 é contaminada, a antissepsia vai da periferia para a lesão, e a dissecção passa pelo tecido sadio, sem cortar o nódulo.
 
+## Melhorias de 19/11
+Revisão quadro a quadro das 11 cenas, com estas correções:
+- **Nome da cena legível em todas as cenas.** Nas cenas 3 a 10 o nome saía em branco sobre o fundo claro e
+  quase sumia; agora fica numa pílula escura, como a legenda.
+- **A legenda cobre menos o campo.** Ficou um pouco menor e cabe em uma linha, e a imagem 3D sobe 6% da altura
+  (`DESLOC_Y` em `src/fim.js`), então a ponta do fuso, a sutura e a pata com o acesso não ficam mais embaixo dela.
+- **Hemostasia (cena 8):** a gaze era um quadrado branco liso que sumia contra o leito. Virou uma compressa
+  dobrada, com espessura, trama e a dobra de cima, que desce, comprime (achata e pulsa) e sai. Rótulo novo:
+  "Compressão com gaze: pressão direta, sem esfregar o leito". Continua sem sangue, como pede o briefing.
+- **Histopatológico (cena 10):** a câmera recua e mira mais alto enquanto a peça vai para o frasco; antes a peça
+  saía pelo topo do quadro.
+- **Pós-operatório (cena 11):** o tubo saía de uma vez; agora a extubação é animada (o tubo desliza para fora com
+  o oxímetro e a língua recolhe). Rótulos novos: "Ferida suturada", "Acesso venoso" e "Extubação: quando volta o
+  reflexo de deglutição", conforme as fotos 4 a 6.
+
+Conferido no Chromium (1280 × 784, celular em retrato e em paisagem), sem erros no console.
+
 ## Como o modelo foi adaptado (`tools/cao.py`)
 O modelo original é um labrador amarelo em pé, sem esqueleto. O script:
 - pinta a pelagem de preto e deixa o focinho grisalho (salpicado), como a paciente das fotos;
@@ -48,3 +65,5 @@ Para conferir um quadro: abra `index.html?t=45` (abre parado aos 45 s).
 - Lado operado (o modelo mostra o lado esquerdo, com a cadela em decúbito lateral direito).
 - Se houve antibiótico no pós-operatório e se foi feita cultura da secreção.
 - A animação fala só em "nódulo": o tipo depende do laudo histopatológico.
+- Se houve curativo: a legenda da cena 11 (do briefing) cita "curativo", mas as fotos 4 a 6 mostram a ferida
+  descoberta, e a animação também.

@@ -111,8 +111,10 @@ function poseBandeja(t) {
   tomada(s[6] + 4.6, "bandeja", [.04, .42, .5], [-.05, .0, .01], 30, true);
   tomada(s[6] + 8.8, "bandeja", [.03, .34, .4], [-.03, .0, .03], 30);
   tomada(s[9], "bandeja", [.06, .38, .44], [-.05, .02, .0], 30, true);
-  tomada(s[9] + 4.2, "bandeja", [-.02, .34, .4], [-.12, .03, -.04], 30);
-  tomada(s[9] + 7.8, "bandeja", [-.04, .3, .36], [-.13, .035, -.05], 30);
+  /* a peça sobe uns 10 cm acima do frasco: a câmera recua e mira mais alto para ela não sair pelo topo do quadro */
+  tomada(s[9] + 2.4, "bandeja", [.01, .41, .5], [-.1, .065, -.02], 30);
+  tomada(s[9] + 4.6, "bandeja", [-.02, .35, .43], [-.13, .055, -.04], 30);
+  tomada(s[9] + 7.8, "bandeja", [-.04, .31, .38], [-.13, .05, -.05], 30);
 })();
 rotulo(S[6] + 6.4, S[6] + 9, "bandeja", "Peça cirúrgica", "nódulo ulcerado e pele retirados em bloco", function () { return pecaBandeja.position.clone().add(new V3(0, .012, 0)); }, 12, -8);
 rotulo(S[9] + 5.4, S[9] + 8, "bandeja", "Formol 10%", "volume cerca de 10 vezes o da peça", function () { return frasco.position.clone().add(new V3(0, .06, .04)); }, 13, -9);

@@ -386,7 +386,40 @@ var caneta = (function () {
 var bist = bisturi(), kelly = pinca("kelly"), kellyVaso = pinca("kelly"), tesoura = pinca("tesoura"), adson = pincaDente(), porta = pinca("porta");
 var agulhaP = new THREE.Mesh(new THREE.TorusGeometry(.0075, .00042, 6, 30, PI * .75), ACO); agulhaP.castShadow = true;
 porta.add(agulhaP); agulhaP.position.set(.0005, .0005, 0); agulhaP.rotation.set(PI / 2, 0, PI * .1);
-var gazeH = gaze(.075, .06, .0016);
+/* compressa de gaze dobrada (foto 2): almofada macia com trama aparente e uma dobra por cima, num branco frio
+   para não sumir contra a fáscia creme do leito. O eixo maior (z) segue o eixo maior do fuso. */
+var texCompressa = texCanvas(256, 256, function (g, w, h) {
+  /* trama exagerada de propósito (fios a cada ~3 mm): na distância da câmera a trama real some e a gaze vira papel */
+  g.fillStyle = "#f4f6f6"; g.fillRect(0, 0, w, h);
+  for (var i = 0; i < w; i += 12) {
+    g.fillStyle = "rgba(128,138,144," + (.34 + .2 * rnd()) + ")"; g.fillRect(i + (rnd() - .5) * 2, 0, 3, h);
+    g.fillStyle = "rgba(128,138,144," + (.34 + .2 * rnd()) + ")"; g.fillRect(0, i + (rnd() - .5) * 2, w, 3);
+  }
+  for (i = 0; i < 120; i++) { g.fillStyle = "rgba(255,255,255,.6)"; g.fillRect(rnd() * w, rnd() * h, 4 + rnd() * 6, 1.5); }   /* fiapos */
+  var vg = g.createRadialGradient(w / 2, h / 2, w * .3, w / 2, h / 2, w * .72); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(70,80,90,.22)");
+  g.fillStyle = vg; g.fillRect(0, 0, w, h);   /* bordas um pouco mais escuras: as camadas dobradas */
+});
+function almofada(lx, lz, esp, ruga) {
+  var geo = new THREE.BoxGeometry(1, 1, 1, 28, 2, 24), p = geo.attributes.position;
+  for (var i = 0; i < p.count; i++) {
+    var x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    var perfil = Math.sqrt(Math.max(0, 1 - Math.pow(2 * Math.abs(x), 4))) * Math.sqrt(Math.max(0, 1 - Math.pow(2 * Math.abs(z), 4)));
+    var X = x * lx, Z = z * lz;
+    var onda = ruga * (Math.sin(X * 190 + Z * 60) * .6 + Math.sin(Z * 230 - X * 70) * .4);
+    p.setXYZ(i, X, y * esp * (.3 + .7 * perfil) + (y > 0 ? onda * perfil : 0), Z);
+  }
+  geo.computeVertexNormals();
+  var m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: texCompressa, color: 0xf0f5f9, roughness: .95, metalness: 0, envMapIntensity: .45 }));
+  m.castShadow = true; m.receiveShadow = true; return m;
+}
+function compressa(lx, lz, esp) {
+  var g = new THREE.Group();
+  g.add(almofada(lx, lz, esp, .0005));
+  var dobra = almofada(lx * .94, lz * .58, esp * .55, .0004);   /* a dobra de cima, deslocada para um lado */
+  dobra.position.set(.0015, esp * .55, lz * .17); g.add(dobra);
+  return g;
+}
+var gazeH = compressa(.044, .068, .0055);
 [caneta, bist, kelly, kellyVaso, tesoura, adson, porta, gazeH].forEach(function (o) { o.visible = false; campo.add(o); });
 /* coloca um instrumento: ponta em p, cabo na direção y, "lado" na direção x */
 function orienta(o, p, y, x) {
@@ -522,9 +555,12 @@ function poseCampo(t) {
     orienta(adson, alvo.clone().add(new V3(0, .03 * desce2, 0)), new V3(.15, .85, .5), new V3(1, 0, 0));
     adson.userData.abre(1 - ss(s7 + 1.6, s7 + 1.85, t));
   }
-  if (t > s8 + .4 && t < s8 + 5.2) {          /* gaze comprime o leito */
+  if (t > s8 + .4 && t < s8 + 5.2) {          /* compressa de gaze desce até o leito, comprime (achata e pulsa) e sai limpa */
     var pz = ss(s8 + .4, s8 + 1.4, t) * (1 - ss(s8 + 4, s8 + 5.2, t));
-    gazeH.visible = true; gazeH.position.set(0, lerp(.06, -.015, pz), 0); gazeH.rotation.set(0, .2, 0); gazeH.scale.set(1, lerp(1, .55, ss(s8 + 1.2, s8 + 1.6, t) * (1 - ss(s8 + 4, s8 + 4.4, t))), 1);
+    var aperta = ss(s8 + 1.2, s8 + 1.6, t) * (1 - ss(s8 + 4, s8 + 4.4, t)), pulso = .06 * aperta * (.5 - .5 * Math.cos((t - s8 - 1.6) * TAU / 1.2));
+    var achata = 1 - .35 * aperta - pulso, fundoLeito = S0(0, 0) - K.fasc;
+    gazeH.visible = true; gazeH.position.set(0, lerp(.06, fundoLeito + .0006, pz), .002); gazeH.rotation.set(0, .08, 0);
+    gazeH.scale.set(1 + .06 * aperta, achata, 1 + .04 * aperta);
   }
   if (t > s9 + 7.6 && t < s9 + 15.8) {        /* porta-agulhas com agulha curva */
     var u2 = clamp(F.f2, -K.L + .006, K.L - .006), mergulho = .5 + .5 * Math.cos((t - s9) * TAU / (7.4 / 19));
@@ -584,6 +620,7 @@ rotulo(S[3] + 7.9, S[4] + 9.8, "campo", "Nódulo", "rompeu a pele e ficou expost
 rotulo(S[4] + 3, S[4] + 9.8, "campo", "Úlcera infeccionada", "crostas e exsudato", pontoCorte(K.rv * .5, K.nc + K.rn * .84), 12, -9);
 rotulo(S[5] + 1.4, S[5] + 8.8, "campo", "Artéria e veia do nódulo", null, function () { return new V3(-.07, S0(C_CORTE, -.07) - K.fasc + .004, F.c + .002); }, -6, 7);
 rotulo(S[5] + 4.4, S[5] + 8.8, "campo", "Ligadura", "antes do corte", function () { return ligadura.position.clone(); }, -9, -7);
+rotulo(S[7] + 1.7, S[7] + 4.4, "campo", "Compressão com gaze", "pressão direta, sem esfregar o leito", function () { return gazeH.position.clone().add(new V3(.018, .006, -.012)); }, 13, -8);
 rotulo(S[7] + 5.4, S[7] + 8, "campo", "Leito sem sangramento", null, function () { return new V3(0, S0(0, 0) - K.fasc + .001, .02); }, 10, -7, "ok");
 rotulo(S[8] + 2.5, S[8] + 6.6, "campo", "Subcutâneo aproximado", "fio absorvível, sem espaço morto", pontoCorte(0, -.012), 11, -8);
 rotulo(S[8] + 10, S[8] + 16, "campo", "Pele: náilon 3-0", "sutura contínua", function () { return new V3(0, pele(-.03, 0) + .002, -.03); }, 10, -8);

@@ -22,6 +22,11 @@ var _sitioMundo = new V3();
 function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
 rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e infeccionado, perto da axila", sitioMundo, 9, -9);
 rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
+/* pós-operatório (fotos 4 a 6): ferida suturada, acesso venoso e extubação */
+var _ferida = new V3(), _acesso = new V3(), _boca = new V3();
+rotulo(S[10] + .9, S[10] + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);
+rotulo(S[10] + 2.0, S[10] + 4.8, "sala", "Acesso venoso", "no membro torácico", function () { return acesso.localToWorld(_acesso.set(0, 0, 0)); }, -2, 8);
+rotulo(S[10] + 5.2, S[10] + 8.4, "sala", "Extubação", "quando volta o reflexo de deglutição", function () { return anest.localToWorld(_boca.copy(anest.boca)); }, 10, -10);
 
 /* ============================================================ interface */
 var E = { t: 0, tocando: false, tudo: false, cena: -1 };
@@ -93,11 +98,13 @@ function legenda(t) {
 }
 
 /* ============================================================ quadro */
+/* a imagem 3D sobe 6% da altura do palco: o centro de cada tomada fica acima da legenda, que ocupa a faixa de baixo */
+var DESLOC_Y = .06;
 function ajusta() {
   var hb = document.body.classList.contains("cheia") ? 0 : (innerWidth < 760 ? 56 : 64);
   document.documentElement.style.setProperty("--hb", hb + "px");
   var W = palco.clientWidth, H = palco.clientHeight; if (!W || !H) return;
-  ren.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix();
+  ren.setSize(W, H, false); cam.setViewOffset(W, H, 0, H * DESLOC_Y, W, H);   /* também acerta o aspecto */
 }
 addEventListener("resize", ajusta);
 var MUNDOS = { sala: sala, campo: typeof campo !== "undefined" ? campo : sala, bandeja: typeof bandeja !== "undefined" ? bandeja : sala };
@@ -106,7 +113,6 @@ function desenha(t) {
   if (window.poseCampo) poseCampo(t);
   if (window.poseBandeja) poseBandeja(t);
   var mundo = camara(t);
-  palco.classList.toggle("escuro", mundo !== "sala");
   rotulos(t, mundo); legenda(t);
   ren.render(MUNDOS[mundo] || sala, cam);
 }

@@ -320,6 +320,9 @@ var anest = new THREE.Group(); cao.add(anest);
   ox.add(cabo);
   ox.position.set(lingua.position.x - .012, lingua.position.y - .004, lingua.position.z + .026); ox.rotation.set(.3, 0, -.2);
   ox.traverse(function (o) { o.castShadow = true; }); anest.add(ox);
+  /* guardados para a extubação na cena 11 (o tubo sai deslizando pela boca) */
+  anest.tubo = tubo; anest.con = con; anest.ox = ox; anest.boca = B.clone();
+  anest.con0 = con.position.clone(); anest.ox0 = ox.position.clone(); anest.lingua0 = lingua.position.clone();
 })();
 
 var massaCao = new THREE.Mesh(GEO_NOD, matNodulo());
@@ -327,6 +330,7 @@ massaCao.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, S
 massaCao.position.copy(SIT.c).addScaledVector(SIT.n, NOD.sobe); massaCao.castShadow = true; cao.add(massaCao);
 
 /* ============================================================ estado no tempo (sala) */
+var _puxa = new V3();
 var OLHO = { e: vec(CM.olho_e), d: vec(CM.olho_d), ed: vec(CM.olho_e_dei), dd: vec(CM.olho_d_dei) };
 function poseSala(t) {
   var c2 = S[1];
@@ -374,8 +378,16 @@ function poseSala(t) {
     b.userData.abre(.18 * (1 - k));
   });
   acesso.visible = t >= S[10];
-  anest.visible = t >= c2 + 2.2 && t < S[10] + 7.5;
+  /* extubação: com o reflexo de deglutição de volta, o tubo (com o oxímetro) sai pela boca e a língua recolhe */
+  var extuba = eio(seg(t, S[10] + 5.4, S[10] + 6.6)), recolhe = eio(seg(t, S[10] + 6.2, S[10] + 7.2));
+  anest.visible = t >= c2 + 2.2 && t < S[10] + 7.2;
   anest.scale.setScalar(1);
+  var puxa = .085 * extuba;
+  anest.tubo.position.set(-.012 * extuba, -.004 * extuba, puxa); anest.tubo.material.opacity = .62 * (1 - ss(.6, 1, extuba));
+  anest.con.position.copy(anest.con0).add(_puxa.set(-.012 * extuba, -.004 * extuba, puxa));
+  anest.ox.position.copy(anest.ox0).add(_puxa.set(-.02 * extuba, -.01 * extuba, puxa));
+  anest.ox.visible = anest.con.visible = extuba < .85;
+  anest.lingua.position.copy(anest.lingua0).lerp(anest.boca, recolhe * .7); anest.lingua.scale.setScalar(1 - .65 * recolhe);
   UC.uResp.value = .0028 * Math.sin(t * TAU / (t >= c2 && t < S[10] + 4 ? 4.2 : 2.6));
   UC.uCauda.value = t >= S[10] + 6.5 ? .16 * Math.sin((t - S[10]) * 5.2) * ss(S[10] + 6.5, S[10] + 7.5, t) : 0;
 }

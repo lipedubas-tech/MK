@@ -27,10 +27,12 @@ body{overflow:hidden;touch-action:manipulation}
 #topo{position:absolute;left:2.2cqw;top:1.8cqw;display:flex;align-items:center;gap:1.1cqw;pointer-events:none}
 #topo .num{display:grid;place-items:center;min-width:5.6cqw;height:2.9cqw;padding:0 1cqw;border-radius:1.5cqw;background:var(--acento);color:var(--acento-tinta);
   font:700 1.55cqw/1 var(--sans);font-variant-numeric:tabular-nums}
-#topo .nome{font:600 1.75cqw/1.1 var(--sans);color:#1b2836;text-shadow:0 1px 0 rgba(255,255,255,.5)}
-#palco.escuro #topo .nome{color:#f3f6f8;text-shadow:0 1px 2px rgba(0,0,0,.6)}
-#legenda{position:absolute;left:50%;bottom:2.4cqw;transform:translateX(-50%);max-width:82cqw;padding:1.1cqw 2.2cqw 1.25cqw;border-radius:1.2cqw;
-  background:rgba(16,25,34,.88);color:#fff;text-align:center;font:600 2.65cqw/1.28 var(--sans);letter-spacing:.005em;text-wrap:balance;
+/* o nome da cena vai numa pílula escura: fica legível sobre o fundo claro do campo e sobre a cadela preta */
+#topo .nome{display:grid;place-items:center;height:2.9cqw;padding:0 1.3cqw;border-radius:1.5cqw;background:rgba(16,25,34,.82);color:#fff;
+  font:600 1.6cqw/1 var(--sans);box-shadow:0 .3cqw 1cqw rgba(0,0,0,.18)}
+/* legenda numa linha só sempre que couber, para cobrir menos o campo (a imagem 3D também sobe um pouco: DESLOC_Y em fim.js) */
+#legenda{position:absolute;left:50%;bottom:1.8cqw;transform:translateX(-50%);max-width:88cqw;width:max-content;padding:.9cqw 2.1cqw 1cqw;border-radius:1.2cqw;
+  background:rgba(16,25,34,.88);color:#fff;text-align:center;font:600 2.35cqw/1.25 var(--sans);letter-spacing:.005em;text-wrap:balance;
   box-shadow:0 .4cqw 1.6cqw rgba(0,0,0,.25);transition:opacity .35s}
 #legenda:empty{opacity:0}
 #abertura{position:absolute;left:5cqw;top:50%;transform:translateY(-62%);max-width:44cqw;pointer-events:none;opacity:0}
@@ -415,6 +417,9 @@ var anest = new THREE.Group(); cao.add(anest);
   ox.add(cabo);
   ox.position.set(lingua.position.x - .012, lingua.position.y - .004, lingua.position.z + .026); ox.rotation.set(.3, 0, -.2);
   ox.traverse(function (o) { o.castShadow = true; }); anest.add(ox);
+  /* guardados para a extubação na cena 11 (o tubo sai deslizando pela boca) */
+  anest.tubo = tubo; anest.con = con; anest.ox = ox; anest.boca = B.clone();
+  anest.con0 = con.position.clone(); anest.ox0 = ox.position.clone(); anest.lingua0 = lingua.position.clone();
 })();
 
 var massaCao = new THREE.Mesh(GEO_NOD, matNodulo());
@@ -422,6 +427,7 @@ massaCao.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, S
 massaCao.position.copy(SIT.c).addScaledVector(SIT.n, NOD.sobe); massaCao.castShadow = true; cao.add(massaCao);
 
 /* ============================================================ estado no tempo (sala) */
+var _puxa = new V3();
 var OLHO = { e: vec(CM.olho_e), d: vec(CM.olho_d), ed: vec(CM.olho_e_dei), dd: vec(CM.olho_d_dei) };
 function poseSala(t) {
   var c2 = S[1];
@@ -469,8 +475,16 @@ function poseSala(t) {
     b.userData.abre(.18 * (1 - k));
   });
   acesso.visible = t >= S[10];
-  anest.visible = t >= c2 + 2.2 && t < S[10] + 7.5;
+  /* extubação: com o reflexo de deglutição de volta, o tubo (com o oxímetro) sai pela boca e a língua recolhe */
+  var extuba = eio(seg(t, S[10] + 5.4, S[10] + 6.6)), recolhe = eio(seg(t, S[10] + 6.2, S[10] + 7.2));
+  anest.visible = t >= c2 + 2.2 && t < S[10] + 7.2;
   anest.scale.setScalar(1);
+  var puxa = .085 * extuba;
+  anest.tubo.position.set(-.012 * extuba, -.004 * extuba, puxa); anest.tubo.material.opacity = .62 * (1 - ss(.6, 1, extuba));
+  anest.con.position.copy(anest.con0).add(_puxa.set(-.012 * extuba, -.004 * extuba, puxa));
+  anest.ox.position.copy(anest.ox0).add(_puxa.set(-.02 * extuba, -.01 * extuba, puxa));
+  anest.ox.visible = anest.con.visible = extuba < .85;
+  anest.lingua.position.copy(anest.lingua0).lerp(anest.boca, recolhe * .7); anest.lingua.scale.setScalar(1 - .65 * recolhe);
   UC.uResp.value = .0028 * Math.sin(t * TAU / (t >= c2 && t < S[10] + 4 ? 4.2 : 2.6));
   UC.uCauda.value = t >= S[10] + 6.5 ? .16 * Math.sin((t - S[10]) * 5.2) * ss(S[10] + 6.5, S[10] + 7.5, t) : 0;
 }
@@ -1087,7 +1101,40 @@ var caneta = (function () {
 var bist = bisturi(), kelly = pinca("kelly"), kellyVaso = pinca("kelly"), tesoura = pinca("tesoura"), adson = pincaDente(), porta = pinca("porta");
 var agulhaP = new THREE.Mesh(new THREE.TorusGeometry(.0075, .00042, 6, 30, PI * .75), ACO); agulhaP.castShadow = true;
 porta.add(agulhaP); agulhaP.position.set(.0005, .0005, 0); agulhaP.rotation.set(PI / 2, 0, PI * .1);
-var gazeH = gaze(.075, .06, .0016);
+/* compressa de gaze dobrada (foto 2): almofada macia com trama aparente e uma dobra por cima, num branco frio
+   para não sumir contra a fáscia creme do leito. O eixo maior (z) segue o eixo maior do fuso. */
+var texCompressa = texCanvas(256, 256, function (g, w, h) {
+  /* trama exagerada de propósito (fios a cada ~3 mm): na distância da câmera a trama real some e a gaze vira papel */
+  g.fillStyle = "#f4f6f6"; g.fillRect(0, 0, w, h);
+  for (var i = 0; i < w; i += 12) {
+    g.fillStyle = "rgba(128,138,144," + (.34 + .2 * rnd()) + ")"; g.fillRect(i + (rnd() - .5) * 2, 0, 3, h);
+    g.fillStyle = "rgba(128,138,144," + (.34 + .2 * rnd()) + ")"; g.fillRect(0, i + (rnd() - .5) * 2, w, 3);
+  }
+  for (i = 0; i < 120; i++) { g.fillStyle = "rgba(255,255,255,.6)"; g.fillRect(rnd() * w, rnd() * h, 4 + rnd() * 6, 1.5); }   /* fiapos */
+  var vg = g.createRadialGradient(w / 2, h / 2, w * .3, w / 2, h / 2, w * .72); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(70,80,90,.22)");
+  g.fillStyle = vg; g.fillRect(0, 0, w, h);   /* bordas um pouco mais escuras: as camadas dobradas */
+});
+function almofada(lx, lz, esp, ruga) {
+  var geo = new THREE.BoxGeometry(1, 1, 1, 28, 2, 24), p = geo.attributes.position;
+  for (var i = 0; i < p.count; i++) {
+    var x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    var perfil = Math.sqrt(Math.max(0, 1 - Math.pow(2 * Math.abs(x), 4))) * Math.sqrt(Math.max(0, 1 - Math.pow(2 * Math.abs(z), 4)));
+    var X = x * lx, Z = z * lz;
+    var onda = ruga * (Math.sin(X * 190 + Z * 60) * .6 + Math.sin(Z * 230 - X * 70) * .4);
+    p.setXYZ(i, X, y * esp * (.3 + .7 * perfil) + (y > 0 ? onda * perfil : 0), Z);
+  }
+  geo.computeVertexNormals();
+  var m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: texCompressa, color: 0xf0f5f9, roughness: .95, metalness: 0, envMapIntensity: .45 }));
+  m.castShadow = true; m.receiveShadow = true; return m;
+}
+function compressa(lx, lz, esp) {
+  var g = new THREE.Group();
+  g.add(almofada(lx, lz, esp, .0005));
+  var dobra = almofada(lx * .94, lz * .58, esp * .55, .0004);   /* a dobra de cima, deslocada para um lado */
+  dobra.position.set(.0015, esp * .55, lz * .17); g.add(dobra);
+  return g;
+}
+var gazeH = compressa(.044, .068, .0055);
 [caneta, bist, kelly, kellyVaso, tesoura, adson, porta, gazeH].forEach(function (o) { o.visible = false; campo.add(o); });
 /* coloca um instrumento: ponta em p, cabo na direção y, "lado" na direção x */
 function orienta(o, p, y, x) {
@@ -1223,9 +1270,12 @@ function poseCampo(t) {
     orienta(adson, alvo.clone().add(new V3(0, .03 * desce2, 0)), new V3(.15, .85, .5), new V3(1, 0, 0));
     adson.userData.abre(1 - ss(s7 + 1.6, s7 + 1.85, t));
   }
-  if (t > s8 + .4 && t < s8 + 5.2) {          /* gaze comprime o leito */
+  if (t > s8 + .4 && t < s8 + 5.2) {          /* compressa de gaze desce até o leito, comprime (achata e pulsa) e sai limpa */
     var pz = ss(s8 + .4, s8 + 1.4, t) * (1 - ss(s8 + 4, s8 + 5.2, t));
-    gazeH.visible = true; gazeH.position.set(0, lerp(.06, -.015, pz), 0); gazeH.rotation.set(0, .2, 0); gazeH.scale.set(1, lerp(1, .55, ss(s8 + 1.2, s8 + 1.6, t) * (1 - ss(s8 + 4, s8 + 4.4, t))), 1);
+    var aperta = ss(s8 + 1.2, s8 + 1.6, t) * (1 - ss(s8 + 4, s8 + 4.4, t)), pulso = .06 * aperta * (.5 - .5 * Math.cos((t - s8 - 1.6) * TAU / 1.2));
+    var achata = 1 - .35 * aperta - pulso, fundoLeito = S0(0, 0) - K.fasc;
+    gazeH.visible = true; gazeH.position.set(0, lerp(.06, fundoLeito + .0006, pz), .002); gazeH.rotation.set(0, .08, 0);
+    gazeH.scale.set(1 + .06 * aperta, achata, 1 + .04 * aperta);
   }
   if (t > s9 + 7.6 && t < s9 + 15.8) {        /* porta-agulhas com agulha curva */
     var u2 = clamp(F.f2, -K.L + .006, K.L - .006), mergulho = .5 + .5 * Math.cos((t - s9) * TAU / (7.4 / 19));
@@ -1285,6 +1335,7 @@ rotulo(S[3] + 7.9, S[4] + 9.8, "campo", "Nódulo", "rompeu a pele e ficou expost
 rotulo(S[4] + 3, S[4] + 9.8, "campo", "Úlcera infeccionada", "crostas e exsudato", pontoCorte(K.rv * .5, K.nc + K.rn * .84), 12, -9);
 rotulo(S[5] + 1.4, S[5] + 8.8, "campo", "Artéria e veia do nódulo", null, function () { return new V3(-.07, S0(C_CORTE, -.07) - K.fasc + .004, F.c + .002); }, -6, 7);
 rotulo(S[5] + 4.4, S[5] + 8.8, "campo", "Ligadura", "antes do corte", function () { return ligadura.position.clone(); }, -9, -7);
+rotulo(S[7] + 1.7, S[7] + 4.4, "campo", "Compressão com gaze", "pressão direta, sem esfregar o leito", function () { return gazeH.position.clone().add(new V3(.018, .006, -.012)); }, 13, -8);
 rotulo(S[7] + 5.4, S[7] + 8, "campo", "Leito sem sangramento", null, function () { return new V3(0, S0(0, 0) - K.fasc + .001, .02); }, 10, -7, "ok");
 rotulo(S[8] + 2.5, S[8] + 6.6, "campo", "Subcutâneo aproximado", "fio absorvível, sem espaço morto", pontoCorte(0, -.012), 11, -8);
 rotulo(S[8] + 10, S[8] + 16, "campo", "Pele: náilon 3-0", "sutura contínua", function () { return new V3(0, pele(-.03, 0) + .002, -.03); }, 10, -8);
@@ -1401,8 +1452,10 @@ function poseBandeja(t) {
   tomada(s[6] + 4.6, "bandeja", [.04, .42, .5], [-.05, .0, .01], 30, true);
   tomada(s[6] + 8.8, "bandeja", [.03, .34, .4], [-.03, .0, .03], 30);
   tomada(s[9], "bandeja", [.06, .38, .44], [-.05, .02, .0], 30, true);
-  tomada(s[9] + 4.2, "bandeja", [-.02, .34, .4], [-.12, .03, -.04], 30);
-  tomada(s[9] + 7.8, "bandeja", [-.04, .3, .36], [-.13, .035, -.05], 30);
+  /* a peça sobe uns 10 cm acima do frasco: a câmera recua e mira mais alto para ela não sair pelo topo do quadro */
+  tomada(s[9] + 2.4, "bandeja", [.01, .41, .5], [-.1, .065, -.02], 30);
+  tomada(s[9] + 4.6, "bandeja", [-.02, .35, .43], [-.13, .055, -.04], 30);
+  tomada(s[9] + 7.8, "bandeja", [-.04, .31, .38], [-.13, .05, -.05], 30);
 })();
 rotulo(S[6] + 6.4, S[6] + 9, "bandeja", "Peça cirúrgica", "nódulo ulcerado e pele retirados em bloco", function () { return pecaBandeja.position.clone().add(new V3(0, .012, 0)); }, 12, -8);
 rotulo(S[9] + 5.4, S[9] + 8, "bandeja", "Formol 10%", "volume cerca de 10 vezes o da peça", function () { return frasco.position.clone().add(new V3(0, .06, .04)); }, 13, -9);
@@ -1431,6 +1484,11 @@ var _sitioMundo = new V3();
 function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
 rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e infeccionado, perto da axila", sitioMundo, 9, -9);
 rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
+/* pós-operatório (fotos 4 a 6): ferida suturada, acesso venoso e extubação */
+var _ferida = new V3(), _acesso = new V3(), _boca = new V3();
+rotulo(S[10] + .9, S[10] + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);
+rotulo(S[10] + 2.0, S[10] + 4.8, "sala", "Acesso venoso", "no membro torácico", function () { return acesso.localToWorld(_acesso.set(0, 0, 0)); }, -2, 8);
+rotulo(S[10] + 5.2, S[10] + 8.4, "sala", "Extubação", "quando volta o reflexo de deglutição", function () { return anest.localToWorld(_boca.copy(anest.boca)); }, 10, -10);
 
 /* ============================================================ interface */
 var E = { t: 0, tocando: false, tudo: false, cena: -1 };
@@ -1502,11 +1560,13 @@ function legenda(t) {
 }
 
 /* ============================================================ quadro */
+/* a imagem 3D sobe 6% da altura do palco: o centro de cada tomada fica acima da legenda, que ocupa a faixa de baixo */
+var DESLOC_Y = .06;
 function ajusta() {
   var hb = document.body.classList.contains("cheia") ? 0 : (innerWidth < 760 ? 56 : 64);
   document.documentElement.style.setProperty("--hb", hb + "px");
   var W = palco.clientWidth, H = palco.clientHeight; if (!W || !H) return;
-  ren.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix();
+  ren.setSize(W, H, false); cam.setViewOffset(W, H, 0, H * DESLOC_Y, W, H);   /* também acerta o aspecto */
 }
 addEventListener("resize", ajusta);
 var MUNDOS = { sala: sala, campo: typeof campo !== "undefined" ? campo : sala, bandeja: typeof bandeja !== "undefined" ? bandeja : sala };
@@ -1515,7 +1575,6 @@ function desenha(t) {
   if (window.poseCampo) poseCampo(t);
   if (window.poseBandeja) poseBandeja(t);
   var mundo = camara(t);
-  palco.classList.toggle("escuro", mundo !== "sala");
   rotulos(t, mundo); legenda(t);
   ren.render(MUNDOS[mundo] || sala, cam);
 }
