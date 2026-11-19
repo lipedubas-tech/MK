@@ -1,6 +1,6 @@
 <title>Nodulectomia em cão</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Animação didática em 3D de uma nodulectomia em cão: preparo, incisão elíptica com margem, dissecção, ligadura, exérese em bloco, sutura e envio ao histopatológico.">
+<meta name="description" content="Animação didática em 3D de uma nodulectomia em cão: preparo, incisão elíptica com margem, dissecção, ligadura, exérese em bloco, hemostasia, sutura e pós-operatório.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
@@ -27,10 +27,12 @@ body{overflow:hidden;touch-action:manipulation}
 #topo{position:absolute;left:2.2cqw;top:1.8cqw;display:flex;align-items:center;gap:1.1cqw;pointer-events:none}
 #topo .num{display:grid;place-items:center;min-width:5.6cqw;height:2.9cqw;padding:0 1cqw;border-radius:1.5cqw;background:var(--acento);color:var(--acento-tinta);
   font:700 1.55cqw/1 var(--sans);font-variant-numeric:tabular-nums}
-#topo .nome{font:600 1.75cqw/1.1 var(--sans);color:#1b2836;text-shadow:0 1px 0 rgba(255,255,255,.5)}
-#palco.escuro #topo .nome{color:#f3f6f8;text-shadow:0 1px 2px rgba(0,0,0,.6)}
-#legenda{position:absolute;left:50%;bottom:2.4cqw;transform:translateX(-50%);max-width:82cqw;padding:1.1cqw 2.2cqw 1.25cqw;border-radius:1.2cqw;
-  background:rgba(16,25,34,.88);color:#fff;text-align:center;font:600 2.65cqw/1.28 var(--sans);letter-spacing:.005em;text-wrap:balance;
+/* o nome da cena vai numa pílula escura: fica legível sobre o fundo claro do campo e sobre a cadela preta */
+#topo .nome{display:grid;place-items:center;height:2.9cqw;padding:0 1.3cqw;border-radius:1.5cqw;background:rgba(16,25,34,.82);color:#fff;
+  font:600 1.6cqw/1 var(--sans);box-shadow:0 .3cqw 1cqw rgba(0,0,0,.18)}
+/* legenda numa linha só sempre que couber, para cobrir menos o campo (a imagem 3D também sobe um pouco: DESLOC_Y em fim.js) */
+#legenda{position:absolute;left:50%;bottom:1.8cqw;transform:translateX(-50%);max-width:88cqw;width:max-content;padding:.9cqw 2.1cqw 1cqw;border-radius:1.2cqw;
+  background:rgba(16,25,34,.88);color:#fff;text-align:center;font:600 2.35cqw/1.25 var(--sans);letter-spacing:.005em;text-wrap:balance;
   box-shadow:0 .4cqw 1.6cqw rgba(0,0,0,.25);transition:opacity .35s}
 #legenda:empty{opacity:0}
 #abertura{position:absolute;left:5cqw;top:50%;transform:translateY(-62%);max-width:44cqw;pointer-events:none;opacity:0}
@@ -75,9 +77,9 @@ body{overflow:hidden;touch-action:manipulation}
   <div id="palco" role="img" aria-label="Animação 3D da nodulectomia em cão">
     <div id="carregando">Carregando o modelo 3D…</div>
     <div id="veu"></div>
-    <div id="abertura"><p class="k">Animação didática</p><h1>Nodulectomia em cão</h1><p>Exérese de nódulo cutâneo/subcutâneo, da marcação ao histopatológico</p></div>
+    <div id="abertura"><p class="k">Animação didática</p><h1>Nodulectomia em cão</h1><p>Exérese de nódulo cutâneo/subcutâneo, da marcação ao pós-operatório</p></div>
     <div id="rotulos"><svg aria-hidden="true"></svg></div>
-    <div id="topo" aria-hidden="true"><span class="num" id="num">1/11</span><span class="nome" id="nome">Abertura</span></div>
+    <div id="topo" aria-hidden="true"><span class="num" id="num">1/10</span><span class="nome" id="nome">Abertura</span></div>
     <p id="legenda" aria-live="polite"></p>
   </div>
   <nav id="barra" aria-label="Controles da animação">
