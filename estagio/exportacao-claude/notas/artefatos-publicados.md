@@ -10,6 +10,7 @@ Os links só abrem logado na conta do Felipe. Para editar no Claude Code, baixe 
 | Cirurgia da Katita em 3D (osso em Y + visão do cirurgião) | https://claude.ai/artifact/5jzyf4bCynjkN2e3FroFAk |
 | Cirurgia da Katita sobre esqueleto 3D (.glb enviado em 13/11) | https://claude.ai/artifact/HzsxC8rvK49Ss3tfd1b76K |
 | "Microscópio do Estágio" (exames de sangue: microscópio, guia de células, mapa de calor, radar) | https://claude.ai/artifact/85brKfCJS7kMSgTEgs4NYZ |
+| "A seringa vermelha": quimioterapia com doxorrubicina em 8 cenas (código em `estagio/quimioterapia/`) | https://claude.ai/artifact/2KrnwDdg2sY1Nqw3SReCVJ |
 
 ## Aprendizados de design
 - Formas geométricas simples em 3D foram rejeitadas ("não impressiona ninguém"); o esqueleto .glb real foi melhor.
