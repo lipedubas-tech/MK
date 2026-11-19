@@ -44,6 +44,8 @@ com a Cláudia ou o Thiago, nunca escrita como fato.
 
 Roda de manhã, à tarde e à noite. Cada execução lê
 `estagio/defesa/MELHORIAS.md`, escolhe a próxima melhoria, faz, e registra lá
-o que fez e o que sugere em seguida.
+o que fez e o que sugere em seguida. Ao terminar, manda um e-mail (Gmail) ao
+Felipe com o resumo das mudanças e o link do PR. As decisões do Felipe ficam
+no topo do MELHORIAS.md e valem sempre.
 
 Depois de juntar, avise o usuário em uma linha o que foi gravado.
