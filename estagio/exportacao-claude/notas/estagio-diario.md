@@ -85,3 +85,4 @@ Período: 28/10/2026 a 07/12/2026. Horário: 08:00–13:00 e 13:00–18:00 (mesm
   (ulcerado, não estava mais subcutâneo) e **estava infeccionado**. Exérese em bloco com margem de pele; hemostática
   curva na dissecção, gaze para hemostasia; pele em sutura contínua com náilon 3-0; peça para histopatológico.
   Fotos e briefing em `animacao-nodulectomia/`. A confirmar: antibiótico, cultura, padrão de sutura do subcutâneo.
+- Correção do Felipe (19/11): a peça da nodulectomia **não foi para o formol** nem para o histopatológico; essa parte não aconteceu. A confirmar com a Cláudia se foi para algum exame.
