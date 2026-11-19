@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSH em gata</title>
+<style>
+  :root {
+    --fundo: #10161e;
+    --palco: #f3f6f9;
+    --marinho: #1f3a5f;
+    --texto: #1d2733;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--fundo); }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  #palco {
+    width: min(100vw, calc(100vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background: var(--palco);
+  }
+  #palco svg { display: block; width: 100%; height: 100%; }
+  svg text { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+  #controles {
+    position: absolute; top: 1.2%; right: 1%;
+    display: flex; gap: .5em; font-size: clamp(10px, 1.1vw, 15px);
+  }
+  #controles button {
+    font: inherit; font-weight: 600; cursor: pointer;
+    padding: .45em .9em; border-radius: .5em;
+    border: 1.5px solid var(--marinho); background: #fff; color: var(--marinho);
+  }
+  #controles button[aria-pressed="true"] { background: var(--marinho); color: #fff; }
+
+  .sem-rotulos .rotulo { display: none; }
+  .oculto { display: none; }
+  .com-campo .so-sem-campo { display: none; }
+</style>
+</head>
+<body>
+<div id="palco">
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Gata em decúbito dorsal e recorte anatômico do trato reprodutivo">
+  <defs>
+    <!-- pelagem colorpoint: creme no corpo, cinza-azulado nas extremidades -->
+    <linearGradient id="gPataDianteira" gradientUnits="userSpaceOnUse" x1="0" y1="300" x2="0" y2="130">
+      <stop offset="0" stop-color="#efe3cf"/>
+      <stop offset=".45" stop-color="#c9c3bb"/>
+      <stop offset="1" stop-color="#7a8492"/>
+    </linearGradient>
+    <linearGradient id="gPataTraseira" gradientUnits="userSpaceOnUse" x1="0" y1="575" x2="0" y2="760">
+      <stop offset="0" stop-color="#efe3cf"/>
+      <stop offset=".5" stop-color="#c3bfb9"/>
+      <stop offset="1" stop-color="#76808e"/>
+    </linearGradient>
+    <linearGradient id="gCauda" gradientUnits="userSpaceOnUse" x1="0" y1="655" x2="0" y2="790">
+      <stop offset="0" stop-color="#b9b6b1"/>
+      <stop offset=".35" stop-color="#7d8796"/>
+      <stop offset="1" stop-color="#5d6775"/>
+    </linearGradient>
+    <radialGradient id="gMascara" cx="370" cy="226" r="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5f6979"/>
+      <stop offset=".45" stop-color="#7f8999"/>
+      <stop offset=".8" stop-color="#c8c4bd" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#efe3cf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gVentre" cx="370" cy="500" r="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fbf6ee"/>
+      <stop offset=".6" stop-color="#f3e9d8"/>
+      <stop offset="1" stop-color="#e4d4bb"/>
+    </radialGradient>
+    <linearGradient id="gMesa" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b7c0c9"/>
+      <stop offset=".5" stop-color="#dfe5ea"/>
+      <stop offset="1" stop-color="#b7c0c9"/>
+    </linearGradient>
+    <linearGradient id="gUtero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e98e78"/>
+      <stop offset=".5" stop-color="#f4ad99"/>
+      <stop offset="1" stop-color="#e98e78"/>
+    </linearGradient>
+    <linearGradient id="gAorta" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="660">
+      <stop offset=".8" stop-color="#d64545"/><stop offset="1" stop-color="#d64545" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gCava" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="660">
+      <stop offset=".8" stop-color="#3d6fc2"/><stop offset="1" stop-color="#3d6fc2" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clipCabeca">
+      <path d="M370,130 C415,130 445,160 447,195 C449,232 418,262 370,262 C322,262 291,232 293,195 C295,160 325,130 370,130 Z"/>
+    </clipPath>
+    <clipPath id="clipJanela">
+      <rect x="796" y="121" width="748" height="638" rx="22"/>
+    </clipPath>
+
+    <!-- membros desenhados uma vez (lado direito do paciente = esquerda da tela) e espelhados -->
+    <g id="membroDianteiro">
+      <path d="M318,300 C298,252 272,196 250,146 Q248,116 272,112 Q294,116 292,140 C308,190 330,238 360,282 Z"
+            fill="url(#gPataDianteira)" stroke="#a89c8a" stroke-width="2"/>
+      <ellipse cx="266" cy="121" rx="22" ry="18" fill="#68727f" stroke="#555e6a" stroke-width="2"/>
+      <ellipse cx="266" cy="126" rx="8.5" ry="6.5" fill="#b9939a"/>
+      <circle cx="254" cy="114" r="3.6" fill="#b9939a"/>
+      <circle cx="263" cy="109" r="3.6" fill="#b9939a"/>
+      <circle cx="273" cy="109" r="3.6" fill="#b9939a"/>
+      <circle cx="281" cy="115" r="3.6" fill="#b9939a"/>
+    </g>
+    <g id="membroTraseiro">
+      <path d="M302,560 C280,602 270,662 268,722 Q268,752 290,754 Q310,752 312,730 C316,690 330,646 352,618 Z"
+            fill="url(#gPataTraseira)" stroke="#a89c8a" stroke-width="2"/>
+      <ellipse cx="290" cy="758" rx="21" ry="18" fill="#646e7b" stroke="#555e6a" stroke-width="2"/>
+      <ellipse cx="290" cy="762" rx="8" ry="6" fill="#b9939a"/>
+      <circle cx="279" cy="750" r="3.4" fill="#b9939a"/>
+      <circle cx="287" cy="746" r="3.4" fill="#b9939a"/>
+      <circle cx="296" cy="746" r="3.4" fill="#b9939a"/>
+      <circle cx="303" cy="751" r="3.4" fill="#b9939a"/>
+    </g>
+    <g id="orelha">
+      <path d="M306,166 L284,92 L348,140 Z" fill="#6f7a89" stroke="#5a6472" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M310,154 L295,108 L334,138 Z" fill="#b8a3a4"/>
+    </g>
+    <g id="olho">
+      <path d="M326,196 Q340,183 354,196 Q340,207 326,196 Z" fill="#9ccbe8" stroke="#3c4552" stroke-width="2"/>
+      <ellipse cx="340" cy="196" rx="2.6" ry="6.5" fill="#1c2430"/>
+      <!-- pálpebra semicerrada: paciente anestesiada -->
+      <path class="palpebra" d="M325,196 Q340,181 355,196 Q340,191 325,196 Z" fill="#646e7c"/>
+      <circle cx="344" cy="198" r="1.6" fill="#fff"/>
+    </g>
+    <g id="bigodes">
+      <path d="M352,236 L300,226 M352,240 L298,242 M354,244 L304,258" stroke="#fbf8f2" stroke-width="1.6"
+            stroke-linecap="round" opacity=".9" fill="none"/>
+    </g>
+    <g id="rim">
+      <!-- hilo voltado para a esquerda do desenho (-x) -->
+      <path d="M0,-62 C30,-62 44,-30 44,0 C44,32 30,62 0,62 C-20,62 -30,48 -26,30 C-22,16 -12,10 -12,0 C-12,-10 -22,-16 -26,-30 C-30,-48 -20,-62 0,-62 Z"
+            fill="#a95b4f" stroke="#7d3f36" stroke-width="2"/>
+      <path d="M8,-44 C24,-30 26,30 8,44" fill="none" stroke="#c27a6d" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g id="ovario">
+      <ellipse cx="0" cy="0" rx="21" ry="14" fill="#f4e3b5" stroke="#bfa36b" stroke-width="2"/>
+      <circle cx="-7" cy="-3" r="4.5" fill="#fbf0d2" stroke="#d3bb85" stroke-width="1.2"/>
+      <circle cx="6" cy="3" r="3.5" fill="#fbf0d2" stroke="#d3bb85" stroke-width="1.2"/>
+    </g>
+    <g id="pincaCampo">
+      <!-- pinça de campo (Backhaus), esquemática -->
+      <circle cx="-9" cy="22" r="7" fill="none" stroke="#7d8893" stroke-width="3.5"/>
+      <circle cx="9" cy="22" r="7" fill="none" stroke="#7d8893" stroke-width="3.5"/>
+      <path d="M-6,16 L6,-6 M6,16 L-6,-6" stroke="#7d8893" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M-6,-6 Q0,-16 6,-6" fill="none" stroke="#5f6a75" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <!-- ===================== PAINEL ESQUERDO: PACIENTE ===================== -->
+  <text x="370" y="72" text-anchor="middle" font-size="26" font-weight="700" fill="#1f3a5f">Paciente em decúbito dorsal</text>
+
+  <g id="mesa">
+    <rect x="195" y="92" width="350" height="684" rx="26" fill="url(#gMesa)" stroke="#9aa4ae" stroke-width="2"/>
+    <line x1="370" y1="110" x2="370" y2="760" stroke="#c4ccd4" stroke-width="3"/>
+  </g>
+
+  <g id="gata">
+    <!-- cauda -->
+    <path d="M370,640 C374,690 358,730 370,786" fill="none" stroke="url(#gCauda)" stroke-width="22" stroke-linecap="round"/>
+    <!-- membros -->
+    <use href="#membroTraseiro"/>
+    <use href="#membroTraseiro" transform="translate(740,0) scale(-1,1)"/>
+    <use href="#membroDianteiro"/>
+    <use href="#membroDianteiro" transform="translate(740,0) scale(-1,1)"/>
+    <!-- tronco -->
+    <path id="tronco" d="M370,248 C335,248 314,266 304,294 C284,340 281,400 289,450 C294,500 287,560 299,610 C311,650 340,674 370,676 C400,674 429,650 441,610 C453,560 446,500 451,450 C459,400 456,340 436,294 C426,266 405,248 370,248 Z"
+          fill="url(#gVentre)" stroke="#a89c8a" stroke-width="2"/>
+    <!-- arco costal (discreto) -->
+    <path d="M300,398 Q370,436 440,398" fill="none" stroke="#dccfb9" stroke-width="2.5"/>
+    <!-- linha alba -->
+    <line x1="370" y1="300" x2="370" y2="650" stroke="#e2d6c2" stroke-width="2" stroke-dasharray="2 7"/>
+    <!-- mamas: 4 pares -->
+    <g fill="#e2ada0">
+      <circle cx="322" cy="372" r="4.5"/><circle cx="418" cy="372" r="4.5"/>
+      <circle cx="320" cy="436" r="4.5"/><circle cx="420" cy="436" r="4.5"/>
+      <circle cx="321" cy="502" r="4.5"/><circle cx="419" cy="502" r="4.5"/>
+      <circle cx="326" cy="566" r="4.5"/><circle cx="414" cy="566" r="4.5"/>
+    </g>
+    <!-- umbigo -->
+    <path d="M364,468 Q370,476 376,468" fill="none" stroke="#c7b296" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- cabeça -->
+    <use href="#orelha"/>
+    <use href="#orelha" transform="translate(740,0) scale(-1,1)"/>
+    <path d="M370,130 C415,130 445,160 447,195 C449,232 418,262 370,262 C322,262 291,232 293,195 C295,160 325,130 370,130 Z"
+          fill="#efe3cf" stroke="#a89c8a" stroke-width="2"/>
+    <g clip-path="url(#clipCabeca)">
+      <ellipse cx="370" cy="214" rx="86" ry="64" fill="url(#gMascara)"/>
+    </g>
+    <use href="#olho"/>
+    <use href="#olho" transform="translate(740,0) scale(-1,1)"/>
+    <path d="M361,221 L379,221 L370,232 Z" fill="#4b5461" stroke-linejoin="round"/>
+    <path d="M370,232 V239 M370,239 Q362,246 355,241 M370,239 Q378,246 385,241" fill="none"
+          stroke="#3e4653" stroke-width="2" stroke-linecap="round"/>
+    <use href="#bigodes"/>
+    <use href="#bigodes" transform="translate(740,0) scale(-1,1)"/>
+  </g>
+
+  <!-- tricotomia + campo fenestrado (prévia do estado “com campo”) -->
+  <g id="tricotomia" class="oculto">
+    <rect x="312" y="398" width="116" height="244" rx="34" fill="#f3d7cb" stroke="#e2bfb1" stroke-width="2"/>
+    <line x1="370" y1="410" x2="370" y2="630" stroke="#e7c3b5" stroke-width="2" stroke-dasharray="2 7"/>
+    <g fill="#dea092">
+      <circle cx="326" cy="566" r="4.5"/><circle cx="414" cy="566" r="4.5"/>
+      <circle cx="322" cy="502" r="4.5"/><circle cx="418" cy="502" r="4.5"/>
+      <circle cx="320" cy="436" r="4.5"/><circle cx="420" cy="436" r="4.5"/>
+    </g>
+    <path d="M364,468 Q370,476 376,468" fill="none" stroke="#c9998a" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g id="campo" class="oculto">
+    <path fill-rule="evenodd" fill="#a7d0ec" stroke="#7fb1d6" stroke-width="2.5"
+          d="M180,250 H560 V798 H180 Z M330,430 H410 V612 H330 Z"/>
+    <path d="M200,300 Q260,320 300,300 M440,320 Q500,300 540,330 M210,700 Q270,680 320,700 M430,690 Q490,710 545,690 M250,470 Q280,520 255,580 M490,470 Q462,530 488,590"
+          fill="none" stroke="#86b9de" stroke-width="3" stroke-linecap="round"/>
+    <rect x="330" y="430" width="80" height="182" fill="none" stroke="#6ea3cb" stroke-width="3"/>
+    <use href="#pincaCampo" transform="translate(330,430) rotate(-45) scale(1.35)"/>
+    <use href="#pincaCampo" transform="translate(410,430) rotate(45) scale(1.35)"/>
+    <use href="#pincaCampo" transform="translate(330,612) rotate(-135) scale(1.35)"/>
+    <use href="#pincaCampo" transform="translate(410,612) rotate(135) scale(1.35)"/>
+  </g>
+
+  <!-- marca da região do recorte -->
+  <g id="marcaRecorte" class="so-sem-campo">
+    <rect x="322" y="410" width="96" height="224" rx="14" fill="none" stroke="#1f3a5f" stroke-width="3" stroke-dasharray="9 7"/>
+    <path d="M418,452 L760,140 M418,600 L760,760" stroke="#1f3a5f" stroke-width="1.6" opacity=".22"/>
+  </g>
+
+  <g class="rotulo" font-size="21" fill="#1d2733">
+    <g stroke="#1d2733" stroke-width="1.6" fill="none">
+      <path d="M572,474 H382"/><path d="M572,532 H376"/>
+    </g>
+    <g fill="#1d2733"><circle cx="376" cy="472" r="4"/><circle cx="371" cy="532" r="4"/></g>
+    <g class="so-sem-campo">
+      <path d="M178,372 H316" stroke="#1d2733" stroke-width="1.6"/>
+      <circle cx="322" cy="372" r="4" fill="#1d2733"/>
+      <text x="170" y="379" text-anchor="end">Mamas</text>
+    </g>
+    <text x="580" y="481">Umbigo</text>
+    <text x="580" y="539">Linha alba</text>
+  </g>
+
+  <!-- rosa de orientação -->
+  <g id="orientacao" font-size="18" fill="#4a5868" text-anchor="middle">
+    <path d="M90,640 V560 M90,560 l-9,14 M90,560 l9,14 M90,660 V740 M90,740 l-9,-14 M90,740 l9,-14"
+          stroke="#4a5868" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <text x="90" y="548">cranial</text>
+    <text x="90" y="764">caudal</text>
+  </g>
+
+  <!-- ===================== PAINEL DIREITO: RECORTE ANATÔMICO ===================== -->
+  <text x="790" y="72" font-size="26" font-weight="700" fill="#1f3a5f">Recorte da cavidade abdominal · vista ventral</text>
+  <text x="1560" y="72" font-size="18" fill="#4a5868" text-anchor="end">D ← paciente → E</text>
+
+  <!-- borda da janela: pele / subcutâneo / músculo -->
+  <rect x="780" y="105" width="780" height="670" rx="34" fill="#f2c9bd"/>
+  <rect x="786" y="111" width="768" height="658" rx="30" fill="#f6e3a8"/>
+  <rect x="791" y="116" width="758" height="648" rx="26" fill="#c96a5c"/>
+  <rect x="796" y="121" width="748" height="638" rx="22" fill="#fbefe9"/>
+
+  <g id="anatomia" clip-path="url(#clipJanela)">
+    <!-- ligamentos largos (mesométrio), translúcidos -->
+    <path d="M1004,368 C1020,450 1100,525 1150,590 L1112,650 C1040,620 960,590 930,540 C925,480 945,420 968,380 Z"
+          fill="#f6c9ba" opacity=".55" stroke="#e9b0a0" stroke-width="1.5"/>
+    <path d="M1334,398 C1312,470 1230,530 1180,590 L1218,650 C1290,622 1370,592 1400,548 C1406,490 1388,440 1364,402 Z"
+          fill="#f6c9ba" opacity=".55" stroke="#e9b0a0" stroke-width="1.5"/>
+
+    <!-- aorta e veia cava caudal (dorsais) -->
+    <g opacity=".75">
+      <rect x="1143" y="120" width="14" height="540" fill="url(#gCava)"/>
+      <rect x="1174.5" y="120" width="11" height="540" fill="url(#gAorta)"/>
+    </g>
+
+    <!-- rins (o direito, à esquerda da tela, é mais cranial no gato) -->
+    <use href="#rim" transform="translate(1025,232) scale(-1,1)"/>
+    <use href="#rim" transform="translate(1305,268)"/>
+    <!-- vasos renais -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M1180,226 C1120,222 1080,226 1046,230" stroke="#d64545" stroke-width="6"/>
+      <path d="M1150,242 C1110,244 1080,242 1046,240" stroke="#3d6fc2" stroke-width="7"/>
+      <path d="M1180,262 C1220,260 1260,262 1286,264" stroke="#d64545" stroke-width="6"/>
+      <path d="M1286,276 C1240,280 1190,282 1150,280" stroke="#3d6fc2" stroke-width="7"/>
+    </g>
+
+    <!-- ligamentos suspensores do ovário: do ovário à parede dorsal, na altura da última costela -->
+    <path d="M1004,346 C990,300 975,240 948,170" fill="none" stroke="#c9b3a6" stroke-width="9" stroke-linecap="round"/>
+    <path d="M1004,346 C990,300 975,240 948,170" fill="none" stroke="#efe2d9" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1328,376 C1345,330 1360,270 1392,200" fill="none" stroke="#c9b3a6" stroke-width="9" stroke-linecap="round"/>
+    <path d="M1328,376 C1345,330 1360,270 1392,200" fill="none" stroke="#efe2d9" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- pedículos ovarianos: artérias da aorta; veia direita na cava, veia esquerda na renal esquerda -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M1180,318 C1120,316 1080,348 1030,352" stroke="#d64545" stroke-width="4.5"/>
+      <path d="M1150,332 C1110,338 1070,362 1030,362" stroke="#3d6fc2" stroke-width="5.5"/>
+      <path d="M1180,330 C1230,334 1270,372 1300,382" stroke="#d64545" stroke-width="4.5"/>
+      <path d="M1244,280 C1262,320 1280,380 1300,392" stroke="#3d6fc2" stroke-width="5.5"/>
+    </g>
+
+    <!-- vasos uterinos, ao longo da face lateral dos cornos e do corpo -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M1000,378 C1010,456 1086,528 1132,592 C1140,612 1142,640 1144,700" stroke="#d64545" stroke-width="3.5"/>
+      <path d="M994,382 C1004,462 1080,534 1126,598 C1134,618 1136,646 1138,700" stroke="#3d6fc2" stroke-width="4"/>
+      <path d="M1330,406 C1318,476 1240,536 1198,592 C1190,612 1188,640 1186,700" stroke="#d64545" stroke-width="3.5"/>
+      <path d="M1336,410 C1324,482 1246,542 1204,598 C1196,618 1194,646 1192,700" stroke="#3d6fc2" stroke-width="4"/>
+    </g>
+
+    <!-- vagina (segue dorsal à bexiga) -->
+    <path d="M1165,672 V770" stroke="#d8a196" stroke-width="22" stroke-linecap="round"/>
+    <path d="M1165,672 V770" stroke="#eebcb1" stroke-width="16" stroke-linecap="round"/>
+
+    <!-- útero bicorno em Y -->
+    <g id="utero" fill="none" stroke-linecap="round">
+      <path d="M1018,368 C1030,450 1110,520 1157,586 M1314,398 C1300,470 1220,530 1173,586 M1165,584 V650"
+            stroke="#c8705c" stroke-width="28"/>
+      <path d="M1018,368 C1030,450 1110,520 1157,586 M1314,398 C1300,470 1220,530 1173,586 M1165,584 V650"
+            stroke="#f0a08a" stroke-width="22"/>
+      <path d="M1022,376 C1036,452 1110,516 1153,578 M1310,406 C1296,474 1222,528 1177,578"
+            stroke="#f7c0b0" stroke-width="5" opacity=".9"/>
+      <!-- corpo do útero um pouco mais largo -->
+      <rect x="1148" y="584" width="34" height="70" rx="12" fill="url(#gUtero)" stroke="#c8705c" stroke-width="3"/>
+      <!-- cérvix: constrição firme, caudal ao corpo -->
+      <rect x="1151" y="652" width="28" height="24" rx="8" fill="#d98572" stroke="#a9584a" stroke-width="3"/>
+    </g>
+
+    <!-- tubas uterinas enroladas e ovários na extremidade cranial dos cornos -->
+    <path d="M1018,368 q-16,-4 -20,-14 q-4,-12 8,-16 q14,-2 16,10" fill="none" stroke="#e7a28f" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M1314,398 q16,-4 20,-14 q4,-12 -8,-16 q-14,-2 -16,10" fill="none" stroke="#e7a28f" stroke-width="3.5" stroke-linecap="round"/>
+    <use href="#ovario" transform="translate(1010,352) rotate(-20)"/>
+    <use href="#ovario" transform="translate(1322,382) rotate(20)"/>
+
+    <!-- bexiga, rebatida caudalmente e translúcida (é ventral ao útero) -->
+    <ellipse cx="1165" cy="738" rx="54" ry="40" fill="#f6e7a8" opacity=".75" stroke="#d8c272" stroke-width="2.5"/>
+  </g>
+
+  <!-- rótulos do recorte -->
+  <g class="rotulo" font-size="21" fill="#1d2733">
+    <g stroke="#1d2733" stroke-width="1.6" fill="none">
+      <path d="M902,150 L958,196"/>
+      <path d="M932,240 H984"/>
+      <path d="M884,358 H984"/>
+      <path d="M958,466 H1060"/>
+      <path d="M980,560 H1040"/>
+      <path d="M966,650 H1138"/>
+      <path d="M1288,152 L1186,170"/>
+      <path d="M1384,264 H1352"/>
+      <path d="M1340,330 L1268,362"/>
+      <path d="M1378,606 H1186"/>
+      <path d="M1452,666 H1184"/>
+      <path d="M1452,744 H1222"/>
+    </g>
+    <g fill="#1d2733">
+      <circle cx="958" cy="196" r="4"/><circle cx="984" cy="240" r="4"/><circle cx="986" cy="358" r="4"/>
+      <circle cx="1060" cy="466" r="4"/><circle cx="1040" cy="560" r="4"/><circle cx="1139" cy="650" r="4"/>
+      <circle cx="1185" cy="170" r="4"/><circle cx="1350" cy="264" r="4"/><circle cx="1266" cy="363" r="4"/>
+      <circle cx="1184" cy="606" r="4"/><circle cx="1182" cy="666" r="4"/><circle cx="1220" cy="744" r="4"/>
+    </g>
+    <text x="810" y="146">Ligamento suspensor</text>
+    <text x="810" y="247">Rim direito</text>
+    <text x="810" y="365">Ovário</text>
+    <text x="810" y="473">Corno uterino</text>
+    <text x="810" y="567">Ligamento largo</text>
+    <text x="810" y="657">Vasos uterinos</text>
+    <text x="1534" y="146" text-anchor="end">Aorta e veia cava caudal</text>
+    <text x="1534" y="271" text-anchor="end">Rim esquerdo</text>
+    <text x="1534" y="337" text-anchor="end">Pedículo ovariano</text>
+    <text x="1534" y="613" text-anchor="end">Corpo do útero</text>
+    <text x="1534" y="673" text-anchor="end">Cérvix</text>
+    <text x="1534" y="751" text-anchor="end">Bexiga</text>
+  </g>
+
+  <!-- ===================== LEGENDA ===================== -->
+  <rect x="40" y="800" width="1520" height="84" rx="16" fill="#1f3a5f"/>
+  <text id="legenda" x="800" y="854" text-anchor="middle" font-size="34" font-weight="600" fill="#fff">Ovariosalpingohisterectomia (OSH) em felina · modelo base</text>
+</svg>
+
+<div id="controles">
+  <button id="btCampo" aria-pressed="false">Campo cirúrgico</button>
+  <button id="btRotulos" aria-pressed="true">Rótulos</button>
+  <button id="btTela" title="Tela cheia (F)">Tela cheia</button>
+</div>
+</div>
+
+<script>
+(function () {
+  var palco = document.getElementById('palco');
+  var btCampo = document.getElementById('btCampo');
+  var btRotulos = document.getElementById('btRotulos');
+  var btTela = document.getElementById('btTela');
+
+  function alternar(bt) {
+    var ligado = bt.getAttribute('aria-pressed') !== 'true';
+    bt.setAttribute('aria-pressed', String(ligado));
+    return ligado;
+  }
+
+  btCampo.addEventListener('click', function () {
+    var ligado = alternar(btCampo);
+    document.getElementById('tricotomia').classList.toggle('oculto', !ligado);
+    document.getElementById('campo').classList.toggle('oculto', !ligado);
+    palco.classList.toggle('com-campo', ligado);
+  });
+
+  btRotulos.addEventListener('click', function () {
+    var ligado = alternar(btRotulos);
+    palco.classList.toggle('sem-rotulos', !ligado);
+  });
+
+  function telaCheia() {
+    if (document.fullscreenElement) { document.exitFullscreen(); }
+    else if (palco.requestFullscreen) { palco.requestFullscreen(); }
+  }
+  btTela.addEventListener('click', telaCheia);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'f' || e.key === 'F') { telaCheia(); }
+  });
+})();
+</script>
+</body>
+</html>
