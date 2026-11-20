@@ -42,7 +42,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 13h41 (`estagio/defesa/tempo-animacoes.md`) — P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
 - [x] **FEITO 20/11 15h41 (`estagio/defesa/roteiro/roteiro.md`) — Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
 - [x] **FEITO 20/11 17h41 (`estagio/defesa/auditoria/auditoria.md`) — P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
-- [ ] **P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
+- [x] **FEITO 20/11 19h41 (`estagio/defesa/prototipo/`) — P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
 - [ ] **P13 (escolhido pelo Felipe em 20/11): teste offline de todas as peças** num navegador sem rede (Playwright com rede bloqueada): Katita, OSH, nodulectomia, quimio, linha do tempo, corpo do estágio, Odisseu. Para cada uma: abre? fontes e imagens carregam? animação roda? tempo de carregamento. Resultado e checklist para o dia da defesa em `estagio/defesa/plano-b/teste-offline.md`. Pode ser feito junto com o item do plano B.
 - [x] ~~Animação da limpeza de tártaro~~ — descartado pelo Felipe em 19/11 (não justifica uma animação).
@@ -270,3 +270,26 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão:** P2, o protótipo de 5 slides em frase-afirmação e prova num `.pptx` separado (19h41).
 
 **PR:** https://github.com/lipedubas-tech/MK/pull/53 (juntado). O WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 20/11/2026 — 19h41
+
+**Feito:** P2, o protótipo de 5 slides em frase-afirmação e prova, num `.pptx` separado sobre o modelo do IFC. A apresentação atual não foi alterada.
+- **Os 5 slides:**
+  - Rangel: "O Rangel queria bois; a região pediu cães e gatos."
+  - Katita: "Duas placas e um parafuso uniram o cotovelo partido."
+  - Bob: "O Bob mostrou que não sentia a pata."
+  - Quimio: "Seringa, e não bolsa: ele arrancava o acesso."
+  - Esporotricose: "Dois gatos com a mesma zoonose em três semanas."
+- **Notas do apresentador:** cada slide tem a fala e o que falta confirmar.
+- **Comparação:** o LEIAME compara cada slide com o atual. Os atuais têm de 60 a 92 palavras na tela; os do protótipo, de 17 a 37, menos o do Bob (cerca de 58, se as linhas de baixo ficarem).
+- **Achado da auditoria:** o slide do Rangel usa uma foto sua. Isso também resolve a foto da Yasmin no slide 4.
+- **Arquivos:** `estagio/defesa/prototipo/` (`prototipo-5-slides.pptx`, `previa-1.png` a `previa-5.png`, `gerar_prototipo.py`, `LEIAME.md`).
+
+**Perguntas para o Felipe:**
+- Gostou do formato? Se sim, aplicar nos outros slides, em PR em rascunho.
+- Confirmar com o Rangel quando ele deixou as consultas.
+- O raio-X do Bob.
+
+**Próxima sugestão:** o plano B offline junto com o P13, o teste de todas as peças sem internet (21h41).
+
+**PR e aviso:** o link do PR vai no e-mail. O WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
