@@ -40,7 +40,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 11h41 (`estagio/defesa/fechamento/dificuldades-e-consideracoes.md`)** — Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
 - [x] **FEITO 20/11 13h41 (`estagio/defesa/tempo-animacoes.md`) — P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
-- [ ] **Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
+- [x] **FEITO 20/11 15h41 (`estagio/defesa/roteiro/roteiro.md`) — Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
 - [ ] **P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
 - [ ] **P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
@@ -219,3 +219,26 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Juntar o PR #43?
 
 **Próxima sugestão:** o roteiro de 25–30 min (15h41), já usando este orçamento.
+
+### 20/11/2026 — 15h41
+
+**Feito:** o roteiro da defesa, com cerca de 26 min e 4 min de folga.
+- **Estrutura:** 16 blocos com tempo e tempo acumulado.
+  - Parte 1: 5 min 45 s, o esboço sem mudança.
+  - Ponte: o corpo do estágio.
+  - Parte 2: cerca de 17 min, em ordem cronológica de 28/10 a 19/11.
+  - Fechamento: cerca de 2 min 15 s.
+- **Camadas:** uma tabela diz onde fica cada eixo, e outra cruza cada caso com cada eixo, com uma frase de fala tirada do material e as camadas principais marcadas com ★.
+- **Casos:** Katita, Bob, quimio e esporotricose são os centrais. Criocirurgia, castrações com os fetos, nodulectomia, fecaloma e 19/11 entram como candidatos.
+- **Animações:** os trechos seguem o P12.
+- **Também tem:** a lista do que ficou de fora e por quê, e uma lista de corte que leva a defesa a cerca de 22 min sem tocar nos casos centrais.
+- `estagio/defesa/roteiro/roteiro.md`
+
+**Perguntas para o Felipe:**
+- Quais casos entram?
+- Odisseu como moldura, ou São Francisco no fim?
+- Entra o slide dos fetos? Existe foto?
+- A eutanásia de 19/11 tem slide próprio, ou entra só como dificuldade?
+- Ensaiar com cronômetro e anotar o tempo de cada bloco.
+
+**Próxima sugestão:** P1, a auditoria da apresentação atual comparada com este roteiro (17h41).
