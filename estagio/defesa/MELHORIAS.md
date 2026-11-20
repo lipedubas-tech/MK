@@ -39,7 +39,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 9h41 (`estagio/defesa/perguntas/perguntas-por-pessoa.md`)** — Lista única "perguntas para a Cláudia, o Thiago e a Fran", juntando as pendências.
 - [x] **FEITO 20/11 11h41 (`estagio/defesa/fechamento/dificuldades-e-consideracoes.md`)** — Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
-- [ ] **P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
+- [x] **FEITO 20/11 13h41 (`estagio/defesa/tempo-animacoes.md`) — P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
 - [ ] **Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
 - [ ] **P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
 - [ ] **P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
@@ -203,3 +203,19 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - A imagem final é São Francisco ou Odisseu?
 
 **Próxima sugestão:** P12, o orçamento de tempo das animações (13h41).
+
+### 20/11/2026 — 13h41
+
+**Feito:** P12, o orçamento de tempo das animações.
+- **Medido no código:** OSH com 1 min 56 s (11 cenas), nodulectomia com 1 min 43 s (10 cenas) e quimio com cerca de 4 min. A Katita e a criocirurgia ficaram para medir no P13.
+- **Trechos propostos por animação:** Katita de 60 a 75 s, OSH 36 s, nodulectomia 27 s, quimio de 50 a 60 s, criocirurgia de 0 a 20 s. Somam cerca de 3 min a 3 min 40 s, dentro de um orçamento de 3 a 4 min.
+- **Observação:** a OSH não mostra os fetos mumificados.
+- `estagio/defesa/tempo-animacoes.md`
+
+**Perguntas para o Felipe:**
+- Aprova os trechos?
+- Entra um slide dos fetos depois da OSH?
+- Criocirurgia: foto ou animação?
+- Juntar o PR #43?
+
+**Próxima sugestão:** o roteiro de 25–30 min (15h41), já usando este orçamento.
