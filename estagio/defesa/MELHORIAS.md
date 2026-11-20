@@ -41,7 +41,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
 - [x] **FEITO 20/11 13h41 (`estagio/defesa/tempo-animacoes.md`) — P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
 - [x] **FEITO 20/11 15h41 (`estagio/defesa/roteiro/roteiro.md`) — Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
-- [ ] **P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
+- [x] **FEITO 20/11 17h41 (`estagio/defesa/auditoria/auditoria.md`) — P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
 - [ ] **P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
 - [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
 - [ ] **P13 (escolhido pelo Felipe em 20/11): teste offline de todas as peças** num navegador sem rede (Playwright com rede bloqueada): Katita, OSH, nodulectomia, quimio, linha do tempo, corpo do estágio, Odisseu. Para cada uma: abre? fontes e imagens carregam? animação roda? tempo de carregamento. Resultado e checklist para o dia da defesa em `estagio/defesa/plano-b/teste-offline.md`. Pode ser feito junto com o item do plano B.
@@ -246,3 +246,27 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **PR:** https://github.com/lipedubas-tech/MK/pull/51 (juntado).
 
 **Aviso:** o WhatsApp falhou porque esta sessão não tem `CALLMEBOT_PHONE`/`CALLMEBOT_APIKEY` nem `~/.callmebot`. A tarefa agendada passou a rodar nesta sessão em 20/11. O resumo foi enviado pelo Gmail.
+
+### 20/11/2026 — 17h41
+
+**Feito:** P1, a auditoria da apresentação atual. Os 24 slides foram convertidos em imagem para a análise, e a apresentação não foi alterada.
+- **Por slide:** a tabela avalia o título, as palavras na tela, se a imagem prova o que o slide diz, a privacidade, o tempo e as Decisões do Felipe, com uma sugestão para cada slide.
+- **Comparações:** um quadro compara a apresentação com o roteiro, bloco a bloco, e há uma ordem sugerida para mexer.
+- **Achado principal (🔴):** as fotos da fachada, da recepção, do pet shop e dos 6 ambientes (slides 2, 4 e 5) são extraídas do PDF da defesa da Yasmin, mas os slides dizem "Fonte: O autor".
+- **Outros achados:**
+  - os slides 14, 15, 16 e 23 contrariam as decisões de 19/11;
+  - nenhum título é uma frase-afirmação, e a média é de cerca de 60 palavras por slide;
+  - o "41 dias de estágio" do slide 3 são dias corridos (os dias úteis são 29, menos os feriados);
+  - o Bob aparece só numa linha do slide 20;
+  - a versão atual dura cerca de 19 min.
+- **Arquivos:** `estagio/defesa/auditoria/` (`auditoria.md` e as miniaturas `slides-1-a-8.png`, `slides-9-a-16.png`, `slides-17-a-24.png`).
+
+**Perguntas para o Felipe:**
+- Slides 2, 4 e 5: tirar fotos suas ou dar o crédito à Yasmin?
+- Aprova a saída dos slides 14, 15, 16 e 23?
+- Quantos dias de estágio diz o termo?
+- Conferir as telas de ultrassom nos slides 20 e 24.
+
+**Próxima sugestão:** P2, o protótipo de 5 slides em frase-afirmação e prova num `.pptx` separado (19h41).
+
+**PR:** https://github.com/lipedubas-tech/MK/pull/53 (juntado). O WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
