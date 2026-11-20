@@ -268,3 +268,5 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Conferir as telas de ultrassom nos slides 20 e 24.
 
 **Próxima sugestão:** P2, o protótipo de 5 slides em frase-afirmação e prova num `.pptx` separado (19h41).
+
+**PR:** https://github.com/lipedubas-tech/MK/pull/53 (juntado). O WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
