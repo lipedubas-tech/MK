@@ -37,7 +37,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 19/11 23h41 (`estagio/defesa/corpo-do-estagio/`) — O corpo do estágio (o Felipe escolheu em 19/11):** uma silhueta de cão e uma de gato, desenhadas com cuidado (nada de formas genéricas), com cada lesão ou procedimento marcado no lugar do corpo onde aconteceu. Ao clicar no ponto, aparecem a foto real e uma legenda curta. Pontos: cotovelo esquerdo da Katita (fratura em Y), pálpebra superior (nodulectomia com cauterização), axila (nodulectomia de 17/11), pescoço (mordida da cadela de 12 anos), traseiro (melanoma, criocirurgia), boca (Barão, cerca de 8 extrações), pata (esporotricose, 28/10), olho e pescoço do gato branco (esporotricose, 18/11), bexiga (gato paraplégico; cistite; cistocentese), útero (castrações de 11/11 e 17/11), baço (Mel labradora), pescoço e cabeça (sarcoma, quimio), costela e barriga (filhote de 19/11), quadril (Luna, a confirmar). Interpretações clínicas "a confirmar"; fotos com rosto ou nome não entram. Página em `estagio/defesa/corpo-do-estagio/`, mais uma versão estática para slide/PDF.
 - [x] **FEITO 20/11 7h41 (`estagio/defesa/simulado-banca/simulado.md`) — Simulado da banca (o Felipe escolheu em 19/11):** as perguntas prováveis da banca, cada uma com uma resposta curta montada a partir do material dele (nunca inventada), e os pontos frágeis marcados. Incluir: o que ele fez de fato na castração (atos privativos, Lei 5.517/68: auxílio sob supervisão); por que esses casos e não outros; a estrutura e os serviços da clínica; perguntas técnicas básicas de cada caso (FeLV, esporotricose como zoonose, por que a quimio em seringa, por que não suturar mordida, o que é osteotomia do olécrano); dificuldades e o que aprendeu. Onde o material não tiver resposta, marcar "pesquisar ou perguntar à Cláudia". Em `estagio/defesa/simulado-banca/`.
 - [x] **FEITO 20/11 9h41 (`estagio/defesa/perguntas/perguntas-por-pessoa.md`)** — Lista única "perguntas para a Cláudia, o Thiago e a Fran", juntando as pendências.
-- [ ] Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
+- [x] **FEITO 20/11 11h41 (`estagio/defesa/fechamento/dificuldades-e-consideracoes.md`)** — Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
 - [ ] **P12 (escolhido pelo Felipe em 20/11): orçamento de tempo das animações**, antes do roteiro. Abrir cada animação (Katita 3D/`katita-3d/dist/katita-offline.html`, OSH `castracao-osh/osh-3d.html`, nodulectomia `estagio/animacao-nodulectomia/index.html`, quimio `estagio/quimioterapia/dist/quimio-offline.html`, criocirurgia só no claude.ai) e medir a duração total e de cada cena. Propor para cada uma o trecho que entra na defesa (cenas e segundos) e o que fica de fora, de modo que as animações somadas caibam num orçamento razoável dentro dos 25–30 min. Em `estagio/defesa/tempo-animacoes.md`. Não editar as animações.
 - [ ] **Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
@@ -187,3 +187,19 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Perguntas para o Felipe:** levar a lista à clínica e ao IFC. As principais são a data da defesa e a banca, a carga horária e o setor, como apresentar a castração, a autorização das fotos e a dose da quimio.
 
 **Próxima sugestão:** rascunho de "Dificuldades encontradas" e "Considerações finais" (11h41).
+
+### 20/11/2026 — 11h41
+
+**Feito:** rascunho de "Dificuldades encontradas" e "Considerações finais".
+- **Dificuldades:** 5 candidatas tiradas do diário, sendo 2 novas em relação ao slide 21 (aprender a lidar com o dó e a relação com os gatos), com título e fala de cerca de 40 s.
+- **Considerações finais:** uma versão para o slide, com a tese, e uma versão falada de cerca de 1 min que usa as camadas dos eixos.
+- **Ações que o campus poderia alterar:** 4 ideias tiradas da experiência dele, que só entram se forem verdade para ele.
+- Os slides 21 e 22 da apresentação não foram alterados.
+- `estagio/defesa/fechamento/dificuldades-e-consideracoes.md`
+
+**Perguntas para o Felipe:**
+- Quais dificuldades entram no slide?
+- Quais ações o campus poderia alterar?
+- A imagem final é São Francisco ou Odisseu?
+
+**Próxima sugestão:** P12, o orçamento de tempo das animações (13h41).
