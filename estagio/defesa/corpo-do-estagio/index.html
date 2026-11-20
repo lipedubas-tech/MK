@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corpo do estágio</title>
+<style>
+:root{
+  --fundo:#f4f1ea; --papel:#fbfaf6; --tinta:#1f2328; --suave:#5d646d; --linha:#d8d2c4;
+  --cao:#c2410c; --gato:#1d6fa5; --ativo:#111;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --fundo:#16181b; --papel:#1f2226; --tinta:#ebe8e2; --suave:#a3a9b1; --linha:#3a3f45; --cao:#fb923c; --gato:#60a5fa; --ativo:#fff; }
+  :root:not([data-theme="light"]) .silhueta{ filter:invert(.85); }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{max-width:1200px;margin:0 auto;padding:28px 16px 4px}
+h1{margin:0;font-size:2rem;letter-spacing:-.01em}
+header p{margin:6px 0 0;color:var(--suave)}
+main{max-width:1200px;margin:0 auto;padding:12px 16px 32px;display:grid;grid-template-columns:1fr 360px;gap:20px}
+.corpos{display:grid;gap:18px}
+.corpo{background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:14px 14px 8px}
+.corpo h2{margin:0 0 6px;font-size:1rem;text-transform:uppercase;letter-spacing:.08em}
+.corpo.cao h2{color:var(--cao)} .corpo.gato h2{color:var(--gato)}
+.palco{position:relative;width:100%}
+.silhueta{display:block;width:100%;height:auto;opacity:.9}
+.ponto{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;
+  border:2px solid #fff;color:#fff;font:700 13px/26px system-ui,sans-serif;text-align:center;cursor:pointer;padding:0;
+  box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.cao .ponto{background:var(--cao)} .gato .ponto{background:var(--gato)}
+.ponto:hover,.ponto:focus-visible,.ponto[aria-pressed="true"]{outline:3px solid var(--ativo);outline-offset:2px;z-index:2}
+.ponto.confirmar{border-style:dashed}
+aside{position:sticky;top:12px;align-self:start;background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:16px;min-height:300px}
+aside h3{margin:0 0 4px;font-size:1.15rem}
+aside .meta{color:var(--suave);font-size:.9rem;margin:0 0 10px}
+aside img{width:100%;border-radius:8px;display:block;margin:8px 0;background:#ddd}
+aside .nofoto{padding:24px;text-align:center;color:var(--suave);border:1px dashed var(--linha);border-radius:8px;margin:8px 0}
+aside .aviso{color:#a8322d;font-weight:600;font-size:.9rem}
+.lista{max-width:1200px;margin:0 auto;padding:0 16px 40px;columns:2;column-gap:28px}
+.lista h2{column-span:all;font-size:1.1rem;margin:8px 0}
+.lista p{break-inside:avoid;margin:0 0 8px;font-size:.92rem}
+.lista b.n{display:inline-block;min-width:26px;text-align:center;border-radius:12px;color:#fff;margin-right:6px}
+.lista .c b.n{background:var(--cao)} .lista .g b.n{background:var(--gato)}
+footer{max-width:1200px;margin:0 auto;padding:0 16px 40px;color:var(--suave);font-size:.85rem}
+@media (max-width:820px){ main{grid-template-columns:1fr} aside{position:static} .lista{columns:1} .ponto{width:24px;height:24px;font-size:11px;line-height:20px} }
+@media print{ aside{display:none} main{grid-template-columns:1fr} body{background:#fff} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Corpo do estágio</h1>
+  <p>Cada caso do estágio marcado no lugar do corpo onde aconteceu. Clique num ponto para ver a foto real e a legenda. Pontos tracejados: local ou dado ainda a confirmar.</p>
+</header>
+<main>
+  <div class="corpos">
+    <section class="corpo cao"><h2>Cão</h2><div class="palco" id="palco-cao"><img class="silhueta" src="silhueta-cao.png" alt="Silhueta de um cão de perfil, voltado para a esquerda"></div></section>
+    <section class="corpo gato"><h2>Gato</h2><div class="palco" id="palco-gato"><img class="silhueta" src="silhueta-gato.png" alt="Silhueta de um gato de perfil, voltado para a esquerda"></div></section>
+  </div>
+  <aside id="painel" aria-live="polite"><p class="meta">Clique num ponto.</p></aside>
+</main>
+<div class="lista" id="lista"></div>
+<footer>
+  Silhuetas feitas a partir dos modelos 3D usados nas animações do repositório: o cão é o modelo da animação da nodulectomia (origem e licença a confirmar), e o gato é "Cat by Sumpitueslag" (https://skfb.ly/pPwUI), de photon (that one larry), licença CC BY 4.0, com a silhueta derivada e suavizada. As posições são aproximadas e didáticas. Interpretações clínicas estão a confirmar com a Cláudia ou o Thiago.
+  Gerado em 20/11/2026 pela tarefa "Melhorar a defesa".
+</footer>
+<script>
+const F = "../../fotos/";
+const PONTOS = [
+  // CÃO (x, y em fração da silhueta)
+  {e:"cao", x:.257, y:.618, t:"Cotovelo: fratura em Y", d:"29/10 · Katita", txt:"Fratura em Y do úmero distal após atropelamento; osteotomia do olécrano, 2 placas, parafuso intercondilar e banda de tensão (Thiago).", foto:"../../../katita-3d/img/rx_pos_anot.jpg"},
+  {e:"cao", x:.095, y:.106, t:"Pálpebra: nodulectomia", d:"05/11", txt:"Nódulo na pálpebra superior retirado com bisturi e hemostasia com cauterização.", foto:null},
+  {e:"cao", x:.338, y:.539, t:"Perto da axila: nodulectomia", d:"17/11 · cadela preta idosa", txt:"Nódulo já ulcerado e infeccionado; exérese em bloco com margem de pele, sutura contínua de náilon. Lado a confirmar.", foto:"../../animacao-nodulectomia/referencias/foto4-pos-operatorio.jpg", conf:true},
+  {e:"cao", x:.198, y:.343, t:"Pescoço: mordida", d:"06/11 · cadela de 12 anos", txt:"Mordida só na pele: limpeza, clorexidina e curativo; sem sutura, para não formar abscesso.", foto:F+"dia07/02-mordida-no-pescoco.jpg"},
+  {e:"cao", x:.700, y:.402, t:"Traseiro: melanoma", d:"05/11", txt:"Criocirurgia com nitrogênio líquido (cerca de −196 °C): congela, incha, forma crosta e cai.", foto:F+"dia06/01-criocirurgia-spray.jpg"},
+  {e:"cao", x:.036, y:.244, t:"Boca: extrações", d:"04/11 · Barão", txt:"Cerca de 8 dentes extraídos; linfoma na raiz dentária (a confirmar).", foto:F+"legendas/08-barao-depois-odontologico.jpg"},
+  {e:"cao", x:.540, y:.520, t:"Útero: castração", d:"11/11 · cadela", txt:"Ovariohisterectomia; auxílio sob supervisão segurando o útero com pinça. Sem foto.", foto:null},
+  {e:"cao", x:.468, y:.461, t:"Baço: hemangiossarcoma", d:"07/10 a 06/11 · Mel (labradora)", txt:"Baço com nódulos no ultrassom, esplenectomia e biópsia com hemangiossarcoma esplênico.", foto:F+"dia07/14-mel-laudo-ultrassom.jpg"},
+  {e:"cao", x:.144, y:.146, t:"Cabeça e pescoço: sarcoma (quimio)", d:"12/11 · cão de 17 anos", txt:"Quimioterapia com doxorrubicina a cada 21 dias, aplicada em seringa, devagar (vesicante).", foto:F+"quimio/05-quimio-seringa-no-acesso.jpg"},
+  {e:"cao", x:.600, y:.545, t:"Bexiga: cistocentese", d:"12/11", txt:"Coleta de urina direto da bexiga guiada por ultrassom, em cão com suspeita de doença renal.", foto:F+"quimio/06-cistocentese-ecoguiada.jpg"},
+  {e:"cao", x:.662, y:.323, t:"Quadril: atropelamento", d:"30/10 · Luna", txt:"Possível fratura de quadril, não confirmada. Sem foto no repositório.", foto:null, conf:true},
+  // GATO
+  {e:"gato", x:.240, y:.960, t:"Pata: esporotricose", d:"28/10 · dia 1", txt:"Lesão ulcerada na pata; zoonose, manejo com luvas; colar elizabetano.", foto:F+"geral/17-esporotricose-lesao-pata.jpg"},
+  {e:"gato", x:.051, y:.178, t:"Perto do olho: esporotricose", d:"18/11 · gato branco", txt:"Segundo caso do estágio, três semanas depois do primeiro.", foto:F+"dia-18-11/07-esporotricose-lesao-olho.jpg"},
+  {e:"gato", x:.132, y:.362, t:"Pescoço: esporotricose", d:"18/11 · gato branco", txt:"Ferida ulcerada no pescoço. Na foto aparece a mão sem luva: recortar antes de usar em slide.", foto:F+"dia-18-11/04-esporotricose-lesao-pescoco.jpg", aviso:"Mão sem luva na foto"},
+  {e:"gato", x:.640, y:.634, t:"Bexiga: cristais e cistite", d:"06/11 e 10/11", txt:"Gato paraplégico (jogado de uma janela em movimento quando filhote) com cristais na bexiga; outro gato com cistite no ultrassom. Foto com rosto: não exibida.", foto:null},
+  {e:"gato", x:.554, y:.614, t:"Útero: castração com fetos mumificados", d:"17/11 · gata colorpoint", txt:"OSH; havia fetos mumificados no útero. Animação 3D pronta em castracao-osh/.", foto:"../../../castracao-osh/referencias/foto1-campo-incisao.jpg"},
+  {e:"gato", x:.456, y:.556, t:"Intestino: fecaloma", d:"18/11 · cirurgia do Rangel", txt:"Massa de fezes endurecidas retirada do intestino; o gato comeu pão; terceira cirurgia dele.", foto:F+"cirurgia-felino/07-material-removido-cuba-rim.jpg"},
+  {e:"gato", x:.283, y:.800, t:"Veia: transfusão", d:"05 e 06/11 · Mel Serafina", txt:"Anemia grave (provável FeLV, a confirmar); transfusão de sangue.", foto:F+"dia07/03-transfusao-mel-serafina.jpg", conf:true},
+  {e:"gato", x:.326, y:.498, t:"Costela e barriga: filhote", d:"19/11 · resgate", txt:"Ninhada de 7, quatro mortos por um cachorro; o creme com furo infeccionado na barriga, olho doente e costela quebrada.", foto:F+"dia-19-11/01-laranja-e-branco-olho-remelento.jpg", conf:true},
+];
+const painel=document.getElementById('painel');
+let n={cao:0,gato:0};
+function mostra(p,btn){
+  document.querySelectorAll('.ponto').forEach(b=>b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  painel.innerHTML = `<h3>${p.num}. ${p.t}</h3><p class="meta">${p.e==='cao'?'Cão':'Gato'} · ${p.d}${p.conf?' · <b>a confirmar</b>':''}</p>`+
+    (p.foto?`<img src="${p.foto}" alt="${p.t}">`:`<div class="nofoto">Sem foto para mostrar</div>`)+
+    (p.aviso?`<p class="aviso">${p.aviso}</p>`:'')+`<p>${p.txt}</p>`;
+}
+const lista=document.getElementById('lista'); let html='<h2>Legenda</h2>';
+PONTOS.forEach(p=>{
+  p.num=++n[p.e];
+  const b=document.createElement('button'); b.className='ponto'+(p.conf?' confirmar':''); b.textContent=p.num;
+  b.style.left=(p.x*100)+'%'; b.style.top=(p.y*100)+'%'; b.title=p.t; b.setAttribute('aria-label',`${p.e==='cao'?'Cão':'Gato'} ${p.num}: ${p.t}`); b.setAttribute('aria-pressed','false');
+  b.onclick=()=>mostra(p,b);
+  document.getElementById('palco-'+p.e).appendChild(b);
+  html+=`<p class="${p.e==='cao'?'c':'g'}"><b class="n">${p.num}</b><b>${p.t}</b> · ${p.d}${p.conf?' (a confirmar)':''}</p>`;
+});
+lista.innerHTML=html;
+</script>
+</body>
+</html>
