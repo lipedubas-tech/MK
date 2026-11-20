@@ -35,7 +35,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 19/11 19h41 (`estagio/defesa/casos/esporotricose.md`) — P3 (escolhido pelo Felipe em 19/11): esporotricose como caso de Saúde Única.** Slide (frase + prova: as lesões dos dois gatos, 28/10 e 18/11, lado a lado) e fala ligando os dois casos à zoonose em expansão, com casos confirmados no Sul de SC, e à biossegurança (luvas, mão sem luva recortada, descarte). Interpretação clínica "a confirmar"; fontes só como estudo (seção 2.7 da pesquisa), sem slide de referências. Em `estagio/defesa/casos/esporotricose.md`.
 - [x] **FEITO 19/11 21h41 (`estagio/defesa/odisseu-argos/`) — Odisseu e o cão Argos (ideia do Felipe em 19/11): colocar nos slides.** A cena da *Odisseia* (canto XVII) em que só o velho cão reconhece Odisseu na volta e morre em seguida. Achar a obra de arte (candidata: John Flaxman, *Ulysses and his Dog*), **confirmar o domínio público no Wikimedia Commons**, baixar em boa resolução e montar o slide (imagem inteira, uma frase, crédito da obra), com 2 ou 3 variantes de posição para ele escolher: abertura, fechamento ou ponte entre a Parte 1 e a Parte 2. Detalhes na seção 5 de `estagio/defesa/pesquisa/relatorio.md`.
 - [x] **FEITO 19/11 23h41 (`estagio/defesa/corpo-do-estagio/`) — O corpo do estágio (o Felipe escolheu em 19/11):** uma silhueta de cão e uma de gato, desenhadas com cuidado (nada de formas genéricas), com cada lesão ou procedimento marcado no lugar do corpo onde aconteceu. Ao clicar no ponto, aparecem a foto real e uma legenda curta. Pontos: cotovelo esquerdo da Katita (fratura em Y), pálpebra superior (nodulectomia com cauterização), axila (nodulectomia de 17/11), pescoço (mordida da cadela de 12 anos), traseiro (melanoma, criocirurgia), boca (Barão, cerca de 8 extrações), pata (esporotricose, 28/10), olho e pescoço do gato branco (esporotricose, 18/11), bexiga (gato paraplégico; cistite; cistocentese), útero (castrações de 11/11 e 17/11), baço (Mel labradora), pescoço e cabeça (sarcoma, quimio), costela e barriga (filhote de 19/11), quadril (Luna, a confirmar). Interpretações clínicas "a confirmar"; fotos com rosto ou nome não entram. Página em `estagio/defesa/corpo-do-estagio/`, mais uma versão estática para slide/PDF.
-- [ ] **Simulado da banca (o Felipe escolheu em 19/11):** as perguntas prováveis da banca, cada uma com uma resposta curta montada a partir do material dele (nunca inventada), e os pontos frágeis marcados. Incluir: o que ele fez de fato na castração (atos privativos, Lei 5.517/68: auxílio sob supervisão); por que esses casos e não outros; a estrutura e os serviços da clínica; perguntas técnicas básicas de cada caso (FeLV, esporotricose como zoonose, por que a quimio em seringa, por que não suturar mordida, o que é osteotomia do olécrano); dificuldades e o que aprendeu. Onde o material não tiver resposta, marcar "pesquisar ou perguntar à Cláudia". Em `estagio/defesa/simulado-banca/`.
+- [x] **FEITO 20/11 7h41 (`estagio/defesa/simulado-banca/simulado.md`) — Simulado da banca (o Felipe escolheu em 19/11):** as perguntas prováveis da banca, cada uma com uma resposta curta montada a partir do material dele (nunca inventada), e os pontos frágeis marcados. Incluir: o que ele fez de fato na castração (atos privativos, Lei 5.517/68: auxílio sob supervisão); por que esses casos e não outros; a estrutura e os serviços da clínica; perguntas técnicas básicas de cada caso (FeLV, esporotricose como zoonose, por que a quimio em seringa, por que não suturar mordida, o que é osteotomia do olécrano); dificuldades e o que aprendeu. Onde o material não tiver resposta, marcar "pesquisar ou perguntar à Cláudia". Em `estagio/defesa/simulado-banca/`.
 - [ ] Lista única "perguntas para a Cláudia, o Thiago e a Fran", juntando as pendências.
 - [ ] Rascunho de "Dificuldades encontradas" e "Considerações finais" a partir do diário e das reflexões.
 - [x] ~~Referências bibliográficas~~ — descartado pelo Felipe em 19/11 (citações não são necessárias).
@@ -159,3 +159,19 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Confirmar o lado da nodulectomia de 17/11.
 
 **Próxima sugestão:** o simulado da banca (amanhã, 7h41).
+
+### 20/11/2026 — 7h41
+
+**Feito:** o simulado da banca.
+- Cerca de 35 perguntas prováveis, em 10 blocos: estágio e clínica, Katita, Bob, quimio, criocirurgia, cirurgias de 17/11 e 18/11, esporotricose, rotina, eutanásia e fechamento.
+- Cada pergunta tem uma resposta curta tirada do material (nada inventado) e um status: no material, a confirmar ou falta.
+- Os pontos frágeis estão marcados. O principal: dizer sempre "acompanhei e auxiliei sob supervisão", porque há atos privativos do veterinário.
+- No fim, uma tabela de prioridades das pendências.
+- `estagio/defesa/simulado-banca/simulado.md`
+
+**Perguntas para o Felipe:**
+- Carga horária e setor do estágio.
+- Ensaiar a resposta a "por que pequenos animais num curso de Agropecuária?".
+- Algumas respostas são pessoais e só ele pode dar: dificuldade, o que leva do estágio, o que o campus poderia mudar.
+
+**Próxima sugestão:** a lista única de perguntas para a Cláudia, o Thiago e a Fran (9h41).
