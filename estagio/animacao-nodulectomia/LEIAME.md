@@ -9,7 +9,7 @@ Animação didática em 10 cenas para a defesa do estágio, feita a partir do br
 
 ## Como usar
 Setas ← → (ou os botões) trocam de cena e cada cena toca ao entrar; espaço pausa;
-**Reproduzir tudo** passa pelas 10 cenas sem parar (cerca de 1 min 43 s); **F** põe em tela cheia.
+**Reproduzir tudo** passa pelas 10 cenas sem parar (cerca de 1 min 47 s); **F** põe em tela cheia.
 No celular: deslize para o lado para trocar de cena, toque para pausar.
 
 ## Correção do caso (18/11)
@@ -25,6 +25,15 @@ instrumentais, que agora bate com a foto 3 (peça na gaze, instrumental e envelo
 de 11 para 10 cenas, e os textos que davam o exame como feito ficaram neutros: o subtítulo da abertura diz
 "da marcação ao pós-operatório", e a legenda do pós-operatório diz "Recuperação: analgesia, curativo e retorno"
 (sem "com o laudo").
+
+## Correção do caso (20/11): a cauterização foi o principal
+O Felipe contou que **a cauterização foi a principal forma de hemostasia** nesta cirurgia. A cena 8 (Hemostasia)
+passou de 8 para 12 s e agora começa por ela: o cauterizador, com a ponta em brasa, toca seis pontos que sangram
+(quatro no leito e dois na parede da ferida). Cada toque solta um fio de fumaça e deixa uma escara, o tecido
+coagulado, escuro no centro e esbranquiçado em volta. Depois vêm a compressão com gaze da foto 2 e a conferência
+do leito. A legenda virou "Hemostasia por cauterização e conferência do leito", e há dois rótulos novos:
+"Cauterização: o calor coagula os vasinhos que sangram" e "Pontos cauterizados: tecido coagulado, o vaso fica
+fechado". As escaras acompanham o leito e as paredes quando a ferida fecha na sutura. Continua sem sangue.
 
 ## Melhorias de 19/11
 Revisão quadro a quadro das cenas, com estas correções (a numeração abaixo já é a de 10 cenas):
@@ -72,5 +81,9 @@ Para conferir um quadro: abra `index.html?t=45` (abre parado aos 45 s).
 - Se houve antibiótico no pós-operatório e se foi feita cultura da secreção.
 - A animação fala só em "nódulo": o tipo só se confirma com exame histopatológico.
 - Se a peça foi para algum exame (sem formol, a animação não mostra mais o envio ao laboratório) e se haverá laudo.
+- Que cauterizador foi usado na nodulectomia de 17/11 (a clínica tem um de ferro quente, o mesmo da pálpebra em
+  05/11) e em que momentos: a animação mostra uma caneta genérica com ponta de fio em brasa, só na hemostasia.
+- Se os vasos do nódulo foram ligados com fio (cena 6) ou também cauterizados, e se houve cauterização durante a
+  dissecção.
 - Se houve curativo: a legenda do pós-operatório (do briefing) cita "curativo", mas as fotos 4 a 6 mostram a ferida
   descoberta, e a animação também.

@@ -25,7 +25,7 @@ var CENAS = [
   { nome: "Dissecção", dur: 10, leg: "Dissecção pelo tecido sadio, sem cortar o nódulo" },
   { nome: "Vasos", dur: 9, leg: "Pinçamento e ligadura dos vasos" },
   { nome: "Retirada", dur: 9, leg: "Exérese em bloco, com a pele ao redor da úlcera" },
-  { nome: "Hemostasia", dur: 8, leg: "Hemostasia por compressão e conferência do leito" },
+  { nome: "Hemostasia", dur: 12, leg: "Hemostasia por cauterização e conferência do leito" },
   { nome: "Sutura", dur: 16, leg: "Redução do espaço morto e síntese da pele" },
   { nome: "Pós-operatório", dur: 12, leg: "Recuperação: analgesia, curativo e retorno" }
 ];
