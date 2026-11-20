@@ -242,3 +242,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Ensaiar com cronômetro e anotar o tempo de cada bloco.
 
 **Próxima sugestão:** P1, a auditoria da apresentação atual comparada com este roteiro (17h41).
+
+**PR:** https://github.com/lipedubas-tech/MK/pull/51 (juntado).
+
+**Aviso:** o WhatsApp falhou porque esta sessão não tem `CALLMEBOT_PHONE`/`CALLMEBOT_APIKEY` nem `~/.callmebot`. A tarefa agendada passou a rodar nesta sessão em 20/11. O resumo foi enviado pelo Gmail.
