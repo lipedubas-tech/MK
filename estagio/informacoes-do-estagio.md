@@ -513,6 +513,7 @@ As referências estão ilegíveis na foto.
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
 
 **Organizar:**
+- [ ] **Escrever uma carta para a Cláudia no fim do estágio** (até 07/12). Quem escreve é o Felipe; lembrete registrado em 20/11.
 - [ ] Começar a contar as vacinas aplicadas por dia
 - [ ] Baixar das conversas do claude.ai as fotos, os laudos, os PDFs de referência e o `.glb`
 - [ ] Cobrir nomes de tutores e pacientes nos laudos e raios-X antes de usar nos slides
