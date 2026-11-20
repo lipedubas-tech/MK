@@ -1,0 +1,115 @@
+# Perguntas para levar à clínica e ao IFC
+
+> **Execução de 20/11/2026, às 9h41.** Esta é a lista única que junta as pendências espalhadas por todo o material: o diário (seção 9), o simulado da banca, o caso da esporotricose, a Parte 1, o corpo do estágio e a pesquisa.
+>
+> **Como usar:** abra no celular. A ordem em cada pessoa vai do mais importante para a defesa ao menos importante. Anote a resposta embaixo de cada pergunta (ou me mande que eu registro no diário). Itens marcados com ★ são os que travam a defesa.
+>
+> Este arquivo é derivado. As respostas, quando vierem, entram no diário como **acréscimo**.
+
+---
+
+## Fran (orientadora, IFC)
+
+1. ★ **Como apresentar a minha participação nas cirurgias?** Na castração de 11/11, segurei o útero com pinça para a Cláudia cortar e suturar. Posso dizer "auxiliei sob supervisão"? (Atos privativos do veterinário: Lei 5.517/68.)
+   - Resposta:
+2. ★ **O slide de "Referências bibliográficas" do modelo do IFC é obrigatório?** Eu queria não ter citações.
+   - Resposta:
+3. ★ **Qual é a data da defesa, quem está na banca e quanto tempo exato eu tenho?**
+   - Resposta:
+4. **A sala tem projetor e internet? O computador é meu ou de vocês?** (Define o plano B offline.)
+   - Resposta:
+5. **Posso usar fotos tiradas da defesa da Yasmin (ambientes da clínica) se der crédito?** Ou preciso tirar as minhas?
+   - Resposta:
+6. **O que o modelo espera em "ações que o campus poderia alterar"?**
+   - Resposta:
+7. **Preciso entregar o plano de atividades de estágio no dia?** (Lembrete do modelo do IFC.)
+   - Resposta:
+
+---
+
+## Cláudia (supervisora)
+
+**Para o modelo do IFC**
+1. ★ **Qual é a minha carga horária oficial (por dia e total) e o nome do setor do estágio?**
+   - Resposta:
+2. ★ **Posso usar as fotos dos casos e da clínica na minha defesa?** Sem nomes de tutores e com rostos recortados. Se puder, uma autorização simples por escrito ajuda.
+   - Resposta:
+3. **Os dados da clínica continuam os mesmos?** Endereço Av. Antonio Sant'Helena, 165; telefone (48) 99924-7977; responsável legal Rangel Ramos Cardoso. A clínica tem site?
+   - Resposta:
+4. **Posso fotografar os ambientes** (fachada, balcão, consultório, internamento, espera, banho e tosa, canil, sala de cirurgia)?
+   - Resposta:
+
+**Casos**
+5. ★ **Esporotricose (28/10 e 18/11):** como foi feito o diagnóstico (citologia, cultura, clínico)? Qual o tratamento de cada gato? O Revolution Plus de 18/11 foi para o gato com esporotricose?
+   - Resposta:
+6. **Nodulectomia de 17/11:** de que lado era o nódulo? A peça foi para algum exame? Qual cauterizador foi usado (o de ferro quente da pálpebra?) e houve ligadura com fio? Houve curativo?
+   - Resposta:
+7. **Castração da gata (17/11):** o que explica os fetos mumificados? Há quanto tempo estavam lá?
+   - Resposta:
+8. **Eutanásia:** qual é o protocolo da clínica (anestesia profunda e depois cloreto de potássio)?
+   - Resposta:
+9. **Mel Serafina:** o FeLV foi confirmado? Como foi escolhido o sangue da transfusão (tipagem)? Como ela ficou?
+   - Resposta:
+10. **Filhotes resgatados (19/11):** como estão? O creme está respirando melhor?
+    - Resposta:
+11. **Teste FeLV/FIV da foto 24:** de qual paciente era e qual foi o resultado?
+    - Resposta:
+12. **Hemogramas:** a hemoglobina e o CHCM altos na pastora alemã e no Barão podem ser efeito da hemólise e da lipemia 3+?
+    - Resposta:
+13. **Procedimento sob anestesia das fotos 10 a 14 (28/10):** era odontologia ou retirada de lesão na face?
+    - Resposta:
+14. **Melanoma (05/11):** houve citologia ou histopatologia?
+    - Resposta:
+
+**Dados para pedir**
+15. Números de parvovirose do ano passado e de agora; desde quando não aparece cinomose.
+16. Densidade urinária, ureia e creatinina do cão da cistocentese (12/11).
+17. Exame de sangue do gato de rua internado (29/10).
+18. Radiografia do Bob e PDFs do raio-X pós-operatório da Katita (sem reflexo de tela).
+
+---
+
+## Thiago (ortopedista)
+
+1. ★ **Katita:** qual lado foi operado (o raio-X marca "E")? Quanto tempo durou a cirurgia e qual foi a anestesia? Quantos pinos e onde (só na ulna, ou também no úmero)? O parafuso é "intercondilar" mesmo? Como foi o pós-operatório?
+   - Resposta:
+2. **Posso usar a animação 3D da cirurgia da Katita na defesa?** Quer conferir se está correta?
+   - Resposta:
+3. **Bob:** a recomendação foi só a bota ortopédica? Existe exame para confirmar a causa neurológica?
+   - Resposta:
+
+---
+
+## Oncologista
+
+1. ★ **Dose da doxorrubicina:** o que significa "6,4/2 que dá 3,2"? (mg/m², mg ou mL?)
+   - Resposta:
+2. **A bolsa de soro de 250 mL** era para lavar o acesso antes e depois?
+   - Resposta:
+3. **Por que a cada 21 dias?** (É o tempo de os neutrófilos voltarem?) Quantas sessões o protocolo prevê?
+   - Resposta:
+4. **Que tipo de sarcoma** o cão de 17 anos tem?
+   - Resposta:
+5. **Posso usar as fotos da quimio** em que você aparece de máscara e protetor?
+   - Resposta:
+
+---
+
+## Rangel (fundador)
+
+1. **Fecaloma (18/11):** por que operar em vez de tentar laxante ou enema? Nome, idade e peso do gato, e há quanto tempo estava sem evacuar?
+   - Resposta:
+2. **Posso usar a foto da equipe paramentada** (você e a Cláudia) no slide da história da clínica? (Já está anotado como autorizado; só para confirmar.)
+   - Resposta:
+
+---
+
+## Comigo mesmo (decisões suas que estão em aberto)
+
+- [ ] Odisseu: variante A (abertura), B (fechamento), C (ponte) ou A+B?
+- [ ] PR #43 (cauterização na animação da nodulectomia): juntar?
+- [ ] De onde veio o modelo 3D do cão (licença)?
+- [ ] Mão sem luva na esporotricose: recortar, usar como aprendizado ou ligar à biossegurança?
+- [ ] As duas eutanásias entram na defesa?
+- [ ] Respostas pessoais do simulado: maior dificuldade, o que leva do estágio, se segue na veterinária.
+- [ ] Escrever a carta para a Cláudia até 07/12.
