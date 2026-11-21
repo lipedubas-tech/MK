@@ -23,7 +23,7 @@ Um eixo pode ser **combinado com a tese**. A tese vira o fio humano, e o eixo vi
 |---|---|---|---|---|---|
 | **1. Tornar visível o oculto** | A clínica é a arte de ver o que não aparece por fora | Katita (raio-X), Bob (olhos tapados), Mel (ultrassom e biópsia), gato paraplégico (cristais), castração da gata (fetos mumificados) | O raio-X da Katita, antes, sem explicação | O que também não se vê: o que o tutor sente | Virar vitrine de exames, o que vai contra a decisão de que exames não viram caso |
 | **2. Dar voz ao paciente que não fala** | O animal não diz onde dói; a clínica aprende a ouvir | Bob, Mel Serafina (mucosa branca), Katita mancando, gato paraplégico, filhotes | O teste do Bob: reage com os olhos livres, não reage com os olhos tapados | "Os animais têm uma alma muito pura." | Ficar sentimental; antropomorfizar |
-| **3. Caráter formado por exposição e habituação** | Quem eu era no dia 1 e quem sou agora | Dia 1 (mortes e eutanásia), gato de rua, Katita, castração com auxílio, filhotes | 28/10: três mortes antes do almoço | 19/11: o mesmo que tinha apatia por gatos cuidando de três | Falar mais de você do que da clínica |
+| **3. Caráter formado por exposição e habituação** | Quem eu era no dia 1 e quem sou agora | Dia 1 (mortes e eutanásia), gato de rua, Katita, castração com auxílio, filhotes | 28/10: a morte apareceu três vezes | 19/11: o mesmo que tinha apatia por gatos diante de três filhotes vivos *(revisto em 21/11)* | Falar mais de você do que da clínica |
 | **4. Mortalidade e tempo condensados em dados clínicos** | Cada caso é uma conta de tempo: anos, semanas, dias | Quimio aos 17 anos, Mel Serafina (3 dias de prazo), Mel (queda ao longo de semanas), eutanásia, fetos e filhotes | O par 17/11 → 19/11 | Os três filhotes vivos | Peso emocional; os exames voltarem pela porta dos fundos |
 | **5. Mídia visual como argumento** | Mostrar em vez de descrever | Katita (animação e 3D), criocirurgia, linha do tempo, corpo do estágio | A Katita em modo cinema | O corpo do estágio inteiro aceso | É um método, não um tema; depende de internet |
 | **Tese: as pessoas que o amam** | O paciente é o animal, mas a clínica é feita de gente | Golden (família presente), eutanásia, Atena (tutor), gato paraplégico (tutora), dobermann, Mel Serafina (donos), filhotes (resgate) | O golden morrendo no ultrassom, com a família na sala | Alguém resgatou a ninhada | Os casos técnicos ficarem em segundo plano |
@@ -78,7 +78,7 @@ Um eixo pode ser **combinado com a tese**. A tese vira o fio humano, e o eixo vi
 
 ## 3. Caráter formado por exposição e habituação
 
-**A ideia:** o estágio como transformação. No dia 1 você chegou e já havia um animal morto; antes do almoço viu outro morrer no ultrassom e acompanhou uma eutanásia com choro. Você tinha apatia por gatos. Três semanas depois, segurou um útero na castração e chegou ao dia dos filhotes. A defesa conta quem você era e quem ficou.
+**A ideia:** o estágio como transformação. No dia 1 você chegou e já havia um animal morto; no mesmo dia viu outro morrer no ultrassom e acompanhou uma eutanásia com choro. Você tinha apatia por gatos. Três semanas depois, segurou um útero na castração e chegou ao dia dos filhotes. A defesa conta quem você era e quem ficou.
 
 **Casos que encaixam, em ordem de data**
 - **28/10:** pastora alemã morta, golden no ultrassom, eutanásia. O choque.
