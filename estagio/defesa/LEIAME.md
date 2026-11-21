@@ -4,6 +4,7 @@
 
 ## Por onde começar
 
+0. **`previa-defesa/previa-defesa.pdf`:** a defesa inteira, de ponta a ponta, num PDF só.
 1. **`roteiro/roteiro.md`:** a defesa inteira em cerca de 26 min, bloco a bloco, com as camadas dos eixos.
 2. **`prototipo/previa-1.png` a `previa-5.png`:** o visual proposto para os slides (frase-afirmação e prova).
 3. **`auditoria/auditoria.md`:** o que mudar na apresentação atual e em que ordem.
@@ -29,6 +30,9 @@
 | `prototipo/` | 5 slides novos em `.pptx`, as prévias e o script | 20/11 |
 | `plano-b/teste-offline.md` | Teste das 7 peças sem internet, o plano B e o checklist do dia | 20/11 |
 | `privacidade/checklist-fotos.md` | As 55 fotos dos slides conferidas, com o checklist da véspera | 20/11 |
+| `roteiro/fala-completa.md` | A defesa inteira escrita como fala, para ensaiar com cronômetro (cerca de 21 min) | 21/11 |
+| `prototipo/prototipo-extra-3-slides.pptx` | 3 slides extras: dia 1, o par fetos/filhotes, fecaloma | 21/11 |
+| `previa-defesa/previa-defesa.pdf` | **A defesa inteira em 26 páginas, na ordem do roteiro**, cada uma com a origem e o que falta | 21/11 |
 
 A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nada dela foi alterado.
 
