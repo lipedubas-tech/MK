@@ -76,7 +76,7 @@
 **Aplicado aos seus casos (uma frase cada):**
 - **Bob:** não apoiava a pata e tinha uma fratura antiga, MAS o raio-X não explicava a claudicação, PORTANTO o teste dos olhos tapados mostrou que era neurológico.
 - **Cadela mordida no pescoço:** tinha uma ferida aberta, MAS suturar poderia prender a infecção e formar abscesso, PORTANTO foi só limpa e deixada aberta.
-- **A defesa inteira:** cheguei no dia 1 e vi três mortes antes do almoço, MAS fiquei, PORTANTO no dia 19/11 já sabia o que fazer com o dó.
+- **A defesa inteira:** cheguei no dia 1 e a morte apareceu três vezes, MAS fiquei, PORTANTO no dia 19/11 já sabia o que fazer com o dó.
 
 Isso combina com o eixo 3 (caráter) e com a tese.
 

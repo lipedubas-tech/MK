@@ -74,7 +74,7 @@
   - analisador: `fotos/geral/05-vetscan-vs2.jpg`;
   - microscópio: `fotos/geral/06-microscopio.jpg`.
 - **Ao lado, pequeno:** biossegurança, com as autoclaves (`fotos/dia-18-11/01-autoclave-cristofoli-vitale-21.jpg`) e a geladeira de vacinas a 6 °C (`fotos/geral/26-geladeira-de-vacinas.jpg`).
-- **Fala:** "Esses equipamentos vão aparecer nos casos. O raio-X da Katita, o ultrassom da Mel."
+- **Fala:** "Esses equipamentos vão aparecer nos casos: o raio-X da Katita, o ultrassom do gato paraplégico, a cistocentese guiada por ultrassom." *(revisto em 21/11: o ultrassom da Mel labradora foi feito num laboratório externo, e não na clínica)*
 - **Camada:** eixo 1 (tornar visível o oculto).
 - **Tempo:** 60 s.
 
@@ -93,7 +93,7 @@
   - banho e tosa.
 - **Atenção à linguagem:** use "acompanhei" e "auxiliei sob supervisão". Incisão, ligadura, sutura e eutanásia são atos do veterinário (Lei 5.517/68), a confirmar com a Fran.
 - **Fala:** termine com a ponte para a Parte 2: "Desses, escolhi os casos que mais me ensinaram."
-- **Camada:** eixo 3, o caráter: "no primeiro dia, vi três mortes antes do almoço" pode entrar aqui ou na abertura da Parte 2.
+- **Camada:** eixo 3, o caráter: "no primeiro dia, a morte apareceu três vezes" *(revisto em 21/11: o diário não registra o horário)* pode entrar aqui ou na abertura da Parte 2.
 - **Tempo:** 60 s.
 
 ---

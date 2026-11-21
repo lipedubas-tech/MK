@@ -385,3 +385,20 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (11h41):** sem uma decisão nova, revisar a coerência entre o roteiro, o esboço da Parte 1 e o fechamento (frases repetidas, tempos e fotos), ou preparar um ensaio cronometrado em texto. Com a decisão do Felipe, aplicar o protótipo na apresentação, em PR em rascunho.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 11h41
+
+**Revisão de coerência** do roteiro, do esboço da Parte 1, do fechamento, dos eixos e da pesquisa contra o diário. Foram achadas e corrigidas 4 afirmações sem base no material. Todas as correções foram em trabalho derivado; nada das informações puras mudou.
+1. **"Três mortes antes do almoço"** aparecia no fechamento, no esboço, nos eixos e na pesquisa. O diário não registra o horário, e a pastora alemã já estava morta quando ele chegou. Agora: "a morte apareceu três vezes".
+2. **"Numa cirurgia de quatro horas eu esqueci de almoçar"** (fechamento). O diário diz que ele **pulou** o almoço de propósito, para sentir a rotina, e que a cirurgia durou **mais de** quatro horas. Corrigido.
+3. **"Saí cuidando de três"** (fechamento e eixos). O diário não registra que ele cuidou dos filhotes, e a veterinária conduz o caso. Trocado pelo gato de rua do dia 02, que se esfregava nos dedos dele pelo vidro (isso está no diário), com a observação de que ele pode voltar à frase se for verdade.
+4. **"O ultrassom da Mel"** como exemplo dos equipamentos da clínica (esboço, slide 6). O ultrassom da Mel labradora foi feito num laboratório externo. Trocado pelo do gato paraplégico e pela cistocentese, feitos na clínica.
+- **Conferido e sem problema:** "12 ambientes" (a lista da seção 1 tem 12, mas os dados são de 2025, confirmar) e "21 anos" (de 2005 a 2026).
+- **Arquivos:** `fechamento/dificuldades-e-consideracoes.md`, `parte1-clinica/esboco.md`, `eixos/comparativo.md`, `pesquisa/relatorio.md`.
+
+**Perguntas para o Felipe:**
+- Você cuidou dos filhotes de 19/11? Se sim, a frase "saí cuidando de três" pode voltar, e vale acrescentar isso ao diário.
+
+**Próxima sugestão (13h41):** continuar a revisão de coerência no simulado e no protótipo (as falas das notas contra o diário), ou um ensaio cronometrado em texto, com a fala completa da defesa bloco a bloco.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.

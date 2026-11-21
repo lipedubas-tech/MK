@@ -18,12 +18,12 @@ O slide atual tem 3 dificuldades. Abaixo estão 5 candidatas, todas tiradas do d
 | 2 | **A rotina intensa** | Das 8h às 18h; a cirurgia da Katita durou mais de 4 horas e você pulou o almoço para acompanhar | Sim |
 | 3 | **Tutores em momentos difíceis** | 11/11: a dona do dobermann recusou a sedação e saiu muito alterada | Sim |
 | 4 | **Aprender a lidar com o dó** | 19/11: na eutanásia de uma cachorra que ainda andava, o esforço para largar o dó, lembrando a frase da Fran | **Não, é nova** |
-| 5 | **Gatos, que eu não conhecia** | Você nunca tinha tido gato e sentia apatia por eles; terminou cuidando de três filhotes | **Não, é nova** (é mais crescimento que dificuldade) |
+| 5 | **Gatos, que eu não conhecia** | Você nunca tinha tido gato e sentia apatia por eles; no dia 02 já se envolvia com o gato de rua da baia (cuidar dos filhotes de 19/11 não está no diário: **confirme**) | **Não, é nova** (é mais crescimento que dificuldade) |
 
 **Sugestão de frase para o título do slide:** "O mais difícil não foi a técnica: foi a morte, o tempo e as pessoas." **[ajuste]**
 
 **Fala (cerca de 40 s):**
-> "No primeiro dia, antes do almoço, já tinha visto três mortes. A rotina vai das oito da manhã às seis da tarde, e numa cirurgia de quatro horas eu esqueci de almoçar. Mas o mais difícil foram as pessoas e o dó: tutores nervosos, decisões que ninguém quer tomar. Numa eutanásia, eu precisei me esforçar para largar o dó, lembrando uma frase da professora Fran."
+> "No primeiro dia, a morte apareceu três vezes na clínica. A rotina vai das oito da manhã às seis da tarde, e numa cirurgia de mais de quatro horas eu pulei o almoço para não perder nada. Mas o mais difícil foram as pessoas e o dó: tutores nervosos, decisões que ninguém quer tomar. Numa eutanásia, eu precisei me esforçar para largar o dó, lembrando uma frase da professora Fran."
 
 **Cuidado:** a dificuldade 4 envolve a eutanásia de 19/11. Use sem detalhes que exponham a Cláudia ou o tutor.
 
@@ -47,7 +47,7 @@ Embaixo, menor: "Os animais têm uma alma muito pura." (sua frase do dia 02)
 >
 > E vi o tempo: um cão de 17 anos fazendo quimioterapia a cada 21 dias, três fetos que nunca nasceram e, dois dias depois, três filhotes que chegaram vivos.
 >
-> Eu chegava sem saber nada de gatos. Saí cuidando de três.
+> Eu nunca tinha tido gato e sentia apatia por eles. No segundo dia, um gato de rua se esfregava nos meus dedos pelo vidro da baia. **[revisto em 21/11: a frase anterior, "saí cuidando de três", não tinha base no diário; se você de fato cuidou dos filhotes, pode voltar a ela]**
 >
 > O paciente é o animal, mas a clínica é construída com as pessoas que o amam: o tutor que resgata, a família que fica até o fim, a veterinária que sustenta as decisões difíceis, o fundador que deixou as consultas mas continua operando."
 
