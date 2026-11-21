@@ -438,3 +438,22 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (17h41):** escrever as notas do apresentador dos slides que ainda não estão no protótipo (dia 1, castrações, fecaloma e 19/11), no mesmo formato, para quando ele aprovar o protótipo.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 17h41
+
+**Feito:** 3 slides extras para o protótipo, no mesmo formato de frase-afirmação e prova, para quando o Felipe aprovar o formato.
+- **Dia 1:** "No primeiro dia, a morte apareceu três vezes." Três cartões e a frase dele do dia 1, sem foto de animal morto.
+- **O par 17/11 → 19/11:** "Três já não podiam ser salvos; três ainda podiam." Um cartão escuro com o 3 dos fetos, ao lado da foto dos 3 filhotes.
+- **Fecaloma:** "O fundador que deixou as consultas continua operando." A foto é da cuba-rim, sem rostos.
+- **Notas do apresentador:** as falas vêm da `fala-completa.md`.
+- **O arquivo `prototipo-5-slides.pptx` não mudou.** O script ganhou a opção `--extra`, que gera os 3 slides num arquivo à parte.
+- **Ponto de privacidade:** na foto dos filhotes há uma mão sem luva, que não dá para recortar sem cortar um filhote. Isso está registrado nas notas e no LEIAME.
+- **Arquivos:** `estagio/defesa/prototipo/` (`prototipo-extra-3-slides.pptx`, `previa-extra-1.png` a `previa-extra-3.png`, `gerar_prototipo.py`, `LEIAME.md`).
+
+**Perguntas para o Felipe:**
+- O slide do par fetos/filhotes entra?
+- Aprova o formato do protótipo? Se sim, o próximo passo é aplicá-lo na apresentação, em PR em rascunho.
+
+**Próxima sugestão (19h41):** sem decisão nova, juntar os 8 slides do protótipo e os do esboço numa prévia única da defesa inteira, em PDF, na ordem do roteiro. Assim ele vê a defesa de ponta a ponta antes de decidir.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
