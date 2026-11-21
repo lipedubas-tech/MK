@@ -20,12 +20,13 @@
 | **Castração (OSH)**: `castracao-osh/osh-3d.html` | 11 | **1 min 56 s** (116 s) | `castracao-osh/3d/src/40-roteiro.js` |
 | **Nodulectomia**: `estagio/animacao-nodulectomia/index.html` | 10 | **1 min 43 s** (103 s). Se o PR #43 da cauterização for juntado, passa para cerca de 1 min 47 s | `estagio/animacao-nodulectomia/src/app.js` |
 | **Quimio, "A seringa vermelha"**: `estagio/quimioterapia/dist/quimio-offline.html` | 8 cenas, 25 passos com clique | **cerca de 4 min**, no ritmo de quem apresenta | LEIAME da quimio |
-| **Katita 3D**: `katita-3d/dist/katita-offline.html` | 7 etapas | **a medir no P13**. Toca sozinha ou etapa por etapa | `katita-3d/src/app.js` |
+| **Katita 3D**: `katita-3d/dist/katita-offline.html` | 7 etapas | **1 min 18 s** (78 s; medido em 20/11 às 21h41, P13). Toca sozinha ou etapa por etapa | `katita-3d/src/app.js` (lista `DUR`: 8, 8, 14, 11, 14, 12 e 11 s) |
 | **Criocirurgia** (2D e 3D) | 7 passos | **a medir**. Existe só no claude.ai, sem versão offline no repositório | — |
 
 ## Trecho proposto de cada uma (você decide)
 
-### Katita: cerca de 60 a 75 s, a mais longa porque é o caso principal
+### Katita: 48 s tocando sozinha, até cerca de 75 s se você pausar para falar (a mais longa, porque é o caso principal)
+- **Medido no P13:** as etapas 2, 3, 5 e 6 somam 8 + 14 + 14 + 12 = **48 s** na velocidade normal.
 - **Entram** a etapa 2 (a lesão em Y), a 3 (a osteotomia do olécrano), a 5 (placas e parafusos) e a 6 (banda de tensão), avançando no seu ritmo enquanto fala.
 - **Ficam de fora** a etapa 1 (o esqueleto, que você pode substituir pelo raio-X de antes) e a 7 (o fechamento).
 - **Dica:** o raio-X real de antes e depois, nos slides 8 e 10, já conta metade da história. A animação mostra só o que o raio-X não mostra: como as peças entram.
@@ -62,12 +63,12 @@
 
 | Animação | Trecho |
 |---|---|
-| Katita | 60 a 75 s |
+| Katita | 48 a 75 s |
 | OSH | 36 s |
 | Nodulectomia | 27 s |
 | Quimio | 50 a 60 s |
 | Criocirurgia | 0 a 20 s |
-| **Total** | **cerca de 3 min a 3 min 40 s** ✅ dentro do orçamento |
+| **Total** | **cerca de 2 min 40 s a 3 min 40 s** ✅ dentro do orçamento (revisto em 21/11 com a Katita medida) |
 
 ## Como mostrar sem perder tempo
 

@@ -19,7 +19,7 @@
 - Parte 2, os casos em ordem cronológica: cerca de 17 min, de 28/10 a 19/11;
 - fechamento: cerca de 3 min.
 
-As animações somam cerca de 3 min 20 s.
+As animações somam de 2 min 40 s a 3 min 20 s (revisto em 21/11: a Katita, medida no código, toca o trecho em 48 s).
 
 ## A espinha
 
@@ -108,7 +108,7 @@ Cada célula é **uma frase de fala**, tirada do material. Onde não há base no
 | Slide | Frase | Prova | Tempo |
 |---|---|---|---|
 | a | "Uma fratura em Y no cotovelo de uma cadela de 35 kg." | Raio-X de antes (26/10) e o seu desenho da fratura | 0:45 |
-| b | "Para alcançar a articulação, foi preciso cortar o osso." | Animação 3D: as etapas 2, 3, 5 e 6, no seu ritmo | 1:15 |
+| b | "Para alcançar a articulação, foi preciso cortar o osso." | Animação 3D: as etapas 2, 3, 5 e 6 (48 s tocando sozinha; abra na aba "2. A cirurgia"), com pausas para falar | 1:15 |
 | c | "Duas placas, um parafuso entre os côndilos e uma banda de tensão." | Raio-X de depois, anotado (verde e vermelho) | 0:45 |
 | d | "Mais de quatro horas, e eu pulei o almoço para ver." | Campo cirúrgico e a Katita sentada no pós-operatório | 0:45 |
 | | | Margem | 0:30 |

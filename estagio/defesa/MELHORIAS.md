@@ -345,3 +345,21 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (amanhã, 7h41):** sem decisão nova do Felipe, melhorar o que já existe. Por exemplo, revisar o roteiro com os 48 s medidos da Katita e corrigir a soma do orçamento das animações no `tempo-animacoes.md`. Com a decisão dele, aplicar o protótipo na apresentação, em PR em rascunho.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 7h41
+
+**A fila numerada está vazia, e nenhuma decisão nova do Felipe chegou.** Por isso esta execução melhorou o que já existe, sem criar trabalho novo.
+- **Novo `estagio/defesa/LEIAME.md`:** a porta de entrada da pasta.
+  - Por onde começar e a lista de todos os arquivos, com o que é e quando foi feito.
+  - **Tudo o que espera o Felipe, numa lista só:** 18 itens, em 4 grupos (urgente, conteúdo, formato e confirmar com alguém), cada um apontando o documento de origem.
+- **`tempo-animacoes.md` revisto:** a Katita, medida no P13, entrou na tabela (78 s ao todo, 48 s no trecho das etapas 2, 3, 5 e 6). O total das animações passou de "3 min a 3 min 40 s" para "2 min 40 s a 3 min 40 s".
+- **`roteiro/roteiro.md` revisto:** a soma das animações foi atualizada, e o bloco da Katita ganhou os 48 s e o lembrete de abrir na aba "2. A cirurgia".
+
+**Perguntas para o Felipe:** a lista completa está no `LEIAME.md`. As três urgentes:
+- Os slides 2, 4 e 5: fotos suas ou crédito à Yasmin?
+- A data da defesa e a banca.
+- A carga horária e o setor.
+
+**Próxima sugestão:** sem uma decisão nova, revisar o simulado da banca com o que mudou desde 20/11 (o roteiro, o Bob como caso, os pontos da auditoria). Com a decisão do Felipe, aplicar o protótipo na apresentação, em PR em rascunho.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
