@@ -363,3 +363,25 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão:** sem uma decisão nova, revisar o simulado da banca com o que mudou desde 20/11 (o roteiro, o Bob como caso, os pontos da auditoria). Com a decisão do Felipe, aplicar o protótipo na apresentação, em PR em rascunho.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 9h41
+
+**A fila numerada continua vazia, e não chegou decisão nova.** Por isso esta execução revisou o simulado da banca com o que mudou desde 20/11.
+- **`simulado-banca/simulado.md`:** ganhou a seção 11, com 12 perguntas novas, cada uma com resposta tirada do material e status. Os destaques:
+  - **11.1 "Quem fez as animações?":** responder com franqueza que foram planejadas por ele e construídas com IA (Claude). É a pergunta mais provável sobre a parte visual.
+  - **11.2:** o modelo 3D do cão não tem origem nem licença registradas.
+  - **11.3:** as fotos da Yasmin.
+  - **11.4:** a autorização da clínica para usar as fotos.
+  - **11.5 e 11.6:** o Bob como caso, e o teste, que parece de propriocepção (a confirmar com o Thiago).
+  - **11.7 a 11.12:** os exames fora dos casos, Odisseu, o Rangel, os fetos e os filhotes, o que fazer depois de um arranhão (não está no material) e o tempo das animações.
+- **Tabela de prioridades:** ganhou 5 linhas novas.
+- **`LEIAME.md`:** a lista de pendências ganhou os itens 19 (o modelo do cão) e 20 (como contar o uso de IA).
+
+**Perguntas para o Felipe:**
+- De onde veio o `cao.glb`?
+- Como ele quer apresentar o uso de IA? Combinar com a Fran.
+- A clínica autoriza o uso das fotos?
+
+**Próxima sugestão (11h41):** sem uma decisão nova, revisar a coerência entre o roteiro, o esboço da Parte 1 e o fechamento (frases repetidas, tempos e fotos), ou preparar um ensaio cronometrado em texto. Com a decisão do Felipe, aplicar o protótipo na apresentação, em PR em rascunho.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.

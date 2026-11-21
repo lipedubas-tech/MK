@@ -59,6 +59,8 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 16. **O Thiago:** o lado, os pinos e o parafuso da Katita; o teste e a conclusão do Bob. *(simulado)*
 17. **A clínica:** o raio-X do Bob (31/08) e os raios-X da Katita sem reflexo de tela. *(perguntas)*
 18. **Conferir as telas de ultrassom** nos slides 20 e 24. *(auditoria, privacidade)*
+19. **De onde veio o modelo 3D do cão** (`cao.glb`) e qual é a licença dele? Sem isso, o cão não deve aparecer sem crédito. *(simulado 11.2, corpo do estágio)*
+20. **Como contar à banca que as animações foram feitas com IA**, e se a Fran quer que isso apareça num slide. *(simulado 11.1)*
 
 ## Como pedir uma mudança
 
