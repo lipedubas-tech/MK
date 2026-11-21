@@ -43,8 +43,8 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 15h41 (`estagio/defesa/roteiro/roteiro.md`) — Roteiro da defesa (25–30 min) com todos os eixos integrados** (destravado: decisão de 19/11). Ordem dos casos, tempo por bloco e onde cada eixo aparece em cada bloco (tabela caso × eixo), seguindo a proposta de camadas nas Decisões. Mostrar o que coube e o que ficou de fora por tempo.
 - [x] **FEITO 20/11 17h41 (`estagio/defesa/auditoria/auditoria.md`) — P1 (escolhido pelo Felipe em 20/11): auditoria da apresentação atual**, sem mexer nela. Renderizar cada slide de `estagio/apresentacao/Defesa-de-Estagio-Felipe.pptx` (LibreOffice/pdf → imagem) e dar uma nota por slide: título em frase-afirmação, número de palavras (meta 15–25), imagem como prova, privacidade (rostos, nomes, mão sem luva), tempo estimado e se contraria as Decisões do Felipe (slides 5, 14, 15, 23). Comparar com o roteiro e o esboço da Parte 1. Em `estagio/defesa/auditoria/`.
 - [x] **FEITO 20/11 19h41 (`estagio/defesa/prototipo/`) — P2 (escolhido pelo Felipe em 20/11): protótipo de 5 slides em frase-afirmação e prova**, num `.pptx` novo em `estagio/defesa/prototipo/` (nunca no da apresentação): Katita, quimio, esporotricose, Bob e um da Parte 1 (o Rangel). Usar as falas e frases já escritas em `parte1-clinica/esboco.md` e `casos/esporotricose.md`. Gerar prévias em imagem para o Felipe comparar com os slides atuais.
-- [ ] Plano B offline: lista do que gravar em vídeo/PDF das animações.
-- [ ] **P13 (escolhido pelo Felipe em 20/11): teste offline de todas as peças** num navegador sem rede (Playwright com rede bloqueada): Katita, OSH, nodulectomia, quimio, linha do tempo, corpo do estágio, Odisseu. Para cada uma: abre? fontes e imagens carregam? animação roda? tempo de carregamento. Resultado e checklist para o dia da defesa em `estagio/defesa/plano-b/teste-offline.md`. Pode ser feito junto com o item do plano B.
+- [x] **FEITO 20/11 21h41 (`estagio/defesa/plano-b/teste-offline.md`)** — Plano B offline: lista do que gravar em vídeo/PDF das animações.
+- [x] **FEITO 20/11 21h41 (`estagio/defesa/plano-b/teste-offline.md`) — P13 (escolhido pelo Felipe em 20/11): teste offline de todas as peças** num navegador sem rede (Playwright com rede bloqueada): Katita, OSH, nodulectomia, quimio, linha do tempo, corpo do estágio, Odisseu. Para cada uma: abre? fontes e imagens carregam? animação roda? tempo de carregamento. Resultado e checklist para o dia da defesa em `estagio/defesa/plano-b/teste-offline.md`. Pode ser feito junto com o item do plano B.
 - [x] ~~Animação da limpeza de tártaro~~ — descartado pelo Felipe em 19/11 (não justifica uma animação).
 - [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
 - [ ] Checklist de privacidade das fotos que entram nos slides.
@@ -293,3 +293,26 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão:** o plano B offline junto com o P13, o teste de todas as peças sem internet (21h41).
 
 **PR e aviso:** o link do PR vai no e-mail. O WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 20/11/2026 — 21h41
+
+**Feito:** o P13 (teste offline de todas as peças) e o plano B. As 7 peças foram abertas num Chromium sem rede, pelo Playwright.
+- **Resultado: as 7 abrem sem internet.** Nenhuma pediu nada à internet, nenhuma imagem quebrou e o console não mostrou erros. As fontes da quimio estão embutidas e carregaram, e o 3D desenhou a cena.
+- **Tempos de carregamento:** de instantâneo a 3,3 s (nodulectomia).
+- **Corpo do estágio:** as fotos dos 19 pontos carregaram ao clicar.
+- **Pontos de atenção:**
+  - a Katita abre no relato de caso, e é preciso clicar em "2. A cirurgia";
+  - a linha do tempo e o corpo do estágio dependem das pastas de fotos, então é preciso copiar a `estagio/` inteira;
+  - o texto de Odisseu fica cortado em 1280 × 720;
+  - a criocirurgia não tem versão offline.
+- **Katita medida pelo código:** 78 s no total. O trecho das etapas 2, 3, 5 e 6 dá 48 s (o P12 previa de 60 a 75 s).
+- **Também tem:** a tabela do plano B (o que já existe como imagem ou PDF e os vídeos que faltam) e um checklist para a véspera, para a sala e para quando algo falhar.
+- `estagio/defesa/plano-b/teste-offline.md`
+
+**Perguntas para o Felipe:**
+- Gravar os 4 vídeos do plano B no repositório (cerca de 10 a 25 MB)?
+- Testar no notebook e no projetor que vai usar.
+
+**Próxima sugestão:** o checklist de privacidade das fotos que entram nos slides, o último item aberto da fila (amanhã, 7h41). Ou gravar os vídeos, se o Felipe aprovar.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
