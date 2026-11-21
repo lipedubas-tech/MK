@@ -417,3 +417,24 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (15h41):** sem decisão nova, corrigir os tempos do `roteiro.md` com base no tamanho real da fala, ou escrever as notas do apresentador para os slides que ainda não estão no protótipo (dia 1, castrações, fecaloma, 19/11).
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 15h41
+
+**Feito:** os tempos do roteiro foram revistos pelo tamanho real da fala escrita.
+- **Medição:** cada bloco da `fala-completa.md`, a 100 palavras por minuto, mais as animações medidas e 5 s por slide.
+- **Resultado:** cerca de **21 min**, contra os 26 previstos.
+- **Onde ficou mais curto:** a Parte 1 (cerca de 2 min a menos) e a Katita (cerca de 50 s).
+- **Onde ficou um pouco mais longo:** a abertura com Odisseu (+20 s).
+- **`roteiro/roteiro.md`:** ganhou a seção "Tempos revistos pela fala escrita", com a tabela bloco a bloco e as conclusões:
+  - a lista de corte só vale se o ensaio passar de 28 min;
+  - o tempo extra pode vir da Parte 1 ou da Katita;
+  - se o mínimo do IFC for 25 min, isso fecha a conta.
+- **Arquivos:** `estagio/defesa/roteiro/roteiro.md` (a seção nova e uma nota na lista de corte).
+
+**Perguntas para o Felipe:**
+- Qual é o tempo mínimo e máximo da defesa? Perguntar à Fran.
+- Ensaiar e mandar os tempos reais.
+
+**Próxima sugestão (17h41):** escrever as notas do apresentador dos slides que ainda não estão no protótipo (dia 1, castrações, fecaloma e 19/11), no mesmo formato, para quando ele aprovar o protótipo.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
