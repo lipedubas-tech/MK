@@ -47,7 +47,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 21h41 (`estagio/defesa/plano-b/teste-offline.md`) — P13 (escolhido pelo Felipe em 20/11): teste offline de todas as peças** num navegador sem rede (Playwright com rede bloqueada): Katita, OSH, nodulectomia, quimio, linha do tempo, corpo do estágio, Odisseu. Para cada uma: abre? fontes e imagens carregam? animação roda? tempo de carregamento. Resultado e checklist para o dia da defesa em `estagio/defesa/plano-b/teste-offline.md`. Pode ser feito junto com o item do plano B.
 - [x] ~~Animação da limpeza de tártaro~~ — descartado pelo Felipe em 19/11 (não justifica uma animação).
 - [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
-- [ ] Checklist de privacidade das fotos que entram nos slides.
+- [x] **FEITO 20/11 23h41 (`estagio/defesa/privacidade/checklist-fotos.md`)** — Checklist de privacidade das fotos que entram nos slides.
 
 ## Registro das execuções
 
@@ -314,5 +314,34 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Testar no notebook e no projetor que vai usar.
 
 **Próxima sugestão:** o checklist de privacidade das fotos que entram nos slides, o último item aberto da fila (amanhã, 7h41). Ou gravar os vídeos, se o Felipe aprovar.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 20/11/2026 — 23h41
+
+**Feito:** o checklist de privacidade das fotos. Foram conferidas as 55 imagens usadas na apresentação atual, no protótipo, no roteiro e no esboço da Parte 1, cada uma aberta inteira.
+- **🔴 Resolver:** as 8 fotos da Yasmin nos slides 2, 4 e 5 aparecem com "Fonte: O autor".
+- **🟠 Conferir:**
+  - os rostos no ultrassom do gato paraplégico (esboço da Parte 1, slide 6);
+  - a tela da cistocentese (slides 20 e 24);
+  - o recorte do criocautério (slide 13);
+  - uma cabeça no fundo do exame físico;
+  - a mão sem luva na esporotricose (os recortes atuais já a tiram) e nos filhotes;
+  - a foto do Rangel e da Cláudia (uso autorizado; confirmar se pode ir à banca).
+- **Raios-X da Katita usados nos slides:** foram conferidos e nenhum mostra o nome do tutor.
+- **Imagens fortes:** a lista do que avisar à banca antes.
+- **Nomes:** nenhum tutor aparece nos slides, e nenhum deve aparecer na fala.
+- **No fim:** um checklist para a véspera.
+- `estagio/defesa/privacidade/checklist-fotos.md`
+
+**A fila numerada acabou.** Todos os itens estão feitos ou dependem do Felipe.
+
+**Perguntas para o Felipe:**
+- Os slides 2, 4 e 5: fotos suas ou crédito à Yasmin?
+- Pode usar os nomes dos pacientes? Perguntar à Fran.
+- Gravar os vídeos do plano B?
+- Aplicar o formato do protótipo nos outros slides?
+
+**Próxima sugestão (amanhã, 7h41):** sem decisão nova do Felipe, melhorar o que já existe. Por exemplo, revisar o roteiro com os 48 s medidos da Katita e corrigir a soma do orçamento das animações no `tempo-animacoes.md`. Com a decisão dele, aplicar o protótipo na apresentação, em PR em rascunho.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
