@@ -9,6 +9,7 @@ script o faria regerar a apresentação inteira).
 """
 import copy
 import os
+import sys
 import tempfile
 from itertools import count
 
@@ -25,7 +26,8 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 ESTAGIO = os.path.dirname(os.path.dirname(AQUI))
 REPO = os.path.dirname(ESTAGIO)
 MODELO = os.path.join(ESTAGIO, "Modelo Defesa de estágio Técnico.pptx")
-SAIDA = os.path.join(AQUI, "prototipo-5-slides.pptx")
+EXTRA = "--extra" in sys.argv   # 21/11: gera só os 3 slides novos, sem mexer no arquivo dos 5
+SAIDA = os.path.join(AQUI, "prototipo-extra-3-slides.pptx" if EXTRA else "prototipo-5-slides.pptx")
 TMP = tempfile.mkdtemp(prefix="prototipo-")
 _n = count()
 
@@ -315,11 +317,92 @@ Camada: pessoas (Saúde Única), caráter ("eu nunca tinha tido gato"), tempo. ~
 A CONFIRMAR com a Cláudia: como foi o diagnóstico e o tratamento dos dois gatos.
 """)
 
+# ---- Slides extras (21/11): dia 1, o par 17/11 → 19/11 e o fecaloma.
+# Gerados só com --extra, num arquivo à parte.
+n_antes = len(prs.slides)
+
+# ---- 6. O dia 1
+s = novo("No primeiro dia, a morte apareceu três vezes.")
+w = (CW - 0.5) / 3
+for i, (cab, txt) in enumerate([
+    ("Pastora alemã", "já estava morta quando cheguei"),
+    ("Golden retriever", "morreu durante o ultrassom, com a família presente"),
+    ("Cão idoso", "eutanásia, depois de uma longa conversa com a dona"),
+]):
+    x = L + i * (w + 0.25)
+    caixa(s, x, 1.9, w, 2.2, NEUTRO)
+    texto(s, x + 0.25, 2.15, w - 0.5, 2.2, [
+        [(cab, {"tam": 22, "negrito": True, "cor": AZUL})],
+        [(txt, {"tam": 17})],
+    ], depois=10)
+caixa(s, L, 4.5, CW, 1.9, VERDE_CLARO)
+texto(s, L + 0.4, 4.5, CW - 0.8, 1.9, [
+    [("“O trabalho do veterinário é quase mais com humanos do que com animais.”", {"tam": 22, "italico": True})],
+    [("minha anotação do dia 1, 28/10", {"tam": 14, "cor": CINZA})],
+], alinh=PP_ALIGN.CENTER, ancora=MSO_ANCHOR.MIDDLE, depois=6)
+fonte(s)
+notas(s, """
+[Frase-afirmação. Sem foto de propósito: nenhuma foto de animal morto.]
+"No primeiro dia, a morte apareceu três vezes. Quando cheguei, já havia uma pastora alemã morta. Depois, um golden morreu durante o ultrassom, com a família presente. E acompanhei a eutanásia de um cão idoso, depois de uma longa conversa com a dona.
+Naquele dia eu escrevi que o trabalho do veterinário é quase mais com humanos do que com animais."
+Camadas: tempo (abre a moldura) e caráter (o ponto de partida). ~45 s.
+""")
+
+# ---- 7. O par 17/11 → 19/11
+s = novo("Três já não podiam ser salvos; três ainda podiam.", tam=28)
+caixa(s, L, 1.8, 4.6, 4.9, "2B2B2B")
+texto(s, L + 0.35, 1.8, 3.9, 4.9, [
+    [("17/11", {"tam": 20, "negrito": True, "cor": "BBBBBB"})],
+    [("3", {"tam": 72, "negrito": True, "cor": "FFFFFF"})],
+    [("fetos mumificados no útero da gata, na castração", {"tam": 18, "cor": "FFFFFF"})],
+], alinh=PP_ALIGN.CENTER, ancora=MSO_ANCHOR.MIDDLE, depois=8)
+foto(s, F("dia-19-11", "02-tres-filhotes-comendo.jpg"), L + 4.9, 1.8, CW - 4.9, 4.2, foco=(0.55, 0.5),
+     alt="Três filhotes comendo na baia, 19/11")
+legenda(s, L + 4.9, 6.1, CW - 4.9, [("19/11", {"negrito": True, "cor": TEXTO}),
+                                   (" · 3 filhotes resgatados, vivos, depois de um ataque de cachorro", {})], tam=16)
+fonte(s)
+notas(s, """
+[Frase-afirmação + prova: o contraste escuro e claro. Decisão do Felipe: este slide entra?]
+"Na castração da gata, no dia 17, o útero tinha três fetos que já estavam mortos. Não havia nada a fazer por eles.
+Dois dias depois, chegaram três filhotes. Eram sete; um cachorro matou quatro. Alguém resgatou os três que sobraram.
+A clínica só pode mexer no que ainda está acontecendo na frente dela."
+Camadas: tempo (fecha a moldura) e pessoas (alguém resgatou). ~45 s.
+A foto mostra uma mão sem luva tocando o filhote branco. Recortar a mão corta também um dos três filhotes, então ela ficou. Tenha a resposta pronta ou troque a foto (privacidade/checklist-fotos.md).
+O estado clínico dos filhotes está a confirmar; a veterinária conduz o caso.
+""")
+
+# ---- 8. Fecaloma
+s = novo("O fundador que deixou as consultas continua operando.", tam=28)
+foto(s, F("cirurgia-felino", "07-material-removido-cuba-rim.jpg"), L, 1.75, 6.0, 4.75, foco=(0.45, 0.45),
+     alt="Fecaloma retirado, na cuba-rim, 18/11")
+caixa(s, L + 6.3, 1.75, CW - 6.3, 4.75, NEUTRO)
+texto(s, L + 6.5, 2.0, CW - 6.7, 4.3, [
+    [("Fecaloma", {"tam": 24, "negrito": True, "cor": AZUL})],
+    ["fezes ressecadas que o gato não consegue eliminar"],
+    [("3ª cirurgia", {"tam": 24, "negrito": True, "cor": VERMELHO})],
+    ["do mesmo gato; a causa foi comer pão"],
+], tam=17, depois=8)
+legenda(s, L, 6.55, 6.0, "18/11 · retirado pelo Rangel, com a Cláudia na anestesia", tam=14)
+fonte(s)
+notas(s, """
+[Frase-afirmação + prova: o que saiu de dentro do gato.]
+"No dia 18, o Rangel operou um gato com fecaloma, com a Cláudia na anestesia. Fecaloma é uma massa de fezes ressecadas que o gato não consegue eliminar.
+Esse gato tinha o estômago sensível, comeu pão, e foi a terceira cirurgia dele. A dieta também é tratamento, e ela está nas mãos do tutor."
+Camadas: pessoas (o Rangel e o tutor) e oculto. ~45 s. Terceiro a sair se faltar tempo.
+""")
+
+novos = list(prs.slides)
 apagar(prs, base)
 for sl in orig:
     apagar(prs, sl)
 
-prs.core_properties.title = "Protótipo: 5 slides em frase-afirmação e prova"
+# novos[0] é a base; os 5 primeiros vêm logo depois, e os 3 extras no fim.
+extras = novos[n_antes:]
+cinco = [x for x in novos[:n_antes] if x is not base and x not in orig]
+for sl in (cinco if EXTRA else extras):
+    apagar(prs, sl)
+
+prs.core_properties.title = ("Protótipo: 3 slides extras" if EXTRA else "Protótipo: 5 slides em frase-afirmação e prova")
 prs.core_properties.author = "Felipe de Oliveira Dubas Pires"
 prs.save(SAIDA)
 print("salvo:", SAIDA, "-", len(prs.slides), "slides")

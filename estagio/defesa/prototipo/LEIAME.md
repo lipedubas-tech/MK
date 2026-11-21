@@ -31,6 +31,20 @@ As frases vêm do roteiro, do esboço da Parte 1 e de `casos/esporotricose.md`. 
 
 Fotos: as mesmas que os slides atuais já usam, menos a do Rangel. As da esporotricose continuam recortadas sem a mão sem luva.
 
+## Os 3 slides extras (21/11/2026, às 17h41)
+
+São um arquivo à parte, `prototipo-extra-3-slides.pptx`, com as prévias em `previa-extra-1.png` a `previa-extra-3.png`. Ele é gerado com `python3 estagio/defesa/prototipo/gerar_prototipo.py --extra`. O arquivo dos 5 slides não mudou.
+
+| # | Bloco do roteiro | Título | Prova |
+|---|---|---|---|
+| 6 | 3. O dia 1 | "No primeiro dia, a morte apareceu três vezes." | Três cartões (pastora alemã, golden, cão idoso) e a sua frase do dia 1. **Sem foto de animal morto, de propósito** |
+| 7 | 8 e 12. O par 17/11 → 19/11 | "Três já não podiam ser salvos; três ainda podiam." | Um cartão escuro com o "3" dos fetos, ao lado da foto dos três filhotes. **[decisão sua: entra?]** |
+| 8 | 11. Fecaloma | "O fundador que deixou as consultas continua operando." | A cuba-rim com o fecaloma, sem rostos |
+
+As falas estão nas notas do apresentador e vêm da `roteiro/fala-completa.md`.
+
+**Atenção à foto dos filhotes:** ela mostra uma mão sem luva tocando um filhote. Para tirar a mão, o recorte cortaria também um dos três filhotes, então ela ficou. Tenha a resposta pronta ou troque a foto.
+
 ## O que depende de você
 
 1. **Gostou do formato?** Se sim, a próxima etapa é aplicar nos outros slides. Isso mexe na apresentação, então vai em PR em rascunho para você aprovar.
