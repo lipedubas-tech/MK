@@ -165,6 +165,50 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 
 ---
 
+## 11. Perguntas novas (revisão de 21/11/2026, às 9h41)
+
+> Estas perguntas saíram do que mudou depois do simulado: o roteiro, o Bob como caso próprio, a auditoria, o protótipo, o teste offline e o checklist de privacidade.
+
+**11.1 Quem fez as animações e os modelos 3D? Foi você?** ⚠️
+> Seja direto: "Eu planejei cada animação a partir das minhas fotos e anotações, escrevi o roteiro das cenas e conferi o conteúdo. A construção foi feita com uma ferramenta de inteligência artificial, o Claude." O próprio material registra isso: as páginas e as animações foram feitas no Claude.
+> **Ponto frágil:** é a pergunta mais provável sobre a parte visual. Não diga que programou sozinho. Diga também quem conferiu a técnica **[a confirmar: o Thiago viu a animação da Katita?]**. O diário conta que o ortopedista gostou dela.
+
+**11.2 De onde vêm os modelos 3D?** ⚠️
+> O gato da castração é o modelo "Cat by Sumpitueslag", de photon (that one larry), com licença CC BY 4.0. O crédito aparece na própria animação.
+> **O modelo do cão (nodulectomia e corpo do estágio) não tem origem nem licença registradas no repositório.** Descubra antes da defesa. Se não achar, não mostre o cão sem crédito.
+
+**11.3 Essas fotos da clínica são suas?** ⚠️ hoje, não
+> Nos slides 2, 4 e 5 atuais, as fotos dos ambientes vêm da defesa da Yasmin, mas estão com "Fonte: O autor". **Resolva antes da banca:** tire as suas fotos ou dê o crédito (`privacidade/checklist-fotos.md`). Se a banca perguntar e o crédito estiver lá, a resposta é simples: "estas são da defesa de 2025, com crédito; as dos casos são minhas".
+
+**11.4 Você tinha autorização para fotografar pacientes e cirurgias?** ❓
+> O material registra só a autorização do Rangel para a cirurgia de 18/11 e para contar a história dele. **Pergunte à Cláudia** se a clínica autoriza o uso das outras fotos na defesa. Os tutores não aparecem em nenhuma foto, e nenhum nome de tutor aparece nos slides.
+
+**11.5 Por que o Bob é um caso, se não teve cirurgia nem diagnóstico fechado?** ✅
+> "Porque ele mostrou o problema sem falar. Com os olhos livres, reagia quando a pata encostava na mesa; com os olhos tapados, não reagia. Um teste simples separou neurológico de ortopédico, e o raio-X, que parecia a resposta, não explicava a claudicação. Nem todo caso termina na mesa de cirurgia."
+
+**11.6 Que teste foi esse no Bob?** ⚠️
+> O material descreve o teste, mas não registra o nome. Pela descrição, parece um teste de propriocepção, a noção de onde a pata está sem olhar **[a confirmar com o Thiago, nome e interpretação]**. Se não confirmar, descreva o teste sem dar nome a ele.
+
+**11.7 Onde ficaram os exames de sangue? Você tinha tantos.** ✅
+> "Estão nas atividades realizadas. Escolhi falar dos casos em que eu acompanhei a história do animal; os exames fizeram parte da rotina." Essa é a sua decisão de 19/11. Se insistirem, você tem a série da Mel labradora (o hematócrito de 13,9% em 06/11) como resposta guardada.
+
+**11.8 Por que a *Odisseia* numa defesa técnica?** ✅ *(se Odisseu entrar)*
+> "É uma das cenas mais antigas sobre o vínculo entre um animal e uma pessoa. A defesa é sobre isso, visto de dentro de uma clínica: o paciente é o animal, mas quem o leva até lá é alguém que o ama."
+
+**11.9 Por que contar a história do dono da clínica?** ✅
+> "Porque ela explica a clínica: ele queria grande porte, e a região pediu cães e gatos. E mostra o peso da profissão: ele deixou as consultas, mas continua operando." O uso foi autorizado por ele.
+
+**11.10 Os fetos e os filhotes não são sentimentais demais para uma defesa técnica?** ⚠️ *(se o par entrar)*
+> "São dois fatos clínicos do mesmo período: fetos mumificados num útero retirado e três filhotes feridos que chegaram vivos. Juntos, mostram o que a clínica pode e o que não pode mudar." Mantenha os fatos e deixe a reflexão em uma frase só.
+
+**11.11 E se você for arranhado por um gato com esporotricose?** ❓
+> O material diz que a transmissão é por arranhão, mordida ou contato com a ferida, e que o manejo é com luvas. **O que fazer depois de um arranhão não está no material:** pergunte à Cláudia ou pesquise numa fonte oficial de saúde. Não improvise a resposta.
+
+**11.12 Por que tanta animação?** ✅
+> "São cerca de 3 minutos em 26. Cada animação mostra uma coisa que a foto não mostra: como as placas entram no osso da Katita, ou por que a quimio é repetida a cada 21 dias. O resto é foto real."
+
+---
+
 ## O que mais precisa ser resolvido antes da defesa
 
 | Prioridade | Pendência | Com quem |
@@ -176,6 +220,11 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 | Média | Diagnóstico e tratamento da esporotricose | Cláudia |
 | Média | Peça da nodulectomia e cauterização | Cláudia |
 | Média | Protocolo da eutanásia | Cláudia |
+| **Alta (nova, 21/11)** | Autoria das fotos dos slides 2, 4 e 5 (Yasmin) | Você |
+| **Alta (nova, 21/11)** | Como explicar o uso de IA nas animações (11.1) | Você e a Fran |
+| Média (nova, 21/11) | Origem e licença do modelo 3D do cão | Você (de onde veio o `cao.glb`?) |
+| Média (nova, 21/11) | Autorização da clínica para usar as fotos | Cláudia |
+| Média (nova, 21/11) | Nome do teste do Bob | Thiago |
 | Baixa | Números de parvovirose e cinomose | Cláudia |
 
 A lista completa de perguntas para cada pessoa é o próximo item da fila (9h41).
