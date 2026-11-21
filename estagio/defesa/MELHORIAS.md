@@ -402,3 +402,18 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (13h41):** continuar a revisão de coerência no simulado e no protótipo (as falas das notas contra o diário), ou um ensaio cronometrado em texto, com a fala completa da defesa bloco a bloco.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 13h41
+
+**Feito:**
+- **Revisão de coerência do simulado e das notas do protótipo contra o diário:** nada a corrigir. O nódulo ulcerado e infeccionado está no LEIAME da nodulectomia, a fundação em 2005 está na seção 1, e o resto também tem base.
+- **Novo `roteiro/fala-completa.md`:** a defesa inteira escrita como fala, bloco a bloco, na ordem do roteiro. Foi montada com as falas que já existiam (esboço, esporotricose, notas do protótipo, fechamento) e com o diário. As decisões dele aparecem entre colchetes, e há uma tabela com a coluna "Seu tempo" para o ensaio.
+- **Achado importante:** o texto tem cerca de 1.600 palavras, que dão cerca de 16 min de fala mais 3 min de animações, ou seja, **cerca de 19 min, e não 26**. O documento propõe três jeitos de usar os 7 min de folga: falar com calma, manter os blocos da lista de corte ou aprofundar a Katita.
+
+**Perguntas para o Felipe:**
+- Ensaiar com cronômetro e mandar os tempos reais.
+- Qual é o tempo mínimo e máximo da defesa no IFC? Perguntar à Fran.
+
+**Próxima sugestão (15h41):** sem decisão nova, corrigir os tempos do `roteiro.md` com base no tamanho real da fala, ou escrever as notas do apresentador para os slides que ainda não estão no protótipo (dia 1, castrações, fecaloma, 19/11).
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
