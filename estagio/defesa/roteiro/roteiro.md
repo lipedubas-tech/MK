@@ -192,6 +192,8 @@ Cada célula é **uma frase de fala**, tirada do material. Onde não há base no
 
 ## Lista de corte, se o ensaio passar de 28 min
 
+*(Revisto em 21/11: pela fala escrita, a defesa fica perto de 21 min. Ver "Tempos revistos", mais abaixo.)*
+
 Os blocos saem nesta ordem:
 1. Criocirurgia: −1:00
 2. Nodulectomia: −1:00
@@ -200,6 +202,40 @@ Os blocos saem nesta ordem:
 5. Ponte do corpo do estágio: −0:45
 
 Sem os cinco, a defesa cai de 26 para cerca de 22 min. Os 4 casos centrais e a moldura do tempo ficam intactos.
+
+## Tempos revistos pela fala escrita (21/11/2026, às 15h41)
+
+A `fala-completa.md` foi medida bloco a bloco. A estimativa soma três coisas:
+- as palavras faladas, a **100 por minuto**, que é um ritmo calmo de apresentação;
+- o tempo das animações (Katita 48 s, quimio cerca de 55 s, OSH 36 s, nodulectomia 27 s);
+- **5 s por slide** para a troca e a pausa.
+
+A abertura foi contada com Odisseu.
+
+| Bloco | No roteiro | Estimado pela fala | Diferença |
+|---|---|---|---|
+| 0. Abertura | 0:30 | 0:51 | +0:21 |
+| 1. Parte 1, a clínica | 5:45 | 3:48 | −1:57 |
+| 2. O corpo do estágio | 0:45 | 0:26 | −0:19 |
+| 3. O dia 1 | 0:45 | 0:42 | −0:03 |
+| 4. Katita | 4:00 | 3:12 | −0:48 |
+| 5. Bob | 1:30 | 1:17 | −0:13 |
+| 6. Criocirurgia | 1:00 | 0:47 | −0:13 |
+| 7. Quimioterapia | 2:30 | 2:27 | −0:03 |
+| 8. Castrações | 2:00 | 1:28 | −0:32 |
+| 9. Nodulectomia | 1:00 | 0:57 | −0:03 |
+| 10. Esporotricose | 1:30 | 1:14 | −0:16 |
+| 11. Fecaloma | 1:00 | 0:42 | −0:18 |
+| 12. 19/11 | 1:30 | 1:05 | −0:25 |
+| 13–15. Fechamento | 2:15 | 2:13 | −0:02 |
+| **Total** | **26:00** | **21:09** | **−4:51** |
+
+**O que isso muda:**
+- **A lista de corte acima só vale se o ensaio passar de 28 min.** Pela fala escrita, a defesa fica perto de **21 min** sem cortar nada.
+- **A Parte 1 é onde o texto ficou mais curto** que o previsto (cerca de 2 min a menos). É normal, porque a banca lê as tabelas. Se precisar de tempo, ele vem daqui, explicando um serviço ou um equipamento com um exemplo do estágio.
+- **A Katita pode crescer até 40 s** sem desequilibrar, com a etapa 4 da animação (a redução e o parafuso, 11 s) e o raio-X de antes e depois comentado com mais calma.
+- **Se o mínimo do IFC for 25 min** **[confirmar com a Fran]**, as duas saídas acima, mais um ritmo um pouco mais lento, fecham a conta.
+- **O número que vale é o do seu ensaio.** Esta tabela é só uma estimativa, e a coluna "Seu tempo" da `fala-completa.md` é para isso.
 
 ## O que depende de você
 
