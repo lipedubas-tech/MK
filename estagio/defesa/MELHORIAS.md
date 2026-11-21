@@ -457,3 +457,19 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (19h41):** sem decisão nova, juntar os 8 slides do protótipo e os do esboço numa prévia única da defesa inteira, em PDF, na ordem do roteiro. Assim ele vê a defesa de ponta a ponta antes de decidir.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 19h41
+
+**Feito:** a prévia da defesa inteira num PDF só, na ordem do roteiro, com 26 páginas (uma por slide).
+- **Cada página traz:** o bloco, o tempo previsto, a origem e o que falta.
+- **Etiquetas de origem:** protótipo (9 páginas), apresentação atual (12), peça pronta (4: Odisseu, o corpo do estágio, a quimio) e falta fazer (1: a eutanásia de 19/11).
+- **Para que serve:** o Felipe vê a defesa de ponta a ponta antes de decidir o formato. A diferença entre os slides do protótipo e os atuais fica visível lado a lado.
+- **Arquivos:** `estagio/defesa/previa-defesa/` (`previa-defesa.pdf`, `gerar_previa.py`, `LEIAME.md`). A apresentação não foi alterada.
+
+**Perguntas para o Felipe:**
+- Olhe o PDF e diga: aplico o formato do protótipo na apresentação (PR em rascunho)?
+- Quais slides "apresentação atual" ficam como estão?
+
+**Próxima sugestão (21h41):** sem decisão nova, revisar a página 7 do esboço da Parte 1 (atividades) com as contagens que existem no diário, e checar o `LEIAME.md` da pasta com os arquivos novos (fala completa, extras, prévia).
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
