@@ -1,12 +1,12 @@
 # Defesa: mapa da pasta e decisões pendentes
 
-> **Atualizado em 21/11/2026, às 7h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
+> **Atualizado em 21/11/2026, às 23h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
 
 ## Por onde começar
 
 0. **`previa-defesa/previa-defesa.pdf`:** a defesa inteira, de ponta a ponta, num PDF só.
-1. **`roteiro/roteiro.md`:** a defesa inteira em cerca de 26 min, bloco a bloco, com as camadas dos eixos.
-2. **`prototipo/previa-1.png` a `previa-5.png`:** o visual proposto para os slides (frase-afirmação e prova).
+1. **`roteiro/roteiro.md`** e **`roteiro/fala-completa.md`:** a defesa bloco a bloco, com as camadas dos eixos. A fala escrita dá cerca de 21 min, e não os 26 previstos.
+2. **`prototipo/previa-*.png`** (5 slides, mais 3 extras): o visual proposto para os slides (frase-afirmação e prova).
 3. **`auditoria/auditoria.md`:** o que mudar na apresentação atual e em que ordem.
 4. **`privacidade/checklist-fotos.md`** e **`plano-b/teste-offline.md`:** os checklists da véspera.
 
@@ -28,7 +28,7 @@
 | `fechamento/dificuldades-e-consideracoes.md` | Rascunho das dificuldades, das considerações finais e das ações do campus | 20/11 |
 | `tempo-animacoes.md` | O trecho de cada animação e o orçamento total (de 2 min 40 s a 3 min 40 s) | 20/11, revisto em 21/11 |
 | `auditoria/` | A nota de cada um dos 24 slides atuais e as miniaturas | 20/11 |
-| `prototipo/` | 5 slides novos em `.pptx`, as prévias e o script | 20/11 |
+| `prototipo/` | 5 slides novos em `.pptx`, mais 3 extras (21/11), as prévias e o script | 20/11 e 21/11 |
 | `plano-b/teste-offline.md` | Teste das 7 peças sem internet, o plano B e o checklist do dia | 20/11 |
 | `privacidade/checklist-fotos.md` | As 55 fotos dos slides conferidas, com o checklist da véspera | 20/11 |
 | `roteiro/fala-completa.md` | A defesa inteira escrita como fala, para ensaiar com cronômetro (cerca de 21 min) | 21/11 |
@@ -66,6 +66,12 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 18. **Conferir as telas de ultrassom** nos slides 20 e 24. *(auditoria, privacidade)*
 19. **De onde veio o modelo 3D do cão** (`cao.glb`) e qual é a licença dele? Sem isso, o cão não deve aparecer sem crédito. *(simulado 11.2, corpo do estágio)*
 20. **Como contar à banca que as animações foram feitas com IA**, e se a Fran quer que isso apareça num slide. *(simulado 11.1)*
+21. **O tempo mínimo e o máximo da defesa:** a fala escrita dá cerca de 21 min. *(fala-completa, roteiro)*
+22. **Os filhotes de 19/11:** você cuidou deles? Se sim, a frase "saí cuidando de três" pode voltar. *(fechamento)*
+23. **As eutanásias entram na grade do slide 7?** E quer contar vacinas e consultas por dia? *(atividades-contagem)*
+24. **O slide do par fetos/filhotes entra?** *(prototipo, extras)*
+
+**Todas as perguntas por pessoa, para levar no celular:** `perguntas/perguntas-por-pessoa.md` (atualizado em 21/11).
 
 ## Como pedir uma mudança
 
