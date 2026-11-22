@@ -510,3 +510,18 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (amanhã, 7h41):** as execuções sem decisão nova começam a render pouco. Sugestão ao Felipe: diminuir a frequência no fim de semana, ou responder 2 ou 3 decisões para destravar o protótipo na apresentação. Sem resposta, a execução de amanhã faz uma revisão leve (links e caminhos dos arquivos citados nos documentos).
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 22/11/2026 — 7h41
+
+**Feito:** uma revisão leve, porque não chegou decisão nova do Felipe e a fila está vazia.
+- **Caminhos conferidos:** os 146 caminhos de arquivo e links citados nos documentos de `estagio/defesa/`, tanto os com pasta quanto os links markdown. **Nenhum está quebrado.**
+- **Arquivos alterados:** nenhum, além deste registro.
+
+**Perguntas para o Felipe:** as 3 que destravam o trabalho continuam abertas:
+- aprova o formato do protótipo? (ver `previa-defesa/previa-defesa.pdf`)
+- as fotos da Yasmin;
+- o tempo da defesa.
+
+**Próxima sugestão:** sem decisão nova, as próximas execuções de domingo vão só verificar se chegou alguma resposta e registrar isso, sem gerar material novo de pouco valor. Com a resposta, aplicar o protótipo na apresentação, em PR em rascunho.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
