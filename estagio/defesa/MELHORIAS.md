@@ -473,3 +473,19 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (21h41):** sem decisão nova, revisar a página 7 do esboço da Parte 1 (atividades) com as contagens que existem no diário, e checar o `LEIAME.md` da pasta com os arquivos novos (fala completa, extras, prévia).
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 21h41
+
+**Feito:** a contagem das atividades para o slide 7 da Parte 1, usando só o que o diário registra de 28/10 a 19/11.
+- **Números contados:** 8 procedimentos sob anestesia (2 castrações, 2 nodulectomias, Katita, fecaloma e 2 odontológicos), 5 ultrassons na clínica, 3 raios-X, 5 pacientes com exame de sangue, 1 quimio, 1 criocirurgia, 1 transfusão, 2 gatos com esporotricose e 2 eutanásias.
+- **Não contados:** vacinas e consultas.
+- **Proposta de slide:** uma grade com os números, o cuidado com "acompanhei" e o aviso de que os números são um mínimo e precisam ser atualizados até 07/12.
+- `estagio/defesa/parte1-clinica/atividades-contagem.md`
+
+**Perguntas para o Felipe:**
+- As eutanásias entram na grade?
+- Quer começar a contar vacinas e consultas por dia?
+
+**Próxima sugestão (23h41):** sem decisão nova, conferir o `LEIAME.md` da pasta e as pendências, para que o pacote fique coerente para o fim de semana. Ou um slide 7 de exemplo no protótipo, com a grade de números.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.

@@ -16,6 +16,7 @@
 |---|---|---|
 | `roteiro/roteiro.md` | Roteiro de 25 a 30 min, com uma tabela caso × eixo e a lista de corte | 20/11 |
 | `parte1-clinica/esboco.md` | Os 7 slides da Parte 1 (a clínica), abrindo com o Rangel | 19/11 |
+| `parte1-clinica/atividades-contagem.md` | O que o diário permite contar para o slide de atividades (até 19/11) | 21/11 |
 | `casos/esporotricose.md` | O caso de Saúde Única: slide, fala e perguntas da banca | 19/11 |
 | `eixos/comparativo.md` | Os 5 eixos e a tese comparados. Decidido: todos, em camadas | 19/11 |
 | `pesquisa/relatorio.md` | A pesquisa aprofundada e as propostas P1 a P15 | 19/11 |
