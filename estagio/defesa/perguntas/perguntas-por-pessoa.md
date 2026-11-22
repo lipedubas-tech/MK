@@ -24,6 +24,12 @@
    - Resposta:
 7. **Preciso entregar o plano de atividades de estágio no dia?** (Lembrete do modelo do IFC.)
    - Resposta:
+8. ★ **Qual é o tempo mínimo e o máximo da defesa?** *(acrescentada em 21/11: a fala escrita dá cerca de 21 min)*
+   - Resposta:
+9. **Como apresento o uso de IA nas animações?** Planejei e conferi, e a construção foi feita com uma ferramenta de IA. Digo na fala, ponho num slide ou nos dois? *(acrescentada em 21/11)*
+   - Resposta:
+10. **Posso usar o nome dos pacientes (Katita, Bob, Barão) nos slides?** Nenhum tutor aparece. *(acrescentada em 21/11)*
+   - Resposta:
 
 ---
 
@@ -66,6 +72,16 @@
 16. Densidade urinária, ureia e creatinina do cão da cistocentese (12/11).
 17. Exame de sangue do gato de rua internado (29/10).
 18. Radiografia do Bob e PDFs do raio-X pós-operatório da Katita (sem reflexo de tela).
+
+---
+
+### Acrescentadas em 21/11
+- **A clínica autoriza o uso das fotos de pacientes e de cirurgias na defesa?**
+  - Resposta:
+- **O que fazer se eu for arranhado por um gato com esporotricose?**
+  - Resposta:
+- **O ultrassom e a cistocentese (slides 20 e 24): a tela mostra nome de paciente ou da clínica?**
+  - Resposta:
 
 ---
 
@@ -113,3 +129,6 @@
 - [ ] As duas eutanásias entram na defesa?
 - [ ] Respostas pessoais do simulado: maior dificuldade, o que leva do estágio, se segue na veterinária.
 - [ ] Escrever a carta para a Cláudia até 07/12.
+- [ ] *(21/11)* Eu cuidei dos filhotes de 19/11? Se sim, registrar no diário.
+- [ ] *(21/11)* Ensaiar com a `roteiro/fala-completa.md` e anotar os tempos.
+- [ ] *(21/11)* Começar a contar vacinas e consultas por dia, se quiser números no slide 7.

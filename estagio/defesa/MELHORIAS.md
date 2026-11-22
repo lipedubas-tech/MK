@@ -489,3 +489,24 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão (23h41):** sem decisão nova, conferir o `LEIAME.md` da pasta e as pendências, para que o pacote fique coerente para o fim de semana. Ou um slide 7 de exemplo no protótipo, com a grade de números.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 21/11/2026 — 23h41
+
+**Feito:** a arrumação do pacote do fim de semana, para ninguém se perder.
+- **`LEIAME.md` da pasta:**
+  - data e "por onde começar" atualizados, com a fala completa e o aviso de cerca de 21 min;
+  - o protótipo agora aparece com os 3 slides extras;
+  - a lista de pendências ganhou os itens 21 a 24: o tempo mínimo e o máximo, os filhotes, as eutanásias na grade e o slide do par.
+- **`perguntas/perguntas-por-pessoa.md`:** recebeu as perguntas que surgiram em 21/11.
+  - **Para a Fran:** o tempo mínimo e o máximo (★), o uso de IA e os nomes dos pacientes.
+  - **Para a Cláudia:** a autorização das fotos, o que fazer depois de um arranhão e as telas de ultrassom.
+  - **Para você mesmo:** os filhotes, o ensaio e a contagem diária.
+
+**Perguntas para o Felipe:** estão todas no `LEIAME.md` (24 itens) e no `perguntas-por-pessoa.md`. As que mais destravam o trabalho são três:
+- aprovar ou não o formato do protótipo;
+- as fotos da Yasmin;
+- o tempo da defesa.
+
+**Próxima sugestão (amanhã, 7h41):** as execuções sem decisão nova começam a render pouco. Sugestão ao Felipe: diminuir a frequência no fim de semana, ou responder 2 ou 3 decisões para destravar o protótipo na apresentação. Sem resposta, a execução de amanhã faz uma revisão leve (links e caminhos dos arquivos citados nos documentos).
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
