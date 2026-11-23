@@ -75,6 +75,12 @@
 
 ---
 
+### Acrescentadas em 23/11 (abdominocentese de 17/11)
+- **Qual era a causa do líquido no abdômen da cadela caramelo?** De que tipo ele era (sangue, transudato ou exsudato)? Foi para análise?
+  - Resposta:
+- **Quando ela morreu, e era fêmea mesmo?** (As fotos estão nomeadas como "cadela".)
+  - Resposta:
+
 ### Acrescentadas em 21/11
 - **A clínica autoriza o uso das fotos de pacientes e de cirurgias na defesa?**
   - Resposta:

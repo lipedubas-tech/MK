@@ -12,6 +12,7 @@
 | Criocirurgia | 1 | Melanoma (05/11) |
 | Quimioterapia | 1 sessão | Doxorrubicina (12/11) |
 | Transfusão de sangue | 1 | Mel Serafina (06/11) |
+| Abdominocentese | 1 | Cadela caramelo, cerca de 3 L drenados (17/11). O animal morreu depois *(acrescentado em 23/11)* |
 | **Ultrassons na clínica** | **5** | Golden (28/10); salsicha (28/10); gato paraplégico (06/11); gato com cistite (10/11); cistocentese guiada (12/11). Mais 1 que não aconteceu: o dobermann (11/11) |
 | Raios-X acompanhados | 3 pacientes | Katita (pós-operatório, 29/10); Bob (imagem de 31/08, vista em 30/10); Luna (29/10) |
 | Exames de sangue com valores registrados | 5 pacientes | Primeiro paciente e pastora alemã (28/10); Barão (04/11); Mel Serafina (05/11); Mel labradora (série) |

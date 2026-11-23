@@ -525,3 +525,23 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão:** sem decisão nova, as próximas execuções de domingo vão só verificar se chegou alguma resposta e registrar isso, sem gerar material novo de pouco valor. Com a resposta, aplicar o protótipo na apresentação, em PR em rascunho.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 23/11/2026 — 11h41
+
+**Material novo do Felipe** (PRs lipedubas-tech/mk#68 e #69): a abdominocentese terapêutica de 17/11 em uma cadela caramelo, com 4 fotos e cerca de 3 L de líquido avermelhado drenados. O animal morreu depois. A causa, o sexo e a data do óbito estão a confirmar.
+
+**Feito:** o caso novo entrou no trabalho derivado.
+- **Linha do tempo:** o dia 17/11 ganhou o caso e as 4 fotos, com as legendas da seção 10.9. A página e o PDF foram regenerados e agora somam 123 fotos.
+- **Contagem das atividades:** a abdominocentese entrou como mais uma linha.
+- **Perguntas para a Cláudia:** a causa e o tipo do líquido, se foi para análise, a data do óbito e o sexo.
+- **Roteiro:** o caso entrou em "o que ficou de fora". Pode ir para o bloco 8, se o Felipe quiser, depois de confirmar a causa.
+- **Privacidade:** as 4 fotos foram conferidas. Não aparece nenhum rosto: só a pessoa de blusa verde, com o rosto fora do quadro, e um antebraço sem luva.
+- **Arquivos:** `linha-do-tempo/` (`gerar.py`, `index.html`, `linha-do-tempo.pdf`), `parte1-clinica/atividades-contagem.md`, `perguntas/perguntas-por-pessoa.md`, `roteiro/roteiro.md`, `privacidade/checklist-fotos.md`.
+
+**Perguntas para o Felipe:**
+- A abdominocentese entra na defesa? (Por exemplo, junto do par 17/11 → 19/11.)
+- Continuam abertas: o formato do protótipo, as fotos da Yasmin e o tempo da defesa.
+
+**Próxima sugestão:** se ele quiser, pôr a abdominocentese no corpo do estágio (um ponto na barriga do cão).
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
