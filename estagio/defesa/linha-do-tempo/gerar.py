@@ -135,10 +135,11 @@ DIAS = [
         ],
     },
     {
-        "data": "17/11", "titulo": "Castração da gata e nodulectomia",
+        "data": "17/11", "titulo": "Castração da gata, nodulectomia e abdominocentese",
         "casos": [
             "Castração (OSH) de uma gata colorpoint, com fetos mumificados no útero.",
             "Nodulectomia em cadela preta idosa, na axila.",
+            "Abdominocentese terapêutica em cadela caramelo: cerca de 3 L de líquido avermelhado drenados (causa a confirmar). O animal morreu depois (registrado em 23/11).",
         ],
         "reflexoes": [],
         "ideias": [
@@ -187,6 +188,7 @@ PASTA_DIA = {
     "fotos/quimio": "12/11",
     "fotos/dia-18-11": "18/11",
     "fotos/cirurgia-felino": "18/11",
+    "fotos/abdominocentese-cao": "17/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",

@@ -39,6 +39,13 @@
 | 9 | `katita-3d/img/rx_pre_dp.jpg` | Slide 8 e protótipo, slide 2 | Raio-X de antes, já recortado | **Conferido:** nenhum nome aparece. ✅ |
 | 10 | `fotos/quimio/03-quimio-contencao.jpg` | Slide 12 da apresentação | A veterinária de respirador e protetor facial; o recorte do slide mostra só o cão e as mãos | O recorte atual já está bom. **Não use a foto inteira** |
 
+## Fotos novas (23/11): abdominocentese de 17/11
+
+Elas não estão em nenhum slide; apareceram até agora só na linha do tempo. Se entrarem na defesa:
+- **Fotos 01, 02 e 03:** mostram uma pessoa de blusa verde e outras mãos; o rosto fica fora do quadro. Confira o recorte antes de usar.
+- **Foto 02:** mostra o antebraço de alguém, sem luva, segurando a pata. O risco é baixo.
+- **Foto 04:** mostra o líquido no pote, no chão. Não tem pessoa nenhuma.
+
 ## Imagens fortes (avisar a banca)
 
 São cirurgias abertas e sangue. Não é um problema de privacidade, mas vale uma frase antes, como "a próxima imagem mostra a cirurgia aberta":
