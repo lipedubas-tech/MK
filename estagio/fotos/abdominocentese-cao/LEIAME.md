@@ -16,3 +16,8 @@ mandado para análise.
 | 02-drenagem-cadela-na-mesa.jpg | Drenagem em andamento: o equipo sai do abdômen e há seringas na mesa |
 | 03-aspiracao-com-seringa.jpg | Aspiração do líquido com seringa, pelo acesso na lateral do abdômen |
 | 04-liquido-drenado-no-pote.jpg | Líquido drenado no pote, no chão, com a ponta do equipo dentro |
+
+## Desfecho
+
+O animal morreu depois do procedimento (informado em 23/11/2026). Data do
+óbito e sexo a confirmar.
