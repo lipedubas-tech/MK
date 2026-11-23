@@ -178,6 +178,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](animacao-osh/) e [`animacao-nodulectomia/`](animacao-nodulectomia/)).
 - **Castração (OSH) de uma gata colorpoint:** incisão na linha média, retirada de ovários e útero e sutura em três planos. Havia fetos mumificados no útero.
 - **Nodulectomia em uma cadela preta idosa:** nódulo na região da axila, retirado inteiro junto com a pele por cima; sutura contínua de náilon.
+- **Abdominocentese terapêutica em uma cadela caramelo:** abdômen muito distendido; drenados cerca de 3 L de líquido avermelhado. Causa a confirmar com a Cláudia ou o Thiago. Fotos e nota em [`fotos/abdominocentese-cao/`](fotos/abdominocentese-cao/).
 
 ### 18/11/2026 (quarta)
 - **Conversa com o Rangel**, dono da clínica: formou-se em 2005, queria grande porte, mas só havia demanda para pet, então abriu o consultório para pequenos animais. Há 2 anos se afastou do atendimento por causa do estresse de trabalhar com a vida animal; hoje só aparece para fazer cirurgias (ver seção 1 e seção 2).
@@ -510,6 +511,7 @@ As referências estão ilegíveis na foto.
 - [ ] Sua carga horária diária e total
 - [ ] O resultado do teste FeLV/FIV da foto 24 e de qual paciente era
 - [ ] O protocolo da eutanásia: anestesia profunda e depois cloreto de potássio
+- [ ] Abdominocentese da cadela caramelo (17/11): causa do líquido, tipo de líquido, se foi para análise e nome da paciente
 - [ ] O procedimento sob anestesia das fotos 10 a 14: o diário fala em procedimento odontológico e as legendas falam em lesão na face e material removido
 
 **Organizar:**
@@ -705,6 +707,15 @@ O nome da tutora já vem coberto nos laudos.
 | 7 | ![](fotos/cirurgia-felino/07-material-removido-cuba-rim.jpg) | Material removido na cuba-rim: duas massas grandes e dois fragmentos menores, escuros e secos (fecaloma) |
 | 8 | ![](fotos/cirurgia-felino/08-sutura-e-mesa-de-instrumentais.jpg) | Fase de sutura. Na mesa: tesouras, pinças hemostáticas, porta-agulhas, cabo de bisturi, afastador de Farabeuf, gaze e fio 3-0 |
 | 9 | ![](fotos/cirurgia-felino/09-pos-operatorio-intubado.jpg) | Pós-operatório imediato: gato tigrado e branco ainda intubado, com acesso venoso enfaixado na pata e a ferida suturada no abdômen, aquecido com toalhas |
+
+### 10.9 Abdominocentese em cadela — 17/11/2026 ([`fotos/abdominocentese-cao/`](fotos/abdominocentese-cao/))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/abdominocentese-cao/01-abdomen-distendido.jpg) | Cadela caramelo deitada de lado, com o abdômen bem distendido por líquido |
+| 2 | ![](fotos/abdominocentese-cao/02-drenagem-cadela-na-mesa.jpg) | Drenagem em andamento: o equipo sai do abdômen e há seringas na mesa |
+| 3 | ![](fotos/abdominocentese-cao/03-aspiracao-com-seringa.jpg) | Aspiração do líquido com seringa, pelo acesso na lateral do abdômen |
+| 4 | ![](fotos/abdominocentese-cao/04-liquido-drenado-no-pote.jpg) | Líquido avermelhado drenado no pote (cerca de 3 L no total) |
 
 ---
 
