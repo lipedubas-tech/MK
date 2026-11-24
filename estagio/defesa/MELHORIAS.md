@@ -568,3 +568,16 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - Continuam abertas: o protótipo, as fotos da Yasmin, o tempo da defesa e a abdominocentese.
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 24/11/2026 — fotos enviadas pelo Felipe no chat
+
+**Feito:** o Felipe mandou 4 fotos tiradas em 24/11, entre 13h43 e 13h46.
+- **As fotos:** São Francisco ao lado de um crucifixo (2 fotos, em melhor resolução que a `geral/31`), o consultório (sala de atendimento) e o internamento atualizado.
+- **Onde foram guardadas:** em `estagio/fotos/dia-24-11/`, com LEIAME. O diário ganhou a seção 10.11, só com acréscimo.
+- **Linha do tempo:** o dia 24/11 agora tem as 4 fotos.
+- **Pendências:** a das fotos da Yasmin foi atualizada. O consultório e o internamento já têm fotos dele. Faltam a fachada, a recepção e o pet shop, a sala de espera, o banho e tosa e a sala de cirurgia.
+- **Privacidade:** nenhuma pessoa aparece nas fotos novas.
+
+**Perguntas para o Felipe:**
+- O ambiente da foto 03 é o consultório?
+- Pode tirar fotos dos ambientes que faltam?

@@ -39,6 +39,11 @@
 | 9 | `katita-3d/img/rx_pre_dp.jpg` | Slide 8 e protótipo, slide 2 | Raio-X de antes, já recortado | **Conferido:** nenhum nome aparece. ✅ |
 | 10 | `fotos/quimio/03-quimio-contencao.jpg` | Slide 12 da apresentação | A veterinária de respirador e protetor facial; o recorte do slide mostra só o cão e as mãos | O recorte atual já está bom. **Não use a foto inteira** |
 
+## Fotos novas (24/11): ambientes e São Francisco
+
+- **`fotos/dia-24-11/`:** consultório, internamento e São Francisco. Nenhuma pessoa aparece. No consultório há uma câmera de segurança no canto; no internamento, dois cães sem identificação. ✅ Podem ser usadas.
+- **Elas resolvem 2 das 6 fotos da Yasmin no slide 5** (consultório e internamento).
+
 ## Fotos novas (24/11): radiografias da Dara (23/11)
 
 - **As 3 imagens mostram o nome da paciente e "Amelia" (possível tutora) no canto.** Se forem usadas, **corte ou cubra esse canto**. Na linha do tempo elas já aparecem marcadas como "rosto ou nome visível".

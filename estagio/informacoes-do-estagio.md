@@ -739,6 +739,16 @@ Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (
 
 **Diagnóstico do Thiago** (informado pelo Felipe em 24/11): extrusão discal mineralizada entre L3 e L4, com diminuição do espaço intervertebral; esclerose e espondilose ventrolateral anquilosante entre L2 e L4.
 
+
+### 10.11 Ambientes e São Francisco — 24/11/2026 ([`fotos/dia-24-11/`](fotos/dia-24-11/))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia-24-11/01-sao-francisco-e-crucifixo.jpg) | São Francisco de Assis ao lado de um crucifixo, numa prateleira da clínica (versão em melhor resolução da foto geral 31) |
+| 2 | ![](fotos/dia-24-11/02-sao-francisco-e-crucifixo-perto.jpg) | A mesma cena, mais de perto |
+| 3 | ![](fotos/dia-24-11/03-consultorio.jpg) | Sala de atendimento: mesa de exame, microscópio, analisador, geladeira de vacinas e armário de medicamentos (nome do ambiente a confirmar) |
+| 4 | ![](fotos/dia-24-11/04-internamento.jpg) | Internamento atualizado: baias com porta de vidro em dois andares, com cães internados |
+
 ---
 
 ## 11. A defesa da Yasmin (referência)
