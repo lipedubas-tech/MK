@@ -75,6 +75,12 @@
 
 ---
 
+### Acrescentadas em 24/11 (Dara e a terceira nodulectomia)
+- **Dara (raio-X de 23/11):** espécie, raça, idade, que sinais ela tinha (dor, andar, paralisia?) e qual foi a conduta? "Amelia" é a tutora?
+  - Resposta:
+- **A nodulectomia de 24/11:** em que animal foi, onde era o nódulo, que técnica e que sutura foram usadas? A peça foi para análise?
+  - Resposta:
+
 ### Acrescentadas em 23/11 (abdominocentese de 17/11)
 - **Qual era a causa do líquido no abdômen da cadela caramelo?** De que tipo ele era (sangue, transudato ou exsudato)? Foi para análise?
   - Resposta:

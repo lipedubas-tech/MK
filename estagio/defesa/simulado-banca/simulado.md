@@ -173,6 +173,8 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 > Seja direto: "Eu planejei cada animação a partir das minhas fotos e anotações, escrevi o roteiro das cenas e conferi o conteúdo. A construção foi feita com uma ferramenta de inteligência artificial, o Claude." O próprio material registra isso: as páginas e as animações foram feitas no Claude.
 > **Ponto frágil:** é a pergunta mais provável sobre a parte visual. Não diga que programou sozinho. Diga também quem conferiu a técnica **[a confirmar: o Thiago viu a animação da Katita?]**. O diário conta que o ortopedista gostou dela.
 
+> **Um exemplo do próprio material (acrescentado em 24/11):** antes do laudo da Dara, o Claude arriscou um palpite pelas fotos dos raios-X. Acertou a doença do disco, mas errou o local e não viu a espondilose. Se a banca perguntar se a IA "sabe veterinária", esta é uma resposta honesta: "ela ajudou a organizar e a mostrar, mas quem lê a imagem é o veterinário. Até no meu material o palpite dela errou o lugar".
+
 **11.2 De onde vêm os modelos 3D?** ⚠️
 > O gato da castração é o modelo "Cat by Sumpitueslag", de photon (that one larry), com licença CC BY 4.0. O crédito aparece na própria animação.
 > **O modelo do cão (nodulectomia e corpo do estágio) não tem origem nem licença registradas no repositório.** Descubra antes da defesa. Se não achar, não mostre o cão sem crédito.

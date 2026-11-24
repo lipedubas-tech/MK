@@ -177,6 +177,26 @@ DIAS = [
             "Odisseu e o cão Argos (Odisseia, canto XVII) como imagem para os slides.",
         ],
     },
+    {
+        "data": "23/11", "titulo": "As radiografias da Dara",
+        "casos": [
+            "Radiografias de abdômen e coluna da Dara, em 3 projeções. Laudo do Thiago: extrusão discal mineralizada entre L3 e L4 e espondilose entre L2 e L4. Sinais clínicos e conduta a confirmar.",
+        ],
+        "reflexoes": [],
+        "ideias": [
+            "O palpite do Claude acertou a doença do disco, mas errou o local e não viu a espondilose: o laudo depende da imagem original e de quem sabe ler.",
+        ],
+    },
+    {
+        "data": "24/11", "titulo": "A terceira nodulectomia",
+        "casos": [
+            "Mais uma nodulectomia, a terceira do estágio (animal, local e técnica a registrar).",
+        ],
+        "reflexoes": [],
+        "ideias": [
+            "Correção na animação da nodulectomia de 17/11: a antissepsia foi da lesão para fora.",
+        ],
+    },
 ]
 
 # Pastas de fotos -> dia da linha do tempo
@@ -189,6 +209,7 @@ PASTA_DIA = {
     "fotos/dia-18-11": "18/11",
     "fotos/cirurgia-felino": "18/11",
     "fotos/abdominocentese-cao": "17/11",
+    "fotos/dia-23-11": "23/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",
@@ -201,6 +222,7 @@ SENSIVEIS = {
     "fotos/dia02/09", "fotos/dia02/10", "fotos/dia02/11", "fotos/dia02/12",
     "fotos/legendas/01", "fotos/quimio/03", "fotos/quimio/04", "fotos/dia07/01",
     "fotos/cirurgia-felino/01", "fotos/cirurgia-felino/08",
+    "fotos/dia-23-11/01", "fotos/dia-23-11/02", "fotos/dia-23-11/03",
 }
 
 

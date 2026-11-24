@@ -545,3 +545,26 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Próxima sugestão:** se ele quiser, pôr a abdominocentese no corpo do estágio (um ponto na barriga do cão).
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 24/11/2026 — 11h41
+
+**Material novo do Felipe** (PRs lipedubas-tech/mk#71 a #75):
+- **Radiografias da Dara (23/11):** 3 projeções e o laudo do Thiago (extrusão discal mineralizada entre L3 e L4, espondilose entre L2 e L4).
+- **Terceira nodulectomia (24/11):** os detalhes ainda serão registrados.
+- **Correção na animação da nodulectomia:** a antissepsia foi da lesão para fora.
+
+**Feito:** o material novo entrou no trabalho derivado.
+- **Linha do tempo:** ganhou dois momentos novos, 23/11 e 24/11, com as 3 radiografias marcadas como "nome visível". A página e o PDF foram regenerados: agora são 17 momentos e 126 fotos.
+- **Contagem:** as nodulectomias passaram a 3, e os raios-X a 4 pacientes.
+- **Perguntas:** para o Thiago e a Cláudia, os sinais e a conduta da Dara, e quem é "Amelia". Para a clínica, os detalhes da nodulectomia de 24/11.
+- **Privacidade:** as 3 radiografias trazem o nome da paciente e o "Amelia" no canto; é preciso cortar esse canto antes de usar.
+- **Roteiro:** a Dara entrou em "o que ficou de fora". Ela poderia fazer par com o Bob (casos neurológicos vistos pelo Thiago), a decidir.
+- **Simulado:** a pergunta 11.1, sobre o uso de IA, ganhou o exemplo real do palpite do Claude que errou o local da lesão.
+- **Arquivos:** `linha-do-tempo/` (`gerar.py`, `index.html`, `linha-do-tempo.pdf`), `parte1-clinica/atividades-contagem.md`, `perguntas/perguntas-por-pessoa.md`, `privacidade/checklist-fotos.md`, `roteiro/roteiro.md`, `simulado-banca/simulado.md`.
+
+**Perguntas para o Felipe:**
+- A Dara entra na defesa? Por exemplo, junto do Bob.
+- Os detalhes da nodulectomia de 24/11.
+- Continuam abertas: o protótipo, as fotos da Yasmin, o tempo da defesa e a abdominocentese.
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
