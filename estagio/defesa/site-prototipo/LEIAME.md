@@ -15,8 +15,15 @@ Prévias: `previa-computador.png` e `previa-celular.png`.
 3. **Serviços:** tirados da lista de serviços e do que o Felipe viu no estágio.
 4. **A clínica por dentro:** a foto do consultório, que é do Felipe (24/11). Há espaços marcados para as fotos que faltam: fachada, recepção e pet shop, banho e tosa.
 5. **Nossa história:** os começos com o Rangel, em 2005.
-6. **Onde estamos:** endereço, telefone, botão para o mapa e para pedir direções.
-7. **No celular:** um botão fixo de WhatsApp no rodapé da tela.
+6. **Agendar horário** *(ideia do Felipe, 24/11)*: a pessoa escolhe o serviço, o dia e o horário, e preenche o nome do animal, a espécie, o nome e o telefone, com uma autorização de uso dos dados. No fim aparece o resumo do pedido e a opção de **enviar também pelo WhatsApp**, com tudo já preenchido. O botão "Agendar pelo site" aparece na abertura e em "O que o seu animal precisa hoje?", com o serviço já escolhido. O WhatsApp continua em todo lugar.
+   - **No protótipo, o pedido não vai para ninguém.** Os horários são de exemplo: fecha aos domingos e, aos sábados, atende só de manhã.
+   - **Para funcionar de verdade**, os pedidos precisam chegar a algum lugar. Opções, da mais simples para a mais completa:
+     - **(a) Agenda do Google com página de agendamento**, que é grátis. A clínica marca os horários livres no Google Agenda, e o site mostra os horários dela. O pedido cai direto na agenda, com aviso por e-mail.
+     - **(b) Formulário que envia por e-mail** (por exemplo, Formspree ou Google Forms). É simples, mas a clínica confirma tudo à mão.
+     - **(c) Sistema de agenda veterinária** (há vários, pagos). Vale se a clínica já usa algum, porque ele costuma ter um link de agendamento pronto.
+   - **Antes de publicar:** quais serviços aceitam agendamento on-line, os horários reais, quem confirma os pedidos e o texto de privacidade (LGPD).
+7. **Onde estamos:** endereço, telefone, botão para o mapa e para pedir direções.
+8. **No celular:** um botão fixo de WhatsApp no rodapé da tela.
 
 ## Tudo o que está em amarelo precisa ser confirmado pela clínica
 
