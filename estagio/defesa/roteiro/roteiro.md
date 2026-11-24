@@ -187,6 +187,7 @@ Cada célula é **uma frase de fala**, tirada do material. Onde não há base no
 | Gato paraplégico, cistite, cistocentese | Pouco material e sem desfecho | Slide 6 (o ultrassom) |
 | Cadela com mordida no pescoço | Caso curto | Pergunta da banca: "por que não suturar mordida" |
 | Luna, Atena, polidactilia, dobermann | Sem desfecho registrado | Linha do tempo |
+| Radiografias da Dara (23/11) *(acrescentadas em 24/11)* | O laudo do Thiago já existe (doença do disco entre L2 e L4), mas faltam os sinais clínicos e a conduta | Linha do tempo. **[decisão sua]** Poderia fazer par com o Bob, que é neurológico e foi visto pelo mesmo Thiago, se os sinais forem parecidos. Mas só depois de confirmar com ele |
 | Abdominocentese da cadela caramelo (17/11) *(acrescentada em 23/11)* | A causa ainda está a confirmar; o animal morreu depois | Linha do tempo. **[decisão sua]** Pode entrar no bloco 8, junto do par 17/11 → 19/11, como mais uma perda do mesmo dia, mas só depois de confirmar a causa |
 | Cinomose e parvovirose (o efeito da vacina) | Não houve caso, só conversa | Uma frase no slide 7, com números se a Cláudia passar |
 | Linha do tempo interativa | Não cabe no tempo | Plano B e respostas à banca |
