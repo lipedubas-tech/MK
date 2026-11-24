@@ -1,5 +1,14 @@
 # Protótipo de site da Mundo Animal (ideia do Felipe, 24/11/2026)
 
+> **Versão 2 (24/11): mais animais, menos texto.** O Felipe orientou que o público é principalmente feminino e que o Instagram da clínica mostra animais fofos (gatos, filhotes) e a fachada, não a infraestrutura. Por isso:
+> - a abertura agora tem filhotes e a frase "Quem é da família é cuidado aqui.";
+> - a seção "A clínica por dentro" virou **"Nossos pacientes"**, um mosaico de gatos com espaço para a foto da fachada;
+> - os serviços viraram etiquetas curtas;
+> - a história ficou com uma frase;
+> - a letra está maior, e entrou um botão **Ligar** (para o público mais velho).
+>
+> As fotos de animais são **de exemplo**, tiradas no estágio. No site de verdade, use fotos do Instagram da clínica ou de pacientes com autorização do tutor.
+
 A clínica ainda não tem site. Este é um protótipo de **uma página**, feito para o Felipe mostrar à clínica e na defesa. **Não está publicado em lugar nenhum.**
 
 ## Como abrir
