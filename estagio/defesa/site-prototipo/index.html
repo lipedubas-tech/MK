@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mundo Animal Clínica Veterinária · Sombrio (SC)</title>
+<meta name="description" content="Clínica veterinária e pet shop no centro de Sombrio (SC), desde 2005. Consultas, vacinas, cirurgias, exames, raio-X, ultrassom, banho e tosa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1d6b45;        /* o verde do letreiro da fachada */
+  --verde-escuro:#12442c;
+  --menta:#e4f1e8;
+  --papel:#ffffff;
+  --fundo:#f6faf7;
+  --texto:#1c2a23;
+  --suave:#4f6158;
+  --linha:#d3e3d8;
+  --amarelo:#f5c518;      /* destaque só para "chamar no WhatsApp" */
+  --amarelo-texto:#2a2100;
+  --titulo:"Bricolage Grotesque", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --corpo:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --verde:#5fbf8a; --verde-escuro:#a9e0c0; --menta:#173226; --papel:#14201a;
+    --fundo:#0f1914; --texto:#e8f1ec; --suave:#a8bab0; --linha:#2a4135;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--fundo);color:var(--texto);font:17px/1.6 var(--corpo)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--verde)}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--titulo);line-height:1.1;margin:0;color:var(--verde-escuro)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:.6em 0}
+
+/* faixa de protótipo */
+.prototipo{background:var(--verde-escuro);color:#fff;font-size:.86rem;padding:8px 0}
+@media (prefers-color-scheme: dark){.prototipo{background:#0a120e;color:var(--suave)}}
+.prototipo .wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+
+/* topo */
+header.topo{background:var(--papel);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:5}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.marca{font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--verde);text-decoration:none;line-height:1}
+.marca small{display:block;font:500 .78rem var(--corpo);color:var(--suave);margin-top:3px}
+nav.menu{display:flex;gap:22px}
+nav.menu a{color:var(--texto);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.menu a:hover{color:var(--verde)}
+@media (max-width:760px){nav.menu{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;border-radius:999px;padding:13px 22px;font-size:1rem;border:2px solid transparent;cursor:pointer}
+.btn-zap{background:var(--amarelo);color:var(--amarelo-texto)}
+.btn-zap:hover{filter:brightness(.95)}
+.btn-linha{border-color:var(--verde);color:var(--verde);background:transparent}
+.btn-linha:hover{background:var(--menta)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* abertura */
+.abertura{background:var(--papel);padding:56px 0 64px}
+.abertura .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:860px){.abertura .wrap{grid-template-columns:1fr;gap:32px}.abertura{padding-top:36px}}
+.abertura h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+.abertura .sub{font-size:1.2rem;color:var(--suave);max-width:34ch;margin:18px 0 28px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.foto-abertura{position:relative}
+.foto-abertura img{border-radius:28px 28px 28px 120px;aspect-ratio:4/5;max-height:600px;object-fit:cover;width:100%}
+.selo{position:absolute;left:-18px;bottom:28px;background:var(--verde);color:#fff;border-radius:18px;padding:14px 18px;font-family:var(--titulo);line-height:1.05;box-shadow:0 10px 30px rgba(18,68,44,.25)}
+.selo b{display:block;font-size:2rem;font-weight:800}
+.selo span{font-size:.9rem;font-weight:500}
+@media (max-width:860px){.selo{left:12px}}
+
+/* o que seu animal precisa hoje */
+.precisa{padding:72px 0}
+.precisa .intro{max-width:58ch}
+.opcoes{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 22px;padding:0;list-style:none}
+.opcoes button{font:600 1rem var(--corpo);border:2px solid var(--linha);background:var(--papel);color:var(--texto);border-radius:999px;padding:11px 18px;cursor:pointer}
+.opcoes button:hover{border-color:var(--verde)}
+.opcoes button[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+@media (prefers-color-scheme: dark){.opcoes button[aria-pressed="true"]{color:#0f1914}}
+.resposta{background:var(--papel);border:2px solid var(--verde);border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;max-width:860px}
+.resposta h3{font-size:1.5rem}
+.resposta p{color:var(--suave);margin:.4em 0 0}
+@media (max-width:640px){.resposta{grid-template-columns:1fr}}
+
+/* serviços */
+.servicos{background:var(--papel);padding:72px 0;border-block:1px solid var(--linha)}
+.lista-servicos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:32px;padding:0;list-style:none}
+.lista-servicos li{padding:18px 0;border-top:1px solid var(--linha)}
+.lista-servicos h3{color:var(--verde)}
+.lista-servicos p{margin:.25em 0 0;color:var(--suave)}
+@media (max-width:700px){.lista-servicos{grid-template-columns:1fr}}
+
+/* por dentro */
+.dentro{padding:72px 0}
+.galeria{margin-top:32px}
+.galeria figure{margin:0}
+.galeria img{border-radius:20px;width:100%;aspect-ratio:16/9;object-fit:cover}
+figcaption{font-size:.92rem;color:var(--suave);margin-top:8px}
+.falta{border:2px dashed var(--linha);border-radius:20px;display:grid;place-items:center;text-align:center;color:var(--suave);padding:24px;min-height:180px;font-size:.95rem}
+.faltam{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+@media (max-width:760px){.faltam{grid-template-columns:1fr}.falta{min-height:110px}}
+
+/* história */
+.historia{background:var(--verde-escuro);color:#e9f4ee;padding:80px 0}
+@media (prefers-color-scheme: dark){.historia{background:#0b1510}}
+.historia .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
+.historia h2{color:#fff;margin-bottom:20px}
+.historia blockquote{margin:0;font-family:var(--titulo);font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:700;line-height:1.25;color:#fff}
+.historia p{color:#cfe5d8;max-width:60ch}
+.historia img{border-radius:20px;max-width:320px;width:100%;aspect-ratio:3/4;max-height:440px;object-fit:cover;object-position:30% 40%}
+@media (max-width:860px){.historia .wrap{grid-template-columns:1fr}}
+
+/* onde */
+.onde{padding:72px 0}
+.onde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media (max-width:760px){.onde .wrap{grid-template-columns:1fr}}
+.dados{margin:24px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 20px}
+.dados dt{font-weight:700;color:var(--verde-escuro)}
+.dados dd{margin:0}
+.pendente{background:#fff3c4;color:#5c4400;border-radius:6px;padding:1px 6px;font-size:.88em}
+@media (prefers-color-scheme: dark){.pendente{background:#3d3210;color:#f3dc8b}}
+.mapa{background:var(--menta);border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.mapa p{font-family:var(--titulo);font-size:1.6rem;font-weight:700;color:var(--verde-escuro);line-height:1.2;margin:0}
+
+footer{background:var(--papel);border-top:1px solid var(--linha);padding:28px 0 90px;font-size:.9rem;color:var(--suave)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* botão fixo no celular */
+.zap-fixo{display:none}
+@media (max-width:760px){.zap-fixo{display:flex;position:fixed;left:16px;right:16px;bottom:16px;justify-content:center;z-index:9;box-shadow:0 8px 24px rgba(0,0,0,.2)}}
+</style>
+</head>
+<body>
+
+<div class="prototipo" role="note">
+  <div class="wrap">
+    <span>Protótipo feito pelo estagiário Felipe (IFC Santa Rosa do Sul), novembro de 2026. Ainda não está no ar.</span>
+    <span>Itens em <span class="pendente">amarelo</span> precisam ser confirmados pela clínica.</span>
+  </div>
+</div>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio">Mundo Animal<small>Clínica Veterinária · Sombrio (SC)</small></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#por-dentro">A clínica</a>
+      <a href="#historia">História</a>
+      <a href="#onde">Onde estamos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="abertura">
+  <div class="wrap">
+    <div>
+      <h1>Cuidado para cães e gatos no centro de Sombrio, desde 2005.</h1>
+      <p class="sub">Consulta, vacina, cirurgia, exames e banho e tosa no mesmo lugar, com pet shop na entrada.</p>
+      <div class="acoes">
+        <a class="btn btn-zap zap" href="#" data-msg="Olá! Vim pelo site e gostaria de falar com a clínica.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Chamar no WhatsApp
+        </a>
+        <a class="btn btn-linha" href="#onde">Ver endereço</a>
+      </div>
+    </div>
+    <div class="foto-abertura">
+      <img src="img/internamento.jpg" alt="Internamento da clínica, com baias de vidro em dois andares e cães internados" width="900" height="1200">
+      <div class="selo" aria-hidden="true"><b>2005</b><span>em Sombrio</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="precisa" aria-labelledby="t-precisa">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="t-precisa">O que o seu animal precisa hoje?</h2>
+      <p>Escolha abaixo e já mande a mensagem certa para a clínica. Assim a gente responde mais rápido.</p>
+    </div>
+    <ul class="opcoes" id="opcoes"></ul>
+    <div class="resposta" aria-live="polite">
+      <div>
+        <h3 id="r-titulo"></h3>
+        <p id="r-texto"></p>
+      </div>
+      <a class="btn btn-zap zap" id="r-botao" href="#">Mandar esta mensagem</a>
+    </div>
+    <p><span class="pendente">As orientações acima precisam ser revisadas pela veterinária antes de publicar.</span></p>
+  </div>
+</section>
+
+<section class="servicos" id="servicos" aria-labelledby="t-servicos">
+  <div class="wrap">
+    <h2 id="t-servicos">Serviços</h2>
+    <ul class="lista-servicos">
+      <li><h3>Consultas</h3><p>Exame clínico de cães e gatos, com encaminhamento ao ortopedista quando precisa.</p></li>
+      <li><h3>Vacinas</h3><p>Polivalentes (V8/V10) e antirrábica para cães, com a geladeira de vacinas controlada.</p></li>
+      <li><h3>Cirurgias</h3><p>Castração, retirada de nódulos, ortopedia e odontologia, com anestesia inalatória e monitoração.</p></li>
+      <li><h3>Exames</h3><p>Hemograma, bioquímico e teste rápido de FIV/FeLV feitos na própria clínica.</p></li>
+      <li><h3>Raio-X e ultrassom</h3><p>Exames de imagem feitos na própria clínica.</p></li>
+      <li><h3>Internamento</h3><p>Baias individuais para quem precisa de soro, medicação ou observação.</p></li>
+      <li><h3>Banho e tosa</h3><p>Banho, condicionamento e secagem no próprio prédio.</p></li>
+      <li><h3>Pet shop</h3><p>Ração, antiparasitários e acessórios na entrada da clínica.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="dentro" id="por-dentro" aria-labelledby="t-dentro">
+  <div class="wrap">
+    <h2 id="t-dentro">A clínica por dentro</h2>
+    <div class="galeria">
+      <figure class="grande">
+        <img src="img/consultorio.jpg" alt="Consultório com mesa de exame, microscópio, analisador e armário de medicamentos" width="1600" height="1200" loading="lazy">
+        <figcaption>O consultório, com laboratório ao lado da mesa de exame.</figcaption>
+      </figure>
+    </div>
+    <div class="faltam">
+      <div class="falta">Foto da fachada<br>(a tirar)</div>
+      <div class="falta">Foto da recepção e do pet shop<br>(a tirar)</div>
+      <div class="falta">Foto do banho e tosa<br>(a tirar)</div>
+    </div>
+  </div>
+</section>
+
+<section class="historia" id="historia" aria-labelledby="t-historia">
+  <div class="wrap">
+    <img src="img/sao-francisco.jpg" alt="Imagem de São Francisco de Assis numa prateleira da clínica" width="675" height="900" loading="lazy">
+    <div>
+      <h2 id="t-historia">Nossa história</h2>
+      <blockquote>“Começou como um consultório pequeno, porque era disso que a região precisava.”</blockquote>
+      <p>A Mundo Animal foi aberta em 2005 pelo médico veterinário Rangel Ramos Cardoso. Ele se formou pensando em bois e cavalos, mas em Sombrio quem batia à porta eram cães e gatos. O consultório cresceu, ganhou laboratório, raio-X, ultrassom, internamento e banho e tosa, e virou referência na região.</p>
+      <p><span class="pendente">Texto a aprovar pelo Rangel antes de publicar.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="onde" id="onde" aria-labelledby="t-onde">
+  <div class="wrap">
+    <div>
+      <h2 id="t-onde">Onde estamos</h2>
+      <dl class="dados">
+        <dt>Endereço</dt><dd>Avenida Antonio Sant'Helena, 165, Centro, Sombrio (SC), 88960-000</dd>
+        <dt>Telefone</dt><dd><a href="tel:+5548999247977">(48) 99924-7977</a> <span class="pendente">confirmar</span></dd>
+        <dt>Horário</dt><dd><span class="pendente">a confirmar com a clínica</span></dd>
+        <dt>Urgências</dt><dd><span class="pendente">a clínica atende fora do horário? a confirmar</span></dd>
+      </dl>
+    </div>
+    <div class="mapa">
+      <p>No centro de Sombrio, na Avenida Antonio Sant'Helena.</p>
+      <div class="acoes">
+        <a class="btn btn-linha" href="https://www.google.com/maps/search/?api=1&query=Avenida+Antonio+Sant%27Helena+165+Sombrio+SC" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="btn btn-zap zap" href="#" data-msg="Olá! Como faço para chegar na clínica?">Pedir direções</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Mundo Animal Clínica Veterinária · Comercial Agropecuária Rangel LTDA</span>
+    <span>Responsável técnico: <span class="pendente">nome e CRMV a confirmar</span></span>
+  </div>
+</footer>
+
+<a class="btn btn-zap zap zap-fixo" href="#" data-msg="Olá! Vim pelo site e gostaria de falar com a clínica.">Chamar no WhatsApp</a>
+
+<script>
+// Número da clínica (dado de 2025, a confirmar). Só dígitos, com 55 e DDD.
+const ZAP = "5548999247977";
+const link = msg => "https://wa.me/" + ZAP + "?text=" + encodeURIComponent(msg);
+
+document.querySelectorAll("a.zap[data-msg]").forEach(a => {
+  a.href = link(a.dataset.msg); a.target = "_blank"; a.rel = "noopener";
+});
+
+// "O que o seu animal precisa hoje?"
+const OPCOES = [
+  { nome: "Vacina", titulo: "Vacinas e reforços",
+    texto: "Traga a carteirinha de vacinação, se tiver. A clínica diz qual vacina está na hora.",
+    msg: "Olá! Quero vacinar meu animal. Ele é um (cão/gato) de (idade). Qual dia posso levar?" },
+  { nome: "Consulta", titulo: "Consulta",
+    texto: "Conte o que está acontecendo: há quanto tempo, se come, se bebe água, se mudou o comportamento.",
+    msg: "Olá! Gostaria de marcar uma consulta. Meu animal é um (cão/gato) e está com: " },
+  { nome: "Está mancando", titulo: "Dor, manqueira ou queda",
+    texto: "Evite dar remédio por conta própria. Se possível, mande um vídeo dele andando.",
+    msg: "Olá! Meu animal está mancando / com dor. Desde quando: . Posso mandar um vídeo?" },
+  { nome: "Exames", titulo: "Exames e raio-X",
+    texto: "Alguns exames de sangue pedem jejum. Pergunte antes de levar.",
+    msg: "Olá! Preciso fazer exames no meu animal. Precisa de jejum?" },
+  { nome: "Castração", titulo: "Castração",
+    texto: "A castração é marcada com antecedência e pede jejum. A clínica orienta o preparo.",
+    msg: "Olá! Quero castrar meu animal. Ele é um (cão/gato), (macho/fêmea), de (idade). Como funciona?" },
+  { nome: "Banho e tosa", titulo: "Banho e tosa",
+    texto: "Diga o porte e o tipo de pelo para a clínica reservar o horário certo.",
+    msg: "Olá! Quero agendar banho e tosa. Porte: . Pelo curto ou longo: ." },
+  { nome: "Pet shop", titulo: "Pet shop",
+    texto: "Pergunte se o produto está em estoque antes de sair de casa.",
+    msg: "Olá! Vocês têm em estoque: " },
+];
+const ul = document.getElementById("opcoes");
+const rt = document.getElementById("r-titulo"), rx = document.getElementById("r-texto"), rb = document.getElementById("r-botao");
+function escolher(i){
+  ul.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-pressed", String(i === j)));
+  const o = OPCOES[i];
+  rt.textContent = o.titulo; rx.textContent = o.texto;
+  rb.href = link(o.msg); rb.target = "_blank"; rb.rel = "noopener";
+}
+OPCOES.forEach((o, i) => {
+  const li = document.createElement("li"), b = document.createElement("button");
+  b.type = "button"; b.textContent = o.nome; b.addEventListener("click", () => escolher(i));
+  li.appendChild(b); ul.appendChild(li);
+});
+escolher(0);
+</script>
+</body>
+</html>
