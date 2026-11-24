@@ -27,7 +27,7 @@ ou cobrir antes de usar.
 - Diminuição do espaço intervertebral.
 - Esclerose e espondilose ventrolateral anquilosante entre L2 e L4.
 
-A confirmar: quem laudou, os sinais clínicos que levaram ao exame e a conduta.
+Laudo do Thiago. A confirmar: os sinais clínicos que levaram ao exame e a conduta.
 
 Antes de saber o diagnóstico, o Claude arriscou um palpite pelas fotos: acertou a
 doença do disco, mas errou o local (apontou a junção toracolombar, T13–L1/L1–L2) e
