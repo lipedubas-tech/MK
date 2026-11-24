@@ -188,9 +188,10 @@ DIAS = [
         ],
     },
     {
-        "data": "24/11", "titulo": "A terceira nodulectomia",
+        "data": "24/11", "titulo": "A terceira nodulectomia e as fotos dos ambientes",
         "casos": [
             "Mais uma nodulectomia, a terceira do estágio (animal, local e técnica a registrar).",
+            "Fotos novas: o consultório, o internamento atualizado e São Francisco em melhor resolução.",
         ],
         "reflexoes": [],
         "ideias": [
@@ -210,6 +211,7 @@ PASTA_DIA = {
     "fotos/cirurgia-felino": "18/11",
     "fotos/abdominocentese-cao": "17/11",
     "fotos/dia-23-11": "23/11",
+    "fotos/dia-24-11": "24/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",

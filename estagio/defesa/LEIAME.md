@@ -40,7 +40,7 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 ## Tudo o que espera você (numa lista só)
 
 ### Urgente
-1. **As fotos da Yasmin nos slides 2, 4 e 5** dizem "Fonte: O autor". Você tira fotos suas até 07/12, ou eu dou o crédito agora? *(auditoria, privacidade)*
+1. **As fotos da Yasmin nos slides 2, 4 e 5** dizem "Fonte: O autor". Você tira fotos suas até 07/12, ou eu dou o crédito agora? *(auditoria, privacidade)* **Atualização de 24/11:** o consultório e o internamento já têm fotos suas (`fotos/dia-24-11/`). Ainda faltam a fachada, a recepção e o pet shop, a sala de espera, o banho e tosa e a sala de cirurgia.
 2. **A data da defesa e a banca.** *(perguntas: a Fran)*
 3. **A carga horária e o setor do estágio**, e quantos dias diz o termo (o slide 3 diz "41 dias", que são dias corridos). *(Parte 1, auditoria)*
 
