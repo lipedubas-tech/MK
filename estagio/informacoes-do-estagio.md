@@ -197,6 +197,9 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
   3. O Felipe acredita que, por a Cláudia não querer fazer a eutanásia, a mão dela pesou mais; mas a cachorra já estava desacordada.
   - Percepções e crenças do Felipe, não fatos clínicos. Protocolo, motivo do tutor e condição da cachorra a confirmar com a Cláudia. Sem fotos.
 
+### 23/11/2026 (segunda)
+- **Radiografias de abdômen e coluna da Dara** (3 projeções: duas laterais e uma ventrodorsal, 14h38–14h40). Espécie, motivo do exame e achados a confirmar com a Cláudia ou o Thiago. Imagens e nota em [`fotos/dia-23-11/`](fotos/dia-23-11/) (seção 10.10).
+
 ### 24/11/2026 (terça)
 - **Mais uma nodulectomia.** É a terceira do estágio (as outras foram em 05/11, na pálpebra, e em 17/11, na axila). Animal, local do nódulo, técnica e sutura a registrar.
 
@@ -356,6 +359,7 @@ A Katita tem pelagem caramelo e orelhas escuras.
 | 11/11 | Dobermann sem ultrassom (recusa de sedação); banho e tosa; castração |
 | 12/11 | Cistocentese ecoguiada |
 | 18/11 | Cirurgia de fecaloma em gato (comeu pão; terceira cirurgia dele), feita pelo Rangel (seção 4.9) |
+| 23/11 | Radiografias de abdômen e coluna da Dara (motivo a confirmar) |
 | 24/11 | Nodulectomia (terceira do estágio; detalhes a registrar) |
 
 ### 4.9 Gato: fecaloma (18/11/2026)
@@ -721,6 +725,16 @@ O nome da tutora já vem coberto nos laudos.
 | 2 | ![](fotos/abdominocentese-cao/02-drenagem-cadela-na-mesa.jpg) | Drenagem em andamento: o equipo sai do abdômen e há seringas na mesa |
 | 3 | ![](fotos/abdominocentese-cao/03-aspiracao-com-seringa.jpg) | Aspiração do líquido com seringa, pelo acesso na lateral do abdômen |
 | 4 | ![](fotos/abdominocentese-cao/04-liquido-drenado-no-pote.jpg) | Líquido avermelhado drenado no pote (cerca de 3 L no total) |
+
+### 10.10 Radiografias da Dara — 23/11/2026 ([`fotos/dia-23-11/`](fotos/dia-23-11/))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia-23-11/01-rx-lateral-esquerda-14h38.jpg) | Lateral de abdômen e coluna, cabeça à esquerda (14h38) |
+| 2 | ![](fotos/dia-23-11/02-rx-ventrodorsal-14h39.jpg) | Ventrodorsal, do tórax caudal aos joelhos (14h39; o aparelho rotulou "LAT") |
+| 3 | ![](fotos/dia-23-11/03-rx-lateral-direita-14h40.jpg) | Lateral, cabeça à direita (14h40; o aparelho rotulou "V-D") |
+
+Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (cortar antes de usar na defesa).
 
 ---
 
