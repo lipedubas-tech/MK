@@ -20,3 +20,16 @@ A confirmar com a Cláudia ou o Thiago:
 
 Para a defesa: as imagens trazem o nome da paciente e o "Amelia" no canto; cortar
 ou cobrir antes de usar.
+
+## Diagnóstico (informado pelo Felipe em 24/11/2026)
+
+- Extrusão discal mineralizada entre L3 e L4.
+- Diminuição do espaço intervertebral.
+- Esclerose e espondilose ventrolateral anquilosante entre L2 e L4.
+
+A confirmar: quem laudou, os sinais clínicos que levaram ao exame e a conduta.
+
+Antes de saber o diagnóstico, o Claude arriscou um palpite pelas fotos: acertou a
+doença do disco, mas errou o local (apontou a junção toracolombar, T13–L1/L1–L2) e
+não viu a espondilose. Bom exemplo, para a defesa, de que o laudo depende da imagem
+original e de quem sabe ler.
