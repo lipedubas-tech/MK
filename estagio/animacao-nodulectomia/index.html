@@ -324,11 +324,10 @@ matCao.onBeforeCompile = function (sh) {
       "float toco = smoothstep(.62, .9, h12(floor(vec2(su, sv) * 1700.)));",
       "pele = mix(pele, lin(vec3(.16, .14, .16)), toco * .7);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, pele, rasp);",
-      /* antissepsia em espiral, do centro para fora */
-      /* lesão infeccionada: a antissepsia vai da periferia para a lesão; rs = raio onde a gaze está agora */
-      "float th = atan(sv / .078, su / .108); float voltas = 5.; float rs = .98 - uAntis * .68;",
+      /* antissepsia em espiral, da lesão para fora (correção do Felipe, 24/11); rs = raio onde a gaze está agora */
+      "float th = atan(sv / .078, su / .108); float voltas = 5.; float rs = .30 + uAntis * .68;",
       "float atras = 1. - fract((uAntis * voltas * 6.2832 - th) / 6.2832);",
-      "float pint = smoothstep(rs + atras * (.68 / voltas) - .01, rs + atras * (.68 / voltas) + .02, re) * (1. - smoothstep(.98, 1.01, re)) * step(.001, uAntis) * rasp;",
+      "float pint = (1. - smoothstep(rs - atras * (.68 / voltas) - .02, rs - atras * (.68 / voltas) + .01, re)) * smoothstep(.27, .3, re) * (1. - smoothstep(.98, 1.01, re)) * step(.001, uAntis) * rasp;",
       "pint = max(pint, step(.999, uAntis) * (1. - smoothstep(.98, 1.01, re)) * smoothstep(.27, .3, re) * rasp);",
       "diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * lin(vec3(.95, .66, .42)), pint * .85);",
       /* ferida suturada (pós-operatório): linha da incisão com pontos contínuos de náilon */
@@ -468,10 +467,10 @@ function poseSala(t) {
     var yy = SIT.u.clone().multiplyScalar(.82).addScaledVector(SIT.n, .57).normalize(), zz = new V3().crossVectors(SIT.v, yy).normalize();
     maquina.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, yy, zz));
   }
-  /* gaze com antisséptico em espiral, da periferia para a lesão (área contaminada por último) */
+  /* gaze com antisséptico em espiral, da lesão para fora */
   var an = UC.uAntis.value; bola.visible = an > 0 && an < 1;
   if (bola.visible) {
-    var th = an * 5 * TAU, rr = .98 - an * .68, ps = SIT.c.clone().addScaledVector(SIT.u, Math.cos(th) * rr * .108).addScaledVector(SIT.v, Math.sin(th) * rr * .078).addScaledVector(SIT.n, .007);
+    var th = an * 5 * TAU, rr = .30 + an * .68, ps = SIT.c.clone().addScaledVector(SIT.u, Math.cos(th) * rr * .108).addScaledVector(SIT.v, Math.sin(th) * rr * .078).addScaledVector(SIT.n, .007);
     bola.position.copy(ps);
     var yb = SIT.n.clone().multiplyScalar(.75).addScaledVector(SIT.u, -.66).normalize(), zb = new V3().crossVectors(SIT.v, yb).normalize();
     bola.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(SIT.v, yb, zb));
@@ -1440,7 +1439,7 @@ rotulo(S[6] + 6.4, S[6] + 9, "bandeja", "Peça cirúrgica", "nódulo ulcerado e 
 var _sitioMundo = new V3();
 function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
 rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e infeccionado, perto da axila", sitioMundo, 9, -9);
-rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
+rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da lesão para fora", sitioMundo, 10, -8);
 /* pós-operatório (fotos 4 a 6): ferida suturada, acesso venoso e extubação */
 var _ferida = new V3(), _acesso = new V3(), _boca = new V3();
 rotulo(POS + .9, POS + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);

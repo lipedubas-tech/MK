@@ -16,7 +16,13 @@ No celular: deslize para o lado para trocar de cena, toque para pausar.
 No dia da cirurgia o nódulo **já tinha rompido a pele** (aberto para fora, ulcerado) e **estava infeccionado**;
 não estava mais sob a pele, como dizia o briefing. A animação mostra isso: metade da massa fica para fora da
 pele, com crostas e exsudato discretos e a pele inflamada em volta; a base entra no subcutâneo. Como a lesão
-é contaminada, a antissepsia vai da periferia para a lesão, e a dissecção passa pelo tecido sadio, sem cortar o nódulo.
+é contaminada, a dissecção passa pelo tecido sadio, sem cortar o nódulo.
+
+## Correção do caso (24/11): antissepsia da lesão para fora
+O Felipe corrigiu que, nesta nodulectomia, a antissepsia foi feita **da lesão para fora** (em espiral, do
+centro para a periferia). A versão de 18/11 mostrava o contrário (da periferia para a lesão). Mudaram a espiral
+pintada na pele e o caminho da gaze (`src/app.js`) e o rótulo da cena 2, que agora diz "antissepsia da lesão
+para fora" (`src/fim.js`).
 
 ## Correção do caso (19/11): sem formol
 O Felipe corrigiu que **a peça não foi para o formol**: essa parte não aconteceu. Saíram a cena 10 do briefing

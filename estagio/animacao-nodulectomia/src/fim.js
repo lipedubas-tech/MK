@@ -21,7 +21,7 @@
 var _sitioMundo = new V3();
 function sitioMundo() { return cao.localToWorld(_sitioMundo.copy(SIT.c).addScaledVector(SIT.n, (NOD.sobe + NOD.rn * .8) * massaCao.scale.x)); }
 rotulo(S[0] + 3.6, S[0] + 7.8, "sala", "Nódulo ulcerado", "aberto para fora e infeccionado, perto da axila", sitioMundo, 9, -9);
-rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da periferia para a lesão", sitioMundo, 10, -8);
+rotulo(S[1] + 7.2, S[1] + 9.9, "sala", "Lesão infeccionada", "antissepsia da lesão para fora", sitioMundo, 10, -8);
 /* pós-operatório (fotos 4 a 6): ferida suturada, acesso venoso e extubação */
 var _ferida = new V3(), _acesso = new V3(), _boca = new V3();
 rotulo(POS + .9, POS + 4.8, "sala", "Ferida suturada", "pele em sutura contínua com náilon", function () { return cao.localToWorld(_ferida.copy(SIT.c).addScaledVector(SIT.n, .004)); }, 11, -9);
