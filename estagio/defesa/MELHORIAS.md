@@ -16,6 +16,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
   - **4. Mortalidade e tempo:** abertura e fechamento com o par 17/11 → 19/11 e o dia 1.
   - **5. Mídia visual como argumento:** o método de toda a defesa (raio-X real, 3D, linha do tempo, corpo do estágio), com plano B offline.
 - **24/11 — Ambientes que não mudaram.** A sala de espera, o banho e tosa e a sala de cirurgia continuam iguais às fotos da defesa da Yasmin (2025). Essas fotos ainda representam a clínica de hoje, mas não são do Felipe: se forem usadas, levam o crédito "Fotos: Yasmim de Borba da Rolt, 2025", nunca "Fonte: O autor". O consultório e o internamento já têm fotos dele (`fotos/dia-24-11/`).
+- **24/11 — A Yasmin dispensou o crédito.** O Felipe falou com ela, e ela disse que não precisa de crédito pelas fotos dos ambientes. Mesmo assim, essas fotos não são do Felipe, então não devem levar "Fonte: O autor". Proposta: uma legenda neutra, por exemplo "Fotos cedidas", ou nenhuma linha de fonte nesses slides. **[o Felipe escolhe]**
 - **19/11 — Material dos PRs abertos conta.** O Felipe pediu que o material dos pull requests em rascunho (#1, #6, #8, #9, #10, #12) seja considerado nas pesquisas e decisões. Cada execução deve olhar também os PRs abertos do repositório, não só o branch principal. Juntar esses PRs depende da aprovação dele.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
@@ -593,3 +594,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - **Em aberto:** a fachada (slide 2) e a recepção/pet shop (slides 4 e 5).
 
 **Pergunta para o Felipe:** a fachada e a recepção também continuam iguais? Ou vai tirar fotos novas?
+
+### 24/11/2026 — informação do Felipe no chat (2)
+
+**Registrado nas Decisões:** a Yasmin dispensou o crédito pelas fotos dos ambientes. Ficou anotado também o cuidado que vem com isso: não chamar essas fotos de "O autor". Use "Fotos cedidas" ou nenhuma linha de fonte. O `LEIAME.md` foi atualizado.

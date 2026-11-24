@@ -40,7 +40,7 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 ## Tudo o que espera você (numa lista só)
 
 ### Urgente
-1. **As fotos da Yasmin nos slides 2, 4 e 5** dizem "Fonte: O autor". Você tira fotos suas até 07/12, ou eu dou o crédito agora? *(auditoria, privacidade)* **Atualização de 24/11:** o consultório e o internamento já têm fotos suas (`fotos/dia-24-11/`). A sala de espera, o banho e tosa e a sala de cirurgia continuam iguais às fotos da Yasmin (Felipe, 24/11), então podem ficar, com crédito. **Ainda sem resposta: a fachada e a recepção/pet shop.** Tirar fotos novas ou usar as da Yasmin com crédito?
+1. **As fotos da Yasmin nos slides 2, 4 e 5** dizem "Fonte: O autor". Você tira fotos suas até 07/12, ou eu dou o crédito agora? *(auditoria, privacidade)* **Atualização de 24/11:** o consultório e o internamento já têm fotos suas (`fotos/dia-24-11/`). A sala de espera, o banho e tosa e a sala de cirurgia continuam iguais às fotos da Yasmin (Felipe, 24/11), então podem ficar. A Yasmin dispensou o crédito (24/11). Mesmo assim, não use "Fonte: O autor" nessas fotos: use "Fotos cedidas" ou deixe sem linha de fonte. **Ainda sem resposta: a fachada e a recepção/pet shop.** Tirar fotos novas ou usar as da Yasmin com crédito?
 2. **A data da defesa e a banca.** *(perguntas: a Fran)*
 3. **A carga horária e o setor do estágio**, e quantos dias diz o termo (o slide 3 diz "41 dias", que são dias corridos). *(Parte 1, auditoria)*
 
