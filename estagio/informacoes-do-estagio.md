@@ -199,6 +199,7 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 
 ### 23/11/2026 (segunda)
 - **Radiografias de abdômen e coluna da Dara** (3 projeções: duas laterais e uma ventrodorsal, 14h38–14h40). Espécie, motivo do exame e achados a confirmar com a Cláudia ou o Thiago. Imagens e nota em [`fotos/dia-23-11/`](fotos/dia-23-11/) (seção 10.10).
+  - **Diagnóstico radiográfico** (informado pelo Felipe em 24/11): extrusão discal mineralizada entre L3 e L4; diminuição do espaço intervertebral; esclerose e espondilose ventrolateral anquilosante entre L2 e L4. Quem laudou, sinais clínicos e conduta a confirmar com a Cláudia ou o Thiago.
 
 ### 24/11/2026 (terça)
 - **Mais uma nodulectomia.** É a terceira do estágio (as outras foram em 05/11, na pálpebra, e em 17/11, na axila). Animal, local do nódulo, técnica e sutura a registrar.
@@ -735,6 +736,8 @@ O nome da tutora já vem coberto nos laudos.
 | 3 | ![](fotos/dia-23-11/03-rx-lateral-direita-14h40.jpg) | Lateral, cabeça à direita (14h40; o aparelho rotulou "V-D") |
 
 Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (cortar antes de usar na defesa).
+
+**Diagnóstico** (informado pelo Felipe em 24/11): extrusão discal mineralizada entre L3 e L4, com diminuição do espaço intervertebral; esclerose e espondilose ventrolateral anquilosante entre L2 e L4.
 
 ---
 
