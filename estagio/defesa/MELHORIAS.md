@@ -15,6 +15,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
   - **1. Tornar visível o oculto** e **2. Dar voz ao paciente:** duas perguntas aplicadas dentro de cada caso: "o que estava escondido e como apareceu?" e "como o animal mostrou o que sentia?".
   - **4. Mortalidade e tempo:** abertura e fechamento com o par 17/11 → 19/11 e o dia 1.
   - **5. Mídia visual como argumento:** o método de toda a defesa (raio-X real, 3D, linha do tempo, corpo do estágio), com plano B offline.
+- **24/11 — Ambientes que não mudaram.** A sala de espera, o banho e tosa e a sala de cirurgia continuam iguais às fotos da defesa da Yasmin (2025). Essas fotos ainda representam a clínica de hoje, mas não são do Felipe: se forem usadas, levam o crédito "Fotos: Yasmim de Borba da Rolt, 2025", nunca "Fonte: O autor". O consultório e o internamento já têm fotos dele (`fotos/dia-24-11/`).
 - **19/11 — Material dos PRs abertos conta.** O Felipe pediu que o material dos pull requests em rascunho (#1, #6, #8, #9, #10, #12) seja considerado nas pesquisas e decisões. Cada execução deve olhar também os PRs abertos do repositório, não só o branch principal. Juntar esses PRs depende da aprovação dele.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
@@ -581,3 +582,14 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 **Perguntas para o Felipe:**
 - O ambiente da foto 03 é o consultório?
 - Pode tirar fotos dos ambientes que faltam?
+
+### 24/11/2026 — informação do Felipe no chat
+
+**Registrado:** a sala de espera, o banho e tosa e a sala de cirurgia não mudaram desde as fotos da Yasmin (2025). A informação entrou nas "Decisões do Felipe" no topo deste arquivo. Essas 3 fotos podem ficar no slide 5, mas **com o crédito à Yasmin**. O `LEIAME.md` também foi atualizado.
+
+**Situação do slide 5 e dos slides 2 e 4:**
+- **Fotos dele:** consultório e internamento.
+- **Fotos da Yasmin, com crédito:** sala de espera, banho e tosa e sala de cirurgia.
+- **Em aberto:** a fachada (slide 2) e a recepção/pet shop (slides 4 e 5).
+
+**Pergunta para o Felipe:** a fachada e a recepção também continuam iguais? Ou vai tirar fotos novas?
