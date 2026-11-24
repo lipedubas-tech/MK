@@ -197,6 +197,9 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
   3. O Felipe acredita que, por a Cláudia não querer fazer a eutanásia, a mão dela pesou mais; mas a cachorra já estava desacordada.
   - Percepções e crenças do Felipe, não fatos clínicos. Protocolo, motivo do tutor e condição da cachorra a confirmar com a Cláudia. Sem fotos.
 
+### 24/11/2026 (terça)
+- **Mais uma nodulectomia.** É a terceira do estágio (as outras foram em 05/11, na pálpebra, e em 17/11, na axila). Animal, local do nódulo, técnica e sutura a registrar.
+
 ---
 
 ## 4. Casos em detalhe
@@ -353,6 +356,7 @@ A Katita tem pelagem caramelo e orelhas escuras.
 | 11/11 | Dobermann sem ultrassom (recusa de sedação); banho e tosa; castração |
 | 12/11 | Cistocentese ecoguiada |
 | 18/11 | Cirurgia de fecaloma em gato (comeu pão; terceira cirurgia dele), feita pelo Rangel (seção 4.9) |
+| 24/11 | Nodulectomia (terceira do estágio; detalhes a registrar) |
 
 ### 4.9 Gato: fecaloma (18/11/2026)
 **Diagnóstico confirmado: fecaloma**, uma massa de fezes ressecadas e endurecidas que o gato não consegue eliminar. A massa foi retirada do **intestino**. O resto vem das fotos; o histórico e a evolução ainda faltam.
