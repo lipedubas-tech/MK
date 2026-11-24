@@ -51,6 +51,8 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] ~~Linha do tempo dos exames da Mel (labradora)~~ — descartado pela decisão de 19/11 (exames não viram caso).
 - [x] **FEITO 20/11 23h41 (`estagio/defesa/privacidade/checklist-fotos.md`)** — Checklist de privacidade das fotos que entram nos slides.
 
+- [ ] **Site da Mundo Animal (ideia do Felipe, 24/11).** O protótipo de uma página já existe (`estagio/defesa/site-prototipo/`) e está em PR em rascunho. Próximos passos: as confirmações da clínica (telefone, horário, responsável técnico, o texto da história), as fotos que faltam e um slide de 30 s nas considerações finais.
+
 ## Registro das execuções
 
 ### 19/11/2026 — execução de teste (manhã)
@@ -598,3 +600,24 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 ### 24/11/2026 — informação do Felipe no chat (2)
 
 **Registrado nas Decisões:** a Yasmin dispensou o crédito pelas fotos dos ambientes. Ficou anotado também o cuidado que vem com isso: não chamar essas fotos de "O autor". Use "Fotos cedidas" ou nenhuma linha de fonte. O `LEIAME.md` foi atualizado.
+
+### 24/11/2026 — ideia do Felipe no chat: o site da clínica
+
+**Pedido:** a Mundo Animal não tem site. O Felipe quer fazer um protótipo, como contribuição que ele mesmo pode fazer, para mostrar na defesa e apresentar à Tamiris.
+
+**Feito:** o protótipo de uma página em `estagio/defesa/site-prototipo/`:
+- `index.html`, com as fotos dele em `img/`;
+- prévias do computador e do celular;
+- um `LEIAME.md`.
+
+Partes da página:
+- a abertura, com o WhatsApp;
+- **"O que o seu animal precisa hoje?"**, que monta a mensagem de WhatsApp certa para cada necessidade;
+- serviços;
+- a clínica por dentro;
+- a história;
+- o endereço.
+
+Só foram usados dados que já estão no repositório. O que falta confirmar aparece em amarelo: telefone, horário, urgências, responsável técnico e CRMV, o texto da história (com o Rangel) e as orientações (com a veterinária). Por ser código, foi em **PR em rascunho**.
+
+**Observação:** o item do IFC é "ações que **o campus** poderia alterar". O site é uma contribuição para **a empresa**, e cabe melhor nas considerações finais.

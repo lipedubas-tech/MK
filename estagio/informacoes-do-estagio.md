@@ -94,6 +94,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **A eutanásia que a Cláudia não queria fazer (19/11):** uma cachorra que ainda andava; o tutor que não quis acompanhar; a veia difícil; o dó que ele se esforçou para largar, lembrando a professora Franciele, a orientadora Fran Oliveira ("se alguém tiver com dó, o bicho não morre"); a impressão de que a mão da Cláudia pesou por ela não querer fazer. É a segunda eutanásia do estágio (a primeira foi no dia 01).
 - **Resgate dos filhotes (19/11):** os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que sobreviveram ao ataque de um cachorro. Reflexão sobre o sofrimento desnecessário no mundo: só se mexe no que ainda está acontecendo na nossa frente.
 - **O sentido da defesa:** você quer usar a defesa para explorar a sua curiosidade e as suas "megalomanias", pensando primeiro no sentido dela ("metafísica da defesa") antes de fechar o formato. O que mais agradou ao ortopedista e a quem assistiu foi a animação da cirurgia da Katita.
+- **"Ela é minha vida!" (registrado em 24/11):** é uma frase que você escuta muito dos tutores, falando da cachorra ou da gata. Pela sua impressão, quem diz é quase sempre uma mulher idosa ("acho que 100%"). É uma percepção sua, não uma contagem.
 
 **Eixos temáticos propostos (nenhum decidido):**
 1. Tornar visível o oculto
