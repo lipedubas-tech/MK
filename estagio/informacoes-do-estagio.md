@@ -205,6 +205,10 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 ### 24/11/2026 (terça)
 - **Mais uma nodulectomia.** É a terceira do estágio (as outras foram em 05/11, na pálpebra, e em 17/11, na axila). Animal, local do nódulo, técnica e sutura a registrar.
 
+### 25/11/2026 (quarta)
+- **Duas profilaxias** (limpeza dentária). Pacientes, anestesia, extrações e equipamento a registrar.
+- Foto do internamento às 11h20, com dois cães deitados (um deles no soro). A confirmar se são os pacientes das profilaxias. Foto e nota em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
+
 ---
 
 ## 4. Casos em detalhe
@@ -749,6 +753,12 @@ Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (
 | 2 | ![](fotos/dia-24-11/02-sao-francisco-e-crucifixo-perto.jpg) | A mesma cena, mais de perto |
 | 3 | ![](fotos/dia-24-11/03-consultorio.jpg) | Sala de atendimento: mesa de exame, microscópio, analisador, geladeira de vacinas e armário de medicamentos (nome do ambiente a confirmar) |
 | 4 | ![](fotos/dia-24-11/04-internamento.jpg) | Internamento atualizado: baias com porta de vidro em dois andares, com cães internados |
+
+### 10.12 Internamento — 25/11/2026 ([`fotos/dia-25-11/`](fotos/dia-25-11/))
+
+| # | Foto | Legenda |
+|---|---|---|
+| 1 | ![](fotos/dia-25-11/01-internamento-dois-caes.jpg) | Dois cães nas baias do internamento, às 11h20 do dia das duas profilaxias: um preto e castanho e um caramelo idoso, coberto e no soro (a confirmar se são os pacientes das profilaxias) |
 
 ---
 
