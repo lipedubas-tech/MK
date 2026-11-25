@@ -84,6 +84,10 @@
   - Resposta:
 - **O que causa a miíase num coelho de casa?** Feridas, sujeira na região genital, calor, mosca? É o que eu digo se a banca perguntar.
   - Resposta:
+- **Qual era o spray prata que passaram na agropecuária, antes de ele chegar?** Ele é seguro para coelho? Por que não funcionou?
+  - Resposta:
+- **Por que passar álcool antes de tirar as larvas?** E com o que você as tirava: pinça ou mão?
+  - Resposta:
 
 ### Acrescentadas em 25/11 (a cadela de 17 anos da fluidoterapia)
 - **Qual é o diagnóstico dela** (doença renal crônica? em que estágio?) e que exames mostram isso?

@@ -80,3 +80,15 @@ coelho veio às 18h33, depois do filhote (16h31); fica a confirmar como as duas 
 Diagnóstico (Felipe, 25/11): teste rápido.
 
 Ordem (Felipe, 25/11): o cachorro foi atendido depois do coelho. Os dados das fotos (mesmo celular) dizem 16h31 para o filhote e 18h33 para o coelho; a confirmar.
+
+Complemento do coelho (Felipe, 25/11, no questionário da animação):
+- **Antes da clínica**, a tutora foi a uma agropecuária e lá passaram um **spray prata** nas feridas. Ele não alcançou
+  várias feridas que tinham larvas e foi ineficaz. Nome do produto a confirmar.
+- **Retirada das larvas:** a Cláudia passava **álcool** e ia tirando a maioria. As larvas que ficavam mais acima, o
+  Felipe retirou **com luva**, com o dedo.
+- **Sem sedação:** só contenção física. **Tricotomia com máquina.**
+- **Locais das feridas:** dorso, garupa e base da cauda, e região genital e perineal.
+- **Ordem:** a depilação e a limpeza vieram antes do soro. As fotos mostram o equipo já ligado às 18h35 (fotos 04 e 05,
+  na borda esquerda), então a rifamicina (18h38) veio depois do soro.
+- Os originais em alta resolução (4096 × 3072) das fotos 04, 05 e 06 foram reenviados pelo Felipe em 25/11. As cópias
+  reduzidas estão em `estagio/animacao-miiase-coelho/referencias/` (fotos 2, 3 e 4).
