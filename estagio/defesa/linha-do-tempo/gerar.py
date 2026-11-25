@@ -199,9 +199,10 @@ DIAS = [
         ],
     },
     {
-        "data": "25/11", "titulo": "Duas profilaxias",
+        "data": "25/11", "titulo": "Duas profilaxias e a fluidoterapia da cadela de 17 anos",
         "casos": [
             "Duas profilaxias (limpeza dentária) com extração em dois cães de pequeno porte; a Cláudia fez a anestesia. Os dois se recuperam no internamento.",
+            "Sessão semanal de fluidoterapia da cadela de 17 anos, sem dentes, com os rins sem funcionar. É a mesma de 29/10: passou de 3 sessões por semana (subcutânea) para 1 (intravenosa, com o remédio junto). Diagnóstico e remédio a confirmar.",
         ],
         "reflexoes": [],
         "ideias": [],

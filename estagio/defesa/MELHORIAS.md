@@ -637,3 +637,20 @@ As execuções de 24/11 à noite e de 25/11 até agora não gravaram nada, porqu
 **Perguntas para o Felipe:** continuam abertas as de sempre (o protótipo dos slides, o tempo da defesa, a fachada e a recepção). Duas novas: os detalhes da nodulectomia de 24/11 e o que é a faixa escura no pescoço do cão preto (bandagem ou colar?).
 
 **Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.
+
+### 25/11/2026 — 17h41 (a cadela de 17 anos)
+
+Material novo do dia: a foto e o registro da fluidoterapia semanal da cadela de 17 anos (PRs lipedubas-tech/MK#88 e #89). O Felipe confirmou que é a mesma cadela de 29/10.
+
+**Feito:**
+- **Caso novo em rascunho:** `casos/cadela-17-anos-renal.md`. É a única paciente acompanhada do começo ao fim do estágio. O arquivo tem a proposta de slide, a fala e as perguntas da banca, e o que é clínico está marcado "a confirmar".
+- **Linha do tempo:** o dia 25/11 ganhou a fluidoterapia e a foto nova. A página e o PDF foram regenerados.
+- **Contagem das atividades:** ganhou a linha "Fluidoterapia contínua: 1 paciente".
+- **Perguntas para a Cláudia:** o diagnóstico, o remédio do soro, o motivo da troca de via e a raça (o diário diz shih-tzu; a foto parece yorkshire).
+- **Arquivos:** `casos/cadela-17-anos-renal.md`, `linha-do-tempo/` (`gerar.py`, `index.html`, `linha-do-tempo.pdf`), `parte1-clinica/atividades-contagem.md`, `perguntas/perguntas-por-pessoa.md`.
+
+**Pergunta para o Felipe:** ela entra na defesa como caso (um slide) ou só numa frase?
+
+**Próxima sugestão:** quando a Cláudia responder, completar o caso e decidir onde ele entra no roteiro.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

@@ -75,6 +75,16 @@
 
 ---
 
+### Acrescentadas em 25/11 (a cadela de 17 anos da fluidoterapia)
+- **Qual é o diagnóstico dela** (doença renal crônica? em que estágio?) e que exames mostram isso?
+  - Resposta:
+- **Que remédio vai junto no soro, e qual o volume da sessão?** Quando a fluidoterapia passou de subcutânea para intravenosa, e por quê?
+  - Resposta:
+- **Qual é a raça dela?** O diário de 29/10 diz shih-tzu; pela foto, ela parece uma yorkshire.
+  - Resposta:
+- **Posso contar o caso dela na defesa** como o paciente que acompanhei do começo ao fim do estágio?
+  - Resposta:
+
 ### Acrescentadas em 24/11 (Dara e a terceira nodulectomia)
 - **Dara (raio-X de 23/11):** espécie, raça, idade, que sinais ela tinha (dor, andar, paralisia?) e qual foi a conduta? "Amelia" é a tutora?
   - Resposta:
