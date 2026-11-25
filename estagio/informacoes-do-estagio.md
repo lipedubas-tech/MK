@@ -208,6 +208,7 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 ### 25/11/2026 (quarta)
 - **Duas profilaxias** (limpeza dentária) em dois cães de pequeno porte, com extração dentária. A Cláudia fez a anestesia.
 - Foto dos dois pacientes no internamento às 11h20, em recuperação (um deles no soro). Foto e nota em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
+- **Fluidoterapia em cadela idosa de 17 anos**, sem dentes: "os rins não funcionam mais". Faz uma sessão por semana. Diagnóstico, via (subcutânea ou intravenosa), volume e exames a confirmar com a Cláudia ou o Thiago. Se é a mesma "shih-tzu de 17 anos" de 29/10 (que recebia soro 3 vezes por semana), a confirmar. Foto às 14h23 em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
 
 ---
 
@@ -759,6 +760,7 @@ Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (
 | # | Foto | Legenda |
 |---|---|---|
 | 1 | ![](fotos/dia-25-11/01-internamento-dois-caes.jpg) | Os dois cães das profilaxias no internamento, às 11h20, em recuperação: um preto e castanho e um caramelo idoso, coberto e no soro |
+| 2 | ![](fotos/dia-25-11/02-fluidoterapia-cadela-17-anos.jpg) | Cadela de 17 anos, de pelo longo, no internamento durante a sessão semanal de fluidoterapia (14h23). O reflexo do Felipe aparece no vidro |
 
 ---
 
