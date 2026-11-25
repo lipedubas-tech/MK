@@ -75,6 +75,16 @@
 
 ---
 
+### Acrescentadas em 25/11 (o coelho com miíase)
+- **Além da rifamicina, o que mais ele recebeu?** Antiparasitário (qual?), antibiótico sistêmico, analgesia? Por que o soro foi na veia da orelha?
+  - Resposta:
+- **Como ele está nos dias seguintes?** Teve alta? Qual era o prognóstico?
+  - Resposta:
+- **Por que a clínica normalmente não atende coelhos?** E o que fez você abrir a exceção? Posso contar isso na defesa?
+  - Resposta:
+- **O que causa a miíase num coelho de casa?** Feridas, sujeira na região genital, calor, mosca? É o que eu digo se a banca perguntar.
+  - Resposta:
+
 ### Acrescentadas em 25/11 (a cadela de 17 anos da fluidoterapia)
 - **Qual é o diagnóstico dela** (doença renal crônica? em que estágio?) e que exames mostram isso?
   - Resposta:

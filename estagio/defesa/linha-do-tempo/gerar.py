@@ -199,10 +199,11 @@ DIAS = [
         ],
     },
     {
-        "data": "25/11", "titulo": "Duas profilaxias e a fluidoterapia da cadela de 17 anos",
+        "data": "25/11", "titulo": "Profilaxias, a cadela de 17 anos e o coelho com miíase",
         "casos": [
             "Duas profilaxias (limpeza dentária) com extração em dois cães de pequeno porte; a Cláudia fez a anestesia. Os dois se recuperam no internamento.",
             "Sessão semanal de fluidoterapia da cadela de 17 anos, sem dentes, com os rins sem funcionar. É a mesma de 29/10: passou de 3 sessões por semana (subcutânea) para 1 (intravenosa, com o remédio junto). Diagnóstico e remédio a confirmar.",
+            "Emergência perto das 18h: coelho com miíase, muitas larvas, feridas nas costas e na região genital e desidratação. Depilação, higienização, rifamicina spray e soro na veia da orelha; depois comeu no internamento. É o primeiro coelho do estágio, e a Cláudia, que normalmente não atende coelhos, atendeu porque ele sofria muito.",
         ],
         "reflexoes": [],
         "ideias": [],
