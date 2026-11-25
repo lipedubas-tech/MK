@@ -24,3 +24,16 @@ com fonte), discussão, nota sobre o modelo e referências no formato da ABNT.
 Para refazer a página depois de mexer em `src/`: `python3 tools/build_page.py`
 (com `THREE_JS=caminho/three.min.js` para gerar também a versão offline).
 Depois de mexer em `tools/skel_clean.py`: `python3 tools/skel_clean.py` antes do `build_page.py`.
+
+## Novo visual com a Hallmark (25/11, pedido do Felipe)
+
+Restyle com a skill de design [Hallmark](https://github.com/Nutlope/hallmark), no tema **Almanac**. O layout de artigo, as três abas, a animação, o modo apresentação e todo o texto científico continuam iguais.
+
+- **Mudou o sistema visual:** papel ardósia, títulos em Hanken Grotesk, texto em Newsreader e números das abas e etapas em IBM Plex Mono. O magenta fica só para o botão Pausar, a aba atual e a etapa atual. Os cantos são retos e os fios têm dois pesos. O palco 3D continua escuro.
+- **Pequenos ajustes de texto:**
+  - "Relato de caso · Ortopedia veterinária" virou o começo da linha de autoria, e os "·" dessa linha viraram vírgulas e uma quebra de linha;
+  - as setas dos links viraram "Voltar:" e "Próxima:";
+  - os botões ‹ › viraram "Anterior" e "Próxima".
+- **Ficou de propósito:** o travessão das legendas ("Figura 1 – …"), que é da ABNT, mesmo o verificador apontando. Os "·" das miniaturas da galeria também ficaram, porque são gerados pelo `app.js`, que não foi alterado.
+- **Verificador da Hallmark:** de 45 para 4 falhas. Das 4, 1 é o travessão da ABNT; as outras 3 são alarmes falsos do código 3D: a textura listrada de um instrumento e as miniaturas que o script preenche.
+- Os dois arquivos de `dist/` foram refeitos com `tools/build_page.py`, usando o Three.js r128.
