@@ -78,3 +78,5 @@ Como era o fim do dia, ele trocou de roupa e não atendeu mais nenhum paciente. 
 coelho veio às 18h33, depois do filhote (16h31); fica a confirmar como as duas coisas se encaixam.
 
 Diagnóstico (Felipe, 25/11): teste rápido.
+
+Ordem (Felipe, 25/11): o cachorro foi atendido depois do coelho. Os dados das fotos (mesmo celular) dizem 16h31 para o filhote e 18h33 para o coelho; a confirmar.
