@@ -210,6 +210,7 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 - Foto dos dois pacientes no internamento às 11h20, em recuperação (um deles no soro). Foto e nota em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
 - **Fluidoterapia em cadela idosa de 17 anos**, sem dentes: "os rins não funcionam mais". Faz uma sessão por semana. Diagnóstico, via (subcutânea ou intravenosa), volume e exames a confirmar com a Cláudia ou o Thiago. Se é a mesma "shih-tzu de 17 anos" de 29/10 (que recebia soro 3 vezes por semana), a confirmar. Foto às 14h23 em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
   - **É a mesma cadela de 17 anos do dia 29/10** (confirmado pelo Felipe em 25/11). Ela passou de 3 sessões por semana para 1 porque agora a fluidoterapia é **intravenosa, e não mais subcutânea**, e o remédio vai junto na veia. Assim, ela é um caso acompanhado ao longo de todo o estágio. Observação: o registro de 29/10 diz "shih-tzu" e "intravenoso"; a raça (na foto ela parece uma yorkshire), o nome do remédio e a data da troca de via estão a confirmar.
+- **Filhote de cachorro com parvovirose.** Filhote de pelo longo, branco e marrom, de olhos azuis, com coleira. Fotos no colo, no laboratório da clínica, às 16h31. Como foi o diagnóstico (teste rápido?), o tratamento, o isolamento e a evolução estão a confirmar. Fotos em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
 - **Emergência no fim do dia (perto das 18h): coelho com miíase.** Várias feridas e bicheira nas costas e na região genital, com uma dermatite muito feia. A tutora relatou que ele gritou quando ela foi passar água nas feridas. Na clínica, a equipe depilou e higienizou as feridas, aplicou rifamicina spray (Rifotrat, rifamicina SV sódica 10 mg/mL) e colocou soro pela veia da orelha, porque ele estava muito desidratado. Depois ficou internado e comeu. Retirada de larvas, outros remédios e prognóstico a confirmar com a Cláudia. Fotos das 18h33 às 18h45 em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
   - **Complemento (Felipe, 25/11):** foram retiradas **muitas larvas**. É o **primeiro coelho do estágio**. A Cláudia normalmente nem atende coelhos; atendeu porque o bichinho sofria muito. Outros remédios e prognóstico ainda a confirmar.
 
@@ -772,6 +773,8 @@ Achados a confirmar com a Cláudia ou o Thiago; as imagens têm nomes no canto (
 | 8 | ![](fotos/dia-25-11/08-rifotrat-spray.jpg) | O frasco: Rifotrat spray, rifamicina SV sódica 10 mg/mL (18h42) |
 | 9 | ![](fotos/dia-25-11/09-coelho-internado-comendo.jpg) | O coelho internado, comendo ração (18h45) |
 | 10 | ![](fotos/dia-25-11/10-coelho-internado-soro-na-orelha.jpg) | O coelho internado, com o soro na orelha (18h45) |
+| 11 | ![](fotos/dia-25-11/11-filhote-parvovirose-colo.jpg) | Filhote com parvovirose no colo, de olhos fechados, no laboratório da clínica (16h31) |
+| 12 | ![](fotos/dia-25-11/12-filhote-parvovirose-colo-2.jpg) | O mesmo filhote, de olhos abertos (azuis), olhando para a câmera (16h32) |
 
 ---
 

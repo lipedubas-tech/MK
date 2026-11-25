@@ -56,3 +56,19 @@ uma água nas feridas. Depilamos, higienizamos e botamos o soro na orelha porque
 
 Complemento (Felipe, 25/11): foram retiradas muitas larvas. É o primeiro coelho do estágio; a Cláudia
 normalmente não atende coelhos e atendeu porque o animal sofria muito.
+
+## Fotos 11 e 12: filhote com parvovirose (acrescentadas em 25/11)
+
+Fotos de 25/11/2026, às 16h31 e 16h32 (celular), enviadas pelo Felipe com o registro "Filhote de cachorro com parvovirose".
+
+| Arquivo | Hora | Conteúdo |
+|---|---|---|
+| `11-filhote-parvovirose-colo.jpg` | 16:31 | Um rapaz segura no colo um filhote grande, de pelo longo, branco e marrom, com uma coleira estampada; o filhote está de olhos fechados. Ao fundo, o laboratório: o analisador Abaxis, o VetScan VS2, o microscópio, livros, São Francisco, um crucifixo, uma imagem de Nossa Senhora e um retrato de formatura |
+| `12-filhote-parvovirose-colo-2.jpg` | 16:32 | O mesmo, com o filhote de olhos abertos (azuis), olhando para a câmera |
+
+**A confirmar:** quem segura o filhote (o Felipe?); como foi feito o diagnóstico (teste rápido?); o tratamento, o isolamento e a evolução.
+
+**Privacidade e cuidado:**
+- **O rosto de quem segura o filhote aparece inteiro.** Se for o Felipe, pode usar. Se for outra pessoa, precisa da autorização dela.
+- **O retrato de formatura** na prateleira mostra o rosto de alguém. Em tamanho de slide, quase não se reconhece.
+- **Biossegurança:** a parvovirose é muito contagiosa entre cães. A banca pode perguntar por que o filhote está no colo, sem luva nem avental e fora do isolamento. Tenha a resposta pronta **[a confirmar com a Cláudia]**.
