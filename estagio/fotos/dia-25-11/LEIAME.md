@@ -76,3 +76,5 @@ Fotos de 25/11/2026, às 16h31 e 16h32 (celular), enviadas pelo Felipe com o reg
 Complemento (Felipe, 25/11): é o Felipe quem segura o filhote. Depois, o filhote foi para o isolamento.
 Como era o fim do dia, ele trocou de roupa e não atendeu mais nenhum paciente. Pelo horário das fotos, o
 coelho veio às 18h33, depois do filhote (16h31); fica a confirmar como as duas coisas se encaixam.
+
+Diagnóstico (Felipe, 25/11): teste rápido.
