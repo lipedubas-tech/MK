@@ -622,3 +622,18 @@ Partes da página:
 Só foram usados dados que já estão no repositório. O que falta confirmar aparece em amarelo: telefone, horário, urgências, responsável técnico e CRMV, o texto da história (com o Rangel) e as orientações (com a veterinária). Por ser código, foi em **PR em rascunho**.
 
 **Observação:** o item do IFC é "ações que **o campus** poderia alterar". O site é uma contribuição para **a empresa**, e cabe melhor nas considerações finais.
+
+### 25/11/2026 — 13h41 (retomada depois do PR do site)
+
+As execuções de 24/11 à noite e de 25/11 até agora não gravaram nada, porque o branch estava ocupado com o PR do site (lipedubas-tech/mk#81). O Felipe juntou o PR às 13h45, e esta execução retomou a defesa.
+
+**Feito:**
+- **Linha do tempo:** ganhou o dia 25/11, com as duas profilaxias e a foto do internamento. A página e o PDF foram regenerados.
+- **Contagem das atividades:** passou para 11 procedimentos sob anestesia, somando a nodulectomia de 24/11 e as 2 profilaxias de 25/11.
+- **Fala completa:** "ela é minha vida" entrou nas considerações finais.
+- **Simulado:** a pergunta nova 10.2a, "O que você aprendeu sobre os tutores?", tem como resposta a frase dele, marcada como percepção.
+- **Arquivos:** `linha-do-tempo/` (`gerar.py`, `index.html`, `linha-do-tempo.pdf`), `parte1-clinica/atividades-contagem.md`, `roteiro/fala-completa.md`, `simulado-banca/simulado.md`.
+
+**Perguntas para o Felipe:** continuam abertas as de sempre (o protótipo dos slides, o tempo da defesa, a fachada e a recepção). Duas novas: os detalhes da nodulectomia de 24/11 e o que é a faixa escura no pescoço do cão preto (bandagem ou colar?).
+
+**Envio:** o WhatsApp continua sem a chave do CallMeBot nesta sessão, então o resumo foi pelo Gmail.

@@ -183,7 +183,7 @@
 > "As maiores dificuldades foram duas. **A morte logo no começo**: no primeiro dia, a morte apareceu três vezes. E **aprender a lidar com o dó**, que nenhuma aula prepara."
 
 **Considerações finais (1 min)**
-> "No primeiro dia, escrevi que o trabalho do veterinário é quase mais com pessoas do que com animais. Continuo achando isso.
+> "No primeiro dia, escrevi que o trabalho do veterinário é quase mais com pessoas do que com animais. Continuo achando isso. A frase que eu mais ouvi no balcão foi: **\"ela é minha vida\"**. *(acrescentado em 25/11, a partir da sua reflexão de 24/11)*
 > Vi a clínica **tornar visível o que estava escondido**: uma fratura em Y no raio-X, um fecaloma dentro de um gato, um fungo que passa do gato para quem cuida dele. Vi **animais que não falam mostrarem onde dói**: um cão que não sentia a pata. E vi **o tempo**: um cão de 17 anos fazendo quimioterapia a cada 21 dias, três fetos que não nasceram e três filhotes que chegaram vivos.
 > Eu nunca tinha tido gato e sentia apatia por eles. No segundo dia, um gato de rua se esfregava nos meus dedos pelo vidro da baia.
 > **O paciente é o animal, mas a clínica é construída com as pessoas que o amam.**"
