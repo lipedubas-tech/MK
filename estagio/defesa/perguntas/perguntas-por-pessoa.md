@@ -88,6 +88,8 @@
   - Resposta:
 - **Por que passar álcool antes de tirar as larvas?** E com o que você as tirava: pinça ou mão?
   - Resposta:
+- **O pelo longo dele contribuiu para a miíase?** Posso dizer na defesa que o pelo escondeu as feridas da tutora e segurou umidade e sujeira perto da pele, o que atraiu a mosca?
+  - Resposta:
 
 ### Acrescentadas em 25/11 (a cadela de 17 anos da fluidoterapia)
 - **Qual é o diagnóstico dela** (doença renal crônica? em que estágio?) e que exames mostram isso?
