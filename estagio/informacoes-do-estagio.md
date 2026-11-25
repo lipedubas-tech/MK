@@ -209,6 +209,7 @@ Estes casos estão descritos nos briefings das animações ([`animacao-osh/`](an
 - **Duas profilaxias** (limpeza dentária) em dois cães de pequeno porte, com extração dentária. A Cláudia fez a anestesia.
 - Foto dos dois pacientes no internamento às 11h20, em recuperação (um deles no soro). Foto e nota em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
 - **Fluidoterapia em cadela idosa de 17 anos**, sem dentes: "os rins não funcionam mais". Faz uma sessão por semana. Diagnóstico, via (subcutânea ou intravenosa), volume e exames a confirmar com a Cláudia ou o Thiago. Se é a mesma "shih-tzu de 17 anos" de 29/10 (que recebia soro 3 vezes por semana), a confirmar. Foto às 14h23 em [`fotos/dia-25-11/`](fotos/dia-25-11/) (seção 10.12).
+  - **É a mesma cadela de 17 anos do dia 29/10** (confirmado pelo Felipe em 25/11). Ela passou de 3 sessões por semana para 1 porque agora a fluidoterapia é **intravenosa, e não mais subcutânea**, e o remédio vai junto na veia. Assim, ela é um caso acompanhado ao longo de todo o estágio. Observação: o registro de 29/10 diz "shih-tzu" e "intravenoso"; a raça (na foto ela parece uma yorkshire), o nome do remédio e a data da troca de via estão a confirmar.
 
 ---
 

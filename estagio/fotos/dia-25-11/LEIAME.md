@@ -24,3 +24,7 @@ Sem os dentes, estamos fazendo uma sessão por semana".
 
 Privacidade: o reflexo do Felipe aparece no vidro da baia (tronco, mãos e celular, sem o rosto).
 Se a foto for usada, recorte o alto ou aceite o reflexo. A cadela não tem identificação.
+
+Atualização de 25/11 (Felipe): é a mesma cadela de 17 anos registrada em 29/10. A fluidoterapia
+passou de 3 sessões por semana para 1 porque agora é intravenosa, e não mais subcutânea, com o remédio
+junto na veia. Raça e nome do remédio a confirmar.
