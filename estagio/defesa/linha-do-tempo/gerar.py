@@ -198,6 +198,14 @@ DIAS = [
             "Correção na animação da nodulectomia de 17/11: a antissepsia foi da lesão para fora.",
         ],
     },
+    {
+        "data": "25/11", "titulo": "Duas profilaxias",
+        "casos": [
+            "Duas profilaxias (limpeza dentária) com extração em dois cães de pequeno porte; a Cláudia fez a anestesia. Os dois se recuperam no internamento.",
+        ],
+        "reflexoes": [],
+        "ideias": [],
+    },
 ]
 
 # Pastas de fotos -> dia da linha do tempo
@@ -212,6 +220,7 @@ PASTA_DIA = {
     "fotos/abdominocentese-cao": "17/11",
     "fotos/dia-23-11": "23/11",
     "fotos/dia-24-11": "24/11",
+    "fotos/dia-25-11": "25/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",

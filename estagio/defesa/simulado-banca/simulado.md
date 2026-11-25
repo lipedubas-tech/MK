@@ -154,6 +154,9 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 **10.1 Qual foi a maior dificuldade?** ✅
 > Resposta sua. Material para ela: o impacto do dia 1, a rotina das 8h às 18h (você pulou o almoço para acompanhar a cirurgia da Katita), lidar com a morte e com o dó, e os termos técnicos novos.
 
+**10.2a O que você aprendeu sobre os tutores?** ✅ *(acrescentada em 25/11)*
+> "A frase que eu mais ouvi foi: \"ela é minha vida\", e quase sempre de senhoras falando da cachorra ou da gata. Isso mudou como eu vejo a clínica: o paciente é o animal, mas quem a gente atende junto é a pessoa." (A frase está nas suas reflexões de 24/11. O "quase sempre" é uma impressão sua, não uma contagem.)
+
 **10.2 O que você leva do estágio?** ✅
 > A sua reflexão do dia 1: "o trabalho do veterinário é quase mais com humanos do que com animais". E a tese: "o paciente é o animal, mas a clínica é construída com as pessoas que o amam".
 

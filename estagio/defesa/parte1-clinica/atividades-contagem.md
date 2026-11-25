@@ -6,7 +6,7 @@
 
 | Atividade | Quantos | Quais (data) |
 |---|---|---|
-| **Procedimentos sob anestesia** | **8** | Odontologia em cão (28/10); Katita (29/10); Barão, extrações (04/11); nodulectomia da pálpebra (05/11); castração de cadela (11/11); castração de gata (17/11); nodulectomia da axila (17/11); fecaloma (18/11) |
+| **Procedimentos sob anestesia** | **11** | Odontologia em cão (28/10); Katita (29/10); Barão, extrações (04/11); nodulectomia da pálpebra (05/11); castração de cadela (11/11); castração de gata (17/11); nodulectomia da axila (17/11); fecaloma (18/11); nodulectomia (24/11); 2 profilaxias com extração (25/11) *(atualizado em 25/11)* |
 | Castrações | 2 | Cadela (11/11, com o seu auxílio); gata (17/11) |
 | Nodulectomias | 3 | Pálpebra (05/11); axila (17/11); a terceira em 24/11 *(acrescentada em 24/11, detalhes a registrar)* |
 | Criocirurgia | 1 | Melanoma (05/11) |
