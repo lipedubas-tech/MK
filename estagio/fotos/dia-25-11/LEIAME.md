@@ -53,3 +53,6 @@ uma água nas feridas. Depilamos, higienizamos e botamos o soro na orelha porque
 - Nenhum rosto aparece. Aparecem mãos, uma blusa vermelha e uma calça estampada.
 - **Mãos sem luva** em contato com as feridas (fotos 03, 05 e 07). Se a foto for usada, tenha a resposta pronta ou recorte.
 - **Imagens fortes** (fotos 04 a 07): avise a banca antes de mostrar.
+
+Complemento (Felipe, 25/11): foram retiradas muitas larvas. É o primeiro coelho do estágio; a Cláudia
+normalmente não atende coelhos e atendeu porque o animal sofria muito.
