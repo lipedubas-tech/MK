@@ -72,3 +72,7 @@ Fotos de 25/11/2026, às 16h31 e 16h32 (celular), enviadas pelo Felipe com o reg
 - **O rosto de quem segura o filhote aparece inteiro.** Se for o Felipe, pode usar. Se for outra pessoa, precisa da autorização dela.
 - **O retrato de formatura** na prateleira mostra o rosto de alguém. Em tamanho de slide, quase não se reconhece.
 - **Biossegurança:** a parvovirose é muito contagiosa entre cães. A banca pode perguntar por que o filhote está no colo, sem luva nem avental e fora do isolamento. Tenha a resposta pronta **[a confirmar com a Cláudia]**.
+
+Complemento (Felipe, 25/11): é o Felipe quem segura o filhote. Depois, o filhote foi para o isolamento.
+Como era o fim do dia, ele trocou de roupa e não atendeu mais nenhum paciente. Pelo horário das fotos, o
+coelho veio às 18h33, depois do filhote (16h31); fica a confirmar como as duas coisas se encaixam.
