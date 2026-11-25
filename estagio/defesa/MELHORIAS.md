@@ -17,6 +17,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
   - **5. Mídia visual como argumento:** o método de toda a defesa (raio-X real, 3D, linha do tempo, corpo do estágio), com plano B offline.
 - **24/11 — Ambientes que não mudaram.** A sala de espera, o banho e tosa e a sala de cirurgia continuam iguais às fotos da defesa da Yasmin (2025). Essas fotos ainda representam a clínica de hoje, mas não são do Felipe: se forem usadas, levam o crédito "Fotos: Yasmim de Borba da Rolt, 2025", nunca "Fonte: O autor". O consultório e o internamento já têm fotos dele (`fotos/dia-24-11/`).
 - **24/11 — A Yasmin dispensou o crédito.** O Felipe falou com ela, e ela disse que não precisa de crédito pelas fotos dos ambientes. Mesmo assim, essas fotos não são do Felipe, então não devem levar "Fonte: O autor". Proposta: uma legenda neutra, por exemplo "Fotos cedidas", ou nenhuma linha de fonte nesses slides. **[o Felipe escolhe]**
+- **25/11 — O coelho com miíase entra na defesa ("com certeza").** É o caso da emergência de 25/11, perto das 18h: muitas larvas, o primeiro coelho do estágio, atendido pela Cláudia, que normalmente não atende coelhos, porque ele sofria muito. Rascunho em `casos/coelho-miiase.md`. Onde ele entra no roteiro, e quanto tempo ocupa, ainda é decisão do Felipe.
 - **19/11 — Material dos PRs abertos conta.** O Felipe pediu que o material dos pull requests em rascunho (#1, #6, #8, #9, #10, #12) seja considerado nas pesquisas e decisões. Cada execução deve olhar também os PRs abertos do repositório, não só o branch principal. Juntar esses PRs depende da aprovação dele.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
@@ -654,3 +655,17 @@ Material novo do dia: a foto e o registro da fluidoterapia semanal da cadela de 
 **Próxima sugestão:** quando a Cláudia responder, completar o caso e decidir onde ele entra no roteiro.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 25/11/2026 — decisão do Felipe no chat: o coelho entra na defesa
+
+O Felipe enviou 8 fotos e o relato da emergência de 25/11, perto das 18h: um coelho com miíase, muitas larvas, o primeiro coelho do estágio, atendido pela Cláudia porque sofria muito (PRs lipedubas-tech/MK#91 e #92). Depois decidiu: "Isso vai para a defesa. Com certeza."
+
+**Feito:**
+- **Decisão registrada** no topo, nas "Decisões do Felipe".
+- **Rascunho do caso:** `casos/coelho-miiase.md`, com a linha do tempo da noite, a proposta de slide, a fala e as perguntas da banca.
+- **Linha do tempo:** o coelho entrou no dia 25/11. A página e o PDF foram regenerados.
+- **Contagem das atividades:** ganhou a linha "Pet não convencional: 1 coelho".
+- **Perguntas para a Cláudia:** os remédios, a evolução, por que a clínica não atende coelhos e a causa da miíase.
+- **Checklist de privacidade:** mãos sem luva e imagens fortes; as fotos 08 e 10 são as mais seguras.
+
+**Pergunta para o Felipe:** ele entra como o quinto caso ou nas dificuldades?

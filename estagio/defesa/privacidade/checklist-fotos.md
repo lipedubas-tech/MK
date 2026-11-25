@@ -55,6 +55,14 @@ Elas não estão em nenhum slide; apareceram até agora só na linha do tempo. S
 - **Foto 02:** mostra o antebraço de alguém, sem luva, segurando a pata. O risco é baixo.
 - **Foto 04:** mostra o líquido no pote, no chão. Não tem pessoa nenhuma.
 
+## Fotos novas (25/11): o coelho com miíase
+
+Ele vai entrar na defesa (decisão do Felipe, 25/11). Antes de escolher as fotos:
+- **Nenhum rosto.** Aparecem mãos, uma blusa vermelha e uma calça estampada.
+- **Mãos sem luva** tocando as feridas nas fotos 03, 05 e 07. Recorte as mãos, ou tenha pronta a resposta sobre biossegurança.
+- **Imagens fortes** nas fotos 04 a 07 (feridas e região genital). Avise a banca antes.
+- **As fotos mais seguras** são a 10 (o coelho internado, com o soro na orelha) e a 08 (o frasco de rifamicina).
+
 ## Imagens fortes (avisar a banca)
 
 São cirurgias abertas e sangue. Não é um problema de privacidade, mas vale uma frase antes, como "a próxima imagem mostra a cirurgia aberta":
