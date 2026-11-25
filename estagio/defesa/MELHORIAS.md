@@ -52,6 +52,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [x] **FEITO 20/11 23h41 (`estagio/defesa/privacidade/checklist-fotos.md`)** — Checklist de privacidade das fotos que entram nos slides.
 
 - [ ] **Site da Mundo Animal (ideia do Felipe, 24/11).** O protótipo de uma página já existe (`estagio/defesa/site-prototipo/`) e está em PR em rascunho. Próximos passos: as confirmações da clínica (telefone, horário, responsável técnico, o texto da história), as fotos que faltam e um slide de 30 s nas considerações finais.
+  - **25/11 (Felipe):** o acesso ao **Instagram da clínica** é muito importante para fazer o site (fotos, textos, link). Combinado: o Felipe faz o site junto com o Claude **no computador, à noite de 25/11**. As execuções agendadas não mexem no site até lá.
 
 ## Registro das execuções
 
