@@ -7,6 +7,15 @@
 > - a história ficou com uma frase;
 > - a letra está maior, e entrou um botão **Ligar** (para o público mais velho).
 >
+> **Versão 3 (25/11): elementos da referência e banho e tosa.** Com base no site do Hospital Veterinário Criciúma (ver `referencia-hospital-criciuma.md`), o site ganhou:
+> - uma **faixa de contato no topo**, com WhatsApp, telefone, endereço e o botão "Agendar banho e tosa";
+> - uma **faixa de diferenciais** com 4 itens verdadeiros (desde 2005, raio-X e ultrassom, internamento, banho e tosa);
+> - **dúvidas frequentes**, com 5 perguntas e respostas *a revisar pela veterinária*;
+> - um link para as **avaliações no Google**;
+> - o **agendamento de banho e tosa**: ao escolher esse serviço, aparecem o tipo (só banho, banho e tosa, tosa higiênica), o porte e o pelo, e tudo isso entra no resumo e na mensagem de WhatsApp.
+>
+> As fotos de banco de imagens ficaram de fora: precisam de liberação de rede e de escolha caso a caso.
+>
 > As fotos de animais são **de exemplo**, tiradas no estágio. No site de verdade, use fotos do Instagram da clínica ou de pacientes com autorização do tutor.
 
 A clínica ainda não tem site. Este é um protótipo de **uma página**, feito para o Felipe mostrar à clínica e na defesa. **Não está publicado em lugar nenhum.**

@@ -93,6 +93,35 @@ input:focus,select:focus,textarea:focus{border-color:var(--verde);outline:none}
 .confirmado h3{font-size:1.5rem}
 @media (max-width:640px){fieldset{grid-template-columns:1fr}#form-agenda,.confirmado{padding:20px}}
 
+/* faixa de contato */
+.faixa-contato{background:var(--verde);font-size:.92rem}
+.faixa-contato .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;padding-top:8px;padding-bottom:8px}
+.faixa-contato a{color:#fff;text-decoration:none;font-weight:600}
+.faixa-contato a:hover{text-decoration:underline}
+.faixa-contato .destaque{margin-left:auto;background:var(--amarelo);color:var(--amarelo-texto);border-radius:999px;padding:4px 14px}
+@media (prefers-color-scheme: dark){.faixa-contato a{color:#0f1914}}
+@media (max-width:760px){.faixa-contato .so-largo{display:none}.faixa-contato .destaque{margin-left:0}}
+
+/* diferenciais */
+.diferenciais{background:var(--papel);border-block:1px solid var(--linha)}
+.diferenciais ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px;margin:0 auto}
+.diferenciais li,.diferenciais li a{display:flex;gap:12px;align-items:center;color:var(--texto);text-decoration:none;line-height:1.3}
+.diferenciais svg{width:40px;height:40px;flex:none;color:var(--verde);background:var(--menta);border-radius:50%;padding:8px}
+.diferenciais b{display:block;color:var(--verde-escuro)}
+.diferenciais li a:hover b{text-decoration:underline}
+@media (max-width:860px){.diferenciais ul{grid-template-columns:1fr 1fr}}
+
+/* dúvidas */
+.duvidas{padding:72px 0;background:var(--papel)}
+.faq{max-width:780px;margin-top:24px}
+.faq details{border-bottom:1px solid var(--linha);padding:4px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.1rem;padding:14px 0;color:var(--verde-escuro);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--verde)}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:0 0 16px;color:var(--suave);max-width:64ch}
+.avaliacoes{margin:0}
+
 /* abertura */
 .abertura{background:var(--papel);padding:56px 0 64px}
 .abertura .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
@@ -188,6 +217,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </div>
 
+<div class="faixa-contato">
+  <div class="wrap">
+    <a class="zap" href="#" data-msg="Olá! Vim pelo site e gostaria de falar com a clínica.">WhatsApp</a>
+    <a href="tel:+5548999247977">(48) 99924-7977</a>
+    <a href="#onde" class="so-largo">Av. Antonio Sant'Helena, 165, Centro, Sombrio</a>
+    <a href="#agendar" data-servico="Banho e tosa" class="destaque">Agendar banho e tosa</a>
+  </div>
+</div>
+
 <header class="topo">
   <div class="wrap">
     <a class="marca" href="#inicio">Mundo Animal<small>Clínica Veterinária · Sombrio (SC)</small></a>
@@ -195,7 +233,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <a href="#agendar">Agendar</a>
       <a href="#servicos">Serviços</a>
       <a href="#pacientes">Nossos pacientes</a>
-      <a href="#historia">História</a>
+      <a href="#duvidas">Dúvidas</a>
       <a href="#onde">Onde estamos</a>
     </nav>
   </div>
@@ -222,6 +260,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="selo" aria-hidden="true"><b>2005</b><span>em Sombrio</span></div>
     </div>
   </div>
+</section>
+
+<section class="diferenciais" aria-label="Por que a Mundo Animal">
+  <ul class="wrap">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><b>Desde 2005</b> cuidando dos animais de Sombrio</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4a3 3 0 0 0-2.8 4.1A3 3 0 0 0 6 13.8l4.2-4.2a3 3 0 0 0-3.2-5.6Zm10 16a3 3 0 0 0 2.8-4.1A3 3 0 0 0 18 10.2l-4.2 4.2a3 3 0 0 0 3.2 5.6ZM8.5 11.5l4 4 3-3-4-4Z" fill="currentColor"/></svg><span><b>Raio-X e ultrassom</b> na própria clínica</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V7m0 7h18v4M7 11h4a2 2 0 0 1 2 2v1M15 11h3a3 3 0 0 1 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Internamento</b> para quem precisa ficar</span></li>
+    <li><a href="#agendar" data-servico="Banho e tosa"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 8.6 20 18M8.5 15.4 20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><b>Banho e tosa</b> com hora marcada</span></a></li>
+  </ul>
 </section>
 
 <section class="precisa" aria-labelledby="t-precisa">
@@ -269,6 +316,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
           <div class="horarios" id="horarios" role="radiogroup" aria-labelledby="rot-hora"></div>
           <p class="dica" id="dica-hora">Escolha um dia para ver os horários.</p>
         </div>
+      </fieldset>
+      <fieldset id="f-banho" hidden>
+        <legend>Banho e tosa</legend>
+        <label>O que fazer
+          <select name="banho_tipo"><option value="">Escolha</option><option>Só banho</option><option>Banho e tosa</option><option>Tosa higiênica</option></select>
+        </label>
+        <label>Porte
+          <select name="porte"><option value="">Escolha</option><option>Pequeno (até 10 kg)</option><option>Médio (10 a 25 kg)</option><option>Grande (mais de 25 kg)</option></select>
+        </label>
+        <label>Pelo
+          <select name="pelo"><option value="">Escolha</option><option>Curto</option><option>Longo</option></select>
+        </label>
+        <p class="dica largo"><span class="pendente">Tipos de serviço e faixas de porte de exemplo; a clínica define.</span></p>
       </fieldset>
       <fieldset>
         <legend>O animal e você</legend>
@@ -332,6 +392,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </section>
 
+<section class="duvidas" id="duvidas" aria-labelledby="t-duvidas">
+  <div class="wrap">
+    <h2 id="t-duvidas">Dúvidas frequentes</h2>
+    <div class="faq">
+      <details><summary>Quais vacinas o meu cachorro precisa?</summary>
+        <p>Em geral, a polivalente (V8 ou V10) e a antirrábica, com reforço todo ano. Filhotes tomam uma série de doses. A veterinária monta o calendário certo para o seu cão.</p></details>
+      <details><summary>E o meu gato, precisa de vacina?</summary>
+        <p>Precisa, mesmo que não saia de casa. A veterinária indica quais vacinas e quando. A clínica também faz o teste rápido de FIV e FeLV.</p></details>
+      <details><summary>Meu gato tem uma ferida que não fecha. O que eu faço?</summary>
+        <p>Traga-o para avaliação. Feridas que não cicatrizam em gatos podem ser esporotricose, que também passa para pessoas. Até lá, use luvas para mexer nele.</p></details>
+      <details><summary>Precisa de jejum para exame ou cirurgia?</summary>
+        <p>Alguns exames de sangue e toda cirurgia pedem jejum. A clínica orienta o preparo quando você agenda.</p></details>
+      <details><summary>Como agendo o banho e tosa?</summary>
+        <p>Aqui mesmo no site, em <a href="#agendar" data-servico="Banho e tosa">Agendar banho e tosa</a>, ou pelo WhatsApp. Diga o porte e o tipo de pelo para a clínica reservar o tempo certo.</p></details>
+    </div>
+    <p><span class="pendente">Respostas a escrever ou revisar pela veterinária antes de publicar.</span></p>
+  </div>
+</section>
+
 <section class="onde" id="onde" aria-labelledby="t-onde">
   <div class="wrap">
     <div>
@@ -350,6 +429,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <a class="btn btn-zap zap" href="#" data-msg="Olá! Como faço para chegar na clínica?">Pedir direções</a>
         <a class="btn btn-linha" href="tel:+5548999247977">Ligar</a>
       </div>
+      <p class="avaliacoes"><a href="https://www.google.com/maps/search/?api=1&query=Mundo+Animal+Cl%C3%ADnica+Veterin%C3%A1ria+Sombrio" target="_blank" rel="noopener">Veja as avaliações da clínica no Google</a> <span class="pendente">conferir se a clínica tem perfil com avaliações</span></p>
     </div>
   </div>
 </section>
@@ -443,12 +523,23 @@ function montarHorarios(){
   });
 }
 dia.addEventListener("change", montarHorarios);
+const selServico = document.getElementById("f-servico"), fsBanho = document.getElementById("f-banho");
+function atualizarBanho(){ fsBanho.hidden = selServico.value !== "Banho e tosa"; }
+selServico.addEventListener("change", atualizarBanho);
+document.querySelectorAll("a[data-servico]").forEach(a => a.addEventListener("click", () => {
+  selServico.value = a.dataset.servico; atualizarBanho();
+}));
 form.addEventListener("input", () => { erro.hidden = true; });
 form.addEventListener("submit", ev => {
   ev.preventDefault();
   const f = new FormData(form);
   const faltando = [];
   if (!f.get("servico")) faltando.push("o serviço");
+  if (f.get("servico") === "Banho e tosa") {
+    if (!f.get("banho_tipo")) faltando.push("o tipo de banho");
+    if (!f.get("porte")) faltando.push("o porte");
+    if (!f.get("pelo")) faltando.push("o pelo");
+  }
   if (!f.get("dia")) faltando.push("o dia");
   if (!hora) faltando.push("o horário");
   if (!f.get("animal")) faltando.push("o nome do animal");
@@ -459,14 +550,16 @@ form.addEventListener("submit", ev => {
   if (faltando.length) { erro.textContent = "Falta preencher: " + faltando.join(", ") + "."; erro.hidden = false; return; }
   erro.hidden = true;
   const dataBR = new Date(f.get("dia") + "T12:00").toLocaleDateString("pt-BR", {weekday:"long", day:"2-digit", month:"2-digit"});
-  const resumo = f.get("servico") + " para " + f.get("animal") + " (" + f.get("especie").toLowerCase() + "), " + dataBR + ", às " + hora + ".";
+  const ehBanho = f.get("servico") === "Banho e tosa";
+  const nomeServico = ehBanho ? f.get("banho_tipo") + " (porte " + f.get("porte").split(" ")[0].toLowerCase() + ", pelo " + f.get("pelo").toLowerCase() + ")" : f.get("servico");
+  const resumo = nomeServico + " para " + f.get("animal") + " (" + f.get("especie").toLowerCase() + "), " + dataBR + ", às " + hora + ".";
   document.getElementById("c-resumo").textContent = resumo;
   const msg = "Olá! Fiz um pedido de horário pelo site.\n" + resumo + "\nNome: " + f.get("tutor") + "\nTelefone: " + f.get("fone") + (f.get("obs") ? "\nObservação: " + f.get("obs") : "");
   document.getElementById("c-zap").href = link(msg);
   form.hidden = true; conf.hidden = false; conf.focus();
 });
 document.getElementById("c-novo").addEventListener("click", () => {
-  form.reset(); montarHorarios(); conf.hidden = true; form.hidden = false;
+  form.reset(); montarHorarios(); atualizarBanho(); conf.hidden = true; form.hidden = false;
 });
 </script>
 </body>
