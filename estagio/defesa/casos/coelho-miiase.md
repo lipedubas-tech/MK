@@ -13,11 +13,12 @@ Três coisas que nenhum outro caso tem:
 
 | Hora | O que aconteceu | Foto |
 |---|---|---|
+| Antes | A tutora foi a uma agropecuária e lá passaram um **spray prata**, que não alcançou várias feridas com larvas (Felipe, 25/11; produto **a confirmar**) | — |
 | ~18h | Chegou como emergência: miíase, várias feridas e bicheira nas costas e na região genital, "dermatite muito feia". A tutora contou que ele gritou quando ela foi passar água nas feridas | — |
+| 18h–18h33 | Antes do soro: tricotomia com máquina, sem sedação (só contenção física). A Cláudia passava **álcool** e ia tirando as larvas; as que ficavam mais acima, o **Felipe tirou com luva**. Foram **muitas larvas**. Feridas no dorso, na garupa e base da cauda e na região genital e perineal (Felipe, 25/11) | — |
 | 18h33 | Cateter na veia da orelha, para o soro: ele estava muito desidratado | 03 |
 | 18h35 | As feridas depiladas: pele avermelhada e crostas | 04, 05 |
 | 18h38 | Higienização e rifamicina spray (Rifotrat, rifamicina SV sódica 10 mg/mL) | 06, 07, 08 |
-| — | Retirada de **muitas larvas** (Felipe, 25/11) | — |
 | 18h45 | Internado, com o soro na orelha e comendo ração | 09, 10 |
 
 ## Proposta de slide
@@ -40,6 +41,9 @@ Três coisas que nenhum outro caso tem:
 3. **Por que a veia da orelha?** É o acesso comum em coelhos **[a confirmar]**.
 4. **Que outros remédios foram usados?** **[a confirmar]**: antiparasitário, antibiótico, analgesia.
 5. **Como ele ficou?** **[a confirmar]**.
-6. **Por que a mão sem luva?** Tenha a resposta pronta, ou use fotos recortadas.
+6. **Por que a mão sem luva?** Tenha a resposta pronta, ou use fotos recortadas. Na retirada das larvas, você usou luva (Felipe, 25/11).
+7. **O spray da agropecuária era adequado para coelho?** **[a confirmar com a Cláudia]**: qual era o produto e por que não funcionou.
 
 As perguntas para a Cláudia estão em `perguntas/perguntas-por-pessoa.md`. Os cuidados com as fotos estão em `privacidade/checklist-fotos.md`.
+
+**Animação:** o projeto da animação 3D deste caso está em `estagio/animacao-miiase-coelho/` (briefing de 25/11, ainda sem a animação).
