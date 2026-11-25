@@ -24,9 +24,18 @@ Três coisas que nenhum outro caso tem:
 ## Proposta de slide
 
 - **Frase-afirmação:** "A Cláudia não atende coelhos. Atendeu este porque ele sofria."
-- **Prova:** a foto 10 (o coelho internado, com o soro na orelha) grande, e as fotos 04 ou 06 pequenas, só depois do aviso à banca. Embaixo, uma linha: **depilação → higienização e retirada das larvas → rifamicina → soro na orelha → internamento**.
-- **Fala (cerca de 1 min):** "Perto das seis da tarde, na hora de ir embora, chegou um coelho com miíase. Tinha feridas nas costas e na região genital, cheias de larvas. A tutora contou que ele gritou quando ela tentou lavar as feridas. A Cláudia normalmente não atende coelhos, mas atendeu porque ele estava sofrendo muito. Depilamos, limpamos, tiramos as larvas, passamos rifamicina e colocamos o soro na veia da orelha, porque ele estava muito desidratado. Meia hora depois, ele estava comendo no internamento."
+- **Prova:** a foto 10 (o coelho internado, com o soro na orelha) grande, e as fotos 04 ou 06 pequenas, só depois do aviso à banca. Embaixo, uma linha: **depilação → higienização e retirada das larvas → soro na orelha → rifamicina → internamento** (ordem pelas fotos: o equipo já aparece às 18h35, antes da rifamicina das 18h38).
+- **Fala (cerca de 1 min):** "Perto das seis da tarde, na hora de ir embora, chegou um coelho com miíase. Tinha feridas nas costas e na região genital, cheias de larvas. A tutora contou que ele gritou quando ela tentou lavar as feridas. A Cláudia normalmente não atende coelhos, mas atendeu porque ele estava sofrendo muito. Depilamos, limpamos, tiramos as larvas, colocamos o soro na veia da orelha, porque ele estava muito desidratado, e passamos rifamicina. Meia hora depois, ele estava comendo no internamento."
 - **Cuidado com a última frase:** "comendo" é o que a foto mostra. Não diga que ele se recuperou sem saber como ficou nos dias seguintes **[a confirmar]**.
+
+## O pelo escondia (ideia do Felipe, 25/11)
+
+**Por que a tutora não viu antes.** O coelho tem pelo longo e denso. Por fora, parecia um coelho normal e fofo. As feridas e as larvas estavam por baixo, no dorso, na garupa e na região genital, cobertas pelo pelo. Para o Felipe, o pelo provavelmente teve dois papéis: **escondeu as feridas**, e a tutora só percebeu quando o quadro já estava grave; e **segurou umidade e sujeira perto da pele**, sobretudo na região perineal, o que atrai a mosca **[interpretação do Felipe, a confirmar com a Cláudia]**. Só na clínica, quando a máquina tirou o pelo, apareceu o tamanho real das lesões: pele avermelhada, crostas e muitas larvas.
+
+- **Frase do slide (Felipe):** "O pelo escondia. A tricotomia mostrou."
+- **Prova:** o trecho da animação com as cenas 3 e 6 (cerca de 22 s): primeiro, por baixo do pelo, as larvas crescendo sem nada mudar por fora; depois, a máquina revelando as feridas. Ou, sem animação, a foto 10 (fofo, por fora) ao lado da foto 04 (depilado), depois do aviso à banca.
+- **Ligação com os eixos:** é o caso que melhor responde à pergunta do eixo 1, "tornar visível o oculto": o que estava escondido e como apareceu? Estava escondido pelo pelo e apareceu com a tricotomia.
+- **Duas frases, dois papéis (decisão sua):** "A Cláudia não atende coelhos. Atendeu este porque ele sofria." conta o porquê do atendimento; "O pelo escondia. A tricotomia mostrou." conta o que o atendimento revelou. Podem ficar em dois slides, ou a segunda entra como título da animação.
 
 ## Onde encaixar (a decidir)
 
@@ -43,6 +52,7 @@ Três coisas que nenhum outro caso tem:
 5. **Como ele ficou?** **[a confirmar]**.
 6. **Por que a mão sem luva?** Tenha a resposta pronta, ou use fotos recortadas. Na retirada das larvas, você usou luva (Felipe, 25/11).
 7. **O spray da agropecuária era adequado para coelho?** **[a confirmar com a Cláudia]**: qual era o produto e por que não funcionou.
+8. **Por que a tutora não percebeu antes?** O pelo longo e denso cobria as feridas; por fora, ele parecia normal **[a confirmar com a Cláudia]**.
 
 As perguntas para a Cláudia estão em `perguntas/perguntas-por-pessoa.md`. Os cuidados com as fotos estão em `privacidade/checklist-fotos.md`.
 
