@@ -19,6 +19,8 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - **24/11 — A Yasmin dispensou o crédito.** O Felipe falou com ela, e ela disse que não precisa de crédito pelas fotos dos ambientes. Mesmo assim, essas fotos não são do Felipe, então não devem levar "Fonte: O autor". Proposta: uma legenda neutra, por exemplo "Fotos cedidas", ou nenhuma linha de fonte nesses slides. **[o Felipe escolhe]**
 - **25/11 — O coelho com miíase entra na defesa ("com certeza").** É o caso da emergência de 25/11, perto das 18h: muitas larvas, o primeiro coelho do estágio, atendido pela Cláudia, que normalmente não atende coelhos, porque ele sofria muito. Rascunho em `casos/coelho-miiase.md`. Onde ele entra no roteiro, e quanto tempo ocupa, ainda é decisão do Felipe.
 - **26/11 — A defesa é em 15/12/2026.** É uma terça-feira, 8 dias depois do fim do estágio (07/12). Ainda faltam a banca, o tempo exato e a sala. Até lá: fechar os casos, montar a apresentação final, ensaiar com cronômetro e fazer o teste offline na véspera.
+- **26/11 — A ordem até a montagem.** Primeiro termina a animação do coelho, depois o site da Mundo Animal, e o acompanhamento do filhote com parvovirose segue junto. **Só depois disso começa a montagem dos slides definitivos** (em PR em rascunho, com a aprovação do Felipe).
+- **26/11 — Os casos não fecham em 30/11.** O Felipe não quer congelar os casos: o que aparecer no estágio até o fim (07/12) pode entrar. Cada caso novo entra no material (linha do tempo, contagem, rascunho em `casos/`) e o roteiro mostra quanto tempo ele custa e o que sairia para caber.
 - **19/11 — Material dos PRs abertos conta.** O Felipe pediu que o material dos pull requests em rascunho (#1, #6, #8, #9, #10, #12) seja considerado nas pesquisas e decisões. Cada execução deve olhar também os PRs abertos do repositório, não só o branch principal. Juntar esses PRs depende da aprovação dele.
 
 ## Fila de ideias (a próxima execução escolhe daqui ou propõe outra)
@@ -55,6 +57,9 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 
 - [ ] **Site da Mundo Animal (ideia do Felipe, 24/11).** O protótipo de uma página já existe (`estagio/defesa/site-prototipo/`) e está em PR em rascunho. Próximos passos: as confirmações da clínica (telefone, horário, responsável técnico, o texto da história), as fotos que faltam e um slide de 30 s nas considerações finais.
   - **25/11 (Felipe):** o acesso ao **Instagram da clínica** é muito importante para fazer o site (fotos, textos, link). Combinado: o Felipe faz o site junto com o Claude **no computador, à noite de 25/11**. As execuções agendadas não mexem no site até lá.
+
+- [ ] **Acompanhar o filhote com parvovirose (pedido do Felipe, 26/11).** A cada notícia nova (evolução, alta ou óbito, tratamento), registrar no diário (só acréscimo), na linha do tempo e num rascunho `casos/filhote-parvovirose.md`, com o que é clínico marcado "a confirmar" com a Cláudia.
+- [ ] **Montar os slides definitivos (depois do coelho, do site e do filhote, decisão de 26/11).** Um bloco por execução, em PR em rascunho, seguindo o roteiro e o protótipo. Não começar antes de o Felipe liberar.
 
 ## Registro das execuções
 
