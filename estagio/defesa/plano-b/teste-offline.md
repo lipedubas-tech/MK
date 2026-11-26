@@ -92,3 +92,11 @@ Retestei sem internet o que mudou desde 20/11, com o mesmo método (Chromium pel
 | **Linha do tempo** (agora com 142 fotos) | `estagio/defesa/linha-do-tempo/index.html` | ✅ | nenhum | nenhum; 142 de 142 fotos carregaram |
 
 **Atenção:** `estagio/animacao-nodulectomia/dist/nodulectomia.html` é a versão **para publicar**. Ela busca o three.js e a fonte na internet e, **sem rede, não abre** (erro "THREE is not defined"). No dia, use o `index.html` da mesma pasta.
+
+## Reteste de 26/11/2026, às 17h41: a Katita com a etapa 8
+
+| Peça | Arquivo | Abriu? | Pedidos à internet | Imagens | Erros no console |
+|---|---|---|---|---|---|
+| **Katita 3D, com a etapa 8** (PR #116) | `katita-3d/dist/katita-offline.html` | ✅ | nenhum | 20 de 20, incluindo as 3 novas de 30 dias | nenhum |
+
+A galeria mostra as figuras 9 e 10, ambas da "etapa 8: Controle de 30 dias". **Continua valendo o ponto de atenção 1:** a página abre no relato de caso. Antes de apresentar, clique em "2. A cirurgia".

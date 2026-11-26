@@ -98,6 +98,7 @@
 **e. 30 dias depois (proposta de 26/11, cerca de 30 s)** **[decisão sua: entra ou não]**
 > "**A cirurgia não é o fim da história.** No controle de 30 dias, em 26 de novembro, ela fez raio-X de novo **[o que o Thiago leu nas imagens: a confirmar]**. Mas ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia. A placa segura o osso; quem devolve o movimento é a recuperação, e ela leva tempo."
 *(Foto: `fotos/dia-26-11/07-katita-internamento-pos30.jpg`. Se usar o raio-X de 30 dias, cubra o nome do tutor no canto.)*
+*(Atualização da mesma noite: a animação 3D ganhou a **etapa 8, "Controle de 30 dias"** (12 s), com o raio-X e os implantes rotulados, e as figuras já recortadas, sem nomes. Dá para tocar a etapa 8 no lugar da foto. Você contou também que "provavelmente não vai dar tempo de estágio para ver o resultado da fisio". Se for assim, termine o trecho com: **"O resultado da fisioterapia vai vir depois do fim do meu estágio. A Katita continua em tratamento."**)*
 
 *(30 s de margem)*
 
