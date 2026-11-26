@@ -1,6 +1,6 @@
 # Defesa: mapa da pasta e decisões pendentes
 
-> **Atualizado em 25/11/2026, às 21h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
+> **Atualizado em 25/11/2026, às 23h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
 
 ## Por onde começar
 
@@ -28,7 +28,7 @@
 | `simulado-banca/simulado.md` | Cerca de 35 perguntas prováveis, com as respostas tiradas do material | 20/11 |
 | `perguntas/perguntas-por-pessoa.md` | O que perguntar à Fran, à Cláudia, ao Thiago, à oncologista e ao Rangel | 20/11 |
 | `fechamento/dificuldades-e-consideracoes.md` | Rascunho das dificuldades, das considerações finais e das ações do campus | 20/11 |
-| `tempo-animacoes.md` | O trecho de cada animação e o orçamento total (de 2 min 40 s a 3 min 40 s) | 20/11, revisto em 21/11 |
+| `tempo-animacoes.md` | O trecho de cada animação e o orçamento total (de 3 min 02 s a 4 min 04 s, com o coelho) | 20/11, revisto em 21/11 e 25/11 |
 | `auditoria/` | A nota de cada um dos 24 slides atuais e as miniaturas | 20/11 |
 | `prototipo/` | 5 slides novos em `.pptx`, mais 3 extras (21/11), as prévias e o script | 20/11 e 21/11 |
 | `plano-b/teste-offline.md` | Teste das 7 peças sem internet, o plano B e o checklist do dia | 20/11 |
@@ -59,7 +59,7 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 10. **O formato do protótipo** (frase-afirmação e prova): aplico nos outros slides? Mexe na apresentação, então vai em PR em rascunho. *(prototipo)*
 11. **A saída dos slides 14, 15, 16 e 23**, conforme as suas decisões de 19/11. O 23 só depois da resposta da Fran. *(auditoria)*
 12. **Gravar os 4 vídeos do plano B** no repositório (cerca de 10 a 25 MB)? *(plano-b)*
-13. **Juntar o PR lipedubas-tech/mk#43** (a cauterização na animação da nodulectomia)? Isso muda o trecho escolhido. *(tempo-animacoes)*
+13. ~~Juntar o PR lipedubas-tech/mk#43~~ **Juntado em 25/11.** Falta escolher o trecho da nodulectomia: opção A (27 s) ou B, com a cauterização (29 s). *(tempo-animacoes)*
 
 ### Confirmar com alguém
 14. **O Rangel e a Cláudia:** a foto da cirurgia de 18/11 pode ir para a banca? O Rangel pode ser citado pelo nome, junto com a data em que deixou as consultas? *(prototipo, privacidade)*

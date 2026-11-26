@@ -18,9 +18,10 @@
 | Animação | Cenas | Duração inteira | Fonte da medida |
 |---|---|---|---|
 | **Castração (OSH)**: `castracao-osh/osh-3d.html` | 11 | **1 min 56 s** (116 s) | `castracao-osh/3d/src/40-roteiro.js` |
-| **Nodulectomia**: `estagio/animacao-nodulectomia/index.html` | 10 | **1 min 43 s** (103 s). Se o PR #43 da cauterização for juntado, passa para cerca de 1 min 47 s | `estagio/animacao-nodulectomia/src/app.js` |
+| **Nodulectomia**: `estagio/animacao-nodulectomia/index.html` | 10 | **1 min 47 s** (107 s), com a cauterização (PR #43, juntado em 25/11; a cena 8 passou de 8 para 12 s) | `estagio/animacao-nodulectomia/src/app.js` |
 | **Quimio, "A seringa vermelha"**: `estagio/quimioterapia/dist/quimio-offline.html` | 8 cenas, 25 passos com clique | **cerca de 4 min**, no ritmo de quem apresenta | LEIAME da quimio |
 | **Katita 3D**: `katita-3d/dist/katita-offline.html` | 7 etapas | **1 min 18 s** (78 s; medido em 20/11 às 21h41, P13). Toca sozinha ou etapa por etapa | `katita-3d/src/app.js` (lista `DUR`: 8, 8, 14, 11, 14, 12 e 11 s) |
+| **Coelho com miíase**: `estagio/animacao-miiase-coelho/index.html` | 11 | **1 min 44 s** (104 s). **Em construção** (passo 1 de 26/11); a duração pode mudar | `estagio/animacao-miiase-coelho/src/base.js` *(acrescentado em 25/11, 23h41)* |
 | **Criocirurgia** (2D e 3D) | 7 passos | **a medir**. Existe só no claude.ai, sem versão offline no repositório | — |
 
 ## Trecho proposto de cada uma (você decide)
@@ -48,7 +49,18 @@
 | 5. Dissecção pelo tecido sadio | 10 s | é o cuidado principal com um nódulo infeccionado |
 | 7. Retirada em bloco | 9 s | o resultado |
 | **Total** | **27 s** | |
-- Se o PR #43 entrar, dá para trocar a cena 5 pela 8 (cauterização, cerca de 12 s), porque foi a hemostasia que você viu.
+- **Atualização de 25/11:** o PR #43 foi juntado, e a cena 8 agora mostra a cauterização (12 s). Como foi a hemostasia que você viu, há duas opções **[decisão sua]**:
+  - **A, sem mudar:** as cenas 3, 5 e 7, com **27 s**.
+  - **B, com a cauterização:** as cenas 3, 7 e 8, com **29 s**. Sai a dissecção e entra o que você viu de verdade.
+
+### Coelho com miíase: cerca de 22 s *(acrescentado em 25/11, 23h41)*
+| Cena | Duração | Por quê |
+|---|---|---|
+| 3. As larvas (por baixo do pelo, nada muda por fora) | 10 s | mostra o que estava escondido |
+| 6. Tricotomia ("O pelo escondia. A tricotomia mostrou.") | 12 s | é a revelação, a ideia central do caso |
+| **Total** | **22 s** | |
+- É o trecho sugerido no projeto da animação. Ela ainda está em construção, então confira de novo quando ficar pronta.
+- Tem **modo suave** (tecla S), que deixa as larvas e as feridas menos fortes para a banca.
 
 ### Quimio, "A seringa vermelha": cerca de 50 a 60 s
 - **Entram** a abertura (a seringa enchendo de vermelho, com 2 passos) e a cena "O intervalo é o tempo da medula voltar" (o porquê dos 21 dias, com 3 passos).
@@ -65,20 +77,22 @@
 |---|---|
 | Katita | 48 a 75 s |
 | OSH | 36 s |
-| Nodulectomia | 27 s |
+| Nodulectomia | 27 a 29 s |
+| Coelho | 22 s |
 | Quimio | 50 a 60 s |
 | Criocirurgia | 0 a 20 s |
-| **Total** | **cerca de 2 min 40 s a 3 min 40 s** ✅ dentro do orçamento (revisto em 21/11 com a Katita medida) |
+| **Total** | **cerca de 3 min 02 s a 4 min 04 s** (revisto em 25/11, com o coelho e a cauterização). No limite de cima, passa um pouco dos 4 min |
 
 ## Como mostrar sem perder tempo
 
 - **Abrir as animações antes**, cada uma numa aba, já na cena certa. Trocar de aba na hora leva 2 segundos; abrir um arquivo leva 20.
 - **Falar por cima.** As animações têm legenda, mas a banca deve ouvir você, e não ler.
-- **Corte de segurança:** se o tempo apertar, as primeiras a sair são a criocirurgia e a nodulectomia.
+- **Corte de segurança:** se o tempo apertar, as primeiras a sair são a criocirurgia e a nodulectomia. Com o coelho, o mais simples para voltar ao orçamento é tirar a criocirurgia (use a foto) ou tocar a Katita sem pausas (48 s).
 
 ## O que depende de você
 
 1. Aprovar ou mudar os trechos acima.
 2. A OSH sem os fetos: entra um slide logo depois?
-3. Juntar o PR #43 (cauterização) muda a escolha da nodulectomia.
+3. ~~Juntar o PR #43 (cauterização)~~ **Feito em 25/11.** Agora a escolha é da nodulectomia: opção A (27 s) ou B, com a cauterização (29 s)?
+5. O coelho: confirmar o trecho das cenas 3 e 6 quando a animação ficar pronta.
 4. A criocirurgia: foto ou animação?

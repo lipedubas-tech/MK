@@ -689,3 +689,24 @@ Material novo desde a última execução: o filhote com parvovirose (PRs lipedub
 **Próxima sugestão:** quando o Felipe decidir onde entra o coelho, atualizar o roteiro e a fala completa (o tempo total passa de 21 min).
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 25/11/2026 — 23h41
+
+Material novo desde as 21h41:
+- **PR lipedubas-tech/mk#43 juntado:** a cauterização na animação da nodulectomia, uma decisão que estava pendente desde 20/11.
+- **Passo 1 da animação do coelho** (PR #103).
+- **Os dados do Instagram para o site** (PR #102).
+
+**Feito:**
+- **`tempo-animacoes.md`:**
+  - nodulectomia: agora tem 1 min 47 s. Para o trecho, há duas opções: A, as cenas 3, 5 e 7 (27 s); ou B, as cenas 3, 7 e 8, com a cauterização que você viu (29 s);
+  - coelho: entrou com 104 s ao todo, e o trecho sugerido são as cenas 3 e 6 (22 s);
+  - o total das animações passou a ser de 3 min 02 s a 4 min 04 s. Está registrado como voltar aos 4 min: tirar a criocirurgia, ou tocar a Katita sem pausas.
+- **Reteste offline (`plano-b/teste-offline.md`):** a nodulectomia nova, o coelho e a linha do tempo (142 de 142 fotos) funcionam sem internet. Achado: o `dist/nodulectomia.html` não abre sem rede, porque busca o three.js e a fonte na internet; no dia, use o `index.html`.
+- **`LEIAME.md`:** o item 13 foi marcado como feito, e a escolha do trecho ficou pendente.
+
+**Pergunta para o Felipe:** o trecho da nodulectomia fica na opção A (27 s) ou na B (29 s, com a cauterização)?
+
+**Próxima sugestão:** quando a animação do coelho ficar pronta, conferir o trecho e testar de novo sem internet.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
