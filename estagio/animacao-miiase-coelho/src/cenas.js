@@ -16,8 +16,8 @@ var DBG = (function () {
 var DEITA_Y = -3.6;
 function poseDeitado(t) {
   raiz.position.set(0, DEITA_Y, 0); raiz.rotation.set(0, 0, 0);
-  gira("Ear_R", 0, .95, .12 + .03 * Math.sin(t * 1.3));
-  gira("Ear_L", 0, .95, .12 + .03 * Math.sin(t * 1.1 + 1));
+  gira("Ear_R", 0, .5, .28 + .03 * Math.sin(t * 1.3));
+  gira("Ear_L", 0, .5, .28 + .03 * Math.sin(t * 1.1 + 1));
   gira("frontHip_R", 0, 0, .5); gira("frontHip_L", 0, 0, .5);
   gira("backHip_R", 0, 0, -.5); gira("backHip_L", 0, 0, -.5);
   gira("Neck_M", 0, 0, .12);
@@ -46,6 +46,7 @@ function depoisDaPose(t) {
   U.uGrav.value.set(0, -1, 0).applyMatrix3(_m3).normalize();
   /* olhos */
   CO.olhos.forEach(function (O) { pontoMundo(O.bind, O.m.position); });
+  bigodes();
   /* larvas e ovos: escondidos por enquanto */
   larvas.count = 0; ovos.count = 0;
   if (DBG.cam) { var c = DBG.cam; cam.position.set(c[0], c[1], c[2]); cam.lookAt(c[3], c[4], c[5]); }
