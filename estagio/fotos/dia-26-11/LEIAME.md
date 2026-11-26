@@ -74,3 +74,6 @@ tutor ("FABIO")**. Cubra o nome do tutor antes de usar em slides. Na foto 07, ne
 Complemento (Felipe, 26/11): a Katita **ainda não consegue apoiar a pata no chão**. O Thiago
 recomendou **fisioterapia**. Quantas sessões, com que frequência, onde ela vai fazer e quando volta
 para nova avaliação ficam a confirmar.
+
+Complemento (Felipe, 26/11): "Provavelmente não vai dar tempo de estágio para ver resultado da
+fisio." O caso da Katita deve ficar em aberto no fim do estágio.
