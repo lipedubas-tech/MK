@@ -736,3 +736,20 @@ Material novo desde a última execução: as decisões de 26/11, registradas por
 **Próxima sugestão:** a cada notícia do filhote, preencher a tabela de acompanhamento. Depois do coelho e do site, começar a montagem.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 26/11/2026 — 9h41
+
+Sem material novo desde as 7h41. Esta execução cumpriu a decisão de 26/11 ("o roteiro mostra quanto tempo [cada caso novo] custa e o que sairia para caber").
+
+**Feito:**
+- **`roteiro/roteiro.md`:** nova seção "Os casos novos de 24 a 26/11: quanto custam".
+  - **Custos:** o coelho, cerca de 1 min 30 s; a cadela de 17 anos e o filhote, cerca de 40 s cada como slide, ou 10 s como frase. Contas pelo mesmo método dos "Tempos revistos": 100 palavras por minuto, mais as animações, mais 5 s por slide.
+  - **Totais:** com o coelho, a defesa vai para cerca de 22 min 40 s. Com os três como slides, cerca de 24 min.
+  - **Se a Fran disser 20 min:** saem a criocirurgia e a nodulectomia, e a cadela e o filhote ficam como frases.
+- **Proposta de lugar para o coelho:** um bloco depois da esporotricose, porque os dois têm a pele e a tricotomia em comum, ou no fechamento, junto do tema do cuidado.
+
+**Perguntas para o Felipe:** onde entra o coelho? E a cadela de 17 anos e o filhote ficam como slides ou como frases?
+
+**Próxima sugestão:** quando a Fran disser o tempo exato, fechar a lista de casos e a ordem.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

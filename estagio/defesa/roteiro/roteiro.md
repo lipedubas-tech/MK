@@ -239,6 +239,32 @@ A abertura foi contada com Odisseu.
 - **Se o mínimo do IFC for 25 min** **[confirmar com a Fran]**, as duas saídas acima, mais um ritmo um pouco mais lento, fecham a conta.
 - **O número que vale é o do seu ensaio.** Esta tabela é só uma estimativa, e a coluna "Seu tempo" da `fala-completa.md` é para isso.
 
+## Os casos novos de 24 a 26/11: quanto custam (26/11/2026, às 9h41)
+
+A decisão de 26/11 pede que cada caso novo mostre quanto tempo custa e o que sairia para caber. A conta usa o mesmo método dos "Tempos revistos": 100 palavras por minuto, mais o trecho de animação, mais 5 s por slide. As falas vêm dos rascunhos em `casos/`.
+
+| Caso | Situação | Fala | Animação | Slides | **Custo** |
+|---|---|---|---|---|---|
+| **Coelho com miíase** | **Entra** (decisão de 25/11) | 79 palavras, 47 s, mais cerca de 10 s para "o pelo escondia" | 22 s (cenas 3 e 6) | 2 | **cerca de 1 min 30 s** |
+| **Cadela de 17 anos** | A decidir: slide ou frase | 53 palavras, 32 s | — | 1 | **cerca de 40 s** (como frase: cerca de 10 s) |
+| **Filhote com parvovirose** | A decidir: slide ou frase | 52 palavras, 31 s | — | 1 | **cerca de 40 s** (como frase no slide 7: cerca de 10 s) |
+| Nodulectomia, opção B (cauterização) | A decidir | — | +2 s | — | +2 s |
+
+**A soma:**
+
+| Cenário | Total estimado |
+|---|---|
+| A fala de 21/11, sem os casos novos | 21:09 |
+| **Mais o coelho** (já decidido) | **cerca de 22:40** |
+| Mais o coelho, a cadela e o filhote como frases | cerca de 23:00 |
+| Mais o coelho, a cadela e o filhote com slides próprios | cerca de 24:00 |
+
+**O que isso quer dizer:**
+- **Se o tempo da defesa for de 25 a 30 min,** os três cabem, até com slides próprios, sem cortar nada. Ainda sobra cerca de 1 min para a Parte 1 crescer, como propõem os "Tempos revistos".
+- **Se a Fran disser 20 min,** o coelho só cabe com cortes. Pela lista de corte, a criocirurgia e a nodulectomia saem primeiro (−2:00), e a cadela e o filhote ficam só como frases.
+- **Onde o coelho entra no roteiro** ainda é decisão sua (`LEIAME.md`, item 25). Há duas propostas: como bloco próprio, depois da esporotricose (os dois têm a pele e a tricotomia em comum); ou no fechamento, junto do tema do cuidado.
+- **O número que vale continua sendo o do ensaio** (12 e 13/12, pelo cronograma).
+
 ## O que depende de você
 
 1. **Quais casos entram.** Esta é uma proposta, e os 4 centrais são Katita, Bob, quimio e esporotricose.
