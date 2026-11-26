@@ -95,6 +95,10 @@
 > "Foram **mais de quatro horas** de cirurgia. Eu pulei o almoço para acompanhar, porque queria sentir como é a rotina. O veterinário brincou que, depois dessa, eu ia desistir da veterinária. O papel do anestesista foi garantir que ela sobrevivesse até o fim.
 > E esta é a Katita no pós-operatório."
 
+**e. 30 dias depois (proposta de 26/11, cerca de 30 s)** **[decisão sua: entra ou não]**
+> "**A cirurgia não é o fim da história.** No controle de 30 dias, em 26 de novembro, ela fez raio-X de novo **[o que o Thiago leu nas imagens: a confirmar]**. Mas ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia. A placa segura o osso; quem devolve o movimento é a recuperação, e ela leva tempo."
+*(Foto: `fotos/dia-26-11/07-katita-internamento-pos30.jpg`. Se usar o raio-X de 30 dias, cubra o nome do tutor no canto.)*
+
 *(30 s de margem)*
 
 **[confirmar com o Thiago: o lado, os pinos e a duração]**
@@ -187,6 +191,7 @@
 > Vi a clínica **tornar visível o que estava escondido**: uma fratura em Y no raio-X, um fecaloma dentro de um gato, um fungo que passa do gato para quem cuida dele. Vi **animais que não falam mostrarem onde dói**: um cão que não sentia a pata. E vi **o tempo**: um cão de 17 anos fazendo quimioterapia a cada 21 dias, três fetos que não nasceram e três filhotes que chegaram vivos.
 > Eu nunca tinha tido gato e sentia apatia por eles. No segundo dia, um gato de rua se esfregava nos meus dedos pelo vidro da baia.
 > **O paciente é o animal, mas a clínica é construída com as pessoas que o amam.**"
+> *(Opção acrescentada em 26/11, a partir da sua reflexão do mesmo dia; entra antes da última frase, se você quiser:)* "Eu conheci muita gente com um propósito maior. As meninas do Gatil dos resgatados se esforçam muito pelo bem dos animais. O estágio me fez conhecer pessoas que buscam fazer o bem." 
 
 **Ações do campus e agradecimento (30 s)** **[escolha 1 ou 2, só se for verdade para você]**
 > "Uma sugestão para o campus: **[por exemplo, preparar o aluno para a morte e a eutanásia antes do estágio]**.

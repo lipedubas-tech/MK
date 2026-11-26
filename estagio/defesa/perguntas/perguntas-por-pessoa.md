@@ -75,6 +75,12 @@
 
 ---
 
+### Acrescentadas em 26/11 (o ecocardiograma e o filhote)
+- **O ecocardiograma de 26/11:** quem fez o exame (é um cardiologista de fora?), quem era o paciente e qual era a suspeita? Posso ver o laudo?
+  - Resposta:
+- **O filhote com parvovirose:** como ele está hoje? Está comendo sozinho, e os vômitos e a diarreia pararam? Qual é o tratamento?
+  - Resposta:
+
 ### Acrescentadas em 25/11 (o filhote com parvovirose)
 - **Qual foi o tratamento do filhote**, e como ele está? Quantos dias ficou no isolamento?
   - Resposta:
@@ -139,6 +145,8 @@
 2. **Posso usar a animação 3D da cirurgia da Katita na defesa?** Quer conferir se está correta?
    - Resposta:
 3. **Bob:** a recomendação foi só a bota ortopédica? Existe exame para confirmar a causa neurológica?
+   - Resposta:
+4. ★ **Katita, controle de 30 dias (26/11):** o que o raio-X mostrou (a fratura está consolidando? os implantes estão no lugar)? É esperado que ela ainda não apoie a pata aos 30 dias? Quantas sessões de fisioterapia, onde e com que frequência? Quando é o próximo controle? Algum implante vai ser retirado? *(acrescentada em 26/11)*
    - Resposta:
 
 ---

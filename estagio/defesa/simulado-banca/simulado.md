@@ -45,9 +45,16 @@
 
 **2.4 Qual lado foi operado?** ⚠️
 > Esquerdo, pelo marcador "E" no raio-X. **Falta a confirmação do Thiago.**
+> *Atualização de 26/11:* no raio-X do controle de 30 dias (`fotos/dia-26-11/06`), os implantes também estão no membro marcado **E**. Isso reforça o lado esquerdo, mas a palavra final é do Thiago.
 
 **2.5 Quantos pinos foram colocados?** ⚠️
 > A sua anotação marca um pino na ulna, e a página 3D desenhou mais pinos. **Conferir com o Thiago.**
+
+**2.6 Ela voltou a andar? Como ela está hoje?** ⚠️ *(acrescentada em 26/11)*
+> No controle de 30 dias (26/11), ela **ainda não apoiava a pata no chão**, e o Thiago recomendou **fisioterapia** (Felipe, 26/11). Não diga que ela "se recuperou". Diga que a cirurgia estabilizou a fratura e que a recuperação da função ainda está em andamento. **A confirmar com o Thiago:** o que o raio-X de 30 dias mostrou (consolidação, implantes), quantas sessões de fisioterapia, e se é normal não apoiar aos 30 dias numa fratura desse tipo.
+
+**2.7 Por que ela ainda não apoia a pata?** ⚠️ *(acrescentada em 26/11)*
+> Não responda de memória. **Resposta do Thiago, a confirmar.** O que dá para dizer com segurança: foi uma fratura grave, articular, com mais de 4 horas de cirurgia, e o Thiago indicou fisioterapia.
 
 ---
 
@@ -158,6 +165,8 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 
 **10.2a O que você aprendeu sobre os tutores?** ✅ *(acrescentada em 25/11)*
 > "A frase que eu mais ouvi foi: \"ela é minha vida\", e quase sempre de senhoras falando da cachorra ou da gata. Isso mudou como eu vejo a clínica: o paciente é o animal, mas quem a gente atende junto é a pessoa." (A frase está nas suas reflexões de 24/11. O "quase sempre" é uma impressão sua, não uma contagem.)
+>
+> *Outra resposta possível (reflexão de 26/11):* "Conheci muita gente com um propósito maior, como as meninas do Gatil dos resgatados, que se esforçam muito pelo bem dos animais."
 
 **10.2 O que você leva do estágio?** ✅
 > A sua reflexão do dia 1: "o trabalho do veterinário é quase mais com humanos do que com animais". E a tese: "o paciente é o animal, mas a clínica é construída com as pessoas que o amam".

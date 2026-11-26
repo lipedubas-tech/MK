@@ -753,3 +753,26 @@ Sem material novo desde as 7h41. Esta execução cumpriu a decisão de 26/11 ("o
 **Próxima sugestão:** quando a Fran disser o tempo exato, fechar a lista de casos e a ordem.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 26/11/2026 — 15h41
+
+Material novo de 26/11, registrado por outras sessões (PRs lipedubas-tech/MK#110 a #113): o ecocardiograma, o filhote com parvovirose internado, a reflexão "pessoas com um propósito maior" e o **controle de 30 dias da Katita**. Nele, ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia.
+
+**Feito:**
+- **Katita (o caso principal):**
+  - a `fala-completa.md` ganhou a proposta do trecho "e. 30 dias depois" (cerca de 30 s): "A cirurgia não é o fim da história";
+  - o simulado ganhou as perguntas 2.6, "Ela voltou a andar?", e 2.7, "Por que ainda não apoia?", com a orientação de não dizer que ela "se recuperou";
+  - a 2.4 ganhou a nota de que o raio-X de 30 dias também marca os implantes no membro E;
+  - o roteiro ganhou a nota no bloco 4, e o Thiago, uma pergunta ★ sobre o controle de 30 dias.
+- **Filhote:** a tabela de acompanhamento ganhou a linha de 26/11: internado, com acesso na pata, sentado e alerta. É impressão da foto, não laudo.
+- **Ecocardiograma:** entrou na contagem das atividades (1), e há perguntas para a Cláudia: quem fez, que paciente e qual diagnóstico.
+- **Reflexão de 26/11:** entrou como opção nas considerações finais da fala e como outra resposta para a 10.2a do simulado.
+- **Linha do tempo:** ganhou o dia 26/11, agora com 149 fotos. Os raios-X da Katita, que mostram o nome do tutor, e as fotos do eco, com rosto, estão marcados como sensíveis.
+- **Checklist de privacidade:** o nome do tutor nos raios-X de 30 dias deve ser coberto, e o rosto aparece nas fotos do eco.
+- **LEIAME:** a pendência 29 pergunta se o trecho "30 dias depois" entra.
+
+**Perguntas para o Felipe:** o trecho "30 dias depois" da Katita entra na fala?
+
+**Próxima sugestão:** quando o Thiago responder sobre o raio-X de 30 dias, completar a fala e o simulado.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

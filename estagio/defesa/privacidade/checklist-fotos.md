@@ -69,6 +69,13 @@ Ele vai entrar na defesa (decisão do Felipe, 25/11). Antes de escolher as fotos
 - **Biossegurança:** a parvovirose é muito contagiosa. Se a banca perguntar, a resposta registrada é esta: depois, o filhote foi para o isolamento, e o Felipe trocou de roupa e não atendeu mais pacientes (Felipe, 25/11). **Ainda não fecha:** pelo horário das fotos, o filhote foi às 16h31 e o coelho às 18h33, mas o Felipe diz que o cachorro foi depois do coelho. Acerte isso antes de contar.
 - **Uso bom:** é uma das fotos mais "fofas" do estágio e serve para a abertura ou para o fechamento, sem imagem forte.
 
+## Fotos novas (26/11): o eco, o filhote e a Katita aos 30 dias
+
+- **Fotos 01 e 02 (ecocardiograma):** aparecem **o rosto de uma mulher de camiseta verde**, sorrindo, que segura o cão, e uma pessoa de blusa azul operando o aparelho. A tela mostra textos, que podem incluir o nome do paciente. Para usar: peça autorização ou recorte só a tela e o cão, e confira a tela ampliada. Na linha do tempo, as duas estão marcadas como sensíveis.
+- **Foto 03 (o filhote internado):** nenhuma pessoa aparece. ✅
+- **Fotos 04 a 06 (os raios-X da Katita aos 30 dias):** o canto superior esquerdo mostra o **nome do tutor**. **Cubra antes de usar.** Na linha do tempo, as três estão marcadas como sensíveis.
+- **Foto 07 (a Katita no internamento):** nenhum rosto aparece; só uma mão no alto, atrás do vidro. ✅
+
 ## Imagens fortes (avisar a banca)
 
 São cirurgias abertas e sangue. Não é um problema de privacidade, mas vale uma frase antes, como "a próxima imagem mostra a cirurgia aberta":

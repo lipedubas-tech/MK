@@ -28,6 +28,7 @@ No começo do estágio, a Cláudia contou que **no ano passado atendia parvoviro
 | Data | Como ele está | Tratamento | Fonte |
 |---|---|---|---|
 | 25/11 | Diagnóstico; isolamento | **a confirmar** | Felipe |
+| 26/11, 10h22 | No internamento, sentado, alerta, de língua para fora (ofegante), com **acesso na pata (bandagem verde)** e ração nos potes. Parece melhor que na véspera, **mas isso é impressão da foto, não laudo** | Soro pelo acesso; o resto **a confirmar** | `fotos/dia-26-11/03` |
 | | | | |
 
 ## Proposta (se entrar)
