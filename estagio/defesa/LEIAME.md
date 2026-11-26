@@ -1,9 +1,10 @@
 # Defesa: mapa da pasta e decisões pendentes
 
-> **Atualizado em 25/11/2026, às 23h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
+> **Atualizado em 26/11/2026, às 7h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
 
 ## Por onde começar
 
+00. **`cronograma/ate-15-12.md`:** o calendário até a defesa (15/12) e as decisões que precisam chegar antes da montagem dos slides (08/12).
 0. **`previa-defesa/previa-defesa.pdf`:** a defesa inteira, de ponta a ponta, num PDF só.
 1. **`roteiro/roteiro.md`** e **`roteiro/fala-completa.md`:** a defesa bloco a bloco, com as camadas dos eixos. A fala escrita dá cerca de 21 min, e não os 26 previstos.
 2. **`prototipo/previa-*.png`** (5 slides, mais 3 extras): o visual proposto para os slides (frase-afirmação e prova).
@@ -19,6 +20,8 @@
 | `parte1-clinica/atividades-contagem.md` | O que o diário permite contar para o slide de atividades (até 19/11) | 21/11 |
 | `casos/esporotricose.md` | O caso de Saúde Única: slide, fala e perguntas da banca | 19/11 |
 | `casos/cadela-17-anos-renal.md` | A cadela de 17 anos da fluidoterapia, acompanhada de 29/10 a 25/11: slide, fala e perguntas | 25/11 |
+| `casos/filhote-parvovirose.md` | O filhote com parvovirose: a doença que "não aparecia mais" apareceu. Frase ou slide, e a tabela de acompanhamento | 26/11 |
+| `cronograma/ate-15-12.md` | O calendário até 15/12 e as decisões com prazo | 26/11 |
 | `casos/coelho-miiase.md` | **O coelho com miíase (entra na defesa, decisão de 25/11):** slide, fala, "o pelo escondia" e perguntas | 25/11 |
 | `eixos/comparativo.md` | Os 5 eixos e a tese comparados. Decidido: todos, em camadas | 19/11 |
 | `pesquisa/relatorio.md` | A pesquisa aprofundada e as propostas P1 a P15 | 19/11 |

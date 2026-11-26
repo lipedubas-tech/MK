@@ -135,6 +135,8 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 
 **8.4 Por que cinomose e parvovirose quase não aparecem mais?** ✅
 > Pela vacinação. A Cláudia estava sem atender cinomose havia 1 ano e disse que a parvo era semanal no ano anterior e hoje não aparece. **Números concretos: pedir à Cláudia.**
+>
+> **Atualização de 26/11:** em 25/11 apareceu um filhote com parvovirose (teste rápido). Então a resposta muda para "ficou rara, mas não sumiu: no estágio vi um caso". Se a banca perguntar se ele era vacinado, a resposta está **a confirmar** com a Cláudia (`casos/filhote-parvovirose.md`).
 
 ---
 
