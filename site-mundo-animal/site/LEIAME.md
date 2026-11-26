@@ -53,7 +53,8 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 |---|---|
 | `equipe-tamiris.jpg`, `equipe-tamiris-rosto.jpg` | Captura do reel do Cartão Fidelidade enviada pelo Felipe em 26/11 (recortada sem a barra do celular e sem a legenda) |
 | `fachada.jpg`, `recepcao.jpg`, `pet-shop.jpg`, `sala-de-espera.jpg`, `raio-x.jpg`, `centro-cirurgico.jpg`, `banho-e-tosa.jpg` | Fotos cedidas, tiradas da defesa da Yasmin (2025), que dispensou o crédito. A fachada ainda tem o logo antigo (filhote de golden) |
-| `consultorio.jpg`, `internacao.jpg`, `laboratorio.jpg` | Fotos do Felipe no estágio (`estagio/fotos/dia-24-11/`, `dia-25-11/`, `geral/`) |
+| `consultorio.jpg`, `laboratorio.jpg` | Fotos do Felipe no estágio (`estagio/fotos/dia-24-11/`, `geral/`) |
+| `internacao.jpg` | Filhotes comendo na baia, foto do Felipe escolhida por ele para a internação (26/11) |
 | `pet-*.jpg` | Fotos de exemplo do estágio, as mesmas do protótipo |
 | `emblema.png`, `favicon.png`, `apple-touch-icon.png` | Recorte circular da foto de perfil do Instagram |
 
