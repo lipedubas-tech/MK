@@ -80,3 +80,15 @@ Ordem de segurança: **1) as páginas offline no notebook** → **2) os vídeos 
 
 1. **Gravar os vídeos do plano B no repositório?** São 4 vídeos, de cerca de 10 a 25 MB no total.
 2. **Testar no notebook que você vai levar**, de preferência no projetor da sala. O teste daqui usou um computador simulado.
+
+## Reteste de 25/11/2026, às 23h41
+
+Retestei sem internet o que mudou desde 20/11, com o mesmo método (Chromium pelo Playwright, toda requisição para fora bloqueada, tela de 1280 × 720):
+
+| Peça | Arquivo | Abriu? | Pedidos à internet | Erros no console |
+|---|---|---|---|---|
+| **Nodulectomia 3D, com a cauterização** (PR #43) | `estagio/animacao-nodulectomia/index.html` | ✅ desenhou a cena | nenhum | nenhum |
+| **Coelho com miíase 3D** (em construção, passo 1) | `estagio/animacao-miiase-coelho/index.html` | ✅ abertura com o coelho e o crédito do modelo | nenhum | nenhum |
+| **Linha do tempo** (agora com 142 fotos) | `estagio/defesa/linha-do-tempo/index.html` | ✅ | nenhum | nenhum; 142 de 142 fotos carregaram |
+
+**Atenção:** `estagio/animacao-nodulectomia/dist/nodulectomia.html` é a versão **para publicar**. Ela busca o three.js e a fonte na internet e, **sem rede, não abre** (erro "THREE is not defined"). No dia, use o `index.html` da mesma pasta.
