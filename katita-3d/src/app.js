@@ -14,7 +14,10 @@ var steps=[
 {t:"Banda de tensão e pinos",est:"Olécrano, ulna e canal medular da ulna",obj:"Refixar o olécrano, transformando a tração do tríceps em compressão",ins:"Furadeira, pinos de Kirschner, fio de cerclagem",
  ph:[[0,"O olécrano volta à posição anatômica."],[.3,"Dois pinos longos entram pela ponta do olécrano e descem pela ulna."],[.62,"Um túnel fino é perfurado na ulna, abaixo do corte, para ancorar o fio de aço."],[.74,"O fio de cerclagem cruza em oito por trás do osso e é preso nas pontas dos pinos."]]},
 {t:"Fechamento",est:"Músculo, tecido subcutâneo e pele",obj:"Reconstruir os planos de tecido e proteger a fixação",ins:"Porta-agulhas, fio absorvível (violeta) e nylon (escuro)",
- ph:[[0,"Pela incisão ainda aberta dá para ver as placas. Os planos musculares são reaproximados."],[.32,"Sutura do músculo com fio absorvível, ponto a ponto."],[.62,"Sutura da pele com fio de nylon. A pele em volta foi raspada antes da cirurgia."]]}
+ ph:[[0,"Pela incisão ainda aberta dá para ver as placas. Os planos musculares são reaproximados."],[.32,"Sutura do músculo com fio absorvível, ponto a ponto."],[.62,"Sutura da pele com fio de nylon. A pele em volta foi raspada antes da cirurgia."]]},
+/* etapa 8: o acompanhamento depois da cirurgia (26/11/2026). O modelo mostra os implantes como ficaram no fim da cirurgia; a consolidação não é modelada. */
+{t:"Controle de 30 dias",est:"Úmero, olécrano, ulna e implantes",obj:"Acompanhar a recuperação depois da cirurgia",ins:"Radiografia de controle (26/11/2026)",
+ ph:[[0,"Em 26/11/2026, quatro semanas depois da cirurgia, a Katita voltou à clínica para o controle radiográfico do cotovelo."],[.28,"No raio-X de controle aparecem as placas, os parafusos, os pinos e o fio em oito colocados na cirurgia."],[.56,"Ela ainda não apoia a pata no chão. O ortopedista recomendou fisioterapia."],[.8,"O resultado da fisioterapia deve vir depois do fim do estágio. O caso segue em acompanhamento."]]}
 ];
 var LB={r:[["Escápula",-.09,.21,.13],["Úmero",-.102,.03,.168],["Cotovelo fraturado",-.092,-.05,.12],["Ulna e rádio",-.09,-.17,.125]],
 1:[["Diáfise do úmero",-.104,.012,.166],["Côndilo lateral",-.128,-.05,.128],["Côndilo medial",-.066,-.05,.136],["Rádio",-.088,-.125,.142],["Ulna",-.108,-.14,.112]],
@@ -23,8 +26,9 @@ inc:[["Incisão de pele",-.1287,.0341,.1393]],
 3:[["Parafuso intercondilar",-.1195,-.0612,.1245]],
 4:[["Placa lateral",-.1195,.004,.153],["Parafusos",-.1235,-.0315,.128]],
 5:[["Pinos",-.105,-.14,.112],["Banda de tensão",-.103,-.062,.083]],
-6:[["Músculo: fio absorvível",-.117,-.02,.1],["Pele: nylon",-.1235,-.09,.094]]};
-var N=steps.length,DUR=[8,8,14,11,14,12,11],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
+6:[["Músculo: fio absorvível",-.117,-.02,.1],["Pele: nylon",-.1235,-.09,.094]],
+7:[["Placas e parafusos",-.1235,-.0315,.128],["Pinos",-.105,-.14,.112],["Banda de tensão",-.103,-.062,.083]]};
+var N=steps.length,DUR=[8,8,14,11,14,12,11,12],A3={u:0},api=null,speed=1,playing=!matchMedia("(prefers-reduced-motion: reduce)").matches,$=function(x){return document.getElementById(x)};
 var tickEl=$("ticks"),lastK=-1,lastP=-1,figs=document.querySelectorAll(".rf");
 /* três páginas no mesmo endereço: #caso, #cirurgia, #discussao */
 var PGS=["caso","cirurgia","discussao"],curPg="caso";
@@ -48,22 +52,28 @@ function uiTick(){var u=A3.u>=0?A3.u:0,k=Math.min(N-1,Math.floor(u)),f=u-k,S=ste
     Array.prototype.forEach.call(tickEl.children,function(b,i){b.className="tk"+(i===k?" on":(i<k?" done":""))});lastP=-1}
   if(pi!==lastP||lastP===-1){lastP=pi;$("d").textContent=S.ph[pi][1];$("pd").textContent=S.ph[pi][1]}
   var tl=$("tl");if(document.activeElement!==tl)tl.value=Math.round(u*1000);
-  $("pp").textContent=playing?"Pausar":"Reproduzir"}
+  $("pp").textContent=playing?"Pausar":"Reproduzir";autoXray(k)}
+/* etapa 8 (controle de 30 dias): liga o raio-X sozinho ao entrar e desliga ao sair, se foi ligado por aqui.
+   Se a pessoa mexer no botão Raio-X durante a etapa, a escolha dela fica valendo. */
+var autoX=false,xrK=-1;
+function autoXray(k){if(!api||k===xrK)return;xrK=k;var b=$("xr"),on=b.getAttribute("aria-pressed")==="true";
+  if(k===N-1){if(!on){b.setAttribute("aria-pressed","true");api.xray(true);autoX=true}}
+  else if(autoX){autoX=false;if(on){b.setAttribute("aria-pressed","false");api.xray(false)}}}
 function stepBack(){var k=Math.floor(A3.u);go(A3.u-k>.15?k:k-1)}
 function stepFwd(){go(Math.floor(A3.u)+1)}
-function togglePlay(){playing=!playing;if(playing&&A3.u>=6.99)go(0);uiTick()}
+function togglePlay(){playing=!playing;if(playing&&A3.u>=N-.01)go(0);uiTick()}
 $("prev").onclick=stepBack;$("next").onclick=stepFwd;
 $("rst").onclick=function(){go(Math.floor(A3.u));playing=true};
 $("pp").onclick=togglePlay;
-var tlb=$("tl");
-tlb.addEventListener("input",function(){A3.u=Math.min(6.999,tlb.value/1000);lastK=-1;if(window.setDragSlider)setDragSlider(true);uiTick()});
+var tlb=$("tl");tlb.max=N*1000-1;
+tlb.addEventListener("input",function(){A3.u=Math.min(N-.001,tlb.value/1000);lastK=-1;if(window.setDragSlider)setDragSlider(true);uiTick()});
 ["change","pointerup","keyup","blur"].forEach(function(ev){tlb.addEventListener(ev,function(){if(window.setDragSlider)setDragSlider(false)})});
 $("spd").onchange=function(){speed=parseFloat(this.value)};
 function press(id,fn){$(id).onclick=function(){var on=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",on);fn(on,this)}}
 Array.prototype.forEach.call(document.querySelectorAll("#views button"),function(b){b.onclick=function(){if(api)api.view(b.getAttribute("data-v"))}});
 press("iso",function(on){if(api)api.iso(on)});
 press("cmp",function(on){if(api)api.cmp(on)});
-press("xr",function(on){if(api)api.xray(on)});
+press("xr",function(on){autoX=false;if(api)api.xray(on)});
 press("pov",function(on,b){b.textContent=on?"Voltar à visão externa":"Visão do cirurgião";if(api)api.pov(on)});
 press("pres",function(on,b){b.textContent=on?"Sair da apresentação":"Modo apresentação";$("wrap").classList.toggle("present",on);
   try{if(on){var el=document.documentElement,rq=el.requestFullscreen||el.webkitRequestFullscreen;if(rq){var pr=rq.call(el);if(pr&&pr.catch)pr.catch(function(){})}}
@@ -397,7 +407,7 @@ function build(){
   var sunT=new THREE.Object3D();sc.add(sunT);sun.target=sunT;sun.castShadow=true;sun.shadow.mapSize.set(1536,1536);sun.shadow.bias=-.0004;sun.shadow.normalBias=.0006;
   ren.shadowMap.enabled=true;ren.shadowMap.type=THREE.PCFSoftShadowMap;ren.toneMapping=THREE.ACESFilmicToneMapping;ren.toneMappingExposure=1.0;
   var ground=new THREE.Mesh(new THREE.PlaneGeometry(6,6),new THREE.ShadowMaterial({opacity:.34}));ground.rotation.x=-PI/2;ground.position.y=-.406;ground.receiveShadow=true;ground.layers.set(1);sc.add(ground);
-  function camKey(u){var k=Math.min(6,Math.floor(u));if(cmp)return"cl";if(pov)return k===6?"povw":"pov";if(k===0)return u<.5?"far":"near";if(k===6)return"wide";if(k===2&&u<2+INC-.04)return"wide";if(k===2||k===5)return"lat";if(k===3)return u<3.52?"cl":"scw";if(k===4)return"cl";return"near"}
+  function camKey(u){var k=Math.min(N-1,Math.floor(u));if(cmp)return"cl";if(pov)return k>=6?"povw":"pov";if(k===0)return u<.5?"far":"near";if(k===7)return"lat";if(k===6)return"wide";if(k===2&&u<2+INC-.04)return"wide";if(k===2||k===5)return"lat";if(k===3)return u<3.52?"cl":"scw";if(k===4)return"cl";return"near"}
   function setLabels(list){labs.forEach(function(l){l.el.remove()});labs=(list||[]).map(function(a){var el=document.createElement("div");el.className="lb";el.textContent=a[0];host.appendChild(el);setTimeout(function(){el.classList.add("on")},60);return{el:el,v:new V(a[1],a[2],a[3])}})}
   var so=1,gA=0,tV=new V(),INC=.3;
   var IPATH=SO.path.map(P3),ICUM=[0];for(var ip=1;ip<IPATH.length;ip++)ICUM.push(ICUM[ip-1]+IPATH[ip].distanceTo(IPATH[ip-1]));
@@ -406,7 +416,7 @@ function build(){
     var a=IPATH[i-1],b=IPATH[i],q=(L-ICUM[i-1])/Math.max(1e-9,ICUM[i]-ICUM[i-1]);incR.p.copy(a).lerp(b,q);incR.t.copy(b).sub(a).normalize();
     var j=1;while(j<ISN.length-1&&ISN[j].s<sv)j++;var qa=ISN[j-1],qb=ISN[j],qq=Math.min(1,Math.max(0,(sv-qa.s)/(qb.s-qa.s)));incR.n.copy(qa.n).lerp(qb.n,qq).normalize();return incR}
   function applyState(u,t){
-    var k=Math.min(6,Math.floor(u));
+    var k=Math.min(N-1,Math.floor(u));
     /* fratura e olécrano */
     var f3=u-2,inc=u>=2&&u<2+INC,w=(u>=2&&u<3)?2+Math.max(0,f3-INC)/(1-INC):u; /* w: tempo da etapa 3 sem a incisão */
     var disp=1-RP(u,3.1,3.5),cutp=RP(w,2.08,2.42),od=RP(w,2.45,2.85)*(1-RP(u,5.02,5.3)),cutOn=w>=2.08;
@@ -492,7 +502,7 @@ function build(){
   var t0=performance.now(),tp=t0,pv=new V();
   function frame(u,t,k){
     var key=camKey(u);
-    var kk=Math.min(6,Math.floor(u)),lk=key+"|"+kk+"|"+(kk===0&&u<.5)+"|"+(kk===2&&u<2+INC-.04)+"|"+pov+"|"+cmp;
+    var kk=Math.min(N-1,Math.floor(u)),lk=key+"|"+kk+"|"+(kk===0&&u<.5)+"|"+(kk===2&&u<2+INC-.04)+"|"+pov+"|"+cmp;
     if(key!==lastKey){lastKey=key;ct.copy(VW[key][1]);cc.copy(VW[key][0]).sub(ct);fvT=VW[key][2]}
     if(lk!==lastLbl){lastLbl=lk;setLabels(pov||cmp?[]:(kk===0?(u<.5?LB.r:LB.r.slice(2,3)):(kk===2&&u<2+INC-.04?LB.inc:LB[kk])));vig.classList.toggle("on",pov&&kk>0)}
     cl.lerp(ct,k);co.lerp(offsetFor(),k);var tgt=cl.clone().add(panV);
@@ -514,7 +524,7 @@ function build(){
     ren.clearDepth();cam.layers.set(0);ren.render(sc,cam);ren.autoClear=true}
   function loop(now){requestAnimationFrame(loop);if(!host.offsetParent){tp=now;return}
     var dt=Math.max(0,Math.min((now-tp)/1000,.1)),t=(now-t0)/1000,kk=Math.min(1,dt*(calm||STILL?20:2.2));tp=now;
-    var A=window.A3;if(playing&&!dragSlider){var k0=Math.min(6,Math.floor(A.u));A.u+=dt*speed/DUR[k0];if(A.u>=7){A.u=6.999;playing=false}}
+    var A=window.A3;if(playing&&!dragSlider){var k0=Math.min(N-1,Math.floor(A.u));A.u+=dt*speed/DUR[k0];if(A.u>=N){A.u=N-.001;playing=false}}
     if(!(A.u>=0))A.u=0;var u=A.u;
     if(cmp){frame(1.5,t,kk);
       ren.setScissorTest(true);cam.aspect=W/2/H;cam.updateProjectionMatrix();
