@@ -199,11 +199,12 @@ DIAS = [
         ],
     },
     {
-        "data": "25/11", "titulo": "Profilaxias, a cadela de 17 anos e o coelho com miíase",
+        "data": "25/11", "titulo": "Profilaxias, a cadela de 17 anos, o coelho com miíase e o filhote com parvovirose",
         "casos": [
             "Duas profilaxias (limpeza dentária) com extração em dois cães de pequeno porte; a Cláudia fez a anestesia. Os dois se recuperam no internamento.",
             "Sessão semanal de fluidoterapia da cadela de 17 anos, sem dentes, com os rins sem funcionar. É a mesma de 29/10: passou de 3 sessões por semana (subcutânea) para 1 (intravenosa, com o remédio junto). Diagnóstico e remédio a confirmar.",
-            "Emergência perto das 18h: coelho com miíase, muitas larvas, feridas nas costas e na região genital e desidratação. Depilação, higienização, rifamicina spray e soro na veia da orelha; depois comeu no internamento. É o primeiro coelho do estágio, e a Cláudia, que normalmente não atende coelhos, atendeu porque ele sofria muito.",
+            "Emergência perto das 18h: coelho com miíase, muitas larvas, feridas nas costas e na região genital e desidratação. Tricotomia com máquina, sem sedação; a Cláudia passava álcool e tirava as larvas, e o Felipe tirou as mais altas, com luva. Depois, soro na veia da orelha e rifamicina spray; em seguida comeu no internamento. É o primeiro coelho do estágio, e a Cláudia, que normalmente não atende coelhos, atendeu porque ele sofria muito.",
+            "Filhote de cachorro com parvovirose, diagnosticada por teste rápido. Depois de atendido, foi para o isolamento; o Felipe trocou de roupa e não atendeu mais pacientes. Tratamento e evolução a confirmar.",
         ],
         "reflexoes": [],
         "ideias": [],

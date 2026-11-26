@@ -63,6 +63,12 @@ Ele vai entrar na defesa (decisão do Felipe, 25/11). Antes de escolher as fotos
 - **Imagens fortes** nas fotos 04 a 07 (feridas e região genital). Avise a banca antes.
 - **As fotos mais seguras** são a 10 (o coelho internado, com o soro na orelha) e a 08 (o frasco de rifamicina).
 
+## Fotos novas (25/11): o filhote com parvovirose
+
+- **Fotos 11 e 12 de `fotos/dia-25-11/`:** o Felipe aparece com o filhote no colo (confirmado por ele, 25/11). Ele pode usar o próprio rosto. Ao fundo há um retrato de formatura numa prateleira; em tamanho de slide, quase não se reconhece.
+- **Biossegurança:** a parvovirose é muito contagiosa. Se a banca perguntar, a resposta registrada é esta: depois, o filhote foi para o isolamento, e o Felipe trocou de roupa e não atendeu mais pacientes (Felipe, 25/11). **Ainda não fecha:** pelo horário das fotos, o filhote foi às 16h31 e o coelho às 18h33, mas o Felipe diz que o cachorro foi depois do coelho. Acerte isso antes de contar.
+- **Uso bom:** é uma das fotos mais "fofas" do estágio e serve para a abertura ou para o fechamento, sem imagem forte.
+
 ## Imagens fortes (avisar a banca)
 
 São cirurgias abertas e sangue. Não é um problema de privacidade, mas vale uma frase antes, como "a próxima imagem mostra a cirurgia aberta":
