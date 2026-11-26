@@ -3977,8 +3977,10 @@ var PRATA = { c: [0, 15.5, -5.5], r: [6.5, 6.0, 6.5] };   /* onde o spray prata 
 
 function g3(a) { return "vec3(" + a.map(function (x) { return x.toFixed(3); }).join(",") + ")"; }
 
+/* a lente é um círculo na tela (uLensS: centro e raio em pixels do canvas), preso a um ponto do corpo (uLensC,
+   no espaço de ligação) e com o raio uLensR medido no corpo; fim.js projeta os dois a cada quadro */
 var U = {
-  uLayer: { value: 0 }, uLensC: { value: new V3() }, uLensR: { value: 4 }, uLensA: { value: 0 },
+  uLayer: { value: 0 }, uLensC: { value: new V3() }, uLensR: { value: 4 }, uLensA: { value: 0 }, uLensS: { value: new V3(0, 0, 1) },
   uTosa: { value: new V3() }, uFerida: { value: 0 }, uPrata: { value: 0 }, uRif: { value: 0 }, uAlcool: { value: 0 },
   uSujo: { value: 0 }, uGrav: { value: new V3(0, -1, 0) }, uVeia: { value: 0 }, uSuave: { value: 0 }, uTempo: { value: 0 },
   uFurL: { value: PELO }, uOvos: { value: 0 }
@@ -3989,7 +3991,6 @@ var GLSL_COELHO = [
   "uniform vec3 uLensC, uTosa, uGrav;",
   "uniform float uLensR, uLensA, uFerida, uPrata, uRif, uAlcool, uSujo, uVeia, uSuave, uTempo, uFurL;",
   "float elip(vec3 p, vec3 c, vec3 r){ return 1. - length((p - c) / r); }",
-  "float lente(vec3 p){ return uLensA * (1. - smoothstep(uLensR * .74, uLensR, distance(p, uLensC))); }",
   "float zona(vec3 p, vec3 c, vec3 r, vec3 a, float prog){",
   "  if (prog <= 0.) return 0.;",
   "  float dentro = smoothstep(-.02, .14, elip(p, c, r) + (vn3(p * 1.3) - .5) * .22);",
@@ -4044,6 +4045,9 @@ function matCoelho(camada) {
         "L *= 1. - .55 * aReg.z;",                                   /* patas */
         "L *= smoothstep(.9, 2.4, min(distance(position, " + g3(OLHO_D.toArray()) + "), distance(position, " + g3(OLHO_E.toArray()) + ")));",
         "L *= 1. - .85 * smoothstep(9.8, 11.6, position.z) * step(14., position.y);",   /* focinho */
+        /* tosa: as camadas descem até a pele onde a máquina passou, e a borda do pelo cortado fica em rampa,
+           sem degraus (a máscara fina, por pixel, termina o corte no fragment shader) */
+        "L *= 1. - smoothstep(0., .7, tosa(position));",
         "vL = L;",
         "transformed += normalize(objectNormal) * L * uLayer + uGrav * L * uLayer * uLayer * .55;"
       ].join("\n"));
@@ -4052,16 +4056,19 @@ function matCoelho(camada) {
         .replace("#include <clipping_planes_pars_fragment>", "#include <clipping_planes_pars_fragment>\n" +
           "vec3 relevo(vec3 n, float h, float k){ vec3 dpx = dFdx(-vViewPosition), dpy = dFdy(-vViewPosition); float hx = dFdx(h), hy = dFdy(h);" +
           " vec3 q1 = cross(dpy, n), q2 = cross(n, dpx); float det = dot(dpx, q1); vec3 g = sign(det) * (hx * q1 + hy * q2) * k; return normalize(abs(det) * n - g); }\n" +
-          "float gFerida, gRug, gCrosta, gBrilho, gMetal;\n")
+          "float gFerida, gRug, gCrosta, gBrilho, gMetal;\n" +
+          /* lente na tela: tudo o que cai dentro do círculo perde o pelo, com a borda desfiada */
+          "uniform vec3 uLensS;\n" +
+          "float lente(){ return uLensA * (1. - smoothstep(uLensS.z * .8, uLensS.z, distance(gl_FragCoord.xy, uLensS.xy))); }\n")
         .replace("#include <map_fragment>", [
           "#include <map_fragment>",
           "vec3 p = vBind;",
-          "float sh = tosa(p), le = lente(p), w = ferida(p);",
+          "float sh = tosa(p), le = lente(), w = ferida(p);",
           "gFerida = 0.; gRug = 0.; gCrosta = 0.; gBrilho = 0.; gMetal = 0.;",
           "if (uLayer > 0.) {",
           /* ----- camada de pelo: fios por ruído, mais finos na ponta */
           "  float len = vL * (1. - sh);",
-          "  if (len < .08 || uLayer > 1. - sh * .98) discard;",
+          "  if (len < .08 || sh > .5) discard;",
           "  vec3 pc = p + vec3(sin(p.y * 2.1 + p.z * 1.3), sin(p.z * 1.7 + p.x * 1.1), sin(p.x * 1.9 + p.y * 1.4)) * .22 * uLayer;",
           "  float n = .58 * vn3(pc * 7.6) + .42 * vn3(pc * 2.1 + 3.1);",
           "  float lim = uLayer * uLayer * .5 + uLayer * .38 + vReg.x * .35 + (h12(gl_FragCoord.xy) - .5) * .05;",
@@ -4077,22 +4084,36 @@ function matCoelho(camada) {
           /* ----- pele: raiz escura sob o pelo; pele, restolho e feridas onde a tosa ou a lente mostram */
           "  float vis = max(sh, smoothstep(.25, .6, le));",
           "  vec3 raiz = corPelo(p, vReg) * .32;",
-          "  vec3 pele = lin(vec3(.74,.67,.64)) * (.92 + .16 * vn3(p * 3.));",
-          "  vec3 rest = mix(lin(vec3(.64,.62,.6)), corPelo(p, vReg), .45) * (.8 + .35 * vn3(p * 16.));",
-          "  vec3 c = mix(raiz, mix(pele, rest, sh * .8), vis);",
+          /* pele tosada (fotos 2 e 3): cinza-rosada, com o restolho do pelo, claro sob o pelo branco e escuro sob o cinza */
+          "  vec3 pele = lin(vec3(.62,.57,.55)) * (.92 + .16 * vn3(p * 2.6));",
+          "  float rq = vn3(p * 7.) * .6 + vn3(p * 21.) * .4;",
+          "  vec3 rest = mix(pele, corPelo(p, vReg) * .85 + .03, .34 + .3 * rq);",
+          "  vec3 c = mix(raiz, rest, vis);",
           /* umidade e sujeira presas junto da pele (cena 2) */
           "  float sj = uSujo * smoothstep(0., .4, elip(p, vec3(0.,9.,-8.), vec3(5.,6.5,4.)) + (fbm3(p * 1.4) - .5) * .5) * vis;",
           "  c = mix(c, lin(vec3(.36,.29,.2)) * (.8 + .4 * vn3(p * 6.)), sj * .7);",
           /* feridas: halo inflamado, centro em carne viva, crostas amareladas */
-          "  float nucleo = smoothstep(.45, .8, w), halo = smoothstep(.04, .4, w);",
-          "  float rug = fbm3(p * 3.3);",
-          "  float crosta = smoothstep(.54, .66, fbm3(p * 2.5 + 5.)) * smoothstep(.05, .5, w) * (1. - nucleo * .6);",
-          "  vec3 inflam = lin(vec3(.76,.46,.45)), cru = lin(vec3(.64,.22,.26)), fundo = lin(vec3(.33,.1,.14));",
-          "  vec3 wc = mix(inflam, mix(cru, fundo, smoothstep(.48, .72, rug)), nucleo);",
-          "  wc = mix(wc, lin(vec3(.8,.67,.36)) * (.85 + .3 * vn3(p * 9.)), crosta * .9);",
+          /* feridas (fotos 2 e 3): pele inchada e enrugada, avermelhada; placas de crosta amarelada com fendas
+             escuras; no centro, carne viva com os buracos onde as larvas entram; borda úmida e escura.
+             Ruído em frequência baixa (q deformado), para não granular de longe. */
+          "  vec3 q = p + (vec3(fbm3(p * .45 + 3.), fbm3(p * .45 + 7.), fbm3(p * .45 + 11.)) - .5) * 1.6;",
+          "  float nucleo = smoothstep(.42, .78, w), halo = smoothstep(.03, .3, w);",
+          "  float dobra = pow(1. - abs(vn3(q * vec3(1.4, 2.6, 1.4)) * 2. - 1.), 3.);",
+          "  float placa = smoothstep(.42, .55, fbm3(q * 1.1 + 5.)) * smoothstep(.05, .4, w) * (1. - nucleo * .55);",
+          "  float fenda = smoothstep(.84, .96, 1. - abs(vn3(q * 2.2 + 2.) * 2. - 1.)) * placa;",
+          "  float poco = smoothstep(.62, .78, vn3(q * 3.1 + 9.)) * nucleo;",
+          "  vec3 inflam = lin(vec3(.6,.44,.41)), cru = lin(vec3(.55,.23,.25)), fundo = lin(vec3(.22,.06,.08));",
+          "  vec3 wc = mix(inflam, cru, nucleo * (.7 + .3 * dobra));",
+          "  wc *= 1. - .42 * dobra * halo;",                         /* sulcos escuros entre as dobras inchadas */
+          "  wc = mix(wc, fundo, poco * .85);",
+          "  vec3 crostaC = mix(lin(vec3(.76,.63,.36)), lin(vec3(.55,.42,.26)), vn3(q * 3.3 + 1.));",
+          "  wc = mix(wc, crostaC * (.88 + .2 * vn3(q * 4.)), placa * .92);",
+          "  wc = mix(wc, lin(vec3(.26,.17,.11)), fenda * .85);",
+          "  float borda = smoothstep(0., .1, w) * (1. - smoothstep(.1, .26, w));",
+          "  wc = mix(wc, lin(vec3(.36,.22,.2)), borda * .45);",
           "  wc = mix(wc, vec3(dot(wc, vec3(.3,.5,.2))) * vec3(1.05,.98,.95), uSuave * .55);",
           "  c = mix(c, wc, halo * vis);",
-          "  gFerida = halo * vis; gRug = (rug * nucleo * .8 + crosta * .5) * vis; gCrosta = crosta * vis;",
+          "  gFerida = halo * vis; gRug = (-dobra * halo * .6 + placa * .45 - fenda * .4 - poco * .8) * vis; gCrosta = placa * vis;",
           /* prata em parte das feridas (vista pela lente) */
           "  float pw = prataM(p) * step(.48, vn3(p * .55 + 4.)) * vis;",
           "  c = mix(c, lin(vec3(.7,.72,.75)), pw * .85); gMetal = pw * .6;",
@@ -4106,7 +4127,7 @@ function matCoelho(camada) {
         ].join("\n"))
         .replace("#include <roughnessmap_fragment>", "#include <roughnessmap_fragment>\nroughnessFactor = mix(roughnessFactor, .32, gBrilho);")
         .replace("#include <metalnessmap_fragment>", "#include <metalnessmap_fragment>\nmetalnessFactor = gMetal;")
-        .replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\nif (uLayer <= 0.) normal = relevo(normal, gRug, 1.6);");
+        .replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\nif (uLayer <= 0.) normal = relevo(normal, gRug, 1.0);");
   };
   m.customProgramCacheKey = function () { return "coelho"; };
   return m;
@@ -4352,13 +4373,18 @@ function sombraContato(lx, lz, op) {
 
 /* mesa de granito com o pano branco */
 var texGranito = texCanvas(1024, 1024, function (c, w, h) {
-  c.fillStyle = "#8c847b"; c.fillRect(0, 0, w, h);
+  /* granito das fotos: fundo cinza-amarronzado, pintas pretas densas e grãos bege, pequenos e irregulares */
+  c.fillStyle = "#6f675e"; c.fillRect(0, 0, w, h);
   semente = 5;
-  var cores = ["#2a2724", "#1c1a18", "#c2b29a", "#d9cfc0", "#6e665e", "#a59c90", "#4b4540"];
-  for (var i = 0; i < 26000; i++) {
-    var x = rnd() * w, y = rnd() * h, r = .6 + Math.pow(rnd(), 3) * 9, k = Math.floor(rnd() * cores.length);
-    c.fillStyle = cores[k]; c.globalAlpha = .55 + rnd() * .45;
-    c.beginPath(); c.ellipse(x, y, r, r * (.5 + rnd() * .6), rnd() * PI, 0, TAU); c.fill();
+  var cores = ["#1d1b19", "#1d1b19", "#2a2724", "#2a2724", "#c2b29a", "#a89a86", "#585049", "#8a8075"];
+  for (var i = 0; i < 70000; i++) {
+    var x = rnd() * w, y = rnd() * h, r = .5 + Math.pow(rnd(), 2.4) * 4.2, k = Math.floor(rnd() * cores.length);
+    c.fillStyle = cores[k]; c.globalAlpha = .6 + rnd() * .4;
+    c.beginPath();
+    /* grão poligonal, não círculo */
+    var lados = 4 + Math.floor(rnd() * 3), a0 = rnd() * TAU;
+    for (var j = 0; j < lados; j++) { var a = a0 + j / lados * TAU, rr = r * (.55 + rnd() * .7); c[j ? "lineTo" : "moveTo"](x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
+    c.fill();
   }
   c.globalAlpha = 1;
 }, [3, 3]);
@@ -4382,7 +4408,8 @@ AMB.mesa = (function () {
     p.setZ(i, Math.max(.15, z));
   }
   gp.computeVertexNormals();
-  var matPano = new THREE.MeshStandardMaterial({ map: texPano, roughness: .95, metalness: 0, side: THREE.DoubleSide });
+  /* cor abaixo do branco puro, para o pano não estourar na exposição e mostrar dobras e sombra */
+  var matPano = new THREE.MeshStandardMaterial({ map: texPano, color: 0xa8a49c, roughness: .95, metalness: 0, side: THREE.DoubleSide, envMapIntensity: .6 });
   var pano = new THREE.Mesh(gp, matPano); pano.rotation.x = -PI / 2; pano.position.set(0, 0, -1); pano.receiveShadow = true; g.add(pano);
   AMB.pano = pano; AMB.matPano = matPano;
   g.add(sombraContato(30, 24, .3));
@@ -4443,14 +4470,31 @@ var DBG = (function () {
   m = /[?&]raiz=([-\d.,]+)/.exec(q); if (m) o.raiz = m[1].split(",").map(parseFloat);
   m = /[?&]u=([^&]+)/.exec(q); if (m) o.u = decodeURIComponent(m[1]).split(";").map(function (x) { var k = x.split(":"); return [k[0], k[1].split(",").map(parseFloat)]; });
   m = /[?&]lente=(\w+)/.exec(q); if (m) o.lente = m[1];
+  m = /[?&]amb=(\w+)/.exec(q); if (m) o.amb = m[1];
   return o;
 })();
 
+/* decúbito esternal (cenas 1 a 9): o corpo desce até a barriga encostar no chão (o que passa do chão é
+   cortado pelo plano CHAO), as patas se recolhem e as orelhas deitam para trás, sobre o dorso */
+var DEITA_Y = -3.6;
+function poseDeitado(t) {
+  raiz.position.set(0, DEITA_Y, 0); raiz.rotation.set(0, 0, 0);
+  gira("Ear_R", 0, .95, .12 + .03 * Math.sin(t * 1.3));
+  gira("Ear_L", 0, .95, .12 + .03 * Math.sin(t * 1.1 + 1));
+  gira("frontHip_R", 0, 0, .5); gira("frontHip_L", 0, 0, .5);
+  gira("backHip_R", 0, 0, -.5); gira("backHip_L", 0, 0, -.5);
+  gira("Neck_M", 0, 0, .12);
+  /* respiração (0,9 Hz): o tórax sobe e alarga um pouco */
+  var r = Math.sin(t * TAU * .9);
+  corpo.scale.set(1 + .012 * r, 1 + .018 * r, 1);
+}
+
 function estado(t) {
-  ambienteVisivel("estudio");
+  ambienteVisivel(DBG.amb || "estudio");
   if (!CO.ok) return;
   repouso();
   U.uTempo.value = t;
+  poseDeitado(t);
   if (DBG.rot) DBG.rot.forEach(function (r) { gira(r[0], r[1], r[2], r[3]); });
   if (DBG.u) DBG.u.forEach(function (r) { var v = U[r[0]].value; if (typeof v === "number") U[r[0]].value = r[1][0]; else v.set(r[1][0], r[1][1], r[1][2]); });
   if (DBG.lente) { U.uLensC.value.copy(LENTES[DBG.lente].c); U.uLensR.value = LENTES[DBG.lente].r; }
@@ -4550,13 +4594,16 @@ function legenda(t) {
 var _lc = new V3(), _lr = new V3(), _dir = new V3();
 function anelLente() {
   var a = U.uLensA.value, anel = $("anel"), anel2 = $("anel2");
-  if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; return; }
+  if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; U.uLensS.value.z = 1; return; }
   pontoMundo(U.uLensC.value, _lc);
   _dir.set(1, 0, 0).applyQuaternion(cam.quaternion);
   _lr.copy(_lc).addScaledVector(_dir, U.uLensR.value * .95 * Math.min(1, a * 1.4));
   var W = palco.clientWidth, H = palco.clientHeight;
   _lc.project(cam); _lr.project(cam);
   var x = (_lc.x * .5 + .5) * W, y = (-_lc.y * .5 + .5) * H, r = Math.abs(_lr.x - _lc.x) * .5 * W;
+  /* o mesmo círculo no shader, em pixels do canvas (gl_FragCoord conta de baixo para cima) */
+  var pr = ren.getPixelRatio();
+  U.uLensS.value.set(x * pr, (H - y) * pr, Math.max(1, r * pr));
   [anel, anel2].forEach(function (c) { c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); c.setAttribute("r", r.toFixed(1)); c.style.opacity = clamp(a * 1.5, 0, 1); });
 }
 
@@ -4575,6 +4622,7 @@ function desenha(t) {
   camara(t);
   cena3d.updateMatrixWorld(true);
   depoisDaPose(t);
+  cam.updateMatrixWorld();   /* a câmera não está na cena: sem isto, rótulos e lente usariam a do quadro anterior */
   rotulos(t); legenda(t); anelLente();
   ren.render(cena3d, cam);
 }

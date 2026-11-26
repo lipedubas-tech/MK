@@ -24,13 +24,18 @@ function sombraContato(lx, lz, op) {
 
 /* mesa de granito com o pano branco */
 var texGranito = texCanvas(1024, 1024, function (c, w, h) {
-  c.fillStyle = "#8c847b"; c.fillRect(0, 0, w, h);
+  /* granito das fotos: fundo cinza-amarronzado, pintas pretas densas e grãos bege, pequenos e irregulares */
+  c.fillStyle = "#6f675e"; c.fillRect(0, 0, w, h);
   semente = 5;
-  var cores = ["#2a2724", "#1c1a18", "#c2b29a", "#d9cfc0", "#6e665e", "#a59c90", "#4b4540"];
-  for (var i = 0; i < 26000; i++) {
-    var x = rnd() * w, y = rnd() * h, r = .6 + Math.pow(rnd(), 3) * 9, k = Math.floor(rnd() * cores.length);
-    c.fillStyle = cores[k]; c.globalAlpha = .55 + rnd() * .45;
-    c.beginPath(); c.ellipse(x, y, r, r * (.5 + rnd() * .6), rnd() * PI, 0, TAU); c.fill();
+  var cores = ["#1d1b19", "#1d1b19", "#2a2724", "#2a2724", "#c2b29a", "#a89a86", "#585049", "#8a8075"];
+  for (var i = 0; i < 70000; i++) {
+    var x = rnd() * w, y = rnd() * h, r = .5 + Math.pow(rnd(), 2.4) * 4.2, k = Math.floor(rnd() * cores.length);
+    c.fillStyle = cores[k]; c.globalAlpha = .6 + rnd() * .4;
+    c.beginPath();
+    /* grão poligonal, não círculo */
+    var lados = 4 + Math.floor(rnd() * 3), a0 = rnd() * TAU;
+    for (var j = 0; j < lados; j++) { var a = a0 + j / lados * TAU, rr = r * (.55 + rnd() * .7); c[j ? "lineTo" : "moveTo"](x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
+    c.fill();
   }
   c.globalAlpha = 1;
 }, [3, 3]);
@@ -54,7 +59,8 @@ AMB.mesa = (function () {
     p.setZ(i, Math.max(.15, z));
   }
   gp.computeVertexNormals();
-  var matPano = new THREE.MeshStandardMaterial({ map: texPano, roughness: .95, metalness: 0, side: THREE.DoubleSide });
+  /* cor abaixo do branco puro, para o pano não estourar na exposição e mostrar dobras e sombra */
+  var matPano = new THREE.MeshStandardMaterial({ map: texPano, color: 0xa8a49c, roughness: .95, metalness: 0, side: THREE.DoubleSide, envMapIntensity: .6 });
   var pano = new THREE.Mesh(gp, matPano); pano.rotation.x = -PI / 2; pano.position.set(0, 0, -1); pano.receiveShadow = true; g.add(pano);
   AMB.pano = pano; AMB.matPano = matPano;
   g.add(sombraContato(30, 24, .3));

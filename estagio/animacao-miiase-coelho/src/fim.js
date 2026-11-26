@@ -75,13 +75,16 @@ function legenda(t) {
 var _lc = new V3(), _lr = new V3(), _dir = new V3();
 function anelLente() {
   var a = U.uLensA.value, anel = $("anel"), anel2 = $("anel2");
-  if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; return; }
+  if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; U.uLensS.value.z = 1; return; }
   pontoMundo(U.uLensC.value, _lc);
   _dir.set(1, 0, 0).applyQuaternion(cam.quaternion);
   _lr.copy(_lc).addScaledVector(_dir, U.uLensR.value * .95 * Math.min(1, a * 1.4));
   var W = palco.clientWidth, H = palco.clientHeight;
   _lc.project(cam); _lr.project(cam);
   var x = (_lc.x * .5 + .5) * W, y = (-_lc.y * .5 + .5) * H, r = Math.abs(_lr.x - _lc.x) * .5 * W;
+  /* o mesmo círculo no shader, em pixels do canvas (gl_FragCoord conta de baixo para cima) */
+  var pr = ren.getPixelRatio();
+  U.uLensS.value.set(x * pr, (H - y) * pr, Math.max(1, r * pr));
   [anel, anel2].forEach(function (c) { c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); c.setAttribute("r", r.toFixed(1)); c.style.opacity = clamp(a * 1.5, 0, 1); });
 }
 
@@ -100,6 +103,7 @@ function desenha(t) {
   camara(t);
   cena3d.updateMatrixWorld(true);
   depoisDaPose(t);
+  cam.updateMatrixWorld();   /* a câmera não está na cena: sem isto, rótulos e lente usariam a do quadro anterior */
   rotulos(t); legenda(t); anelLente();
   ren.render(cena3d, cam);
 }
