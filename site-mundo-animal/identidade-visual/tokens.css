@@ -1,0 +1,24 @@
+/* Mundo Animal — tokens sugeridos (cores aproximadas do Instagram, 25/11/2026; confirmar com a clínica) */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap");
+
+:root {
+  /* Institucional (emblema) */
+  --ma-musgo: #1f3315;
+  --ma-dourado: #b09759;
+  --ma-bronze: #715f3a;
+  --ma-creme: #eee5cd;
+
+  /* Redes / pet shop */
+  --ma-verde: #068d50;
+  --ma-verde-texto: #06874d;   /* versão de #068d50 que passa 4,5:1 com texto branco */
+  --ma-verde-vivo: #39be34;    /* só acento: não usar com texto branco */
+  --ma-verde-patinha: #2e6619;
+  --ma-amarelo-icone: #f7e696;
+  --ma-verde-agua: #eaf6f5;
+  --ma-branco: #ffffff;
+
+  /* Tipografia (alternativas web às fontes observadas) */
+  --ma-fonte-institucional: "Cinzel", "Trajan Pro", Georgia, serif;
+  --ma-fonte-chamada: "Bebas Neue", "Oswald", Impact, sans-serif;
+  --ma-fonte-texto: "Nunito", system-ui, sans-serif;
+}
