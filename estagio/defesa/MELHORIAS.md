@@ -58,7 +58,7 @@ uma entrada no fim deste arquivo (nunca apaga as anteriores).
 - [ ] **Site da Mundo Animal (ideia do Felipe, 24/11).** O protótipo de uma página já existe (`estagio/defesa/site-prototipo/`) e está em PR em rascunho. Próximos passos: as confirmações da clínica (telefone, horário, responsável técnico, o texto da história), as fotos que faltam e um slide de 30 s nas considerações finais.
   - **25/11 (Felipe):** o acesso ao **Instagram da clínica** é muito importante para fazer o site (fotos, textos, link). Combinado: o Felipe faz o site junto com o Claude **no computador, à noite de 25/11**. As execuções agendadas não mexem no site até lá.
 
-- [ ] **Acompanhar o filhote com parvovirose (pedido do Felipe, 26/11).** A cada notícia nova (evolução, alta ou óbito, tratamento), registrar no diário (só acréscimo), na linha do tempo e num rascunho `casos/filhote-parvovirose.md`, com o que é clínico marcado "a confirmar" com a Cláudia.
+- [ ] **Acompanhar o filhote com parvovirose (pedido do Felipe, 26/11).** *Rascunho criado em 26/11, às 7h41 (`casos/filhote-parvovirose.md`). Falta a evolução.* A cada notícia nova (evolução, alta ou óbito, tratamento), registrar no diário (só acréscimo), na linha do tempo e num rascunho `casos/filhote-parvovirose.md`, com o que é clínico marcado "a confirmar" com a Cláudia.
 - [ ] **Montar os slides definitivos (depois do coelho, do site e do filhote, decisão de 26/11).** Um bloco por execução, em PR em rascunho, seguindo o roteiro e o protótipo. Não começar antes de o Felipe liberar.
 
 ## Registro das execuções
@@ -714,5 +714,25 @@ Material novo desde as 21h41:
 **Pergunta para o Felipe:** o trecho da nodulectomia fica na opção A (27 s) ou na B (29 s, com a cauterização)?
 
 **Próxima sugestão:** quando a animação do coelho ficar pronta, conferir o trecho e testar de novo sem internet.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 26/11/2026 — 7h41
+
+Material novo desde a última execução: as decisões de 26/11, registradas por outra sessão (PRs lipedubas-tech/MK#105 e #106):
+- a defesa é em 15/12;
+- a ordem é coelho → site → filhote → slides;
+- os casos ficam abertos até 07/12.
+
+**Feito:**
+- **Item da fila "Acompanhar o filhote":** o rascunho `casos/filhote-parvovirose.md` está criado. **Achado:** o diário registra que a Cláudia atendia parvovirose toda semana no ano passado e que "hoje a clínica não tem casos", e o roteiro e o simulado usavam isso como "não houve caso, só conversa". O filhote de 25/11 muda essa frase para "ficou rara, mas não sumiu". A mensagem do caso depende de uma resposta da Cláudia: **ele era vacinado?**
+- **Roteiro e simulado (8.4):** receberam uma atualização marcada, sem apagar o texto de antes.
+- **Perguntas para a Cláudia:** o teste rápido usado e quantos casos de parvo houve este ano.
+- **Cronograma novo:** `cronograma/ate-15-12.md`, com as semanas até a defesa, as decisões que travam a montagem (com prazo) e os riscos. A fachada e a recepção precisam ser fotografadas até 07/12.
+- **LEIAME:** o mapa ganhou o cronograma e o caso do filhote.
+
+**Perguntas para o Felipe:** o cronograma está bom? E o filhote entra só como frase no slide 7 ou ganha um slide próprio?
+
+**Próxima sugestão:** a cada notícia do filhote, preencher a tabela de acompanhamento. Depois do coelho e do site, começar a montagem.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

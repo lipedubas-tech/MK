@@ -80,7 +80,8 @@
   - Resposta:
 - **Como funciona o isolamento da clínica?** Onde fica, quem entra e com que roupa? É a resposta para a banca se ela perguntar da foto com o filhote no colo.
   - Resposta:
-- **Ele era vacinado?** Que idade tinha? Posso falar da vacinação na defesa?
+- **Ele era vacinado?** Que idade tinha? Posso falar da vacinação na defesa? *(É a resposta que decide a mensagem do caso: se não era vacinado, ele confirma a sua fala de que a parvo quase sumiu por causa da vacina.)*
+- **Qual foi o teste rápido** (antígeno nas fezes?) **e quantos casos de parvo houve este ano**, para comparar com "toda semana" do ano passado?
   - Resposta:
 
 ### Acrescentadas em 25/11 (o coelho com miíase)
