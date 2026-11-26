@@ -46,7 +46,9 @@ body{overflow:hidden;touch-action:manipulation}
 #anel2{fill:none;stroke:rgba(255,255,255,.35);stroke-width:7}
 #creditos{position:absolute;right:1.4cqw;bottom:.5cqw;margin:0;font:500 .95cqw/1.2 var(--sans);color:rgba(20,28,36,.55);pointer-events:none}
 .escuro #creditos{color:rgba(255,255,255,.5)}
-.limpo #abertura,.limpo #aviso,.limpo #legenda,.limpo #topo{display:none}
+.limpo #abertura,.limpo #aviso,.limpo #legenda,.limpo #topo,.limpo #rascunho{display:none !important}
+#rascunho{position:absolute;right:2.2cqw;top:1.8cqw;margin:0;height:2.9cqw;display:grid;place-items:center;padding:0 1.3cqw;border-radius:1.5cqw;
+  background:rgba(16,25,34,.72);color:var(--acento);font:600 1.3cqw/1 var(--sans);pointer-events:none}
 #rotulos{position:absolute;inset:0;pointer-events:none}
 #rotulos svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 #rotulos .r{position:absolute;transform:translate(-50%,-50%);padding:.45cqw .9cqw .5cqw;border-radius:.7cqw;background:var(--rotulo-fundo);color:var(--rotulo);
@@ -90,6 +92,7 @@ body{overflow:hidden;touch-action:manipulation}
     <svg id="lente" aria-hidden="true"><circle id="anel2" cx="0" cy="0" r="0"/><circle id="anel" cx="0" cy="0" r="0"/></svg>
     <div id="rotulos"><svg aria-hidden="true"></svg></div>
     <div id="topo" aria-hidden="true"><span class="num" id="num">1/11</span><span class="nome" id="nome">Abertura</span></div>
+    <p id="rascunho" style="display:none">Rascunho: ainda sem mãos e instrumentos</p>
     <p id="legenda" aria-live="polite"></p>
     <p id="creditos">Modelo 3D: Rabbit Rigged, de FourthGreen (Sketchfab), CC BY 4.0, modificado</p>
   </div>
@@ -3899,6 +3902,7 @@ function camara(t) {
   cam.lookAt(camAlvo);
   var veu = 0;
   TOMADAS.forEach(function (T, j) { if (T.corte && j > 0) veu = Math.max(veu, 1 - Math.abs(t - T.t) / .32); });
+  veu = Math.max(veu, .82 * seg(t, TOTAL - 2.6, TOTAL - .4));   /* a última cena escurece devagar */
   $("veu").style.opacity = clamp(veu, 0, 1).toFixed(3);
   return A.mundo;
 }
@@ -3997,7 +4001,7 @@ var GLSL_COELHO = [
   "  float f = max(max(" + FERIDAS.map(function (F, i) { return "elip(p," + g3(F.c) + "," + g3(F.r) + ")" + (i === 1 ? "), max(" : i === 3 ? "))" : ","); }).join("") + ";",
   "  return f + (fbm3(p * .9 + 1.7) - .5) * .75;",
   "}",
-  "float ferida(vec3 p){ return clamp((campoFerida(p) + mix(-.75, 0., uFerida)) * 2.4, 0., 1.); }",
+  "float ferida(vec3 p){ return clamp((campoFerida(p) + mix(-1.45, 0., uFerida)) * 2.4, 0., 1.); }",   /* em 0, nenhuma ferida */
   "float prataM(vec3 p){ return uPrata * smoothstep(0., .35, elip(p," + g3(PRATA.c) + "," + g3(PRATA.r) + ") + (fbm3(p * .7 + 9.) - .5) * .6); }",
   /* pelagem do paciente: frente branca, corpo cinza-escuro acastanhado, manchas cinza-claras */
   "vec3 corPelo(vec3 p, vec4 rg){",
@@ -4063,7 +4067,7 @@ function matCoelho(camada) {
           "  if (len < .08 || sh > .5) discard;",
           "  vec3 pc = p + vec3(sin(p.y * 2.1 + p.z * 1.3), sin(p.z * 1.7 + p.x * 1.1), sin(p.x * 1.9 + p.y * 1.4)) * .22 * uLayer;",
           "  float n = .58 * vn3(pc * 7.6) + .42 * vn3(pc * 2.1 + 3.1);",
-          "  float lim = uLayer * uLayer * .5 + uLayer * .38 + vReg.x * .35 + (h12(gl_FragCoord.xy) - .5) * .05;",
+          "  float lim = uLayer * uLayer * .5 + uLayer * .38 + vReg.x * .35 + (h12(gl_FragCoord.xy) - .5) * .05 + sh * 1.1;",
           "  if (n < lim) discard;",
           "  if (le > .3 + .35 * n) discard;",
           "  vec3 c = corPelo(p, vReg) * (.86 + .3 * vn3(p * 2.3 + 7.));",
@@ -4119,12 +4123,13 @@ function matCoelho(camada) {
           "  c = mix(c, wc, halo * vis);",
           "  gFerida = halo * vis; gRug = (-dobra * halo * .6 + placa * .45 - fenda * .4 - poco * .8) * vis; gCrosta = placa * vis;",
           /* prata em parte das feridas (vista pela lente) */
-          "  float pw = prataM(p) * step(.48, vn3(p * .55 + 4.)) * vis;",
+          "  float pw = prataM(p) * step(.48, vn3(p * .55 + 4.)) * halo * vis;",
           "  c = mix(c, lin(vec3(.7,.72,.75)), pw * .85); gMetal = pw * .6;",
           /* rifamicina: laranja onde foi tosado */
-          "  float rf = clamp(uRif * 1.7 - fbm3(p * .7 + 2.) * .9, 0., 1.) * smoothstep(.05, .45, sh + halo * .5);",
+          "  float rf = clamp(uRif * 1.7 - fbm3(p * .7 + 2.) * .9, 0., 1.) * smoothstep(.05, .45, halo + sh * .25);",
           "  c = mix(c, lin(vec3(.9,.47,.1)) * (.78 + .32 * vn3(p * 5.)), rf * .92);",
           "  gBrilho = max(nucleo * .5, max(uAlcool * halo, rf * .6)) * vis;",
+          "  gBrilho = max(gBrilho, sj * .45);",
           /* vasos da orelha (cena 9): veia marginal na borda, artéria central no meio */
           "  diffuseColor.rgb = c;",
           "}"
@@ -4251,7 +4256,9 @@ function pontoMundo(P, alvo) {
 }
 
 /* ============================================================ larvas e ovos presos à pele */
-var ANC = { larvas: [], ovos: [] };
+var ANC = { larvas: [], ovos: [], grupos: [] };
+/* centros dos grupos de ovos (espaço de ligação), no lado da garupa que a câmera vê (x > 0) */
+var GRUPOS_OVOS = [[.6, 14.7, -7.9], [1.7, 14.1, -7.7], [1.0, 15.6, -7.0], [-.3, 13.7, -8.4], [2.0, 15.3, -6.9]].map(function (q) { return new V3(q[0], q[1], q[2]); });
 function preparaAncoras() {
   var idx = CO.sk.geometry.index.array, P = CO.pos, a = new V3(), b = new V3(), c = new V3(), m = new V3();
   var cand = [];
@@ -4266,18 +4273,34 @@ function preparaAncoras() {
   /* até 3 larvas por triângulo, mais nos triângulos de ferida mais funda */
   cand.forEach(function (C) {
     var k = C.f > .45 ? 3 : C.f > .3 ? 2 : 1;
-    for (var q = 0; q < k && ANC.larvas.length < 150; q++) {
+    for (var q = 0; q < k && ANC.larvas.length < 220; q++) {
       var u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
-      ANC.larvas.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], f: C.f, fase: rnd() * TAU, incl: rnd(), gira: rnd() * TAU, tam: .75 + rnd() * .5, m: C.m });
+      ANC.larvas.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], f: C.f, fase: rnd() * TAU, incl: rnd(), gira: rnd() * TAU, tam: .75 + rnd() * .5, m: C.m, ordem: rnd() });
     }
   });
-  /* ovos: grupos na pele da garupa e da região perineal */
-  cand.forEach(function (C) {
-    if (ANC.ovos.length >= 160) return;
-    if (C.m.z > -4.5) return;
-    for (var q = 0; q < 2; q++) {
-      var u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
-      ANC.ovos.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], gira: rnd() * TAU, incl: rnd(), ordem: rnd(), m: C.m });
+  /* as larvas "mais acima" (as mais altas no corpo, no dorso) ficam para a cena 8, tiradas com o dedo de luva */
+  ANC.larvas.slice().sort(function (x, y) { return y.m.y - x.m.y; }).forEach(function (L, j, todas) { L.alto = j < todas.length * .18; });
+  /* ovos (cena 2): 5 grupos de 14 na garupa, onde a ferida da garupa vai abrir; cada grupo fica em volta do
+     vértice mais próximo do centro pedido. ANC.grupos guarda o centro de cada grupo (para a mosca e o rótulo). */
+  ANC.grupos = [];
+  GRUPOS_OVOS.forEach(function (C, g) {
+    var c0 = new V3().fromBufferAttribute(P, maisProximo(C)), tris = [], melhor = -1, md = 1e9;
+    for (var t = 0; t < idx.length; t += 3) {
+      a.fromBufferAttribute(P, idx[t]); b.fromBufferAttribute(P, idx[t + 1]); c.fromBufferAttribute(P, idx[t + 2]);
+      m.copy(a).add(b).add(c).multiplyScalar(1 / 3);
+      var d = m.distanceTo(c0);
+      if (d < 1.2) tris.push(t);
+      if (d < md) { md = d; melhor = t; }
+    }
+    ANC.grupos.push({ i: [idx[melhor], idx[melhor + 1], idx[melhor + 2]], b: [1 / 3, 1 / 3, 1 / 3] });
+    var n = 0, tent = 0, q3 = new V3();
+    while (n < 14 && tent++ < 600) {
+      var t2 = tris[Math.floor(rnd() * tris.length)], u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
+      a.fromBufferAttribute(P, idx[t2]); b.fromBufferAttribute(P, idx[t2 + 1]); c.fromBufferAttribute(P, idx[t2 + 2]);
+      q3.set(0, 0, 0).addScaledVector(a, 1 - u - v).addScaledVector(b, u).addScaledVector(c, v);
+      if (q3.distanceTo(c0) > .45) continue;
+      ANC.ovos.push({ i: [idx[t2], idx[t2 + 1], idx[t2 + 2]], b: [1 - u - v, u, v], grupo: g, k: n, gira: (rnd() - .5) * .5, incl: .3 + rnd() * .25 });
+      n++;
     }
   });
   criaLarvas(); criaOvos();
@@ -4303,24 +4326,30 @@ var GEO_LARVA = (function () {
   pr.unshift(new THREE.Vector2(0.001, 0));
   var g = new THREE.LatheGeometry(pr, 14); g.computeVertexNormals(); return g;
 })();
-var matLarva = new THREE.MeshStandardMaterial({ color: 0xefe6cf, roughness: .38, metalness: 0, envMapIntensity: .8, clippingPlanes: [CHAO] });
+var matLarva = new THREE.MeshStandardMaterial({ color: 0xe3d7bd, roughness: .5, metalness: 0, envMapIntensity: .8, clippingPlanes: [CHAO] });
 var UL = { uAgita: { value: 0 } };
 matLarva.onBeforeCompile = function (sh) {
   sh.uniforms.uTempo = U.uTempo; sh.uniforms.uSuave = U.uSuave; sh.uniforms.uAgita = UL.uAgita;
-  sh.vertexShader = "attribute vec4 aEst;\nuniform float uTempo, uSuave, uAgita;\nvarying float vY;\n" + sh.vertexShader.replace("#include <begin_vertex>", [
+  sh.vertexShader = "attribute vec4 aEst;\nuniform float uTempo, uSuave, uAgita;\nvarying float vY;\nvarying vec2 vXZ;\n" + sh.vertexShader.replace("#include <begin_vertex>", [
     "#include <begin_vertex>",
-    "vY = position.y;",
+    "vY = position.y; vXZ = position.xz;",
     "float fr = 2.2 + uAgita * 4.5;",
-    "float onda = sin(position.y * 7. - uTempo * fr * 6.283 + aEst.x) * (.05 + uAgita * .09) * position.y;",
-    "transformed.x += onda; transformed.z += cos(position.y * 5. - uTempo * fr * 4. + aEst.x) * .03 * position.y;",
+    "float livre = 1. - smoothstep(0., .62, position.y);",                     /* a ponta de trás, fora da pele, é a que mexe */
+    "float onda = sin(position.y * 7. - uTempo * fr * 6.283 + aEst.x) * (.07 + uAgita * .12) * livre;",
+    "transformed.x += onda; transformed.z += cos(position.y * 5. - uTempo * fr * 4. + aEst.x) * (.05 + uAgita * .08) * livre;",
     "transformed.xz *= 1. + .12 * sin(position.y * 22. - uTempo * fr * 9. + aEst.x);",
-    "if (uSuave > .5) { transformed = normalize(position - vec3(0.,.5,0.)) * .16 + vec3(0.,.5,0.); }"
+    "transformed.y += sin(uTempo * fr * 3.1 + aEst.x) * (.035 + uAgita * .05);",  /* entra e sai um pouco da ferida */
+    "if (uSuave > .5) { transformed = normalize(position - vec3(0.,.5,0.)) * .16 + vec3(0.,.3,0.); }"
   ].join("\n"));
-  sh.fragmentShader = "varying float vY;\nuniform float uSuave;\n" + sh.fragmentShader.replace("#include <map_fragment>", [
+  sh.fragmentShader = "varying float vY;\nvarying vec2 vXZ;\nuniform float uSuave;\n" + sh.fragmentShader.replace("#include <map_fragment>", [
     "#include <map_fragment>",
     "float sulco = pow(abs(sin(vY * 11. * 3.14159)), 6.);",
     "diffuseColor.rgb *= 1. - .22 * (1. - sulco);",
-    "if (vY < .04 && uSuave < .5) diffuseColor.rgb = vec3(.12,.08,.05);",     /* espiráculos */
+    /* placa de trás (fora da pele): creme-amarelada, com os dois espiráculos escuros */
+    "if (vY < .045 && uSuave < .5) {",
+    "  float e = min(length(vXZ - vec2(.05, 0.)), length(vXZ + vec2(.05, 0.)));",
+    "  diffuseColor.rgb = mix(vec3(.2,.12,.07), vec3(.84,.74,.56), smoothstep(.026, .038, e));",
+    "}",
     "if (vY > .96 && uSuave < .5) diffuseColor.rgb = vec3(.15,.1,.07);",      /* ganchos bucais */
     "if (uSuave > .5) diffuseColor.rgb = vec3(.95,.93,.88);"
   ].join("\n"));
@@ -4335,8 +4364,8 @@ function criaLarvas() {
   cena3d.add(larvas);
 }
 function criaOvos() {
-  var g = new THREE.SphereGeometry(.09, 8, 6); g.scale(1, 3.2, 1); g.translate(0, .25, 0);
-  ovos = new THREE.InstancedMesh(g, new THREE.MeshStandardMaterial({ color: 0xf6f2e6, roughness: .5 }), ANC.ovos.length);
+  var g = new THREE.SphereGeometry(.06, 10, 8); g.scale(1, 3.3, 1); g.translate(0, .2, 0);
+  ovos = new THREE.InstancedMesh(g, new THREE.MeshStandardMaterial({ color: 0xf7f3e8, roughness: .45, clippingPlanes: [CHAO] }), ANC.ovos.length);
   ovos.frustumCulled = false; ovos.instanceMatrix.setUsage(THREE.DynamicDrawUsage); cena3d.add(ovos);
 }
 
@@ -4394,7 +4423,7 @@ function sombraContato(lx, lz, op) {
     c.fillStyle = gr; c.fillRect(0, 0, w, h);
   }, null, true);
   var m = new THREE.Mesh(new THREE.PlaneGeometry(lx, lz), new THREE.MeshBasicMaterial({ map: tx, transparent: true, opacity: op, depthWrite: false, color: 0x000000 }));
-  m.rotation.x = -PI / 2; m.position.set(0, .06, -1); m.renderOrder = -1; return m;
+  m.rotation.x = -PI / 2; m.position.set(0, .06, 3); m.renderOrder = -1; return m;   /* sob o corpo deitado (do rabo, z -7, ao focinho, z 16) */
 }
 
 /* mesa de granito com o pano branco */
@@ -4469,8 +4498,8 @@ AMB.baia = (function () {
   manta.rotation.x = -PI / 2; manta.position.set(0, -.4, 0); manta.receiveShadow = true; g.add(manta);
   /* pote de inox com pellets */
   var pote = lathe([[0, 0], [5.4, 0], [6.2, .3], [7.6, 3.2], [7.9, 3.4], [7.4, 3.5], [6.0, .8], [0, .8]], ACO, 40);
-  pote.position.set(0, .2, 14); sombras(pote, true); g.add(pote);
-  var pel = new THREE.InstancedMesh(new THREE.CylinderGeometry(.32, .32, .9, 8), M(0x7a6a3c, { roughness: .9 }), 110);
+  pote.position.set(0, .2, 11); pote.scale.setScalar(.75); sombras(pote, true); g.add(pote);
+  var pel = new THREE.InstancedMesh(new THREE.CylinderGeometry(.32, .32, .9, 8), M(0x4a3c22, { roughness: .9, envMapIntensity: .3 }), 110);
   semente = 21; var m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler();
   for (var k = 0; k < 110; k++) {
     var a = rnd() * TAU, r = Math.sqrt(rnd()) * 5.6;
@@ -4478,7 +4507,7 @@ AMB.baia = (function () {
     m4.compose(new V3(Math.cos(a) * r, 1.2 + rnd() * 1.1, Math.sin(a) * r), q, new V3(1, 1, 1));
     pel.setMatrixAt(k, m4);
   }
-  pel.position.copy(pote.position); g.add(pel);
+  pel.position.copy(pote.position); pel.scale.setScalar(.75); g.add(pel);
   AMB.pote = pote;
   cena3d.add(g); g.visible = false; return g;
 })();
@@ -4487,11 +4516,170 @@ function ambienteVisivel(nome) {
   palco.classList.toggle("escuro", nome === "baia");
 }
 
-/* ============================================================ estado no tempo */
+/* ============================================================ objetos
+   mosca (cena 2), lata de spray prata e a nuvem (cena 4), mancha de rifamicina no pano (cena 10).
+   Cada objeto tem uma função que o põe no lugar a partir do tempo; fora do seu trecho, fica invisível. */
+
+/* base ortonormal: frente f e cima n (mundo) -> quaternion de um objeto com +z para a frente e +y para cima */
+var _bx = new V3(), _by = new V3(), _bz = new V3(), _mb = new THREE.Matrix4();
+function orienta(obj, frente, cima) {
+  _bz.copy(frente).normalize();
+  _bx.crossVectors(cima, _bz); if (_bx.lengthSq() < 1e-6) _bx.set(1, 0, 0); _bx.normalize();
+  _by.crossVectors(_bz, _bx).normalize();
+  _mb.makeBasis(_bx, _by, _bz); obj.quaternion.setFromRotationMatrix(_mb);
+}
+/* curva de Bézier cúbica */
+function bezier(a, b, c, d, k, alvo) {
+  var m = 1 - k;
+  return alvo.set(0, 0, 0).addScaledVector(a, m * m * m).addScaledVector(b, 3 * m * m * k).addScaledVector(c, 3 * m * k * k).addScaledVector(d, k * k * k);
+}
+
+/* ------------------------------------------------------------ mosca
+   Corpo verde-azulado metálico, olhos castanho-avermelhados, asas translúcidas e seis patas. Cerca de 1,1 u
+   (1,7 cm): um pouco maior que a real, para aparecer na tela. +z é a frente, +y é o dorso, os pés ficam em y = 0. */
+var MOSCA = (function () {
+  var g = new THREE.Group();
+  var metal = M(0x2b7466, { metalness: .7, roughness: .3, envMapIntensity: 1.6 });
+  var escuro = M(0x1b1e1d, { roughness: .55 });
+  var olhoM = M(0x8e3420, { roughness: .32, envMapIntensity: 1.2 });
+  function bola(mt, sx, sy, sz, x, y, z, pai) { var b = new THREE.Mesh(new THREE.SphereGeometry(1, 18, 12), mt); b.scale.set(sx, sy, sz); b.position.set(x, y, z); (pai || g).add(b); return b; }
+  bola(metal, .2, .17, .24, 0, .27, .03);                         /* tórax */
+  var abd = new THREE.Group(); abd.position.set(0, .27, -.16); g.add(abd);
+  bola(metal, .21, .16, .3, 0, -.02, -.24, abd);                  /* abdome, preso pela junta: dobra para pôr os ovos */
+  bola(escuro, .17, .15, .12, 0, .27, .32);                       /* cabeça */
+  bola(olhoM, .1, .12, .09, -.1, .3, .35); bola(olhoM, .1, .12, .09, .1, .3, .35);
+  /* asas: elipses translúcidas, presas no alto do tórax */
+  var forma = new THREE.Shape(); forma.absellipse(0, -.32, .12, .33, 0, TAU, false, 0);
+  var geoAsa = new THREE.ShapeGeometry(forma, 20); geoAsa.rotateX(-PI / 2);   /* deitada no plano xz, apontando para trás */
+  var matAsa = new THREE.MeshStandardMaterial({ color: 0xe3e9ec, transparent: true, opacity: .38, roughness: .2, metalness: .1, side: THREE.DoubleSide, depthWrite: false });
+  var asas = [-1, 1].map(function (s) {
+    var piv = new THREE.Group(); piv.position.set(s * .07, .42, .06); g.add(piv);
+    var a = new THREE.Mesh(geoAsa, matAsa); a.position.x = s * .1; a.rotation.y = s * .22; piv.add(a);
+    return { piv: piv, s: s };
+  });
+  /* patas: coxa para fora e para cima, canela até o chão */
+  var matPata = M(0x141615, { roughness: .6 });
+  function haste(a, b) {
+    var d = new V3().subVectors(b, a), h = new THREE.Mesh(new THREE.CylinderGeometry(.018, .014, d.length(), 5), matPata);
+    h.position.copy(a).add(b).multiplyScalar(.5); h.quaternion.setFromUnitVectors(new V3(0, 1, 0), d.normalize()); g.add(h);
+  }
+  [.16, .03, -.1].forEach(function (z, i) {
+    [-1, 1].forEach(function (s) {
+      var raizP = new V3(s * .1, .18, z), joelho = new V3(s * .3, .26, z + (1 - i) * .08), pe = new V3(s * .36, 0, z + (1 - i) * .2);
+      haste(raizP, joelho); haste(joelho, pe);
+    });
+  });
+  g.traverse(function (o) { if (o.isMesh) o.castShadow = true; });
+  g.visible = false; cena3d.add(g);
+  return { g: g, abd: abd, asas: asas };
+})();
+function asasMosca(voando, t) {
+  MOSCA.asas.forEach(function (A) {
+    if (voando) { A.piv.rotation.set(0, A.s * .15, A.s * (.25 + .85 * Math.sin(t * TAU * 17))); }
+    else { A.piv.rotation.set(0, A.s * .05, A.s * .06); }
+  });
+}
+
+/* ------------------------------------------------------------ lata de spray prata (genérica, sem marca)
+   Eixo +y, bico virado para +z. Cerca de 9 u de altura (13 cm). */
+var LATA = (function () {
+  var g = new THREE.Group();
+  var corpoL = lathe([[0, 0], [1.42, 0], [1.5, .18], [1.5, 7.3], [1.36, 7.9], [.95, 8.5], [.55, 8.75], [.5, 8.95], [0, 8.95]],
+    M(0xc9cdd2, { metalness: .9, roughness: .26, envMapIntensity: 1.3 }), 40);
+  g.add(corpoL);
+  /* rótulo: faixa escura com um filete prata, sem texto */
+  var tex = texCanvas(256, 128, function (c, w, h) {
+    c.fillStyle = "#33414f"; c.fillRect(0, 0, w, h);
+    c.fillStyle = "#b9bfc6"; c.fillRect(0, h * .62, w, h * .07);
+    c.fillStyle = "#8f9aa5"; c.fillRect(0, h * .2, w, h * .04);
+  });
+  var rot = new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 4.6, 40, 1, true), new THREE.MeshStandardMaterial({ map: tex, roughness: .5, metalness: .2 }));
+  rot.position.y = 3.6; g.add(rot);
+  /* válvula e atuador com o bico */
+  var atu = new THREE.Group(); atu.position.y = 8.95; g.add(atu);
+  var cap = new THREE.Mesh(new THREE.CylinderGeometry(.48, .52, .7, 24), M(0x2b2f33, { roughness: .45 })); cap.position.y = .35; atu.add(cap);
+  var bico = new THREE.Mesh(new THREE.CylinderGeometry(.1, .12, .32, 12), M(0x15181a, { roughness: .4 }));
+  bico.rotation.x = PI / 2; bico.position.set(0, .45, .5); atu.add(bico);
+  sombras(g);
+  g.visible = false; cena3d.add(g);
+  return { g: g, atu: atu, bicoLocal: new V3(0, 9.4, .68) };
+})();
+
+/* ------------------------------------------------------------ nuvem do spray: partículas, todas funções do tempo */
+var NUVEM = (function () {
+  var N = 560, pos = new Float32Array(N * 3), tam = new Float32Array(N), alfa = new Float32Array(N), sem = [];
+  semente = 77;
+  for (var i = 0; i < N; i++) sem.push({ nasce: i / N, ang: rnd() * TAU, abre: Math.sqrt(rnd()), alc: .82 + rnd() * .3, tam: .7 + rnd() * .8, gira: rnd() * TAU });
+  var g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  g.setAttribute("aTam", new THREE.BufferAttribute(tam, 1));
+  g.setAttribute("aAlfa", new THREE.BufferAttribute(alfa, 1));
+  var tx = texCanvas(64, 64, function (c, w, h) {
+    var gr = c.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+    gr.addColorStop(0, "rgba(255,255,255,1)"); gr.addColorStop(.45, "rgba(255,255,255,.55)"); gr.addColorStop(1, "rgba(255,255,255,0)");
+    c.fillStyle = gr; c.fillRect(0, 0, w, h);
+  }, null, true);
+  var mat = new THREE.ShaderMaterial({
+    uniforms: { uMapa: { value: tx }, uEscala: { value: 400 } },
+    vertexShader: "attribute float aTam, aAlfa; varying float vA; uniform float uEscala;" +
+      "void main(){ vec4 mv = modelViewMatrix * vec4(position, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = aTam * uEscala / -mv.z; vA = aAlfa; }",
+    fragmentShader: "uniform sampler2D uMapa; varying float vA;" +
+      "void main(){ float a = texture2D(uMapa, gl_PointCoord).a; gl_FragColor = vec4(vec3(.7,.72,.76), a * vA); }",
+    transparent: true, depthWrite: false
+  });
+  var p = new THREE.Points(g, mat); p.frustumCulled = false; p.renderOrder = 40; p.visible = false; cena3d.add(p);
+  return { p: p, sem: sem, N: N };
+})();
+var _np = new V3(), _nd = new V3(), _n1 = new V3(), _n2 = new V3();
+/* u: tempo da cena 4; de: bico (mundo); para: alvo (mundo) */
+function nuvem(u, de, para, ini, dur) {
+  var S2 = NUVEM, at = S2.p.geometry.attributes, vis = false;
+  _nd.subVectors(para, de); var D = _nd.length(); _nd.normalize();
+  _n1.crossVectors(_nd, _y); if (_n1.lengthSq() < 1e-4) _n1.set(1, 0, 0); _n1.normalize(); _n2.crossVectors(_nd, _n1);
+  for (var i = 0; i < S2.N; i++) {
+    var q = S2.sem[i], idade = u - (ini + q.nasce * dur), vida = 1.5;
+    if (idade < 0 || idade > vida) { at.aAlfa.array[i] = 0; continue; }
+    vis = true;
+    var anda = D * q.alc * (1 - Math.exp(-4.2 * idade)) / (1 - Math.exp(-4.2 * vida));
+    var abre = (.16 * anda + 1.6 * Math.sqrt(idade)) * q.abre;
+    _np.copy(de).addScaledVector(_nd, anda)
+      .addScaledVector(_n1, Math.cos(q.ang + idade * .8) * abre).addScaledVector(_n2, Math.sin(q.ang + idade * .8) * abre);
+    _np.y += Math.sin(q.gira + idade * 3) * .3 - idade * .6;
+    at.position.array[i * 3] = _np.x; at.position.array[i * 3 + 1] = _np.y; at.position.array[i * 3 + 2] = _np.z;
+    at.aTam.array[i] = q.tam * (.5 + 2.6 * Math.sqrt(idade));
+    at.aAlfa.array[i] = Math.min(1, idade / .07) * Math.pow(1 - idade / vida, 1.4) * .5;
+  }
+  at.position.needsUpdate = at.aTam.needsUpdate = at.aAlfa.needsUpdate = true;
+  S2.p.visible = vis;
+  S2.p.material.uniforms.uEscala.value = palco.clientHeight * ren.getPixelRatio() / (2 * Math.tan(cam.fov * PI / 360));
+}
+
+/* ------------------------------------------------------------ mancha de rifamicina no pano (cena 10)
+   Usa a mesma malha do pano (com as dobras), por cima dele; a textura cobre o pano inteiro e a mancha fica
+   embaixo da garupa (mundo z ≈ -3, ou seja, v ≈ 0,54 na textura do pano). */
+var MANCHA = (function () {
+  var tx = texCanvas(512, 512, function (c, w, h) {
+    semente = 13;
+    for (var i = 0; i < 120; i++) {
+      var a = rnd() * TAU, r = Math.pow(rnd(), .7) * w * .1, x = w * .5 + Math.cos(a) * r * 1.2, y = h * .46 + Math.sin(a) * r, rr = 6 + rnd() * 20;
+      var gr = c.createRadialGradient(x, y, 0, x, y, rr);
+      gr.addColorStop(0, "rgba(214,118,28,.55)"); gr.addColorStop(1, "rgba(230,152,40,0)");
+      c.fillStyle = gr; c.beginPath(); c.arc(x, y, rr, 0, TAU); c.fill();
+    }
+  });
+  var m = new THREE.Mesh(AMB.pano.geometry, new THREE.MeshStandardMaterial({ map: tx, transparent: true, opacity: 0, roughness: .95, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 }));
+  m.rotation.copy(AMB.pano.rotation); m.position.copy(AMB.pano.position); m.renderOrder = 2; AMB.mesa.add(m);
+  return m;
+})();
+
+/* ============================================================ estado no tempo
+   Cada cena calcula o seu estado a partir do tempo local u (segundos desde o começo da cena).
+   Cenas 1 a 4 (passo 2): estúdio de fundo neutro; o coelho deitado parece normal por fora e a lente mostra o que
+   acontece por baixo do pelo: a mosca e os ovos, as larvas abrindo as feridas, o spray prata.
+   Cenas 5 a 11: rascunho (câmera, ambiente, pose e máscaras), ainda sem mãos e instrumentos. */
 var DBG = (function () {
   var q = location.search, o = {};
   var m = /[?&]cam=([-\d.,]+)/.exec(q); if (m) o.cam = m[1].split(",").map(parseFloat);
-  m = /[?&]dbg=(\w+)/.exec(q); if (m) o.modo = m[1];
   m = /[?&]rot=([^&]+)/.exec(q); if (m) o.rot = decodeURIComponent(m[1]).split(";").map(function (x) { var k = x.split(","); return [k[0], +k[1] || 0, +k[2] || 0, +k[3] || 0]; });
   m = /[?&]raiz=([-\d.,]+)/.exec(q); if (m) o.raiz = m[1].split(",").map(parseFloat);
   m = /[?&]u=([^&]+)/.exec(q); if (m) o.u = decodeURIComponent(m[1]).split(";").map(function (x) { var k = x.split(":"); return [k[0], k[1].split(",").map(parseFloat)]; });
@@ -4500,49 +4688,302 @@ var DBG = (function () {
   return o;
 })();
 
-/* decúbito esternal (cenas 1 a 9): o corpo desce até a barriga encostar no chão (o que passa do chão é
-   cortado pelo plano CHAO), as patas se recolhem e as orelhas deitam para trás, sobre o dorso */
-var DEITA_Y = -3.6;
+/* ------------------------------------------------------------ pose */
+var DEITA_Y = -3.6, CENTRO_Y = 10;   /* o coelho vira em volta do centro do corpo (altura 10 no espaço de ligação) */
+/* tremida de orelha: um giro rápido que volta */
+function tremida(t, em, dur, k) { return Math.sin(seg(t, em, em + dur) * PI) * k; }
+/* decúbito esternal (cenas 1 a 9 e 11): barriga no chão (o que passa do chão é cortado pelo plano CHAO),
+   patas recolhidas, orelhas inclinadas para trás */
 function poseDeitado(t) {
-  raiz.position.set(0, DEITA_Y, 0); raiz.rotation.set(0, 0, 0);
-  gira("Ear_R", 0, .5, .28 + .03 * Math.sin(t * 1.3));
-  gira("Ear_L", 0, .5, .28 + .03 * Math.sin(t * 1.1 + 1));
+  var tr = tremida(t, 2.2, .35, .16) + tremida(t, 13.4, .3, .12) + tremida(t, 47.5, .3, .12) + tremida(t, 97, .3, .1);
+  var tl = tremida(t, 4.3, .35, .16) + tremida(t, 21.2, .3, .12) + tremida(t, 60.5, .3, .1);
+  gira("Ear_R", 0, .5 - tr, .28 + .03 * Math.sin(t * 1.3));
+  gira("Ear_L", 0, .5 - tl, .28 + .03 * Math.sin(t * 1.1 + 1));
   gira("frontHip_R", 0, 0, .5); gira("frontHip_L", 0, 0, .5);
   gira("backHip_R", 0, 0, -.5); gira("backHip_L", 0, 0, -.5);
   gira("Neck_M", 0, 0, .12);
-  /* respiração (0,9 Hz): o tórax sobe e alarga um pouco */
-  var r = Math.sin(t * TAU * .9);
-  corpo.scale.set(1 + .012 * r, 1 + .018 * r, 1);
+}
+/* respiração (0,9 Hz): o tórax sobe e alarga um pouco */
+function respira(t, k) { var r = Math.sin(t * TAU * .9) * k; corpo.scale.set(1 + .012 * r, 1 + .018 * r, 1); }
+/* lugar do coelho: deitado de barriga para baixo (vira = 0) ou de barriga para cima (vira = 1, cena 10) */
+function poeCorpo(x, z, vira) {
+  raiz.position.set(x, lerp(DEITA_Y + CENTRO_Y, 8.7, vira), z);
+  raiz.rotation.set(0, 0, PI * vira);
+  corpo.position.set(0, -CENTRO_Y, 0);
 }
 
+/* ------------------------------------------------------------ lente: um ponto do corpo, ou o caminho entre dois */
+var LENTE = { de: "garupa", para: "garupa", k: 0 };
+var _l1 = new V3(), _l2 = new V3();
+function lenteMundo(alvo) {
+  pontoMundo(LENTES[LENTE.de].c, _l1); pontoMundo(LENTES[LENTE.para].c, _l2);
+  return alvo.lerpVectors(_l1, _l2, LENTE.k);
+}
+function lente(de, para, k, abre) {
+  LENTE.de = de; LENTE.para = para; LENTE.k = k;
+  U.uLensR.value = lerp(LENTES[de].r, LENTES[para].r, k); U.uLensA.value = abre;
+}
+
+/* ------------------------------------------------------------ estado de cada instante */
+var EST = {};
+function mundoDe(t) { var m = TOMADAS[0].mundo; TOMADAS.forEach(function (T) { if (T.t <= t) m = T.mundo; }); return m; }
 function estado(t) {
-  ambienteVisivel(DBG.amb || "estudio");
+  var k = cenaDe(t), u = t - S[k];
+  ambienteVisivel(DBG.amb || mundoDe(t));
   if (!CO.ok) return;
   repouso();
-  U.uTempo.value = t;
+  U.uTempo.value = t; U.uSuave.value = SUAVE.on ? 1 : 0;
+  /* ponto de partida: tudo fechado */
+  lente("garupa", "garupa", 0, 0);
+  U.uFerida.value = 0; U.uTosa.value.set(0, 0, 0); U.uPrata.value = 0; U.uRif.value = 0; U.uAlcool.value = 0; U.uSujo.value = 1;
+  UL.uAgita.value = 0;
+  EST.ovos = -1; EST.eclode = 0; EST.cresce = 0; EST.tira = -1; EST.tiraAlto = -1; EST.mosca = -1; EST.lata = -1;
+  var vira = 0, cz = 0, fome = 0;
+
+  /* o que já aconteceu continua: feridas abertas desde a cena 3, prata no pelo desde a 4, tosa desde a 6 */
+  if (k >= 2) { U.uFerida.value = k === 2 ? sai(seg(u, .6, 5.6)) : 1; EST.cresce = k === 2 ? lerp(.3, 1, sai(seg(u, .5, 6))) : 1; }
+  if (k >= 3) U.uPrata.value = k === 3 ? sai(seg(u, 2, 3.6)) : 1;
+  if (k >= 6) U.uTosa.value.set(1, 1, 1);
+
+  if (k === 1) {                 /* 2. Como começa: a lente abre na garupa; a mosca pousa, entra no pelo e põe os ovos */
+    lente("garupa", "garupa", 0, sai(seg(u, 1.8, 3)));
+    EST.mosca = u; EST.ovos = u - 5.4;
+  } else if (k === 2) {          /* 3. As larvas: os ovos eclodem e as feridas abrem; a lente passeia e fecha */
+    EST.ovos = 99; EST.eclode = seg(u, .2, 1.4);
+    var a = 1 - seg(u, 8.5, 9.2);
+    if (u < 3.4) lente("garupa", "garupa", 0, a);
+    else if (u < 5.8) lente("garupa", "dorso", eio(seg(u, 3.4, 4.4)), a);
+    else lente("dorso", "perineo", eio(seg(u, 5.8, 7)), a);
+  } else if (k === 3) {          /* 4. Antes da clínica: o spray prata; a lente mostra as feridas que ele não alcançou */
+    EST.lata = u;
+    lente("garupa", "garupa", 0, sai(seg(u, 4.8, 5.8)) * (1 - seg(u, 7.3, 7.9)));
+  } else if (k === 5) {          /* 6. Tricotomia (rascunho: a máscara de tosa avança em faixas, sem a máquina) */
+    U.uTosa.value.set(eio(seg(u, 1, 4.4)), eio(seg(u, 4.2, 7.6)), eio(seg(u, 7.4, 10.4)));
+  } else if (k === 6) {          /* 7. Álcool e retirada (rascunho: as larvas se agitam, sobem e saem uma a uma) */
+    U.uAlcool.value = sai(seg(u, .3, 1.6)); UL.uAgita.value = seg(u, .8, 1.6); EST.tira = u;
+  } else if (k === 7) {          /* 8. Com a luva (rascunho: saem as que ficavam mais acima) */
+    U.uAlcool.value = 1; UL.uAgita.value = .7; EST.tira = 99; EST.tiraAlto = u;
+  } else if (k >= 8) {
+    U.uAlcool.value = k === 8 ? 1 - seg(u, 0, 4) : 0; EST.tira = 99; EST.tiraAlto = 99;
+    if (k === 9) { vira = eio(seg(u, 0, 1.5)); U.uRif.value = sai(seg(u, 2.5, 6.5)); }   /* 10. vira e recebe a rifamicina */
+    if (k === 10) { U.uRif.value = 1; cz = -6; fome = 1; }                               /* 11. na baia, comendo */
+  }
+
   poseDeitado(t);
+  if (fome) {   /* cabeça baixa no pote, mastigando (3 Hz) */
+    gira("Neck_M", 0, 0, .85);
+    gira("Head_M", 0, 0, .3 + .035 * Math.sin(t * TAU * 3));
+  }
+  poeCorpo(0, cz, vira);
+  respira(t, vira > 0 ? .5 : 1);
+
   if (DBG.rot) DBG.rot.forEach(function (r) { gira(r[0], r[1], r[2], r[3]); });
   if (DBG.u) DBG.u.forEach(function (r) { var v = U[r[0]].value; if (typeof v === "number") U[r[0]].value = r[1][0]; else v.set(r[1][0], r[1][1], r[1][2]); });
-  if (DBG.lente) { U.uLensC.value.copy(LENTES[DBG.lente].c); U.uLensR.value = LENTES[DBG.lente].r; }
+  if (DBG.lente) { LENTE.de = LENTE.para = DBG.lente; LENTE.k = 0; U.uLensR.value = LENTES[DBG.lente].r; }
   if (DBG.raiz) { raiz.position.set(DBG.raiz[0], DBG.raiz[1], DBG.raiz[2]); raiz.rotation.set(DBG.raiz[3] || 0, DBG.raiz[4] || 0, DBG.raiz[5] || 0); }
 }
 
-var _g = new V3(), _m3 = new THREE.Matrix3(), _pos = new V3(), _nor = new V3();
+/* ------------------------------------------------------------ depois da pose: o que fica preso à pele */
+var _g = new V3(), _m3 = new THREE.Matrix3(), _x = new V3(1, 0, 0), _ZERO = new THREE.Matrix4().makeScale(0, 0, 0);
+var _lp = new V3(), _ln = new V3(), _t1 = new V3(), _t2 = new V3(), _di = new V3(), _o = new V3(), _qs = new THREE.Quaternion();
 function depoisDaPose(t) {
   if (!CO.ok) return;
   /* gravidade no espaço do objeto, para o pelo cair */
   _m3.setFromMatrix4(CO.sk.matrixWorld).invert();
   U.uGrav.value.set(0, -1, 0).applyMatrix3(_m3).normalize();
-  /* olhos */
   CO.olhos.forEach(function (O) { pontoMundo(O.bind, O.m.position); });
   bigodes();
-  /* larvas e ovos: escondidos por enquanto */
-  larvas.count = 0; ovos.count = 0;
+  poeLarvas(); poeOvos(); poeMosca(t); poeLata();
+  MANCHA.material.opacity = U.uRif.value * .9;
   if (DBG.cam) { var c = DBG.cam; cam.position.set(c[0], c[1], c[2]); cam.lookAt(c[3], c[4], c[5]); }
 }
 
-/* tomadas provisórias */
-tomada(0, "estudio", [48, 22, 30], [0, 9, 0], 30);
+/* larvas: nascem quando a ferida chega até elas, crescem, e saem na retirada (cenas 7 e 8).
+   A cabeça (y = 1 na geometria) fica dentro da pele; a ponta de trás, com os espiráculos, fica para fora. */
+function poeLarvas() {
+  var off = lerp(-1.45, 0, U.uFerida.value), n = ANC.larvas.length;
+  for (var i = 0; i < n; i++) {
+    var L = ANC.larvas[i];
+    var s = L.tam * clamp(((L.f + off) * 2.4 - .25) / .45, 0, 1) * EST.cresce, sobe = 0;
+    var tt = L.alto ? EST.tiraAlto : EST.tira;
+    if (tt >= 0) {
+      var vez = L.alto ? 1.2 + L.ordem * 5.2 : 2.2 + L.ordem * 9;
+      sobe = seg(tt, vez - .6, vez); s *= 1 - seg(tt, vez, vez + .25);
+    }
+    if (s < .01) { larvas.setMatrixAt(i, _ZERO); continue; }
+    ancora(L, _lp, _ln);
+    _t1.crossVectors(_ln, Math.abs(_ln.y) < .9 ? _y : _x).normalize(); _t2.crossVectors(_ln, _t1);
+    var al = .35 + L.incl * .6;
+    _di.copy(_ln).multiplyScalar(-Math.cos(al)).addScaledVector(_t1, Math.cos(L.gira) * Math.sin(al)).addScaledVector(_t2, Math.sin(L.gira) * Math.sin(al)).normalize();
+    _o.copy(_lp).addScaledVector(_di, -s * (.5 + .45 * sobe));
+    _q.setFromUnitVectors(_y, _di); _qs.setFromAxisAngle(_y, L.fase); _q.multiply(_qs);
+    _m4.compose(_o, _q, _s.set(s, s, s)); larvas.setMatrixAt(i, _m4);
+  }
+  larvas.count = n; larvas.instanceMatrix.needsUpdate = true;
+}
+/* ovos: cada grupo aparece em 0,4 s, deitados lado a lado na pele, "descendo" o corpo; somem quando eclodem */
+var _ov = new V3(0, -1, -.3), _od = new V3();
+function poeOvos() {
+  for (var i = 0; i < ANC.ovos.length; i++) {
+    var E2 = ANC.ovos[i], quando = E2.grupo * .4 + E2.k * .022;
+    var s = EST.ovos < 0 ? 0 : seg(EST.ovos, quando, quando + .12) * (1 - EST.eclode);
+    if (s < .01) { ovos.setMatrixAt(i, _ZERO); continue; }
+    ancora(E2, _lp, _ln);
+    _t1.copy(_ov).addScaledVector(_ln, -_ov.dot(_ln)).normalize(); _t2.crossVectors(_ln, _t1);
+    _od.copy(_t1).multiplyScalar(Math.cos(E2.gira)).addScaledVector(_t2, Math.sin(E2.gira))
+      .multiplyScalar(Math.cos(E2.incl)).addScaledVector(_ln, Math.sin(E2.incl)).normalize();
+    _o.copy(_lp).addScaledVector(_ln, .03);
+    _q.setFromUnitVectors(_y, _od);
+    _m4.compose(_o, _q, _s.set(s, s, s)); ovos.setMatrixAt(i, _m4);
+  }
+  ovos.instanceMatrix.needsUpdate = true;
+}
+
+/* mosca (cena 2, tempo local u): entra voando pela direita, pousa na ponta do pelo, desce até a pele, anda pelos
+   5 grupos pondo os ovos (0,4 s cada) e vai embora */
+var _cr = new V3(), _cu = new V3(), _pA = new V3(), _nA = new V3(), _pB = new V3(), _nB = new V3();
+var _b0 = new V3(), _b1 = new V3(), _b2 = new V3(), _b3 = new V3(), _mp = new V3(), _mq = new V3(), _mf = new V3(), _mup = new V3();
+function grupoPele(g, p, n) { ancora(ANC.grupos[clamp(g, 0, ANC.grupos.length - 1)], p, n); return p; }
+function poeMosca(t) {
+  var u = EST.mosca, G = ANC.grupos.length;
+  if (u < 2.6 || u > 9) { MOSCA.g.visible = false; return; }
+  MOSCA.g.visible = true;
+  _cr.set(1, 0, 0).applyQuaternion(cam.quaternion); _cu.set(0, 1, 0).applyQuaternion(cam.quaternion);
+  var voa = false, curva = 0;
+  _mup.set(0, 1, 0);
+  if (u < 5.4) {                          /* chega: voo, pouso na ponta do pelo, descida até a pele */
+    grupoPele(0, _pA, _nA);
+    _b3.copy(_pA).addScaledVector(_nA, PELO * 1.05);                        /* ponta do pelo */
+    if (u < 4.6) {
+      voa = true;
+      _b0.copy(_b3).addScaledVector(_cr, 15).addScaledVector(_cu, 8);
+      _b1.copy(_b0).addScaledVector(_cr, -6).addScaledVector(_cu, -5);
+      _b2.copy(_b3).addScaledVector(_nA, 4).addScaledVector(_cr, 3);
+      var kv = eio(seg(u, 2.6, 4.6));
+      bezier(_b0, _b1, _b2, _b3, kv, _mp); bezier(_b0, _b1, _b2, _b3, Math.min(1, kv + .02), _mq);
+      var trem = (1 - kv) * .35;
+      _mp.x += Math.sin(u * 23) * trem; _mp.y += Math.sin(u * 17 + 1) * trem;
+      _mf.subVectors(_mq, _mp); if (_mf.lengthSq() < 1e-6) _mf.copy(_cr).negate();
+      _mf.y *= .3;
+    } else {
+      _mp.copy(_b3).lerp(_mq.copy(_pA).addScaledVector(_nA, .05), eio(seg(u, 5, 5.4)));
+      _mf.copy(_cr).negate(); _mup.copy(_nA);
+    }
+  } else if (u < 7.4) {                   /* põe os ovos: um grupo a cada 0,4 s */
+    var gk = Math.floor((u - 5.4) / .4), fr = (u - 5.4) / .4 - gk;
+    grupoPele(gk, _pA, _nA); grupoPele(gk + 1, _pB, _nB);
+    var anda = gk < G - 1 ? eio(seg(fr, .78, 1)) : 0;
+    _mp.copy(_pA).lerp(_pB, anda).addScaledVector(_nA, .05);
+    _mf.subVectors(_pB, _pA); if (gk >= G - 1 || _mf.lengthSq() < 1e-4) _mf.copy(_cr).negate();
+    _mup.copy(_nA);
+    curva = Math.sin(seg(fr, .05, .7) * PI);
+  } else {                                /* sobe até a ponta do pelo e vai embora */
+    grupoPele(G - 1, _pA, _nA);
+    _b0.copy(_pA).addScaledVector(_nA, PELO * 1.05);
+    if (u < 7.8) { _mp.copy(_pA).addScaledVector(_nA, .05).lerp(_b0, eio(seg(u, 7.4, 7.8))); _mf.copy(_cr).negate(); _mup.copy(_nA); }
+    else {
+      voa = true;
+      _b1.copy(_b0).addScaledVector(_nA, 4);
+      _b2.copy(_b0).addScaledVector(_cr, -8).addScaledVector(_cu, 8);
+      _b3.copy(_b0).addScaledVector(_cr, -18).addScaledVector(_cu, 14);
+      var ks = sai(seg(u, 7.8, 9));
+      bezier(_b0, _b1, _b2, _b3, ks, _mp); bezier(_b0, _b1, _b2, _b3, Math.min(1, ks + .02), _mq);
+      _mf.subVectors(_mq, _mp); _mf.y *= .3;
+    }
+  }
+  /* a frente fica no plano da pele (perpendicular ao "cima") */
+  _mf.addScaledVector(_mup, -_mf.dot(_mup)); if (_mf.lengthSq() < 1e-6) _mf.set(0, 0, 1);
+  MOSCA.g.position.copy(_mp); orienta(MOSCA.g, _mf, _mup);
+  MOSCA.abd.rotation.x = -.5 * curva;
+  asasMosca(voa, t);
+}
+
+/* lata de spray prata (cena 4, tempo local u): entra pela direita da tela, aponta para a garupa, borrifa e sai */
+var _alvo = new V3(), _bico = new V3(), _lf = new V3();
+function poeLata() {
+  var u = EST.lata;
+  if (u < 0 || u > 4.9) { LATA.g.visible = false; NUVEM.p.visible = false; return; }
+  _cr.set(1, 0, 0).applyQuaternion(cam.quaternion); _cu.set(0, 1, 0).applyQuaternion(cam.quaternion);
+  pontoMundo(LENTES.garupa.c, _alvo); _alvo.y += 2.6;                     /* o pelo da garupa */
+  var entra = sai(seg(u, .3, 1.4)), vai = eio(seg(u, 3.7, 4.7));
+  _bico.copy(_alvo).addScaledVector(_cr, 12 + 10 * (1 - entra) + 14 * vai).addScaledVector(_cu, 3 + 4 * (1 - entra) + 3 * vai);
+  /* lata em pé, girada para o alvo e inclinada para a frente: o bico aponta para a garupa */
+  _lf.subVectors(_alvo, _bico); _lf.y = 0; _lf.normalize();
+  orienta(LATA.g, _lf, _y);
+  LATA.g.rotateX(.3);
+  LATA.g.position.set(0, 0, 0); LATA.g.updateMatrixWorld();
+  _lp.copy(LATA.bicoLocal).applyMatrix4(LATA.g.matrixWorld);                 /* onde o bico fica com a lata na origem */
+  LATA.g.position.copy(_bico).sub(_lp);
+  LATA.atu.position.y = 8.95 - .14 * sino(u, 1.55, 3.4);                     /* o dedo aperta a válvula */
+  LATA.g.visible = true; LATA.g.updateMatrixWorld();
+  _lp.copy(LATA.bicoLocal).applyMatrix4(LATA.g.matrixWorld);
+  nuvem(u, _lp, _alvo, 1.7, 1.6);
+}
+
+/* ------------------------------------------------------------ rótulos */
+var _r1 = new V3(), _r2 = new V3(), _r3 = new V3(), P_SUJO = new V3(1.2, 12.2, -9), P_FLANCO = new V3(5.4, 12.5, -1);
+var ESCOLHA = {};
+/* a larva que o rótulo aponta: a mais perto do centro da lente na tela, do lado virado para a câmera (e, na cena 4,
+   numa parte da ferida sem prata). A escolha fica guardada, para o rótulo não pular de uma larva para outra. */
+/* a mesma conta do shader (prataM e o recorte em manchas): esta parte da ferida ficou com prata? */
+function temPrata(m) {
+  return elipJS(m, PRATA) + (fbm3(m.x * .7 + 9, m.y * .7 + 9, m.z * .7 + 9) - .5) * .6 > .12 && vn3(m.x * .55 + 4, m.y * .55 + 4, m.z * .55 + 4) >= .48;
+}
+function larvaNaLente(semPrata) {
+  var chave = semPrata ? "sem" : "com";
+  if (ESCOLHA[chave] === undefined) {
+    lenteMundo(_r3).project(cam);
+    var rl = U.uLensS.value.z / (palco.clientWidth * ren.getPixelRatio()) * 2;   /* raio da lente na tela (unidades de x) */
+    var melhor = 0, md = 1e9;
+    ANC.larvas.forEach(function (L, i) {
+      if (semPrata && temPrata(L.m)) return;
+      ancora(L, _r1, _r2);
+      if (_r2.dot(_lp.subVectors(cam.position, _r1)) < 0) return;      /* do outro lado do corpo */
+      _r1.project(cam);
+      var d = Math.hypot(_r1.x - _r3.x, (_r1.y - _r3.y) * 9 / 16);
+      d += d > rl * .75 ? 10 : -L.f * .03;                                   /* fora da lente, só em último caso */
+      if (d < md) { md = d; melhor = i; }
+    });
+    ESCOLHA[chave] = melhor;
+  }
+  return ancora(ANC.larvas[ESCOLHA[chave]], _r1, _r2);
+}
+rotulo(9.4, 11.8, "umidade e sujeira", "presas junto da pele", function () { return pontoMundo(P_SUJO, _r1); }, -15, 5);
+rotulo(12.2, 14.9, "ovos", "postos na base do pelo", function () { return ancora(ANC.grupos[2], _r1, _r2); }, 11, -8);
+rotulo(16.6, 18.4, "larvas", "cabeça para dentro, espiráculos para fora", function () { return larvaNaLente(false); }, 12, -9);
+rotulo(26.6, 28.7, "spray prata", "de agropecuária", function () { return _r1.set(0, 5.5, 0).applyMatrix4(LATA.g.matrixWorld); }, -13, -6);
+rotulo(30.9, 32.9, "ferida sem o produto", "as larvas continuam vivas", function () { return larvaNaLente(true); }, 12, -8);
+rotulo(35, 40.4, "muito desidratado", null, function () { return pontoMundo(P_FLANCO, _r1); }, 11, -9);
+
+/* ------------------------------------------------------------ câmera: tomadas no tempo global (mundo: estudio, mesa, baia) */
+var V_GARUPA = [[26, 25, -22], [0, 7, -2.5]], V_DORSO = [[30, 30, 10], [0, 9.5, 3]], V_PERINEO = [[6, 8, -34], [0, 3, -4.5]], V_LARGA = [[40, 22, -30], [0, 6, 1]];
+function vista(t, mundo, v, fov, corte) { tomada(t, mundo, v[0], v[1], fov || 30, corte); }
+/* 1. Abertura: a câmera se aproxima */
+tomada(0, "estudio", [64, 30, 44], [-6.5, 6.5, 13.9]);   /* o coelho à direita, para o título caber à esquerda */
+tomada(6, "estudio", [46, 22, 32], [0, 7, 3.5]);
+/* 2. Como começa: vai para a garupa e fica */
+vista(8.2, "estudio", V_GARUPA); vista(18.4, "estudio", V_GARUPA);
+/* 3. As larvas: acompanha a lente (dorso, depois região perineal) e se afasta no fim */
+vista(19.4, "estudio", V_DORSO); vista(20.8, "estudio", V_DORSO);
+vista(22.0, "estudio", V_PERINEO); vista(23.5, "estudio", V_PERINEO);
+vista(25, "estudio", V_LARGA);
+/* 4. Antes da clínica: plano largo para o spray, depois a garupa para a lente */
+vista(28.6, "estudio", V_LARGA); vista(30.2, "estudio", V_GARUPA);
+/* 5. Chegada: corte para a mesa */
+tomada(33, "mesa", [50, 36, 54], [0, 6, 3], 30, true); tomada(41, "mesa", [40, 29, 44], [0, 6, 3]);
+/* 6. Tricotomia: garupa, região perineal, e se afasta para mostrar o tamanho das lesões */
+vista(42.2, "mesa", V_GARUPA); vista(47.6, "mesa", V_GARUPA); vista(50.6, "mesa", V_PERINEO); vista(53, "mesa", [[38, 30, -34], [0, 6, 1]]);
+/* 7. Álcool e retirada */
+tomada(55, "mesa", [22, 22, -20], [0, 7, -2], 28); tomada(65, "mesa", [19, 20, -17], [0, 7, -2], 28);
+/* 8. Com a luva: as de cima, no dorso */
+tomada(66.4, "mesa", [26, 32, 12], [0, 10, 2], 28); tomada(73, "mesa", [24, 30, 12], [0, 10, 2], 28);
+/* 9. Acesso e soro: a orelha direita */
+tomada(74.6, "mesa", [-20, 22, 24], [-4.3, 12.8, 8.3], 26); tomada(85, "mesa", [-17, 20, 21], [-4.3, 12.8, 8.3], 26);
+/* 10. Rifamicina: plano largo enquanto ele vira, depois de cima, sobre a garupa */
+tomada(86, "mesa", [40, 34, 44], [0, 7, 3]); tomada(87.6, "mesa", [40, 34, 44], [0, 7, 3]);
+tomada(89.2, "mesa", [4, 32, -30], [0, 12, -4.5]); tomada(94, "mesa", [4, 30, -27], [0, 12, -4.5]);   /* de trás: a região perineal, entre as patas */
+/* 11. Internamento: corte para a baia */
+tomada(94, "baia", [40, 20, 30], [0, 4.5, 4], 30, true); tomada(104, "baia", [34, 17, 26], [0, 4.5, 4]);
 
 /* ============================================================ interface */
 var E = { t: 0, tocando: false, tudo: false, cena: -1 };
@@ -4605,6 +5046,7 @@ function mostra(forca) {
   if (k !== E.cena || forca) {
     E.cena = k; $("num").textContent = (k + 1) + "/" + NC; $("nome").textContent = c.nome;
     palco.setAttribute("aria-label", "Cena " + (k + 1) + " de " + NC + ", " + c.nome + ": " + c.desc);
+    $("rascunho").style.display = k >= 4 ? "" : "none";   /* cenas 5 a 11: ainda sem mãos e instrumentos */
   }
   for (var i = 0; i < NC; i++) barras[i].style.width = (100 * clamp((E.t - S[i]) / CENAS[i].dur, 0, 1)).toFixed(1) + "%";
   $("icone-tocar").setAttribute("d", E.tocando ? "M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z" : "M7 4.5v15l13-7.5z");
@@ -4622,7 +5064,7 @@ var _lc = new V3(), _lr = new V3(), _dir = new V3();
 function anelLente() {
   var a = U.uLensA.value, anel = $("anel"), anel2 = $("anel2");
   if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; U.uLensS.value.z = 1; return; }
-  pontoMundo(U.uLensC.value, _lc);
+  lenteMundo(_lc);
   _dir.set(1, 0, 0).applyQuaternion(cam.quaternion);
   _lr.copy(_lc).addScaledVector(_dir, U.uLensR.value * .95 * Math.min(1, a * 1.4));
   var W = palco.clientWidth, H = palco.clientHeight;
@@ -4685,6 +5127,8 @@ window.__vai = function (t) { E.t = t; E.tocando = false; mostra(true); desenha(
   var espera = setInterval(function () {
     if (pendentes > 0) return; clearInterval(espera);
     var c = $("carregando"); if (c) c.remove();
+    /* ?captura: sem laço; cada quadro é desenhado só quando pedido (window.__vai), para as capturas saírem rápido */
+    if (/[?&]captura/.test(location.search)) { mostra(true); desenha(E.t); window.__pronto = true; return; }
     window.__pronto = true; requestAnimationFrame(laco);
   }, 30);
 })();

@@ -59,6 +59,7 @@ function mostra(forca) {
   if (k !== E.cena || forca) {
     E.cena = k; $("num").textContent = (k + 1) + "/" + NC; $("nome").textContent = c.nome;
     palco.setAttribute("aria-label", "Cena " + (k + 1) + " de " + NC + ", " + c.nome + ": " + c.desc);
+    $("rascunho").style.display = k >= 4 ? "" : "none";   /* cenas 5 a 11: ainda sem mãos e instrumentos */
   }
   for (var i = 0; i < NC; i++) barras[i].style.width = (100 * clamp((E.t - S[i]) / CENAS[i].dur, 0, 1)).toFixed(1) + "%";
   $("icone-tocar").setAttribute("d", E.tocando ? "M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z" : "M7 4.5v15l13-7.5z");
@@ -76,7 +77,7 @@ var _lc = new V3(), _lr = new V3(), _dir = new V3();
 function anelLente() {
   var a = U.uLensA.value, anel = $("anel"), anel2 = $("anel2");
   if (a < .02 || !CO.ok) { anel.style.opacity = anel2.style.opacity = 0; U.uLensS.value.z = 1; return; }
-  pontoMundo(U.uLensC.value, _lc);
+  lenteMundo(_lc);
   _dir.set(1, 0, 0).applyQuaternion(cam.quaternion);
   _lr.copy(_lc).addScaledVector(_dir, U.uLensR.value * .95 * Math.min(1, a * 1.4));
   var W = palco.clientWidth, H = palco.clientHeight;
@@ -139,6 +140,8 @@ window.__vai = function (t) { E.t = t; E.tocando = false; mostra(true); desenha(
   var espera = setInterval(function () {
     if (pendentes > 0) return; clearInterval(espera);
     var c = $("carregando"); if (c) c.remove();
+    /* ?captura: sem laço; cada quadro é desenhado só quando pedido (window.__vai), para as capturas saírem rápido */
+    if (/[?&]captura/.test(location.search)) { mostra(true); desenha(E.t); window.__pronto = true; return; }
     window.__pronto = true; requestAnimationFrame(laco);
   }, 30);
 })();

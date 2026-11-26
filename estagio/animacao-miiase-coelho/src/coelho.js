@@ -61,7 +61,7 @@ var GLSL_COELHO = [
   "  float f = max(max(" + FERIDAS.map(function (F, i) { return "elip(p," + g3(F.c) + "," + g3(F.r) + ")" + (i === 1 ? "), max(" : i === 3 ? "))" : ","); }).join("") + ";",
   "  return f + (fbm3(p * .9 + 1.7) - .5) * .75;",
   "}",
-  "float ferida(vec3 p){ return clamp((campoFerida(p) + mix(-.75, 0., uFerida)) * 2.4, 0., 1.); }",
+  "float ferida(vec3 p){ return clamp((campoFerida(p) + mix(-1.45, 0., uFerida)) * 2.4, 0., 1.); }",   /* em 0, nenhuma ferida */
   "float prataM(vec3 p){ return uPrata * smoothstep(0., .35, elip(p," + g3(PRATA.c) + "," + g3(PRATA.r) + ") + (fbm3(p * .7 + 9.) - .5) * .6); }",
   /* pelagem do paciente: frente branca, corpo cinza-escuro acastanhado, manchas cinza-claras */
   "vec3 corPelo(vec3 p, vec4 rg){",
@@ -127,7 +127,7 @@ function matCoelho(camada) {
           "  if (len < .08 || sh > .5) discard;",
           "  vec3 pc = p + vec3(sin(p.y * 2.1 + p.z * 1.3), sin(p.z * 1.7 + p.x * 1.1), sin(p.x * 1.9 + p.y * 1.4)) * .22 * uLayer;",
           "  float n = .58 * vn3(pc * 7.6) + .42 * vn3(pc * 2.1 + 3.1);",
-          "  float lim = uLayer * uLayer * .5 + uLayer * .38 + vReg.x * .35 + (h12(gl_FragCoord.xy) - .5) * .05;",
+          "  float lim = uLayer * uLayer * .5 + uLayer * .38 + vReg.x * .35 + (h12(gl_FragCoord.xy) - .5) * .05 + sh * 1.1;",
           "  if (n < lim) discard;",
           "  if (le > .3 + .35 * n) discard;",
           "  vec3 c = corPelo(p, vReg) * (.86 + .3 * vn3(p * 2.3 + 7.));",
@@ -183,12 +183,13 @@ function matCoelho(camada) {
           "  c = mix(c, wc, halo * vis);",
           "  gFerida = halo * vis; gRug = (-dobra * halo * .6 + placa * .45 - fenda * .4 - poco * .8) * vis; gCrosta = placa * vis;",
           /* prata em parte das feridas (vista pela lente) */
-          "  float pw = prataM(p) * step(.48, vn3(p * .55 + 4.)) * vis;",
+          "  float pw = prataM(p) * step(.48, vn3(p * .55 + 4.)) * halo * vis;",
           "  c = mix(c, lin(vec3(.7,.72,.75)), pw * .85); gMetal = pw * .6;",
           /* rifamicina: laranja onde foi tosado */
-          "  float rf = clamp(uRif * 1.7 - fbm3(p * .7 + 2.) * .9, 0., 1.) * smoothstep(.05, .45, sh + halo * .5);",
+          "  float rf = clamp(uRif * 1.7 - fbm3(p * .7 + 2.) * .9, 0., 1.) * smoothstep(.05, .45, halo + sh * .25);",
           "  c = mix(c, lin(vec3(.9,.47,.1)) * (.78 + .32 * vn3(p * 5.)), rf * .92);",
           "  gBrilho = max(nucleo * .5, max(uAlcool * halo, rf * .6)) * vis;",
+          "  gBrilho = max(gBrilho, sj * .45);",
           /* vasos da orelha (cena 9): veia marginal na borda, artéria central no meio */
           "  diffuseColor.rgb = c;",
           "}"
@@ -315,7 +316,9 @@ function pontoMundo(P, alvo) {
 }
 
 /* ============================================================ larvas e ovos presos à pele */
-var ANC = { larvas: [], ovos: [] };
+var ANC = { larvas: [], ovos: [], grupos: [] };
+/* centros dos grupos de ovos (espaço de ligação), no lado da garupa que a câmera vê (x > 0) */
+var GRUPOS_OVOS = [[.6, 14.7, -7.9], [1.7, 14.1, -7.7], [1.0, 15.6, -7.0], [-.3, 13.7, -8.4], [2.0, 15.3, -6.9]].map(function (q) { return new V3(q[0], q[1], q[2]); });
 function preparaAncoras() {
   var idx = CO.sk.geometry.index.array, P = CO.pos, a = new V3(), b = new V3(), c = new V3(), m = new V3();
   var cand = [];
@@ -330,18 +333,34 @@ function preparaAncoras() {
   /* até 3 larvas por triângulo, mais nos triângulos de ferida mais funda */
   cand.forEach(function (C) {
     var k = C.f > .45 ? 3 : C.f > .3 ? 2 : 1;
-    for (var q = 0; q < k && ANC.larvas.length < 150; q++) {
+    for (var q = 0; q < k && ANC.larvas.length < 220; q++) {
       var u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
-      ANC.larvas.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], f: C.f, fase: rnd() * TAU, incl: rnd(), gira: rnd() * TAU, tam: .75 + rnd() * .5, m: C.m });
+      ANC.larvas.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], f: C.f, fase: rnd() * TAU, incl: rnd(), gira: rnd() * TAU, tam: .75 + rnd() * .5, m: C.m, ordem: rnd() });
     }
   });
-  /* ovos: grupos na pele da garupa e da região perineal */
-  cand.forEach(function (C) {
-    if (ANC.ovos.length >= 160) return;
-    if (C.m.z > -4.5) return;
-    for (var q = 0; q < 2; q++) {
-      var u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
-      ANC.ovos.push({ i: [idx[C.t], idx[C.t + 1], idx[C.t + 2]], b: [1 - u - v, u, v], gira: rnd() * TAU, incl: rnd(), ordem: rnd(), m: C.m });
+  /* as larvas "mais acima" (as mais altas no corpo, no dorso) ficam para a cena 8, tiradas com o dedo de luva */
+  ANC.larvas.slice().sort(function (x, y) { return y.m.y - x.m.y; }).forEach(function (L, j, todas) { L.alto = j < todas.length * .18; });
+  /* ovos (cena 2): 5 grupos de 14 na garupa, onde a ferida da garupa vai abrir; cada grupo fica em volta do
+     vértice mais próximo do centro pedido. ANC.grupos guarda o centro de cada grupo (para a mosca e o rótulo). */
+  ANC.grupos = [];
+  GRUPOS_OVOS.forEach(function (C, g) {
+    var c0 = new V3().fromBufferAttribute(P, maisProximo(C)), tris = [], melhor = -1, md = 1e9;
+    for (var t = 0; t < idx.length; t += 3) {
+      a.fromBufferAttribute(P, idx[t]); b.fromBufferAttribute(P, idx[t + 1]); c.fromBufferAttribute(P, idx[t + 2]);
+      m.copy(a).add(b).add(c).multiplyScalar(1 / 3);
+      var d = m.distanceTo(c0);
+      if (d < 1.2) tris.push(t);
+      if (d < md) { md = d; melhor = t; }
+    }
+    ANC.grupos.push({ i: [idx[melhor], idx[melhor + 1], idx[melhor + 2]], b: [1 / 3, 1 / 3, 1 / 3] });
+    var n = 0, tent = 0, q3 = new V3();
+    while (n < 14 && tent++ < 600) {
+      var t2 = tris[Math.floor(rnd() * tris.length)], u = rnd(), v = rnd(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
+      a.fromBufferAttribute(P, idx[t2]); b.fromBufferAttribute(P, idx[t2 + 1]); c.fromBufferAttribute(P, idx[t2 + 2]);
+      q3.set(0, 0, 0).addScaledVector(a, 1 - u - v).addScaledVector(b, u).addScaledVector(c, v);
+      if (q3.distanceTo(c0) > .45) continue;
+      ANC.ovos.push({ i: [idx[t2], idx[t2 + 1], idx[t2 + 2]], b: [1 - u - v, u, v], grupo: g, k: n, gira: (rnd() - .5) * .5, incl: .3 + rnd() * .25 });
+      n++;
     }
   });
   criaLarvas(); criaOvos();
@@ -367,24 +386,30 @@ var GEO_LARVA = (function () {
   pr.unshift(new THREE.Vector2(0.001, 0));
   var g = new THREE.LatheGeometry(pr, 14); g.computeVertexNormals(); return g;
 })();
-var matLarva = new THREE.MeshStandardMaterial({ color: 0xefe6cf, roughness: .38, metalness: 0, envMapIntensity: .8, clippingPlanes: [CHAO] });
+var matLarva = new THREE.MeshStandardMaterial({ color: 0xe3d7bd, roughness: .5, metalness: 0, envMapIntensity: .8, clippingPlanes: [CHAO] });
 var UL = { uAgita: { value: 0 } };
 matLarva.onBeforeCompile = function (sh) {
   sh.uniforms.uTempo = U.uTempo; sh.uniforms.uSuave = U.uSuave; sh.uniforms.uAgita = UL.uAgita;
-  sh.vertexShader = "attribute vec4 aEst;\nuniform float uTempo, uSuave, uAgita;\nvarying float vY;\n" + sh.vertexShader.replace("#include <begin_vertex>", [
+  sh.vertexShader = "attribute vec4 aEst;\nuniform float uTempo, uSuave, uAgita;\nvarying float vY;\nvarying vec2 vXZ;\n" + sh.vertexShader.replace("#include <begin_vertex>", [
     "#include <begin_vertex>",
-    "vY = position.y;",
+    "vY = position.y; vXZ = position.xz;",
     "float fr = 2.2 + uAgita * 4.5;",
-    "float onda = sin(position.y * 7. - uTempo * fr * 6.283 + aEst.x) * (.05 + uAgita * .09) * position.y;",
-    "transformed.x += onda; transformed.z += cos(position.y * 5. - uTempo * fr * 4. + aEst.x) * .03 * position.y;",
+    "float livre = 1. - smoothstep(0., .62, position.y);",                     /* a ponta de trás, fora da pele, é a que mexe */
+    "float onda = sin(position.y * 7. - uTempo * fr * 6.283 + aEst.x) * (.07 + uAgita * .12) * livre;",
+    "transformed.x += onda; transformed.z += cos(position.y * 5. - uTempo * fr * 4. + aEst.x) * (.05 + uAgita * .08) * livre;",
     "transformed.xz *= 1. + .12 * sin(position.y * 22. - uTempo * fr * 9. + aEst.x);",
-    "if (uSuave > .5) { transformed = normalize(position - vec3(0.,.5,0.)) * .16 + vec3(0.,.5,0.); }"
+    "transformed.y += sin(uTempo * fr * 3.1 + aEst.x) * (.035 + uAgita * .05);",  /* entra e sai um pouco da ferida */
+    "if (uSuave > .5) { transformed = normalize(position - vec3(0.,.5,0.)) * .16 + vec3(0.,.3,0.); }"
   ].join("\n"));
-  sh.fragmentShader = "varying float vY;\nuniform float uSuave;\n" + sh.fragmentShader.replace("#include <map_fragment>", [
+  sh.fragmentShader = "varying float vY;\nvarying vec2 vXZ;\nuniform float uSuave;\n" + sh.fragmentShader.replace("#include <map_fragment>", [
     "#include <map_fragment>",
     "float sulco = pow(abs(sin(vY * 11. * 3.14159)), 6.);",
     "diffuseColor.rgb *= 1. - .22 * (1. - sulco);",
-    "if (vY < .04 && uSuave < .5) diffuseColor.rgb = vec3(.12,.08,.05);",     /* espiráculos */
+    /* placa de trás (fora da pele): creme-amarelada, com os dois espiráculos escuros */
+    "if (vY < .045 && uSuave < .5) {",
+    "  float e = min(length(vXZ - vec2(.05, 0.)), length(vXZ + vec2(.05, 0.)));",
+    "  diffuseColor.rgb = mix(vec3(.2,.12,.07), vec3(.84,.74,.56), smoothstep(.026, .038, e));",
+    "}",
     "if (vY > .96 && uSuave < .5) diffuseColor.rgb = vec3(.15,.1,.07);",      /* ganchos bucais */
     "if (uSuave > .5) diffuseColor.rgb = vec3(.95,.93,.88);"
   ].join("\n"));
@@ -399,8 +424,8 @@ function criaLarvas() {
   cena3d.add(larvas);
 }
 function criaOvos() {
-  var g = new THREE.SphereGeometry(.09, 8, 6); g.scale(1, 3.2, 1); g.translate(0, .25, 0);
-  ovos = new THREE.InstancedMesh(g, new THREE.MeshStandardMaterial({ color: 0xf6f2e6, roughness: .5 }), ANC.ovos.length);
+  var g = new THREE.SphereGeometry(.06, 10, 8); g.scale(1, 3.3, 1); g.translate(0, .2, 0);
+  ovos = new THREE.InstancedMesh(g, new THREE.MeshStandardMaterial({ color: 0xf7f3e8, roughness: .45, clippingPlanes: [CHAO] }), ANC.ovos.length);
   ovos.frustumCulled = false; ovos.instanceMatrix.setUsage(THREE.DynamicDrawUsage); cena3d.add(ovos);
 }
 

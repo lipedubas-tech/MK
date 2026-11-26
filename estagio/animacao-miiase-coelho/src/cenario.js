@@ -19,7 +19,7 @@ function sombraContato(lx, lz, op) {
     c.fillStyle = gr; c.fillRect(0, 0, w, h);
   }, null, true);
   var m = new THREE.Mesh(new THREE.PlaneGeometry(lx, lz), new THREE.MeshBasicMaterial({ map: tx, transparent: true, opacity: op, depthWrite: false, color: 0x000000 }));
-  m.rotation.x = -PI / 2; m.position.set(0, .06, -1); m.renderOrder = -1; return m;
+  m.rotation.x = -PI / 2; m.position.set(0, .06, 3); m.renderOrder = -1; return m;   /* sob o corpo deitado (do rabo, z -7, ao focinho, z 16) */
 }
 
 /* mesa de granito com o pano branco */
@@ -94,8 +94,8 @@ AMB.baia = (function () {
   manta.rotation.x = -PI / 2; manta.position.set(0, -.4, 0); manta.receiveShadow = true; g.add(manta);
   /* pote de inox com pellets */
   var pote = lathe([[0, 0], [5.4, 0], [6.2, .3], [7.6, 3.2], [7.9, 3.4], [7.4, 3.5], [6.0, .8], [0, .8]], ACO, 40);
-  pote.position.set(0, .2, 14); sombras(pote, true); g.add(pote);
-  var pel = new THREE.InstancedMesh(new THREE.CylinderGeometry(.32, .32, .9, 8), M(0x7a6a3c, { roughness: .9 }), 110);
+  pote.position.set(0, .2, 11); pote.scale.setScalar(.75); sombras(pote, true); g.add(pote);
+  var pel = new THREE.InstancedMesh(new THREE.CylinderGeometry(.32, .32, .9, 8), M(0x4a3c22, { roughness: .9, envMapIntensity: .3 }), 110);
   semente = 21; var m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler();
   for (var k = 0; k < 110; k++) {
     var a = rnd() * TAU, r = Math.sqrt(rnd()) * 5.6;
@@ -103,7 +103,7 @@ AMB.baia = (function () {
     m4.compose(new V3(Math.cos(a) * r, 1.2 + rnd() * 1.1, Math.sin(a) * r), q, new V3(1, 1, 1));
     pel.setMatrixAt(k, m4);
   }
-  pel.position.copy(pote.position); g.add(pel);
+  pel.position.copy(pote.position); pel.scale.setScalar(.75); g.add(pel);
   AMB.pote = pote;
   cena3d.add(g); g.visible = false; return g;
 })();

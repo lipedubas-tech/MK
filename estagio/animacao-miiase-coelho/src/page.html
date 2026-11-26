@@ -46,7 +46,9 @@ body{overflow:hidden;touch-action:manipulation}
 #anel2{fill:none;stroke:rgba(255,255,255,.35);stroke-width:7}
 #creditos{position:absolute;right:1.4cqw;bottom:.5cqw;margin:0;font:500 .95cqw/1.2 var(--sans);color:rgba(20,28,36,.55);pointer-events:none}
 .escuro #creditos{color:rgba(255,255,255,.5)}
-.limpo #abertura,.limpo #aviso,.limpo #legenda,.limpo #topo{display:none}
+.limpo #abertura,.limpo #aviso,.limpo #legenda,.limpo #topo,.limpo #rascunho{display:none !important}
+#rascunho{position:absolute;right:2.2cqw;top:1.8cqw;margin:0;height:2.9cqw;display:grid;place-items:center;padding:0 1.3cqw;border-radius:1.5cqw;
+  background:rgba(16,25,34,.72);color:var(--acento);font:600 1.3cqw/1 var(--sans);pointer-events:none}
 #rotulos{position:absolute;inset:0;pointer-events:none}
 #rotulos svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 #rotulos .r{position:absolute;transform:translate(-50%,-50%);padding:.45cqw .9cqw .5cqw;border-radius:.7cqw;background:var(--rotulo-fundo);color:var(--rotulo);
@@ -90,6 +92,7 @@ body{overflow:hidden;touch-action:manipulation}
     <svg id="lente" aria-hidden="true"><circle id="anel2" cx="0" cy="0" r="0"/><circle id="anel" cx="0" cy="0" r="0"/></svg>
     <div id="rotulos"><svg aria-hidden="true"></svg></div>
     <div id="topo" aria-hidden="true"><span class="num" id="num">1/11</span><span class="nome" id="nome">Abertura</span></div>
+    <p id="rascunho" style="display:none">Rascunho: ainda sem mãos e instrumentos</p>
     <p id="legenda" aria-live="polite"></p>
     <p id="creditos">Modelo 3D: Rabbit Rigged, de FourthGreen (Sketchfab), CC BY 4.0, modificado</p>
   </div>

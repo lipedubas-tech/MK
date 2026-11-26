@@ -157,6 +157,7 @@ function camara(t) {
   cam.lookAt(camAlvo);
   var veu = 0;
   TOMADAS.forEach(function (T, j) { if (T.corte && j > 0) veu = Math.max(veu, 1 - Math.abs(t - T.t) / .32); });
+  veu = Math.max(veu, .82 * seg(t, TOTAL - 2.6, TOTAL - .4));   /* a última cena escurece devagar */
   $("veu").style.opacity = clamp(veu, 0, 1).toFixed(3);
   return A.mundo;
 }
