@@ -40,6 +40,30 @@ provavelmente escondeu as feridas da tutora e segurou umidade e sujeira perto da
 
 **Fora desta versão:** a foto de 26/11 ("como ele vai estar") não entra na animação de agora, a pedido do Felipe.
 
+## Animação em andamento (26/11, PR em rascunho)
+
+Começou a construção, seguindo o `handoff.md` (a especificação técnica: layout, cores, componentes,
+estados, movimento por cena e acessibilidade). A base é a mesma da animação da nodulectomia.
+
+- `src/`: o código, em partes, na ordem em que roda: `base.js` (roteiro das 11 cenas, renderizador, câmera,
+  rótulos), `coelho.js` (o modelo, o pelo em camadas, feridas, tosa, lente, larvas e ovos, poses),
+  `cenario.js` (estúdio, mesa de granito com o pano, baia), `cenas.js` (o estado de cada instante) e
+  `fim.js` (controles e laço); `page.html` é a casca da página.
+- `vendor/GLTFLoader-r128.js`: o carregador de modelos do three.js r128 (licença MIT).
+- `tools/build_page.py`: monta `index.html` (abre sem internet) e `dist/miiase-coelho.html` (para publicar):
+  `THREE_JS=castracao-osh/3d/vendor/three-r128.min.js python3 estagio/animacao-miiase-coelho/tools/build_page.py`
+- `tools/briefing.py`: refaz o PDF do briefing.
+
+**Pronto:** o coelho com o pelo longo e volumoso, nas cores do paciente (traseira escura, frente branca), deitado,
+com as orelhas para trás, olhos novos, sem os bigodes do modelo e com a sombra no chão.
+**Escrito, ainda sem conferir na tela:** a lente de transparência, as feridas e a tosa.
+**Falta:** larvas e ovos visíveis; mosca, máquina de tosa, pinça, luva, cateter, soro e sprays; a câmera e o
+tempo das 11 cenas; a baia; a conferência no Chromium (desktop e celular, sem erros no console).
+
+Para conferir um instante: abra `index.html?t=12.5&limpo` (parado em 12,5 s, sem título nem legendas).
+Parâmetros de teste: `&cam=x,y,z,ax,ay,az` (câmera), `&rot=Osso,x,y,z;...` (giro de ossos),
+`&raiz=x,y,z` (posição do coelho), `&u=uFerida:1;uTosa:1,1,1` (máscaras), `&lente=garupa` (dorso, perineo, cauda).
+
 ## Próximo passo
 
 Passo 1 do briefing: repintar o coelho com as cores do paciente, fazer o pelo longo e volumoso, deitá-lo no pano
