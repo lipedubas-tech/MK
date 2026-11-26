@@ -53,6 +53,8 @@
 **2.6 Ela voltou a andar? Como ela está hoje?** ⚠️ *(acrescentada em 26/11)*
 > No controle de 30 dias (26/11), ela **ainda não apoiava a pata no chão**, e o Thiago recomendou **fisioterapia** (Felipe, 26/11). Não diga que ela "se recuperou". Diga que a cirurgia estabilizou a fratura e que a recuperação da função ainda está em andamento. **A confirmar com o Thiago:** o que o raio-X de 30 dias mostrou (consolidação, implantes), quantas sessões de fisioterapia, e se é normal não apoiar aos 30 dias numa fratura desse tipo.
 
+> *Complemento (Felipe, 26/11):* "provavelmente não vai dar tempo de estágio para ver o resultado da fisio". Se a banca perguntar como ela terminou, a resposta honesta é: **o caso continua em aberto, e o resultado da fisioterapia vem depois do estágio.**
+
 **2.7 Por que ela ainda não apoia a pata?** ⚠️ *(acrescentada em 26/11)*
 > Não responda de memória. **Resposta do Thiago, a confirmar.** O que dá para dizer com segurança: foi uma fratura grave, articular, com mais de 4 horas de cirurgia, e o Thiago indicou fisioterapia.
 

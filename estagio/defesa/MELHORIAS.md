@@ -776,3 +776,24 @@ Material novo de 26/11, registrado por outras sessões (PRs lipedubas-tech/MK#11
 **Próxima sugestão:** quando o Thiago responder sobre o raio-X de 30 dias, completar a fala e o simulado.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 26/11/2026 — 17h41
+
+Material novo desde as 15h41 (PRs lipedubas-tech/MK#115 e #116):
+- a animação 3D da Katita ganhou a **etapa 8, "Controle de 30 dias"**, com o raio-X de 30 dias e as figuras 9 e 10, já recortadas e sem nomes;
+- o Felipe disse que provavelmente não vai dar tempo de ver o resultado da fisioterapia durante o estágio.
+
+**Feito:**
+- **`tempo-animacoes.md`:**
+  - a Katita passou a ter 90 s, com 8 etapas;
+  - proposta: se o trecho "30 dias depois" entrar na fala, tocar a etapa 8 no lugar da foto, e o trecho da Katita passa a ter 60 s;
+  - o total das animações sobe 12 s.
+- **`fala-completa.md`:** o trecho "e. 30 dias depois" ganhou a opção de usar a etapa 8 e uma frase final para o caso em aberto: "O resultado da fisioterapia vai vir depois do fim do meu estágio. A Katita continua em tratamento."
+- **Simulado 2.6:** se a banca perguntar como ela terminou, a resposta é que o caso continua em aberto.
+- **Reteste offline:** o `katita-offline.html` com a etapa 8 funciona sem internet, com 20 de 20 imagens e nenhum erro.
+- **Cronograma:** ganhou o risco "a Katita fica em aberto".
+- **Arquivos:** `tempo-animacoes.md`, `roteiro/fala-completa.md`, `simulado-banca/simulado.md`, `plano-b/teste-offline.md`, `cronograma/ate-15-12.md`.
+
+**Pergunta para o Felipe:** continua aberta a pendência 29: o trecho "30 dias depois" entra? Se entrar, com a etapa 8 ou com a foto?
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

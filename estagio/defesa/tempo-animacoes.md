@@ -20,7 +20,7 @@
 | **Castração (OSH)**: `castracao-osh/osh-3d.html` | 11 | **1 min 56 s** (116 s) | `castracao-osh/3d/src/40-roteiro.js` |
 | **Nodulectomia**: `estagio/animacao-nodulectomia/index.html` | 10 | **1 min 47 s** (107 s), com a cauterização (PR #43, juntado em 25/11; a cena 8 passou de 8 para 12 s) | `estagio/animacao-nodulectomia/src/app.js` |
 | **Quimio, "A seringa vermelha"**: `estagio/quimioterapia/dist/quimio-offline.html` | 8 cenas, 25 passos com clique | **cerca de 4 min**, no ritmo de quem apresenta | LEIAME da quimio |
-| **Katita 3D**: `katita-3d/dist/katita-offline.html` | 7 etapas | **1 min 18 s** (78 s; medido em 20/11 às 21h41, P13). Toca sozinha ou etapa por etapa | `katita-3d/src/app.js` (lista `DUR`: 8, 8, 14, 11, 14, 12 e 11 s) |
+| **Katita 3D**: `katita-3d/dist/katita-offline.html` | **8 etapas** (a 8ª, "Controle de 30 dias", entrou em 26/11) | **1 min 30 s** (90 s; eram 78 s com 7 etapas). Toca sozinha ou etapa por etapa | `katita-3d/src/app.js` (lista `DUR`: 8, 8, 14, 11, 14, 12, 11 e 12 s) |
 | **Coelho com miíase**: `estagio/animacao-miiase-coelho/index.html` | 11 | **1 min 44 s** (104 s). **Em construção** (passo 1 de 26/11); a duração pode mudar | `estagio/animacao-miiase-coelho/src/base.js` *(acrescentado em 25/11, 23h41)* |
 | **Criocirurgia** (2D e 3D) | 7 passos | **a medir**. Existe só no claude.ai, sem versão offline no repositório | — |
 
@@ -30,6 +30,7 @@
 - **Medido no P13:** as etapas 2, 3, 5 e 6 somam 8 + 14 + 14 + 12 = **48 s** na velocidade normal.
 - **Entram** a etapa 2 (a lesão em Y), a 3 (a osteotomia do olécrano), a 5 (placas e parafusos) e a 6 (banda de tensão), avançando no seu ritmo enquanto fala.
 - **Ficam de fora** a etapa 1 (o esqueleto, que você pode substituir pelo raio-X de antes) e a 7 (o fechamento).
+- **Novo em 26/11, a etapa 8 ("Controle de 30 dias", 12 s):** a câmera fica de lado, como na radiografia de controle, e o raio-X liga sozinho, com os implantes rotulados. O texto da etapa conta que ela ainda não apoia a pata, que o ortopedista recomendou fisioterapia e que o resultado deve vir depois do fim do estágio. **Se o trecho "e. 30 dias depois" da fala entrar** (pendência 29 do `LEIAME.md`), toque a etapa 8 no lugar da foto: o trecho da Katita passa a ter **60 s** (2, 3, 5, 6 e 8). **[decisão sua]**
 - **Dica:** o raio-X real de antes e depois, nos slides 8 e 10, já conta metade da história. A animação mostra só o que o raio-X não mostra: como as peças entram.
 
 ### Castração (OSH): cerca de 35 s
@@ -75,13 +76,13 @@
 
 | Animação | Trecho |
 |---|---|
-| Katita | 48 a 75 s |
+| Katita | 48 a 75 s (60 a 87 s com a etapa 8) |
 | OSH | 36 s |
 | Nodulectomia | 27 a 29 s |
 | Coelho | 22 s |
 | Quimio | 50 a 60 s |
 | Criocirurgia | 0 a 20 s |
-| **Total** | **cerca de 3 min 02 s a 4 min 04 s** (revisto em 25/11, com o coelho e a cauterização). No limite de cima, passa um pouco dos 4 min |
+| **Total** | **cerca de 3 min 02 s a 4 min 04 s** (revisto em 25/11, com o coelho e a cauterização). No limite de cima, passa um pouco dos 4 min. **Com a etapa 8 da Katita, soma mais 12 s: de 3 min 14 s a 4 min 16 s** (26/11) |
 
 ## Como mostrar sem perder tempo
 
