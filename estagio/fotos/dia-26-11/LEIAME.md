@@ -70,3 +70,7 @@ se ela recebe alta e se este é mesmo o último controle.
 
 **Privacidade:** as radiografias trazem no canto superior esquerdo o nome da paciente e o **nome do
 tutor ("FABIO")**. Cubra o nome do tutor antes de usar em slides. Na foto 07, nenhum rosto aparece.
+
+Complemento (Felipe, 26/11): a Katita **ainda não consegue apoiar a pata no chão**. O Thiago
+recomendou **fisioterapia**. Quantas sessões, com que frequência, onde ela vai fazer e quando volta
+para nova avaliação ficam a confirmar.
