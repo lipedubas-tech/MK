@@ -48,3 +48,25 @@ pararam, qual o tratamento em curso).
 
 **A confirmar:** o nome do filhote; o diagnóstico (teste rápido, registrado em 25/11); o
 tratamento (fluidoterapia, antieméticos, antibiótico), o tempo de internamento e a evolução.
+
+## Fotos 04 a 07: Katita, controle de 30 dias (acrescentadas em 26/11)
+
+Enviadas pelo Felipe em 26/11/2026 com o registro: "provavelmente a atualização final da Katita".
+As radiografias saíram do aparelho da clínica (cabeçalho "Mundo Animal", 26/11/2026); a foto 07 é do celular.
+
+| Arquivo | Hora | Conteúdo |
+|---|---|---|
+| `04-katita-rx-pos30-lateral-estendido.jpg` | 14:38 | Radiografia identificada como "Katitapos30", incidência "ELBOW LAT EXT" (cotovelo, lateral, estendido). Membro torácico inteiro de lado, com os implantes no cotovelo: a placa com parafusos no úmero distal, os pinos longos e o fio de cerclagem em "8" (banda de tensão) na ponta do cotovelo. Ao fundo, parte do tórax |
+| `05-katita-rx-pos30-torax-membro.jpg` | 14:39 | Mesmo cabeçalho "ELBOW LAT EXT", mas a imagem mostra o tórax e o pescoço de frente/oblíquo, com o membro operado no canto superior esquerdo e os implantes vistos de outro ângulo |
+| `06-katita-rx-pos30-dp-torax-lateral.jpg` | 14:40 | Cabeçalho "ELBOW DP EXT", mas a imagem é uma lateral do tórax com os dois membros torácicos embaixo, marcados "D" e "E"; os implantes estão no membro marcado **E** (esquerdo) |
+| `07-katita-internamento-pos30.jpg` | 14:43 | A Katita (cadela caramelo com o focinho mais escuro, porte médio) sentada numa baia do internamento, fotografada através do vidro, de boca aberta e olhando para o lado. Pelo do peito e do membro ainda raspado, crescendo. Uma mão (reflexo ou por trás do vidro) aparece no alto |
+
+Os rótulos de incidência das fotos 05 e 06 não batem com o que aparece na imagem (provável rótulo
+padrão do aparelho, a confirmar). "Katitapos30" indica o controle de 30 dias de pós-operatório.
+
+**A confirmar com o Thiago (ortopedista) ou a Cláudia:** a leitura das radiografias — consolidação
+da fratura, posição dos implantes, se algum implante vai ser retirado; como ela está apoiando o membro;
+se ela recebe alta e se este é mesmo o último controle.
+
+**Privacidade:** as radiografias trazem no canto superior esquerdo o nome da paciente e o **nome do
+tutor ("FABIO")**. Cubra o nome do tutor antes de usar em slides. Na foto 07, nenhum rosto aparece.
