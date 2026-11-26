@@ -485,6 +485,7 @@ As referências estão ilegíveis na foto.
 | Rangel Ramos Cardoso | Médico veterinário, fundador e responsável legal da clínica. Formado em 2005; queria grande porte, mas abriu para pet pela demanda. Afastado do atendimento clínico há 2 anos pelo estresse; hoje só vem para cirurgias. Operou o gato do fecaloma (18/11). Autorizou citar a história dele na defesa |
 | Thiago | Ortopedista; cirurgião da Katita e responsável pelo caso do Bob |
 | Fran Oliveira | Orientadora do estágio no IFC |
+| Talita | Professora de história; vai ser uma das pessoas da banca da defesa (informado pelo Felipe em 26/11) |
 | Yasmim de Borba da Rolt | Colega que defendeu estágio na mesma clínica em dezembro de 2025. A orientadora dela foi Daiane da Rosa Fregulia e a banca, Rita de Albernaz Gonçalves da Silva |
 | Angela | Tutora da labradora Mel |
 | Hillary Giordani | Responsável pelo ultrassom da Mel (Nexavet) |
