@@ -669,3 +669,23 @@ O Felipe enviou 8 fotos e o relato da emergência de 25/11, perto das 18h: um co
 - **Checklist de privacidade:** mãos sem luva e imagens fortes; as fotos 08 e 10 são as mais seguras.
 
 **Pergunta para o Felipe:** ele entra como o quinto caso ou nas dificuldades?
+
+### 25/11/2026 — 21h41
+
+Material novo desde a última execução: o filhote com parvovirose (PRs lipedubas-tech/MK#94 a #97) e os complementos do coelho feitos em outra sessão (PRs #98 a #100: o questionário da animação, "o pelo escondia" e o projeto `estagio/animacao-miiase-coelho/`).
+
+**Feito:**
+- **Linha do tempo:** o filhote com parvovirose entrou no dia 25/11. O texto do coelho foi acertado com o questionário: tricotomia sem sedação, a Cláudia tirando as larvas com álcool, você tirando as mais altas com luva, e o soro antes da rifamicina. A página e o PDF foram regenerados.
+- **Contagem das atividades:** ganhou a linha "Teste rápido de parvovirose: 1".
+- **Perguntas para a Cláudia:** o tratamento e a evolução do filhote, como funciona o isolamento e se ele era vacinado.
+- **Checklist de privacidade:** você no colo com o filhote, a resposta sobre biossegurança (isolamento e troca de roupa) e a ordem dos atendimentos, que ainda não fecha.
+- **`LEIAME.md` da defesa:**
+  - o mapa ganhou os dois casos novos, o site e a animação do coelho;
+  - a lista de pendências ganhou os itens 25 a 28 (o coelho, a cadela de 17 anos, a ordem filhote/coelho, a nodulectomia de 24/11 e o cão preto).
+- **Arquivos:** `LEIAME.md`, `linha-do-tempo/` (`gerar.py`, `index.html`, `linha-do-tempo.pdf`), `parte1-clinica/atividades-contagem.md`, `perguntas/perguntas-por-pessoa.md`, `privacidade/checklist-fotos.md`.
+
+**Perguntas para o Felipe:** os itens 25 a 28 do `LEIAME.md`.
+
+**Próxima sugestão:** quando o Felipe decidir onde entra o coelho, atualizar o roteiro e a fala completa (o tempo total passa de 21 min).
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

@@ -1,6 +1,6 @@
 # Defesa: mapa da pasta e decisões pendentes
 
-> **Atualizado em 21/11/2026, às 23h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
+> **Atualizado em 25/11/2026, às 21h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
 
 ## Por onde começar
 
@@ -18,6 +18,8 @@
 | `parte1-clinica/esboco.md` | Os 7 slides da Parte 1 (a clínica), abrindo com o Rangel | 19/11 |
 | `parte1-clinica/atividades-contagem.md` | O que o diário permite contar para o slide de atividades (até 19/11) | 21/11 |
 | `casos/esporotricose.md` | O caso de Saúde Única: slide, fala e perguntas da banca | 19/11 |
+| `casos/cadela-17-anos-renal.md` | A cadela de 17 anos da fluidoterapia, acompanhada de 29/10 a 25/11: slide, fala e perguntas | 25/11 |
+| `casos/coelho-miiase.md` | **O coelho com miíase (entra na defesa, decisão de 25/11):** slide, fala, "o pelo escondia" e perguntas | 25/11 |
 | `eixos/comparativo.md` | Os 5 eixos e a tese comparados. Decidido: todos, em camadas | 19/11 |
 | `pesquisa/relatorio.md` | A pesquisa aprofundada e as propostas P1 a P15 | 19/11 |
 | `linha-do-tempo/` | A página e o PDF do estágio dia a dia, com 119 fotos | 19/11 |
@@ -34,8 +36,9 @@
 | `roteiro/fala-completa.md` | A defesa inteira escrita como fala, para ensaiar com cronômetro (cerca de 21 min) | 21/11 |
 | `prototipo/prototipo-extra-3-slides.pptx` | 3 slides extras: dia 1, o par fetos/filhotes, fecaloma | 21/11 |
 | `previa-defesa/previa-defesa.pdf` | **A defesa inteira em 26 páginas, na ordem do roteiro**, cada uma com a origem e o que falta | 21/11 |
+| `site-prototipo/` | Protótipo do site da Mundo Animal (versão 3, com agendamento de banho e tosa) | 24/11 e 25/11 |
 
-A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nada dela foi alterado.
+A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nada dela foi alterado. A animação 3D do coelho está sendo feita em `estagio/animacao-miiase-coelho/` (em andamento).
 
 ## Tudo o que espera você (numa lista só)
 
@@ -71,7 +74,13 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 23. **As eutanásias entram na grade do slide 7?** E quer contar vacinas e consultas por dia? *(atividades-contagem)*
 24. **O slide do par fetos/filhotes entra?** *(prototipo, extras)*
 
-**Todas as perguntas por pessoa, para levar no celular:** `perguntas/perguntas-por-pessoa.md` (atualizado em 21/11).
+### Novos em 25/11
+25. **O coelho com miíase:** entra como o quinto caso ou nas dificuldades? E qual frase fica, "A Cláudia não atende coelhos..." ou "O pelo escondia. A tricotomia mostrou.", ou as duas? *(casos/coelho-miiase)*
+26. **A cadela de 17 anos:** entra com um slide próprio ou só numa frase? *(casos/cadela-17-anos-renal)*
+27. **O filhote com parvovirose e o coelho: qual veio primeiro?** As fotos dizem filhote às 16h31 e coelho às 18h33, e você disse que o cachorro foi depois. Isso importa para a resposta sobre biossegurança. *(privacidade)*
+28. **A nodulectomia de 24/11** (animal, local, técnica) e **a faixa no pescoço do cão preto** de 25/11 (bandagem ou colar?). *(atividades-contagem)*
+
+**Todas as perguntas por pessoa, para levar no celular:** `perguntas/perguntas-por-pessoa.md` (atualizado em 25/11).
 
 ## Como pedir uma mudança
 

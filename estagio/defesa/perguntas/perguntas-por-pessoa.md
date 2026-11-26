@@ -75,6 +75,14 @@
 
 ---
 
+### Acrescentadas em 25/11 (o filhote com parvovirose)
+- **Qual foi o tratamento do filhote**, e como ele está? Quantos dias ficou no isolamento?
+  - Resposta:
+- **Como funciona o isolamento da clínica?** Onde fica, quem entra e com que roupa? É a resposta para a banca se ela perguntar da foto com o filhote no colo.
+  - Resposta:
+- **Ele era vacinado?** Que idade tinha? Posso falar da vacinação na defesa?
+  - Resposta:
+
 ### Acrescentadas em 25/11 (o coelho com miíase)
 - **Além da rifamicina, o que mais ele recebeu?** Antiparasitário (qual?), antibiótico sistêmico, analgesia? Por que o soro foi na veia da orelha?
   - Resposta:

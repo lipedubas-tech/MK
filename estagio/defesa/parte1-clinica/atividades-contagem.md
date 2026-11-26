@@ -19,6 +19,7 @@
 | Raios-X acompanhados | 4 pacientes | Katita (pós-operatório, 29/10); Bob (imagem de 31/08, vista em 30/10); Luna (29/10); Dara, abdômen e coluna (23/11) *(acrescentada em 24/11)* |
 | Exames de sangue com valores registrados | 5 pacientes | Primeiro paciente e pastora alemã (28/10); Barão (04/11); Mel Serafina (05/11); Mel labradora (série) |
 | Teste rápido FeLV/FIV | pelo menos 1 | 28/10 |
+| Teste rápido de parvovirose | 1 | Filhote de cachorro, positivo, que foi para o isolamento (25/11) *(acrescentado em 25/11)* |
 | Esporotricose | 2 gatos | 28/10 e 18/11 |
 | Eutanásias | 2 | 28/10 e 19/11 |
 | Vacinas | **não contadas** | V8/V10, antirrábica, Vanguard Plus, Nobivac (diário: "várias, sem contagem") |
