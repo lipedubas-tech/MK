@@ -10,6 +10,7 @@ Material coletado do Instagram público da clínica (@mundoanimal_sombrio) em 25
 | `identidade-visual/identidade-visual.md` | Paleta, logos, tipografia, elementos gráficos, fotos e tom de voz, com sugestões para o site |
 | `identidade-visual/tokens.css` | Cores e fontes sugeridas em variáveis CSS |
 | `identidade-visual/referencias/` | Recortes do Instagram usados como referência (baixa resolução) |
+| `site/` | **O site em produção** (começado em 26/11/2026): `index.html` com `css/`, `js/` e `img/`, prévias e `LEIAME.md` com o que falta a clínica confirmar |
 
 Planilha interativa com os mesmos dados: https://claude.ai/artifact/FToidQoBaDmtt4F8cjbckn
 

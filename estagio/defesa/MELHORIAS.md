@@ -753,3 +753,17 @@ Sem material novo desde as 7h41. Esta execução cumpriu a decisão de 26/11 ("o
 **Próxima sugestão:** quando a Fran disser o tempo exato, fechar a lista de casos e a ordem.
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
+
+### 26/11/2026 — pedido do Felipe no chat: começar a produção do site
+
+**Pedido:** começar o site da Mundo Animal com tudo o que foi coletado do Instagram, inspirado no site de Criciúma, priorizando a identidade visual e a intuitividade. Na abertura, como em Criciúma, a profissional em primeiro plano e as instalações ao fundo: a foto da Tamiris no pet shop (captura do reel do Cartão Fidelidade).
+
+**Feito:** o site em `site-mundo-animal/site/` (o protótipo em `site-prototipo/` não foi mexido).
+- Abertura em verde-musgo e dourado, como o emblema, com o globo desenhado atrás da foto da Tamiris.
+- Diferenciais, "O que o seu pet precisa hoje?", serviços, a fachada com a história, um mosaico com 9 ambientes, a equipe, o cartão fidelidade, o "Pet do dia", o agendamento, as dúvidas e o mapa.
+- Fachada, recepção e pet shop: das fotos cedidas da defesa da Yasmin. Não foi preciso baixar nada do Instagram.
+- Tudo o que falta a clínica confirmar fica marcado em amarelo, e um botão esconde as marcações para mostrar a versão limpa à Tamiris. A lista completa está no `LEIAME.md` do site.
+
+Por ser código, foi em **PR em rascunho**, esperando a aprovação do Felipe.
+
+**Próxima sugestão:** levar a lista de confirmações do `LEIAME.md` à Tamiris e pedir o logo em vetor. Depois disso, a montagem dos slides (decisão de 26/11).
