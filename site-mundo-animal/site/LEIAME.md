@@ -22,7 +22,7 @@ Tudo o que ainda depende da clínica aparece **marcado em amarelo**. O botão "I
 | Globo com meridianos | O "mundo" do emblema | Desenhado em dourado atrás da foto da Tamiris (a linha se desenha ao abrir a página) |
 | Verde `#068d50` e ícones amarelos em círculo verde | Capas dos destaques do Instagram | Faixa de diferenciais e ícones dos serviços |
 | Verde vivo `#39be34` | Post "Nossos serviços" | Só no botão do WhatsApp sobre o verde-musgo, com texto verde-musgo |
-| Creme `#eee5cd` | Fundo do emblema | Seções "Desde 2005" e "Venha nos visitar" |
+| Creme `#eee5cd` | Fundo do emblema | Seção "Desde 2005", a última da página |
 | Patinhas verde-água | Fundo dos posts | Fundo da seção de serviços |
 | Painel xadrez verde e branco | Painel do "Pet do dia" | Fundo da seção "Pet do dia", em tom claro |
 | Marcellus (títulos) e Nunito (texto) | Serifada romana do emblema e sans arredondada dos posts | Google Fonts |
@@ -37,14 +37,14 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 4. **Diferenciais:** exames de sangue na clínica, raio-X e ultrassom, internação, banho e tosa, busca e entrega.
 5. **O que o seu pet precisa hoje?** O visitante toca na necessidade e sai com a mensagem de WhatsApp pronta (ou vai para o agendamento com o serviço já escolhido).
 6. **Serviços:** clínica veterinária e pet shop e estética, com os produtos e marcas que aparecem nos reels.
-7. **Desde 2005 no centro de Sombrio:** a fachada e a história (com o Rangel).
-8. **Por dentro da clínica:** 9 ambientes num mosaico; tocar abre a foto maior.
-9. **Quem cuida do seu pet:** Tamiris, Dra. Cláudia, Dr. Thiago e Dr. Rangel.
-10. **Cliente da casa ganha mais:** o cartão fidelidade (desenhado com carimbos de patinha) e o primeiro banho grátis com a vacinação completa.
-11. **Pet do dia:** convite para seguir o Instagram.
-12. **Agendar horário:** o formulário do protótipo, agora com a opção de busca e entrega no banho e tosa.
-13. **Dúvidas frequentes:** 6 perguntas.
-14. **Venha nos visitar:** endereço, WhatsApp, telefone fixo, horário, **Como chegar** e o mapa do Google.
+7. **Por dentro da clínica:** 9 ambientes num mosaico; tocar abre a foto maior.
+8. **Quem cuida do seu pet:** Tamiris, Dra. Cláudia, Dr. Thiago e Dr. Rangel.
+9. **Cliente da casa ganha mais:** o cartão fidelidade (desenhado com carimbos de patinha) e o primeiro banho grátis com a vacinação completa.
+10. **Pet do dia:** convite para seguir o Instagram.
+11. **Agendar horário:** o formulário do protótipo, agora com a opção de busca e entrega no banho e tosa.
+12. **Dúvidas frequentes:** 6 perguntas.
+13. **Venha nos visitar:** endereço, WhatsApp, telefone fixo, horário, **Como chegar** e o mapa do Google.
+14. **Desde 2005 no centro de Sombrio:** a fachada e a história (com o Rangel). Fica por último, a pedido do Felipe (26/11), logo antes do rodapé.
 15. **Rodapé** e o **botão fixo do WhatsApp** em todas as telas.
 
 ## Fotos (`img/`)
@@ -52,13 +52,14 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 | Arquivo | Origem |
 |---|---|
 | `equipe-tamiris.jpg`, `equipe-tamiris-rosto.jpg` | Captura do reel do Cartão Fidelidade enviada pelo Felipe em 26/11 (recortada sem a barra do celular e sem a legenda) |
-| `fachada.jpg`, `recepcao.jpg`, `pet-shop.jpg`, `sala-de-espera.jpg`, `raio-x.jpg`, `centro-cirurgico.jpg`, `banho-e-tosa.jpg` | Fotos cedidas, tiradas da defesa da Yasmin (2025), que dispensou o crédito. A fachada ainda tem o logo antigo (filhote de golden) |
+| `fachada.jpg` | Foto enviada pelo Felipe em 26/11 (866 px de largura). Mostra também a placa lateral com os telefones. Se veio do Google Maps, confirmar quem tirou antes de publicar |
+| `recepcao.jpg`, `pet-shop.jpg`, `sala-de-espera.jpg`, `raio-x.jpg`, `centro-cirurgico.jpg`, `banho-e-tosa.jpg` | Fotos cedidas, tiradas da defesa da Yasmin (2025), que dispensou o crédito |
 | `consultorio.jpg`, `laboratorio.jpg` | Fotos do Felipe no estágio (`estagio/fotos/dia-24-11/`, `geral/`) |
 | `internacao.jpg` | Filhotes comendo na baia, foto do Felipe escolhida por ele para a internação (26/11) |
 | `pet-*.jpg` | Fotos de exemplo do estágio, as mesmas do protótipo |
 | `emblema.png`, `favicon.png`, `apple-touch-icon.png` | Recorte circular da foto de perfil do Instagram |
 
-Não foi preciso baixar nada do Instagram: a fachada e os ambientes já estavam no repositório.
+O letreiro da fachada ainda tem o logo antigo (filhote de golden); o site usa o emblema novo. Não foi preciso baixar nada do Instagram.
 
 ## Antes de publicar: o que a clínica precisa confirmar
 
