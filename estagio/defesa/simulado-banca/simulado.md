@@ -246,3 +246,29 @@ As respostas completas estão em [`../casos/esporotricose.md`](../casos/esporotr
 | Baixa | Números de parvovirose e cinomose | Cláudia |
 
 A lista completa de perguntas para cada pessoa é o próximo item da fila (9h41).
+
+## 12. Uma professora de história na banca (26/11/2026)
+
+> O Felipe informou em 26/11 que a **professora Talita, de história**, vai ser uma das pessoas da banca. Estas são perguntas que alguém de fora da veterinária pode fazer. As respostas saem do material; onde ele não responde, está marcado o que pesquisar. **Proposta para o Felipe avaliar.**
+
+**O que muda na defesa por causa disso**
+- Cada termo técnico (osteotomia do olécrano, FeLV, miíase, cistocentese) precisa de uma frase simples na primeira vez que aparece.
+- A parte humana ganha peso: Odisseu e Argos, São Francisco e a história do Rangel são pontes naturais para ela.
+- Odisseu deixa de ser só enfeite: uma professora de história pode perguntar pela obra e pelo contexto, então é preciso dominar o crédito e a cena.
+
+**12.1 De onde vem a cena de Odisseu e Argos?**
+> Do canto XVII da *Odisseia*, de Homero. Odisseu volta para casa disfarçado depois de 20 anos; ninguém o reconhece, só o velho cão Argos, que abana a cauda e morre logo depois. A imagem é de John Flaxman (1755–1826), ilustração para a *Odisseia*, em domínio público (detalhes em `odisseu-argos/LEIAME.md`). **Pesquisar:** em que época se situa e quando a *Odisseia* foi composta, para responder com segurança se ela perguntar.
+
+**12.2 Por que São Francisco?**
+> Ele aparece numa prateleira da clínica, ao lado de um crucifixo (fotos de 24/11). E liga com a reflexão do dia 1: o trabalho do veterinário é quase mais com pessoas do que com animais, mais perto de São Francisco do que de um "tratador". **Pesquisar:** por que ele é o padroeiro dos animais (datas e a história principal).
+
+**12.3 Como a relação das pessoas com os animais de companhia mudou?**
+> No material: o Rangel se formou em 2005 querendo grande porte e abriu a clínica para pets pela demanda. É um exemplo vivo da mudança. **Pesquisar** um dado simples sobre o crescimento dos pets no Brasil, só para a fala (sem slide de referências, decisão de 19/11).
+
+**12.4 Desde quando existe a profissão de médico veterinário no Brasil?**
+> A Lei 5.517/68 regula a profissão e define os atos privativos, e é por isso que você diz "acompanhei" e "auxiliei". **Pesquisar:** as primeiras escolas de veterinária do país, se quiser uma frase de contexto.
+
+**12.5 O que você aprendeu que não é técnico?**
+> As reflexões do diário respondem: o caráter formado pela exposição e pela habituação, e "o paciente é o animal, mas a clínica é construída com as pessoas que o amam" (a tese da defesa). Escolha com as suas palavras.
+
+**Pergunta para o Felipe:** você sabe o sobrenome da professora Talita e quem mais está na banca?
