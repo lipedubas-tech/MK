@@ -115,6 +115,8 @@ Cada célula é **uma frase de fala**, tirada do material. Onde não há base no
 - **Camadas:** oculto (o raio-X) e mídia (o 3D).
 - **Atenção:** o lado esquerdo, o parafuso **intercondilar** e o número de pinos continuam a confirmar com o Thiago (ver `simulado-banca/simulado.md`).
 
+- **Atualização de 26/11:** no controle de 30 dias, a Katita **ainda não apoiava a pata**, e o Thiago recomendou fisioterapia. Proposta: um trecho "e. 30 dias depois" (cerca de 30 s) na `fala-completa.md`. Ele deixa o caso mais honesto: a cirurgia estabiliza, a recuperação leva tempo. **[decisão sua]**
+
 ### 5. Bob (1 min 30 s)
 - **Frase:** "O Bob mostrou que não sentia a pata."
 - **Prova:** o teste de encostar a pata na mesa, contado na fala ou em dois quadros (olhos livres e olhos tapados). Se a clínica mandar o raio-X de 31/08, ele entra também.

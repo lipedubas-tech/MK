@@ -16,7 +16,8 @@
 | Fluidoterapia contínua | 1 paciente | Cadela de 17 anos com doença renal, acompanhada de 29/10 (3 sessões por semana) a 25/11 (1 sessão intravenosa por semana). Número de sessões não contado *(acrescentado em 25/11)* |
 | Pet não convencional | 1 coelho | Miíase com muitas larvas, atendimento de emergência (25/11). O primeiro coelho do estágio *(acrescentado em 25/11)* |
 | **Ultrassons na clínica** | **5** | Golden (28/10); salsicha (28/10); gato paraplégico (06/11); gato com cistite (10/11); cistocentese guiada (12/11). Mais 1 que não aconteceu: o dobermann (11/11) |
-| Raios-X acompanhados | 4 pacientes | Katita (pós-operatório, 29/10); Bob (imagem de 31/08, vista em 30/10); Luna (29/10); Dara, abdômen e coluna (23/11) *(acrescentada em 24/11)* |
+| Raios-X acompanhados | 4 pacientes | Katita (pós-operatório, 29/10, e controle de 30 dias, 26/11 *(acrescentado em 26/11)*); Bob (imagem de 31/08, vista em 30/10); Luna (29/10); Dara, abdômen e coluna (23/11) *(acrescentada em 24/11)* |
+| Ecocardiograma | 1 | Cão pequeno de pelo escuro, com modo B e Doppler (26/11). Quem fez o exame e o diagnóstico: a confirmar *(acrescentado em 26/11)* |
 | Exames de sangue com valores registrados | 5 pacientes | Primeiro paciente e pastora alemã (28/10); Barão (04/11); Mel Serafina (05/11); Mel labradora (série) |
 | Teste rápido FeLV/FIV | pelo menos 1 | 28/10 |
 | Teste rápido de parvovirose | 1 | Filhote de cachorro, positivo, que foi para o isolamento (25/11) *(acrescentado em 25/11)* |
