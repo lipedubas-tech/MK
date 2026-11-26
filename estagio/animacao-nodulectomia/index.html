@@ -132,7 +132,7 @@ var CENAS = [
   { nome: "Dissecção", dur: 10, leg: "Dissecção pelo tecido sadio, sem cortar o nódulo" },
   { nome: "Vasos", dur: 9, leg: "Pinçamento e ligadura dos vasos" },
   { nome: "Retirada", dur: 9, leg: "Exérese em bloco, com a pele ao redor da úlcera" },
-  { nome: "Hemostasia", dur: 8, leg: "Hemostasia por compressão e conferência do leito" },
+  { nome: "Hemostasia", dur: 12, leg: "Hemostasia por cauterização e conferência do leito" },
   { nome: "Sutura", dur: 16, leg: "Redução do espaço morto e síntese da pele" },
   { nome: "Pós-operatório", dur: 12, leg: "Recuperação: analgesia, curativo e retorno" }
 ];
@@ -1187,6 +1187,96 @@ function atualizaSuturas() {
   tubo(fioPele, pp, .0006);
 }
 
+/* ---------------- cauterização (cena 8): foi a principal forma de hemostasia nesta cirurgia (Felipe, 20/11).
+   O cauterizador toca os pontos que sangram no leito e na parede; cada toque solta um fio de fumaça e deixa
+   uma escara (tecido coagulado, escuro no centro e esbranquiçado em volta). As escaras acompanham o leito e as
+   paredes quando a ferida fecha na sutura. Sem sangue, como pede o briefing. Modelo do cauterizador: genérico
+   (caneta com ponta de fio em brasa), a confirmar. */
+var texEscara = texCanvas(64, 64, function (g, w, h) {
+  var gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+  gr.addColorStop(0, "rgba(48,28,17,1)"); gr.addColorStop(.32, "rgba(82,50,30,1)"); gr.addColorStop(.5, "rgba(170,132,98,.95)");
+  gr.addColorStop(.78, "rgba(205,178,150,.45)"); gr.addColorStop(1, "rgba(205,178,150,0)");
+  g.fillStyle = gr; g.fillRect(0, 0, w, h);
+});
+var texFumaca = texCanvas(64, 64, function (g, w, h) {
+  var gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+  gr.addColorStop(0, "rgba(255,255,255,.95)"); gr.addColorStop(.45, "rgba(255,255,255,.4)"); gr.addColorStop(1, "rgba(255,255,255,0)");
+  g.fillStyle = gr; g.fillRect(0, 0, w, h);
+});
+var cauterio = (function () {
+  var g = new THREE.Group();
+  g.add(lathe([[0, .03], [.0052, .031], [.0061, .04], [.0063, .1], [.0061, .132], [.0045, .137], [0, .138]], M(0xdfe4e8, { roughness: .42 })));
+  var botao = new THREE.Mesh(new THREE.BoxGeometry(.0042, .014, .0032), M(0xc0392b, { roughness: .4 })); botao.position.set(0, .062, .0058); g.add(botao);
+  g.add(lathe([[0, .021], [.0016, .0215], [.0042, .028], [.0052, .031], [0, .031]], M(0x8d969e, { roughness: .5 })));
+  var haste = new THREE.Mesh(new THREE.CylinderGeometry(.0008, .0008, .018, 10), ACO2); haste.position.y = .013; g.add(haste);
+  g.add(lathe([[0, .0018], [.0021, .0018], [.0013, .0046], [0, .0046]], M(0xe9e2d0, { roughness: .6 })));   /* bucha de cerâmica */
+  var brasa = new THREE.MeshStandardMaterial({ color: 0x5a2a12, emissive: 0xff5a14, emissiveIntensity: 1, roughness: .5, metalness: .2 });
+  var alca = new THREE.Mesh(new THREE.TorusGeometry(.0017, .00045, 8, 20, PI), brasa); alca.rotation.z = PI; alca.position.y = .0017; g.add(alca);
+  g.userData.brasa = brasa;
+  sombras(g);
+  /* brilho alaranjado da ponta em brasa, para o calor aparecer mesmo com a ponta pequena no quadro
+     (mistura normal e sem tone mapping: no fundo claro, o aditivo estourava para branco) */
+  var brilho = new THREE.Sprite(new THREE.SpriteMaterial({ map: texFumaca, color: 0xff5a10, transparent: true, depthWrite: false, toneMapped: false }));
+  brilho.position.y = .0012; g.add(brilho); g.userData.brilho = brilho;
+  g.scale.setScalar(.75); g.visible = false; campo.add(g); return g;
+})();
+var matEscara = new THREE.MeshStandardMaterial({ map: texEscara, transparent: true, depthWrite: false, roughness: .85, metalness: 0, polygonOffset: true, polygonOffsetFactor: -4, clippingPlanes: [PLANO] });
+/* toques: s = segundos depois do início da cena 8; no leito (u, v) ou na parede do lado da câmera (v < 0) a uma profundidade */
+var CAUT = [
+  { s: 1.1, u: -.048, v: .005, leito: true }, { s: 2.0, u: -.018, v: -.011, leito: true }, { s: 2.9, u: .014, v: .008, leito: true },
+  { s: 3.8, u: .044, v: -.005, leito: true }, { s: 4.7, u: .03, prof: .011 }, { s: 5.6, u: -.026, prof: .008 }
+];
+var N_FUMO = 6;
+CAUT.forEach(function (c, i) {
+  var geo = new THREE.CircleGeometry(.0031 + .0006 * ((i * 7) % 3) / 2, 18);
+  if (c.leito) geo.rotateX(-PI / 2); else geo.rotateY(PI / 2);
+  c.escara = new THREE.Mesh(geo, matEscara); c.escara.rotation.set(0, 0, 0); c.escara.visible = false; campo.add(c.escara);
+  c.fumo = [];
+  for (var k = 0; k < N_FUMO; k++) {
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: texFumaca, color: 0xa9afb4, transparent: true, depthWrite: false, opacity: 0 }));
+    sp.visible = false; campo.add(sp); c.fumo.push(sp);
+  }
+});
+function pontoCaut(c) {   /* posição atual do ponto (segue o fechamento da ferida) e a normal da superfície */
+  if (c.leito) { var k1 = F.k1 * frente(F.f1, c.u); return { p: new V3(c.v * (1 - k1), S0(c.u, c.v) - K.fasc + .0003, c.u), n: new V3(0, 1, 0) }; }
+  var p = pontoMaterial(c.u, -hw(c.u), c.prof); p.x += .0004; return { p: p, n: new V3(1, 0, 0) };
+}
+var _cy = new V3();
+function poseCauterio(t, s8) {
+  var pts = CAUT.map(pontoCaut), n = CAUT.length, ti = function (i) { return s8 + CAUT[i].s; };
+  /* escaras e fumaça */
+  CAUT.forEach(function (c, i) {
+    var q = pts[i], cresce = ss(ti(i) + .1, ti(i) + .45, t);
+    c.escara.visible = t >= S[7] && cresce > 0 && t < POS;
+    if (c.escara.visible) { c.escara.position.copy(q.p).addScaledVector(q.n, .0002); c.escara.scale.setScalar(Math.max(.01, cresce)); }
+    c.fumo.forEach(function (sp, k) {
+      var idade = t - ti(i) - .08 - k * .07, vida = 1.05;
+      sp.visible = idade > 0 && idade < vida;
+      if (!sp.visible) return;
+      sp.position.copy(q.p).addScaledVector(q.n, .002).add(_cy.set(Math.sin(k * 2.1 + idade * 3) * .004 * idade, .004 + .03 * idade, Math.cos(k * 1.7) * .004 * idade));
+      sp.scale.setScalar(.006 + .02 * idade);
+      sp.material.opacity = .7 * Math.min(1, idade * 5) * (1 - idade / vida);
+    });
+  });
+  /* o cauterizador: desce no primeiro ponto, vai de ponto em ponto (fica .4 s em cada um) e sobe */
+  var ini = s8 + .3, fim = ti(n - 1) + 1.1;
+  cauterio.visible = t > ini && t < fim;
+  if (!cauterio.visible) return;
+  var pos, Y, contato = 0, eixo = function (q) { return q.n.y > .5 ? new V3(-.3, 1, -.38) : new V3(.4, 1, -.4); };
+  if (t < ti(0) - .05) { pos = pts[0].p.clone().addScaledVector(pts[0].n, .0002); pos.y += .04 * (1 - ss(ini, ti(0) - .05, t)); Y = eixo(pts[0]); }
+  else if (t >= ti(n - 1) + .4) { var q = pts[n - 1]; pos = q.p.clone().addScaledVector(q.n, .0002); pos.y += .05 * ss(ti(n - 1) + .4, fim, t); Y = eixo(q); }
+  else {
+    var i = 0; while (i + 1 < n && t >= ti(i + 1) - .05) i++;
+    var a = pts[i], b = pts[Math.min(i + 1, n - 1)], k = eio(seg(t, ti(i) + .4, ti(i + 1 < n ? i + 1 : i) - .05));
+    contato = 1 - ss(ti(i) + .32, ti(i) + .42, t);
+    pos = a.p.clone().addScaledVector(a.n, .0002).lerp(b.p.clone().addScaledVector(b.n, .0002), k); pos.y += .008 * Math.sin(PI * k);
+    Y = eixo(a).lerp(eixo(b), k);
+  }
+  orienta(cauterio, pos, Y, new V3(0, 0, 1));
+  cauterio.userData.brasa.emissiveIntensity = .9 + 2.2 * contato;
+  cauterio.userData.brilho.scale.setScalar(.007 + .006 * contato); cauterio.userData.brilho.material.opacity = .45 + .5 * contato;
+}
+
 /* ---------------- pose do campo no tempo global */
 function poseCampo(t) {
   var s3 = S[2], s4 = S[3], s5 = S[4], s6 = S[5], s7 = S[6], s8 = S[7], s9 = S[8];
@@ -1205,7 +1295,7 @@ function poseCampo(t) {
   F.c = t < s7 + 1.5 ? lerp(K.U0, C_CORTE, cIn * (1 - cOut)) : lerp(K.U0, C_CORTE, cIn2 * (1 - cOut2));
   F.k1 = t >= s9 + 1.2 ? 1 : 0; F.f1 = lerp(-K.L - .02, K.L + .02, seg(t, s9 + 1.3, s9 + 6.4));
   F.k2 = t >= s9 + 7.8 ? 1 : 0; F.f2 = lerp(-K.L - .02, K.L + .02, seg(t, s9 + 7.9, s9 + 15.3));
-  F.leito = ss(s8 + 5, s8 + 5.8, t) * (1 - ss(s9, s9 + .6, t));
+  F.leito = ss(s8 + 9.6, s8 + 10.4, t) * (1 - ss(s9, s9 + .6, t));
   PLANO.constant = F.c;
   UK.uMarca.value = F.marca; UK.uInc.value = F.inc; UK.uMargem.value = F.margem; UK.uTensao.value = F.tensao;
   UK.uDInc.value = F.dInc; UK.uRem.value = F.rem; UK.uLeito.value = F.leito; UK.uAberto.value = F.gO > .0002 ? 1 : 0;
@@ -1279,9 +1369,10 @@ function poseCampo(t) {
     orienta(adson, alvo.clone().add(new V3(0, .03 * desce2, 0)), new V3(.15, .85, .5), new V3(1, 0, 0));
     adson.userData.abre(1 - ss(s7 + 1.6, s7 + 1.85, t));
   }
-  if (t > s8 + .4 && t < s8 + 5.2) {          /* compressa de gaze desce até o leito, comprime (achata e pulsa) e sai limpa */
-    var pz = ss(s8 + .4, s8 + 1.4, t) * (1 - ss(s8 + 4, s8 + 5.2, t));
-    var aperta = ss(s8 + 1.2, s8 + 1.6, t) * (1 - ss(s8 + 4, s8 + 4.4, t)), pulso = .06 * aperta * (.5 - .5 * Math.cos((t - s8 - 1.6) * TAU / 1.2));
+  poseCauterio(t, s8);
+  if (t > s8 + 6.6 && t < s8 + 9.9) {         /* depois da cauterização, a compressa de gaze (foto 2) desce, comprime e sai limpa */
+    var pz = ss(s8 + 6.6, s8 + 7.4, t) * (1 - ss(s8 + 9, s8 + 9.9, t));
+    var aperta = ss(s8 + 7.2, s8 + 7.6, t) * (1 - ss(s8 + 8.9, s8 + 9.3, t)), pulso = .06 * aperta * (.5 - .5 * Math.cos((t - s8 - 7.6) * TAU / 1.2));
     var achata = 1 - .35 * aperta - pulso, fundoLeito = S0(0, 0) - K.fasc;
     gazeH.visible = true; gazeH.position.set(0, lerp(.06, fundoLeito + .0006, pz), .002); gazeH.rotation.set(0, .08, 0);
     gazeH.scale.set(1 + .06 * aperta, achata, 1 + .04 * aperta);
@@ -1324,7 +1415,10 @@ function poseCampo(t) {
   tomada(s[6] + 4.5, "campo", [.16, .26, .32], [.03, .01, 0], 30);
   /* 8. hemostasia */
   tomada(s[7], "campo", [.08, .27, .27], [0, -.012, .002], 30, true);
-  tomada(s[7] + 7.8, "campo", [.06, .25, .24], [0, -.014, .002], 30);
+  tomada(s[7] + 1.6, "campo", [.08, .2, .21], [-.004, -.016, .004], 30);     /* mais perto para ver a cauterização */
+  tomada(s[7] + 5.6, "campo", [.075, .2, .2], [-.002, -.016, .006], 30);
+  tomada(s[7] + 7.2, "campo", [.07, .26, .26], [0, -.013, .002], 30);
+  tomada(s[7] + 11.8, "campo", [.06, .25, .24], [0, -.014, .002], 30);
   /* 9. sutura: de frente (subcutâneo fechando no corte), depois de cima (pele) */
   tomada(s[8] + 1.2, "campo", [.07, .1, .3], [-.002, -.012, 0], 30);
   tomada(s[8] + 6.4, "campo", [.06, .11, .29], [-.002, -.012, 0], 30);
@@ -1344,8 +1438,10 @@ rotulo(S[3] + 7.9, S[4] + 9.8, "campo", "Nódulo", "rompeu a pele e ficou expost
 rotulo(S[4] + 3, S[4] + 9.8, "campo", "Úlcera infeccionada", "crostas e exsudato", pontoCorte(K.rv * .5, K.nc + K.rn * .84), 12, -9);
 rotulo(S[5] + 1.4, S[5] + 8.8, "campo", "Artéria e veia do nódulo", null, function () { return new V3(-.07, S0(C_CORTE, -.07) - K.fasc + .004, F.c + .002); }, -6, 7);
 rotulo(S[5] + 4.4, S[5] + 8.8, "campo", "Ligadura", "antes do corte", function () { return ligadura.position.clone(); }, -9, -7);
-rotulo(S[7] + 1.7, S[7] + 4.4, "campo", "Compressão com gaze", "pressão direta, sem esfregar o leito", function () { return gazeH.position.clone().add(new V3(.018, .006, -.012)); }, 13, -8);
-rotulo(S[7] + 5.4, S[7] + 8, "campo", "Leito sem sangramento", null, function () { return new V3(0, S0(0, 0) - K.fasc + .001, .02); }, 10, -7, "ok");
+rotulo(S[7] + 1.0, S[7] + 4.4, "campo", "Cauterização", "o calor coagula os vasinhos que sangram", function () { return cauterio.position.clone(); }, 12, -10);
+rotulo(S[7] + 4.6, S[7] + 6.6, "campo", "Pontos cauterizados", "tecido coagulado: o vaso fica fechado", function () { return pontoCaut(CAUT[1]).p; }, -13, 7);
+rotulo(S[7] + 7.3, S[7] + 9.2, "campo", "Compressão com gaze", "pressão direta, sem esfregar o leito", function () { return gazeH.position.clone().add(new V3(.018, .006, -.012)); }, 13, -8);
+rotulo(S[7] + 9.9, S[7] + 12, "campo", "Leito sem sangramento", null, function () { return new V3(0, S0(0, 0) - K.fasc + .001, .02); }, 10, -7, "ok");
 rotulo(S[8] + 2.5, S[8] + 6.6, "campo", "Subcutâneo aproximado", "fio absorvível, sem espaço morto", pontoCorte(0, -.012), 11, -8);
 rotulo(S[8] + 10, S[8] + 16, "campo", "Pele: náilon 3-0", "sutura contínua", function () { return new V3(0, pele(-.03, 0) + .002, -.03); }, 10, -8);
 
