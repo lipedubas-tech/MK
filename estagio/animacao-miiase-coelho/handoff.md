@@ -122,7 +122,7 @@ ambientes com véu escuro de 0,32 s.
 | 4 | Antes da clínica | 8 s | lata de spray entra, nuvem prateada; película aparece no pelo e em parte das feridas; a lente mostra as feridas sem produto | spray: partículas, 1,5 s |
 | 5 | Chegada e contenção | 8 s | corte para a mesa de granito; mãos (contorno) seguram; rótulo "muito desidratado" | corte com véu |
 | 6 | Tricotomia: a revelação | 12 s | câmera parada 1 s; máquina passa em 5 faixas (1,6 s cada); o pelo some na faixa e cai em mechas; feridas e larvas aparecem; câmera se afasta | máscara de tosa avança junto com a lâmina |
-| 7 | Álcool e retirada | 12 s | borrifos de álcool; larvas se agitam (4 Hz) e sobem; pinça tira uma por vez (0,7 s cada) para a gaze | — |
+| 7 | Álcool e retirada | 12 s | borrifos de álcool; larvas se agitam (4 Hz) e sobem; os dedos (mão em contorno) tiram uma por vez (0,7 s cada) para a gaze (Felipe, 26/11: com a mão, sem pinça) | — |
 | 8 | Com a luva | 8 s | dedo de luva azul tira as larvas restantes do alto | — |
 | 9 | Acesso na orelha e soro | 12 s | close na orelha; rótulos (veia marginal, artéria central); cateter entra (2 s), mandril sai, esparadrapo, equipo; gotas a cada 0,8 s | — |
 | 10 | Rifamicina | 9 s | coelho vira de barriga para cima (1,5 s); spray laranja cobre as feridas; mancha cresce no pano | — |

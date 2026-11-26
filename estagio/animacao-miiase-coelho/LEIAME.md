@@ -88,5 +88,9 @@ Com a aprovação do Felipe, o passo 2 do briefing: larvas e ovos nas feridas, a
 (a lente abrindo e passeando). O código da animação é mudança estrutural (regras do `CLAUDE.md`), então cada
 passo vai em pull request em rascunho, esperando a aprovação dele.
 
-**A confirmar com o Felipe:** com o que a Cláudia tirava as larvas depois do álcool (pinça ou mão) e o que quer
-dizer "as que ficavam mais acima" (mais na superfície ou mais no alto do corpo).
+**Resposta do Felipe (26/11):** a retirada das larvas foi **com a mão nos dois casos**: a Cláudia, depois do álcool,
+e o Felipe, de luva. A cena 7 mostra mãos (só o contorno), sem pinça.
+
+**Rosto (26/11):** o Felipe achou que parecia "mais um pokémon do que coelho". Corrigido: olhos menores e castanho-escuros
+com pálpebra escura, pelo curto no rosto, focinho com nariz rosado, narinas e boca em Y, bigodes, e as orelhas
+inclinadas para trás em vez de enterradas no pelo (captura `passo1-6.png`).
