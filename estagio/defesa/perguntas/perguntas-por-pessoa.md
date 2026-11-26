@@ -15,7 +15,7 @@
 2. ★ **O slide de "Referências bibliográficas" do modelo do IFC é obrigatório?** Eu queria não ter citações.
    - Resposta:
 3. ★ **Qual é a data da defesa, quem está na banca e quanto tempo exato eu tenho?**
-   - Resposta:
+   - Resposta: a data é 15/12/2026 (Felipe, 26/11). Faltam a banca e o tempo exato.
 4. **A sala tem projetor e internet? O computador é meu ou de vocês?** (Define o plano B offline.)
    - Resposta:
 5. **Posso usar fotos tiradas da defesa da Yasmin (ambientes da clínica) se der crédito?** Ou preciso tirar as minhas?
