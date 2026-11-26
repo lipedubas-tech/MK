@@ -54,22 +54,39 @@ estados, movimento por cena e acessibilidade). A base é a mesma da animação d
   `THREE_JS=castracao-osh/3d/vendor/three-r128.min.js python3 estagio/animacao-miiase-coelho/tools/build_page.py`
 - `tools/briefing.py`: refaz o PDF do briefing.
 
-**Pronto:** o coelho com o pelo longo e volumoso, nas cores do paciente (traseira escura, frente branca), deitado,
-com as orelhas para trás, olhos novos, sem os bigodes do modelo e com a sombra no chão.
-**Escrito, ainda sem conferir na tela:** a lente de transparência, as feridas e a tosa.
+**Passo 1 pronto e conferido na tela (26/11), esperando o Felipe aprovar.** As capturas estão em `capturas/`:
+
+| Captura | O que mostra |
+|---|---|
+| `passo1-1.png` | Cena 1: o coelho deitado em decúbito esternal, patas recolhidas, orelhas deitadas para trás, respirando. Por fora, normal e fofo |
+| `passo1-2.png` | Cenas 2 a 4: a lente de transparência na garupa. Dentro do anel o pelo some e aparecem as feridas; fora dele, nada muda |
+| `passo1-3.png` | Cena 5: deitado no pano branco, sobre a mesa de granito |
+| `passo1-4.png` | Cena 6 em diante: depois da tricotomia, na mesa (dorso, garupa e base da cauda) |
+| `passo1-5.png` | Depois da tricotomia, de trás: garupa, base da cauda e região perineal |
+
+O que mudou no passo 1:
+- **Pose:** antes o coelho ficava sentado, de orelhas em pé; agora fica deitado, com a barriga no pano, e respira.
+- **Lente:** antes não abria (o anel aparecia, mas o pelo continuava); agora é um círculo na tela, preso a um
+  ponto do corpo, que acompanha a câmera.
+- **Feridas:** antes eram manchas rosadas redondas e granuladas; agora seguem as fotos 2 e 3: pele inchada e
+  enrugada, placas de crosta amarelada com fendas escuras, carne viva com buracos no centro e borda úmida.
+- **Pele tosada:** cinza-rosada com o restolho do pelo, e a borda do pelo cortado em rampa (antes formava "dentes de pente").
+- **Mesa:** granito mais escuro, com grãos irregulares; o pano não estoura mais de branco.
+- **Correção:** rótulos e lente usavam a câmera do quadro anterior; agora usam a do quadro atual.
+
 **Falta:** larvas e ovos visíveis; mosca, máquina de tosa, pinça, luva, cateter, soro e sprays; a câmera e o
-tempo das 11 cenas; a baia; a conferência no Chromium (desktop e celular, sem erros no console).
+tempo das 11 cenas; a baia; a conferência no celular.
 
 Para conferir um instante: abra `index.html?t=12.5&limpo` (parado em 12,5 s, sem título nem legendas).
 Parâmetros de teste: `&cam=x,y,z,ax,ay,az` (câmera), `&rot=Osso,x,y,z;...` (giro de ossos),
-`&raiz=x,y,z` (posição do coelho), `&u=uFerida:1;uTosa:1,1,1` (máscaras), `&lente=garupa` (dorso, perineo, cauda).
+`&raiz=x,y,z` (posição do coelho), `&u=uFerida:1;uTosa:1,1,1` (máscaras), `&lente=garupa` (dorso, perineo, cauda),
+`&amb=mesa` (estudio, mesa ou baia).
 
 ## Próximo passo
 
-Passo 1 do briefing: repintar o coelho com as cores do paciente, fazer o pelo longo e volumoso, deitá-lo no pano
-sobre o granito e marcar as feridas, visíveis só pela lente de transparência. Depois, **mostrar capturas ao Felipe
-antes de animar**. O código da animação é mudança estrutural (regras do `CLAUDE.md`), então vai em
-pull request em rascunho, esperando a aprovação dele.
+Com a aprovação do Felipe, o passo 2 do briefing: larvas e ovos nas feridas, a mosca e o tempo das cenas 1 a 4
+(a lente abrindo e passeando). O código da animação é mudança estrutural (regras do `CLAUDE.md`), então cada
+passo vai em pull request em rascunho, esperando a aprovação dele.
 
 **A confirmar com o Felipe:** com o que a Cláudia tirava as larvas depois do álcool (pinça ou mão) e o que quer
 dizer "as que ficavam mais acima" (mais na superfície ou mais no alto do corpo).
