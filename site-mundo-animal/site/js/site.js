@@ -81,7 +81,7 @@ OPCOES.forEach((o, i) => {
 escolher(0);
 
 // ---------- agendamento ----------
-// Atendimento das 8h às 12h e das 13h às 18h (Felipe, 26/11). Os dias são de exemplo: fecha aos domingos, sábado só de manhã.
+// Atendimento (Felipe, 26/11): segunda a sexta, 8h às 12h e 13h às 18h; sábado, 8h às 12h; domingo fechado.
 const HORARIOS = ["08:00", "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
 const form = document.getElementById("form-agenda");
 const campoDia = document.getElementById("f-dia");
@@ -105,7 +105,7 @@ function montarHorarios() {
   const d = new Date(campoDia.value + "T12:00");
   if (d.getDay() === 0) { dica.textContent = "A clínica não abre aos domingos. Escolha outro dia."; return; }
   const lista = d.getDay() === 6 ? HORARIOS.filter(h => h < "12:00") : HORARIOS;
-  dica.textContent = d.getDay() === 6 ? "Sábado: só pela manhã." : "";
+  dica.textContent = d.getDay() === 6 ? "Sábado: só pela manhã, das 8h às 12h." : "";
   lista.forEach(h => {
     const b = document.createElement("button");
     b.type = "button";

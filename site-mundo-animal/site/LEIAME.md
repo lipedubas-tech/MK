@@ -68,13 +68,13 @@ O letreiro da fachada ainda tem o logo antigo (filhote de golden); o site usa o 
 - **Especialistas:** novo item, "vários especialistas cadastrados na clínica", com quimioterapia e ortopedia.
 - **Banho e tosa, rações e medicações:** textos novos ("os melhores shampoos e condicionadores", "todas as linhas de ração", "medicações para todas as situações, em opções que cabem no seu bolso"). Os nomes de marcas saíram.
 - **Equipe:** a Cláudia ficou só como clínica geral, e o Thiago saiu.
-- **Horário:** das 8h às 12h e das 13h às 18h, no contato, na barra do topo e nos horários do agendamento.
+- **Horário:** de segunda a sexta, das 8h às 12h e das 13h às 18h; sábado, das 8h às 12h; domingo fechado. Está no contato, na barra do topo, nos horários do agendamento e nos dados para o Google.
 
 ## Antes de publicar: o que a clínica precisa confirmar
 
 - **Tamiris:** a função dela e a autorização para usar a foto e o nome.
 - **Veterinários:** autorização, fotos de rosto e CRMV de cada um; **responsável técnico** com CRMV no rodapé.
-- **Dias de atendimento:** o horário já está no site (8h às 12h e 13h às 18h); faltam os dias da semana e se atende urgência fora do horário.
+- **Urgências:** a clínica atende fora do horário? Se sim, vale uma faixa como a de Criciúma.
 - **Telefone fixo (48) 3533-4232:** lido na placa da fachada de 2025.
 - **Ano de abertura:** o Instagram diz "22 anos"; desde 2005 seriam 21.
 - **Texto da história:** aprovação do Rangel.
