@@ -1,6 +1,6 @@
 # Defesa: mapa da pasta e decisões pendentes
 
-> **Atualizado em 26/11/2026, às 7h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
+> **Atualizado em 26/11/2026, às 15h41.** Esta é a porta de entrada da pasta `estagio/defesa/`: o que existe, para que serve e, numa lista só, tudo o que espera uma decisão sua. O registro das execuções e a fila continuam em `MELHORIAS.md`.
 
 ## Por onde começar
 
@@ -82,6 +82,7 @@ A apresentação de verdade continua em `estagio/apresentacao/`. Até agora, nad
 26. **A cadela de 17 anos:** entra com um slide próprio ou só numa frase? *(casos/cadela-17-anos-renal)*
 27. **O filhote com parvovirose e o coelho: qual veio primeiro?** As fotos dizem filhote às 16h31 e coelho às 18h33, e você disse que o cachorro foi depois. Isso importa para a resposta sobre biossegurança. *(privacidade)*
 28. **A nodulectomia de 24/11** (animal, local, técnica) e **a faixa no pescoço do cão preto** de 25/11 (bandagem ou colar?). *(atividades-contagem)*
+29. **A Katita 30 dias depois (26/11):** ela ainda não apoia a pata, e o Thiago recomendou fisioterapia. Entra o trecho "e. 30 dias depois" na fala (cerca de 30 s)? *(fala-completa, simulado 2.6 e 2.7)*
 
 **Todas as perguntas por pessoa, para levar no celular:** `perguntas/perguntas-por-pessoa.md` (atualizado em 25/11).
 

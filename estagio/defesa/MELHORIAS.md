@@ -764,6 +764,31 @@ Sem material novo desde as 7h41. Esta execução cumpriu a decisão de 26/11 ("o
 - Fachada, recepção e pet shop: das fotos cedidas da defesa da Yasmin. Não foi preciso baixar nada do Instagram.
 - Tudo o que falta a clínica confirmar fica marcado em amarelo, e um botão esconde as marcações para mostrar a versão limpa à Tamiris. A lista completa está no `LEIAME.md` do site.
 
-Por ser código, foi em **PR em rascunho**, esperando a aprovação do Felipe.
+Depois, no mesmo dia, o Felipe mandou a foto nova da fachada e a da internação (filhotes), pôs o "Desde 2005" no fim da página, corrigiu os textos dos serviços (a clínica não faz anestesia inalatória; o Thiago saiu da equipe) e deu o horário: segunda a sexta, 8h às 12h e 13h às 18h; sábado, 8h às 12h. Detalhes no `LEIAME.md` do site.
+
+Por ser código, foi em **PR em rascunho** (lipedubas-tech/MK#109), esperando a aprovação do Felipe.
 
 **Próxima sugestão:** levar a lista de confirmações do `LEIAME.md` à Tamiris e pedir o logo em vetor. Depois disso, a montagem dos slides (decisão de 26/11).
+
+### 26/11/2026 — 15h41
+
+Material novo de 26/11, registrado por outras sessões (PRs lipedubas-tech/MK#110 a #113): o ecocardiograma, o filhote com parvovirose internado, a reflexão "pessoas com um propósito maior" e o **controle de 30 dias da Katita**. Nele, ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia.
+
+**Feito:**
+- **Katita (o caso principal):**
+  - a `fala-completa.md` ganhou a proposta do trecho "e. 30 dias depois" (cerca de 30 s): "A cirurgia não é o fim da história";
+  - o simulado ganhou as perguntas 2.6, "Ela voltou a andar?", e 2.7, "Por que ainda não apoia?", com a orientação de não dizer que ela "se recuperou";
+  - a 2.4 ganhou a nota de que o raio-X de 30 dias também marca os implantes no membro E;
+  - o roteiro ganhou a nota no bloco 4, e o Thiago, uma pergunta ★ sobre o controle de 30 dias.
+- **Filhote:** a tabela de acompanhamento ganhou a linha de 26/11: internado, com acesso na pata, sentado e alerta. É impressão da foto, não laudo.
+- **Ecocardiograma:** entrou na contagem das atividades (1), e há perguntas para a Cláudia: quem fez, que paciente e qual diagnóstico.
+- **Reflexão de 26/11:** entrou como opção nas considerações finais da fala e como outra resposta para a 10.2a do simulado.
+- **Linha do tempo:** ganhou o dia 26/11, agora com 149 fotos. Os raios-X da Katita, que mostram o nome do tutor, e as fotos do eco, com rosto, estão marcados como sensíveis.
+- **Checklist de privacidade:** o nome do tutor nos raios-X de 30 dias deve ser coberto, e o rosto aparece nas fotos do eco.
+- **LEIAME:** a pendência 29 pergunta se o trecho "30 dias depois" entra.
+
+**Perguntas para o Felipe:** o trecho "30 dias depois" da Katita entra na fala?
+
+**Próxima sugestão:** quando o Thiago responder sobre o raio-X de 30 dias, completar a fala e o simulado.
+
+**Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.

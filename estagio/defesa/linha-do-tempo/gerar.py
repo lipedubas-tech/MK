@@ -209,6 +209,18 @@ DIAS = [
         "reflexoes": [],
         "ideias": [],
     },
+    {
+        "data": "26/11", "titulo": "A Katita 30 dias depois, o eco e o filhote internado",
+        "casos": [
+            "Katita, controle de 30 dias: novas radiografias do cotovelo, com os implantes no membro esquerdo. Ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia. A leitura das imagens está a confirmar.",
+            "Ecocardiograma (modo B e Doppler) num cão pequeno de pelo escuro. Quem fez o exame e o diagnóstico estão a confirmar.",
+            "O filhote com parvovirose no internamento, com acesso na pata, sentado e alerta. A evolução está a confirmar.",
+        ],
+        "reflexoes": [
+            "\"Eu conheci muita gente com propósito maior de vida.\" As meninas do Gatil dos resgatados se esforçam muito pelo bem dos animais.",
+        ],
+        "ideias": [],
+    },
 ]
 
 # Pastas de fotos -> dia da linha do tempo
@@ -224,6 +236,7 @@ PASTA_DIA = {
     "fotos/dia-23-11": "23/11",
     "fotos/dia-24-11": "24/11",
     "fotos/dia-25-11": "25/11",
+    "fotos/dia-26-11": "26/11",
     "fotos/dia-19-11": "19/11",
     "animacao-osh/referencias": "17/11",
     "animacao-nodulectomia/referencias": "17/11",
@@ -237,6 +250,8 @@ SENSIVEIS = {
     "fotos/legendas/01", "fotos/quimio/03", "fotos/quimio/04", "fotos/dia07/01",
     "fotos/cirurgia-felino/01", "fotos/cirurgia-felino/08",
     "fotos/dia-23-11/01", "fotos/dia-23-11/02", "fotos/dia-23-11/03",
+    "fotos/dia-26-11/01", "fotos/dia-26-11/02",
+    "fotos/dia-26-11/04", "fotos/dia-26-11/05", "fotos/dia-26-11/06",
 }
 
 

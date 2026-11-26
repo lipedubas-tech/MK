@@ -95,6 +95,7 @@ Estas são as suas reflexões, com as suas palavras sempre que estavam registrad
 - **Resgate dos filhotes (19/11):** os 3 fetos que já estavam mortos na castração da gata (17/11) e os 3 filhotes que sobreviveram ao ataque de um cachorro. Reflexão sobre o sofrimento desnecessário no mundo: só se mexe no que ainda está acontecendo na nossa frente.
 - **O sentido da defesa:** você quer usar a defesa para explorar a sua curiosidade e as suas "megalomanias", pensando primeiro no sentido dela ("metafísica da defesa") antes de fechar o formato. O que mais agradou ao ortopedista e a quem assistiu foi a animação da cirurgia da Katita.
 - **"Ela é minha vida!" (registrado em 24/11):** é uma frase que você escuta muito dos tutores, falando da cachorra ou da gata. Pela sua impressão, quem diz é quase sempre uma mulher idosa ("acho que 100%"). É uma percepção sua, não uma contagem.
+- **Pessoas com um propósito maior (registrado em 26/11):** "Eu conheci muita gente com propósito maior de vida." As meninas do Gatil dos resgatados se esforçam muito pelo bem dos animais. O estágio me fez conhecer pessoas que buscam fazer o bem. (Ideia para lembrar.)
 
 **Eixos temáticos propostos (nenhum decidido):**
 1. Tornar visível o oculto
