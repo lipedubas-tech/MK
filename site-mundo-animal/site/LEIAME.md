@@ -38,7 +38,7 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 5. **O que o seu pet precisa hoje?** O visitante toca na necessidade e sai com a mensagem de WhatsApp pronta (ou vai para o agendamento com o serviço já escolhido).
 6. **Serviços:** clínica veterinária e pet shop e estética, com os produtos e marcas que aparecem nos reels.
 7. **Por dentro da clínica:** 9 ambientes num mosaico; tocar abre a foto maior.
-8. **Quem cuida do seu pet:** Tamiris, Dra. Cláudia, Dr. Thiago e Dr. Rangel.
+8. **Quem cuida do seu pet:** Tamiris, Dra. Cláudia e Dr. Rangel.
 9. **Cliente da casa ganha mais:** o cartão fidelidade (desenhado com carimbos de patinha) e o primeiro banho grátis com a vacinação completa.
 10. **Pet do dia:** convite para seguir o Instagram.
 11. **Agendar horário:** o formulário do protótipo, agora com a opção de busca e entrega no banho e tosa.
@@ -61,17 +61,26 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 
 O letreiro da fachada ainda tem o logo antigo (filhote de golden); o site usa o emblema novo. Não foi preciso baixar nada do Instagram.
 
+## Correções do Felipe (26/11)
+
+- A clínica **não faz anestesia inalatória**: saiu do texto das cirurgias, que agora diz "Das mais simples às mais complexas, com todo o cuidado e monitoração".
+- **Fluidoterapia é o soro:** ficou só "soro" na internação.
+- **Especialistas:** novo item, "vários especialistas cadastrados na clínica", com quimioterapia e ortopedia.
+- **Banho e tosa, rações e medicações:** textos novos ("os melhores shampoos e condicionadores", "todas as linhas de ração", "medicações para todas as situações, em opções que cabem no seu bolso"). Os nomes de marcas saíram.
+- **Equipe:** a Cláudia ficou só como clínica geral, e o Thiago saiu.
+- **Horário:** das 8h às 12h e das 13h às 18h, no contato, na barra do topo e nos horários do agendamento.
+
 ## Antes de publicar: o que a clínica precisa confirmar
 
 - **Tamiris:** a função dela e a autorização para usar a foto e o nome.
-- **Veterinários:** autorização, fotos de rosto, sobrenome do Thiago e CRMV de cada um; **responsável técnico** com CRMV no rodapé.
-- **Horário de atendimento** e se atende urgência fora dele.
+- **Veterinários:** autorização, fotos de rosto e CRMV de cada um; **responsável técnico** com CRMV no rodapé.
+- **Dias de atendimento:** o horário já está no site (8h às 12h e 13h às 18h); faltam os dias da semana e se atende urgência fora do horário.
 - **Telefone fixo (48) 3533-4232:** lido na placa da fachada de 2025.
 - **Ano de abertura:** o Instagram diz "22 anos"; desde 2005 seriam 21.
 - **Texto da história:** aprovação do Rangel.
 - **Cartão fidelidade:** como funciona (carimbos e prêmio). O desenho com 10 carimbos é ilustrativo.
 - **Primeiro banho grátis com vacinação completa:** a promoção de nov/2025 ainda vale?
-- **Quimioterapia na lista de serviços:** a clínica quer divulgar?
+- **Especialistas:** a lista completa das áreas (hoje o site cita quimioterapia e ortopedia).
 - **Busca e entrega:** área atendida e se há taxa.
 - **Orientações e respostas das dúvidas:** revisão da veterinária.
 - **Agendamento:** dias e horários reais e para onde vão os pedidos (as opções estão no LEIAME do protótipo). Hoje só o WhatsApp chega à clínica.

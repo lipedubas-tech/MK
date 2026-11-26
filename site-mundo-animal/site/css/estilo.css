@@ -185,7 +185,7 @@ h3{font-family:var(--texto);font-weight:800;font-size:1.25rem;line-height:1.3}
 
 /* equipe */
 .equipe{background:var(--agua)}
-.pessoas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 28px;text-align:center}
+.pessoas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 28px;text-align:center;max-width:980px;margin:0 auto}
 .pessoas li{display:flex;flex-direction:column;align-items:center}
 .retrato{display:grid;place-items:center;width:168px;height:168px;border-radius:50%;overflow:hidden;background:var(--musgo);box-shadow:0 0 0 6px var(--agua),0 0 0 7.5px var(--dourado);margin:8px 0 22px}
 .retrato img{width:100%;height:100%;object-fit:cover}
@@ -302,7 +302,6 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--verde);b
 @media (max-width:1080px){
   .menu{gap:18px}
   .diferenciais ul{grid-template-columns:repeat(3,1fr);row-gap:22px}
-  .pessoas{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:900px){
   .botao-menu{display:inline-flex}
@@ -348,7 +347,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--verde);b
   .mosaico{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px;
     grid-template-areas:"rec rec" "rec rec" "loja cons" "lab rx" "lab cir" "int int" "esp ban"}
   .foto-rotulo{font-size:.8rem;left:8px;bottom:8px;padding:4px 10px}
-  .pessoas{gap:32px 16px}
+  .pessoas{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
+  .pessoas li:last-child:nth-child(odd){grid-column:1/-1}
   .retrato{width:128px;height:128px}
   .retrato-inicial{font-size:3.2rem}
   .pessoas b{font-size:1.08rem}

@@ -81,8 +81,8 @@ OPCOES.forEach((o, i) => {
 escolher(0);
 
 // ---------- agendamento ----------
-// Horários de exemplo: fecha aos domingos, sábado só de manhã. A clínica define os reais.
-const HORARIOS = ["08:00", "09:00", "10:00", "11:00", "13:30", "14:30", "15:30", "16:30", "17:00"];
+// Atendimento das 8h às 12h e das 13h às 18h (Felipe, 26/11). Os dias são de exemplo: fecha aos domingos, sábado só de manhã.
+const HORARIOS = ["08:00", "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
 const form = document.getElementById("form-agenda");
 const campoDia = document.getElementById("f-dia");
 const grade = document.getElementById("horarios");
