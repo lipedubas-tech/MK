@@ -213,3 +213,8 @@ alternar.addEventListener("click", () => {
   aplicarRevisao(ligado);
   try { localStorage.setItem("ma-revisao", ligado ? "1" : "0"); } catch (e) { /* sem armazenamento */ }
 });
+
+// ---------- campanhas com data para sumir (data-ate="AAAA-MM-DD") ----------
+document.querySelectorAll(".campanha[data-ate]").forEach(el => {
+  if (new Date() >= new Date(el.dataset.ate + "T00:00")) el.hidden = true;
+});

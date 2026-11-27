@@ -370,6 +370,30 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--verde);b
   .abertura h1{font-size:2.55rem}
   .abertura-sub{font-size:1.06rem}
 }
+/* ---------- Black Friday (campanha temporária) ---------- */
+.faixa-bf{display:block;text-align:center;background:#0d0d0b;color:var(--creme-texto);text-decoration:none;font-size:.92rem;padding:9px 16px;border-bottom:1px solid rgba(176,151,89,.5)}
+.faixa-bf b{color:var(--dourado);font-family:var(--serifa);font-weight:400;font-size:1.05rem;letter-spacing:.04em}
+.faixa-bf:hover{color:#fff}
+.black-friday{background:#0d0d0b radial-gradient(ellipse at 80% 40%,rgba(176,151,89,.18),transparent 60%);color:var(--creme-texto);padding:88px 0}
+.black-friday .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.black-friday :focus-visible{outline-color:var(--amarelo)}
+.black-friday h2{font-size:clamp(3.2rem,8vw,6.4rem);line-height:.95;color:#fff}
+.bf-friday{color:var(--dourado)}
+.bf-sub{font-size:1.2rem;margin:20px 0 30px;max-width:40ch}
+.bf-ofertas{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:14px;max-width:460px}
+.bf-ofertas li{display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid rgba(176,151,89,.45);border-radius:18px}
+.bf-ofertas b{display:block;color:#fff;font-size:1.08rem}
+.bf-ofertas .icone-circulo{background:#1c1a14;color:var(--dourado);box-shadow:inset 0 0 0 1.5px var(--dourado)}
+.btn-ouro{background:var(--dourado);color:#0d0d0b}
+.btn-ouro:hover{background:#c6ad6d;color:#0d0d0b}
+.bf-video{margin:0;justify-self:center;width:100%;max-width:300px}
+.bf-tela{aspect-ratio:9/16;border-radius:34px;border:8px solid #1c1a14;outline:1.5px solid var(--dourado);outline-offset:6px;background:#16150f;display:grid;place-items:center;text-align:center;padding:24px;overflow:hidden}
+.bf-tela video,.bf-tela iframe{width:100%;height:100%;object-fit:cover;border:0}
+.bf-tela p{margin:0;font-family:var(--serifa);font-size:1.3rem;color:var(--dourado)}
+.bf-tela small{font:600 .85rem var(--texto);color:#b9b096}
+@media (max-width:900px){.black-friday .wrap{grid-template-columns:1fr;gap:44px}.bf-video{max-width:260px}}
+@media (max-width:700px){.black-friday{padding:64px 0}.black-friday .btn{width:100%}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}

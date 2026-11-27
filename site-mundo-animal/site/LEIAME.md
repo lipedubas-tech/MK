@@ -61,6 +61,14 @@ Cores e letras são aproximações (ver `../identidade-visual/identidade-visual.
 
 O letreiro da fachada ainda tem o logo antigo (filhote de golden); o site usa o emblema novo. Não foi preciso baixar nada do Instagram.
 
+## Black Friday (27/11)
+
+Pedido do Felipe: a chefa está gravando vídeos da Black Friday, e o site ganhou uma campanha para mostrar a ela.
+- **Faixa preta no topo**, "Black Friday na Mundo Animal: veja as ofertas", que leva à seção.
+- **Seção "Black Friday"** logo depois dos diferenciais, em preto e dourado (o dourado do emblema): três ofertas (rações, medicações e banho e tosa), botão "Quero as ofertas" no WhatsApp e uma moldura de celular para o vídeo.
+- **Some sozinha em 01/12** (atributo `data-ate` na faixa e na seção).
+- **Falta:** as ofertas reais, até quando valem e o vídeo. Para pôr o vídeo, troque o texto dentro de `.bf-tela` por `<video src="img/black-friday.mp4" controls playsinline></video>`.
+
 ## Correções do Felipe (26/11)
 
 - A clínica **não faz anestesia inalatória**: saiu do texto das cirurgias, que agora diz "Das mais simples às mais complexas, com todo o cuidado e monitoração".
