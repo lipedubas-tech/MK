@@ -78,7 +78,7 @@
 ### Acrescentadas em 26/11 (o ecocardiograma e o filhote)
 - **O ecocardiograma de 26/11:** quem fez o exame (é um cardiologista de fora?), quem era o paciente e qual era a suspeita? Posso ver o laudo?
   - Resposta:
-- **O filhote com parvovirose:** como ele está hoje? Está comendo sozinho, e os vômitos e a diarreia pararam? Qual é o tratamento? *(O Felipe anotou em 27/11: soro; via subcutânea, Bionil, metraminazol, moxilina, dexametasona e dipirona; pela veia, serena e omeprazol. Confirmar: o que é o Bionil, se os outros são metronidazol, amoxicilina e Cerenia, e por que a dexametasona.)*
+- **O filhote com parvovirose:** como ele está hoje? Está comendo sozinho, e os vômitos e a diarreia pararam? Qual é o tratamento? *(O Felipe anotou em 27/11: soro; via subcutânea, Bionil, metraminazol, moxilina, dexametasona e dipirona; pela veia, serena e omeprazol. Confirmar: se o Bionil é o Bionew (Felipe acha que sim, 27/11), se os outros são metronidazol, amoxicilina e Cerenia, e por que a dexametasona.)*
   - Resposta:
 
 ### Acrescentadas em 25/11 (o filhote com parvovirose)

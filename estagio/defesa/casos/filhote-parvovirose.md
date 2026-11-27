@@ -29,7 +29,7 @@ No começo do estágio, a Cláudia contou que **no ano passado atendia parvoviro
 |---|---|---|---|
 | 25/11 | Diagnóstico; isolamento | **a confirmar** | Felipe |
 | 26/11, 10h22 | No internamento, sentado, alerta, de língua para fora (ofegante), com **acesso na pata (bandagem verde)** e ração nos potes. Parece melhor que na véspera, **mas isso é impressão da foto, não laudo** | Soro pelo acesso; o resto **a confirmar** | `fotos/dia-26-11/03` |
-| Informado em 27/11 | — | **Soro.** **Subcutânea:** Bionil, metraminazol, moxilina, dexametasona e dipirona. **Intravenoso:** serena e omeprazol (como o Felipe escreveu). Nomes prováveis, **a confirmar**: metronidazol, amoxicilina e Cerenia (maropitant). "Bionil" não foi identificado. Doses, frequência e dia de início, **a confirmar** com a Cláudia | Felipe, 27/11 |
+| Informado em 27/11 | — | **Soro.** **Subcutânea:** Bionil, metraminazol, moxilina, dexametasona e dipirona. **Intravenoso:** serena e omeprazol (como o Felipe escreveu). Nomes prováveis, **a confirmar**: metronidazol, amoxicilina e Cerenia (maropitant). O "Bionil" provavelmente é **Bionew** (Felipe, 27/11), um suplemento vitamínico injetável **[a confirmar]**. Doses, frequência e dia de início, **a confirmar** com a Cláudia | Felipe, 27/11 |
 | | | | |
 
 ## Proposta (se entrar)
@@ -45,7 +45,7 @@ No começo do estágio, a Cláudia contou que **no ano passado atendia parvoviro
 
 1. **Ele era vacinado? Que idade tinha?** **[a confirmar]**: é a resposta que decide a mensagem do slide.
 2. **Qual teste rápido?** Antígeno nas fezes? **[a confirmar]**
-3. **Qual foi o tratamento?** Registrado pelo Felipe em 27/11: soro; por via subcutânea, Bionil, metronidazol, amoxicilina, dexametasona e dipirona; pela veia, Cerenia (maropitant) e omeprazol (os nomes, **a confirmar**). **Antes da banca, confirme com a Cláudia** os nomes, o que é o Bionil e para que serve cada um, sobretudo a dexametasona, porque a banca pode perguntar por que usar um corticoide numa infecção viral. Não responda de memória.
+3. **Qual foi o tratamento?** Registrado pelo Felipe em 27/11: soro; por via subcutânea, Bionil, metronidazol, amoxicilina, dexametasona e dipirona; pela veia, Cerenia (maropitant) e omeprazol (os nomes, **a confirmar**). **Antes da banca, confirme com a Cláudia** os nomes, se é mesmo o Bionew e para que serve cada um, sobretudo a dexametasona, porque a banca pode perguntar por que usar um corticoide numa infecção viral. Não responda de memória.
 4. **Por que você o segurou no colo?** Resposta registrada: depois ele foi para o isolamento, e você trocou de roupa e não atendeu mais ninguém. Acerte antes a ordem com o coelho.
 5. **Como a parvovirose se transmite, e quanto tempo o vírus fica no ambiente?** **[a confirmar com a Cláudia]**: não responda de memória.
 
