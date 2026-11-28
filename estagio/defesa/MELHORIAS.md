@@ -755,6 +755,22 @@ Sem material novo desde as 7h41. Esta execução cumpriu a decisão de 26/11 ("o
 
 **Envio:** o WhatsApp continua sem a chave, então o resumo foi pelo Gmail.
 
+### 26/11/2026 — pedido do Felipe no chat: começar a produção do site
+
+**Pedido:** começar o site da Mundo Animal com tudo o que foi coletado do Instagram, inspirado no site de Criciúma, priorizando a identidade visual e a intuitividade. Na abertura, como em Criciúma, a profissional em primeiro plano e as instalações ao fundo: a foto da Tamiris no pet shop (captura do reel do Cartão Fidelidade).
+
+**Feito:** o site em `site-mundo-animal/site/` (o protótipo em `site-prototipo/` não foi mexido).
+- Abertura em verde-musgo e dourado, como o emblema, com o globo desenhado atrás da foto da Tamiris.
+- Diferenciais, "O que o seu pet precisa hoje?", serviços, a fachada com a história, um mosaico com 9 ambientes, a equipe, o cartão fidelidade, o "Pet do dia", o agendamento, as dúvidas e o mapa.
+- Fachada, recepção e pet shop: das fotos cedidas da defesa da Yasmin. Não foi preciso baixar nada do Instagram.
+- Tudo o que falta a clínica confirmar fica marcado em amarelo, e um botão esconde as marcações para mostrar a versão limpa à Tamiris. A lista completa está no `LEIAME.md` do site.
+
+Depois, no mesmo dia, o Felipe mandou a foto nova da fachada e a da internação (filhotes), pôs o "Desde 2005" no fim da página, corrigiu os textos dos serviços (a clínica não faz anestesia inalatória; o Thiago saiu da equipe) e deu o horário: segunda a sexta, 8h às 12h e 13h às 18h; sábado, 8h às 12h. Detalhes no `LEIAME.md` do site.
+
+Por ser código, foi em **PR em rascunho** (lipedubas-tech/MK#109), esperando a aprovação do Felipe.
+
+**Próxima sugestão:** levar a lista de confirmações do `LEIAME.md` à Tamiris e pedir o logo em vetor. Depois disso, a montagem dos slides (decisão de 26/11).
+
 ### 26/11/2026 — 15h41
 
 Material novo de 26/11, registrado por outras sessões (PRs lipedubas-tech/MK#110 a #113): o ecocardiograma, o filhote com parvovirose internado, a reflexão "pessoas com um propósito maior" e o **controle de 30 dias da Katita**. Nele, ela ainda não apoia a pata no chão, e o Thiago recomendou fisioterapia.
